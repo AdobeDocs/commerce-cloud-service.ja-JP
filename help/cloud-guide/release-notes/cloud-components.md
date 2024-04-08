@@ -3,9 +3,9 @@ title: コマース用のクラウドコンポーネント
 description: クラウドコンポーネントパッケージの最新の改善点のリストを参照してください。
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
-source-git-commit: f9edcc85c14354a2eddacbc5219557e107a367cb
+source-git-commit: c02dfd2709cdc63ac1630edaa8c89cad5f737ea1
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,13 @@ The `magento/magento-cloud-components` パッケージでは、次のバージ�
 
 <!--Add release notes below-->
 
-## v1.0.13 {#latest}
+## v1.0.14 {#latest}
+
+リリース日： 2024 年 4 月 8 日
+
+- ![新しいアイコン](../../assets/new.svg) **PHP** — PHP 8.3 のサポートを追加しました。
+
+## v1.0.13
 
 リリース日： 2023 年 3 月 11 日
 

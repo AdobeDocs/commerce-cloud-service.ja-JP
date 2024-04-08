@@ -3,11 +3,11 @@ title: Cloud Docker パッケージ
 description: Cloud Docker パッケージの最新の改善点の一覧を参照してください。
 feature: Cloud, Docker, Release Notes
 recommendations: noDisplay, catalog
-last-substantial-update: 2023-07-31T00:00:00Z
+last-substantial-update: 2024-04-08T00:00:00Z
 exl-id: 907d977f-2e9c-4553-a46b-000bc6a57b28
-source-git-commit: 21754f2ee3df586cd03d57210741b36409ad2b36
+source-git-commit: bc76cba0219f16fd055c20289811b51c35c9b026
 workflow-type: tm+mt
-source-wordcount: '3620'
+source-wordcount: '3662'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,16 @@ The `magento/magento-cloud-docker` パッケージでは、次のバージョン
 
 <!--Add release notes below-->
 
-## v1.3.6 {#latest}
+## v1.3.7 {#latest}
+
+リリース日： 2024 年 4 月 8 日
+
+- ![新しいアイコン](../../assets/new.svg) **PHP** — PHP 8.3 および PHP 8.3 イメージのサポートを追加しました。
+- ![新しいアイコン](../../assets/new.svg) **Nginx**  — 画像 nginx v. 1.24 を追加しました。
+- ![新しいアイコン](../../assets/new.svg) **Opensearch**  — 画像 OpenSearch v. 2.12、1.3 が追加されました。
+- ![新しいアイコン](../../assets/new.svg) **コンポーザー** - Composer のバージョンを 2.2.23 に更新しました。
+
+## v1.3.6
 
 リリース日： 2023 年 7 月 31 日
 

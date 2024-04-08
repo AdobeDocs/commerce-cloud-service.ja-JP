@@ -2,11 +2,11 @@
 title: ECE-Tools リリースノート
 description: ECE-Tools パッケージの最新の改善点の一覧を参照してください。
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-01-16T00:00:00Z
+last-substantial-update: 2024-04-08T00:00:00Z
 exl-id: a464b940-c56e-4a7c-9948-559539e25361
-source-git-commit: f2aa4aa183298d829d27c4641f21acef1514d312
+source-git-commit: e21f21e34f89b62842bd22c99ff5705f984898e0
 workflow-type: tm+mt
-source-wordcount: '2887'
+source-wordcount: '2905'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,15 @@ The `ece-tools` パッケージでは、次のリリースのバージョン管�
 
 <!--Add release notes below-->
 
-## v2002.1.17 {#latest}
+
+## v2002.1.18 {#latest}
+
+リリース日： 2024 年 4 月 8 日
+
+- ![新しいアイコン](../../assets/new.svg) **PHP** — PHP 8.3 のサポートを追加しました。
+- ![修正アイコン](../../assets/fix.svg) バリデーター — EOL バリデーターを更新しました。
+
+## v2002.1.17
 
 リリース日： 2024 年 1 月 17 日
 
