@@ -1,11 +1,11 @@
 ---
-source-git-commit: 4dc60128f93f4595b0ed3e1a42cd64bb660e788f
+source-git-commit: ab9e2c8ca8c9a9c527aaa8b4cd5e2c2bc35bb718
 workflow-type: tm+mt
-source-wordcount: '2200'
+source-wordcount: '2184'
 ht-degree: 0%
 
 ---
-# Adobe Commerce用クラウドパッケージ
+# Adobe Commerce用のクラウドパッケージ
 
 <!-- The 'packages' variable contains the 'packages' node of the '_data/codebase/cloud/composer_lock.json' file
  -->
@@ -19,21 +19,21 @@ ht-degree: 0%
 <!-- The edition variable contains `cloud` value from the _data/names.yml file
  -->
 
-クラウドインフラストラクチャ上のAdobe Commerceは、Composer を使用して PHP パッケージを管理します。
+クラウドインフラストラクチャー上のAdobe Commerceでは、PHP パッケージの管理に Composer を使用します。
 
-The `composer.json` ファイルはパッケージのリストを宣言し、 `composer.lock` ファイルには、Adobe CommerceまたはMagento Open Sourceのインストールに使用するパッケージの完全なリスト（各パッケージの完全版とその依存関係）が格納されます。
+この `composer.json` ファイルはパッケージのリストを宣言するのに対して、 `composer.lock` ファイルには、Adobe CommerceまたはMagento Open Sourceのインストールのビルドに使用するパッケージの完全なリスト（各パッケージの完全なバージョンとその依存関係）が保存されます。
 
-次の参照ドキュメントは、 `composer.lock` ファイルに含まれ、Adobe Commerce on cloud infrastructure 2.4.6 に含まれる必要なパッケージをカバーします。
+次のリファレンスドキュメントは、 `composer.lock` ファイルで、cloud infrastructure 2.4.7 上のAdobe Commerceに含まれている必要なパッケージについて説明します。
 
 ## 依存関係
 
-`magento/magento-cloud-metapackage 2.4.6` には次の依存関係があります。
+`magento/magento-cloud-metapackage 2.4.7` には次の依存関係があります。
 
 ```config
 fastly/magento2: ^1.2.34
 magento/ece-tools: ^2002.1.0
 magento/module-paypal-on-boarding: ~100.5.0
-magento/product-enterprise-edition: >=2.4.6 <2.4.7
+magento/product-enterprise-edition: >=2.4.7 <2.4.8
 ```
 
 ## サードパーティライセンス
@@ -51,7 +51,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   <tbody>
   <tr>
     <td>
-      elasticsearch/elasticsearch
+      <a href="https://github.com/elastic/elasticsearch-php.git">elasticsearch/elasticsearch</a>
     </td>
     <td>ライブラリ</td>
     <td>Elasticsearch用 PHP クライアント</td>
@@ -89,20 +89,20 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/awslabs/aws-crt-php.git">aws/aws-crt-php</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP 用AWS Common Runtime</td>
+    <td>PHP 用AWS共通ランタイム</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/aws/aws-sdk-php.git">aws/aws-sdk-php</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP 用AWS SDK - PHP プロジェクトでAmazon Web Servicesを使用します。</td>
+    <td>AWS SDK for PHP - PHP プロジェクトでAmazon Web Servicesを使用する</td>
   </tr>
   <tr>
     <td>
       paypal/module-braintree
     </td>
-    <td>メタパッケージ</td>
+    <td>隠喩</td>
     <td>BraintreeMagento</td>
   </tr>
   <tr>
@@ -115,7 +115,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tbody>
 </table>
 
-### BSD-2-Clause
+### BSD-2 句
 
 <table>
   <thead>
@@ -135,29 +135,22 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/beberlei/assert.git">beberlei/assert</a>
-    </td>
-    <td>ライブラリ</td>
-    <td>ビジネスモデルでの入力検証用のシンアサーションライブラリ。</td>
-  </tr>
-  <tr>
-    <td>
       <a href="https://github.com/DASPRiD/Enum.git">dasprid/enum</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP 7.1 enum の実装</td>
+    <td>PHP 7.1 列挙実装</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/webimpress/safe-writer.git">webimpress/safe-writer</a>
     </td>
     <td>ライブラリ</td>
-    <td>競合状態を避けるため、安全にファイルを書き込むツール</td>
+    <td>競合状態を避けるため、ファイルを安全に書き込むためのツール</td>
   </tr>
   </tbody>
 </table>
 
-### BSD-3-Clause
+### BSD-3 句
 
 <table>
   <thead>
@@ -173,46 +166,46 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/colinmollenhour/Cm_Cache_Backend_File.git">colinmollenhour/cache-backend-file</a>
     </td>
     <td>magento-module</td>
-    <td>Zend_Cache_Backend_File のバックエンドは、キャッシュされた項目の数が増えるにつれて使用できなくなるタグによるクリーニングのパフォーマンスが非常に低下しています。 このバックエンドでは、多くの変更がおこなわれ、特にタグのクリーニングにおいて、パフォーマンスが大幅に向上します。</td>
+    <td>ストックの Zend_Cache_Backend_File バックエンドは、タグによるクリーニングのパフォーマンスが非常に悪く、キャッシュされたアイテムの数が増えると使用できなくなります。 このバックエンドは多くの変更を加え、特にタグのクリーニングのパフォーマンスを大幅に向上させます。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/colinmollenhour/php-redis-session-abstract.git">colinmollenhour/php-redis-session-abstract</a>
     </td>
     <td>ライブラリ</td>
-    <td>Redis ベースのセッションハンドラーで、楽観的なロック機能を備えています。</td>
+    <td>楽観的ロックを使用した Redis ベースのセッションハンドラー</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/fastly/fastly-magento2.git">fastly/magento2</a>
     </td>
     <td>magento2-module</td>
-    <td>Magento2.4.x の Fastly CDN Module</td>
+    <td>Magento 2.4.x 用 Fastly CDN モジュール</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/firebase/php-jwt.git">firebase/php-jwt</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP で JSON Web Tokens(JWT) をエンコードおよびデコードする簡単なライブラリです。 現在の仕様に準拠する必要があります。</td>
+    <td>PHP で JSON ウェブトークン（JWT）をエンコードし、デコードするためのシンプルなライブラリ。 現在の仕様に準拠する必要があります。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/google/recaptcha.git">google/recaptcha</a>
     </td>
     <td>ライブラリ</td>
-    <td>スパムや不正使用から Web サイトを保護する無料のサービス、reCAPTCHA 用のクライアントライブラリ。</td>
+    <td>Web サイトをスパムや不正使用から保護する無料サービスである reCAPTCHA のクライアントライブラリ。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-captcha.git">ラミナ/ラミナ/カプチャ</a>
+      <a href="https://github.com/laminas/laminas-captcha.git">ラミナス/ラミナス – キャプチャ</a>
     </td>
     <td>ライブラリ</td>
-    <td>フィグレット、画像、ReCaptcha などを使用して CAPTCHA を生成および検証します。</td>
+    <td>置物、画像、ReCaptcha などを使用した CAPTCHA の生成と検証</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-code.git">ラミナ/ラミナコード</a>
+      <a href="https://github.com/laminas/laminas-code.git">ラミナス/ラミナス符号</a>
     </td>
     <td>ライブラリ</td>
     <td>PHP Reflection API、静的コードスキャン、およびコード生成の拡張</td>
@@ -222,130 +215,130 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/laminas/laminas-config.git">laminas/laminas-config</a>
     </td>
     <td>ライブラリ</td>
-    <td>は、アプリケーションコード内のこの設定データにアクセスするための、ネストされたオブジェクトプロパティベースのユーザーインターフェイスを提供します。</td>
+    <td>アプリケーション コード内でこの構成データにアクセスするための、ネストされたオブジェクト プロパティ ベースのユーザーインターフェイスを提供します</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-crypt.git">laminas/laminas-crypt</a>
+      <a href="https://github.com/laminas/laminas-crypt.git">ラミナス/ラミナス陰窩</a>
     </td>
     <td>ライブラリ</td>
-    <td>強力な暗号化ツールとパスワードのハッシュ</td>
+    <td>強力な暗号化ツールとパスワードハッシュ</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-db.git">laminas/laminas-db</a>
+      <a href="https://github.com/laminas/laminas-db.git">ラミナス/ラミナス – db</a>
     </td>
     <td>ライブラリ</td>
-    <td>データベース抽象レイヤー、SQL の抽象化、結果セットの抽象化、RowDataGateway と TableDataGateway の実装</td>
+    <td>データベース抽象化レイヤー、SQL 抽象化、結果セット抽象化、RowDataGateway および TableDataGateway の実装</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-di.git">ラミナ/ラミナスジ</a>
+      <a href="https://github.com/laminas/laminas-di.git">ラミナス/ラミナス – ディ</a>
     </td>
     <td>ライブラリ</td>
-    <td>PSR-11 コンテナの自動依存関係挿入</td>
+    <td>PSR-11 コンテナの自動依存関係インジェクション</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-escaper.git">ラミナ/ラミナ脱進機</a>
+      <a href="https://github.com/laminas/laminas-escaper.git">ラミナス/ラミナスエスケープ</a>
     </td>
     <td>ライブラリ</td>
-    <td>HTML、HTML属性、JavaScript、CSS、URL を安全かつ安全にエスケープする</td>
+    <td>HTML、HTML属性、JavaScript、CSS および URL を安全かつ安全にエスケープ</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-eventmanager.git">laminas/laminas-eventmanager</a>
+      <a href="https://github.com/laminas/laminas-eventmanager.git">ラミナス/ラミナス – イベントマネージャ</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP アプリケーション内のトリガーとイベントのリッスン</td>
+    <td>PHP アプリケーション内のイベントをトリガーしてリッスンする</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-feed.git">ラミナ/ラミナフィード</a>
+      <a href="https://github.com/laminas/laminas-feed.git">ラミナス/ラミナス供給</a>
     </td>
     <td>ライブラリ</td>
-    <td>は、RSS および Atom フィードを作成および使用する機能を提供します</td>
+    <td>rss および Atom フィードを作成および使用する機能を提供します</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-file.git">laminas/laminas-file</a>
+      <a href="https://github.com/laminas/laminas-file.git">ラミナス/ラミナス ファイル</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP クラスファイルを見つけます。</td>
+    <td>PHP クラスファイルを見つける</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-filter.git">ラミナ/ラミナフィルター</a>
+      <a href="https://github.com/laminas/laminas-filter.git">ラミナス/ラミナスフィルター</a>
     </td>
     <td>ライブラリ</td>
-    <td>データとファイルをプログラムでフィルターおよび標準化する</td>
+    <td>データとファイルをプログラムでフィルタリングし、正規化する</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/laminas/laminas-http.git">laminas/laminas-http</a>
     </td>
     <td>ライブラリ</td>
-    <td>ハイパーテキスト転送プロトコル (HTTP) 要求を実行するための簡単なインターフェイスを提供</td>
+    <td>ハイパーテキスト転送プロトコル （HTTP） リクエストを実行するための簡単なインターフェイスを提供します。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-i18n.git">ラミナ/ラミナ —i18n</a>
+      <a href="https://github.com/laminas/laminas-i18n.git">ラミナス/ラミナス – i18n</a>
     </td>
     <td>ライブラリ</td>
-    <td>アプリケーションの翻訳を提供し、国際値をフィルターおよび検証します</td>
+    <td>アプリケーションの翻訳を提供し、国際化値をフィルタリングおよび検証します</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/laminas/laminas-json.git">laminas/laminas-json</a>
     </td>
     <td>ライブラリ</td>
-    <td>は、ネイティブ PHP を JSON にシリアル化し、JSON をネイティブ PHP にデコードする便利な方法を提供します。</td>
+    <td>は、ネイティブの PHP を JSON にシリアル化し、JSON をネイティブの PHP にデコードする便利なメソッドを提供します</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-loader.git">ラミナ/ラミナスローダ</a>
+      <a href="https://github.com/laminas/laminas-loader.git">ラミナス/ラミナスローダー</a>
     </td>
     <td>ライブラリ</td>
     <td>自動読み込みとプラグインの読み込み戦略</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-mail.git">ラミナ/ラミナスメール</a>
+      <a href="https://github.com/laminas/laminas-mail.git">laminas/laminas-mail</a>
     </td>
     <td>ライブラリ</td>
-    <td>テキストと MIME 準拠のマルチパート電子メールメッセージの両方を作成および送信する一般化された機能を提供</td>
+    <td>テキストと MIME に準拠したマルチパート形式のメールメッセージを作成して送信する一般的な機能を提供</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-math.git">ラミナ/ラミナス数学</a>
+      <a href="https://github.com/laminas/laminas-math.git">laminas/laminas-math</a>
     </td>
     <td>ライブラリ</td>
-    <td>暗号的に安全な擬似乱数を作成し、大きな整数を管理する</td>
+    <td>暗号学的に安全な擬似乱数を作成し、大きな整数を管理します</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/laminas/laminas-mime.git">laminas/laminas-mime</a>
     </td>
     <td>ライブラリ</td>
-    <td>MIME メッセージと部分の作成と解析</td>
+    <td>MIME メッセージおよび部分の作成と解析</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-modulemanager.git">laminas/laminas-modulemanager</a>
+      <a href="https://github.com/laminas/laminas-modulemanager.git">ラミナス/ラミナス – モジュールマネージャー</a>
     </td>
     <td>ライブラリ</td>
-    <td>ラミナス —mvc アプリケーション用のモジュラーアプリケーションシステム</td>
+    <td>ラミナス mvc アプリケーション用モジュール式アプリケーションシステム</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-mvc.git">ラミナ/ラミナス/mvc</a>
+      <a href="https://github.com/laminas/laminas-mvc.git">ラミナス/ラミナス – mvc</a>
     </td>
     <td>ライブラリ</td>
-    <td>MVC アプリケーション、コントローラ、プラグインを含む Laminas のイベント駆動型 MVC レイヤ</td>
+    <td>Laminas のイベント駆動型 MVC レイヤー（MVC アプリケーション、コントローラ、プラグインを含む）</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-oauth.git">ラミナ/ラミナ/OAuth</a>
+      <a href="https://github.com/laminas/laminas-oauth.git">laminas/laminas-oauth</a>
     </td>
     <td>ライブラリ</td>
     <td></td>
@@ -355,14 +348,14 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/laminas/laminas-permissions-acl.git">laminas/laminas-permissions-acl</a>
     </td>
     <td>ライブラリ</td>
-    <td>権限管理のための軽量で柔軟なアクセス制御リスト (ACL) 実装を提供</td>
+    <td>権限管理のための軽量で柔軟なアクセス制御リスト（ACL）実装を提供します</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/laminas/laminas-recaptcha.git">laminas/laminas-recaptcha</a>
     </td>
     <td>ライブラリ</td>
-    <td>ReCaptcha Web サービス用の OOP ラッパー</td>
+    <td>ReCaptcha web サービスの OOP ラッパー</td>
   </tr>
   <tr>
     <td>
@@ -373,28 +366,28 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-server.git">ラミナ/ラミナサーバ</a>
+      <a href="https://github.com/laminas/laminas-server.git">ラミナス/ラミナス サーバ</a>
     </td>
     <td>ライブラリ</td>
-    <td>Reflection ベースの RPC サーバを作成する</td>
+    <td>反射ベースの RPC サーバを作成する</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-servicemanager.git">laminas/laminas-servicemanager</a>
+      <a href="https://github.com/laminas/laminas-servicemanager.git">ラミナス/ラミナス – サービスマネガー</a>
     </td>
     <td>ライブラリ</td>
-    <td>工場主導型の依存関係注入コンテナ</td>
+    <td>ファクトリ駆動の依存関係挿入コンテナ</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-session.git">ラミナ/ラミナセッション</a>
+      <a href="https://github.com/laminas/laminas-session.git">laminas/laminas-session</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP セッションとストレージに対するオブジェクト指向のインタフェース</td>
+    <td>PHP セッションおよびストレージへのオブジェクト指向インタフェース</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-soap.git">ラミナ/ラミナス石鹸</a>
+      <a href="https://github.com/laminas/laminas-soap.git">ラミナス・ラミナス石鹸</a>
     </td>
     <td>ライブラリ</td>
     <td></td>
@@ -404,68 +397,61 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/laminas/laminas-stdlib.git">laminas/laminas-stdlib</a>
     </td>
     <td>ライブラリ</td>
-    <td>SPL 拡張機能、配列ユーティリティ、エラーハンドラなど</td>
+    <td>SPL 拡張機能、配列ユーティリティ、エラーハンドラーなど</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-text.git">laminas/laminas-text</a>
+      <a href="https://github.com/laminas/laminas-text.git">ラミナス/ラミナス テキスト</a>
     </td>
     <td>ライブラリ</td>
-    <td>FIGlet とテキストベースのテーブルを作成する</td>
+    <td>FIGlets とテキストベースのテーブルの作成</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-uri.git">ラミナス/ラミナス —uri</a>
+      <a href="https://github.com/laminas/laminas-uri.git">laminas/laminas-uri</a>
     </td>
     <td>ライブラリ</td>
-    <td>「URI(Uniform Resource Identifier)」の操作と検証を支援するコンポーネント</td>
+    <td>操作と検証を支援するコンポーネント » Uniform Resource Identifier （URI）</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-validator.git">laminas/laminas-validator</a>
+      <a href="https://github.com/laminas/laminas-validator.git">ラミナス/ラミナスバリデーター</a>
     </td>
     <td>ライブラリ</td>
-    <td>様々なドメインの検証クラス、および複雑な検証基準を作成するためのバリデータを連結する機能</td>
+    <td>幅広いドメイン向けの検証クラスと、複雑な検証条件を作成するためにバリデータを連結する機能</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-view.git">ラミナ/ラミナスビュー</a>
+      <a href="https://github.com/laminas/laminas-view.git">laminas/laminas-view</a>
     </td>
     <td>ライブラリ</td>
-    <td>複数のビュー画層、ヘルパーなどをサポートし、提供する柔軟なビュー画層</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/laminas/laminas-zendframework-bridge.git">laminas/laminas-zendframework-bridge</a>
-    </td>
-    <td>ライブラリ</td>
-    <td>従来の ZF クラス名を Laminas Project に相当する名前にエイリアスします。</td>
+    <td>複数のビューレイヤー、ヘルパーなどをサポートおよび提供する柔軟なビューレイヤー</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/nikic/PHP-Parser.git">nikic/php-parser</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP で書かれた PHP パーサー</td>
+    <td>PHP で書かれた PHP パーサ</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/tedious/JShrink.git">tedivm/jshrink</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP で構築された JavaScript Minifier</td>
+    <td>PHP に組み込まれた JavaScript 縮小機能</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port.git">tubalmartin/cssmin</a>
+      <a href="https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port.git">ツバルマーティン/cssmin</a>
     </td>
     <td>ライブラリ</td>
-    <td>YUI CSS コンプレッサーの PHP ポート</td>
+    <td>YUI CSS コンプレッサの PHP ポート</td>
   </tr>
   </tbody>
 </table>
 
-### BSD-3-Clause-Modification
+### BSD-3 句の変更
 
 <table>
   <thead>
@@ -481,12 +467,12 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/colinmollenhour/Cm_Cache_Backend_Redis.git">colinmollenhour/cache-backend-redis</a>
     </td>
     <td>magento-module</td>
-    <td>Redis を使用する Zend_Cache バックエンドは、タグを完全にサポートします。</td>
+    <td>タグを完全にサポートする Redis を使用した Zend_Cache バックエンド。</td>
   </tr>
   </tbody>
 </table>
 
-### LGPL-2.1-or-later
+### ISC
 
 <table>
   <thead>
@@ -499,17 +485,38 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   <tbody>
   <tr>
     <td>
-      <a href="https://github.com/ezyang/htmlpurifier.git">ezyang/htmlprifier</a>
+      <a href="https://github.com/paragonie/sodium_compat.git">paragonie/sodium_compat</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP で記述された標準準拠のHTMLフィルタ</td>
+    <td>純粋な PHP の libsodium の実装。存在する場合は PHP の拡張機能を使用します。</td>
+  </tr>
+  </tbody>
+</table>
+
+### LGPL-2.1 以降
+
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>タイプ</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <a href="https://github.com/ezyang/htmlpurifier.git">ezyang/htmlpurifier</a>
+    </td>
+    <td>ライブラリ</td>
+    <td>PHP で書かれた標準準拠のHTMLフィルタ</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/php-amqplib/php-amqplib.git">php-amqplib/php-amqplib</a>
     </td>
     <td>ライブラリ</td>
-    <td>以前は videlalvaro/php-amqplib でした。  このライブラリは、AMQP プロトコルの純粋な PHP 実装です。 RabbitMQに対してテストされています</td>
+    <td>以前は videlalvaro/php-amqplib でした。  このライブラリは、AMQP プロトコルを PHP で実装したものです。 RabbitMQに対してテストされています。</td>
   </tr>
   </tbody>
 </table>
@@ -530,42 +537,49 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/braintree/braintree_php.git">braintree/braintree_php</a>
     </td>
     <td>ライブラリ</td>
-    <td>BraintreePHP クライアントライブラリ</td>
+    <td>Braintree PHP クライアントライブラリ</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/brick/math.git">レンガ/数学</a>
+      <a href="https://github.com/brick/math.git">れんが/数学</a>
     </td>
     <td>ライブラリ</td>
-    <td>任意精度の算術ライブラリ</td>
+    <td>任意精度演算ライブラリ</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/brick/varexporter.git">brick/varexporter</a>
+      <a href="https://github.com/brick/varexporter.git">レンガ/ベラエクスポーター</a>
     </td>
     <td>ライブラリ</td>
-    <td>var_export() に代わる強力な代替手段で、__set_state() を使用せずにクロージャやオブジェクトをエクスポートできます。</td>
+    <td>var_export （）の代わりとなる強力な関数で、__set_state （）を使用せずにクロージャやオブジェクトをエクスポートすることができます。</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/CarbonPHP/carbon-doctrine-types.git">carbonphp/carbon-doctrine-types</a>
+    </td>
+    <td>ライブラリ</td>
+    <td>ドクトリンにおける炭素の利用形態</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/ChristianRiesen/base32.git">christian-riesen/base32</a>
     </td>
     <td>ライブラリ</td>
-    <td>RFC 4648 に従った Base32 エンコーダー/デコーダー</td>
+    <td>RFC 4648 に準拠した Base32 エンコーダー/デコーダー</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/colinmollenhour/credis.git">colinmollenhour/credits</a>
+      <a href="https://github.com/colinmollenhour/credis.git">コリンモレン時間/単位</a>
     </td>
     <td>ライブラリ</td>
-    <td>Credis は、パフォーマンスを向上させるために phpredis ライブラリをラップする Redis キー値ストアへの軽量なインターフェイスです。</td>
+    <td>Credis は Redis のキー値ストアへの軽量なインターフェースで、パフォーマンスを向上させるために利用可能な場合は phpredis ライブラリをラップします。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/composer/ca-bundle.git">composer/ca-bundle</a>
     </td>
     <td>ライブラリ</td>
-    <td>システム CA バンドルへのパスを検索し、Mozilla CA バンドルへのフォールバックを含めます。</td>
+    <td>システム CA バンドルへのパスを検索し、Mozilla CA バンドルへのフォールバックを含めることができます。</td>
   </tr>
   <tr>
     <td>
@@ -579,11 +593,11 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/composer/composer.git">composer/composer</a>
     </td>
     <td>ライブラリ</td>
-    <td>Composer は、PHP プロジェクトの依存関係を宣言、管理、インストールする際に役立ちます。 これにより、適切なスタックをどこにでも持つことができます。</td>
+    <td>Composer を使用すると、PHP プロジェクトの依存関係を宣言、管理、およびインストールできます。 あらゆる場所に適切なスタックを確保できます。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/composer/metadata-minifier.git">composer/metadata-minifier</a>
+      <a href="https://github.com/composer/metadata-minifier.git">コンポーザー/メタデータ縮小子</a>
     </td>
     <td>ライブラリ</td>
     <td>メタデータの縮小と拡張を処理する小さなユーティリティライブラリ。</td>
@@ -593,49 +607,28 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/composer/pcre.git">composer/pcre</a>
     </td>
     <td>ライブラリ</td>
-    <td>タイプセーフ preg_*の置き換えを提供する PCRE ラッピングライブラリ。</td>
+    <td>タイプセーフな preg_*代替品を提供する PCRE ラッピングライブラリ。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/composer/semver.git">composer/semver</a>
     </td>
     <td>ライブラリ</td>
-    <td>ユーティリティ、バージョン制約の解析および検証を提供する semver ライブラリ。</td>
+    <td>ユーティリティ、バージョン制約の解析、および検証を提供する Semver ライブラリ。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/composer/spdx-licenses.git">composer/spdx-licenses</a>
     </td>
     <td>ライブラリ</td>
-    <td>SPDX ライセンスの一覧と検証ライブラリ。</td>
+    <td>SPDX ライセンスのリストと検証ライブラリ。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/composer/xdebug-handler.git">composer/xdebug-handler</a>
     </td>
     <td>ライブラリ</td>
-    <td>Xdebug を使用せずにプロセスを再起動します。</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/doctrine/annotations.git">ドクトリン/注釈</a>
-    </td>
-    <td>ライブラリ</td>
-    <td>Docblock 注釈パーサー</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/doctrine/deprecations.git">ドクトリン/廃止</a>
-    </td>
-    <td>ライブラリ</td>
-    <td>トリガー_error(E_USER_DEPRECATED) または PSR-3 ログの上の小さなレイヤー。すべての廃止を無効にするか、パッケージに対して選択的にオプションを指定します。</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/doctrine/lexer.git">doctrin/lexer</a>
-    </td>
-    <td>ライブラリ</td>
-    <td>PHP Doctrion Lexer パーサーライブラリは、トップダウン、再帰的な降下パーサーで使用できます。</td>
+    <td>Xdebug を指定せずにプロセスを再起動する。</td>
   </tr>
   <tr>
     <td>
@@ -649,74 +642,74 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/ezimuel/guzzlestreams.git">ezimuel/guzzlestreams</a>
     </td>
     <td>ライブラリ</td>
-    <td>elasticsearch-php で使用する guzzle/streams のフォーク（廃止）</td>
+    <td>elasticsearch-php で使用される guzzle/streams のフォーク（放棄）</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/ezimuel/ringphp.git">ezimuel/ringphp</a>
     </td>
     <td>ライブラリ</td>
-    <td>guzzle/RingPHP （廃止）のフォークは、elasticsearch-php で使用されます。</td>
+    <td>Elasticsearch-php で使用される guzzle/RingPHP のフォーク（放棄）</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/FriendsOfPHP/proxy-manager-lts.git">friendsofphp/proxy-manager-lts</a>
     </td>
     <td>ライブラリ</td>
-    <td>ocramius/proxy-manager に PHP の幅広いバージョンのサポートを追加しました。</td>
+    <td>様々な PHP バージョンのサポートを ocramius/proxy-manager に追加</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/bzikarsky/gelf-php.git">graylog2/gelf-php</a>
     </td>
     <td>ライブラリ</td>
-    <td>Graylog2 のような GELF 互換のバックエンドにログメッセージを送信するための php 実装。</td>
+    <td>Graylog2 のような GELF 互換バックエンドにログメッセージを送信する php の実装。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/guzzle/guzzle.git">guzzlehttp/guzzle</a>
     </td>
     <td>ライブラリ</td>
-    <td>Guzzle は PHP HTTP クライアントライブラリです。</td>
+    <td>Guzzle は PHP HTTP クライアントライブラリです</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/guzzle/promises.git">guzzlehttp/promises</a>
     </td>
     <td>ライブラリ</td>
-    <td>Guzzle promises ライブラリ</td>
+    <td>Guzzle Promises ライブラリ</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/guzzle/psr7.git">guzzlehttp/psr7</a>
     </td>
     <td>ライブラリ</td>
-    <td>一般的なユーティリティメソッドも提供する PSR-7 メッセージ実装</td>
+    <td>共通のユーティリティメソッドも提供する PSR-7 メッセージ実装</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/illuminate/collections.git">照明/コレクション</a>
     </td>
     <td>ライブラリ</td>
-    <td>コレクションを照らすパッケージ。</td>
+    <td>Illuminate コレクションパッケージ。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/config.git">照明/設定</a>
+      <a href="https://github.com/illuminate/config.git">照度/設定</a>
     </td>
     <td>ライブラリ</td>
-    <td>設定パッケージを照らします。</td>
+    <td>Illuminate Config パッケージ。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/contracts.git">照明/契約</a>
+      <a href="https://github.com/illuminate/contracts.git">照度/契約</a>
     </td>
     <td>ライブラリ</td>
-    <td>「契約を照らす」パッケージ。</td>
+    <td>Illuminate Contracts パッケージ。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/macroable.git">照明/マクロ可能</a>
+      <a href="https://github.com/illuminate/macroable.git">照度/マクロ可能</a>
     </td>
     <td>ライブラリ</td>
     <td>Illuminate Macroable パッケージ。</td>
@@ -733,14 +726,14 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/thephpleague/flysystem.git">league/flysystem</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP 用のファイルストレージの抽象化</td>
+    <td>PHP のファイルストレージの抽象化</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/thephpleague/flysystem-aws-s3-v3.git">league/flysystem-aws-s3-v3</a>
     </td>
     <td>ライブラリ</td>
-    <td>Flysystem 用のAWS S3 ファイルシステムアダプター。</td>
+    <td>Flysystem 用のAWS S3 ファイルシステムアダプタ。</td>
   </tr>
   <tr>
     <td>
@@ -751,45 +744,45 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/Seldaek/monolog.git">モノログ/モノログ</a>
+      <a href="https://github.com/Seldaek/monolog.git">モノローグ/モノローグ</a>
     </td>
     <td>ライブラリ</td>
-    <td>ログをファイル、ソケット、受信ボックス、データベース、および様々な Web サービスに送信します</td>
+    <td>ファイル、ソケット、受信ボックス、データベース、および様々な web サービスにログを送信します。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/jmespath/jmespath.php.git">mtdowling/jmespath.php</a>
     </td>
     <td>ライブラリ</td>
-    <td>JSON ドキュメントから要素を抽出する方法を宣言的に指定する</td>
+    <td>JSON ドキュメントから要素を抽出する方法を宣言的に指定します</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/briannesbitt/Carbon.git">ネスボット/カーボン</a>
+      <a href="https://github.com/briannesbitt/Carbon.git">ネボット/カーボン</a>
     </td>
     <td>ライブラリ</td>
-    <td>281 の異なる言語をサポートする DateTime 用の API 拡張機能。</td>
+    <td>281 の異なる言語をサポートする、DateTime の API 拡張機能。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/paragonie/constant_time_encoding.git">paragonie/constant_time_encoding</a>
     </td>
     <td>ライブラリ</td>
-    <td>RFC 4648 エンコーディングの定時実装 (Base-64、Base-32、Base-16)</td>
+    <td>RFC 4648 エンコーディングの定時間実装（Base-64、Base-32、Base-16）</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/paragonie/random_compat.git">paragonie/random_compat</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP 7 の random_bytes() と random_int() の PHP 5.x の polyfill</td>
+    <td>PHP 5.x における random_bytes （）と random_int （）のポリフィルは PHP 7 から提供されています。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/MyIntervals/emogrifier.git">pelago/emogrifier</a>
+      <a href="https://github.com/MyIntervals/emogrifier.git">ペラゴ/顔文字</a>
     </td>
     <td>ライブラリ</td>
-    <td>CSS スタイルをHTMLコード内のインラインスタイル属性に変換</td>
+    <td>CSS スタイルをHTMLコードのインラインスタイル属性に変換します</td>
   </tr>
   <tr>
     <td>
@@ -803,112 +796,119 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/PhpGt/Dom.git">phpgt/dom</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP プロジェクト用の最新の DOM API です。</td>
+    <td>最新の DOM API。</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PhpGt/PropFunc.git">phpgt/propfunc</a>
+    </td>
+    <td>ライブラリ</td>
+    <td>プロパティのアクセサ関数とミューテータ関数。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/phpseclib/mcrypt_compat.git">phpseclib/mcrypt_compat</a>
     </td>
     <td>ライブラリ</td>
-    <td>mcrypt 拡張の PHP 5.x-8.x polyfill</td>
+    <td>PHP 5.x-8.x polyfill （mcrypt 拡張モジュール用）</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/phpseclib/phpseclib.git">phpseclib/phpseclib</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP セキュア通信ライブラリ — RSA、AES、SSH2、SFTP、X.509 などの Pure-PHP 実装</td>
+    <td>PHP Secure Communications Library - RSA、AES、SSH2、SFTP、X.509 などの純粋な PHP 実装。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/cache.git">psr/cache</a>
+      <a href="https://github.com/php-fig/clock.git">psr/clock</a>
     </td>
     <td>ライブラリ</td>
-    <td>ライブラリのキャッシュ用の共通インターフェイス</td>
+    <td>クロックを読み取るための共通インターフェイス。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/container.git">psr/container</a>
+      <a href="https://github.com/php-fig/container.git">psr/コンテナ</a>
     </td>
     <td>ライブラリ</td>
-    <td>共通コンテナインタフェース (PHP FIG PSR-11)</td>
+    <td>共通コンテナインタフェース （PHP FIG PSR-11）</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/php-fig/event-dispatcher.git">psr/event-dispatcher</a>
     </td>
     <td>ライブラリ</td>
-    <td>イベント処理用の標準インターフェイス。</td>
+    <td>イベント処理の標準インターフェイス。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/php-fig/http-client.git">psr/http-client</a>
     </td>
     <td>ライブラリ</td>
-    <td>HTTP クライアント用の共通インターフェイス</td>
+    <td>HTTP クライアントの共通インターフェイス</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/php-fig/http-factory.git">psr/http-factory</a>
     </td>
     <td>ライブラリ</td>
-    <td>PSR-7 HTTP メッセージファクトリ用の共通インターフェイス</td>
+    <td>PSR-7 HTTP メッセージファクトリの共通インターフェイス</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/php-fig/http-message.git">psr/http-message</a>
     </td>
     <td>ライブラリ</td>
-    <td>HTTP メッセージ用の共通インターフェイス</td>
+    <td>HTTP メッセージの共通インターフェイス</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/php-fig/log.git">psr/log</a>
     </td>
     <td>ライブラリ</td>
-    <td>ログライブラリ用の共通インターフェイス</td>
+    <td>ライブラリをログに記録するための共通インターフェイス</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/php-fig/simple-cache.git">psr/simple-cache</a>
     </td>
     <td>ライブラリ</td>
-    <td>シンプルキャッシュ用の共通インターフェイス</td>
+    <td>シンプルなキャッシュ用の共通インターフェイス</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/ralouphie/getallheaders.git">ralouphie/getallheaders</a>
     </td>
     <td>ライブラリ</td>
-    <td>getallheaders のポリフィルです。</td>
+    <td>getallheaders のポリフィル。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/ramsey/collection.git">ラムゼイ/コレクション</a>
+      <a href="https://github.com/ramsey/collection.git">ラムジー/コレクション</a>
     </td>
     <td>ライブラリ</td>
-    <td>コレクションを表示および操作するための PHP ライブラリ。</td>
+    <td>コレクションを表現および操作するための PHP ライブラリ。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/ramsey/uuid.git">ramsey/uuid</a>
     </td>
     <td>ライブラリ</td>
-    <td>UUID(Universally Unique Identifier) を生成し、使用するための PHP ライブラリ。</td>
+    <td>ユニバーサル固有識別子（UUID）を生成し、操作するための PHP ライブラリ。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/reactphp/promise.git">react/promise</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP 用の CommonJS Promise/A の軽量実装</td>
+    <td>CommonJS Promises/A for PHP の軽量実装</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/sabberworm/PHP-CSS-Parser.git">sabberworm/php-css-parser</a>
+      <a href="https://github.com/MyIntervals/PHP-CSS-Parser.git">sabberworm/php-css-parser</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP で書き込まれた CSS ファイルのパーサー</td>
+    <td>PHP で書かれた CSS ファイルのパーサ</td>
   </tr>
   <tr>
     <td>
@@ -922,70 +922,70 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/Seldaek/phar-utils.git">seld/phar-utils</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHAR ファイル形式のユーティリティ。PHP が</td>
+    <td>PHAR ファイル形式ユーティリティ（PHP が起動した場合に使用）</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/Seldaek/signal-handler.git">seld/signal-handler</a>
     </td>
     <td>ライブラリ</td>
-    <td>シンプルな UNIX シグナルハンドラーで、シグナルがサポートされていない場合に警告なく失敗し、クロスプラットフォーム開発が容易になる</td>
+    <td>クロスプラットフォーム開発を容易にするためにシグナルがサポートされていない場合にサイレントに失敗するシンプルな Unix シグナルハンドラー</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/Spomky-Labs/aes-key-wrap.git">spomky-labs/aes-key-wrap</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP 用の AES キーラップ。</td>
+    <td>PHP 用の AES キーのラップ。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/Spomky-Labs/otphp.git">spomky-labs/otphp</a>
     </td>
     <td>ライブラリ</td>
-    <td>RFC 4226(HOTP Algorithm) および RFC 6238(TOTP Algorithm) に従って 1 回限りのパスワードを生成し、Google Authenticator と互換性を持つ PHP ライブラリ</td>
+    <td>RFC 4226 （HOTP アルゴリズム）および RFC 6238 （TOTP アルゴリズム）に従ってワンタイム パスワードを生成し、Google Authenticator と互換性のある PHP ライブラリ</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/Spomky-Labs/pki-framework.git">spomky-labs/pki-framework</a>
     </td>
     <td>ライブラリ</td>
-    <td>公開鍵インフラストラクチャを管理するための PHP フレームワーク。 これには、X.509 公開鍵証明書、属性証明書、証明書要求、および証明書パス検証が含まれます。</td>
+    <td>公開鍵インフラストラクチャを管理するための PHP フレームワーク。 X.509 公開鍵証明書、属性証明書、証明書リクエストおよび証明書パス検証で構成されます。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/config.git">symfony/config</a>
     </td>
     <td>ライブラリ</td>
-    <td>あらゆる種類の設定値を検索、読み込み、組み合わせ、自動入力および検証できます。</td>
+    <td>あらゆる種類の設定値を検索、読み込み、組み合わせ、自動入力および検証するのに役立ちます</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/console.git">symfony/console</a>
     </td>
     <td>ライブラリ</td>
-    <td>美しくテスト可能なコマンドラインインターフェイスの作成を容易にします。</td>
+    <td>美しくテスト可能なコマンドラインインターフェイスの作成が容易になります。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/css-selector.git">symfony/css-selector</a>
     </td>
     <td>ライブラリ</td>
-    <td>CSS セレクターを XPath 式に変換します</td>
+    <td>CSS セレクターを XPath 式に変換</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/dependency-injection.git">symfony/dependency-injection</a>
     </td>
     <td>ライブラリ</td>
-    <td>アプリケーションでのオブジェクトの構築方法を標準化および一元化できます。</td>
+    <td>を使用すると、アプリケーションでのオブジェクトの作成方法を標準化および一元化できます</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/deprecation-contracts.git">symfony/deprecation-contracts</a>
     </td>
     <td>ライブラリ</td>
-    <td>廃止の通知をトリガーする汎用関数と規則</td>
+    <td>トリガー廃止通知の一般的な関数と規則</td>
   </tr>
   <tr>
     <td>
@@ -999,11 +999,11 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/symfony/event-dispatcher.git">symfony/event-dispatcher</a>
     </td>
     <td>ライブラリ</td>
-    <td>イベントをディスパッチし、それらをリッスンすることで、アプリケーションコンポーネントが相互に通信できるツールを提供します。</td>
+    <td>は、イベントをディスパッチしてリッスンすることで、アプリケーションコンポーネントが相互に通信できるようにするツールを提供します</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/event-dispatcher-contracts.git">symfonity/event-dispatcher-contracts</a>
+      <a href="https://github.com/symfony/event-dispatcher-contracts.git">symfony/event-dispatcher-contracts</a>
     </td>
     <td>ライブラリ</td>
     <td>イベントのディスパッチに関連する一般的な抽象概念</td>
@@ -1013,102 +1013,123 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/symfony/filesystem.git">symfony/filesystem</a>
     </td>
     <td>ライブラリ</td>
-    <td>ファイル・システムの基本的なユーティリティを提供</td>
+    <td>ファイルシステムの基本的なユーティリティを提供します</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/finder.git">symfony/finder</a>
     </td>
     <td>ライブラリ</td>
-    <td>直感的な流暢なインターフェイスでファイルとディレクトリを検索</td>
+    <td>直感的な fluent インターフェイスを使用してファイルとディレクトリを検索します。</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/symfony/http-client.git">symfony/http-client</a>
+    </td>
+    <td>ライブラリ</td>
+    <td>HTTP リソースを同期または非同期で取得する強力なメソッドを提供</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/symfony/http-client-contracts.git">symfony/http-client-contracts</a>
+    </td>
+    <td>ライブラリ</td>
+    <td>HTTP クライアントに関連する一般的な抽象概念</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/http-foundation.git">symfony/http-foundation</a>
     </td>
     <td>ライブラリ</td>
-    <td>HTTP 仕様用のオブジェクト指向レイヤーを定義します。</td>
+    <td>HTTP 仕様のオブジェクト指向レイヤーを定義します</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/http-kernel.git">symfony/http-kernel</a>
     </td>
     <td>ライブラリ</td>
-    <td>リクエストを応答に変換する構造化されたプロセスを提供します。</td>
+    <td>リクエストを応答に変換する構造化されたプロセスを提供します</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/intl.git">symfony/intl</a>
     </td>
     <td>ライブラリ</td>
-    <td>ICU ライブラリからの追加データを含む C intl 拡張用の PHP 置き換えレイヤーを提供します。</td>
+    <td>ICU ライブラリのローカリゼーションデータへのアクセスを提供します</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/polyfill-ctype.git">symfony/polyfill-ctype</a>
+      <a href="https://github.com/symfony/polyfill-ctype.git">symfony/polyfill-type</a>
     </td>
     <td>ライブラリ</td>
-    <td>ctype 関数の Symfony ポリフィル</td>
+    <td>ctype 関数のシンボリックリポリ入力</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-intl-grapheme.git">symfony/polyfill-intl-grapheme</a>
     </td>
     <td>ライブラリ</td>
-    <td>Symfony intl の文字素関数のポリフィル_*</td>
+    <td>intl の grapheme_*関数のシンフォニーポリフィル</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-intl-idn.git">symfony/polyfill-intl-idn</a>
     </td>
     <td>ライブラリ</td>
-    <td>intl の idn_to_ascii 関数と idn_to_utf8 関数の Symfony ポリフィル</td>
+    <td>intl の idn_to_ascii 関数と idn_to_utf8 関数に対するシンボリックリポリフィル</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-intl-normalizer.git">symfony/polyfill-intl-normalizer</a>
     </td>
     <td>ライブラリ</td>
-    <td>intl の Normalizer クラスと関連関数の Symfony ポリフィル</td>
+    <td>Intl の Normalizer クラスおよび関連する関数に対する Symfony polyfill</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-mbstring.git">symfony/polyfill-mbstring</a>
     </td>
     <td>ライブラリ</td>
-    <td>Mbstring 拡張機能の Symfony ポリフィル</td>
+    <td>Mbstring 拡張機能用のシンボリックポリフィル</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-php72.git">symfony/polyfill-php72</a>
     </td>
     <td>ライブラリ</td>
-    <td>Symfony のポリフィルは、PHP 7.2 以降の機能をバックポートし、PHP のバージョンを下げる</td>
+    <td>Symfony polyfill は、PHP 7.2 以降の機能を下位の PHP バージョンにバックポートします。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-php73.git">symfony/polyfill-php73</a>
     </td>
     <td>ライブラリ</td>
-    <td>Symfony のポリフィルは、PHP 7.3 以降の機能をバックポートし、PHP のバージョンを下げる</td>
+    <td>Symfony polyfill は、PHP 7.3 以降の機能を下位の PHP バージョンにバックポートします。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-php80.git">symfony/polyfill-php80</a>
     </td>
     <td>ライブラリ</td>
-    <td>Symfony のポリフィルは、PHP 8.0 以降の機能をバックポートし、PHP のバージョンを下げる</td>
+    <td>Symfony polyfill は、PHP 8.0 以降の機能を下位の PHP バージョンにバックポートします。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-php81.git">symfony/polyfill-php81</a>
     </td>
     <td>ライブラリ</td>
-    <td>Symfony のポリフィルは、PHP 8.1 以降の機能をバックポートし、PHP のバージョンを下げる</td>
+    <td>Symfony polyfill は、PHP 8.1 以降の機能を下位の PHP バージョンにバックポートする</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/process.git">symfony/process</a>
+      <a href="https://github.com/symfony/polyfill-php83.git">symfony/polyfill-php83</a>
+    </td>
+    <td>ライブラリ</td>
+    <td>Symfony polyfill は、PHP 8.3 以降の機能を下位の PHP バージョンにバックポートする</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/symfony/process.git">交信/プロセス</a>
     </td>
     <td>ライブラリ</td>
     <td>サブプロセスでコマンドを実行します</td>
@@ -1117,40 +1138,40 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
     <td>
       <a href="https://github.com/symfony/proxy-manager-bridge.git">symfony/proxy-manager-bridge</a>
     </td>
-    <td>symfony-bridge</td>
-    <td>様々な Symfony コンポーネントと ProxyManager の統合を提供</td>
+    <td>交響橋</td>
+    <td>ProxyManager と様々な Symfony コンポーネントの統合を提供</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/serializer.git">symfony/serializer</a>
     </td>
     <td>ライブラリ</td>
-    <td>オブジェクトグラフを含むデータ構造を、配列構造や XML や JSON などの他の形式にシリアル化およびデシリアル化して処理します。</td>
+    <td>データ構造（オブジェクトグラフを含む）のシリアル化とデシリアライズを、配列構造または XML や JSON などのその他の形式に対応します。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/service-contracts.git">symfony/service-contracts</a>
+      <a href="https://github.com/symfony/service-contracts.git">symfony/service-contract</a>
     </td>
     <td>ライブラリ</td>
-    <td>書き込みサービスに関連する一般的な抽象概念</td>
+    <td>サービスの記述に関連する一般的な抽象概念</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/string.git">symfony/string</a>
     </td>
     <td>ライブラリ</td>
-    <td>文字列、UTF-8 コードポイント、および文字素クラスタを統一された方法で扱う、オブジェクト指向 API を提供します。</td>
+    <td>文字列へのオブジェクト指向 API を提供し、バイト、UTF-8 コードポイントおよび grapheme クラスターを統一された方法で処理します</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/translation.git">symfony/translation</a>
+      <a href="https://github.com/symfony/translation.git">交信/翻訳</a>
     </td>
     <td>ライブラリ</td>
-    <td>アプリケーションを国際化するツールを提供します。</td>
+    <td>アプリケーションを国際化するツールを提供します</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/translation-contracts.git">symfony/translation-contracts</a>
+      <a href="https://github.com/symfony/translation-contracts.git">同期/翻訳契約</a>
     </td>
     <td>ライブラリ</td>
     <td>翻訳に関連する一般的な抽象概念</td>
@@ -1160,27 +1181,27 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/symfony/var-dumper.git">symfony/var-dumper</a>
     </td>
     <td>ライブラリ</td>
-    <td>任意の PHP 変数を介して歩くためのメカニズムを提供します。</td>
+    <td>任意の PHP 変数を参照するためのメカニズムを提供します。</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/symfony/var-exporter.git">symfony/var-exporter</a>
+    </td>
+    <td>ライブラリ</td>
+    <td>シリアライズ可能な PHP データ構造をプレーンな PHP コードにエクスポートする</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/yaml.git">symfony/yaml</a>
     </td>
     <td>ライブラリ</td>
-    <td>YAML ファイルを読み込み、ダンプします。</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/thecodingmachine/safe.git">tecodingmachine/safe</a>
-    </td>
-    <td>ライブラリ</td>
-    <td>エラー時に FALSE を返す代わりに例外をスローする PHP のコア関数</td>
+    <td>YAML ファイルの読み込みとダンプ</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/web-token/jwt-framework.git">web-token/jwt-framework</a>
     </td>
-    <td>symfony-bundle</td>
+    <td>交響束</td>
     <td>PHP および Symfony バンドル用の JSON オブジェクト署名および暗号化ライブラリ。</td>
   </tr>
   <tr>
@@ -1188,21 +1209,21 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/webmozarts/assert.git">webmozart/assert</a>
     </td>
     <td>ライブラリ</td>
-    <td>メソッドの入出力を検証するアサーションで、優れたエラーメッセージが表示されます。</td>
+    <td>メソッドの入力/出力を有効なエラーメッセージで検証するアサーション。</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/webonyx/graphql-php.git">webonyx/graphql-php</a>
     </td>
     <td>ライブラリ</td>
-    <td>GraphQLリファレンス実装の PHP ポート</td>
+    <td>GraphQL参照実装の PHP ポート</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/zordius/lightncandy.git">zordius/lightncandy</a>
     </td>
     <td>ライブラリ</td>
-    <td>handlebars ( http://handlebarsjs.com/ ) と mustache ( http://mustache.github.io/ ) の PHP 実装が非常に高速です。</td>
+    <td>ハンドルバー（http://handlebarsjs.com/）と口ひげ（http://mustache.github.io/）の非常に高速な PHP 実装。</td>
   </tr>
   </tbody>
 </table>
@@ -1220,17 +1241,31 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   <tbody>
   <tr>
     <td>
-      paypal/module-braintree-graph-ql
+      paypal/module-braintree-customer-balance
     </td>
     <td>magento2-module</td>
     <td>該当なし</td>
   </tr>
   <tr>
     <td>
-      temando/module-shipping-remover
+      paypal/module-braintree-gift-card-account
     </td>
     <td>magento2-module</td>
-    <td>Temando のマルチキャリア配送の延長をMagento2 から削除</td>
+    <td>該当なし</td>
+  </tr>
+  <tr>
+    <td>
+      paypal/module-braintree-gift-wrapping
+    </td>
+    <td>magento2-module</td>
+    <td>該当なし</td>
+  </tr>
+  <tr>
+    <td>
+      paypal/module-braintree-graph-ql
+    </td>
+    <td>magento2-module</td>
+    <td>該当なし</td>
   </tr>
   </tbody>
 </table>
@@ -1246,13 +1281,6 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
     </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>
-      temando/module-shipping
-    </td>
-    <td>メタパッケージ</td>
-    <td>Magento2 の Temando マルチキャリア配送拡張</td>
-  </tr>
   </tbody>
 </table>
 
@@ -1272,12 +1300,12 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/2tvenom/CBOREncode.git">2tvenom/cborencode</a>
     </td>
     <td>ライブラリ</td>
-    <td>PHP 用の CBOR エンコーダ</td>
+    <td>PHP 用 CBOR エンコーダ</td>
   </tr>
   </tbody>
 </table>
 
-### 独自
+### 独自の
 
 <table>
   <thead>
@@ -1291,7 +1319,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tbody>
 </table>
 
-### 独自の
+### 専有
 
 <table>
   <thead>
@@ -1307,7 +1335,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       paypal/module-braintree-core
     </td>
     <td>magento2-module</td>
-    <td>Gene Commerce for PayPal によるMagentoBraintree2.2.0 モジュールからのフォーク。</td>
+    <td>PayPal 用の Gene Commerce によるMagentoBraintree 2.2.0 モジュールから分岐。</td>
   </tr>
   </tbody>
 </table>
