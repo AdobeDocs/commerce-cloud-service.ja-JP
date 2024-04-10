@@ -1,12 +1,12 @@
 ---
 title: 開発の概要
-description: クラウドインフラストラクチャ上でのAdobe Commerceとのローカル開発に備えます。
+description: クラウドインフラストラクチャプロジェクト上のAdobe Commerceとのローカル開発の準備。
 role: Developer
 feature: Cloud, Install
 topic: Development
 last-substantial-update: 2024-02-06T00:00:00Z
 exl-id: d4452d7d-d3dc-4f8d-8bd7-76f05d89f545
-source-git-commit: abe9aa36b907be8bdfdf42e6f28f1e1eac68fecf
+source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
 workflow-type: tm+mt
 source-wordcount: '548'
 ht-degree: 0%
@@ -15,63 +15,63 @@ ht-degree: 0%
 
 # 開発の概要
 
-クラウドインフラストラクチャのリモート環境のAdobe Commerce **読み取り専用**（すべてのスターター環境と、すべての Pro 統合、ステージング、実稼動環境を含む） ローカル開発環境では、コードを記述してテストしてから統合環境にプッシュし、ステージング環境と実稼動環境でのテストとデプロイメントをおこなうことができます。
+クラウドインフラストラクチャー上のAdobe Commerce リモート環境は次のとおりです **読み取り専用**（すべてのスターター環境とすべての Pro 統合、ステージングおよび実稼動環境を含む）。 ローカル開発環境では、コードを記述してテストしてから統合環境にプッシュし、ステージング環境と実稼動環境へのさらなるテストとデプロイメントを行うことができます。
 
-ローカルワークスペースを準備する前に、 [資格情報](../../get-started/prepare-workspace.md). ローカル開発では、PHP および Composer のインストールが必要です（使用を選択しない場合）。 [Cloud Docker for Commerce](#docker-environment).
+ローカルワークスペースを準備する前に、次のものが用意されていることを確認します [資格情報](../../get-started/prepare-workspace.md). を使用しない場合、ローカル開発には PHP および Composer のインストールが必要です。 [Cloud Docker for Commerce](#docker-environment).
 
-## 必要なパッケージ
+## 必須パッケージ
 
-Adobe Commerce on cloud infrastructure では、Composer を使用して、プロジェクトの依存関係とアップグレードを管理します。 ローカル開発の場合は、Cloud プロジェクトと互換性のある PHP および Composer バージョンをインストールする必要があります。 例えば、 [!DNL Commerce] 2.4.6 クラウドテンプレートの場合は、 [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/2.4.6/.magento.app.yaml) 設定ファイルを使用 **PHP 8.2** および **Composer 2.2.21**.
+クラウドインフラストラクチャー上のAdobe Commerceでは、Composer を使用してプロジェクトの依存関係やアップグレードを管理します。 ローカル開発を保つには、Cloud プロジェクトと互換性のある PHP および Composer バージョンをインストールする必要があります。 例えば、 [!DNL Commerce] 2.4.7 クラウドテンプレートの場合、 [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/2.4.7/.magento.app.yaml) 設定ファイルで使用されるもの **PHP 8.3** および **Composer 2.7.2**.
 
-プロジェクトに必要なライブラリと依存関係をにインストールします。 `vendor` ディレクトリ。 次の必須の Composer ファイルは、プロジェクトのルートディレクトリにあります。
+Composer は、プロジェクトに必要なライブラリおよび依存関係をにインストールします。 `vendor` ディレクトリ。 次の必須の Composer ファイルは、プロジェクトのルート ディレクトリにあります。
 
-- `composer.json`— `composer.json` ファイル：製品のインストールとアップグレードを管理します。
-- `composer.lock`- `composer.lock` ファイルには、プロジェクトの依存ツリー内のすべてのパッケージに対するすべての要件のバージョン制約を満たす、正確なバージョン依存関係のセットが格納されます。
+- `composer.json` – を使用する `composer.json` 製品のインストールとアップグレードを管理するためのファイル。
+- `composer.lock` – この `composer.lock` ファイルには、プロジェクトの依存関係ツリー内のすべてのパッケージについて、すべての要件のバージョン制約を満たす正確なバージョン依存関係のセットが格納されます。
 
-**一般的なコマンド：**
+**共通コマンド：**
 
 | コマンド | 説明 |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `composer update` | 依存関係の最新バージョンを更新し、 `composer.json` ファイル。 これにより、 `composer.lock` ファイル。 |
-| `composer install` | 次の項目を読み取ります。 `composer.lock` ファイルを使用して依存関係をダウンロードします。 最新のコピーを保持することをお勧めします。 `composer.lock` をプロジェクトリポジトリに追加します。 |
+| `composer update` | に反映された依存関係の最新バージョンへの更新 `composer.json` ファイル。 これにより、 `composer.lock` ファイル。 |
+| `composer install` | を読み取ります。 `composer.lock` 依存関係をダウンロードするファイル。 の最新のコピーを保持することがベストプラクティスです。 `composer.lock` プロジェクトのリポジトリで作成します。 |
 
 {style="table-layout:auto"}
 
-更新されたコードを追加、コミット、およびプッシュすると、デプロイメントプロセスによって自動的に `composer install` コマンド [構築段階](../deploy/process.md#build-phase-build-phase).
+更新されたコードを追加、コミット、プッシュすると、デプロイメントプロセスによって自動的に `composer install` 実行中のコマンド [ビルドフェーズ](../deploy/process.md#build-phase-build-phase).
 
 ### クラウドメタパッケージ
 
-Adobe Commerce on cloud infrastructure は、 `magento/product-enterprise-edition`. 最新バージョンの Commerce の最新の更新を取得するには、次の制約構文を使用します。
+クラウドインフラストラクチャー上のAdobe Commerceは、次を必要とするメタパッケージを使用します `magento/product-enterprise-edition`. 最新バージョンの Commerce の最新のアップデートを取得するには、次の制約構文を使用します。
 
 ```text
 >=current_version <next_version
 ```
 
-例えば、最新のAdobe Commerceバージョン 2.4.5 を使用するには、 `2.4.5` を「現在の」バージョンとして、および `2.4.6` を `composer.json` ファイル：
+例えば、最新バージョンのAdobe Commerce 2.4.7 を使用するには、次のように設定します `2.4.7` 「現在の」バージョンとして、および `2.4.8` を「次へ」バージョンとして設定する `composer.json` ファイル：
 
 ```text
-"magento/magento-cloud-metapackage": ">=2.4.5 <2.4.6"
+"magento/magento-cloud-metapackage": ">=2.4.7 <2.4.8"
 ```
 
-このメタパッケージの主なパッケージは次のとおりです。
+このメタパッケージの主なパッケージは以下の通りです。
 
-- **vendor/magento/ece-tools**- `ece-tools` パッケージは、Adobe Commerceバージョン 2.1.4 以降と互換性があり、Adobe Commerce on cloud infrastructure プロジェクトの管理に使用できる豊富な機能セットを提供します。 コードの管理とプロジェクトの自動構築およびデプロイを支援するスクリプトおよびAdobe Commerce on cloud infrastructure コマンドが含まれています。 詳しくは、 [`ece-tools` パッケージの概要](../dev-tools/package-overview.md).
-- **vendor/magento/product-enterprise-edition** — このメタパッケージには、モジュール、フレームワーク、テーマなどのアプリケーションコンポーネントが必要です。
-- **vendor/fastly2/magento2** — このモジュールは、Pro ステージング環境および実稼動環境およびスターター実稼動環境用の Fastly CDN およびサービスを管理します。 詳しくは、 [Fastly サービス](/help/cloud-guide/cdn/fastly.md#fastly-cdn-module-for-magento-2).
-- **vendor/magento/module-paypal-on-boarding** — このモジュールは、PayPal マーチャントアカウントに接続することにより、PayPal の支払いゲートウェイのチェックアウトを提供します。 詳しくは、 [PayPal オンボーディングツール](../store/paypal.md).
+- **vendor/magento/ece-tools** – この `ece-tools` パッケージはAdobe Commerce バージョン 2.1.4 以降と互換性があり、クラウドインフラストラクチャプロジェクトでのAdobe Commerceの管理に使用できる豊富な機能を提供します。 コードの管理とプロジェクトの自動ビルドおよびデプロイに役立つスクリプトやAdobe Commerce on cloud infrastructure コマンドが含まれています。 を参照してください。 [`ece-tools` パッケージの概要](../dev-tools/package-overview.md).
+- **vendor/magento/product-enterprise-edition** – このメタパッケージには、モジュール、フレームワーク、テーマなど、アプリケーションコンポーネントが必要です。
+- **vendor/fastly2/magento2** – このモジュールは、Pro ステージング環境および実稼動環境とスターター実稼動環境用の Fastly CDN とサービスを管理します。 参照： [Fastly サービス](/help/cloud-guide/cdn/fastly.md#fastly-cdn-module-for-magento-2).
+- **vendor/magento/module-paypal-on-boarding** – このモジュールは、PayPal マーチャントアカウントに接続することにより、PayPal 支払いゲートウェイチェックアウトを提供します。 参照： [PayPal オンボーディングツール](../store/paypal.md).
 
 >[!TIP]
 >
->詳しくは、 [Adobe Commerce用クラウドパッケージ](/help/cloud-guide/release-notes/cloud-packages.md) （内） _Commerce リリースノート_ 依存関係とサードパーティライセンスの一覧
+>参照： [Adobe Commerce用のクラウドパッケージ](/help/cloud-guide/release-notes/cloud-packages.md) が含まれる _Commerce リリースノート_ 依存関係とサードパーティライセンスのリストの参照。
 
 ## Docker 環境
 
-Cloud Docker for Commerce ツールを使用して、クラウドインフラストラクチャの実稼動環境および開発環境上でのAdobe Commerceをローカル開発用にエミュレートできます。 Cloud Docker for Commerce では、PHP および Composer をローカルにインストールする必要はありません。
+Cloud Docker for Commerce ツールを使用して、クラウドインフラストラクチャ上のAdobe Commerceの実稼動環境およびローカル開発環境をエミュレートできます。 Cloud Docker for Commerce では、PHP と Composer をローカルにインストールする必要はありません。
 
-- [Cloud Docker を使用したローカル開発](https://developer.adobe.com/commerce/cloud-tools/docker/setup/) Adobe Developerサイト内
-- [Docker のアーキテクチャと一般的なコマンド](../dev-tools/cloud-docker.md)
+- [Cloud Docker とのローカル開発](https://developer.adobe.com/commerce/cloud-tools/docker/setup/) Adobe Developer サイト内
+- [Docker アーキテクチャと一般的なコマンド](../dev-tools/cloud-docker.md)
 - [Cloud Docker リリースノート](../release-notes/cloud-docker.md)
 
 >[!TIP]
 >
->クラウドインフラストラクチャ上でAdobe Commerceを使用して Git ベースのホスティングサービスを使用する方法については、 [統合](../integrations/overview.md).
+>Cloud Infrastructure 上のAdobe Commerceで Git ベースのホスティングサービスを使用する方法については、を参照してください。 [統合](../integrations/overview.md).
