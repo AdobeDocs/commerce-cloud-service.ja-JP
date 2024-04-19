@@ -1,7 +1,7 @@
 ---
-source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
+source-git-commit: 6d8c082d78259f8f7adb0fb7f11ff4fcdb234124
 workflow-type: tm+mt
-source-wordcount: '21442'
+source-wordcount: '21171'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ magento-cloud cc
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -112,7 +112,7 @@ magento-cloud decode [-P|--property PROPERTY] [--] <value>
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -178,7 +178,7 @@ URL を stdout に出力します。
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -244,7 +244,7 @@ magento-cloud help [--format FORMAT] [--raw] [--] [<command_name>]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -321,7 +321,7 @@ magento-cloud list [--raw] [--format FORMAT] [--all] [--] [<namespace>]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -402,7 +402,7 @@ magento-cloud multi [-p|--projects PROJECTS] [--continue] [--sort SORT] [--rever
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -471,7 +471,7 @@ URL を stdout に出力します。
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -554,7 +554,7 @@ magento-cloud activity:cancel [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] 
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -609,7 +609,7 @@ magento-cloud activity:get [-P|--property PROPERTY] [-t|--type TYPE] [-x|--exclu
 
 ### `--incomplete`, `-i`
 
-不完全なアクティビティのみを含める（デフォルトアクティビティを選択する場合）。 これは\の略記法です&lt;info>—state=in_progress,pending\&lt;/info>
+不完全なアクティビティのみを含める（デフォルトアクティビティを選択する場合）。 —state=in_progress,pending の略記法です。
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -691,7 +691,7 @@ magento-cloud activity:get [-P|--property PROPERTY] [-t|--type TYPE] [-x|--exclu
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -829,7 +829,7 @@ magento-cloud activities [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--li
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -892,7 +892,7 @@ magento-cloud activity:log [--refresh REFRESH] [-t|--timestamps] [--type TYPE] [
 
 ### `--incomplete`, `-i`
 
-不完全なアクティビティのみを含める（デフォルトアクティビティを選択する場合）。 これは\の略記法です&lt;info>—state=in_progress,pending\&lt;/info>
+不完全なアクティビティのみを含める（デフォルトアクティビティを選択する場合）。 —state=in_progress,pending の略記法です。
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -953,7 +953,7 @@ magento-cloud activity:log [--refresh REFRESH] [-t|--timestamps] [--type TYPE] [
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1034,7 +1034,7 @@ magento-cloud app:config-get [-P|--property PROPERTY] [--refresh] [-p|--project 
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1125,7 +1125,7 @@ magento-cloud apps [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environment
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1169,7 +1169,7 @@ magento-cloud auth:api-token-login
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1233,7 +1233,7 @@ URL を stdout に出力します。
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1324,7 +1324,7 @@ magento-cloud auth:info [--no-auto-login] [-P|--property PROPERTY] [--refresh] [
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1382,7 +1382,7 @@ magento-cloud logout [-a|--all] [--other]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1458,7 +1458,7 @@ magento-cloud blackfire:setup [--server_id SERVER_ID] [--server_token SERVER_TOK
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1541,7 +1541,7 @@ magento-cloud certificate:add [--cert CERT] [--key KEY] [--chain CHAIN] [-p|--pr
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1612,7 +1612,7 @@ magento-cloud certificate:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] 
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1682,7 +1682,7 @@ magento-cloud certificate:get [-P|--property PROPERTY] [--date-fmt DATE-FMT] [-p
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1820,7 +1820,7 @@ magento-cloud certificates [--domain DOMAIN] [--exclude-domain EXCLUDE-DOMAIN] [
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1897,7 +1897,7 @@ magento-cloud commit:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|--e
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -1994,7 +1994,7 @@ magento-cloud commits [--limit LIMIT] [-p|--project PROJECT] [-e|--environment E
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -2134,7 +2134,7 @@ gzip を使用してダンプを圧縮します
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -2243,7 +2243,7 @@ magento-cloud db:size [-B|--bytes] [-C|--cleanup] [-p|--project PROJECT] [-e|--e
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -2336,7 +2336,7 @@ magento-cloud sql [--raw] [--schema SCHEMA] [-p|--project PROJECT] [-e|--environ
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -2438,7 +2438,7 @@ magento-cloud domain:add [--cert CERT] [--key KEY] [--chain CHAIN] [--attach ATT
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -2515,7 +2515,7 @@ magento-cloud domain:delete [-p|--project PROJECT] [-e|--environment ENVIRONMENT
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -2611,7 +2611,7 @@ magento-cloud domain:get [-P|--property PROPERTY] [--format FORMAT] [-c|--column
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -2688,7 +2688,7 @@ magento-cloud domains [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -2784,7 +2784,7 @@ magento-cloud domain:update [--cert CERT] [--key KEY] [--chain CHAIN] [-p|--proj
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -2869,7 +2869,7 @@ magento-cloud environment:activate [--parent PARENT] [-p|--project PROJECT] [-e|
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -2969,7 +2969,7 @@ magento-cloud branch [--title TITLE] [--type TYPE] [--no-clone-parent] [-p|--pro
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -3025,7 +3025,7 @@ magento-cloud checkout [-i|--identity-file IDENTITY-FILE] [--] [<id>]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -3167,7 +3167,7 @@ Git ブランチ（非アクティブな環境）を削除しないでくださ�
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -3257,7 +3257,7 @@ magento-cloud httpaccess [--access ACCESS] [--auth AUTH] [--enabled ENABLED] [-p
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -3373,7 +3373,7 @@ magento-cloud environment:info [--refresh] [--date-fmt DATE-FMT] [--format FORMA
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -3456,7 +3456,7 @@ Git リポジトリへの URL
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -3569,7 +3569,7 @@ magento-cloud environments [-I|--no-inactive] [--pipe] [--refresh REFRESH] [--so
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -3663,7 +3663,7 @@ magento-cloud log [--lines LINES] [--tail] [-p|--project PROJECT] [-e|--environm
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -3739,7 +3739,7 @@ magento-cloud merge [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -3809,7 +3809,7 @@ magento-cloud environment:pause [-p|--project PROJECT] [-e|--environment ENVIRON
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -3946,7 +3946,7 @@ magento-cloud push [--target TARGET] [-f|--force] [--force-with-lease] [-u|--set
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4016,7 +4016,7 @@ magento-cloud redeploy [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4103,7 +4103,7 @@ magento-cloud relationships [-P|--property PROPERTY] [--refresh] [-p|--project P
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4173,7 +4173,7 @@ magento-cloud environment:resume [-p|--project PROJECT] [-e|--environment ENVIRO
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4269,7 +4269,7 @@ magento-cloud scp [-r|--recursive] [-p|--project PROJECT] [-e|--environment ENVI
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4372,7 +4372,7 @@ SSH URL のみを出力します。
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4458,7 +4458,7 @@ magento-cloud sync [--rebase] [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4534,7 +4534,7 @@ URL を stdout に出力します。
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4621,7 +4621,7 @@ magento-cloud xdebug [--port PORT] [-p|--project PROJECT] [-e|--environment ENVI
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4722,7 +4722,7 @@ magento-cloud integration:activity:get [-P|--property PROPERTY] [-p|--project PR
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4859,7 +4859,7 @@ magento-cloud int:act [--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--limit LI
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -4940,7 +4940,7 @@ magento-cloud integration:activity:log [-t|--timestamps] [--date-fmt DATE-FMT] [
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -5289,7 +5289,7 @@ POSTリクエストで使用する HTTP ヘッダー。 名前と値はコロン
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -5359,7 +5359,7 @@ magento-cloud integration:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] 
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -5442,7 +5442,7 @@ magento-cloud integration:get [-P|--property [PROPERTY]] [--format FORMAT] [-c|-
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -5513,7 +5513,7 @@ magento-cloud integrations [--format FORMAT] [-c|--columns COLUMNS] [--no-header
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -5868,7 +5868,7 @@ POSTリクエストで使用する HTTP ヘッダー。 名前と値はコロン
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -5924,7 +5924,7 @@ magento-cloud integration:validate [-p|--project PROJECT] [--] [<id>]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -6080,7 +6080,7 @@ Drush：ロックファイルを作成または更新します（Drush バージ
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -6130,7 +6130,7 @@ magento-cloud dir [<subdir>]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -6138,7 +6138,7 @@ magento-cloud dir [<subdir>]
 
 ## `metrics:all`
 
-環境の CPU、ディスク、メモリの指標を表示します
+ベータ版環境の CPU、ディスク、メモリの指標を表示します
 
 ```bash
 magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6153,13 +6153,13 @@ magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [
 
 ### `--range`, `-r`
 
-時間範囲。 終了時間（– to）まで、この期間の指標が読み込まれます。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小値\&lt;comment>5m\&lt;/comment>、最大値\&lt;comment>8h\&lt;/comment> またはそれ以上（プロジェクトによって異なる）、デフォルト \&lt;comment>10m\&lt;/comment>.
+時間範囲。 終了時間（– to）まで、この期間の指標が読み込まれます。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小 5m、最大 8 時間以上（プロジェクトによって異なる）、デフォルトは 10m。
 
 - 値が必要です
 
 ### `--interval`, `-i`
 
-時間間隔。 デフォルトは、範囲の除算です。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小値\&lt;comment>1m\&lt;/comment>.
+時間間隔。 デフォルトは、範囲の除算です。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最低 1m。
 
 - 値が必要です
 
@@ -6260,7 +6260,7 @@ magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -6268,7 +6268,7 @@ magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [
 
 ## `metrics:cpu`
 
-環境の CPU 使用率を表示
+ベータ版環境の CPU 使用率を表示します
 
 ```bash
 magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6276,13 +6276,13 @@ magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--la
 
 ### `--range`, `-r`
 
-時間範囲。 終了時間（– to）まで、この期間の指標が読み込まれます。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小値\&lt;comment>5m\&lt;/comment>、最大値\&lt;comment>8h\&lt;/comment> またはそれ以上（プロジェクトによって異なる）、デフォルト \&lt;comment>10m\&lt;/comment>.
+時間範囲。 終了時間（– to）まで、この期間の指標が読み込まれます。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小 5m、最大 8 時間以上（プロジェクトによって異なる）、デフォルトは 10m。
 
 - 値が必要です
 
 ### `--interval`, `-i`
 
-時間間隔。 デフォルトは、範囲の除算です。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小値\&lt;comment>1m\&lt;/comment>.
+時間間隔。 デフォルトは、範囲の除算です。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最低 1m。
 
 - 値が必要です
 
@@ -6383,7 +6383,7 @@ magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--la
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -6406,13 +6406,13 @@ magento-cloud disk [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--t
 
 ### `--range`, `-r`
 
-時間範囲。 終了時間（– to）まで、この期間の指標が読み込まれます。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小値\&lt;comment>5m\&lt;/comment>、最大値\&lt;comment>8h\&lt;/comment> またはそれ以上（プロジェクトによって異なる）、デフォルト \&lt;comment>10m\&lt;/comment>.
+時間範囲。 終了時間（– to）まで、この期間の指標が読み込まれます。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小 5m、最大 8 時間以上（プロジェクトによって異なる）、デフォルトは 10m。
 
 - 値が必要です
 
 ### `--interval`, `-i`
 
-時間間隔。 デフォルトは、範囲の除算です。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小値\&lt;comment>1m\&lt;/comment>.
+時間間隔。 デフォルトは、範囲の除算です。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最低 1m。
 
 - 値が必要です
 
@@ -6520,7 +6520,7 @@ magento-cloud disk [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--t
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -6528,7 +6528,7 @@ magento-cloud disk [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--t
 
 ## `metrics:memory`
 
-環境のメモリ使用量を表示
+ベータ版環境のメモリ使用量を表示
 
 ```bash
 magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6543,13 +6543,13 @@ magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to
 
 ### `--range`, `-r`
 
-時間範囲。 終了時間（– to）まで、この期間の指標が読み込まれます。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小値\&lt;comment>5m\&lt;/comment>、最大値\&lt;comment>8h\&lt;/comment> またはそれ以上（プロジェクトによって異なる）、デフォルト \&lt;comment>10m\&lt;/comment>.
+時間範囲。 終了時間（– to）まで、この期間の指標が読み込まれます。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小 5m、最大 8 時間以上（プロジェクトによって異なる）、デフォルトは 10m。
 
 - 値が必要です
 
 ### `--interval`, `-i`
 
-時間間隔。 デフォルトは、範囲の除算です。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最小値\&lt;comment>1m\&lt;/comment>.
+時間間隔。 デフォルトは、範囲の除算です。 単位として、時間（h）、分（m）、秒（s）を指定できます。 最低 1m。
 
 - 値が必要です
 
@@ -6650,7 +6650,7 @@ magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -6784,7 +6784,7 @@ magento-cloud mount:download [-a|--all] [-m|--mount MOUNT] [--target TARGET] [--
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -6893,7 +6893,7 @@ magento-cloud mounts [--paths] [--refresh] [--format FORMAT] [-c|--columns COLUM
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7008,7 +7008,7 @@ magento-cloud mount:size [-B|--bytes] [--refresh] [--format FORMAT] [-c|--column
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7128,7 +7128,7 @@ magento-cloud mount:upload [--source SOURCE] [-m|--mount MOUNT] [--delete] [--ex
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7136,7 +7136,7 @@ magento-cloud mount:upload [--source SOURCE] [-m|--mount MOUNT] [--delete] [--ex
 
 ## `operation:list`
 
-環境のランタイム操作のリスト
+ベータ版環境でのリストのランタイム操作
 
 ```bash
 magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -7224,7 +7224,7 @@ magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7232,7 +7232,7 @@ magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT]
 
 ## `operation:run`
 
-環境での操作の実行
+ベータ版環境で操作を実行します
 
 ```bash
 magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-W|--no-wait] [--wait] [--] [<operation>]
@@ -7312,7 +7312,7 @@ magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7362,7 +7362,7 @@ magento-cloud project:clear-build-cache [-p|--project PROJECT]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7448,7 +7448,7 @@ magento-cloud get [-e|--environment ENVIRONMENT] [--depth DEPTH] [--build] [-p|-
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7558,7 +7558,7 @@ magento-cloud project:info [--refresh] [--date-fmt DATE-FMT] [--format FORMAT] [
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7689,7 +7689,7 @@ magento-cloud projects [--pipe] [--region REGION] [--title TITLE] [--my] [--refr
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7739,7 +7739,7 @@ magento-cloud set-remote [<project>]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7808,7 +7808,7 @@ magento-cloud repo:cat [-c|--commit COMMIT] [-p|--project PROJECT] [-e|--environ
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7897,7 +7897,7 @@ magento-cloud repo:ls [-d|--directories] [-f|--files] [--git-style] [-c|--commit
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -7965,7 +7965,7 @@ magento-cloud read [-c|--commit COMMIT] [-p|--project PROJECT] [-e|--environment
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8072,7 +8072,7 @@ magento-cloud route:get [--id ID] [-1|--primary] [-P|--property PROPERTY] [--ref
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8162,7 +8162,7 @@ magento-cloud routes [--refresh] [--format FORMAT] [-c|--columns COLUMNS] [--no-
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8212,7 +8212,7 @@ magento-cloud self:install [--shell-type SHELL-TYPE]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8289,7 +8289,7 @@ magento-cloud update [--no-major] [--unstable] [--manifest MANIFEST] [--current-
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8380,7 +8380,7 @@ magento-cloud services [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environ
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8474,7 +8474,7 @@ gzip を使用してダンプを圧縮します
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8574,7 +8574,7 @@ magento-cloud mongoexport [-c|--collection COLLECTION] [--jsonArray] [--type TYP
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8654,7 +8654,7 @@ magento-cloud mongorestore [-c|--collection COLLECTION] [-r|--relationship RELAT
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8734,7 +8734,7 @@ JavaScript フラグメントをシェルに渡す
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8814,7 +8814,7 @@ Redis コマンドに追加する引数
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8897,7 +8897,7 @@ magento-cloud backup [--live] [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -8973,7 +8973,7 @@ magento-cloud snapshot:delete [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9048,7 +9048,7 @@ magento-cloud snapshot:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|-
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9132,7 +9132,7 @@ magento-cloud snapshots [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9220,7 +9220,7 @@ magento-cloud snapshot:restore [--target TARGET] [--branch-from BRANCH-FROM] [-p
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9304,7 +9304,7 @@ magento-cloud source-ops [--full] [-p|--project PROJECT] [-e|--environment ENVIR
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9326,7 +9326,7 @@ magento-cloud source-operation:run [--variable VARIABLE] [-p|--project PROJECT] 
 
 ### `--variable`
 
-操作中に設定する変数（形式：\）&lt;info>タイプ：名前=値\&lt;/info>
+操作中に設定する変数を type:name=value の形式で指定します。
 
 - デフォルト： `[]`
 - 値が必要です
@@ -9387,7 +9387,7 @@ magento-cloud source-operation:run [--variable VARIABLE] [-p|--project PROJECT] 
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9452,7 +9452,7 @@ magento-cloud ssh-cert:load [--refresh-only] [--new] [--new-key]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9508,7 +9508,7 @@ magento-cloud ssh-key:add [--name NAME] [--] [<path>]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9558,7 +9558,7 @@ magento-cloud ssh-key:delete [<id>]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9623,7 +9623,7 @@ magento-cloud ssh-keys [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9718,7 +9718,7 @@ magento-cloud subscription:info [-s|--id ID] [--date-fmt DATE-FMT] [--format FOR
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9787,7 +9787,7 @@ magento-cloud tunnel:close [-a|--all] [-p|--project PROJECT] [-e|--environment E
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9862,7 +9862,7 @@ base64 でエンコードされた JSON としての出力
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -9952,7 +9952,7 @@ magento-cloud tunnels [-a|--all] [-p|--project PROJECT] [-e|--environment ENVIRO
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10027,7 +10027,7 @@ magento-cloud tunnel:open [-g|--gateway-ports] [-p|--project PROJECT] [-e|--envi
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10114,7 +10114,7 @@ magento-cloud tunnel:single [--port PORT] [-g|--gateway-ports] [-p|--project PRO
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10198,7 +10198,7 @@ magento-cloud user:add [-r|--role ROLE] [--force-invite] [-p|--project PROJECT] 
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10269,7 +10269,7 @@ magento-cloud user:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] <e
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10364,7 +10364,7 @@ magento-cloud user:get [-l|--level LEVEL] [--pipe] [-p|--project PROJECT] [-e|--
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10435,7 +10435,7 @@ magento-cloud users [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|-
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10512,7 +10512,7 @@ magento-cloud user:update [-r|--role ROLE] [-p|--project PROJECT] [-W|--no-wait]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10661,7 +10661,7 @@ magento-cloud variable:create [-u|--update] [-l|--level LEVEL] [--name NAME] [--
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10744,7 +10744,7 @@ magento-cloud variable:delete [-l|--level LEVEL] [-p|--project PROJECT] [-e|--en
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10846,7 +10846,7 @@ magento-cloud vget [-P|--property PROPERTY] [-l|--level LEVEL] [--format FORMAT]
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -10929,7 +10929,7 @@ magento-cloud variables [-l|--level LEVEL] [--format FORMAT] [-c|--columns COLUM
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -11066,7 +11066,7 @@ magento-cloud variable:update [--allow-no-change] [-l|--level LEVEL] [--value VA
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
@@ -11157,7 +11157,7 @@ magento-cloud workers [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environm
 
 ### `--no-interaction`
 
-インタラクティブな質問はしないでください。デフォルト値を使用します。 次の環境変数を使用した場合と同じです。\&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
 - デフォルト： `false`
 - 値を受け入れません
