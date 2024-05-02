@@ -3,9 +3,9 @@ title: バックアップ管理
 description: クラウドインフラストラクチャプロジェクト上のAdobe Commerceのバックアップを手動で作成および復元する方法について説明します。
 feature: Cloud, Paas, Snapshots, Storage
 exl-id: 1cb00db7-2375-4761-9c07-1e20a74859e0
-source-git-commit: 069cbc233492d22932e8dce5bf0426dce8459727
+source-git-commit: 4c3f3f2775e8327476233520e52b589f7264786f
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '711'
 ht-degree: 0%
 
 ---
@@ -130,6 +130,10 @@ ht-degree: 0%
    ```bash
    magento-cloud snapshot:restore <snapshot-id>
    ```
+
+## 障害回復スナップショットの復元
+
+ステージング環境および実稼動環境で障害回復スナップショットを復元するには、次の手順に従います。 [データベースダンプをサーバーから直接インポートします。](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production#meth3).
 
 ## コードをロールバック
 
