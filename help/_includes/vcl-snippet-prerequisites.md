@@ -9,10 +9,10 @@ ht-degree: 0%
 
 <!-- Prerequisites section inserted in tutorials for customizing the Fastly service configuration with custom VCL snippets. -->
 
-- Fastly CDN を使用するように環境を設定する必要があります。 詳しくは、 [Fastly サービスの設定](/help/cloud-guide/cdn/fastly-configuration.md).
+- Fastly CDN を使用するように環境を設定する必要があります。 参照： [Fastly サービスの設定](/help/cloud-guide/cdn/fastly-configuration.md).
 
-- Magento2 の Fastly CDN モジュールの最新バージョンを実行していることを確認します。 詳しくは、 [Fastly モジュールのアップグレード](/help/cloud-guide/cdn/fastly-configuration.md#upgrade-fastly-module).
+- Magento 2 の Fastly CDN モジュールが最新バージョンであることを確認してください。 参照： [Fastly モジュールのアップグレード](/help/cloud-guide/cdn/fastly-configuration.md#upgrade-fastly-module).
 
-- Fastly サービスの環境設定を確認します。 詳しくは、 [Fastly キャッシュを確認します。](/help/cloud-guide/launch/checklist.md#verify-fastly-caching).
+- Fastly サービスの環境設定を確認します。 参照： [Fastly キャッシュを確認する](/help/cloud-guide/launch/checklist.md#verify-fastly-caching).
 
-- ステージング環境と実稼動環境にアクセスするには、管理者の資格情報が必要です。
+- ステージング環境と実稼動環境にアクセスするには、管理者資格情報が必要です。

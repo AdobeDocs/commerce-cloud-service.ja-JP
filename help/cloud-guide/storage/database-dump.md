@@ -12,31 +12,31 @@ ht-degree: 0%
 
 # データベースのバックアップ
 
-データベースのコピーを作成するには、 `ece-tools db-dump` コマンドを使用すると、すべての環境データがサービスとマウントからキャプチャされずに実行できます。 デフォルトでは、このコマンドは、 `/app/var/dump-main` 環境設定で指定されたすべてのデータベース接続のディレクトリ。 DB ダンプ操作は、アプリケーションをメンテナンスモードに切り替え、コンシューマーキュープロセスを停止し、ダンプが開始する前に cron ジョブを無効にします。
+データベースのコピーを作成するには、 `ece-tools db-dump` サービスおよびマウントからすべての環境データを取得せずにコマンドを実行します。 デフォルトでは、このコマンドは `/app/var/dump-main` 環境設定で指定されたすべてのデータベース接続のディレクトリ。 DB ダンプ操作は、アプリケーションをメンテナンスモードに切り替え、コンシューマーキュープロセスを停止し、ダンプを開始する前に cron ジョブを無効にします。
 
-DB ダンプに関しては、次のガイドラインを考慮してください。
+DB ダンプに関する次のガイドラインを考慮してください。
 
-- 実稼動環境では、Adobeは、サイトがメンテナンスモードの場合に発生するサービスの中断を最小限に抑えるために、オフピーク時間中にデータベースダンプ操作を完了することを推奨します。
-- ダンプ操作中にエラーが発生した場合は、ディスク領域を節約するためにダンプファイルが削除されます。 詳細はログを確認してください (`var/log/cloud.log`) をクリックします。
-- Pro 実稼動環境の場合、このコマンドは _1 つ_ 3 つの高可用性ノードのうち、ダンプ中に別のノードに書き込まれた実稼動データがコピーされない可能性がある。 このコマンドにより、 `var/dbdump.lock` ファイルを使用して、複数のノードでコマンドが実行されないようにします。
-- すべての環境サービスのバックアップに関して、Adobeは、 [バックアップ](snapshots.md).
+- 実稼動環境の場合、Adobeでは、サイトがメンテナンスモードの場合にサービスの中断を最小限に抑えるために、ピーク外の時間にデータベースダンプ処理を完了することをお勧めします。
+- ダンプ処理中にエラーが発生した場合は、ディスク容量を節約するために、ダンプ・ファイルが削除されます。 詳細についてはログを確認してください（`var/log/cloud.log`）に設定します。
+- Pro 実稼動環境の場合、このコマンドは次の場所からのみダンプします。 _1_ 3 つの高可用性ノードのうち、ダンプ中に別のノードに書き込まれた実稼動データはコピーされない可能性があります。 このコマンドは、 `var/dbdump.lock` ファイル：コマンドが複数のノードで実行されないようにします。
+- すべての環境サービスのバックアップの場合、Adobeでは次を作成することをお勧めします [バックアップ](snapshots.md).
 
-コマンドにデータベース名を追加することで、複数のデータベースをバックアップすることを選択できます。 次の例では、2 つのデータベースをバックアップします。 `main` および `sales`:
+コマンドにデータベース名を追加することで、複数のデータベースをバックアップするように選択できます。 次の例では、2 つのデータベースをバックアップします。 `main` および `sales`:
 
 ```bash
 php vendor/bin/ece-tools db-dump main sales
 ```
 
-以下を使用します。 `php vendor/bin/ece-tools db-dump --help` コマンドを使用して、さらにオプションを指定します。
+の使用 `php vendor/bin/ece-tools db-dump --help` その他のオプションを表示するには、次のコマンドを使用します。
 
-- `--dump-directory=<dir>` — データベースダンプのターゲットディレクトリを選択します。
-- `--remove-definers` — データベースダンプから DEFINER 文を削除します。
+- `--dump-directory=<dir>`— データベース ダンプのターゲット ディレクトリを選択します。
+- `--remove-definers`— データベース ダンプから DEFINER ステートメントを削除します。
 
-**ステージング環境または実稼動環境でデータベースダンプを作成するには**:
+**ステージング環境または実稼動環境でデータベースダンプを作成するには、次の手順に従います**:
 
-1. [SSH を使用して、リモート環境にログインするか、トンネルを作成して接続します](../development/secure-connections.md) コピーするデータベースを含む
+1. [SSH を使用してログインするか、リモート環境に接続するトンネルを作成します。](../development/secure-connections.md) コピーするデータベースを含みます。
 
-1. 環境の関係をリストし、データベースのログイン情報をメモします。
+1. 環境の関係を一覧表示し、データベースのログイン情報をメモします。
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
@@ -48,13 +48,13 @@ php vendor/bin/ece-tools db-dump main sales
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
    ```
 
-1. データベースのバックアップを作成します。 DB ダンプのターゲットディレクトリを選択するには、 `--dump-directory` オプション。
+1. データベースのバックアップを作成します。 DB ダンプのターゲット・ディレクトリを選択するには、 `--dump-directory` オプション。
 
    ```bash
    php vendor/bin/ece-tools db-dump -- main
    ```
 
-   レスポンスのサンプル：
+   応答の例：
 
    ```terminal
    The db-dump operation switches the site to maintenance mode, stops all active cron jobs and consumer queue processes, and disables cron jobs before starting the dump process.
@@ -71,8 +71,8 @@ php vendor/bin/ece-tools db-dump main sales
    [2020-01-28 16:38:11] NOTICE: Maintenance mode is disabled.
    ```
 
-1. The `db-dump` コマンドは、 `dump-<timestamp>.sql.gz` リモートプロジェクトディレクトリのアーカイブファイル。
+1. この `db-dump` コマンドは、 `dump-<timestamp>.sql.gz` リモートプロジェクトディレクトリのアーカイブファイル。
 
 >[!TIP]
 >
->このデータを特定の環境にプッシュする場合は、 [データと静的ファイルの移行](../deploy/staging-production.md#migrate-static-files).
+>このデータを特定の環境にプッシュする場合は、 [データおよび静的ファイルの移行](../deploy/staging-production.md#migrate-static-files).

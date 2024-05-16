@@ -1,6 +1,6 @@
 ---
-title: New Relicサービス
-description: Adobe Commerce on cloud インフラストラクチャプロジェクトで使用できるNew Relicサービスについて説明します。
+title: New Relic サービス
+description: クラウドインフラストラクチャプロジェクト上のAdobe Commerceで使用できるNew Relic サービスについて説明します。
 feature: Cloud, Observability
 last-substantial-update: 2023-09-06T00:00:00Z
 exl-id: 613f0694-5338-4037-8ee4-ac5eca376159
@@ -11,37 +11,37 @@ ht-degree: 0%
 
 ---
 
-# New Relicサービスの概要
+# New Relic サービスの概要
 
-クラウドインフラストラクチャ上のすべてのAdobe Commerceプロジェクトには、New Relicサービスへのアクセスが含まれており、パフォーマンスの監視と [!DNL Commerce] アプリケーションおよびクラウドインフラストラクチャ。
+クラウドインフラストラクチャ上のすべてのAdobe Commerce プロジェクトには、パフォーマンスの監視とイベントの調査に役立つNew Relic サービスへのアクセスが含まれます [!DNL Commerce] アプリケーションとクラウドインフラストラクチャ
 
-次のNew Relic機能は、実稼動環境とステージング環境で使用できます。
+実稼動環境とステージング環境では、次のNew Relic機能を使用できます。
 
-- [New Relic APM](#new-relic-apm) （Pro および Starter）
-- [New Relic Infrastructure](#new-relic-infrastructure) （Pro のみ）
-- [New Relic Log Management](#new-relic-logs) （Pro のみ）
+- [NEW RELIC APM](#new-relic-apm) （Pro および Starter）
+- [New Relic インフラストラクチャ](#new-relic-infrastructure) （Pro のみ）
+- [New Relic ログ管理](#new-relic-logs) （Pro のみ）
 
 >[!INFO]
 >
->その他のNew Relic機能は、Adobe Commerceプロジェクトでは使用できません。
+>その他のNew Relic機能は、Adobe Commerce プロジェクトでは使用できません。
 
-## New Relic APM
+## NEW RELIC APM
 
-[New Relic（アプリケーションパフォーマンス管理）](https://docs.newrelic.com/introduction-apm/) は、アプリケーションの操作を分析および改善するのに役立つソフトウェア分析製品です。 New Relic APM は、クラウドインフラストラクチャプロジェクト上のすべてのAdobe Commerceで使用でき、次の機能を提供します。
+[APM （Application Performance Management）用New Relic](https://docs.newrelic.com/introduction-apm/) は、アプリケーションのインタラクションの分析と改善に役立つソフトウェア分析製品です。 New Relic APM は、クラウドインフラストラクチャプロジェクト上のすべてのAdobe Commerceで使用でき、次の機能が用意されています。
 
-- **特定のトランザクションに焦点を当てる** — 買い物かごへの追加、チェックアウト、支払いの処理など、サイト内の主な顧客行動を積極的にマークし、監視します。
-- **データベースクエリの監視** — パフォーマンスに影響するデータベースクエリを検索および監視します。
-- **アプリマップ** — サイト、拡張機能、および外部サービス内のアプリケーションの依存関係をすべて表示します。
-- **[!DNL Apdex]スコア** — パフォーマンスを評価し、Flash 販売や Web イベントの影響を受けるサイトのパフォーマンスなど、問題が発生したタイミングを通知するアラートを作成します。 詳しくは、 [Apdex スコア](https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction/).
-- **Adobe Commerce用管理アラート** — このNew Relicのアラートポリシーを使用して、業界のベストプラクティスに基づいてアプリケーションとインフラストラクチャのパフォーマンスを監視します。 詳しくは、 [Adobe Commerceアラートポリシーの管理されたアラートでパフォーマンスを監視する](investigate-performance.md/#monitor-performance-with-managed-alerts).
-- **デプロイメントの追跡** — デプロイメントイベントを監視し、全体的なパフォーマンスに対するデプロイメントの影響を分析します。 詳しくは、 [デプロイメントの追跡](track-deployments.md).
+- **特定のトランザクションに焦点を当てる**- サイト内の主な顧客アクション（買い物かごへの追加、チェックアウト、支払いの処理など）をアクティブにマークおよび監視します。
+- **データベースクエリの監視**- パフォーマンスに影響を与えるデータベース・クエリーを検索および監視します。
+- **アプリ マップ**- サイト、拡張機能、外部サービス内のすべてのアプリケーション依存関係を表示します。
+- **[!DNL Apdex]スコア** – パフォーマンスを評価し、問題を特定して発生時に通知するアラートを作成します。たとえば、フラッシュ販売や Web イベントの影響を受けるサイトのパフォーマンスなどです。 参照： [Apdex スコア](https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction/).
+- **Adobe Commerceの管理アラート** – このNew Relic アラートポリシーを使用して、業界のベストプラクティスに基づいてアプリケーションとインフラストラクチャのパフォーマンスを監視します。 参照： [Adobe Commerceの管理アラートのアラートポリシーを使用したパフォーマンスの監視](investigate-performance.md/#monitor-performance-with-managed-alerts).
+- **デプロイメントの追跡** – 導入イベントを監視し、導入の全体的なパフォーマンスへの影響を分析します。 参照： [デプロイメントの追跡](track-deployments.md).
 
-Adobe Commerce on cloud infrastructure プロジェクトには、New Relic APM サービス用のソフトウェアとライセンスキーが含まれています。 追加のソフトウェアを購入またはインストールする必要はありません。
+Adobe Commerce on cloud infrastructure プロジェクトには、New Relic APM サービスのソフトウェアとライセンスキーが含まれています。 追加のソフトウェアを購入またはインストールする必要はありません。
 
-## New Relic Infrastructure
+## New Relic インフラストラクチャ
 
-Pro プロジェクトには、 [New Relic Infrastructure (NRI)](https://docs.newrelic.com/docs/infrastructure/infrastructure-monitoring/get-started/get-started-infrastructure-monitoring/) サービス。アプリケーションデータおよびパフォーマンス分析と自動的に接続し、動的なサーバー監視を提供します。 このサービスは、Pro 実稼動環境とステージング環境で使用できます。
+Pro プロジェクトには、 [New Relicインフラストラクチャ（NRI）](https://docs.newrelic.com/docs/infrastructure/infrastructure-monitoring/get-started/get-started-infrastructure-monitoring/) サービス。アプリケーションデータおよび performance analytics と自動的に接続され、動的なサーバー監視を提供します。 このサービスは、実稼動環境とステージング環境で利用できます。
 
-## New Relic Log Management
+## New Relic ログ管理
 
-すべてのクラウドインフラストラクチャプロジェクトには、以下が含まれます [New Relic Log Management](log-management.md). このサービスは、ステージング環境と実稼動環境からすべてのログデータを集計し、一元化されたログ管理ダッシュボードに表示するように事前設定されています。
+すべてのクラウドインフラストラクチャプロジェクトには、次のものが含まれます [New Relic ログ管理](log-management.md). このサービスは、ステージング環境と実稼動環境のすべてのログデータを集計して、一元化されたログ管理ダッシュボードに表示するように事前に設定されています。

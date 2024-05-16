@@ -27,7 +27,7 @@ ht-degree: 0%
 | [`relationships`](#relationships) | マップサービス | サービス：<ul><li>`database: "mysql:mysql"`</li><li>`redis: "redis:redis"`</li><li>`opensearch: "opensearch:opensearch"`</li></ul> | 不可 |
 | [`runtime`](#runtime) | Runtime プロパティには、が必要とする拡張機能が含まれています。 [!DNL Commerce] アプリケーション。 | 拡張機能：<ul><li>`xsl`</li><li>`newrelic`</li><li>`sodium`</li></ul> | はい |
 | [`type`](#type-and-build) | ベースコンテナ画像の設定 | `php:8.3` | はい |
-| [`variables`](variables-property.md) | 特定の Commerce バージョンに環境変数を適用する | — | 不可 |
+| [`variables`](variables-property.md) | 特定のCommerce バージョンに環境変数を適用する | — | 不可 |
 | [`web`](web-property.md) | 外部リクエストの処理 | — | はい |
 | [`workers`](workers-property.md) | 外部リクエストの処理 | — | はい（web プロパティを使用していない場合） |
 

@@ -1,6 +1,6 @@
 ---
 title: シナリオベースのデプロイメント
-description: カスタム設定ファイルを使用して、クラウドインフラストラクチャのデプロイメント上でAdobe Commerceをカスタマイズする方法について説明します。
+description: カスタム設定ファイルを使用して、クラウドインフラストラクチャデプロイメント上でAdobe Commerceをカスタマイズする方法について説明します。
 feature: Cloud, Configuration, Deploy, Build
 exl-id: df243068-c7a3-46dd-abe9-9e05198fa343
 source-git-commit: 9b3772cf640ebc56063434e1aa8acb1ec51dc63c
@@ -12,18 +12,18 @@ ht-degree: 0%
 
 # シナリオベースのデプロイメント
 
-を使用 `ece-tools` 2002.1.0 以降では、シナリオベースのデプロイメント機能を使用して、デフォルトのデプロイメント動作をカスタマイズできます。
-この機能は、 **シナリオ** および **手順** 設定で次の手順を実行します。
+（を使用） `ece-tools` 2002.1.0 以降では、シナリオベースのデプロイメント機能を使用して、デフォルトのデプロイメント動作をカスタマイズできます。
+この機能では、を使用します **シナリオ** および **手順** 設定で以下を行います。
 
-- **シナリオの設定** — 各デプロイメントフックは、 *シナリオ*：デプロイメントタスクを完了するためのシーケンスおよび設定パラメーターについて説明する XML 設定ファイル。 シナリオは、 `hooks` のセクション `.magento.app.yaml` ファイル。
+- **シナリオ設定** – 各デプロイメント フックは *シナリオ*&#x200B;これは、デプロイメントタスクを完了するためのシーケンスパラメーターと設定パラメーターを記述する XML 設定ファイルです。 シナリオは次で設定します `hooks` の節 `.magento.app.yaml` ファイル。
 
-- **ステップの設定** — 各シナリオは、 *手順* これは、デプロイメントタスクの完了に必要な操作をプログラムで記述するものです。 手順は、XML ベースのシナリオ設定ファイルで設定します。
+- **手順の設定** – 各シナリオでは、次のシーケンスが使用されます *手順* これは、デプロイメントタスクの完了に必要な操作をプログラムで記述するものです。 この手順は XML ベースのシナリオ設定ファイルで設定します。
 
-Adobe Commerce on cloud infrastructure は、 [デフォルトのシナリオ](https://github.com/magento/ece-tools/tree/2002.1/scenario) および [デフォルトの手順](https://github.com/magento/ece-tools/tree/2002.1/src/Step) （内） `ece-tools` パッケージ。 カスタム XML 設定ファイルを作成してデフォルトの設定を上書きまたはカスタマイズすることで、デプロイメント動作をカスタマイズできます。 また、シナリオと手順を使用して、カスタムモジュールからコードを実行することもできます。
+クラウドインフラストラクチャー上のAdobe Commerceは、以下のセットを提供します [デフォルトのシナリオ](https://github.com/magento/ece-tools/tree/2002.1/scenario) および [デフォルトの手順](https://github.com/magento/ece-tools/tree/2002.1/src/Step) が含まれる `ece-tools` パッケージ。 デフォルトの設定をオーバーライドまたはカスタマイズするカスタム XML 設定ファイルを作成することで、デプロイメントの動作をカスタマイズできます。 シナリオと手順を使用して、カスタムモジュールからコードを実行することもできます。
 
 ## ビルドフックとデプロイフックを使用したシナリオの追加
 
-Adobe Commerceを構築してデプロイするシナリオを `hooks` のセクション `.magento.app.yaml` ファイル。 各フックは、各フェーズで実行するシナリオを指定します。 次の例は、デフォルトのシナリオ設定を示しています。
+Adobe Commerceを構築およびデプロイするためのシナリオをに追加します `hooks` の節 `.magento.app.yaml` ファイル。 各フックは、各フェーズで実行するシナリオを指定します。 次の例に、デフォルトのシナリオ設定を示します。
 
 > `magento.app.yaml` フック
 
@@ -41,11 +41,11 @@ hooks:
 
 >[!NOTE]
 >
->のリリースに伴い `ece-tools` 2002.1.x、新しい [フック設定](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/hooks-property.html) 形式を使用します。 以前の形式 `ece-tools` 2002.0.x リリースは引き続きサポートされます。 ただし、シナリオベースのデプロイメント機能を使用するには、を新しい形式に更新する必要があります。
+>～の放出に伴って `ece-tools` 2002.1.x、新しい [フック設定](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/hooks-property.html) 形式。 の従来の形式 `ece-tools` 2002.0.x リリースは引き続きサポートされます。 ただし、シナリオベースのデプロイメント機能を使用するには、新しい形式に更新する必要があります。
 
-## シナリオ手順の確認
+## シナリオ手順のレビュー
 
-フック設定では、各シナリオは、ビルド、デプロイ、デプロイ後のタスクを実行する手順を含む XML ファイルです。 例えば、 `scenario/transfer` ファイルには、次の 3 つの手順が含まれます。 `compress-static-content`, `clear-init-directory`、および `backup-data`
+フック設定では、各シナリオは、ビルド、デプロイまたはデプロイ後のタスクを実行する手順を含む XML ファイルです。 例： `scenario/transfer` ファイルのステップは次の 3 つです。 `compress-static-content`, `clear-init-directory`、および `backup-data`
 
 > `scenario/transfer.xml`
 
@@ -66,9 +66,9 @@ hooks:
 </scenario>
 ```
 
-## デフォルトのシナリオの拡張
+## デフォルトシナリオの拡張
 
-次の例では、デフォルトのデプロイシナリオを拡張して、追加のデプロイ設定ファイルをフック設定に追加しています。
+次の例では、フック設定にデプロイ設定ファイルを追加することで、デフォルトのデプロイシナリオを拡張しています。
 
 ```yaml
 hooks:
@@ -76,23 +76,23 @@ hooks:
     php ./vendor/bin/ece-tools run scenario/deploy.xml vendor/<vendor-name>/<module-name>/deploy.xml vendor/<vendor-name>/<module-name>/deploy2.xml
 ```
 
-デプロイメント中に、カスタムシナリオが次のルールに基づいてデフォルトのシナリオと結合されます。
+デプロイメント時に、カスタムシナリオは次のルールに基づいてデフォルトのシナリオと結合されます。
 
-- シナリオは、フック定義内の順序に基づいて優先順位付けされ、リストに表示された最後のシナリオの優先順位が最も高くなります。
+- シナリオの優先順位は、フック定義内のシーケンスに基づいて設定され、リストされた最後のシナリオが最も優先順位が高くなります。
 
-  この例では、シナリオは次の優先順位を持ちます。
+  この例では、シナリオの優先度は次のとおりです。
 
    1. `vendor/vendor-name/module-name/deploy2.xml`
    1. `vendor/vendor-name/module-name/deploy.xml`
-   1. `scenario/deploy.xml` （デフォルトまたはベースラインのシナリオ）
+   1. `scenario/deploy.xml` （デフォルトまたはベースラインシナリオ）
 
-- 優先順位が最も高いシナリオのステップは、他のシナリオで同じ名前のステップを上書きします。 設定に新しい手順が追加されました。 同じルールが 2 つ以上のシナリオに適用され、各シナリオが右から左に優先付けされます ( 例：C → B → A)。
+- 最も優先度が高いシナリオのステップは、他のシナリオの同じ名前のステップを上書きします。 新しい手順が設定に追加されます。 例えば（C → B → A）のように、各シナリオが右から左に優先順位付けされる 2 つ以上のシナリオにも同じルールが適用されます。
 
 ### デフォルトの手順を削除
 
-デフォルトのシナリオから手順を削除するには、 `skip` パラメーター。
+デフォルトのシナリオからステップを削除するには、 `skip` パラメーター。
 
-例えば、 `enable-maintenance-mode` および `set-production-mode` デフォルトのデプロイシナリオの手順では、次の設定を含む設定ファイルを作成します。
+例えば、 `enable-maintenance-mode` および `set-production-mode` 手順デフォルトのデプロイシナリオでは、次の設定を含む設定ファイルを作成します。
 
 > `vendor/vendor-name/module-name/deploy-custom-mode-config.xml`
 
@@ -104,9 +104,9 @@ hooks:
 </scenario>
 ```
 
-カスタム設定ファイルを使用するには、デフォルトの `.magento.app.yaml` ファイル。
+カスタム設定ファイルを使用するには、デフォルトのを更新します `.magento.app.yaml` ファイル。
 
-> `.magento.app.yaml` カスタムデプロイシナリオとの併用
+> `.magento.app.yaml` カスタムデプロイメントシナリオの場合
 
 ```yaml
 hooks:
@@ -120,17 +120,17 @@ hooks:
         php ./vendor/bin/ece-tools run scenario/post-deploy.xml
 ```
 
-### デフォルトのステップの置き換え
+### デフォルトの手順を置換
 
-カスタムシナリオは、デフォルトの手順を置き換えて、カスタム実装を提供できます。 これをおこなうには、デフォルトのステップ名をカスタムステップの名前として使用します。
+カスタムシナリオは、デフォルトの手順を置き換えて、カスタムの実装を提供できます。 それには、デフォルトのステップ名をカスタムステップの名前として使用します。
 
-例えば、 [デフォルトのデプロイシナリオ] の `enable-maintenance-mode` ステップはデフォルトを実行します [EnableMaintenanceMode PHP スクリプト].
+例： [デフォルトのデプロイシナリオ] この `enable-maintenance-mode` デフォルトで実行されるステップ [EnableMaintenanceMode PHP スクリプト].
 
 ```xml
 <step name="enable-maintenance-mode" type="Magento\MagentoCloud\Step\EnableMaintenanceMode" priority="300"/>
 ```
 
-この手順を上書きするには、カスタムシナリオ設定ファイルを作成して、 `enable-maintenance-mode` ステップが実行されます。
+この手順を上書きするには、次の場合に別のスクリプトを実行するようにカスタムシナリオ設定ファイルを作成します `enable-maintenance-mode` ステップが実行されます。
 
 ```xml
 <?xml version="1.0"?>
@@ -142,7 +142,7 @@ hooks:
 
 ### ステップの優先度の変更
 
-カスタムシナリオでは、デフォルトの手順の優先度を変更できます。 次の手順で、 `enable-maintenance-mode` ～から足を踏み出す `300` から `10` デプロイシナリオの前の手順を実行するために使用します。
+カスタムシナリオで、デフォルトのステップの優先度を変更できます。 次の手順で、の優先度を変更します `enable-maintenance-mode` ステップ開始 `300` 対象： `10` そのため、デプロイシナリオの前半でステップが実行されます。
 
 ```xml
 <?xml version="1.0"?>
@@ -152,17 +152,17 @@ hooks:
 </scenario>
 ```
 
-この例では、 `enable-maintenance-mode` この手順は、デフォルトのデプロイシナリオの他のすべての手順よりも優先度が低いので、シナリオの先頭に移動します。
+この例では、 `enable-maintenance-mode` デフォルトのデプロイメントシナリオでは他のすべてのステップよりも優先度が低いので、ステップがシナリオの最初に移動します。
 
 ### 例：デプロイシナリオの拡張
 
-次の例では、 [デフォルトのデプロイシナリオ] を次のように変更します。
+次の例では、をカスタマイズしています [デフォルトのデプロイシナリオ] （次の変更を含む）。
 
-- を `remove-deploy-failed-flag` カスタムステップを使用する
-- をスキップする `clean-redis-cache` デプロイ前の手順のサブ手順
-- をスキップする `unlock-cron-jobs` step
-- をスキップする `validate-config` 重要なバリデーターを無効にする手順
-- 新しいデプロイ前の手順を追加します
+- を置き換えます `remove-deploy-failed-flag` カスタムステップを含むステップ
+- をスキップします `clean-redis-cache` デプロイ前手順のサブステップ
+- をスキップします `unlock-cron-jobs` ステップ
+- をスキップします `validate-config` 重要なバリデーターを無効にする手順
+- 新しいプレデプロイ手順を追加します
 
 > `vendor/vendor-name/module-name/deploy-extended.xml`
 
@@ -203,7 +203,7 @@ hooks:
 </scenario>
 ```
 
-このスクリプトをプロジェクトで使用するには、次の設定を `.magento.app.yaml` Adobe Commerce on cloud infrastructure プロジェクト用のファイル：
+このスクリプトをプロジェクトで使用するには、次の設定をに追加します。 `.magento.app.yaml` クラウドインフラストラクチャプロジェクト上のAdobe Commerce用ファイル：
 
 ```yaml
 hooks:
@@ -219,23 +219,23 @@ hooks:
 
 >[!TIP]
 >
->以下を実行すると、 [デフォルトのシナリオ](https://github.com/magento/ece-tools/tree/2002.1/scenario) および [デフォルトのステップ設定](https://github.com/magento/ece-tools/tree/2002.1/src/Step) （内） `ece-tools` GitHub リポジトリを使用して、プロジェクトのビルド、デプロイ、デプロイ後のタスクに合わせてカスタマイズするシナリオと手順を決定します。
+>確認できます [デフォルトのシナリオ](https://github.com/magento/ece-tools/tree/2002.1/scenario) および [デフォルトのステップ設定](https://github.com/magento/ece-tools/tree/2002.1/src/Step) が含まれる `ece-tools` GitHub リポジトリ：プロジェクトのビルド、デプロイ、デプロイ後のタスクに合わせてカスタマイズするシナリオと手順を決定します。
 
 ## 拡張するカスタムモジュールの追加 `ece-tools`
 
-The `ece-tools` パッケージには、セマンティックバージョン標準に従ったデフォルトの API インターフェイスが用意されています。 すべての API インターフェイスは、 **@api** 注釈。 カスタムモジュールを作成し、必要に応じてデフォルトのコードを変更することで、デフォルトの API 実装を独自の実装に置き換えることができます。
+この `ece-tools` パッケージは、セマンティックバージョン標準に準拠したデフォルトの API インターフェイスを提供します。 すべての API インターフェイスにはと示されています。 **@api** 注釈。 カスタムモジュールを作成し、必要に応じてデフォルトコードを変更することで、デフォルトの API 実装を独自の API 実装に置き換えることができます。
 
-クラウドインフラストラクチャ上のAdobe Commerceでカスタムモジュールを使用するには、モジュールを `ece-tools` パッケージ。 登録プロセスは、Adobe Commerceでのモジュールの登録に使用するプロセスと似ています。
+クラウドインフラストラクチャー上のAdobe Commerceでカスタムモジュールを使用するには、 `ece-tools` パッケージ。 登録プロセスは、Adobe Commerceへのモジュール登録に使用するプロセスと似ています。
 
-**モジュールを `ece-tools` パッケージ**:
+**にモジュールを登録するには `ece-tools` package**:
 
-1. を作成または拡張する `registration.php` ファイルのパスを変更します。
+1. を作成または拡張する `registration.php` ファイルはモジュールのルートにあります。
 
    ```php?start_inline=1
    \Magento\MagentoCloud\ExtensionRegistrar::register('module-name', __DIR__);
    ```
 
-1. を更新します。 `autoload` モジュール設定ファイルに含めるセクション `registration.php` モジュールファイルを自動ロードするファイル `composer.json`.
+1. を更新 `autoload` モジュール設定ファイルに含めるセクション `registration.php` モジュール ファイルを自動ロードするファイル `composer.json`.
 
    ```json
    {
@@ -253,7 +253,7 @@ The `ece-tools` パッケージには、セマンティックバージョン標�
    }
    ```
 
-1. 次を追加： `config/services.xml` ファイルをモジュールに挿入します。 この設定は `config/services.xml` から `ece-tools` パッケージ。
+1. を追加 `config/services.xml` ファイルをモジュールに追加します。 この設定はに結合されます `config/services.xml` から `ece-tools` パッケージ。
 
    ```xml
    <?xml version="1.0" encoding="UTF-8" ?>
@@ -271,7 +271,7 @@ The `ece-tools` パッケージには、セマンティックバージョン標�
    </container>
    ```
 
-依存関係のインジェクションの詳細については、 [Symfony 依存関係の挿入](https://symfony.com/doc/current/components/dependency_injection.html).
+依存関係の挿入の詳細については、を参照してください。 [共存注射](https://symfony.com/doc/current/components/dependency_injection.html).
 
 <!-- link definitions -->
 

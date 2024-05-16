@@ -1,6 +1,6 @@
 ---
 title: PHP 設定
-description: クラウドインフラストラクチャにおけるコマースアプリケーション設定に最適な PHP 設定について説明します。
+description: クラウドインフラストラクチャーにおけるCommerce アプリケーション設定に最適な PHP 設定について説明します。
 feature: Cloud, Configuration, Extensions
 exl-id: b4180265-f7a1-48e4-8c23-27835253e171
 source-git-commit: 94c1e16a07567471d446478e3bd2a33977247ef3
@@ -75,7 +75,7 @@ cat /etc/php/<php-version>/fpm/php.ini
 
 >[!WARNING]
 >
->ローカル開発に Cloud Docker for Commerce を使用する場合は、以下を参照してください。 [Docker サービスコンテナ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#fpm-container) カスタムの使用について `php.ini` docker 環境のファイル。
+>ローカル開発に Cloud Docker for Commerceを使用する場合は、以下を参照してください。 [Docker サービスコンテナ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#fpm-container) カスタムの使用について `php.ini` docker 環境のファイル。
 
 ## 拡張機能の有効化
 

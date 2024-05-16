@@ -1,6 +1,6 @@
 ---
-title: GitHub との統合
-description: クラウドインフラストラクチャプロジェクト上のAdobe Commerceを GitHub と統合する方法について説明します。
+title: GitHub 統合
+description: クラウドインフラストラクチャプロジェクト上のAdobe Commerceを GitHub と統合する方法を説明します。
 feature: Cloud, Integration
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: 5305452f-4c8d-438c-ac78-e2e1ec2f8cd9
@@ -11,39 +11,39 @@ ht-degree: 0%
 
 ---
 
-# GitHub との統合
+# GitHub 統合
 
-GitHub 統合を使用すると、クラウドインフラストラクチャ環境上のAdobe Commerceを GitHub リポジトリから直接管理できます。 統合では、既に GitHub にあるコンテンツを管理し、クラウドインフラストラクチャコードリポジトリのAdobe Commerceと同期します。 基本的に、コードリポジトリは GitHub リポジトリのミラーになります。
+GitHub 統合を使用すると、クラウドインフラストラクチャ環境でAdobe Commerceを GitHub リポジトリから直接管理できます。 この統合では、既に GitHub に存在するコンテンツを管理し、クラウドインフラストラクチャコードリポジトリ上のAdobe Commerceと同期します。 基本的に、コードリポジトリは GitHub リポジトリのミラーになります。
 
 {{private-repository}}
 
 この統合により、次のことが可能になります。
 
-- ブランチの作成時に環境を作成する
-- プルリクエストを結合する際に環境を再デプロイする
-- 分岐を削除する際に環境を削除する
+- ブランチの作成時に環境を作成します
+- プルリクエストを結合する際に環境を再デプロイ
+- ブランチを削除したら、環境を削除します
 
-処理を続行するには、GitHub トークンと Webhook を入手する必要があります。
+プロセスを続行するには、GitHub トークンと Webhook を取得する必要があります。
 
 ## 前提条件
 
-- クラウドインフラストラクチャプロジェクト上のAdobe Commerceへの管理者アクセス権
+- Adobe Commerce on cloud infrastructure プロジェクトへの管理者アクセス
 - GitHub リポジトリ
 - GitHub 個人用アクセストークン
 
 ## GitHub トークンの生成
 
-GitHub 開発者設定で、従来の個人用アクセストークンを作成します。 GitHub リポジトリへの書き込みアクセス権を持つグループのメンバーであることが、次の操作を実行できるようにする必要があります。 _プッシュ_ をリポジトリに追加します。 トークンを作成する際に、次のスコープを含めます。
+GitHub 開発者設定で、従来の個人用アクセストークンを作成します。 GitHub リポジトリへの書き込みアクセス権を持つグループのメンバーであることが必要です。これにより、 _プッシュ_ をリポジトリに送信します。 トークンを作成する際には、次の範囲を含めます。
 
-- `admin:repo_hook` — ウェブフックを作成する
-- `repo` — リポジトリと統合します。
-- `read:org` — 組織のリポジトリと統合します。
+- `admin:repo_hook`— Web フックを作成します。
+- `repo` – リポジトリと統合する
+- `read:org` – 組織リポジトリと統合します。
 
-詳しくは、 [GitHub：作成](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+参照： [GitHub：作成](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
-## リポジトリの準備
+## リポジトリを準備
 
-既存の環境からクラウドインフラストラクチャプロジェクト上のAdobe Commerceを複製し、同じブランチ名を保持したまま、プロジェクトブランチを新しい空の GitHub リポジトリに移行します。 それは **重要な** 同じ Git ツリーを保持して、Adobe Commerce on cloud infrastructure プロジェクト内の既存の環境やブランチが失われないようにします。
+既存の環境からクラウドインフラストラクチャー上のAdobe Commerce プロジェクトのクローンを作成し、同じブランチ名を保持したまま、プロジェクトのブランチを新しい空の GitHub リポジトリに移行します。 このプロパティは **重大** Adobe Commerce on cloud infrastructure プロジェクトで既存の環境やブランチが失われないように、同一の Git ツリーを保持する。
 
 1. ターミナルから、クラウドインフラストラクチャプロジェクトのAdobe Commerceにログインします。
 
@@ -51,27 +51,27 @@ GitHub 開発者設定で、従来の個人用アクセストークンを作成�
    magento-cloud login
    ```
 
-1. プロジェクトを一覧表示し、プロジェクト ID をコピーします。
+1. プロジェクトをリストして、プロジェクト ID をコピーします。
 
    ```bash
    magento-cloud project:list
    ```
 
-1. プロジェクトをローカル環境に複製します。
+1. プロジェクトのクローンをローカル環境に作成します。
 
    ```bash
    magento-cloud project:get <project-ID>
    ```
 
-1. GitHub リポジトリをリモートリポジトリとして追加します。
+1. GitHub リポジトリをリモートとして追加します。
 
    ```bash
    git remote add origin git@github.com:<user-name>/<repo-name>.git
    ```
 
-   リモート接続のデフォルト名は次のようになります。 `origin` または `magento`. 次の場合 `origin` が存在する場合は、別の名前を選択するか、既存の参照の名前を変更または削除することができます。 詳しくは、 [git-remote ドキュメント](https://git-scm.com/docs/git-remote).
+   リモート接続のデフォルト名は以下のようになります。 `origin` または `magento`. 次の場合 `origin` 存在する、別の名前を選択できる、または既存の参照の名前を変更または削除できる。 参照： [git-remote ドキュメント](https://git-scm.com/docs/git-remote).
 
-1. GitHub リモートが正しく追加されたことを確認します。
+1. GitHub リモートが正しく追加されていることを確認します。
 
    ```bash
    git remote -v
@@ -84,44 +84,44 @@ GitHub 開発者設定で、従来の個人用アクセストークンを作成�
    origin git@github.com:<user-name>/<repo-name>.git (push)
    ```
 
-1. プロジェクトファイルを新しい GitHub リポジトリにプッシュします。 すべてのブランチ名は同じにしてください。
+1. プロジェクトファイルを新しい GitHub リポジトリにプッシュします。 すべてのブランチ名は同じにしておくことを忘れないでください。
 
    ```bash
    git push -u origin master
    ```
 
-   新しい GitHub リポジトリを使用し始める場合は、 `-f` 」オプションを使用します。リモートリポジトリがローカルコピーと一致しないためです。
+   新しい GitHub リポジトリから始める場合は、を使用する必要がある場合があります。 `-f` リモートリポジトリがローカルコピーと一致しないためです。
 
-1. GitHub リポジトリに、すべてのプロジェクトファイルが含まれていることを確認します。
+1. GitHub リポジトリにすべてのプロジェクトファイルが含まれていることを確認します。
 
 ## GitHub 統合の有効化
 
-開始する前に、プロジェクトのコードと環境を GitHub リポジトリに配置する必要があります。 統合を有効にすると、GitHub リポジトリがコードソースになります。 コードの変更を元の `magento` リポジトリの場合、コードの変更を GitHub リポジトリにプッシュすると、統合によって上書きされます。
+開始する前に、プロジェクトコードと環境を GitHub リポジトリに配置する必要があります。 統合を有効にすると、GitHub リポジトリがコードソースになります。 コードの変更を元の値にプッシュした場合 `magento` リポジトリに対するコードの変更を GitHub リポジトリにプッシュすると、統合によって上書きされます。
 
-次の例では、GitHub 統合が有効になっており、Webhook の作成時に使用するペイロード URL を提供しています。
+以下は GitHub 統合を有効にし、Webhook の作成時に使用するペイロード URL を指定します。
 
 >[!WARNING]
 >
->次のコマンドは、 _すべて_ Adobe Commerce on cloud infrastructure プロジェクト内のコード（GitHub リポジトリ内のコード）。この中には、 `production` 分岐。 この操作は即座に実行され、元に戻すことはできません。 ベストプラクティスとしては、クラウドインフラストラクチャプロジェクト上のAdobe Commerceからすべてのブランチをコピーし、それらを GitHub リポジトリにプッシュすることが重要です **前** GitHub 統合を追加する方法について説明します。
+>次のコマンドは上書きします _all_ クラウドインフラストラクチャプロジェクト上のAdobe Commerceのコード。GitHub リポジトリのコードが含まれます。このリポジトリには、以下を含むすべてのブランチが含まれます。 `production` 分岐。 このアクションは即座に実行され、元に戻すことはできません。 ベストプラクティスとして、Adobe Commerce on cloud infrastructure プロジェクトからすべてのブランチをクローンし、GitHub リポジトリにプッシュすることが重要です **次の前** github 統合を追加します。
 
-CLI プロンプトを順を追って表示するには、 `magento-cloud integration:add` または、次のオプションを使用して統合コマンドを作成できます。
+次のコマンドを使用して、CLI プロンプトをステップ実行できます。 `magento-cloud integration:add` または、次のオプションを使用して統合コマンドを作成できます。
 
 | オプション | 必須？ | 説明 |
 | ----------------------- | --------- | --------------------------------- |
-| `--base-url` | はい | サーバーインストールのベース URL( `https://github.com/` またはカスタム。 リポジトリーがパブリック GitHub でホストされている場合は、このオプションを省略します。 |
+| `--base-url` | はい | サーバーインストールのベース URL。次のようになります `https://github.com/` またはカスタム。 リポジトリが公開 Github でホストされている場合は、このオプションを省略します。 |
 | `--token` | はい | GitHub 用に生成した個人用アクセストークン |
 | `--repository` | はい | リポジトリ名： `owner-or-organisation/repository` |
-| `--build-pull-requests` | オプション | プルリクエスト (`true` （デフォルト） |
-| `--fetch-branches` | オプション | ブランチ (`true` （デフォルト） |
-| `--prune-branches` | オプション | リモートに存在しないブランチを削除する (`true` （デフォルト） |
+| `--build-pull-requests` | オプション | は、プルリクエストを結合した後にデプロイするように、クラウドインフラストラクチャ上のAdobe Commerceに指示します（`true` デフォルト） |
+| `--fetch-branches` | オプション | クラウドインフラストラクチャ上のAdobe Commerceで分岐を追跡し、分岐を更新した後にデプロイします（`true` デフォルト） |
+| `--prune-branches` | オプション | リモートに存在しないブランチを削除します（`true` デフォルト） |
 
-他にも多くのオプションがあり、ヘルプオプションを使用して表示できます。
+その他にも様々なオプションがあり、ヘルプ オプションを使用して確認できます。
 
 ```bash
 magento-cloud integration:add --help
 ```
 
-**GitHub 統合を有効にするには、以下を実行します。**:
+**GitHub 統合を有効にするには**:
 
 1. 統合を有効にします。
 
@@ -143,7 +143,7 @@ magento-cloud integration:add --help
 
 1. プロンプトが表示されたら、必要な情報を入力します。
 
-1. をコピーします。 **ペイロード URL** 戻り出力で表示されます。
+1. をコピーします **ペイロード URL** 戻り値の出力で表示されます。
 
    ```terminal
    Created integration <integration-ID> (type: github)
@@ -153,35 +153,35 @@ magento-cloud integration:add --help
    Payload URL: https://us.magento.cloud/api/projects/<project-id>/integrations/wO8a0eoamxwcg/hook
    ```
 
-## GitHub に Webhook を追加する
+## GitHub での Webhook の追加
 
-イベント（プッシュなど）を Cloud Git サーバーと通信するには、GitHub リポジトリの Webhook を作成する必要があります。
+プッシュなどのイベントをクラウド Git サーバーと通信するには、GitHub リポジトリの Webhook を作成する必要があります。
 
-1. GitHub リポジトリで、 **設定** タブをクリックします。
+1. GitHub リポジトリで、 **設定** タブ。
 
-1. 左側のナビゲーションバーで、 **ウェブフック**.
+1. 左側のナビゲーションバーで、 **Webhook**.
 
-1. Adobe Analytics の _ウェブフック_ ウィンドウ枠で、 **ウェブフックを追加**.
+1. が含まれる _Webhook_ ウィンドウで、をクリック **Webhook を追加**.
 
-1. Adobe Analytics の _ウェブフック/ウェブフックを追加_ フォームで、次のフィールドを編集します。
+1. が含まれる _Webhook/Add Webhook_ フォームで、次のフィールドを編集します。
 
-   - **ペイロード URL**:GitHub 統合を有効にした際に返される URL を入力します。
-   - **コンテンツタイプ**：を選択します。 **application/json** を選択します。
-   - **秘密鍵**：検証暗号鍵を入力します。
-   - **このウェブフックに対してトリガーを設定するイベントを選択してください。**：を選択します。 **すべて送信**.
-   - を選択します。 **アクティブ** チェックボックス。
+   - **ペイロード URL**:GitHub 統合を有効にしたときに返される URL を入力します。
+   - **コンテンツタイプ**：を選択 **application/json** リストから。
+   - **秘密鍵**：検証シークレットを入力します。
+   - **この Webhook をトリガーにするイベント**：を選択 **すべて送ってください**.
+   - 「」を選択します **アクティブ** チェックボックス。
 
-1. クリック **ウェブフックを追加**.
+1. クリック **Webhook を追加**.
 
 ## 統合のテスト
 
-GitHub 統合を設定したら、 `magento-cloud` CLI:
+GitHub 統合を設定したら、統合が動作していることを次を使用して確認できます `magento-cloud` CLI:
 
 ```bash
 magento-cloud integration:validate
 ```
 
-または、簡単な変更を GitHub リポジトリにプッシュしてテストすることもできます。
+または、GitHub リポジトリに簡単な変更をプッシュしてテストできます。
 
 1. テストファイルを作成します。
 
@@ -195,17 +195,17 @@ magento-cloud integration:validate
    git add . && git commit -m "Testing GitHub integration" && git push
    ```
 
-1. にログインします。 [[!DNL Cloud Console]](../project/overview.md) コミットメッセージが表示され、プロジェクトが展開されていることを確認します。
+1. にログインします [[!DNL Cloud Console]](../project/overview.md) コミットメッセージが表示され、プロジェクトがデプロイされていることを確認します。
 
 ## 統合の削除
 
-コードに影響を与えることなく、GitHub 統合をプロジェクトから安全に削除できます。
+コードに影響を与えることなく、プロジェクトから GitHub 統合を安全に削除できます。
 
-**GitHub 統合を削除するには、以下を実行します。**:
+**GitHub 統合を削除するには**:
 
 1. ターミナルから、クラウドインフラストラクチャプロジェクトのAdobe Commerceにログインします。
 
-1. 統合の一覧を表示します。 次の手順を完了するには、GitHub 統合 ID が必要です。
+1. 統合のリストを作成します。 次の手順を完了するには、GitHub 統合 ID が必要です。
 
    ```bash
    magento-cloud integration:list
@@ -217,4 +217,4 @@ magento-cloud integration:validate
    magento-cloud integration:delete <int-ID>
    ```
 
-また、GitHub アカウントにログインして、 _ウェブフック_ リポジトリの「 」タブ _設定_.
+また、GitHub アカウントにログインし、 _Webhook_ リポジトリーのタブ _設定_.

@@ -1,6 +1,6 @@
 ---
 title: カスタム VCL スニペットの基本を学ぶ
-description: Vanish Control Language コードスニペットを使用して、Adobe Commerceの Fastly サービス設定をカスタマイズする方法を説明します。
+description: Varnish Control Language コードスニペットを使用して、Adobe Commerce用の Fastly サービス設定をカスタマイズする方法について説明します。
 feature: Cloud, Configuration, Services
 exl-id: df0f0906-8ffa-41a1-a31c-d36deb5a6a31
 source-git-commit: 89c57a486545d6165e0407f913f4fa4cf6c95abe
@@ -12,50 +12,50 @@ ht-degree: 0%
 
 # カスタム VCL の概要
 
-Fastly は、Vanish Configuration Language(VCL) のカスタマイズバージョンをサポートし、Fastly のサービス設定を要件に合わせて調整します。
+Fastly は、Varnish Configuration Language （VCL）のカスタマイズバージョンをサポートし、お客様の要件に合わせて Fastly サービス設定をカスタマイズします。
 
-カスタム VCL スニペットは、Adobe Commerceサイトにアップロードされるアクティブな VCL バージョンに追加される VCL ロジックのブロックです。 カスタム VCL スニペットによって、リクエストトラフィックに対する Fastly キャッシュサービスの応答方法が変更されます。 例えば、指定したクライアント IP アドレスからのみトラフィックをリクエストできるように、カスタム VCL スニペットを追加できます。 または、紹介スパムをAdobe Commerceサイトに送信することがわかっている Web サイトからのトラフィックをブロックするスニペットを作成します。
+カスタム VCL スニペットは、Adobe Commerce サイトにアップロードされたアクティブな VCL バージョンに追加される VCL ロジックのブロックです。 カスタム VCL スニペットは、リクエストトラフィックに対する Fastly キャッシュサービスの応答方法を変更します。 例えば、カスタム VCL スニペットを追加して、指定されたクライアント IP アドレスからの要求トラフィックのみを許可することができます。 または、Adobe Commerce サイトに紹介スパムを送信することで知られている web サイトからのトラフィックをブロックするスニペットを作成します。
 
-カスタム VCL スニペット（生成、コンパイル、およびすべての Fastly キャッシュに転送）。サーバのダウンタイムなしで読み込み、アクティブ化します。
-
->[!NOTE]
->
->カスタム VCL コード、エッジ辞書、ACL を Fastly モジュール設定に追加する前に、Fastly キャッシュサービスがデフォルト設定で動作することを確認します。 詳しくは、 [Fastly サービスの設定](fastly-configuration.md).
-
-Fastly は、次の 2 種類のカスタム VCL スニペットをサポートしています。
-
-- [通常のスニペット](https://docs.fastly.com/en/guides/about-vcl-snippets) — 特定の VCL バージョン用に、カスタムの通常の VCL スニペットがコード化されます。 通常の VCL スニペットは、Admin または Fastly API から作成、変更およびデプロイできます。
-
-- [動的スニペット](https://docs.fastly.com/en/guides/using-dynamic-vcl-snippets)— Fastly API を使用して作成された VCL スニペットです。 サービスの Fastly VCL バージョンを更新しなくても、ダイナミックスニペットを変更およびデプロイできます。
-
-エッジ辞書およびアクセス制御リスト (ACL) と共にカスタム VCL スニペットを使用して、カスタムコードで使用するデータを保存することをお勧めします。
-
-- [**エッジ辞書**](https://docs.fastly.com/guides/edge-dictionaries/about-edge-dictionaries) — カスタム VCL スニペットから参照可能なディクショナリコンテナに、データをキー値ペアとして格納します。
-
-- [**Edge ACL**](https://docs.fastly.com/guides/access-control-lists/about-acls) — ブロックまたはカスタム VCL スニペットを使用して実装されたルールのアクセス制御リストを定義するクライアント IP アドレスデータを格納します。
-
-ディクショナリと ACL データは、ネットワーク地域全体でアクセス可能な Fastly Edge ノードにデプロイされます。 また、ステージング環境や実稼動環境に VCL コードを再デプロイする必要なく、データをネットワーク全体で動的に更新できます。
+カスタム VCL スニペット（生成、コンパイル、すべての Fastly キャッシュに送信）が、サーバーを停止させることなく読み込みおよびアクティブ化されます。
 
 >[!NOTE]
 >
->ステージング環境または実稼動環境に追加できるのは、カスタム VCL スニペットのみです。 [設定された Fastly サービス](fastly-configuration.md) その環境に対して。
+>カスタム VCL コード、エッジ辞書、ACL を Fastly モジュール設定に追加する前に、Fastly キャッシュサービスがデフォルト設定で機能することを確認してください。 参照： [Fastly サービスの設定](fastly-configuration.md).
+
+Fastly では、次の 2 種類のカスタム VCL スニペットをサポートしています。
+
+- [通常のスニペット](https://docs.fastly.com/en/guides/about-vcl-snippets) – カスタムの通常の VCL スニペットは、特定の VCL バージョンに対してコード化されます。 管理者または Fastly API から、通常の VCL スニペットを作成、変更、およびデプロイできます。
+
+- [動的スニペット](https://docs.fastly.com/en/guides/using-dynamic-vcl-snippets)- Fastly API を使用して作成された VCL スニペット サービスの Fastly VCL バージョンを更新しなくても、動的スニペットを変更およびデプロイできます。
+
+カスタム VCL スニペットとエッジ辞書およびアクセス制御リスト（ACL）を使用して、カスタム コードで使用するデータを保存することをお勧めします。
+
+- [**エッジディクショナリ**](https://docs.fastly.com/guides/edge-dictionaries/about-edge-dictionaries)- カスタム VCL スニペットから参照できるディクショナリコンテナに、キーと値のペアとしてデータを格納します。
+
+- [**エッジ ACL**](https://docs.fastly.com/guides/access-control-lists/about-acls)- カスタム VCL スニペットを使用して実装されたブロックまたは許可ルールのアクセス制御リストを定義するクライアント IP アドレス データを格納します
+
+辞書と ACL データは、ネットワーク地域全体でアクセス可能な Fastly Edge ノードにデプロイされます。 また、データは、ステージング環境または実稼動環境用に VCL コードを再デプロイしなくても、ネットワーク全体で動的に更新できます。
+
+>[!NOTE]
+>
+>ステージング環境または実稼動環境に追加できるのは、次の場合のみです [設定済みの Fastly サービス](fastly-configuration.md) その環境の場合。
 
 ## チュートリアル
 
-このチュートリアルと例では、Edge Dictionaries と Edge ACL を使用して、Adobe Commerceの Fastly サービス設定をカスタマイズする通常のカスタム VCL スニペットの使用方法を示します。 詳しくは、以下の Fastly ドキュメントを参照してください。
+このチュートリアルと例では、Edge ディクショナリと Edge ACL を含んだ通常のカスタム VCL スニペットを使用して、Adobe Commerce用の Fastly サービス設定をカスタマイズする方法について説明します。 詳しくは、Fastly のドキュメントを参照してください。
 
-- [Fastly VCL のガイド](https://docs.fastly.com/guides/vcl/guide-to-vcl)- Fastly Vanish の実装、Fastly VCL の拡張、および Vanish と VCL の詳細を学ぶためのリソースに関する情報。
-- [VCL リファレンスの失敗](https://docs.fastly.com/guides/vcl/)- Fastly カスタム VCL およびカスタム VCL スニペットの開発とトラブルシューティングに関する詳細なプログラミングリファレンス。
+- [Fastly VCL のガイド](https://docs.fastly.com/guides/vcl/guide-to-vcl)- Fastly Varnish の実装、Fastly VCL の拡張機能、および Varnish と VCL の詳細を学習するためのリソースに関する情報です。
+- [Fastly VCL 参照](https://docs.fastly.com/guides/vcl/)- Fastly カスタム VCL およびカスタム VCL スニペットの開発とトラブルシューティングに関する詳細なプログラミング リファレンス。
 
-カスタム VCL スニペットの作成と管理は、Adobe Commerce管理者から、または Fastly API を使用しておこなうことができます。
+カスタム VCL スニペットは、Adobe Commerce管理者から、または Fastly API を使用して作成および管理できます。
 
-- [Adobe Commerce Admin](#manage-custom-vcl-from-admin)—VCL の変更を Fastly サービス設定に検証、アップロード、適用するプロセスを自動化できるので、Adobe Commerce管理者を使用してカスタム VCL スニペットを管理することをお勧めします。 また、Fastly サービス設定に追加されたカスタム VCL スニペットを管理者から表示および編集することもできます。
+- [Adobe Commerce管理者](#manage-custom-vcl-from-admin)—VCL の変更内容の検証、アップロード、Fastly サービス設定への適用を自動化するため、Adobe Commerce管理を使用してカスタム VCL スニペットを管理することをお勧めします。 また、Fastly サービス設定に追加されたカスタム VCL スニペットを、管理者で表示して編集することもできます。
 
-- [Fastly API](#manage-vcl-using-the-api) — 管理者にアクセスできない場合は、Fastly API を使用してカスタム VCL スニペットを管理します。 例えば、API を使用して、サイトがダウンしたときに Fastly サービス設定のトラブルシューティングをおこなったり、カスタム VCL スニペットを追加したりします。 また、一部の操作は API を使用してのみ完了できます。 例えば、API を使用して古い VCL バージョンを再アクティブ化したり、指定した VCL バージョンに含まれるすべての VCL スニペットを表示したりする必要があります。 詳しくは、 [VCL スニペットの API クイックリファレンス](#api-quick-reference-for-vcl-snippets).
+- [Fastly API](#manage-vcl-using-the-api) – 管理者にアクセスできない場合は、Fastly API を使用してカスタム VCL スニペットを管理します。 例えば、API を使用して、サイトがダウンしたときに Fastly サービス設定をトラブルシューティングしたり、カスタム VCL スニペットを追加したりします。 また、API を使用してのみ完了できる操作もあります。 たとえば、API を使用して、古い VCL バージョンを再アクティブ化したり、指定した VCL バージョンに含まれるすべての VCL スニペットを表示する必要があります。 参照： [VCL スニペットの API クイックリファレンス](#api-quick-reference-for-vcl-snippets).
 
 ### VCL スニペットコードの例
 
-次の例は、クライアント IP アドレスでトラフィックをフィルタリングするカスタム VCL スニペット（JSON 形式）を示しています。
+次の例は、クライアントの IP アドレスでトラフィックをフィルタリングするカスタム VCL スニペット（JSON 形式）を示しています。
 
 ```json
 {
@@ -71,55 +71,55 @@ Fastly は、次の 2 種類のカスタム VCL スニペットをサポート�
 
 >[!WARNING]
 >
->この例では、VCL コードは JSON ペイロードとしてフォーマットされ、ファイルに保存して Fastly API リクエストで送信できます。 スニペットを API リクエストの JSON として送信する際に JSON 検証エラーを防ぐには、バックスラッシュを使用してコード内の特殊文字をエスケープします。 詳しくは、 [動的 VCL スニペットの使用](https://docs.fastly.com/vcl/vcl-snippets/) Fastly VCL のドキュメントの 管理者から VCL スニペットを送信する場合は、特殊文字をエスケープする必要はありません。
+>この例では、VCL コードは JSON ペイロードとしてフォーマットされ、ファイルに保存して Fastly API リクエストで送信できます。 スニペットを API リクエストの JSON として送信する際に JSON 検証エラーが発生しないようにするには、バックスラッシュを使用してコード内の特殊文字をエスケープします。 参照： [動的 VCL スニペットの使用](https://docs.fastly.com/vcl/vcl-snippets/) Fastly VCL ドキュメントを参照してください。 管理者から VCL スニペットを送信する場合、特殊文字をエスケープする必要はありません。
 
-の VCL ロジック `content` フィールドは、次の操作を実行します。
+の VCL ロジック `content` フィールドは、次のアクションを実行します。
 
-- 受信 IP アドレスをチェックし、 `client.ip` リクエストごとに
+- 受信 IP アドレスをチェックします。 `client.ip` リクエストごとに
 
-- IP アドレスが *ACLNAME* エッジ ACL、を返す `403 Forbidden` エラー
+- に含まれる IP アドレスを持つすべてのリクエストをブロックします *ACLNAME* エッジ ACL、を返す `403 Forbidden` エラー
 
-次の表に、カスタム VCL スニペットの主要データの詳細を示します。 詳しくは、 [VCL スニペット](https://docs.fastly.com/api/config#api-section-snippet) Fastly ドキュメントのを参照してください。
+次の表に、カスタム VCL スニペットのキーデータの詳細を示します。 詳しくは、を参照してください [VCL スニペット](https://docs.fastly.com/api/config#api-section-snippet) Fastly のドキュメントのを参照してください。
 
 | 値 | 説明 |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `API_KEY` | Fastly アカウントにアクセスするための API キー。 詳しくは、 [認証情報の取得](fastly-configuration.md). |
-| `active` | スニペットまたはバージョンのアクティブステータス。 戻り値 `true` または `false`. true の場合、スニペットまたはバージョンは使用中です。 アクティブなスニペットのバージョン番号を使用して複製します。 |
-| `content` | 実行する VCL コードのスニペット。 Fastly は、すべての VCL 言語機能をサポートしているわけではありません。 また、Fastly は拡張機能にカスタム機能を提供します。 サポートされる機能について詳しくは、 [Fastly VCL プログラミングリファレンス](https://docs.fastly.com/vcl/reference/). |
-| `dynamic` | スニペットの動的ステータス。 戻り値 `false` 対象： [定期的なスニペット](https://docs.fastly.com/en/guides/about-vcl-snippets) Fastly サービス設定用のバージョン管理された VCL に含まれています。 戻り値 `true` の [動的スニペット](https://docs.fastly.com/vcl/vcl-snippets/using-dynamic-vcl-snippets/) 新しい VCL バージョンを必要とせずに、変更やデプロイが可能な |
-| `number` | スニペットが含まれる VCL バージョン番号。 Fastly の使用方法 *編集可能なバージョン番号* を使用します。 API からカスタムスニペットを追加する場合は、API リクエストにバージョン番号を含めます。 管理者からカスタム VCL を追加した場合は、バージョンが提供されます。 |
-| `priority` | 次の値を持つ数値： `1` から `100` カスタム VCL スニペットコードを実行するタイミングを指定します。 優先度の低いスニペットを最初に実行します。 指定しない場合、 `priority` 値のデフォルト値： `100`.<p>優先度の値がのカスタム VCL スニペット `5` は即座に実行されます。これは、要求ルーティング（ブロックとリダイレクト）を実装する VCL コードに最適で許可リストに加えるす。 優先度 `100` は、デフォルトの VCL スニペットコードを上書きするのに最適です。<p>すべて [デフォルトの VCL スニペット](fastly-configuration.md#upload-vcl-snippets) Fastly モジュールに含まれるMagento-Fastly モジュールは、 `priority=50`.<ul><li>高い優先度を割り当てる（例： ） `100` 他のすべての VCL 関数の後にカスタム VCL コードを実行し、デフォルトの VCL コードを上書きする場合。</li></ul> |
-| `service_id` | 特定のステージング環境または実稼動環境の Fastly サービス ID。 この ID は、プロジェクトがクラウドインフラストラクチャ上のAdobe Commerceに追加される際に割り当てられます [Fastly サービスアカウント](fastly.md#fastly-service-account-and-credentials). |
-| `type` | 生成されたスニペットを挿入する場所を指定します ( 例： `init` （サブルーチン以上）および `recv` （サブルーチン内）。 詳しくは、 Fastly [VCL スニペット](https://docs.fastly.com/api/config#api-section-snippet) 参照。 |
+| `API_KEY` | Fastly アカウントにアクセスするための API キー。 参照： [資格情報の取得](fastly-configuration.md). |
+| `active` | スニペットまたはバージョンのアクティブなステータス。 戻り値 `true` または `false`. true の場合、スニペットまたはバージョンは使用中です。 バージョン番号を使用してアクティブなスニペットのクローンを作成します。 |
+| `content` | 実行する VCL コードのスニペット。 Fastly では、すべての VCL 言語機能をサポートしているわけではありません。 また、Fastly は、カスタム機能を備えた拡張機能を提供します。 サポートされる機能について詳しくは、 [Fastly VCL プログラミングリファレンス](https://docs.fastly.com/vcl/reference/). |
+| `dynamic` | スニペットの動的ステータス。 戻り値 `false` （用） [通常のスニペット](https://docs.fastly.com/en/guides/about-vcl-snippets) fastly サービス設定用のバージョン管理された VCL に含まれる。 戻り値 `true` の場合 [動的スニペット](https://docs.fastly.com/vcl/vcl-snippets/using-dynamic-vcl-snippets/) これは、新しい VCL バージョンを必要とせずに変更およびデプロイできます。 |
+| `number` | スニペットが含まれている VCL バージョン番号。 Fastly での使用 *編集可能なバージョン #* の値の例です。 API からカスタムスニペットを追加する場合は、API リクエストにバージョン番号を含めてください。 管理者からカスタム VCL を追加すると、のバージョンが提供されます。 |
+| `priority` | 次の範囲の数値 `1` 対象： `100` カスタム VCL スニペット コードを実行するタイミングを指定します。 優先度の値が小さいスニペットが最初に実行されます。 指定しない場合、 `priority` デフォルト値： `100`.<p>優先順位の値がのカスタム VCL スニペット `5` これは、リクエストルーティング（ブロックおよび許可リストとリダイレクト）を実装する VCL コードに最適です。 優先度 `100` は、デフォルトの VCL スニペットコードを上書きする場合に最適です。<p>すべて [デフォルトの VCL スニペット](fastly-configuration.md#upload-vcl-snippets) Magento-Fastly モジュールに含まれる `priority=50`.<ul><li>次のような高い優先度を割り当てます `100` 他のすべての VCL 関数の後にカスタム VCL コードを実行し、既定の VCL コードをオーバーライドします。</li></ul> |
+| `service_id` | 特定のステージング環境または実稼動環境の Fastly サービス ID。 この ID は、プロジェクトがクラウドインフラストラクチャー上のAdobe Commerceに追加されたときに割り当てられます [Fastly サービスアカウント](fastly.md#fastly-service-account-and-credentials). |
+| `type` | 生成されたスニペットを挿入する場所（例：）を指定します。 `init` （サブルーチンの上）と `recv` （サブルーチン内）。 詳しくは、Fastly を参照してください [VCL スニペット](https://docs.fastly.com/api/config#api-section-snippet) 参照。 |
 
-## 管理者からカスタム VCL を管理
+## 管理者からのカスタム VCL の管理
 
-以下が可能です。 [カスタム VCL スニペットを追加](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md) から *Fastly 設定* > *カスタム VCL スニペット* 」セクションをクリックします。
+次のことができます [カスタム VCL スニペットを追加する](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md) から *Fastly 設定* > *カスタム VCL スニペット* 」セクションを選択します。
 
 ![カスタム VCL スニペットの管理](../../assets/cdn/fastly-edit-snippets.png)
 
-The *カスタム VCL スニペット* 表示には、管理者から追加されたスニペットのみが表示されます。 Fastly API を使用してスニペットを追加する場合は、API を使用して [管理者](#manage-vcl-using-the-api).
+この *カスタム VCL スニペット* 表示には、管理者を通じて追加されたスニペットのみが表示されます。 Fastly API を使用してスニペットを追加する場合は、API を使用して次の操作を行います [それらを管理](#manage-vcl-using-the-api).
 
-以下の例は、管理者からカスタム VCL スニペットを作成および管理する方法、および Fastly Edge モジュールと Edge 辞書を使用する方法を示しています。
+次の例は、カスタム VCL スニペットを管理者から作成および管理する方法と、Fastly Edge モジュールおよび Edge 辞書を使用する方法を示しています。
 
-- [CMS バックエンドにリクエストを再ルーティングする](fastly-vcl-wordpress.md)
+- [CMS バックエンドへのリクエストの再ルーティング](fastly-vcl-wordpress.md)
+- [参照スパムをブロック](fastly-vcl-badreferer.md)
 - [リファラルスパムをブロック](fastly-vcl-badreferer.md)
-- [紹介スパムをブロック](fastly-vcl-badreferer.md)
-- [IP のカスタム VCL 許可リストに加える](fastly-vcl-allowlist.md)
-- [IP のカスタム VCL ブロックリストに加える](fastly-vcl-blocking.md)
-- [Fastly キャッシュをバイパス](fastly-vcl-bypass-to-origin.md)
+- [IP 用のカスタム VCL許可リスト](fastly-vcl-allowlist.md)
+- [IP 用のカスタム VCLブロックリスト](fastly-vcl-blocking.md)
+- [Fastly キャッシュのバイパス](fastly-vcl-bypass-to-origin.md)
 
-## API を使用して VCL を管理
+## API を使用した VCL の管理
 
-以下のウォークスルーは、通常の VCL スニペットファイルを作成し、Fastly API を使用して Fastly サービス設定に追加する方法を示しています。 スニペットは、 *端末* アプリケーション。 特定の環境への SSH 接続は必要ありません。
+次のウォークスルーでは、通常の VCL スニペットファイルを作成し、Fastly API を使用して Fastly サービス設定に追加する方法を示します。 からスニペットを作成および管理できます。 *ターミナル* アプリケーション。 特定の環境への SSH 接続は必要ありません。
 
 **前提条件：**
 
-- Fastly サービス用に、クラウドインフラストラクチャ環境上のAdobe Commerceを設定します。 詳しくは、 [Fastly の設定](fastly-configuration.md).
+- Fastly サービスを使用するには、クラウドインフラストラクチャ環境でAdobe Commerceを設定します。 参照： [Fastly の設定](fastly-configuration.md).
 
-- [Fastly API の資格情報の取得](fastly-configuration.md) を使用して、Fastly API へのリクエストを認証します。 正しい環境（ステージングまたは実稼動）の資格情報が取得されていることを確認します。
+- [Fastly API 資格情報の取得](fastly-configuration.md) Fastly API へのリクエストを認証します。 正しい環境（ステージングまたは実稼動）の資格情報を取得していることを確認します。
 
-- Fastly サービス資格情報を bash 環境変数として保存し、cURL コマンドで使用できます。
+- cURL コマンドで使用できる bash 環境変数として、Fastly サービスの資格情報を保存します。
 
   ```bash
   export FASTLY_SERVICE_ID=<Service-ID>
@@ -129,34 +129,34 @@ The *カスタム VCL スニペット* 表示には、管理者から追加さ�
   export FASTLY_API_TOKEN=<API-Token>
   ```
 
-  書き出された環境変数は、現在の bash セッションでのみ使用でき、端末を閉じると失われます。 新しい値を書き出すことで、変数を再定義できます。 Fastly に関連するエクスポートされた変数のリストを表示するには：
+  書き出された環境変数は、現在の bash セッションでのみ使用でき、ターミナルを閉じると失われます。 新しい値を書き出して変数を再定義できます。 Fastly に関連する、書き出された変数のリストを表示するには：
 
   ```bash
   export | grep FASTLY
   ```
 
-## VCL スニペットを追加
+## VCL スニペットの追加
 
 このチュートリアルでは、Fastly API を使用してカスタムスニペットを追加する基本的な手順を説明します。
 
 >[!NOTE]
 >
->Adobe Commerce Admin からカスタム VCL スニペットを管理する方法については、 [Adobe Commerce Admin から VCL を管理](#manage-custom-vcl-from-admin).
+>Adobe Commerce Admin からカスタム VCL スニペットを管理する方法については、を参照してください。 [Adobe Commerce Admin からの VCL の管理](#manage-custom-vcl-from-admin).
 
 
 **前提条件**
 
 {{$include /help/_includes/vcl-snippet-prerequisites.md}}
 
-### 手順 1：アクティブな VCL バージョンを見つける
+### 手順 1：アクティブな VCL バージョンを探す
 
-Fastly API の使用 [バージョンを取得](https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987) アクティブな VCL バージョン番号を取得する操作：
+Fastly API の使用 [バージョンを取得](https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987) アクティブな VCL のバージョン番号を取得する操作：
 
 ```bash
 curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/active
 ```
 
-JSON 応答で、 `number` キー（例： ） `"number": 99`. VCL を編集用に複製する場合は、バージョン番号が必要です。
+JSON 応答で、で返されたアクティブな VCL バージョン番号をメモします。 `number` キー（例：） `"number": 99`. VCL を編集用に複製する場合は、バージョン番号が必要です。
 
 ```json
 {
@@ -180,15 +180,15 @@ JSON 応答で、 `number` キー（例： ） `"number": 99`. VCL を編集用�
 export FASTLY_VERSION_ACTIVE=<Version>
 ```
 
-### 手順 2：アクティブな VCL バージョンとすべてのスニペットのクローンを作成する
+### 手順 2：アクティブな VCL バージョンとすべてのスニペットを複製する
 
-カスタム VCL スニペットを追加または変更する前に、編集用にアクティブな VCL バージョンのコピーを作成する必要があります。 Fastly API の使用 [複製](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709) 操作：
+カスタム VCL スニペットを追加または修正する前に、編集用にアクティブな VCL バージョンのコピーを作成する必要があります。 Fastly API の使用 [クローン](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709) 操作：
 
 ```bash
 curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION_ACTIVE/clone -X PUT
 ```
 
-JSON 応答では、バージョン番号が増加し、 *アクティブ* キーの値は次のとおりです。 `false`. 非アクティブな新しい VCL バージョンをローカルで変更できます。
+JSON 応答では、バージョン番号が増分され、 *アクティブ* キー値はです `false`. 新しい非アクティブな VCL バージョンは、ローカルで修正できます。
 
 ```json
 {
@@ -206,15 +206,15 @@ JSON 応答では、バージョン番号が増加し、 *アクティブ* キ�
 }
 ```
 
-新しいバージョン番号を bash 環境変数に保存して、後続のコマンドで使用できるようにします。
+以降のコマンドで使用するために、新しいバージョン番号を bash 環境変数に保存します。
 
 ```bash
 export FASTLY_EDIT_VERSION=<Version>
 ```
 
-### 手順 3：カスタム VCL スニペットを作成する
+### 手順 3：カスタム VCL スニペットの作成
 
-カスタム VCL コードを作成し、次の内容と形式を持つ JSON ファイルに保存します。
+カスタム VCL コードを作成し、次の内容と形式で JSON ファイルに保存します。
 
 ```json
 {
@@ -226,45 +226,45 @@ export FASTLY_EDIT_VERSION=<Version>
 }
 ```
 
-次の値が含まれます。
+値には次が含まれます。
 
 - `name`- VCL スニペットの名前。
 
-- `dynamic` — これが [通常のスニペット](https://docs.fastly.com/en/guides/about-vcl-snippets) または [動的スニペット](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets).
+- `dynamic` – これが [標準スニペット](https://docs.fastly.com/en/guides/about-vcl-snippets) または [動的スニペット](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets).
 
-- `type` — 生成されたスニペットを挿入する場所を指定します。次に例を示します。 `init` （サブルーチン以上）および `recv` （サブルーチン内）。 詳しくは、 [VCL スニペットオブジェクト値](https://docs.fastly.com/api/config#snippet) を参照してください。
+- `type` – 生成されたスニペットを挿入する場所を指定します。たとえば、次のような場所を指定します。 `init` （サブルーチンの上）と `recv` （サブルーチン内）。 参照： [Fastly VCL スニペットオブジェクト値](https://docs.fastly.com/api/config#snippet) これらの値について詳しくは、を参照してください。
 
-- `priority` — 値を `1` から `100` カスタム VCL スニペットコードを実行するタイミングを決定する 値が小さいカスタム VCL スニペットを最初に実行します。
+- `priority` – 値 `1` 対象： `100` カスタム VCL スニペットコードを実行するタイミングを指定します。 値が小さいカスタム VCL スニペットが最初に実行されます。
 
-  Fastly VCL モジュールのすべてのデフォルト VCL コードには、 `priority` / `50`. アクションを最後に実行する場合や、デフォルトの VCL コードを上書きする場合は、次のように大きい数値を使用します。 `100`. カスタム VCL スニペットコードを直ちに実行するには、優先度を次のように低い値に設定します。 `5`.
+  Fastly VCL モジュールのすべてのデフォルト VCL コードには、 `priority` 件中 `50`. アクションを最後に実行する場合、またはデフォルトの VCL コードをオーバーライドする場合は、次のように大きい数字を使用します `100`. カスタム VCL スニペットコードをすぐに実行するには、次のように、優先度を低い値に設定します `5`.
 
-- `content`- 1 行で実行する VCL コードのスニペット（改行なし）。 詳しくは、 [カスタム VCL スニペットの例](#example-vcl-snippet-code).
+- `content` – 改行なしで 1 行で実行する VCL コードのスニペット。 参照： [カスタム VCL スニペットの例](#example-vcl-snippet-code).
 
-### 手順 4:VCL スニペットを Fastly 設定に追加する
+### 手順 4:Fastly 設定への VCL スニペットの追加
 
-Fastly API の使用 [スニペットを作成](https://docs.fastly.com/api/config#snippet_41e0e11c662d4d56adada215e707f30d) 操作を使用してカスタム VCL スニペットを VCL バージョンに追加します。
+Fastly API の使用 [スニペットを作成](https://docs.fastly.com/api/config#snippet_41e0e11c662d4d56adada215e707f30d) カスタム VCL スニペットを VCL バージョンに追加する操作。
 
 ```bash
 curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_EDIT_VERSION/snippet -H 'Content-Type: application/json' -X POST --data @<filename.json>
 ```
 
-The `<filename.json>` は、前の手順で準備したファイルの名前です。 各 VCL スニペットに対してこのコマンドを繰り返します。
+この `<filename.json>` は、前の手順で準備したファイルの名前です。 各 VCL スニペットに対して、このコマンドを繰り返します。
 
-以下を受け取った場合、 `500 Internal Server Error` Fastly サービスからの応答で、JSON ファイルの構文を確認して、有効なファイルをアップロードしていることを確認します。
+を受け取った場合 `500 Internal Server Error` fastly サービスからの応答。JSON ファイル構文を調べ、有効なファイルをアップロードしていることを確認します。
 
-### 手順 5：カスタム VCL スニペットを検証してアクティブ化する
+### 手順 5：カスタム VCL スニペットの検証とアクティブ化
 
-カスタム VCL スニペットを追加した後、Fastly は編集中の VCL バージョンにスニペットを挿入します。 変更を適用するには、次の手順を実行して VCL スニペットコードを検証し、VCL バージョンをアクティベートします。
+カスタム VCL スニペットを追加すると、編集中の VCL バージョンにスニペットが挿入されます。 変更を適用するには、次の手順を実行して VCL スニペット コードを検証し、VCL バージョンをアクティブにします。
 
-1. Fastly API の使用 [VCL バージョンを検証](https://docs.fastly.com/api/config#version_97f8cf7bfd5dc2e5ea1933d94dc5a9a6) 操作を使用して、更新された VCL コードを検証します。
+1. Fastly API の使用 [vcl バージョンの検証](https://docs.fastly.com/api/config#version_97f8cf7bfd5dc2e5ea1933d94dc5a9a6) 更新された VCL コードを検証する操作。
 
    ```bash
    curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_EDIT_VERSION/validate
    ```
 
-   Fastly API がエラーを返した場合は、問題を修正し、更新された VCL バージョンを再検証してください。
+   Fastly API がエラーを返した場合は、問題を修正し、更新された VCL バージョンを再度検証します。
 
-1. Fastly API の使用 [アクティブ化](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) 新しい VCL バージョンを有効化する操作。
+1. Fastly API の使用 [アクティベート](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) 新しい VCL バージョンをアクティブにする操作。
 
    ```bash
    curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_EDIT_VERSION/activate -X PUT
@@ -272,19 +272,19 @@ The `<filename.json>` は、前の手順で準備したファイルの名前で�
 
 ## VCL スニペットの API クイックリファレンス
 
-以下の API リクエストの例では、書き出された環境変数を使用して、Fastly で認証する資格情報を提供します。 これらのコマンドの詳細については、 [Fastly API リファレンス](https://docs.fastly.com/api/config#vcl).
+これらの API リクエストの例では、書き出された環境変数を使用して、Fastly で認証するための資格情報を提供しています。 これらのコマンドの詳細については、を参照してください [Fastly API リファレンス](https://docs.fastly.com/api/config#vcl).
 
 >[!NOTE]
 >
->Fastly API を使用して追加したスニペットを管理するには、次のコマンドを使用します。 管理者からスニペットを追加した場合は、 [管理者を使用した VCL スニペットの管理](#manage-vcl-using-the-api).
+>次のコマンドを使用して、Fastly API を使用して追加したスニペットを管理します。 管理者からスニペットを追加した場合は、 [管理を使用して VCL スニペットを管理する](#manage-vcl-using-the-api).
 
-- **アクティブな VCL バージョン番号を取得します**
+- **アクティブな VCL バージョン番号を取得**
 
   ```bash
   curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/active
   ```
 
-- **サービスに接続されているすべての通常の VCL スニペットのリスト**
+- **サービスに接続されているすべての通常の VCL スニペットを一覧表示する**
 
   ```bash
   curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION/snippet
@@ -296,11 +296,11 @@ The `<filename.json>` は、前の手順で準備したファイルの名前で�
   curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION/snippet/<snippet_name>
   ```
 
-  The `<snippet_name>` はスニペットの名前です。例： `my_regular_snippet`.
+  この `<snippet_name>` はスニペットの名前（例：） `my_regular_snippet`.
 
 - **スニペットの更新**
 
-  を変更します。 [準備済みの JSON ファイル](#step-3-create-a-custom-vcl-snippet) 次のリクエストを送信します。
+  を変更する [準備された JSON ファイル](#step-3-create-a-custom-vcl-snippet) そして、次のリクエストを送信します。
 
   ```bash
   curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION/snippet/<snippet_name> -H 'Content-Type: application/json' -X PUT --data @<filename.json>
@@ -308,12 +308,12 @@ The `<filename.json>` は、前の手順で準備したファイルの名前で�
 
 - **個々の VCL スニペットを削除する**
 
-  スニペットのリストを取得し、次を使用します `curl` コマンドに、削除する特定のスニペット名を指定します。
+  スニペットのリストを取得して、次を使用します `curl` 削除する特定のスニペット名を指定したコマンド：
 
   ```bash
   curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION/snippet/<snippet_name> -X DELETE
   ```
 
-- **次の項目の値を上書き： [デフォルトの Fastly VCL コード](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets)**
+- **の値のオーバーライド [デフォルトの Fastly VCL コード](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets)**
 
-  更新された値を持つスニペットを作成し、優先度を `100`.
+  更新された値でスニペットを作成して、の優先度を割り当てます。 `100`.

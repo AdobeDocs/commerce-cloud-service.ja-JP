@@ -1,6 +1,6 @@
 ---
-title: ビットバケットの統合
-description: Adobe Commerce on cloud infrastructure プロジェクトを Bitbucket と統合する方法を説明します。
+title: Bitbucket の統合
+description: クラウドインフラストラクチャプロジェクト上のAdobe Commerceを Bitbucket と統合する方法を説明します。
 feature: Cloud, Integration
 exl-id: cd3cffbe-268f-429b-a2ea-0306159f4a6b
 source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
@@ -10,23 +10,23 @@ ht-degree: 0%
 
 ---
 
-# ビットバケットの統合
+# Bitbucket の統合
 
-コードの変更をプッシュする際に、環境を自動的に構築してデプロイするように Bitbucket リポジトリを設定できます。 この統合は、Bitbucket リポジトリをAdobe Commerce on クラウドインフラストラクチャアカウントと同期します。
+コードの変更をプッシュする際に、環境を自動的にビルドおよびデプロイするように、Bitbucket リポジトリーを設定できます。 この統合により、Bitbucket リポジトリがクラウドインフラストラクチャアカウント上のAdobe Commerceと同期されます。
 
 {{private-repository}}
 
 ## 前提条件
 
-- クラウドインフラストラクチャプロジェクト上のAdobe Commerceへの管理者アクセス権
+- Adobe Commerce on cloud infrastructure プロジェクトへの管理者アクセス
 - [`magento-cloud` CLI](../dev-tools/cloud-cli-overview.md) ローカル環境のツール
 - Bitbucket アカウント
-- Bitbucket リポジトリへの管理者アクセス権
-- ビットバケットリポジトリの SSH アクセスキー
+- Bitbucket リポジトリへの管理者アクセス
+- Bitbucket リポジトリの SSH アクセスキー
 
-## リポジトリの準備
+## リポジトリを準備
 
-既存の環境からクラウドインフラストラクチャプロジェクト上のAdobe Commerceをクローンし、同じブランチ名を保持したまま、プロジェクトブランチを新しい空のビットバケットリポジトリに移行します。 それは **重要な** 同じ Git ツリーを保持して、Adobe Commerce on cloud infrastructure プロジェクト内の既存の環境やブランチが失われないようにします。
+既存の環境からクラウドインフラストラクチャプロジェクト上にAdobe Commerceのクローンを作成し、同じブランチ名を保持したまま、プロジェクトのブランチを新しい空の Bitbucket リポジトリに移行します。 このプロパティは **重大** Adobe Commerce on cloud infrastructure プロジェクトで既存の環境やブランチが失われないように、同一の Git ツリーを保持する。
 
 1. ターミナルから、クラウドインフラストラクチャプロジェクトのAdobe Commerceにログインします。
 
@@ -34,13 +34,13 @@ ht-degree: 0%
    magento-cloud login
    ```
 
-1. プロジェクトを一覧表示し、プロジェクト ID をコピーします。
+1. プロジェクトをリストして、プロジェクト ID をコピーします。
 
    ```bash
    magento-cloud project:list
    ```
 
-1. プロジェクトをローカル環境に複製します。
+1. プロジェクトのクローンをローカル環境に作成します。
 
    ```bash
    magento-cloud project:get <project-ID>
@@ -52,9 +52,9 @@ ht-degree: 0%
    git remote add origin git@bitbucket.org:<user-name>/<repo-name>.git
    ```
 
-   リモート接続のデフォルト名は次のようになります。 `origin` または `magento`. 次の場合 `origin` が存在する場合は、別の名前を選択するか、既存の参照の名前を変更または削除することができます。 詳しくは、 [git-remote ドキュメント](https://git-scm.com/docs/git-remote).
+   リモート接続のデフォルト名は以下のようになります。 `origin` または `magento`. 次の場合 `origin` 存在する、別の名前を選択できる、または既存の参照の名前を変更または削除できる。 参照： [git-remote ドキュメント](https://git-scm.com/docs/git-remote).
 
-1. Bitbucket リモートが正しく追加されたことを確認します。
+1. Bitbucket リモートを正しく追加したことを確認します。
 
    ```bash
    git remote -v
@@ -67,45 +67,45 @@ ht-degree: 0%
    origin git@bitbucket.org:<user-name>/<repo-name>.git (push)
    ```
 
-1. プロジェクトファイルを新しい Bitbucket リポジトリにプッシュします。 すべてのブランチ名は同じにしてください。
+1. プロジェクトファイルを新しい Bitbucket リポジトリにプッシュします。 すべてのブランチ名は同じにしておくことを忘れないでください。
 
    ```bash
    git push -u origin master
    ```
 
-   新しい Bitbucket リポジトリを使用し始める場合は、 `-f` 」オプションを使用します。リモートリポジトリがローカルコピーと一致しないためです。
+   新しい Bitbucket リポジトリで始める場合は、を使用する必要があります。 `-f` リモートリポジトリがローカルコピーと一致しないためです。
 
 1. Bitbucket リポジトリに、すべてのプロジェクトファイルが含まれていることを確認します。
 
-## OAuth 消費者の作成
+## OAuth コンシューマーの作成
 
-Bitbucket の統合には、 [OAuth 消費者](https://support.atlassian.com/bitbucket-cloud/docs/use-oauth-on-bitbucket-cloud/). OAuth が必要です `key` および `secret` このコンシューマーから次の節に進みます。
+Bitbucket の統合には、が必要です [OAuth コンシューマー](https://support.atlassian.com/bitbucket-cloud/docs/use-oauth-on-bitbucket-cloud/). Oauth が必要です `key` および `secret` このコンシューマーから次の節を完了します。
 
-**Bitbucket で OAuth コンシューマーを作成するには、以下を実行します。**:
+**Bitbucket で OAuth コンシューマーを作成するには：**:
 
-1. にログインします。 [Bitbucket](https://id.atlassian.com/login) アカウント。
+1. にログイン [Bitbucket](https://id.atlassian.com/login) アカウント。
 
 1. クリック **設定** > **アクセス管理** > **OAuth**.
 
-1. クリック **消費者を追加** 次のように設定します。
+1. クリック **消費者を追加** そして、次のように設定します。
 
-   ![ビットバケット OAuth 消費者設定](../../assets/oauth-consumer-config.png)
+   ![Bitbucket OAuth コンシューマー設定](../../assets/oauth-consumer-config.png)
 
    >[!WARNING]
    >
-   >有効な **コールバック URL** は必須ではありませんが、統合を正常に完了するには、このフィールドに値を入力する必要があります。
+   >有効な **コールバック URL** 必須ではありませんが、統合を正常に完了するには、このフィールドに値を入力する必要があります。
 
 1. クリック **保存**.
 
-1. 消費者をクリック **名前** OAuth を表示するには `key` および `secret`.
+1. 消費者をクリックします **名前** OAuth を表示するには `key` および `secret`.
 
-1. OAuth をコピーします。 `key` および `secret` 統合を設定する場合。
+1. OAuth をコピー `key` および `secret` ：統合の設定
 
 ## 統合の設定
 
-1. ターミナルから、クラウドインフラストラクチャ上のAdobe Commerceプロジェクトに移動します。
+1. ターミナルから、クラウドインフラストラクチャプロジェクトのAdobe Commerceに移動します。
 
-1. という名前の一時ファイルを作成します。 `bitbucket.json` 次のコードを追加し、山括弧内の変数を値に置き換えます。
+1. という一時ファイルを作成します。 `bitbucket.json` 次のコードを追加し、山括弧で囲まれた変数を、必要な値に置き換えます。
 
    ```json
    {
@@ -124,21 +124,21 @@ Bitbucket の統合には、 [OAuth 消費者](https://support.atlassian.com/bit
 
    >[!TIP]
    >
-   >URL ではなく、Bitbucket リポジトリの名前を使用してください。 URL を使用すると統合に失敗します。
+   >URL ではなく、Bitbucket リポジトリの名前を使用してください。 URL を使用すると、統合が失敗します。
 
-1. を使用して、プロジェクトに統合を追加します。 `magento-cloud` CLI ツール。
+1. を使用して、統合をプロジェクトに追加する `magento-cloud` CLI ツール。
 
    >[!WARNING]
    >
-   >次のコマンドは、 _すべて_ Adobe Commerce on cloud infrastructure プロジェクトのコードと、Bitbucket リポジトリのコード。 これには、 `production` 分岐。 この操作は即座に実行され、元に戻すことはできません。 ベストプラクティスとしては、クラウドインフラストラクチャプロジェクト上のAdobe Commerceからすべてのブランチをクローンし、Bitbucket リポジトリにプッシュすることが重要です **前** bitbucket 統合の追加
+   >次のコマンドは上書きします _all_ Adobe Commerce on cloud infrastructure プロジェクトのコードを、Bitbucket リポジトリーのコードと共に作成します。 これには、を含むすべてのブランチが含まれます `production` 分岐。 このアクションは即座に実行され、元に戻すことはできません。 ベストプラクティスとして、クラウドインフラストラクチャプロジェクト上のAdobe Commerceからすべてのブランチをクローンし、Bitbucket リポジトリにプッシュすることが重要です **次の前** bitbucket 統合の追加
 
    ```bash
    magento-cloud project:curl -p '<project-ID>' /integrations -i -X POST -d "$(< bitbucket.json)"
    ```
 
-   これは、ヘッダー付きの長い HTTP 応答を返します。 統合が成功すると、ステータスコード 200 または 201 が返されます。 ステータスが 400 以上の場合は、エラーが発生したことを示します。
+   これは、ヘッダー付きの長い HTTP 応答を返します。 統合が成功すると、200 または 201 ステータスコードが返されます。 ステータスが 400 以上の場合は、エラーが発生したことを示します。
 
-1. 一時的な `bitbucket.json` ファイル。
+1. 一時を削除 `bitbucket.json` ファイル。
 
 1. プロジェクトの統合を確認します。
 
@@ -156,41 +156,41 @@ Bitbucket の統合には、 [OAuth 消費者](https://support.atlassian.com/bit
    +----------+-----------+--------------------------------------------------------------------------------+
    ```
 
-   次の項目をメモします。 **フック URL** をクリックして、BitBucket で webhook を設定します。
+   をメモします **フック URL** bitbucket で Webhook を設定するには、次の手順に従います。
 
-### BitBucket にウェブフックを追加する
+### BitBucket への Webhook の追加
 
-プッシュなどのイベントを Cloud Git サーバーと通信するには、BitBucket リポジトリの Webhook が必要です。 このページで詳しく説明している Bitbucket 統合の設定方法に従うと、Webhook が自動的に作成されます。 複数の統合を作成するのを避けるために、Webhook を検証することが重要です。
+プッシュなどのイベントを Cloud Git サーバーと通信するには、BitBucket リポジトリに Webhook が必要です。 このページで詳しく説明している Bitbucket 統合の設定方法に従うと、自動的に Webhook が作成されます。 複数の統合を作成しないようにするために、Webhook を検証することが重要です。
 
-1. にログインします。 [Bitbucket](https://id.atlassian.com/login) アカウント。
+1. にログイン [Bitbucket](https://id.atlassian.com/login) アカウント。
 
-1. クリック **リポジトリ** をクリックし、プロジェクトを選択します。
+1. クリック **リポジトリ** プロジェクトを選択します。
 
-1. クリック **リポジトリ設定** > **ワークフロー** > **ウェブフック**.
+1. クリック **リポジトリ設定** > **ワークフロー** > **Webhook**.
 
-1. 続行する前に、Webhook を確認します。
+1. 続行する前に Webhook を確認します。
 
-   フックがアクティブな場合は、残りの手順をスキップし、 [統合のテスト](#test-the-integration). フックの名前は、 **«クラウドインフラストラクチャ上のAdobe Commerce &lt;project_id>&quot;** また、次のようなフック URL 形式も設定できます。 `https://<zone>.magento.cloud/api/projects/<project_id>/integrations/<id>/hook`
+   フックがアクティブな場合は、残りの手順をスキップし、 [統合のテスト](#test-the-integration). フックの名前はのようになります。 **クラウドインフラストラクチャー上のAdobe Commerce &lt;project_id>“** および次のようなフック URL 形式： `https://<zone>.magento.cloud/api/projects/<project_id>/integrations/<id>/hook`
 
-1. クリック **ウェブフックを追加**.
+1. クリック **Webhook を追加**.
 
-1. Adobe Analytics の _新しいウェブフックを追加_ 次のフィールドを表示、編集します。
+1. が含まれる _新しい Webhook を追加_ 表示して、次のフィールドを編集します。
 
-   - **タイトル**:Adobe Commerce統合
-   - **URL**: `magento-cloud` 統合リスト
-   - **トリガー**：デフォルトは基本です。 _リポジトリのプッシュ_
+   - **タイトル**:Adobe Commerceの統合
+   - **URL**：からフック URL を使用します `magento-cloud` 統合リスト
+   - **トリガー**：デフォルトは基本です _リポジトリのプッシュ_
 
 1. クリック **保存**.
 
 ### 統合のテスト
 
-Bitbucket 統合を設定した後は、 `magento-cloud` CLI:
+Bitbucket 統合を設定したら、統合が次を使用して動作していることを確認できます。 `magento-cloud` CLI:
 
 ```bash
 magento-cloud integration:validate
 ```
 
-または、単純な変更をビットバケットリポジトリにプッシュしてテストできます。
+または、単純な変更を Bitbucket リポジトリにプッシュしてテストすることもできます。
 
 1. テストファイルを作成します。
 
@@ -198,23 +198,23 @@ magento-cloud integration:validate
    touch test.md
    ```
 
-1. 変更をコミットして、ビットバケットリポジトリにプッシュします。
+1. 変更をコミットし、Bitbucket リポジトリにプッシュします。
 
    ```bash
    git add . && git commit -m "Testing Bitbucket integration" && git push
    ```
 
-1. にログインします。 [[!DNL Cloud Console]](../project/overview.md) コミットメッセージが表示され、プロジェクトが展開されていることを確認します。
+1. にログインします [[!DNL Cloud Console]](../project/overview.md) コミットメッセージが表示され、プロジェクトがデプロイされていることを確認します。
 
    ![Bitbucket 統合のテスト](../../assets/bitbucket-integration.png)
 
 ## クラウドブランチの作成
 
-Bitbucket 統合は、クラウドインフラストラクチャプロジェクト上のAdobe Commerceの新しい環境をアクティブ化できません。 Bitbucket を使用して環境を作成する場合は、手動で環境をアクティブ化する必要があります。 この余分な手順を避けるには、 `magento-cloud` CLI ツールまたは [!DNL Cloud Console].
+Bitbucket 統合では、クラウドインフラストラクチャプロジェクト上のAdobe Commerceで新しい環境をアクティブ化できません。 Bitbucket を使用して環境を作成する場合は、手動で環境をアクティブ化する必要があります。 このような追加の手順を回避するには、を使用して環境を作成することがベストプラクティスです。 `magento-cloud` CLI ツールまたは [!DNL Cloud Console].
 
-**ビットバケットで作成したブランチをアクティブ化するには**:
+**Bitbucket で作成されたブランチをアクティブにするには**:
 
-1. 以下を使用します。 `magento-cloud` ブランチをプッシュする CLI。
+1. の使用 `magento-cloud` CLI を使用して分岐をプッシュします。
 
    ```bash
    magento-cloud environment:push from-bitbucket
@@ -245,17 +245,17 @@ Bitbucket 統合は、クラウドインフラストラクチャプロジェク�
    * - Indicates the current environment
    ```
 
-環境を作成したら、通常の Git コマンドを使用して、対応するブランチをリモートの Bitbucket リポジトリにプッシュできます。 その後、Bitbucket のブランチを変更すると、環境が自動的に作成されてデプロイされます。
+環境を作成したら、通常の Git コマンドを使用して、対応するブランチをリモート Bitbucket リポジトリにプッシュできます。 その後、Bitbucket のブランチに変更を加えると、環境が自動的にビルドおよびデプロイされます。
 
 ## 統合の削除
 
-コードに影響を与えることなく、Bitbucket 統合をプロジェクトから安全に削除できます。
+コードに影響を与えることなく、プロジェクトから Bitbucket 統合を安全に削除できます。
 
-**Bitbucket 統合を削除するには、以下を実行します。**:
+**Bitbucket 統合を削除するには**:
 
 1. ターミナルから、クラウドインフラストラクチャプロジェクトのAdobe Commerceにログインします。
 
-1. 統合の一覧を表示します。 次の手順を完了するには、Bitbucket 統合 ID が必要です。
+1. 統合のリストを作成します。 次の手順を完了するには、Bitbucket 統合 ID が必要です。
 
    ```bash
    magento-cloud integration:list
@@ -267,19 +267,19 @@ Bitbucket 統合は、クラウドインフラストラクチャプロジェク�
    magento-cloud integration:delete <int-ID>
    ```
 
-また、Bitbucket の統合を削除するには、Bitbucket アカウントにログインし、アカウントに対する OAuth 付与を取り消します _設定_ ページに貼り付けます。
+また、Bitbucket アカウントにログインし、アカウントの OAuth 付与を取り消すことで、Bitbucket の統合を削除できます _設定_ ページ。
 
 ## Bitbucket サーバーの統合
 
-Bitbucket サーバーの統合を使用するには、次の情報が必要です。
+Bitbucket サーバー統合を使用するには、以下が必要です。
 
-- [ビットバケットアクセストークン](https://confluence.atlassian.com/bitbucketserver/http-access-tokens-939515499.html) — プロジェクトを許可するトークンを生成します `read` アクセスとリポジトリ `admin` アクセス
-- [ビットバケットサーバー URL](https://confluence.atlassian.com/bitbucketserver/specify-the-bitbucket-base-url-776640392.html)— Bitbucket インスタンスのベース URL を追加します。
+- [ビットバケットアクセストークン](https://confluence.atlassian.com/bitbucketserver/http-access-tokens-939515499.html)- プロジェクトを許可するトークンを生成します `read` アクセスとリポジトリ `admin` アクセス
+- [Bitbucket サーバー URL](https://confluence.atlassian.com/bitbucketserver/specify-the-bitbucket-base-url-776640392.html)— Bitbucket インスタンスのベース URL を追加します。
 
-Cloud CLI を使用して Bitbucket サーバーの統合手順を実行できますが、full コマンドは次のようになります。
+Cloud CLI を使用して Bitbucket サーバーの統合手順を実行することもできますが、完全なコマンドは次のようになります。
 
 ```bash
 magento-cloud integration:add --type=bitbucket_server --base-url=<bitbucket-url> --username=<username> --token=<bitbucket-access-token> --project=<project-ID>
 ```
 
-その他の使用要件やオプションについては、ヘルプコマンドを使用します。 `magento-cloud integration:add --help`
+その他の使用要件やオプションについては、help コマンドを使用してください。 `magento-cloud integration:add --help`

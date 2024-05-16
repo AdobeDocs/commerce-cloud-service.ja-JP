@@ -1,6 +1,6 @@
 ---
-title: MySQL サービスを設定する
-description: クラウドインフラストラクチャ上のAdobe Commerceを使用して、永続的なデータストレージの MySQL サービスを管理する方法を説明します。
+title: MySQL サービスの設定
+description: クラウドインフラストラクチャー上のAdobe Commerceを使用して、永続的データストレージ用の MySQL サービスを管理する方法について説明します。
 feature: Cloud, Services, Storage
 exl-id: 70820d00-8b82-4b60-87e4-ea98fd7ffcb2
 source-git-commit: 9be8d1e062ab3dba86bc4d9c9ee8b8ece33d5b75
@@ -10,21 +10,21 @@ ht-degree: 1%
 
 ---
 
-# MySQL サービスを設定する
+# MySQL サービスの設定
 
-The `mysql` サービスは、次の基準で永続的なデータストレージを提供します。 [MariaDB](https://mariadb.com/) バージョン 10.2～10.4（をサポート） [XtraDB](https://docs.percona.com/percona-xtradb-cluster/8.0/index.html) ストレージエンジンと、MySQL 5.6 および 5.7 の機能が再実装されました。
+この `mysql` サービスは以下に基づいて永続的なデータストレージを提供 [MariaDB](https://mariadb.com/) バージョン 10.2 ～ 10.4、 [XtraDB](https://docs.percona.com/percona-xtradb-cluster/8.0/index.html) ストレージエンジンと、MySQL 5.6 および 5.7 の機能を再実装。
 
-MariaDB 10.4 でのインデックス再作成は、他の MariaDB または MySQL バージョンと比べて時間がかかります。 詳しくは、 [インデクサー](https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/configuration.html#indexers) （内） _パフォーマンスのベストプラクティス_ ガイド。
+MariaDB 10.4 でのインデックス再作成は、他の MariaDB または MySQL バージョンに比べて時間がかかります。 参照： [インデクサー](https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/configuration.html#indexers) が含まれる _パフォーマンスのベストプラクティス_ ガイド。
 
 >[!WARNING]
 >
->MariaDB をバージョン 10.1 から 10.2 にアップグレードする際は注意が必要です。MariaDB 10.1 はをサポートする最後のバージョンです。 _XtraDB_ ストレージエンジンとして。 MariaDB 10.2 はを使用します。 _InnoDB_ ストレージエンジン用。 10.1 から 10.2 にアップグレードした後は、変更をロールバックできません。 Adobe Commerceは両方のストレージエンジンをサポートしていますが、MariaDB 10.2 との互換性を確認するには、プロジェクトで使用する拡張機能や他のシステムを確認する必要があります。詳しくは、 [10.1 と 10.2 の間の互換性のない変更](https://mariadb.com/kb/en/upgrading-from-mariadb-101-to-mariadb-102/#incompatible-changes-between-101-and-102).
+>MariaDB をバージョン 10.1 から 10.2 にアップグレードする場合は注意が必要です。MariaDB 10.1 は、サポートされる最後のバージョンです _XtraDB_ ストレージエンジンとして。 MariaDB 10.2 は、 _InnoDB_ ストレージエンジン用。 10.1 から 10.2 にアップグレードした後は、変更をロールバックできません。 Adobe Commerceは両方のストレージエンジンをサポートしていますが、MariaDB 10.2 と互換性があることを確認するには、プロジェクトで使用されている拡張機能やその他のシステムを確認する必要があります。参照： [10.1 と 10.2 の間で互換性のない変更](https://mariadb.com/kb/en/upgrading-from-mariadb-101-to-mariadb-102/#incompatible-changes-between-101-and-102).
 
 {{service-instruction}}
 
 **MySQL を有効にするには**:
 
-1. 必要な名前、タイプ、およびディスク値（MB 単位）を `.magento/services.yaml` ファイル。
+1. 必要な名前、タイプ、ディスク値（MB 単位）をに追加します `.magento/services.yaml` ファイル。
 
    ```yaml
    mysql:
@@ -34,34 +34,34 @@ MariaDB 10.4 でのインデックス再作成は、他の MariaDB または MyS
 
    >[!TIP]
    >
-   >MySQL エラー（例： ） `PDO Exception: MySQL server has gone away`は、ディスク容量が不足した結果として発生する可能性があります。 サービスに十分なディスク領域が割り当てられていることを [`.magento/services.yaml`](services-yaml.md#disk) ファイル。
+   >MySQL エラー（など） `PDO Exception: MySQL server has gone away`ディスク容量が不足した結果、が発生する場合があります。 のサービスに十分なディスク領域が割り当てられていることを確認します。 [`.magento/services.yaml`](services-yaml.md#disk) ファイル。
 
-1. 関係を `.magento.app.yaml` ファイル。
+1. での関係の設定 `.magento.app.yaml` ファイル。
 
    ```yaml
    relationships:
        database: "mysql:mysql"
    ```
 
-1. コードの変更を追加、コミット、およびプッシュします。
+1. コードの変更を追加、コミット、プッシュします。
 
    ```bash
    git add .magento/services.yaml .magento.app.yaml && git commit -m "Enable mysql service" && git push origin <branch-name>
    ```
 
-1. [サービスの関係を確認します](services-yaml.md#service-relationships).
+1. [サービス関係の検証](services-yaml.md#service-relationships).
 
 {{service-change-tip}}
 
-## MySQL データベースを設定
+## MySQL データベースの設定
 
-MySQL データベースを設定する際には、次のオプションを使用できます。
+MySQL データベースを設定する際には、次のオプションがあります。
 
-- **`schemas`** — スキーマはデータベースを定義します。 デフォルトのスキーマは、 `main` データベース。
-- **`endpoints`** — 各エンドポイントは、特定の権限を持つ秘密鍵証明書を表します。 デフォルトのエンドポイントは、 `mysql`( ) `admin` へのアクセス `main` データベース。
-- **`properties`** — プロパティは、追加のデータベース設定を定義するために使用されます。
+- **`schemas`**- スキーマはデータベースを定義します。 デフォルトのスキーマは `main` データベース。
+- **`endpoints`** – 各エンドポイントは、特定の権限を持つ資格情報を表します。 デフォルトのエンドポイントはです。 `mysql`、次を持つ `admin` アクセス （への） `main` データベース。
+- **`properties`**- プロパティを使用して、追加のデータベース構成を定義します。
 
-次に、 `.magento/services.yaml` ファイル：
+以下は、の基本的な設定例です `.magento/services.yaml` ファイル：
 
 ```yaml
 mysql:
@@ -73,31 +73,31 @@ mysql:
             optimizer_use_condition_selectivity: 1
 ```
 
-The `properties` 上記の例では、デフォルトの `optimizer` 設定： [パフォーマンスのベストプラクティスガイドで推奨](https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/configuration.html#indexers).
+この `properties` 上記の例では、デフォルトを変更します `optimizer` の設定 [パフォーマンスのベストプラクティスガイドで推奨](https://experienceleague.adobe.com/docs/commerce-operations/performance-best-practices/configuration.html#indexers).
 
 **MariaDB 設定オプション**:
 
 | オプション | 説明 | デフォルト値 |
 | -------------------- | --------------------------------------------------- | ------------------ |
 | `default_charset` | デフォルトの文字セット。 | utf8mb4 |
-| `default_collation` | デフォルトの照合順序。 | utf8mb4_unicode_ci |
-| `max_allowed_packet` | パケットの最大サイズ (MB)。 範囲 `1` から `100`. | 16 |
-| `optimizer_switch` | クエリオプティマイザーの値を設定します。 詳しくは、 [MariaDB ドキュメント](https://mariadb.com/kb/en/server-system-variables/#optimizer_switch). | |
-| `optimizer_use_condition_selectivity` | オプティマイザが使用する統計を選択します。 範囲 `1` から `5`. 詳しくは、 [MariaDB ドキュメント](https://mariadb.com/kb/en/server-system-variables/#optimizer_use_condition_selectivity). | 4（10.4 以降） |
+| `default_collation` | 既定の照合順序です。 | utf8mb4_unicode_ci |
+| `max_allowed_packet` | パケットの最大サイズ （MB 単位）。 範囲 `1` 対象： `100`. | 16 |
+| `optimizer_switch` | クエリオプティマイザーの値を設定します。 参照： [MariaDB ドキュメント](https://mariadb.com/kb/en/server-system-variables/#optimizer_switch). | |
+| `optimizer_use_condition_selectivity` | オプティマイザが使用する統計を選択します。 範囲 `1` 対象： `5`. 参照： [MariaDB ドキュメント](https://mariadb.com/kb/en/server-system-variables/#optimizer_use_condition_selectivity). | 10.4 以降の場合は 4 |
 
 ### 複数のデータベースユーザーの設定
 
-必要に応じて、 `main` データベース。
+オプションで、へのアクセスに関する異なる権限を持つ複数のユーザーを設定できます `main` データベース。
 
-デフォルトでは、 `mysql` データベースに対する管理者アクセス権を持つ 複数のデータベースユーザーを設定するには、 `services.yaml` ファイルを作成し、 `.magento.app.yaml` ファイル。 Pro ステージング環境および実稼動環境の場合、 [Adobe Commerceサポートチケットを送信する](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) をクリックして、追加のユーザーをリクエストします。
+デフォルトでは、という名前のエンドポイントが 1 つあります。 `mysql` データベースへの管理者アクセス権を持つ。 複数のデータベースユーザーを設定するには、で複数のエンドポイントを定義する必要があります。 `services.yaml` ファイルに関係を記述し、で関係を宣言します `.magento.app.yaml` ファイル。 ステージング環境および実稼動環境の場合は、 [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) 追加のユーザーをリクエストします。
 
 ネストされた配列を使用して、特定のユーザーアクセスのエンドポイントを定義します。 各エンドポイントは、1 つ以上のスキーマ（データベース）へのアクセスと、それぞれに対する異なるレベルの権限を指定できます。
 
 有効な権限レベルは次のとおりです。
 
-- `ro`:SELECT クエリのみを使用できます。
-- `rw`:SELECT クエリと、INSERT、UPDATE、およびDELETEクエリを使用できます。
-- `admin`:DDL クエリ（CREATE TABLE、DROP TABLE など）を含むすべてのクエリを使用できます。
+- `ro`:SELECT クエリのみ使用できます。
+- `rw`:SELECT クエリと INSERT クエリ、UPDATE クエリ、DELETEクエリを使用できます。
+- `admin`:DDL クエリ（CREATE TABLE、DROP TABLE など）を含め、すべてのクエリが許可されます。
 
 例：
 
@@ -124,13 +124,13 @@ mysql:
             optimizer_use_condition_selectivity: 1
 ```
 
-前の例では、 `admin` エンドポイントは、管理者レベルでへのアクセスを提供します。 `main` データベース、 `reporter` エンドポイントは読み取り専用アクセスを提供し、 `importer` endpoint は読み取り/書き込みアクセスを提供します。つまり、
+前述の例では、 `admin` エンドポイントは、への管理者レベルのアクセスを提供します `main` データベース、 `reporter` エンドポイントは、読み取り専用アクセスを提供し、 `importer` エンドポイントは、読み取り/書き込みアクセスを提供します。つまり、
 
-- The `admin` ユーザーは、データベースを完全に制御できます。
-- The `reporter` ユーザーは SELECT 権限のみを持っています。
-- The `importer` ユーザーに SELECT、INSERT、UPDATE およびDELETE権限がある。
+- この `admin` ユーザーはデータベースを完全に制御できます。
+- この `reporter` ユーザーは SELECT 権限のみ持っています。
+- この `importer` ユーザーは、SELECT、INSERT、UPDATE およびDELETE権限を持っています。
 
-上記の例で定義したエンドポイントを `relationships` のプロパティ `.magento.app.yaml` ファイル。 例：
+上記の例で定義したエンドポイントを、 `relationships` のプロパティ `.magento.app.yaml` ファイル。 例：
 
 ```yaml
 relationships:
@@ -141,11 +141,11 @@ relationships:
 
 >[!NOTE]
 >
->1 人の MySQL ユーザーを設定した場合、 [`DEFINER`](https://dev.mysql.com/doc/refman/8.0/en/show-grants.html) ストアド・プロシージャおよびビューのアクセス制御メカニズム
+>1 つの MySQL ユーザーを設定した場合、 [`DEFINER`](https://dev.mysql.com/doc/refman/8.0/en/show-grants.html) ストアド・プロシージャとビューのアクセス制御メカニズム。
 
-## データベースに接続
+## データベースへの接続
 
-MariaDB データベースに直接アクセスするには、SSH を使用してリモートクラウド環境にログインし、データベースに接続する必要があります。
+MariaDB データベースに直接アクセスするには、SSH を使用してリモート クラウド環境にログインし、データベースに接続する必要があります。
 
 1. SSH を使用してリモート環境にログインします。
 
@@ -153,7 +153,7 @@ MariaDB データベースに直接アクセスするには、SSH を使用し�
    magento-cloud ssh
    ```
 
-1. から MySQL ログイン資格情報を取得します。 `database` および `type` プロパティ [$MAGENTO_CLOUD_RELATIONSHIPS](../application/properties.md#relationships) 変数を使用します。
+1. から MySQL ログイン資格情報を取得する `database` および `type` のプロパティ [$CLOUD_RELATIONSHIPS$MAGENTO](../application/properties.md#relationships) 変数。
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
@@ -197,7 +197,7 @@ MariaDB データベースに直接アクセスするには、SSH を使用し�
      mysql -h database.internal -u <username>
      ```
 
-   - Pro の場合、ホスト名、ポート番号、ユーザー名、パスワードを指定して、次のコマンドを使用します。 `$MAGENTO_CLOUD_RELATIONSHIPS` 変数を使用します。
+   - Pro の場合は、次のコマンドを、から取得したホスト名、ポート番号、ユーザー名、パスワードと共に使用します。 `$MAGENTO_CLOUD_RELATIONSHIPS` 変数。
 
      ```bash
      mysql -h <hostname> -P <number> -u <username> -p'<password>'
@@ -205,21 +205,21 @@ MariaDB データベースに直接アクセスするには、SSH を使用し�
 
 >[!TIP]
 >
->以下を使用すると、 `magento-cloud db:sql` コマンドを使用してリモート・データベースに接続し、SQL コマンドを実行します。
+>を使用できます `magento-cloud db:sql` リモート・データベースに接続して SQL コマンドを実行するコマンド。
 
-## セカンダリデータベースに接続
+## セカンダリ データベースに接続する
 
 >[!IMPORTANT]
 >
->この機能は、実稼動およびステージング用クラスターでのみ使用できます。
+>この機能は、実稼動環境およびステージングクラスターでのみ使用できます。
 
-データベースのパフォーマンスを向上させたり、データベースのロックの問題を解決するために、セカンダリデータベースに接続する必要が生じる場合があります。 この設定が必要な場合は、 `"port" : 3304` 接続を確立するために。 詳しくは、 [MySQL スレーブ接続を設定するためのベストプラクティス](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/mysql-configuration.html) トピック _実装のベストプラクティス_ ガイド。
+場合によっては、データベースのパフォーマンスを向上させたり、データベース ロックの問題を解決するために、セカンダリ データベースに接続する必要があります。 この設定が必要な場合は、 `"port" : 3304` 接続を確立します。 を参照してください。 [MySQL スレーブ接続を設定するためのベストプラクティス](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/mysql-configuration.html) のトピック _実装のベストプラクティス_ ガイド。
 
 ## トラブルシューティング
 
-MySQL の問題のトラブルシューティングについては、次のAdobe Commerceサポート記事を参照してください。
+MySQL の問題のトラブルシューティングについては、次のAdobe Commerce サポートの記事を参照してください。
 
 - [処理に時間のかかるクエリの確認と MySQL の処理](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/database/checking-slow-queries-and-processes-mysql.html)
-- [クラウド上にデータベースダンプを作成する](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/create-database-dump-on-cloud.html)
+- [クラウドにデータベースダンプを作成](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/create-database-dump-on-cloud.html)
 - [データ移行ツールのトラブルシューティング](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/data-migration-tool-troubleshooting.html)
-- [Adobe Commerceのアップグレード：コンパクトから動的テーブル 2.2.x、2.3.x から 2.4.x へ](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/maintenance/commerce-235-upgrade-prerequisites-mariadb.html)
+- [Adobe Commerceのアップグレード：動的テーブル 2.2.x へのコンパクト、2.3.x から 2.4.x](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/maintenance/commerce-235-upgrade-prerequisites-mariadb.html)

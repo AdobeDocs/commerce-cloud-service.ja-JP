@@ -1,6 +1,6 @@
 ---
-title: デプロイ後の変数
-description: デプロイ後のクラウドインフラストラクチャに関するAdobe Commerceのアクションを制御する環境変数の一覧を参照してください。
+title: デプロイ後変数
+description: Adobe Commerce on cloud infrastructure のデプロイ後のフェーズで、アクションを制御する環境変数のリストを参照してください。
 feature: Cloud, Configuration, Cache
 recommendations: noDisplay, catalog
 role: Developer
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 ---
 
-# デプロイ後の変数
+# デプロイ後変数
 
-次の _デプロイ後_ 変数は、デプロイ後の段階でのアクションを制御し、 [グローバル変数](variables-global.md). 次の変数を `post-deploy` 段階 `.magento.env.yaml` ファイル：
+次の _デプロイ後_ 変数は、デプロイ後のフェーズのアクションを制御し、の値を継承および上書きできます。 [グローバル変数](variables-global.md). これらの変数を `post-deploy` ステージ `.magento.env.yaml` ファイル：
 
 ```yaml
 stage:
@@ -22,7 +22,7 @@ stage:
     POST-DEPLOY_VARIABLE_NAME: value
 ```
 
-ビルドおよびデプロイプロセスのカスタマイズについて詳しくは、次の手順を参照してください。
+ビルドおよびデプロイプロセスのカスタマイズに関する詳細情報：
 
 - [デプロイメント設定](configure-env-yaml.md)
 - [デプロイメントプロセス](../deploy/process.md)
@@ -32,7 +32,7 @@ stage:
 - **デフォルト**— `[]` （空の配列）
 - **バージョン**—Adobe Commerce 2.1.4 以降
 
-設定 _最初のバイトまでの時間_ (TTFB) 指定したページのテストを使用して、サイトのパフォーマンスをテストできます。 テストが必要なページごとに、絶対パス参照またはプロトコルとホストを含む URL を指定します。
+設定 _最初のバイトまでの時間_ （TTFB）指定したページをテストして、サイトのパフォーマンスをテストします。 テストが必要な各ページに対して、絶対パス参照、またはプロトコルとホストを含む URL を指定します。
 
 ```yaml
 stage:
@@ -43,21 +43,21 @@ stage:
        - "https://example.com/catalog/some-category"
 ```
 
-変更をテストおよびコミットするページを指定した後、 _最初のバイトまでの時間_ のテストはデプロイ後の段階で実行され、クラウドログの各パスの結果が次のように投稿されます。
+変更をテストしてコミットするページを指定した後、 _最初のバイトまでの時間_ テストはデプロイ後のフェーズで実行され、各パスの結果をクラウドログに投稿します。
 
 ```terminal
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.313s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/customer/account/create","status":200}
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.408s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/checkout/cart","status":200}
 ```
 
-リダイレクトされたパスの場合、ログは、環境変数で設定されたパスではなく、リダイレクトターゲットのパスを報告します。 無効なパスを指定すると、ログに警告メッセージが表示されます。
+リダイレクトされたパスの場合、ログには、環境変数で設定されたパスではなく、リダイレクトターゲットのパスが報告されます。 無効なパスを指定すると、ログに警告メッセージが表示されます。
 
 ## `WARM_UP_CONCURRENCY`
 
 - **デフォルト**—_未設定_
 - **バージョン**—Adobe Commerce 2.1.4 以降
 
-キャッシュのウォームアップ操作中に送信する同時要求の制限を指定して、サーバーの負荷を軽減します。 この値は、並列接続の数を制限し、 `WARM_UP_PAGES` post-deploy 変数は、キャッシュのプリロード用に複数のページを指定します。
+サーバー負荷を軽減するために、キャッシュウォームアップ操作中に送信する同時リクエストの制限を指定します。 この値は、並列接続の数を制限し、 `WARM_UP_PAGES` デプロイ後変数は、キャッシュのプリロードに複数のページを指定します。
 
 ```yaml
 stage:
@@ -70,9 +70,9 @@ stage:
 - **デフォルト**— `index.php`
 - **バージョン**—Adobe Commerce 2.1.4 以降
 
-キャッシュをプリロードするために使用するページのリストをカスタマイズします ( `post_deploy` ステージ。 デプロイ後のフックを設定する必要があります。 詳しくは、 [フック部](../application/hooks-property.md) の `.magento.app.yaml` ファイル。
+内のキャッシュのプリロードに使用するページのリストのカスタマイズ `post_deploy` ステージ。 デプロイ後フックを設定する必要があります。 を参照してください。 [フック セクション](../application/hooks-property.md) の `.magento.app.yaml` ファイル。
 
-- **単一ページ** — キャッシュに追加する単一のページを指定します。 デフォルトのベース URL を指定する必要はありません。 次の例では、 `BASE_URL/index.php` ページ：
+- **単一ページ**- キャッシュに追加する単一ページを指定します。 デフォルトのベース URL を指定する必要はありません。 次の例では、をキャッシュします `BASE_URL/index.php` ページ：
 
   ```yaml
   stage:
@@ -81,7 +81,7 @@ stage:
         - "index.php"
   ```
 
-- **複数のドメイン** — 複数の URL をリストします。 次の例では、2 つのドメインのページをキャッシュします。
+- **複数のドメイン** – 複数の URL をリストします。 次の例では、2 つのドメインからページをキャッシュします。
 
   ```yaml
   stage:
@@ -91,24 +91,24 @@ stage:
         - 'http://example2.com/test'
   ```
 
-- **複数ページ** — 次の形式を使用して、特定の正規表現パターンに従って複数のページをキャッシュします。
+- **複数ページ** – 特定の正規表現パターンに従って複数のページをキャッシュするには、次の形式を使用します。
 
   ```terminal
   <entity_type>:<pattern|url|product_sku>:<store_id|store_code>
   ```
 
-   - `entity_type`：可能なバリアント `category`, `cms-page`, `product`, `store-page`
-   - `pattern|url|product_sku`：を使用します `regexp` pattern または完全一致 `url` をクリックして URL をフィルターするか、すべてのページにアスタリスク (\*) を使用します。 製品 sku を `product` エンティティタイプ
-   - `store_id|store_code`：ストアの ID またはコード、またはすべてのストアのアスタリスク (\*) を使用すると、複数のストア ID またはコードをで区切って渡すことができます。 `|`
+   - `entity_type`：考えられるバリアント `category`, `cms-page`, `product`, `store-page`
+   - `pattern|url|product_sku`：を使用します `regexp` パターンまたは完全一致 `url` url をフィルタリングするか、すべてのページにアスタリスク（\*）を使用します。 次に対して製品 SKU を使用： `product` エンティティタイプ
+   - `store_id|store_code`：ストアの ID またはコード、またはすべてのストアのアスタリスク（\*）を使用します。複数のストア ID またはコードをで区切って渡すことができます `|`
 
-  次の例では、のキャッシュを `category` および `cms-page` 次の条件に基づくエンティティタイプ：
-   - ID を持つストアのすべてのカテゴリページ `1`
-   - コード付き店舗のすべてのカテゴリページ `store1` および `store2`
-   - カテゴリページ `cars` コード付きのストア用 `store_en`
-   - cms ページ `contact` すべての店舗で
-   - cms ページ `contact` （ID を持つストアの場合） `1` および `2`
-   - カテゴリページ `car_` およびで終わる `html` （ID 2 のストア用）
-   - カテゴリページ `tires_` コード付きのストア用 `store_gb`
+  次の例では、をキャッシュします `category` および `cms-page` 次の条件に基づいたエンティティタイプ：
+   - id を持つストアのすべてのカテゴリ ページ `1`
+   - コードが含まれるストアのすべてのカテゴリ ページ `store1` および `store2`
+   - カテゴリページ `cars` コードを含んだストアの場合 `store_en`
+   - cms ページ `contact` すべてのストア用
+   - cms ページ `contact` ID を持つストアの場合 `1` および `2`
+   - を含むカテゴリページ `car_` で終わる `html` ID 2 のストアの場合
+   - を含むカテゴリページ `tires_` コードを含んだストアの場合 `store_gb`
 
      ```yaml
      stage:
@@ -123,12 +123,12 @@ stage:
            - "category:|tires_.*|:store_gb"
      ```
 
-  次の例では、 `product` 次の条件に基づくエンティティタイプ：
-   - すべてのストアのすべての製品（パフォーマンスの問題を回避するため、プログラムではストアあたり 100 に制限）
-   - すべての製品を保存する `store1`
-   - 製品と `sku1` すべての店舗で
-   - 製品と `sku1` （コード付き店舗用） `store1` および `store2`
-   - 製品と `sku1`, `sku2` および `sku3` （コード付き店舗用） `store1` および `store2`
+  次の例では、をキャッシュします `product` 次の条件に基づいたエンティティタイプ：
+   - すべてのストアのすべての製品（パフォーマンスの問題を回避するために、プログラムによってストアあたり 100 個に制限）
+   - 店舗用のすべての製品 `store1`
+   - を使用した製品 `sku1` すべてのストア用
+   - を使用した製品 `sku1` コードを含むストアの場合 `store1` および `store2`
+   - を使用した製品 `sku1`, `sku2` および `sku3` コードを含むストアの場合 `store1` および `store2`
 
      ```yaml
      stage:
@@ -141,10 +141,10 @@ stage:
            - "product:sku1|sku2|sku3:store1|store2"
      ```
 
-  次の例では、 `store-page` 次の条件に基づくエンティティタイプ：
-   - ページ `/contact-us` すべての店舗で
+  次の例では、をキャッシュします `store-page` 次の条件に基づいたエンティティタイプ：
+   - ページ `/contact-us` すべてのストア用
    - ページ `/contact-us` ID を持つストアの場合 `1`
-   - ページ `/contact-us` （コード付き店舗用） `code1` および `code2`
+   - ページ `/contact-us` コードを含むストアの場合 `code1` および `code2`
 
   ```yaml
         stage:

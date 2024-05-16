@@ -92,7 +92,7 @@ ht-degree: 7%
       + [バックアップ管理](storage/snapshots.md)
    + アップグレードとパッチ {#upgrade}
       + [ベストプラクティス](development/best-practices.md)
-      + [Commerce バージョンのアップグレード](development/commerce-version.md)
+      + [Commerceのバージョンのアップグレード](development/commerce-version.md)
       + [パッチの適用](development/apply-patches.md)
 + 設定 {#configure}
    + [概要](environment/overview.md)

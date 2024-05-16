@@ -1,6 +1,6 @@
 ---
-title: ECE-Tools CLI リファレンス
-description: Adobe Commerce ECE-Tools コマンドラインツールで使用可能なすべてのコマンド、引数、およびオプションについて説明します。
+title: ECE ツール CLI リファレンス
+description: Adobe Commerce ECE ツールコマンドラインツールで使用可能なすべてのコマンド、引数およびオプションについて説明します。
 recommendations: noDisplay
 mini-toc-levels: 1
 last-substantial-update: 2023-06-14T00:00:00Z
@@ -12,6 +12,6 @@ ht-degree: 0%
 
 ---
 
-# ECE-Tools CLI リファレンス
+# ECE ツール CLI リファレンス
 
 {{$include /help/_includes/templated/ece-tools.md}}

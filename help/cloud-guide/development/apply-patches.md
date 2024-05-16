@@ -1,6 +1,6 @@
 ---
 title: パッチの適用
-description: クラウドインフラストラクチャプロジェクト上のAdobe Commerceでパッチを適用する方法を説明します。
+description: Adobe Commerce on cloud infrastructure プロジェクトにパッチを適用する方法を説明します。
 feature: Cloud, Upgrade
 exl-id: a7bf672f-7b89-45cd-8436-e885bca9029d
 source-git-commit: e67d3259b1b5195147e4e441fe9efd82e48241ab
@@ -12,44 +12,44 @@ ht-degree: 0%
 
 # パッチの適用
 
-[コマース用クラウドパッチ](https://github.com/magento/magento-cloud-patches) そして [クォリティパッチツール](https://github.com/magento/quality-patches) インストールしたAdobe Commerceアプリケーションにパッチを配信する。
+[Commerceのクラウドパッチ](https://github.com/magento/magento-cloud-patches) および [品質向上パッチツール](https://github.com/magento/quality-patches) インストールしたAdobe Commerce アプリケーションにパッチを配信します。
 
-- コマース用クラウドパッチパッケージは、重要な修正を含む必要なパッチを提供します。
-- 品質パッチは、オプションの低影響品質の修正を次のように提供します。 [個々のパッチ](https://experienceleague.adobe.com/docs/commerce-operations/release/planning/versioning-policy.html#individual-patch) 下位互換性のない変更を含まない
+- Commerce用クラウドパッチ パッケージは、重要な修正を含む必要なパッチを提供します
+- 品質パッチは、影響の少ないオプションの品質修正を次の形式で提供します [個々のパッチ](https://experienceleague.adobe.com/docs/commerce-operations/release/planning/versioning-policy.html#individual-patch) 後方互換性のない変更を含まない
 
-詳しくは、 [利用可能なパッチ](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) （内） _Commerce Operations Tools ガイド_ リリース済みのパッチの完全なリストを確認する。
+参照： [使用可能なパッチ](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) が含まれる _Commerce操作ツールガイド_ リリースされたパッチの完全なリストを確認します。
 
-どちらのパッケージも、すべてのAdobe Commerceバージョンとクラウド環境の統合を強化し、重要な修正、オプションの修正、カスタム修正をすばやく提供します。 これらのパッケージを使用して、Commerce で使用可能なすべての個々のパッチに関する一般情報を適用、元に戻し、表示できます。
+どちらのパッケージも、すべてのAdobe Commerce バージョンとクラウド環境の統合を強化し、重要な修正、オプションの修正、カスタムの修正の迅速な配信をサポートします。 これらのパッケージを使用して、Commerceで使用可能な個々のパッチに関する一般情報を適用、元に戻し、表示できます。
 
 >[!TIP]
 >
->以下を使用すると、 [クォリティパッチツール](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) Magento Open SourceおよびAdobe Commerceプロジェクト用のスタンドアロンパッケージとしてのコマース用クラウドパッチ。 非クラウドプロジェクトには、品質パッチツールを使用することをお勧めします。
+>を使用できます [品質向上パッチツール](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) およびMagento Open SourceプロジェクトとAdobe Commerce プロジェクトのスタンドアロンパッケージとしてのCommerceのクラウドパッチ クラウド以外のプロジェクトには、品質向上パッチツールを使用することをお勧めします。
 
-リモート環境に変更をデプロイする場合、 `ece-tools` パッケージ使用 `magento/magento-cloud-patches` および `magento/quality-patches` 保留中のパッチをチェックし、次の順序で自動的に適用するには、次の手順に従います。
+変更をリモート環境にデプロイする場合、 `ece-tools` パッケージで使用 `magento/magento-cloud-patches` および `magento/quality-patches` 保留中のパッチをチェックし、次の順序で自動的に適用するには、次の手順に従います。
 
-1. コマース用クラウドパッチパッケージに含まれているすべての必須コマースパッチを適用します。
-1. 品質パッチツールに含まれる、選択したオプションのコマースパッチを適用します。
-1. でカスタムパッチを適用する `/m2-hotfixes` ディレクトリをパッチ名順にアルファベット順に表示します。
+1. 「Commerce用クラウドパッチ」パッケージに含まれる、必要なすべてのCommerce パッチを適用します。
+1. Quality Patches Tool に含まれているオプションのCommerce パッチを適用します。
+1. でのカスタムパッチの適用 `/m2-hotfixes` パッチ名のアルファベット順のディレクトリ。
 
 >[!NOTE]
 >
->を更新する際に、 `ece-tools` パッケージまたはコマース用クラウドパッチパッケージでは、次回プロジェクトをデプロイする際に最新の必要なパッチが適用されます。または、 `ece-patches apply` CLI コマンドを使用し、クラウド環境を再デプロイします。 スキップできません [必要なパッチ](https://github.com/magento/magento-cloud-patches/tree/develop/patches) を設定します。
+>を更新したとき `ece-tools` Commerce用のパッケージまたはクラウド修正プログラム パッケージ、必要な最新の修正プログラムは、次回プロジェクトをデプロイする際に適用されます。または、 `ece-patches apply` CLI コマンドとクラウド環境の再デプロイ。 スキップすることはできません [必要なパッチ](https://github.com/magento/magento-cloud-patches/tree/develop/patches) デプロイメントプロセス中に実行されます。
 
 ## 前提条件
 
 {{upgrade-tip}}
 
-品質パッチツールは、コマース用のクラウドパッチと `ece-tools` パッケージ。 最新のパッチを適用するには、次の条件を満たす必要があります。 [ECE-Tools の最新バージョン](../dev-tools/update-package.md) インストール済み ECE-Tools の最低限必要なバージョンは 2002.1.2 です。
+Quality Patches Tool は、Commerce用 Cloud Patches および `ece-tools` パッケージ。 最新のパッチを適用するには、次の条件を満たす必要があります [ece-Tools の最新版](../dev-tools/update-package.md) インストールされています。 ECE-Tools の最低限必要なバージョンは 2002.1.2 です。
 
-## 使用可能なパッチとステータスを表示
+## 使用可能なパッチとステータスの表示
 
-使用可能な個々のパッチのリストを表示するには、次の手順に従います。
+使用可能な個別パッチのリストを表示するには：
 
 ```bash
 php ./vendor/bin/ece-patches status
 ```
 
-レスポンスのサンプル：
+応答の例：
 
 ```terminal
 More detailed information about patches you can find on https://support.magento.com/
@@ -89,31 +89,31 @@ More detailed information about patches you can find on https://support.magento.
 Magento 2 Enterprise Edition, version 2.3.5.0
 ```
 
-ステータステーブルには、次のタイプの情報が含まれます。
+ステータステーブルには、以下のタイプの情報が表示されます。
 
 - **タイプ**:
-   - `Optional`- Quality Patches Tool と Cloud Patches パッケージのすべてのパッチは、Adobe CommerceおよびMagento Open Sourceインストールではオプションです。 クラウドインフラストラクチャ上のAdobe Commerceの場合、すべてのパッチはオプションです。
-   - `Required`- Cloud のお客様は、コマース用のクラウドパッチパッケージのすべてのパッチが必要です。
-   - `Deprecated` — 個々のパッチは非推奨とマークされ、適用済みの場合は元に戻すことをお勧めします。 非推奨のパッチを元に戻すと、そのパッチはステータステーブルに表示されなくなります。
-   - `Custom`—&#39;m2-hotfixes&#39;ディレクトリのすべてのパッチ。
+   - `Optional` – 品質向上パッチツールおよびクラウドパッチパッケージのすべてのパッチは、Adobe CommerceおよびMagento Open Sourceのインストールではオプションです。 クラウドインフラストラクチャー上のAdobe Commerceの場合、すべてのパッチはオプションです。
+   - `Required`—Cloud Patches for Commerce パッケージのすべてのパッチが、Cloud のお客様に必要です。
+   - `Deprecated` – 個々のパッチは非推奨としてマークされます。適用した場合は元に戻すことをお勧めします。 非推奨パッチを元に戻すと、そのパッチはステータステーブルに表示されなくなります。
+   - `Custom` – 「m2-hotfixes」ディレクトリのすべてのパッチ。
 
 - **ステータス**:
-   - `Applied` — パッチが適用されています。
-   - `Not applied` — パッチは適用されていません。
-   - `N/A` — 競合のため、パッチのステータスを定義できません。
+   - `Applied`— パッチが適用されました。
+   - `Not applied`— パッチが適用されていません。
+   - `N/A` – 競合が原因でパッチのステータスを定義できません。
 
 - **詳細**:
-   - `Affected components` — 影響を受けるモジュールのリスト。
-   - `Required patches` — 必要なパッチ（依存関係）のリスト。
-   - `Recommended replacement` — 非推奨のパッチの推奨置き換えであるパッチ。
+   - `Affected components` – 影響を受けるモジュールのリスト。
+   - `Required patches` – 必要なパッチ （依存関係）のリスト。
+   - `Recommended replacement` – 非推奨のパッチの代わりとして推奨されるパッチ。
 
 ## ローカル環境でのパッチの適用
 
-ローカル環境で手動でパッチを適用し、デプロイする前にテストすることができます。
+ローカル環境でパッチを手動で適用し、デプロイ前にテストできます。
 
-**個々のパッチをローカル開発環境に適用するには**:
+**ローカル開発環境で個別のパッチを適用するには**:
 
-1. 「QUALITY_PATCH」変数を `.magento.env.yaml` ファイルを開き、その下に必要なパッチをリストします。
+1. 「QUALITY_variables」PATCHをに追加します。 `.magento.env.yaml` ファイルを開き、その下に必要なパッチをリストします。
 
    ```yaml
    stage:
@@ -129,10 +129,10 @@ Magento 2 Enterprise Edition, version 2.3.5.0
    php ./vendor/bin/ece-patches apply
    ```
 
-   The `ece-patches apply` コマンドは、次の順序でパッチを適用します。
+   この `ece-patches apply` コマンドは、次の順序でパッチを適用します。
    - 必要なパッチ
-   - 個々のパッチ（オプション）
-   - カスタムパッチを `/m2-hotfixes` directory
+   - 個別のパッチ（オプション）
+   - からのカスタムパッチ `/m2-hotfixes` directory
 
 1. キャッシュをクリアします。
 
@@ -140,9 +140,9 @@ Magento 2 Enterprise Edition, version 2.3.5.0
    php ./bin/magento cache:clean
    ```
 
-1. パッチをテストし、必要に応じてカスタムパッチを変更します。
+1. パッチをテストし、カスタムパッチに必要な変更を加えます。
 
-## リモート環境でのパッチの適用
+## リモート環境へのパッチの適用
 
 >[!WARNING]
 >
@@ -150,7 +150,7 @@ Magento 2 Enterprise Edition, version 2.3.5.0
 
 **リモート環境でパッチを適用するには**:
 
-1. 次を追加： `QUALITY_PATCHES` 変数を `.magento.env.yaml` ファイルを開き、その下に必要なパッチをリストします。
+1. を追加 `QUALITY_PATCHES` 変数を `.magento.env.yaml` ファイルを開き、その下に必要なパッチをリストします。
 
    ```yaml
    stage:
@@ -164,7 +164,7 @@ Magento 2 Enterprise Edition, version 2.3.5.0
    >
    >新しいバージョンのAdobe Commerceにアップグレードした後、パッチが新しいバージョンに含まれていない場合は、パッチを再適用する必要があります。
 
-1. 更新された `.magento.env.yaml` ファイル。
+1. 更新されたを追加、コミット、プッシュします。 `.magento.env.yaml` ファイル。
 
    ```bash
    git add .magento.env.yaml
@@ -180,23 +180,23 @@ Magento 2 Enterprise Edition, version 2.3.5.0
 
 ## カスタムパッチの適用
 
-展開時に、ECE-Tools は、すべてのAdobeパッチと、に追加するカスタムパッチを適用します `/m2-hotfixes` プロジェクトルートのディレクトリ。
+をデプロイすると、ECE-Tools はすべてのAdobeパッチと、ユーザーが追加したすべてのカスタムパッチをに適用します `/m2-hotfixes` プロジェクトルートのディレクトリ。
 
 >[!NOTE]
 >
->すべてのパッチファイル名は、 `.patch` 拡張子。
+>すべてのパッチファイル名はで終わる必要があります。 `.patch` 拡張機能。
 
-**クラウド環境にカスタムパッチを適用してテストするには**:
+**クラウド環境にカスタムパッチを適用してテストするには：**:
 
-1. プロジェクトのルートに、という名前のディレクトリを作成します。 `m2-hotfixes` 存在しない場合
+1. プロジェクトルートにというディレクトリを作成します。 `m2-hotfixes` 存在しない場合
 
    ```bash
    mkdir m2-hotfixes
    ```
 
-1. パッチファイルを `/m2-hotfixes` ディレクトリ。
+1. パッチファイルをにコピーします `/m2-hotfixes` ディレクトリ。
 
-1. コードの変更を追加、コミット、およびプッシュします。
+1. コードの変更を追加、コミットおよびプッシュします。
 
    ```bash
    git add m2-hotfixes/
@@ -212,15 +212,15 @@ Magento 2 Enterprise Edition, version 2.3.5.0
 
    >[!NOTE]
    >
-   >実稼動前の環境で、必ずすべてのパッチをテストしてください。 クラウドインフラストラクチャ上のAdobe Commerceの場合、 `magento-cloud environment:branch <branch-name>` CLI コマンド。
+   >必ず、実稼動前の環境ですべてのパッチをテストしてください。 クラウドインフラストラクチャー上のAdobe Commerceの場合、を使用して分岐を作成できます `magento-cloud environment:branch <branch-name>` CLI コマンド。
 
 ## カスタムパッチを元に戻す
 
 以前に適用したカスタムパッチを元に戻すかアンインストールするには：
 
-1. からパッチファイルを削除します。 `/m2-hotfixes` ディレクトリ。
+1. からパッチファイルを削除 `/m2-hotfixes` ディレクトリ。
 
-1. コードの変更を追加、コミット、およびプッシュします。
+1. コードの変更を追加、コミットおよびプッシュします。
 
    ```bash
    git add m2-hotfixes/
@@ -236,28 +236,28 @@ Magento 2 Enterprise Edition, version 2.3.5.0
 
    >[!NOTE]
    >
-   >必ず実稼動前の環境でテストしてください。 クラウドインフラストラクチャ上のAdobe Commerceの場合、 `magento-cloud environment:branch <branch-name>` CLI コマンド。
+   >必ず実稼動前の環境でテストしてください。 クラウドインフラストラクチャー上のAdobe Commerceの場合、を使用して分岐を作成できます `magento-cloud environment:branch <branch-name>` CLI コマンド。
 
-## 非クラウドプロジェクトへのパッチの適用
+## クラウド以外のプロジェクトへのパッチの適用
 
-以下を使用します。 [クォリティパッチツール](https://github.com/magento/quality-patches) Magento Open SourceとAdobe Commerceプロジェクト用。
+の使用 [品質向上パッチツール](https://github.com/magento/quality-patches) Magento Open SourceおよびAdobe Commerce プロジェクトの場合。
 
-## ローカル環境のパッチを元に戻す
+## ローカル環境でのパッチの復帰
 
-を使用して、ローカル開発環境で以前に適用したすべてのパッチを元に戻すことができます。 `ece-patches` CLI。
+ローカル開発環境で以前に適用したすべてのパッチを元に戻すには、 `ece-patches` CLI。
 
-適用されたすべてのパッチを元に戻すには：
+適用したすべてのパッチを元に戻すには、次の手順に従います。
 
 ```bash
 php ./vendor/bin/ece-patches revert
 ```
 
-このコマンドを実行すると、次の順序ですべてのパッチが元に戻されます。
+このコマンドは、すべてのパッチを次の順序に戻します。
 
-- /m2-hotfixs ディレクトリから、適用されたすべてのカスタムパッチを元に戻します。
-- 適用されたすべてのオプションの個々のパッチを元に戻します。
+- 適用されたすべてのカスタム パッチを/m2-hotfixes ディレクトリから元に戻します。
+- 適用したすべてのオプションの個別パッチを元に戻します。
 - 適用されたすべての必要なパッチを元に戻します。
 
 ## ログ
 
-クォリティパッチツール (Quality Patches Tool) では、に対するすべての操作がログに記録されます。 `<Project_root>/var/log/patch.log` ファイル。
+品質向上パッチツールにより、すべての操作がに記録されます。 `<Project_root>/var/log/patch.log` ファイル。

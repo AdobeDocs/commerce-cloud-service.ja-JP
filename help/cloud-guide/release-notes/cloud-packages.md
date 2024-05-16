@@ -1,5 +1,5 @@
 ---
-title: Adobe Commerce用クラウドパッケージ
+title: Adobe Commerce用のクラウドパッケージ
 description: Adobe Commerceで使用されるすべての依存関係とサードパーティライセンスについて説明します。
 exl-id: 775ec1ca-ce62-40da-a55a-7b783a988ce0
 recommendations: noDisplay
@@ -10,6 +10,6 @@ ht-degree: 0%
 
 ---
 
-# Adobe Commerce用クラウドパッケージ
+# Adobe Commerce用のクラウドパッケージ
 
 {{$include /help/_includes/templated/cloud-packages.md}}

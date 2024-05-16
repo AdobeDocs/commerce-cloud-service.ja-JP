@@ -1,6 +1,6 @@
 ---
 title: パフォーマンスの監視
-description: クラウドインフラストラクチャ上のAdobe Commerceのパフォーマンス監視について説明します。
+description: クラウドインフラストラクチャー上のAdobe Commerceのパフォーマンス監視について説明します。
 feature: Cloud, Observability
 topic: Performance
 exl-id: ba532100-4d7f-4798-bc17-5daf1c50fc5b
@@ -11,15 +11,15 @@ ht-degree: 0%
 
 ---
 
-# パフォーマンスの監視
+# パフォーマンス監視
 
-次のサービスを使用して、クラウド環境のパフォーマンスを監視できます。
+以下のサービスを使用して、クラウド環境のパフォーマンスを監視できます。
 
-- [ヘルス通知](../integrations/health-notifications.md)—Starter と Pro の統合環境にディスク容量のアラートを提供する統合。
-- [Adobe Commerceガイドの監視](https://experienceleague.adobe.com/docs/commerce-operations/tools/observation-for-adobe-commerce/intro.html) — 複数のソースからのログデータを組み合わせた、すべてのコマースサイトの包括的な監視により、Adobe Commerceサイトのパフォーマンスの管理と問題の診断に役立ちます。
+- [正常性通知](../integrations/health-notifications.md)—Starter および Pro 統合環境でディスク容量アラートを提供する統合。
+- [Adobe Commerceの監視ガイド](https://experienceleague.adobe.com/docs/commerce-operations/tools/observation-for-adobe-commerce/intro.html) – 複数のソースからのログデータを組み合わせて、すべてのCommerce サイトを包括的に監視し、Adobe Commerce サイトのパフォーマンスを適切に管理して問題を診断するのに役立ちます。
 
-## New Relicサービス
+## New Relic サービス
 
-を使用して、ステージング環境と実稼動環境でAdobe Commerceのパフォーマンスを監視する [New Relicサービスのパフォーマンス監視](new-relic-service.md).
+を使用して、ステージング環境と実稼動環境でのAdobe Commerceのパフォーマンスを監視します。 [パフォーマンス監視のためのNew Relic サービス](new-relic-service.md).
 
-- [Adobe管理アラートポリシー](investigate-performance.md#monitor-performance-with-managed-alerts) — 異なるパフォーマンス指標を追跡し、サイトのインフラストラクチャやアプリケーションの問題がパフォーマンスに影響を与えた場合のトリガーの警告と重要な通知にしきい値を設定するアラートの集まりを含むポリシー。
+- [Adobe管理アラートのポリシー](investigate-performance.md#monitor-performance-with-managed-alerts) – さまざまなパフォーマンス・メトリックをトラッキングし、サイトのインフラストラクチャやアプリケーションの問題がパフォーマンスに影響を与えた場合に、トリガーの警告や重要な通知に関する閾値を設定するアラートの集合を含むポリシー。

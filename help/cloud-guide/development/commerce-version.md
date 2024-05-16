@@ -1,5 +1,5 @@
 ---
-title: Commerce バージョンのアップグレード
+title: Commerceのバージョンのアップグレード
 description: クラウドインフラストラクチャプロジェクトでAdobe Commerceのバージョンをアップグレードする方法を説明します。
 feature: Cloud, Upgrade
 exl-id: 87821007-4979-4a20-940b-aa3c82c192d8
@@ -10,7 +10,7 @@ ht-degree: 0%
 
 ---
 
-# Commerce バージョンのアップグレード
+# Commerceのバージョンのアップグレード
 
 Adobe Commerceのコードベースを新しいバージョンにアップグレードできます。 プロジェクトをアップグレードする前に、 [必要システム構成](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) が含まれる _インストール_ 最新のソフトウェアバージョン要件に関するガイド。
 
@@ -28,7 +28,7 @@ Adobe Commerceのコードベースを新しいバージョンにアップグレ
 
 ## 古いバージョンからのアップグレード
 
-2.1 より前の Commerce バージョンからアップグレードを開始する場合、Adobe Commerce コードベースの一部の制限事項が次の機能に影響する可能性があります _更新_ 特定の ECE ツールのリリースまたは _アップグレード_ を次にサポートされる Commerce バージョンに変更します。 次の表を使用して、最適なパスを決定します。
+2.1 より前のCommerce バージョンからアップグレードを開始する場合は、Adobe Commerce コードベースの一部の制限事項が次の機能に影響する可能性があります _更新_ 特定の ECE ツールのリリースまたは _アップグレード_ を次にサポートされるCommerceのバージョンに変更します。 次の表を使用して、最適なパスを決定します。
 
 | 現在のバージョン | アップグレードパス |
 | ----------------- | ------------ |

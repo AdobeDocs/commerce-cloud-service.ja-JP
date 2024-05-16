@@ -1,6 +1,6 @@
 ---
 title: プロジェクト構造
-description: クラウドインフラストラクチャ上のAdobe Commerceのファイル構造とプロジェクトテンプレートについて説明します。
+description: クラウドインフラストラクチャー上のAdobe Commerceのファイル構造およびプロジェクトテンプレートについて説明します。
 exl-id: 6dc559bd-116b-4745-a85b-731508e113ff
 source-git-commit: 47ef728ea46b137eeaabbdbada940143d8773ef0
 workflow-type: tm+mt
@@ -11,29 +11,29 @@ ht-degree: 0%
 
 # プロジェクト構造
 
-Adobe Commerce on cloud infrastructure プロジェクトには、資格情報とアプリケーション設定に必須のファイルが含まれています。 これらのファイルは、Adobe Commerceのバージョンに応じて、テンプレートとしてで使用できます。 詳しくは、 [`magento/magento-cloud` GitHub リポジトリ](https://github.com/magento/magento-cloud).
+クラウドインフラストラクチャー上のAdobe Commerce プロジェクトには、資格情報とアプリケーション設定に不可欠なファイルが含まれています。 これらのファイルは、Adobe Commerceのバージョンに応じて、テンプレートとしてで使用できます。 のAdobe Commerce バージョンに基づいたクラウドテンプレートを参照してください。 [`magento/magento-cloud` GitHub リポジトリ](https://github.com/magento/magento-cloud).
 
-次の表に、クラウドプロジェクトに含まれるファイルを示します。
+次の表では、クラウドプロジェクトに含まれるファイルについて説明します。
 
 | ファイル | 説明 |
 | ------------------------- | ------------ |
-| `/.magento/routes.yaml` | リダイレクトする設定ファイル `www` apex ドメインに `php` HTTP を提供するアプリケーション。 詳しくは、 [ルートの設定](../routes/routes-yaml.md). |
-| `/.magento/services.yaml` | MySQL インスタンス (MariaDB)、Redis、OpenSearch またはElasticsearchを定義する設定ファイル。 詳しくは、 [サービスの設定](../services/services-yaml.md). |
-| `/app` | The `code` フォルダーは、カスタムモジュールに使用されます。 The `design` 次のフォルダーが使用されています： [カスタムテーマ](../store/custom-theme.md). The `etc` フォルダーには、アプリケーションの設定ファイルが含まれます。 |
+| `/.magento/routes.yaml` | リダイレクトする設定ファイル `www` apex ドメインに追加し、 `php` http を提供するアプリケーション。 参照： [ルートの設定](../routes/routes-yaml.md). |
+| `/.magento/services.yaml` | MySQL インスタンス（MariaDB）、Redis、OpenSearch またはElasticsearchを定義する設定ファイルです。 参照： [サービスの設定](../services/services-yaml.md). |
+| `/app` | この `code` フォルダーは、カスタムモジュールに使用されます。 この `design` フォルダーの使用目的 [カスタムテーマ](../store/custom-theme.md). この `etc` フォルダーには、アプリケーションの設定ファイルが含まれます。 |
 | `/m2-hotfixes` | カスタムパッチに使用します。 |
-| `/update` | サポートモジュールで使用されるサービスフォルダーです。 |
-| `.gitignore` | 無視するファイルとディレクトリを指定します。 詳しくは、 [`.gitignore` 参照](#ignoring-files). |
-| `.magento.app.yaml` | アプリケーションを構築するためのプロパティを定義する設定ファイル。 詳しくは、 [アプリケーションの設定](../application/configure-app-yaml.md). |
-| `.magento.env.yaml` | ビルド、デプロイ、およびデプロイ後の各フェーズの設定ファイル。 The `ece-tools` パッケージには、このファイルのサンプルが含まれています。 詳しくは、 [環境の設定](../environment/configure-env-yaml.md). |
-| `composer.json` | Adobe Commerceと設定スクリプトを取得し、アプリケーションを準備します。 詳しくは、 [必要なパッケージ](../development/overview.md#required-packages). |
-| `composer.lock` | すべてのパッケージのバージョンの依存関係を格納します。 詳しくは、 [必要なパッケージ](../development/overview.md#required-packages). |
-| `magento-vars.php` | 定義に使用 [複数のストア](../store/multiple-sites.md) 変数を使用するサイトとサイト。 |
+| `/update` | サポートモジュールが使用するサービスフォルダー。 |
+| `.gitignore` | 無視するファイルとディレクトリを指定します。 参照： [`.gitignore` 参照](#ignoring-files). |
+| `.magento.app.yaml` | アプリケーションを構築するためのプロパティを定義する設定ファイル。 参照： [アプリケーションの設定](../application/configure-app-yaml.md). |
+| `.magento.env.yaml` | ビルド、デプロイ、デプロイ後のフェーズ用の設定ファイル。 この `ece-tools` パッケージには、このファイルのサンプルが含まれています。 参照： [環境の設定](../environment/configure-env-yaml.md). |
+| `composer.json` | Adobe Commerceと設定スクリプトを取得して、アプリケーションを準備します。 参照： [必須パッケージ](../development/overview.md#required-packages). |
+| `composer.lock` | パッケージごとにバージョンの依存関係を格納します。 参照： [必須パッケージ](../development/overview.md#required-packages). |
+| `magento-vars.php` | の定義に使用 [複数のストア](../store/multiple-sites.md) および変数を使用したサイト |
 
 {style="table-layout:auto"}
 
 >[!NOTE]
 >
->ローカルの変更をリモートサーバーにプッシュすると、デプロイスクリプトは、 `.magento` ディレクトリに移動した後、スクリプトはディレクトリとその内容を削除します。 お使いのローカル開発環境は影響を受けません。
+>ローカルの変更をリモートサーバーにプッシュする場合、デプロイスクリプトはの設定ファイルで定義されている値を使用します。 `.magento` 次に、スクリプトはディレクトリとその内容を削除します。 ローカル開発環境は影響を受けません。
 
 ## アプリケーションのルートディレクトリ
 
@@ -41,12 +41,12 @@ Adobe Commerce on cloud infrastructure プロジェクトには、資格情報�
 
 - **スターターと Pro の統合**: `/app`
 - **スターター実稼動**: `/<project-ID>`
-- **Pro Staging**: `/<project-ID>_stg`
-- **Pro Production**: `/<project-ID>`
+- **Pro ステージング**: `/<project-ID>_stg`
+- **実稼動環境に対応**: `/<project-ID>`
 
-### 書き込み可能なディレクトリ
+### 書き込み可能ディレクトリ
 
-リモートの統合環境、ステージング環境、実稼動環境は読み取り専用です。 次のディレクトリは *のみ* セキュリティ上の理由から書き込み可能なディレクトリ：
+リモート統合環境、ステージング環境、実稼動環境は読み取り専用です。 次のディレクトリは、 *のみ* 書き込み可能なディレクトリ （セキュリティ上の理由）:
 
 - `var`
 - `pub/static`
@@ -56,23 +56,23 @@ Adobe Commerce on cloud infrastructure プロジェクトには、資格情報�
 
 >[!NOTE]
 >
->実稼動環境とステージング環境では、3 ノードクラスター内の各ノードに `/tmp` 他のノードと共有されていないディレクトリ。
+>実稼動環境とステージング環境では、3 ノードクラスター内の各ノードには次の機能があります `/tmp` 他のノードと共有されていないディレクトリ。
 
 ## ファイルを無視
 
-基地がある `.gitignore` ファイルをクラウドインフラストラクチャのAdobe Commerceプロジェクトリポジトリに保存します。 最新の [magento-cloud リポジトリの.gitignore ファイル](https://github.com/magento/magento-cloud/blob/master/.gitignore). にあるファイルを追加するには、以下を実行します。 `.gitignore` リストに含まれる値は、 `-f` (force) オプション：コミットをステージングする場合：
+基地がある `.gitignore` Adobe Commerce on cloud infrastructure プロジェクトリポジトリを含んだファイル。 最新のを表示 [magento-cloud リポジトリの.gitignore ファイル](https://github.com/magento/magento-cloud/blob/master/.gitignore). に含まれるファイルを追加するには `.gitignore` リストから、を使用できます。 `-f` コミットをステージングする場合の「強制」オプション：
 
 ```bash
 git add <path/filename> -f
 ```
 
-## 基本テンプレートを変更
+## 基本テンプレートの変更
 
-次の手順を使用して、クラウドインフラストラクチャ上のAdobe Commerceの最新のベーステンプレートを反映するように既存のプロジェクトの構造を変更できます。
+次の手順を使用して、既存のプロジェクトの構造を変更し、クラウドインフラストラクチャー上のAdobe Commerceの最新の基本テンプレートを反映させることができます。
 
-1. プロジェクトをローカルワークステーションに複製します。
+1. プロジェクトをローカルワークステーションにクローンします。
 
-1. を更新します。 `composer.json` ファイルの `extra` 」セクションに入力します。
+1. を更新 `composer.json` ファイルにの次の値を設定します `extra` セクション。
 
    ```json
    "extra": {
@@ -81,7 +81,7 @@ git add <path/filename> -f
    }
    ```
 
-1. 次を追加： `.gitignore` 基本テンプレート用に設計されたファイル。 例えば、 `.gitignore` バージョン 2.2.6 テンプレート用のファイルで、 [.gitignore（2.2.6 用）](https://github.com/magento/magento-cloud/blob/2.2.6/.gitignore) ファイルを参照として使用します。
+1. を追加 `.gitignore` 基本テンプレート用に設計されたファイル。 例えば、 `.gitignore` バージョン 2.2.6 テンプレート用のファイルには、 [2.2.6 の.gitignore](https://github.com/magento/magento-cloud/blob/2.2.6/.gitignore) ファイルを参照として使用します。
 
 1. Git キャッシュをクリアします。
 

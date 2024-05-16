@@ -1,6 +1,6 @@
 ---
-title: スマートウィザード
-description: スマートウィザードを使用して、クラウドインフラストラクチャ上のAdobe Commerceプロジェクトがデプロイメントのベストプラクティスに従っているかどうかを評価する方法を説明します。
+title: スマート・ウィザード
+description: スマートウィザードを使用して、クラウドインフラストラクチャプロジェクト上のAdobe Commerceがデプロイメントのベストプラクティスに従っているかどうかを評価する方法を説明します。
 feature: Cloud, Build, Deploy, SCD
 exl-id: eb79431c-8835-4ae4-b453-9c4932c5d5ac
 source-git-commit: 225fba1acfd8b3ce4d7ce989c7851e7b0b218680
@@ -10,25 +10,25 @@ ht-degree: 0%
 
 ---
 
-# スマートウィザード
+# スマート・ウィザード
 
-スマートウィザードを使用すると、クラウド設定がベストプラクティスに従っているかどうかを判断できます。 利用可能なウィザードは、次の設定に役立ちます。
+スマートウィザードを使用すると、クラウド設定がベストプラクティスに従っているかどうかを判断できます。 使用可能なウィザードは、次の構成に役立ちます。
 
-- デプロイメントのダウンタイムを最小限に抑える理想的な状態
+- 導入のダウンタイムを最小限に抑える理想的な状態
 - データベースと Redis のロードバランシング設定
-- オンデマンド、ビルドステージまたはデプロイステージ用の静的コンテンツデプロイメント (SCD)
+- オンデマンド、ビルドステージ、デプロイメントステージの静的コンテンツデプロイメント（SCD）
 
-各スマートウィザードコマンドは、検証応答を提供し、必要に応じて適切な設定を推奨します。
+各スマート・ウィザード・コマンドは、検証応答を提供し、該当する場合は、適切な構成を推奨します。
 
 | コマンド | 説明 |
 | ------- | ------------|
-| `wizard:ideal-state` | SCD が _ビルド_ ステージ、 `SKIP_HTML_MINIFICATION` 変数 `true`、およびクラウド環境で設定された post_deploy フック。 ローカル開発環境では使用しません。 |
-| `wizard:master-slave` | 以下を確認します。 `REDIS_USE_SLAVE_CONNECTION` 変数と `MYSQL_USE_SLAVE_CONNECTION` 変数 `true`. |
-| `wizard:scd-on-demand` | 以下を確認します。 `SCD_ON_DEMAND` グローバル環境変数は次のとおりです。 `true`. |
-| `wizard:scd-on-build` | 以下を確認します。 `SCD_ON_DEMAND` グローバル環境変数は次のとおりです。 `false` そして `SKIP_SCD` 環境変数： `false` （の） _ビルド_ ステージ。 を検証します。 `config.php` ファイルには、ストア、ストアグループ、および web サイトに関する情報が含まれます。 |
-| `wizard:scd-on-deploy` | 以下を確認します。 `SCD_ON_DEMAND` グローバル環境変数は次のとおりです。 `false` そして `SKIP_SCD` 環境変数： `false` （の） _デプロイ_ ステージ。 を検証します。 `config.php` ファイル _NOT_ には、ストア、ストアグループ、Web サイトのリストと関連情報が含まれます。 |
+| `wizard:ideal-state` | SCD がオンになっていることを確認します _ビルド_ ステージ、 `SKIP_HTML_MINIFICATION` 変数は `true`、およびクラウド環境に設定された post_deploy フック。 ローカル開発環境では使用されません。 |
+| `wizard:master-slave` | を確認します。 `REDIS_USE_SLAVE_CONNECTION` 変数と `MYSQL_USE_SLAVE_CONNECTION` 変数は `true`. |
+| `wizard:scd-on-demand` | を確認します。 `SCD_ON_DEMAND` グローバル環境変数は `true`. |
+| `wizard:scd-on-build` | を確認します。 `SCD_ON_DEMAND` グローバル環境変数は `false` および `SKIP_SCD` 環境変数は `false` の場合 _ビルド_ ステージ。 を実行して、 `config.php` ファイルには、ストア、ストアグループ、web サイトの情報が含まれています。 |
+| `wizard:scd-on-deploy` | を確認します。 `SCD_ON_DEMAND` グローバル環境変数は `false` および `SKIP_SCD` 環境変数は `false` の場合 _deploy_ ステージ。 を実行して、 `config.php` ファイルの処理 _ではない_ ストア、ストアグループ、web サイトのリストと関連情報が含まれます。 |
 
-例えば、設定で SCD オンデマンド機能が正しく有効になっていることを確認できます。
+例えば、お使いの設定で SCD オンデマンド機能が適切に有効になっていることを確認できます。
 
 ```bash
 ./vendor/bin/ece-tools wizard:scd-on-demand
@@ -40,15 +40,15 @@ ht-degree: 0%
 SCD on-demand is enabled
 ```
 
-失敗した設定は次のように返されます。
+失敗した設定は次を返します。
 
 ```terminal
 SCD on-demand is disabled
 ```
 
-## 理想的な設定の確認
+## 理想的な設定の検証
 
-The _理想的な_ クラウドプロジェクトを設定すると、キャッシュをウォーミングし、ユーザーの要求に応じて静的コンテンツを生成することで、デプロイメントのダウンタイムを最小限に抑えることができます。 このウィザードは、デプロイメントプロセス中に自動的に実行されます。 クラウドがこのために設定されていない場合 _理想状態_&#x200B;をクリックすると、次のようなメッセージが表示されます。
+この _理想_ クラウドプロジェクトの設定は、ユーザーから要求があったときにキャッシュをウォームアップし、静的コンテンツを生成することで、デプロイメントのダウンタイムを最小限に抑えるのに役立ちます。 このウィザードは、配置プロセス中に自動的に実行されます。 クラウドが設定されていない場合 _理想状態_&#x200B;すると、次のようなメッセージが表示されます。
 
 ```terminal
 - SCD on build is not configured
@@ -58,9 +58,9 @@ The _理想的な_ クラウドプロジェクトを設定すると、キャッ�
 Ideal state is not configured
 ```
 
-出力に基づいて、設定を次のように修正する必要があります。
+出力に基づいて、設定に次の修正を加える必要があります。
 
-1. 「スキップHTML縮小」変数を有効にします。
+1. 「HTMLをスキップ」縮小変数を有効にします。
 
    > .magento.env.yaml
 
@@ -70,7 +70,7 @@ Ideal state is not configured
        SKIP_HTML_MINIFICATION: true
    ```
 
-1. デプロイ後のフックを設定します。
+1. デプロイ後フックを設定します。
 
    > .magento.app.yaml
 
@@ -79,7 +79,7 @@ Ideal state is not configured
            php ./vendor/bin/ece-tools post-deploy
    ```
 
-1. コードの変更をプッシュして、もう一度テストを実行します。 設定が _理想的な_&#x200B;に設定すると、次のメッセージが表示されます。
+1. コードの変更をプッシュし、テストを再度実行します。 設定が _理想_&#x200B;すると、次のメッセージが表示されます。
 
    ```terminal
    Ideal state is configured

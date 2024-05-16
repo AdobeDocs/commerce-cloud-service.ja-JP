@@ -1,6 +1,6 @@
 ---
 title: Cloud CLI リファレンス
-description: Adobe Commerce magento-cloud コマンドラインツールで使用可能なすべてのコマンド、引数、オプションについて説明します。
+description: Adobe Commerce magento-cloud コマンドラインツールで使用可能なすべてのコマンド、引数およびオプションについて説明します。
 recommendations: noDisplay
 last-substantial-update: 2023-06-01T00:00:00Z
 mini-toc-levels: 1

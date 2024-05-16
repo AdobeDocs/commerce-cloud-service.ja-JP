@@ -1,6 +1,6 @@
 ---
 title: デプロイメントの追跡
-description: クラウドインフラストラクチャ上のAdobe Commerceプロジェクトでデプロイメントを追跡し、パフォーマンスの変更を分析するようにNew Relicを設定する方法について説明します。
+description: New Relicを設定して、クラウドインフラストラクチャプロジェクト上のAdobe Commerceのデプロイメントをトラッキングし、パフォーマンスの変化を分析する方法について説明します。
 feature: Cloud, Deploy, Observability
 topic: Performance
 last-substantial-update: 2023-10-12T00:00:00Z
@@ -14,24 +14,24 @@ ht-degree: 0%
 
 # デプロイメントの追跡
 
-New Relic _変更の追跡_ クラウドインフラストラクチャプロジェクト上のコマースのデプロイメントイベントを監視する機能です。
+New Relicを有効にできます _変更の追跡_ クラウドインフラストラクチャプロジェクト上のCommerceのデプロイメントイベントを監視する機能。
 
-Deployments のデータ収集は、CPU、メモリ、応答時間など、デプロイメントの変更が全体的なパフォーマンスに与える影響を分析するのに役立ちます。 詳しくは、 [NerdGraph を使用した変更の追跡](https://docs.newrelic.com/docs/change-tracking/change-tracking-graphql/) （内） _New Relicドキュメント_.
+Deployments データ収集は、CPU、メモリ、応答時間など、全体的なパフォーマンスに対するデプロイメントの変更の影響を分析するのに役立ちます。 参照： [NerdGraph を使用した変更の追跡](https://docs.newrelic.com/docs/change-tracking/change-tracking-graphql/) が含まれる _New Relic ドキュメント_.
 
 >[!PREREQUISITES]
 >
->- `NR_API_URL`:New Relic API エンドポイント（この場合は NerdGraph API URL） `https://api.newrelic.com/graphql`
->- `NR_API_KEY`：ユーザーキーの作成 ( [New Relic API キー](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys) （内） _New Relic_ ドキュメント。
->- `NR_APP_GUID`: New Relicにデータを報告するエンティティに一意の ID(GUID) が割り当てられます。 例えば、ステージング環境でを有効にするには、ステージング環境を調整します `NR_APP_GUID` cloud 変数と _ステージングエンティティ GUID_ New Relicから 詳しくは、 [New Relicエンティティの詳細](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/) および [NerdGraph チュートリアル：エンティティデータの表示](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-entities-api-tutorial/) （内） _New Relic_ ドキュメント。
+>- `NR_API_URL`:New Relic API エンドポイント（ここでは NerdGraph API URL） `https://api.newrelic.com/graphql`
+>- `NR_API_KEY`：ユーザーキーを作成します。を参照してください [New Relicの API キー](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys) が含まれる _New Relic_ ドキュメント。
+>- `NR_APP_GUID`:New Relicにデータをレポートするエンティティには、一意の ID （GUID）があります。 例えば、ステージング環境でを有効にするには、ステージング環境を調整します `NR_APP_GUID` を使用したクラウド変数 _ステージングエンティティ GUID_ New Relicから を参照してください。 [New Relic エンティティについて学ぶ](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/) および [NerdGraph チュートリアル：エンティティ データの表示](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-entities-api-tutorial/) が含まれる _New Relic_ ドキュメント。
 
-## デプロイメントトラッキングの有効化
+## デプロイメントの追跡を有効にする
 
-New Relicでコマースプロジェクトのデプロイメントイベントを追跡するには、 _スクリプト_ 統合とも呼ばれます。
+を作成して、New RelicでCommerce プロジェクトのデプロイメントイベントを追跡します。 _script_ 統合。
 
-**デプロイメントを追跡を有効にするには**:
+**トラック デプロイメントを有効にするには**:
 
-1. ローカルワークステーションで、プロジェクトディレクトリに移動します。
-1. の作成 `action-integration.js` ファイル。 次のコードをコピーし、 `action-integration.js` ファイルと保存：
+1. ローカルワークステーションで、をプロジェクトディレクトリに変更します。
+1. を作成 `action-integration.js` ファイル。 以下のコードをコピーして、に貼り付けます。 `action-integration.js` ファイルと保存：
 
    ```javascript
    function trackDeployments() {
@@ -91,13 +91,13 @@ New Relicでコマースプロジェクトのデプロイメントイベント�
    trackDeployments();
    ```
 
-1. の作成 _スクリプト_ を使用した統合 `magento-cloud` CLI コマンドを使用して、 `action-integration.js` ファイル。
+1. を作成 _script_ を使用したの統合 `magento-cloud` CLI コマンドと参照 `action-integration.js` ファイル。
 
    ```bash
    magento-cloud integration:add --type script --events='environment.restore, environment.push, environment.branch, environment.activate, environment.synchronize, environment.initialize, environment.merge, environment.redeploy, environment.variable.create, environment.variable.delete, environment.variable.update' --file ./action-integration.js --project=<YOUR_PROJECT_ID> --environments=<YOUR_ENVIRONMENT_ID>
    ```
 
-   レスポンスのサンプル：
+   応答の例：
 
    ```terminal
    Created integration 767u4hathojjw (type: script)
@@ -185,13 +185,13 @@ New Relicでコマースプロジェクトのデプロイメントイベント�
    +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
    ```
 
-1. 後で使用するために、統合 ID をメモしておきます。 この例では、ID は次のようになります。
+1. 後で使用するために、統合 ID をメモします。 この例では、ID はです。
 
    ```terminal
    Created integration 767u4hathojjw (type: script)
    ```
 
-   オプションで、次を使用して統合を確認し、統合 ID をメモできます。 `magento-cloud integration:list`
+   オプションで、統合を検証し、次を使用して統合 ID をメモすることができます。 `magento-cloud integration:list`
 
 1. 前提条件を使用して環境変数を作成します。
 
@@ -220,10 +220,10 @@ New Relicでコマースプロジェクトのデプロイメントイベント�
    {"data":{"changeTrackingCreateDeployment":{"deploymentId":"some-deployment-id","entityGuid":"SomeGUIDhere"}}}
    ```
 
-1. にログインします。 [New Relicアカウント](https://login.newrelic.com/login).
+1. にログイン [New Relic アカウント](https://login.newrelic.com/login).
 
 1. エクスプローラーナビゲーションメニューで、 **[!UICONTROL APM & Services]**. 環境を選択 [!UICONTROL Name] および [!UICONTROL Account].
 
-1. の下 _イベント_&#x200B;をクリックし、 **[!UICONTROL Change tracking]**.
+1. 次の下 _イベント_&#x200B;を選択し、 **[!UICONTROL Change tracking]**.
 
    ![デプロイメント](../../assets/new-relic/deployments.png)

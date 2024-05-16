@@ -1,6 +1,6 @@
 ---
 title: 設定 [!DNL Xdebug]
-description: クラウドインフラストラクチャプロジェクト開発上でAdobe Commerceをデバッグするための Xdebug 拡張機能の設定方法について説明します。
+description: クラウドインフラストラクチャプロジェクト開発でAdobe Commerceをデバッグするための Xdebug 拡張機能を設定する方法について説明します。
 exl-id: bf2d32d8-fab7-439e-8df3-b039e53009d4
 source-git-commit: 751456f50e7b017b47c2ff43e008c2d04a558d96
 workflow-type: tm+mt
@@ -11,44 +11,44 @@ ht-degree: 0%
 
 # Xdebug の設定
 
-[!DNL Xdebug] は、PHP をデバッグするための拡張機能です。 任意の IDE を使用できますが、次の手順では、を構成する方法を説明します [!DNL Xdebug] および [!DNL PhpStorm] を追加して、ローカル環境でデバッグを実行します。
+[!DNL Xdebug] は、PHP をデバッグするための拡張モジュールです。 任意の IDE を使用できますが、次に設定方法を説明します [!DNL Xdebug] および [!DNL PhpStorm] ローカル環境でデバッグする場合は、をクリックします。
 
 >[!NOTE]
 >
->次の項目を設定できます。 [!DNL Xdebug] :Cloud Docker 環境で実行してローカルデバッグをおこなう場合に、クラウドインフラストラクチャのAdobe Commerceプロジェクトの設定を変更する必要はありません。 詳しくは、 [Docker 用の Xdebug の設定](https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/).
+>以下を設定できます [!DNL Xdebug] を Cloud Docker 環境で実行し、クラウドインフラストラクチャプロジェクト設定のAdobe Commerceを変更せずにローカルデバッグを行う。 参照： [Docker 用の Xdebug の設定](https://developer.adobe.com/commerce/cloud-tools/docker/test/configure-xdebug/).
 
-有効にするには [!DNL Xdebug]を設定する場合は、Git リポジトリでファイルを設定し、IDE を設定し、ポート転送を設定する必要があります。 一部の設定は、 `magento.app.yaml` ファイル。 編集後、すべてのスターター環境と Pro 統合環境にわたって Git の変更をプッシュし、を有効にします。 [!DNL Xdebug]. [!DNL Xdebug] は、既に Pro ステージング環境および実稼動環境で使用できます。
+を有効にする [!DNL Xdebug]は、Git リポジトリにファイルを設定し、IDE を設定し、ポート転送を設定する必要があります。 一部の設定は、 `magento.app.yaml` ファイル。 編集後、すべてのスターター環境と Pro 統合環境にわたって Git の変更をプッシュして、有効にします [!DNL Xdebug]. [!DNL Xdebug] は、ステージング環境および実稼動環境で既に使用可能です。
 
-設定が完了すると、CLI コマンド、Web リクエスト、コードをデバッグできます。 すべてのクラウドインフラストラクチャ環境は読み取り専用です。 デバッグを実行するには、コードをローカル開発環境に複製します。 Pro ステージング環境と実稼動環境については、 [その他の手順](#debug-for-pro-staging-and-production) 対象： [!DNL Xdebug].
+設定が完了すると、CLI コマンド、Web リクエストおよびコードをデバッグできるようになります。 すべてのクラウドインフラストラクチャ環境は読み取り専用であることに注意してください。 デバッグを実行するために、ローカル開発環境にコードを複製します。 ステージング環境と実稼動環境については、を参照してください。 [追加手順](#debug-for-pro-staging-and-production) （用） [!DNL Xdebug].
 
 ## 要件
 
-を実行して使用するには [!DNL Xdebug]に値を指定する場合は、その環境の SSH URL が必要です。 情報は、 [[!DNL Cloud Console]](../project/overview.md) または [!DNL Cloud Onboarding UI].
+を実行して使用するには [!DNL Xdebug]。環境の SSH URL が必要です。 次の方法で情報を特定できます [[!DNL Cloud Console]](../project/overview.md) または [!DNL Cloud Onboarding UI].
 
 ## Xdebug の設定
 
-を設定するには、以下を実行します。 [!DNL Xdebug]を使用する場合は、次の手順に従います。
+を設定 [!DNL Xdebug]は、次の手順に従います。
 
-- [ブランチで作業してファイルの更新をプッシュ](#get-started-with-a-branch)
-- [有効にする [!DNL Xdebug] （環境の場合）](#enable-xdebug-in-your-environment)
+- [ブランチでの作業によるファイル更新のプッシュ](#get-started-with-a-branch)
+- [Enable （有効） [!DNL Xdebug] 環境の場合](#enable-xdebug-in-your-environment)
 - [IDE の設定](#configure-phpstorm)
 - [ポート転送の設定](#set-up-port-forwarding)
 
-### ブランチの概要
+### ブランチの基本を学ぶ
 
-追加するには [!DNL Xdebug]を使用する場合、Adobeは、 [開発支店](../dev-tools/cloud-cli-overview.md#create-an-environment-branch).
+追加 [!DNL Xdebug]、Adobeでは、で作業することをお勧めします [開発部門](../dev-tools/cloud-cli-overview.md#create-an-environment-branch).
 
-### お使いの環境での Xdebug の有効化
+### お使いの環境で Xdebug を有効にする
 
-次を有効にすることができます。 [!DNL Xdebug] を、すべてのスターター環境と Pro 統合環境に直接追加できます。 この設定手順は、実稼動環境およびステージング環境では必要ありません。 詳しくは、 [Pro のステージング環境および実稼動環境でのデバッグ](#debug-for-pro-staging-and-production).
+を有効にできます [!DNL Xdebug] すべてのスターター環境および Pro 統合環境に直接適用できます。 この設定手順は、実稼動環境とステージング環境には必要ありません。 参照： [ステージング環境および実稼動環境用のデバッグ](#debug-for-pro-staging-and-production).
 
-有効にするには [!DNL Xdebug] プロジェクトに対して、 `xdebug` から `runtime:extensions` のセクション `.magento.app.yaml` ファイル。
+を有効にする [!DNL Xdebug] プロジェクトに次を追加します `xdebug` に `runtime:extensions` の節 `.magento.app.yaml` ファイル。
 
 **Xdebug を有効にするには**:
 
-1. ローカルターミナルで、 `.magento.app.yaml` ファイルを編集します。
+1. ローカルターミナルで、を開きます `.magento.app.yaml` ファイルをテキストエディターで開きます。
 
-1. Adobe Analytics の `runtime` セクション、の下 `extensions`を追加します。 `xdebug`. 例：
+1. が含まれる `runtime` セクション、 `extensions`、追加： `xdebug`. 例：
 
    ```yaml
    runtime:
@@ -60,9 +60,9 @@ ht-degree: 0%
            - xdebug
    ```
 
-1. 変更を `.magento.app.yaml` ファイルを開き、テキストエディタを終了します。
+1. 変更をに保存します。 `.magento.app.yaml` ファイルを開き、テキストエディターを終了します。
 
-1. 変更を追加、コミット、プッシュして、環境を再デプロイします。
+1. 変更を追加、コミットおよびプッシュして、環境を再デプロイします。
 
    ```bash
    git add -A
@@ -76,54 +76,54 @@ ht-degree: 0%
    git push origin <environment-ID>
    ```
 
-スターター環境および Pro 統合環境にデプロイする場合、 [!DNL Xdebug] が利用できるようになりました。 IDE の構成を続けます。 PhpStorm の場合は、 [PhpStorm の設定](#configure-phpstorm).
+スターター環境と Pro 統合環境にデプロイした場合、 [!DNL Xdebug] が利用可能になりました。 IDE の設定を続行します。 PhpStorm については、を参照してください。 [PhpStorm の設定](#configure-phpstorm).
 
 ### PhpStorm の設定
 
-The [PhpStorm](https://www.jetbrains.com/phpstorm/) IDE が正しく機能するように構成する必要があります [!DNL Xdebug].
+この [PhpStorm](https://www.jetbrains.com/phpstorm/) IDE がと正しく連携するように設定する必要があります [!DNL Xdebug].
 
 **Xdebug と連携するように PhpStorm を設定するには**:
 
 1. PhpStorm プロジェクトで、 **設定** パネル。
 
-   - _macOS_ — 選択 **PhpStorm** > **環境設定**.
-   - _Windows/Linux_ — 選択 **ファイル** > **設定**.
+   - _macOS_ – 選択 **PhpStorm** > **環境設定**.
+   - _Windows/Linux_ – 選択 **ファイル** > **設定**.
 
-1. Adobe Analytics の _設定_ パネル、展開して **言語とフレームワーク** > **PHP** > **サーバー** 」セクションに入力します。
+1. が含まれる _設定_ パネルで、を展開して見つけます。 **言語とフレームワーク** > **PHP** > **サーバー** セクション。
 
-1. 次をクリック： **+** をクリックして、サーバー設定を追加します。 プロジェクト名は上部に灰色で表示されます。
+1. 「」をクリックします **+** サーバー設定を追加します。 プロジェクト名は、上部がグレーで表示されます。
 
-1. [オプション] 新しいサーバー構成に対して、次の設定を行います。 詳しくは、 [デバッグサーバーが設定されていません](https://www.jetbrains.com/help/phpstorm/troubleshooting-php-debugging.html#no-debug-server-is-configured) （内） _PHPStorm_ ドキュメント。
+1. [オプション] 新しいサーバー設定に次の設定を行います。 参照： [デバッグサーバーが設定されていません](https://www.jetbrains.com/help/phpstorm/troubleshooting-php-debugging.html#no-debug-server-is-configured) が含まれる _PHPStorm_ ドキュメント。
 
-   - **名前** — ホスト名と同じを入力します。 この値は、 `PHP_IDE_CONFIG` 変数 [Debug CLI コマンド](#debug-cli-commands) ：デバッグに CLI を使用します。
-   - **ホスト** — ホスト名を入力します。
-   - **ポート** — 入力 `443`.
-   - **デバッガー** — 選択 `Xdebug`.
+   - **名前**— ホスト名と同じ値を入力します。 この値は、の値と一致する必要があります `PHP_IDE_CONFIG` 変数 [Debug CLI コマンド](#debug-cli-commands) をクリックします。
+   - **ホスト**— ホスト名を入力します。
+   - **ポート**—Enter `443`.
+   - **デバッガー** – 選択 `Xdebug`.
 
-1. 選択 **パスマッピングを使用**. Adobe Analytics の _ファイル/ディレクトリ_ ウィンドウ、 `serverName` が表示されます。
+1. を選択 **パスマッピングの使用**. が含まれる _ファイル/ディレクトリ_ ペインに変更します。ここでは、 `serverName` が表示されます。
 
-1. Adobe Analytics の **サーバー上の絶対パス** 列で、 **編集** アイコンをクリックし、環境に基づいて設定を追加します。
+1. が含まれる **サーバーの絶対パス** 列で、 **編集** アイコンをクリックし、環境に基づいて設定を追加してください。
 
-   - すべてのスターター環境と Pro 統合環境で、リモートパスは `/app`.
-   - Pro ステージング環境および実稼動環境の場合：
+   - すべてのスターター環境および Pro 統合環境の場合、リモートパスは `/app`.
+   - ステージング環境および実稼動環境の場合：
 
       - 実稼動： `/app/<project_code>/`
       - ステージング：  `/app/<project_code>_stg/`
 
-1. 次を変更： [!DNL Xdebug] の 9000 番に **言語とフレームワーク** > **PHP** > **デバッグ** > **Xdebug** > **デバッグポート** パネル。
+1. 変更： [!DNL Xdebug] の 9000 への移植 **言語とフレームワーク** > **PHP** > **デバッグ** > **Xdebug** > **デバッグポート** パネル。
 
 1. クリック **適用**.
 
 ### ポート転送の設定
 
-マッピング `XDEBUG` サーバーからローカルシステムへの接続。 任意の種類のデバッグを実行するには、クラウドインフラストラクチャサーバー上のAdobe Commerceからローカルマシンにポート 9000 を転送する必要があります。 次のセクションのいずれかを参照してください。
+をマッピングします `XDEBUG` サーバーからローカルシステムへの接続。 あらゆる種類のデバッグを行うには、Cloud Infrastructure Server 上のAdobe Commerceからローカルマシンにポート 9000 を転送する必要があります。 以下のセクションの 1 つを参照してください。
 
-- [Macまたは UNIX でのポート転送](#port-forwarding-on-mac-or-unix)
+- [Macまたは UNIX のポート転送](#port-forwarding-on-mac-or-unix)
 - [Windows でのポート転送](#port-forwarding-on-windows)
 
-#### Macまたは UNIX®でのポート転送
+#### Macまたは UNIX のポート転送®
 
-**Macまたは UNIX®環境でポート転送を設定するには**:
+**Macまたは UNIX® 環境でポート転送を設定するには：**:
 
 1. ターミナルを開きます。
 
@@ -133,9 +133,9 @@ The [PhpStorm](https://www.jetbrains.com/phpstorm/) IDE が正しく機能する
    ssh -R 9000:localhost:9000 <ssh url>
    ```
 
-   以下を使用します。 `-v` (verbose) オプションを使用して、ソケットが転送されるポートに接続されたときに、そのソケットが端末に表示されます。
+   の使用 `-v` （verbose） オプションを指定すると、転送されるポートにソケットが接続されるたびに、端末に表示されます。
 
-   「unable to connect」または「could not listen to port on remote」というエラーが表示された場合は、ポート 9000 を占有しているサーバー上に、別のアクティブな SSH セッションが存続している可能性があります。 その接続が使用されていない場合は、接続を終了できます。
+   「接続できません」または「リモートのポートをリッスンできませんでした」というエラーが表示される場合は、ポート 9000 を占有しているサーバー上に、別のアクティブな SSH セッションが存在している可能性があります。 その接続が使用されていない場合は、終了できます。
 
 **接続のトラブルシューティングをおこなうには**:
 
@@ -145,26 +145,26 @@ The [PhpStorm](https://www.jetbrains.com/phpstorm/) IDE が正しく機能する
 
 1. ユーザー別の既存の SSH セッションを表示します。 自分以外のユーザーに影響を与えないように注意してください。
 
-   - 統合：ユーザー名は `dd2q5ct7mhgus`
-   - ステージング：ユーザー名は、 `dd2q5ct7mhgus_stg`
-   - 実稼動：ユーザー名は `dd2q5ct7mhgus`
+   - 統合：ユーザー名は次に似ています `dd2q5ct7mhgus`
+   - ステージング：ユーザー名は次に似ています `dd2q5ct7mhgus_stg`
+   - 実稼働：ユーザー名は次に似ています `dd2q5ct7mhgus`
 
-1. ユーザーセッションの方が古い場合は、次のような擬似端末 (PTS) 値を見つけます。 `pts/0`.
+1. ユーザーセッションが以前の場合、次のような擬似端末（PTS）値を見つけます。 `pts/0`.
 
-1. PTS 値に対応するプロセス ID(PID) を強制終了します。
+1. PTS 値に対応するプロセス ID （PID）を強制終了します。
 
    ```bash
    ps aux | grep ssh
    kill <PID>
    ```
 
-   レスポンスのサンプル：
+   応答の例：
 
    ```terminal
    dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
    ```
 
-   接続を終了するには、プロセス ID(PID) を指定して kill コマンドを入力します。
+   接続を終了するには、プロセス ID （PID）を指定して kill コマンドを入力します。
 
    ```bash
    kill 3664
@@ -172,61 +172,61 @@ The [PhpStorm](https://www.jetbrains.com/phpstorm/) IDE が正しく機能する
 
 #### Windows でのポート転送
 
-Windows でポート転送（SSH トンネリング）を設定するには、Windows ターミナルアプリケーションを構成する必要があります。 この例では、 [パテ](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). Cygwin などの他のアプリケーションを使用できます。 その他のアプリケーションの詳細については、それらのアプリケーションに付属するベンダーのドキュメントを参照してください。
+Windows にポート転送（SSH トンネリング）をセットアップするには、Windows ターミナル アプリケーションを構成する必要があります。 この例では、を使用して SSH トンネルを作成する手順を示します [パテ](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). Cygwin などの他のアプリケーションを使用できます。 その他のアプリケーションについて詳しくは、それらのアプリケーションに付属するベンダードキュメントを参照してください。
 
-**Putty を使用して Windows で SSH トンネルを設定するには**:
+**Putty を使用して Windows に SSH トンネルをセットアップするには**:
 
-1. まだおこなっていない場合は、をダウンロードします。 [パテ](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+1. まだ行っていない場合は、次をダウンロードします [パテ](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
-1. Putty を起動します。
+1. パテを起動します。
 
-1. [ カテゴリ ] ウィンドウで、 **セッション**.
-
-1. 次の情報を入力します。
-
-   - **ホスト名（または IP アドレス）** フィールド： [SSH URL](../development/secure-connections.md#connect-to-a-remote-environment) クラウドサーバーの
-   - **ポート** フィールド：を入力します。 `22`
-
-   ![パテを設定](../../assets/xdebug/putty-session.png)
-
-1. Adobe Analytics の _カテゴリ_ ウィンドウ枠で、 **接続** > **SSH** > **トンネル**.
+1. カテゴリ ウィンドウで、 **Session**.
 
 1. 次の情報を入力します。
 
-   - **ソースポート** フィールド：を入力します。 `9000`
-   - **宛先** フィールド：を入力します。 `127.0.0.1:9000`
+   - **ホスト名（または IP アドレス）** フィールド： [SSH URL](../development/secure-connections.md#connect-to-a-remote-environment) クラウドサーバーの場合
+   - **ポート** フィールド：Enter `22`
+
+   ![パテの設定](../../assets/xdebug/putty-session.png)
+
+1. が含まれる _カテゴリ_ ウィンドウで、をクリック **接続** > **SSH** > **トンネル**.
+
+1. 次の情報を入力します。
+
+   - **ソースポート** フィールド：Enter `9000`
+   - **宛先** フィールド：Enter `127.0.0.1:9000`
    - クリック **リモート**
 
 1. クリック **追加**.
 
-   ![Putty での SSH トンネルの作成](../../assets/xdebug/putty-tunnels.png)
+   ![Putty で SSH トンネルを作成する](../../assets/xdebug/putty-tunnels.png)
 
-1. Adobe Analytics の _カテゴリ_ ウィンドウ枠で、 **セッション**.
+1. が含まれる _カテゴリ_ ウィンドウで、をクリック **Session**.
 
-1. Adobe Analytics の **保存済みセッション** 「 」フィールドに、この SSH トンネルの名前を入力します。
+1. が含まれる **保存済みセッション** フィールドに、この SSH トンネルの名前を入力します。
 
 1. クリック **保存**.
 
-   ![SSH トンネルを保存します。](../../assets/xdebug/putty-session-save.png)
+   ![SSH トンネルを保存する](../../assets/xdebug/putty-session-save.png)
 
-1. SSH トンネルをテストするには、 **読み込み**&#x200B;を選択し、次に **開く**.
+1. SSH トンネルをテストするには、 **ロード**&#x200B;を選択し、 **開く**.
 
    「接続できません」というエラーが表示される場合は、次の点を確認してください。
 
-   - すべての Putty 設定が正しい
-   - クラウドインフラストラクチャのプライベートAdobe Commerce SSH キーが配置されているマシンで Putty を実行している
+   - Putty の設定はすべて正しい
+   - クラウドインフラストラクチャ上のプライベートAdobe Commerceの SSH キーがあるマシンで Putty を実行しています
 
 ## Xdebug 環境への SSH アクセス
 
-デバッグを開始したり、セットアップを実行したりするには、環境にアクセスするための SSH コマンドが必要です。 この情報は、 [[!DNL Cloud Console]](../development/secure-connections.md#use-an-ssh-command) とプロジェクトのスプレッドシートが含まれます。
+デバッグの開始やセットアップの実行などを行うには、環境にアクセスするための SSH コマンドが必要です。 この情報は、 [[!DNL Cloud Console]](../development/secure-connections.md#use-an-ssh-command) とプロジェクトのスプレッドシートを使用します。
 
-スターター環境および Pro 統合環境では、次の機能を使用できます。 `magento-cloud` CLI コマンドを使用して、次の環境に SSH で接続します。
+スターター環境と Pro 統合環境の場合は、次を使用できます `magento-cloud` これらの環境に SSH 接続するための CLI コマンド：
 
 ```bash
 magento-cloud environment:ssh --pipe -e <environment-ID>
 ```
 
-次を使用するには： [!DNL Xdebug]、次のように環境に SSH を設定します。
+使用目的 [!DNL Xdebug]：以下のように環境に SSH で接続します。
 
 ```bash
 ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH-URL>
@@ -238,20 +238,20 @@ ssh -R <xdebug listen port>:<host>:<xdebug listen port> <SSH-URL>
 ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 ```
 
-## Pro のステージング環境および実稼動環境でのデバッグ
+## ステージング環境および実稼動環境用のデバッグ
 
 >[!NOTE]
 >
->Pro のステージング環境および実稼動環境では、 [!DNL Xdebug] は常に使用可能です。これらの環境は、 [!DNL Xdebug]. 通常の Web リクエストはすべて、 [!DNL Xdebug]. したがって、これらのリクエストは通常どおりに処理され、 [!DNL Xdebug] が読み込まれます。 Web リクエストが送信されたとき、 [!DNL Xdebug] キーを渡すと、PHP プロセスにルーティングされ、 [!DNL Xdebug] 読み込み済み。
+>ステージング環境および実稼動環境では、 [!DNL Xdebug] これらの環境には特別な設定があるので、は常に使用できます。 [!DNL Xdebug]. 通常の Web リクエストはすべて、を持たない専用の PHP プロセスにルーティングされます。 [!DNL Xdebug]. したがって、これらのリクエストは通常どおりに処理され、次の場合にパフォーマンスが低下することはありません。 [!DNL Xdebug] が読み込まれました。 を持つ web リクエストが送信されたとき [!DNL Xdebug] キーを押すと、次のコードを持つ別の PHP プロセスにルーティングされます。 [!DNL Xdebug] 読み込み済み。
 
-次を使用するには： [!DNL Xdebug] 特に、Pro プランのステージング環境と実稼動環境では、アクセス権のある SSH トンネルと Web セッションを個別に作成します。 この使用方法は、一般的なアクセスとは異なります。すべてのユーザーにはアクセスできず、ユーザーにはアクセスできません。
+使用目的 [!DNL Xdebug] 特に、Pro プランのステージング環境および実稼動環境では、アクセス権のあるユーザーのみ、個別の SSH トンネルと Web セッションを作成します。 この使用方法は、通常のアクセス方法とは異なり、すべてのユーザーではなく、ユーザーにアクセス権を提供するだけです。
 
 以下が必要です。
 
 - 環境にアクセスするための SSH コマンド。 この情報は、 [[!DNL Cloud Console]](../project/overview.md) または [!DNL Cloud Onboarding UI].
-- The `xdebug_key` の値は、ステージング環境と Pro 環境を設定する際に設定します。
+- この `xdebug_key` ステージング環境と Pro 環境を設定する際に設定される値。
 
-  The `xdebug_key` は、SSH を使用してプライマリノードにログインし、次のコマンドを実行すると見つかります。
+  この `xdebug_key` は、SSH を使用してプライマリノードにログインし、次のコマンドを実行することで確認できます。
 
   ```bash
   cat /etc/platform/*/nginx.conf | grep xdebug.sock | head -n1
@@ -261,21 +261,21 @@ ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 
 1. ターミナルを開きます。
 
-1. クラスターの各 Web ノードに対するすべての SSH セッションをクリーンアップします。
+1. クラスターの各 web ノードに対するすべての SSH セッションをクリーンアップします。
 
    ```bash
    ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
    ```
 
-1. クラスターの各 Web ノードに対して、Xdebug 用の SSH トンネルを設定します。
+1. クラスターの各 web ノードに対して、Xdebug 用の SSH トンネルを設定します。
 
    ```bash
    ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
    ```
 
-**環境 URL を使用してデバッグを開始するには**:
+**環境 URL を使用してデバッグを開始するには：**:
 
-1. リモートデバッグを有効にします。ブラウザーのサイトにアクセスし、次の URL を次の URL に追加します。 `KEY` 次の値の `xdebug_key`.
+1. リモートデバッグを有効にします。ブラウザーでサイトにアクセスし、URL に次の内容を追加します。この URL は次のとおりです。 `KEY` の値である `xdebug_key`.
 
    ```http
    ?XDEBUG_SESSION_START=KEY
@@ -283,9 +283,9 @@ ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 
    この手順では、ブラウザーリクエストをトリガーに送信する Cookie を設定します [!DNL Xdebug].
 
-1. でデバッグを完了 [!DNL Xdebug].
+1. を使用したデバッグの完了 [!DNL Xdebug].
 
-1. セッションを終了する準備が整ったら、次のコマンドを使用して、Cookie を削除し、次の場所にあるブラウザーを介したデバッグを終了します。 `KEY` 次の値の `xdebug_key`.
+1. セッションを終了する準備が整ったら、次のコマンドを使用して cookie を削除し、ブラウザーによるデバッグを終了します。このコマンドは次のとおりです。 `KEY` の値である `xdebug_key`.
 
    ```http
    ?XDEBUG_SESSION_STOP=KEY
@@ -293,15 +293,15 @@ ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 
    >[!NOTE]
    >
-   >The `XDEBUG_SESSION_START` 通り過ぎる `POST` リクエストはサポートされていません。
+   >この `XDEBUG_SESSION_START` 渡された `POST` リクエストはサポートされていません。
 
 ## Debug CLI コマンド
 
-このセクションでは、CLI コマンドのデバッグの手順を説明します。
+このセクションでは、CLI コマンドのデバッグについて説明します。
 
 CLI コマンドをデバッグするには：
 
-1. CLI コマンドを使用して、デバッグするサーバーに SSH で接続します。
+1. CLI コマンドを使用して、デバッグ対象のサーバに SSH で接続します。
 
 1. 次の環境変数を作成します。
 
@@ -315,16 +315,16 @@ CLI コマンドをデバッグするには：
 
    これらの変数は、SSH セッションが終了すると削除されます。
 
-1. デバッグを開始
+1. デバッグの開始
 
-   スターター環境と Pro 統合環境で、CLI コマンドを実行してデバッグします。
-ランタイムオプションを追加できます。例：
+   スターター環境と Pro 統合環境では、CLI コマンドを実行してデバッグします。
+次のような実行時オプションを追加できます。
 
    ```bash
    php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 bin/magento cache:clean
    ```
 
-   Pro ステージング環境および実稼動環境では、 [!DNL Xdebug] CLI コマンドをデバッグする際の PHP 設定ファイル。次に例を示します。
+   ステージング環境および実稼動環境では、へのパスを指定する必要があります [!DNL Xdebug] CLI コマンドのデバッグ時の PHP 設定ファイル。例：
 
    ```bash
    php -c /etc/platform/USERNAME/php.xdebug.ini bin/magento cache:clean
@@ -332,65 +332,65 @@ CLI コマンドをデバッグするには：
 
 ## Web リクエストのデバッグ
 
-次の手順は、Web リクエストのデバッグに役立ちます。
+次の手順は、web リクエストのデバッグに役立ちます。
 
-1. 次の日： _拡張_ メニュー、クリック **デバッグ** を有効にします。
+1. 日 _拡張機能_ メニュー、クリック **デバッグ** を有効にします。
 
-1. 右クリックし、オプションメニューを選択し、IDE キーをに設定します。 **PHPSTORM**.
+1. 右クリックして「オプション」メニューを選択し、IDE キーをに設定します。 **PHPSTORM**.
 
-1. をインストールします。 [!DNL Xdebug] クライアントがブラウザーに表示されます。 設定して有効にします。
+1. のインストール [!DNL Xdebug] ブラウザー上のクライアント。 を設定して有効にします。
 
-### 例：Chrome の設定
+### 例：Chrome のセットアップ
 
-このセクションでは、 [!DNL Xdebug] Chrome で、 [!DNL Xdebug] ヘルパー拡張機能。 詳しくは、 [!DNL Xdebug] 他のブラウザーのツールについては、ブラウザーのドキュメントを参照してください。
+この節では、の使用方法について説明します [!DNL Xdebug] Chrome でを使用する場合 [!DNL Xdebug] ヘルパー拡張機能。 詳しくは、 [!DNL Xdebug] ツールその他のブラウザーについては、ブラウザーのドキュメントを参照してください。
 
 **Chrome で Xdebug ヘルパーを使用するには**:
 
-1. の作成 [SSH トンネル](#ssh-access-to-xdebug-environments) をクラウドサーバーに追加します。
+1. を作成 [SSH トンネル](#ssh-access-to-xdebug-environments) をクラウドサーバーに送信します。
 
-1. をインストールします。 [Xdebug Helper 拡張機能](https://chromewebstore.google.com/detail/eadndfjplgieldjbigjakmdgkmoaaaoc) を Chrome ストアから削除します。
+1. のインストール [Xdebug Helper 拡張機能](https://chromewebstore.google.com/detail/eadndfjplgieldjbigjakmdgkmoaaaoc) Chrome ストアから。
 
-1. 次の図に示すように、Chrome で拡張機能を有効にします。
+1. Chrome で拡張機能を有効にします（下図を参照）。
 
-   ![Chrome での Xdebug 拡張機能の有効化](../../assets/xdebug/enable-chrome-ext.png)
+   ![Chrome で Xdebug 拡張機能を有効にする](../../assets/xdebug/enable-chrome-ext.png)
 
-1. Chrome で、Chrome ツールバーの緑のヘルパーアイコンを右クリックします。
+1. Chrome では、Chrome ツールバーの緑のヘルパーアイコンを右クリックします。
 
-1. ポップアップメニューで、 **オプション**.
+1. ポップアップメニューから、 **オプション**.
 
-1. 次から： _IDE キー_ リスト、クリック **PhpStorm**.
+1. から _IDE キー_ リスト、クリック **PhpStorm**.
 
 1. クリック **保存**.
 
-   ![Xdebug ヘルパーオプション](../../assets/xdebug/helper-options.png)
+   ![Xdebug Helper オプション](../../assets/xdebug/helper-options.png)
 
 1. PhpStorm プロジェクトを開きます。
 
 1. 上部のナビゲーションバーで、 **リスニングを開始** アイコン。
 
-   ナビゲーションバーが表示されない場合は、 **表示** > **ナビゲーションバー**.
+   ナビゲーション バーが表示されない場合は、 **表示** > **ナビゲーションバー**.
 
-1. PhpStorm ナビゲーションウィンドウで、テストする PHP ファイルをダブルクリックします。
+1. PhpStorm のナビゲーションペインで、テストする PHP ファイルをダブルクリックします。
 
-## ローカルコードのデバッグ
+## ローカルコードをデバッグ
 
-読み取り専用の環境なので、デバッグを実行するには、環境または特定の Git ブランチからローカルワークステーションにコードをプルする必要があります。
+読み取り専用環境なので、デバッグを実行するには、環境または特定の Git ブランチからローカルワークステーションにコードをプルする必要があります。
 
-選択する方法は自由です。 次のオプションがあります。
+その方法は君次第だ。 以下のオプションがあります。
 
-- Git からコードをチェックアウトし、を実行します。 `composer install`
+- Git からコードをチェックアウトして実行する `composer install`
 
-  この方法は `composer.json` は、アクセス権のないプライベートリポジトリ内のパッケージを参照します。 このメソッドを使用すると、Adobe Commerceのコードベース全体が取得されます。
+  この方法は、次の場合を除いて機能します `composer.json` アクセス権のないプライベートリポジトリ内のパッケージを参照します。 このメソッドは、Adobe Commerce コードベース全体を取得します。
 
-- をコピーします。 `vendor`, `app`, `pub`, `lib`、および `setup` ディレクトリ
+- をコピーします `vendor`, `app`, `pub`, `lib`、および `setup` ディレクトリ
 
-  この方法を使用すると、テスト可能なすべてのコードがに含まれます。 静的アセットの数によっては、大量のファイルを含む転送が長くなる場合があります。
+  この方法を使用すると、テスト可能なすべてのコードを入手できます。 保有する静的アセットの数に応じて、大量のファイルを含む長い転送が必要になる場合があります。
 
-- をコピーします。 `vendor` ディレクトリのみ
+- をコピーします `vendor` ディレクトリのみ
 
-  ほとんどのコードは `vendor` ディレクトリ内で、このメソッドを使用すると、適切なテストがおこなわれる可能性が高くなりますが、はコードベース全体をテストするわけではありません。
+  コードのほとんどは `vendor` ディレクトリの場合、コードベース全体をテストしているわけではありませんが、この方法を使用すると適切なテストが行われる可能性があります。
 
-**ファイルを圧縮してローカルマシンにコピーするには**:
+**ファイルを圧縮してローカル マシンにコピーするには**:
 
 1. SSH を使用してリモート環境にログインします。
 

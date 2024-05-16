@@ -1,6 +1,6 @@
 ---
 title: 自動スケーリング
-description: クラウドインフラストラクチャ上のAdobe Commerceが、リソースの需要に応えて拡張する方法を説明します。
+description: クラウドインフラストラクチャー上のAdobe Commerceをリソースのニーズに合わせて拡張する方法について説明します。
 feature: Cloud, Auto Scaling
 topic: Architecture
 exl-id: 2ba49c55-d821-4934-965f-f35bd18ac95f
@@ -13,71 +13,71 @@ ht-degree: 0%
 
 # 自動スケーリング
 
-自動スケーリングにより、クラウドインフラストラクチャにリソースが自動的に追加または削除され、最適なパフォーマンスと妥当なコストが維持されます。 現在、この機能は、 [拡張アーキテクチャ](scaled-architecture.md).
+自動スケーリングでは、最適なパフォーマンスと妥当なコストを維持するために、クラウドインフラストラクチャにリソースを自動的に追加または削除します。 現在、この機能は、で設定されたプロジェクトでのみ使用できます [拡張されたアーキテクチャ](scaled-architecture.md).
 
 ## Web サーバーノード
 
-The [web 層](scaled-architecture.md#web-tier) は、プロセスリクエストの増加やトラフィック要件の増加に対応するために拡大縮小されます。 現在、自動スケーリング機能では、Web サーバーノードを追加または削除して、水平方向にのみスケールします。
+この [web 層](scaled-architecture.md#web-tier) は、プロセスリクエストの増加とトラフィック要件の増加に対応するために拡張されます。 現在、自動スケーリング機能は、web サーバーノードを追加または削除することで水平方向にのみスケーリングできます。
 
-自動スケーリングイベントは、CPU 使用率とトラフィックが事前に定義されたしきい値に達した場合に発生します。
+自動スケーリング イベントは、CPU 使用率とトラフィックが事前定義されたしきい値に達した場合に発生します。
 
-- **追加されたノード** — すべてのアクティブな Web ノードの CPU/コアは、1 分間で 75%の容量になり、5 分間連続でトラフィックが 20%増加しています。
-- **削除されたノード** — すべてのアクティブな Web ノードの CPU/コアは、60 %で 20 分間読み込まれます。 ノードは、追加された順序で削除されます。
+- **追加されたノード** – すべてのアクティブな Web ノードの CPU/コアは、1 分間は 75% の処理能力で、5 分連続でトラフィックが 20% 増加します。
+- **削除されたノード** – すべてのアクティブな Web ノードの CPU/コアが 60% で 20 分間読み込まれます。 ノードは、追加された順序で削除されます。
 
-各商人の契約資源制限に基づいて、最小および最大のしきい値を決定し、設定することで、無限スケーリングのリスクを低減します。
+最小および最大しきい値は、各マーチャントの契約済みリソース制限に基づいて決定および設定されます。これにより、無限スケーリングのリスクが軽減されます。
 
-## New Relicでのしきい値の監視
+## New Relicによるしきい値の監視
 
-以下を使用すると、 [New Relicサービス](../monitor/new-relic-service.md) ：ホスト数や CPU 使用率など、特定のしきい値を監視する。 次のNew Relicクエリでは、 `cluster-id` 例えば、
+を使用できます [New Relic サービス](../monitor/new-relic-service.md) ホスト数や CPU 使用率などの特定のしきい値を監視します。 次のNew Relic クエリでは、変数表記を使用しています `cluster-id` 例です。
 
 >[!TIP]
 >
->クエリの作成に関するリファレンスについては、 [NRQL 構文、句、および関数](https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/) （内） _New Relic_ ドキュメント。
->クエリを使用して [New Relic dashboard](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/introduction-dashboards/).
+>クエリの作成について詳しくは、 [NRQL 構文、句、関数](https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/) が含まれる _New Relic_ ドキュメント。
+>クエリを使用したの構築 [New Relic ダッシュボード](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/introduction-dashboards/).
 
 ### ホスト数
 
-次の例のNew Relicクエリは、環境内のホスト数を示しています。
+次のNew Relic クエリの例では、環境内のホスト数を示しています。
 
 ```sql
 SELECT uniqueCount(SystemSample.entityId) AS 'Infrastructure hosts', uniqueCount(Transaction.host) AS 'APM hosts seen' FROM SystemSample, Transaction where (Transaction.appName = 'cluster-id_stg' AND Transaction.transactionType = 'Web') OR SystemSample.apmApplicationNames LIKE '%|cluster-id_stg|%' TIMESERIES SINCE 3 HOURS AGO
 ```
 
-次のスクリーンショットでは、 **APM ホストが確認される** は、選択した期間に記録されたトランザクションを持つホストの数を指します。
+次のスクリーンショットでは、 **APM ホストが表示される** 選択した期間中にトランザクションがログに記録されたホストの数を参照します。
 
-![New Relicホスト数](../../assets/new-relic/host-count.png)
+![New Relic ホスト数](../../assets/new-relic/host-count.png)
 
 ### CPU 使用率
 
-次の例のNew Relicクエリは、Web ノードの CPU 使用率を示しています。
+次のNew Relic クエリの例は、web ノードの CPU 使用率を示しています。
 
 ```sql
 SELECT average(cpuPercent) FROM SystemSample FACET hostname, apmApplicationNames WHERE instanceType LIKE 'c%' TIMESERIES SINCE 3 HOURS AGO
 ```
 
-![New Relic Web ノードの CPU 使用率](../../assets/new-relic/web-node-cpu-usage.png)
+![New Relic web ノードの CPU 使用率](../../assets/new-relic/web-node-cpu-usage.png)
 
 ## 自動スケーリングを有効にする
 
-クラウドインフラストラクチャプロジェクト上のAdobe Commerceの自動スケーリングを有効または無効にするには、 [Adobe Commerceサポートチケットを送信する](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket). チケットで次の理由を選択します。
+Adobe Commerce on cloud infrastructure プロジェクトの自動スケーリングを有効または無効にするには： [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket). チケットで次の理由を選択します。
 
-- **連絡先の理由**：インフラストラクチャの変更リクエスト
-- **Adobe Commerce Infrastructure の連絡理由**：その他のインフラストラクチャ変更リクエスト
+- **連絡先の理由**: インフラストラクチャ変更リクエスト
+- **Adobe Commerce インフラストラクチャ連絡先の理由**：その他のインフラストラクチャ変更リクエスト
 
 >[!IMPORTANT]
 >
->自動スケーリング機能は、予期しないイベントをキャプチャします。 自動スケーリングを有効にしている場合でも、Adobeでは引き続き [Adobe Commerceサポートチケットを送信する](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) 今後のイベントを予想する場合は、
+>自動スケーリング機能は、予期しないイベントをキャプチャします。 自動スケーリングを有効にしている場合でも、Adobeでは次の操作を続行することをお勧めします [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) 今後のイベントを想定している場合。
 
 ### 負荷テスト
 
-Adobeは、クラウドプロジェクトでの自動スケーリングを有効にします _ステージング_ 最初にクラスターを作成します。 環境で負荷テストを実行して完了した後、Adobeは、実稼動クラスターでの自動スケーリングを有効にします。 負荷テストのガイダンスについては、 [パフォーマンステスト](../launch/checklist.md#performance-testing).
+Adobeを使用すると、クラウドプロジェクトの自動スケーリングが可能になります _ステージング_ 最初にクラスター化します。 環境で負荷テストを実行して完了すると、Adobeは実稼動クラスターで自動スケーリングを有効にします。 負荷テストのガイダンスについては、 [パフォーマンステスト](../launch/checklist.md#performance-testing).
 
-### IP の許可リストに加える
+### IP許可リスト
 
-自動スケーリングを有効にした後、送信 Web ノードトラフィックは、サービスノードの IP アドレスから発生します。 Adobe Commerce on cloud infrastructure プ許可リストに加えるロジェクトにバンドルされていないサードパーティのサービスとのを使用する場合は、サードパーティのサービスプロジェクトで IP アドレスを検証許可リストに加えるします。
+自動スケーリングを有効にした後、送信 web ノードトラフィックは、サービスノードの IP アドレスから発信されます。 クラウドインフラストラクチャプロジェクトのAdobe Commerce許可リストに加えるにバンドルされていないサードパーティサービスと許可リストを使用する場合は、サードパーティサービスの IP アドレスを確認します。
 
 例：
 
-- にサ許可リストに加えるービスノード (1、2、3) の IP アドレスが含まれている場合は、操作は必要ありません。
-- 許可リストに加えるに、サービスノード (1、2、3) と Web ノード (4、5、6) の IP アドレスが含まれている場合（この場合は 6 ノードすべて）、必要なアクションはありません。
-- に IP許可リストに加えるアドレスが含まれている場合 _のみ_ web ノード (4、5、6) の場合は、サービスノードの IP アドレスを含めるようにを更新する必要がありま許可リストに加えるす。
+- 許可リストにサービスノードの IP アドレス（1、2、3）が含まれている場合は、対処は必要ありません。
+- 許可リストにサービスノード（1、2、3）と web ノード（4、5、6）の IP アドレスが含まれている場合（この場合、6 つのノードすべて）、アクションは必要ありません。
+- （許可リストに IP アドレスが含まれている場合） _のみ_ web ノード（4、5、6）の場合、許可リストを更新して、サービスノードの IP アドレスを含める必要があります。

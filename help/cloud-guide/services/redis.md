@@ -1,6 +1,6 @@
 ---
 title: Redis サービスの設定
-description: クラウドインフラストラクチャ上のAdobe Commerceのバックエンドキャッシュソリューションとして Redis を設定し、最適化する方法について説明します。
+description: クラウドインフラストラクチャー上のAdobe Commerceのバックエンドキャッシュソリューションとして Redis を設定し最適化する方法について説明します。
 feature: Cloud, Cache, Services
 exl-id: d6971875-d302-495a-ad10-a81c507c2bc9
 source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
@@ -12,29 +12,29 @@ ht-degree: 0%
 
 # Redis サービスの設定
 
-[レディス](https://redis.io) は、Adobe Commerceがデフォルトで使用する Zend Framework Zend_Cache_Backend_File に代わる、オプションのバックエンドキャッシュソリューションです。
+[Redis](https://redis.io) は、Adobe Commerceがデフォルトで使用する Zend フレームワークの Zend_Cache_Backend_File に代わる、オプションのバックエンドキャッシュソリューションです。
 
-詳しくは、 [Redis を設定](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/redis/config-redis.html) （内） _設定ガイド_.
+参照： [Redis の設定](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/redis/config-redis.html) が含まれる _設定ガイド_.
 
 {{service-instruction}}
 
 **Redis を有効にするには**:
 
-1. 必要な名前とタイプを `.magento/services.yaml` ファイル。
+1. 必要な名前とタイプをに追加します。 `.magento/services.yaml` ファイル。
 
    ```yaml
    myredis:
        type: redis:<version>
    ```
 
-   独自の Redis 設定を提供するには、 `core_config` キーを `.magento/services.yaml` ファイル：
+   独自の Redis 設定を指定するには、を追加します。 `core_config` のキー `.magento/services.yaml` ファイル：
 
    ```yaml
    cache:
        type: redis:<version>
    ```
 
-1. 関係を `.magento.app.yaml` ファイル。
+1. での関係の設定 `.magento.app.yaml` ファイル。
 
    ```yaml
    runtime:
@@ -45,19 +45,19 @@ ht-degree: 0%
        redis: "redis:redis"
    ```
 
-1. コードの変更を追加、コミット、およびプッシュします。
+1. コードの変更を追加、コミット、プッシュします。
 
    ```bash
    git add .magento/services.yaml .magento.app.yaml && git commit -m "Enable redis service" && git push origin <branch-name>
    ```
 
-1. [サービスの関係を確認します](services-yaml.md#service-relationships).
+1. [サービス関係の検証](services-yaml.md#service-relationships).
 
 {{service-change-tip}}
 
 ## Redis CLI の使用
 
-Redis の関係に名前が付いていると仮定します。 `redis`を使用すると、 `redis-cli` ツールを使用します。
+Redis 関係にという名前を付けた場合 `redis`にアクセスするには、 `redis-cli` ツール。
 
 1. SSH を使用して、Redis がインストールおよび設定された統合環境に接続します。
 
@@ -67,24 +67,24 @@ Redis の関係に名前が付いていると仮定します。 `redis`を使用
    redis-cli -h redis.internal
    ```
 
-## インストール済みの Redis バージョンを取得する
+## インストールされた Redis バージョンを取得します。
 
-次のコマンドを使用して、統合環境に Redis バージョンをインストールします。
+次のコマンドを使用して、統合環境にインストールされている Redis のバージョンを取得します。
 
 ```bash
 redis-cli -h redis.internal info | grep version
 ```
 
-レスポンスのサンプル：
+応答の例：
 
 ```terminal
 redis_version:7.0.5
 gcc_version:8.3.0
 ```
 
-### Redis on Pro のステージングおよび実稼動環境
+### Redis on Pro ステージング環境と実稼動環境
 
-ステージング環境または実稼動環境に Redis バージョンをインストールするには、 `redis-server` コマンド：
+ステージング環境または実稼動環境に Redis バージョンをインストールするには、を使用します。 `redis-server` コマンド：
 
 ```bash
 redis-server -v
@@ -94,13 +94,13 @@ redis-server -v
 Redis server v=7.0.5 ...
 ```
 
-次のコマンドを使用して、Redis 設定を Pro Staging 環境または実稼動環境にインストールします。
+次のコマンドを使用して、Redis 設定を Pro ステージング環境または実稼動環境にインストールします。
 
 ```bash
 echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
 ```
 
-レスポンスのサンプル：
+応答の例：
 
 ```terminal
 "redis" : [
@@ -127,11 +127,11 @@ echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
 
 ## Redis のトラブルシューティング
 
-Redis の問題のトラブルシューティングに関するヘルプについては、次のAdobe Commerceサポート記事を参照してください。
+Redis の問題のトラブルシューティングについては、次のAdobe Commerce サポート記事を参照してください。
 
-- [Redis の問題が管理者のログインまたはチェックアウトを遅らせる](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-issue-delay-magento-admin-login-or-checkout.html)
-- [拡張 Redis キャッシュ実装Adobe Commerce 2.3.5 以降](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/redis-service-configuration.html)
-- [MDVA-30102: Redis キャッシュがいっぱいになっています](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/patches/v1-0-6/mdva-30102-magento-patch-redis-cache-getting-full.html)
-- [Adobe Commerceに関する Managed Alerts:Redis メモリ警告アラート](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-warning-alert.html)
-- [Adobe Commerceの Managed Alerts:Redis Memory Critical アラート](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-critical-alert.html)
+- [Redis 問題の管理者ログインまたはチェックアウトの遅延](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-issue-delay-magento-admin-login-or-checkout.html)
+- [Adobe Commerce 2.3.5 以降の拡張 Redis キャッシュ実装](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/redis-service-configuration.html)
+- [MDVA-30102: Redis キャッシュがいっぱいです](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/patches/v1-0-6/mdva-30102-magento-patch-redis-cache-getting-full.html)
+- [Adobe Commerceの管理アラート：Redis メモリ警告アラート](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-warning-alert.html)
+- [Adobe Commerceの管理アラート：Redis メモリクリティカルアラート](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-critical-alert.html)
 - [Redis のトラブルシューティング](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-troubleshooter.html)

@@ -1,6 +1,6 @@
 ---
 title: Adobe Commerceの基本を学ぶ
-description: クラウドインフラストラクチャ上の新しいセルフサービスAdobe Commerceの概要と、Adobe Commerceストアを数分で構築およびデプロイする方法について説明します。
+description: クラウドインフラストラクチャ上の新しいセルフサービス Adobe Commerceの使用を開始し、Adobe Commerce ストアを数分でビルドしてデプロイする方法を説明します。
 recommendations: noDisplay, catalog
 exl-id: 0c0c8012-5e91-4b8b-9519-2ece23cd50cc
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -10,20 +10,20 @@ ht-degree: 0%
 
 ---
 
-# Adobe Commerce on Cloud の概要
+# Cloud 上のAdobe Commerceの概要
 
-Adobe Commerceへようこそ！
+Adobe Commerceへようこそ。
 
-はじめにの節では、Adobe Commerceアカウントを初期化し、 [!DNL Cloud Console]. The _次の手順_ 各トピックの下部にあるリンクをクリックすると、次の概念と手順が開きます。 各トピックは、新しいタスクと学習リンクを含む、前のトピックに基づいて構築されます。
+「はじめに」の節では、Adobe Commerce アカウントを初期化してにアクセスするための手順を説明しています [!DNL Cloud Console]. この _次の手順_ 各トピックの下部にあるリンクをクリックすると、次の概念と手順が開きます。 各トピックは、前のトピックに基づいて、新しいタスクと学習リンクを追加しています。
 
-このガイドは、ユーザーが [!DNL Commerce] アプリケーション。 最新の Commerce Developer および Commerce ユーザーガイドを参照できます。
+このガイドは、読者が以下に関する実用的な知識と理解を持っていることを前提としています [!DNL Commerce] アプリケーション。 最新のCommerce開発者およびCommerce ユーザーガイドを参照できます。
 
-- [Adobe Commerce開発者向けドキュメント](https://developer.adobe.com/commerce/docs/) (Adobe Developerサイト ) — 高度な機能を開発、カスタマイズ、統合、拡張、使用します。
+- [Adobe Commerce開発者向けドキュメント](https://developer.adobe.com/commerce/docs/) （Adobe Developer サイト） – 高度な機能を開発、カスタマイズ、統合、拡張、使用する
 
-- [Adobe Commerce Documentation](https://experienceleague.adobe.com/docs/commerce.html) (Adobe Experience League) — コマースプロジェクトの計画、実装、運用、アップグレード、保守を行います。
+- [Adobe Commerce ドキュメント](https://experienceleague.adobe.com/docs/commerce.html) （Adobe Experience League） – Commerce プロジェクトの計画、実装、運用、アップグレード、保守を行います。
 
 >[!TIP]
 >
->ようこそ呼び出しに備えて、クラウドインフラストラクチャプロジェクト上のAdobe Commerceを初期化します。
+>クラウドインフラストラクチャプロジェクトでAdobe Commerceを初期化するためのウェルカムコールの準備をします。
 >
->**次の手順**: [Cloud での Commerce のプロビジョニング](new-project.md)
+>**次の手順**: [Cloud でのCommerceのプロビジョニング](new-project.md)
