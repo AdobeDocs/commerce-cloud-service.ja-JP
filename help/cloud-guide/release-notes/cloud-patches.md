@@ -2,11 +2,11 @@
 title: Commerceのクラウドパッチ
 description: クラウドパッチパッケージの最新の改善点のリストを確認します。
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-04-08T00:00:00Z
+last-substantial-update: 2024-05-21T00:00:00Z
 exl-id: ae6b511b-a37d-4776-9a5e-ad7d9f9f6611
-source-git-commit: d5ab7c4f1d2edbd85eab5a4ca098b3d156e562e5
+source-git-commit: 61c42a1bd1d5a28f90b8756032ee6f45be4565b2
 workflow-type: tm+mt
-source-wordcount: '2187'
+source-wordcount: '2208'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,13 @@ Cloud Patches for Commerce パッケージは、ECE-Tools パッケージの依�
 
 <!--Add release notes below-->
 
-## v1.0.26 {#latest}
+## v1.0.27 {#latest}
+
+リリース日：2024 年 5 月 21 日（PT）
+
+- **PHP 8.3 のサポート** – このパッチは、php 8.3 と composer パッケージバージョン間の互換性エラーを解決します。
+
+## v1.0.26
 
 リリース日：2024 年 4 月 8 日（PT）
 
