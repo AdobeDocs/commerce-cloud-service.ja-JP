@@ -3,9 +3,9 @@ title: RabbitMQ サービスの設定
 description: RabbitMQ サービスを有効にして、クラウドインフラストラクチャー上のAdobe Commerceのメッセージキューを管理する方法について説明します。
 feature: Cloud, Services
 exl-id: 85794b8f-2260-4a6e-b5a6-a1b4c356594e
-source-git-commit: d4c36b084094846cfad69adc2bffd567a58fab26
+source-git-commit: adcfbb7217c70122a4003a66d1bec1a623fbf11a
 workflow-type: tm+mt
-source-wordcount: '378'
+source-wordcount: '399'
 ht-degree: 0%
 
 ---
@@ -114,7 +114,7 @@ ht-degree: 0%
    }
    ```
 
-1. RabbitMQへのローカルポート転送を有効にします。
+1. RabbitMQへのローカルポート転送を有効にする（プロジェクトが US-3、EU-5、AP-3 リージョンなど別のリージョンにある場合は、 ``us-3``/``eu-5``/``ap-3`` （用） ``us``）
 
    ```bash
    ssh -L <port-number>:rabbitmq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
