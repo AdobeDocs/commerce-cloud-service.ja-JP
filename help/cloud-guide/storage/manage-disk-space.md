@@ -3,9 +3,9 @@ title: ディスク容量の管理
 description: コマンドラインインターフェイスを使用してディスク容量を管理する方法を説明します。
 feature: Cloud, Storage
 exl-id: 480cb33b-ac83-441d-946e-5b4de09ad84e
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: 8b40397796ee865aefbf8a7948cc9a3aceb1d35c
 workflow-type: tm+mt
-source-wordcount: '693'
+source-wordcount: '714'
 ht-degree: 0%
 
 ---
@@ -132,7 +132,7 @@ Filesystem                                    Size  Used Avail Use% Mounted on
 
 >[!IMPORTANT]
 >
->実稼動環境およびステージング環境の場合は、次の操作が必要です [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) ディスク領域の割り当てを変更します。 実稼動環境とステージング環境のサイズは特定の間隔でのみ増加するので、現在のディスク容量の使用状況に応じて、サポートはディスク容量の割り当てを最小 10 GB 増やすことをお勧めします。 一度割り当てると、ステージングおよび実稼働用のストレージの増加を元に戻すことはできません。
+>実稼動環境およびステージング環境の場合は、次の操作が必要です [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) ディスク領域の割り当てを変更します。 実稼動環境とステージング環境のサイズは特定の間隔でのみ増加するので、現在のディスク容量の使用状況に応じて、サポートはディスク容量の割り当てを最小 10 GB 増やすことをお勧めします。 一度割り当てると、ステージングおよび実稼働用のストレージの増加を元に戻すことはできません。 ストレージをリソース間で再割り当てまたは再配分することはできません。 ファイルストレージ領域を追加するには、MySQL に割り当てるディスク領域を減らします。
 
 ### アプリケーションのディスク容量
 
