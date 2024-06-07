@@ -3,9 +3,9 @@ title: 拡張機能の管理
 description: クラウドインフラストラクチャー上のAdobe Commerceで拡張機能をインストールおよび管理する方法について説明します。
 feature: Cloud, Extensions, Upgrade
 exl-id: 9c6e98ca-85da-4342-8402-d576eb382ba2
-source-git-commit: bb7a866b1896a8a43d01ad3f83dc655bcf383374
+source-git-commit: f8fb9d4d43c85f91ff87686160bcddb7cd417635
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '646'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,10 @@ ht-degree: 0%
 # 拡張機能の管理
 
 から拡張機能を追加することで、Adobe Commerce アプリケーションの機能を拡張できます。 [Commerce Marketplace](https://marketplace.magento.com). 例えば、テーマを追加してストアフロントのルックアンドフィールを変更したり、言語パッケージを追加してストアフロントと管理者をローカライズしたりできます。
+
+>[!NOTE]
+>
+>インストールの問題を回避するには、すべての Marketplace での購入を、クラウドプロジェクトを所有するのと同じアカウント（MAGEID）を使用して完了する必要があります。
 
 ## 拡張機能のコンポーザー名
 
