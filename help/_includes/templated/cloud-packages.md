@@ -21,9 +21,9 @@ ht-degree: 0%
 
 クラウドインフラストラクチャー上のAdobe Commerceでは、PHP パッケージの管理に Composer を使用します。
 
-この `composer.json` ファイルはパッケージのリストを宣言するのに対して、 `composer.lock` ファイルには、Adobe Commerceのインストールのビルドに使用されるパッケージの完全なリスト（各パッケージの完全なバージョンとその依存関係）が保存されます。
+`composer.json` ファイルはパッケージのリストを宣言します。`composer.lock` ファイルは、Adobe Commerceのインストールのビルドに使用されるパッケージの完全なリスト（各パッケージの完全なバージョンとその依存関係）を格納します。
 
-次のリファレンスドキュメントは、 `composer.lock` ファイルで、cloud infrastructure 2.4.7 上のAdobe Commerceに含まれている必要なパッケージについて説明します。
+次のリファレンスドキュメントは `composer.lock` ファイルから生成され、Cloud Infrastructure 2.4.7 上のAdobe Commerceに含まれている必須パッケージについて説明しています。
 
 ## 依存関係
 
@@ -198,14 +198,14 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-captcha.git">ラミナス/ラミナス – キャプチャ</a>
+      <a href="https://github.com/laminas/laminas-captcha.git">laminas/laminas-captcha</a>
     </td>
     <td>ライブラリ</td>
     <td>置物、画像、ReCaptcha などを使用した CAPTCHA の生成と検証</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-code.git">ラミナス/ラミナス符号</a>
+      <a href="https://github.com/laminas/laminas-code.git">laminas/laminas-code</a>
     </td>
     <td>ライブラリ</td>
     <td>PHP Reflection API、静的コードスキャン、およびコード生成の拡張</td>
@@ -219,56 +219,56 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-crypt.git">ラミナス/ラミナス陰窩</a>
+      <a href="https://github.com/laminas/laminas-crypt.git">laminas/laminas-crypt</a>
     </td>
     <td>ライブラリ</td>
     <td>強力な暗号化ツールとパスワードハッシュ</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-db.git">ラミナス/ラミナス – db</a>
+      <a href="https://github.com/laminas/laminas-db.git"> ラミナス/ラミナス – db</a>
     </td>
     <td>ライブラリ</td>
     <td>データベース抽象化レイヤー、SQL 抽象化、結果セット抽象化、RowDataGateway および TableDataGateway の実装</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-di.git">ラミナス/ラミナス – ディ</a>
+      <a href="https://github.com/laminas/laminas-di.git"> ラミナス・ラミナス・ディ </a>
     </td>
     <td>ライブラリ</td>
     <td>PSR-11 コンテナの自動依存関係インジェクション</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-escaper.git">ラミナス/ラミナスエスケープ</a>
+      <a href="https://github.com/laminas/laminas-escaper.git"> ラミナス/ラミナスエスケープ </a>
     </td>
     <td>ライブラリ</td>
     <td>HTML、HTML属性、JavaScript、CSS および URL を安全かつ安全にエスケープ</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-eventmanager.git">ラミナス/ラミナス – イベントマネージャ</a>
+      <a href="https://github.com/laminas/laminas-eventmanager.git"> ラミナス/ラミナス – イベントマネージャ </a>
     </td>
     <td>ライブラリ</td>
     <td>PHP アプリケーション内のイベントをトリガーしてリッスンする</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-feed.git">ラミナス/ラミナス供給</a>
+      <a href="https://github.com/laminas/laminas-feed.git"> ラミナス/ラミナス・フィード </a>
     </td>
     <td>ライブラリ</td>
     <td>rss および Atom フィードを作成および使用する機能を提供します</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-file.git">ラミナス/ラミナス ファイル</a>
+      <a href="https://github.com/laminas/laminas-file.git">laminas/laminas-file</a>
     </td>
     <td>ライブラリ</td>
     <td>PHP クラスファイルを見つける</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-filter.git">ラミナス/ラミナスフィルター</a>
+      <a href="https://github.com/laminas/laminas-filter.git"> ラミナス/ラミナスフィルター </a>
     </td>
     <td>ライブラリ</td>
     <td>データとファイルをプログラムでフィルタリングし、正規化する</td>
@@ -282,7 +282,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-i18n.git">ラミナス/ラミナス – i18n</a>
+      <a href="https://github.com/laminas/laminas-i18n.git"> ラミナス/ラミナス – i18n</a>
     </td>
     <td>ライブラリ</td>
     <td>アプリケーションの翻訳を提供し、国際化値をフィルタリングおよび検証します</td>
@@ -296,14 +296,14 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-loader.git">ラミナス/ラミナスローダー</a>
+      <a href="https://github.com/laminas/laminas-loader.git"> ラミナス/ラミナスローダー </a>
     </td>
     <td>ライブラリ</td>
     <td>自動読み込みとプラグインの読み込み戦略</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-mail.git">laminas/laminas-mail</a>
+      <a href="https://github.com/laminas/laminas-mail.git"> ラミナス/ラミナス – メール </a>
     </td>
     <td>ライブラリ</td>
     <td>テキストと MIME に準拠したマルチパート形式のメールメッセージを作成して送信する一般的な機能を提供</td>
@@ -324,14 +324,14 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-modulemanager.git">ラミナス/ラミナス – モジュールマネージャー</a>
+      <a href="https://github.com/laminas/laminas-modulemanager.git"> ラミナス/ラミナス – モジュールマネージャー </a>
     </td>
     <td>ライブラリ</td>
     <td>ラミナス mvc アプリケーション用モジュール式アプリケーションシステム</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-mvc.git">ラミナス/ラミナス – mvc</a>
+      <a href="https://github.com/laminas/laminas-mvc.git"> ラミナス/ラミナス – mvc</a>
     </td>
     <td>ライブラリ</td>
     <td>Laminas のイベント駆動型 MVC レイヤー（MVC アプリケーション、コントローラ、プラグインを含む）</td>
@@ -366,14 +366,14 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-server.git">ラミナス/ラミナス サーバ</a>
+      <a href="https://github.com/laminas/laminas-server.git">laminas/laminas-server</a>
     </td>
     <td>ライブラリ</td>
     <td>反射ベースの RPC サーバを作成する</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-servicemanager.git">ラミナス/ラミナス – サービスマネガー</a>
+      <a href="https://github.com/laminas/laminas-servicemanager.git"> ラミナス/ラミナス – サービスマネガー </a>
     </td>
     <td>ライブラリ</td>
     <td>ファクトリ駆動の依存関係挿入コンテナ</td>
@@ -387,42 +387,42 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-soap.git">ラミナス・ラミナス石鹸</a>
+      <a href="https://github.com/laminas/laminas-soap.git"> ラミナス/ラミナス石鹸 </a>
     </td>
     <td>ライブラリ</td>
     <td></td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-stdlib.git">laminas/laminas-stdlib</a>
+      <a href="https://github.com/laminas/laminas-stdlib.git"> ラミナス/ラミナス – stdlib</a>
     </td>
     <td>ライブラリ</td>
     <td>SPL 拡張機能、配列ユーティリティ、エラーハンドラーなど</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-text.git">ラミナス/ラミナス テキスト</a>
+      <a href="https://github.com/laminas/laminas-text.git"> ラミナス/ラミナス テキスト </a>
     </td>
     <td>ライブラリ</td>
     <td>FIGlets とテキストベースのテーブルの作成</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-uri.git">laminas/laminas-uri</a>
+      <a href="https://github.com/laminas/laminas-uri.git"> ラミナス/ラミナス uri</a>
     </td>
     <td>ライブラリ</td>
     <td>操作と検証を支援するコンポーネント » Uniform Resource Identifier （URI）</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-validator.git">ラミナス/ラミナスバリデーター</a>
+      <a href="https://github.com/laminas/laminas-validator.git">laminas/laminas-validator</a>
     </td>
     <td>ライブラリ</td>
     <td>幅広いドメイン向けの検証クラスと、複雑な検証条件を作成するためにバリデータを連結する機能</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-view.git">laminas/laminas-view</a>
+      <a href="https://github.com/laminas/laminas-view.git"> ラミナス/ラミナス ビュー </a>
     </td>
     <td>ライブラリ</td>
     <td>複数のビューレイヤー、ヘルパーなどをサポートおよび提供する柔軟なビューレイヤー</td>
@@ -443,7 +443,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port.git">ツバルマーティン/cssmin</a>
+      <a href="https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port.git"> タバルマーティン/cssmin</a>
     </td>
     <td>ライブラリ</td>
     <td>YUI CSS コンプレッサの PHP ポート</td>
@@ -541,14 +541,14 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/brick/math.git">れんが/数学</a>
+      <a href="https://github.com/brick/math.git"> ブリック/数学 </a>
     </td>
     <td>ライブラリ</td>
     <td>任意精度演算ライブラリ</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/brick/varexporter.git">レンガ/ベラエクスポーター</a>
+      <a href="https://github.com/brick/varexporter.git">brick/varexporter</a>
     </td>
     <td>ライブラリ</td>
     <td>var_export （）の代わりとなる強力な関数で、__set_state （）を使用せずにクロージャやオブジェクトをエクスポートすることができます。</td>
@@ -569,7 +569,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/colinmollenhour/credis.git">コリンモレン時間/単位</a>
+      <a href="https://github.com/colinmollenhour/credis.git"> コリンモレンアワー/クレディ </a>
     </td>
     <td>ライブラリ</td>
     <td>Credis は Redis のキー値ストアへの軽量なインターフェースで、パフォーマンスを向上させるために利用可能な場合は phpredis ライブラリをラップします。</td>
@@ -597,7 +597,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/composer/metadata-minifier.git">コンポーザー/メタデータ縮小子</a>
+      <a href="https://github.com/composer/metadata-minifier.git">composer/metadata-minifier</a>
     </td>
     <td>ライブラリ</td>
     <td>メタデータの縮小と拡張を処理する小さなユーティリティライブラリ。</td>
@@ -688,28 +688,28 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/collections.git">照明/コレクション</a>
+      <a href="https://github.com/illuminate/collections.git"> イルミネーション/コレクション </a>
     </td>
     <td>ライブラリ</td>
     <td>Illuminate コレクションパッケージ。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/config.git">照度/設定</a>
+      <a href="https://github.com/illuminate/config.git">illuminate/config</a>
     </td>
     <td>ライブラリ</td>
     <td>Illuminate Config パッケージ。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/contracts.git">照度/契約</a>
+      <a href="https://github.com/illuminate/contracts.git"> 照度/コントラクト </a>
     </td>
     <td>ライブラリ</td>
     <td>Illuminate Contracts パッケージ。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/macroable.git">照度/マクロ可能</a>
+      <a href="https://github.com/illuminate/macroable.git"> 照度/マクロ可能 </a>
     </td>
     <td>ライブラリ</td>
     <td>Illuminate Macroable パッケージ。</td>
@@ -744,7 +744,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/Seldaek/monolog.git">モノローグ/モノローグ</a>
+      <a href="https://github.com/Seldaek/monolog.git"> 独白/独白 </a>
     </td>
     <td>ライブラリ</td>
     <td>ファイル、ソケット、受信ボックス、データベース、および様々な web サービスにログを送信します。</td>
@@ -758,7 +758,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/briannesbitt/Carbon.git">ネボット/カーボン</a>
+      <a href="https://github.com/briannesbitt/Carbon.git">nesbot/carbon</a>
     </td>
     <td>ライブラリ</td>
     <td>281 の異なる言語をサポートする、DateTime の API 拡張機能。</td>
@@ -779,7 +779,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/MyIntervals/emogrifier.git">ペラゴ/顔文字</a>
+      <a href="https://github.com/MyIntervals/emogrifier.git"> ペラゴ/顔文字 </a>
     </td>
     <td>ライブラリ</td>
     <td>CSS スタイルをHTMLコードのインラインスタイル属性に変換します</td>
@@ -835,7 +835,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/container.git">psr/コンテナ</a>
+      <a href="https://github.com/php-fig/container.git">psr/container</a>
     </td>
     <td>ライブラリ</td>
     <td>共通コンテナインタフェース （PHP FIG PSR-11）</td>
@@ -891,14 +891,14 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/ramsey/collection.git">ラムジー/コレクション</a>
+      <a href="https://github.com/ramsey/collection.git"> ラムジー/コレクション </a>
     </td>
     <td>ライブラリ</td>
     <td>コレクションを表現および操作するための PHP ライブラリ。</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/ramsey/uuid.git">ramsey/uuid</a>
+      <a href="https://github.com/ramsey/uuid.git"> ラムジー/uuid</a>
     </td>
     <td>ライブラリ</td>
     <td>ユニバーサル固有識別子（UUID）を生成し、操作するための PHP ライブラリ。</td>
@@ -1066,7 +1066,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/polyfill-ctype.git">symfony/polyfill-type</a>
+      <a href="https://github.com/symfony/polyfill-ctype.git">symfony/polyfill-ctype</a>
     </td>
     <td>ライブラリ</td>
     <td>ctype 関数のシンボリックリポリ入力</td>
@@ -1136,7 +1136,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/process.git">交信/プロセス</a>
+      <a href="https://github.com/symfony/process.git">symfony/process</a>
     </td>
     <td>ライブラリ</td>
     <td>サブプロセスでコマンドを実行します</td>
@@ -1157,7 +1157,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/service-contracts.git">symfony/service-contract</a>
+      <a href="https://github.com/symfony/service-contracts.git">symfony/service-contracts</a>
     </td>
     <td>ライブラリ</td>
     <td>サービスの記述に関連する一般的な抽象概念</td>
@@ -1171,14 +1171,14 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/translation.git">交信/翻訳</a>
+      <a href="https://github.com/symfony/translation.git"> 交信/翻訳 </a>
     </td>
     <td>ライブラリ</td>
     <td>アプリケーションを国際化するツールを提供します</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/translation-contracts.git">同期/翻訳契約</a>
+      <a href="https://github.com/symfony/translation-contracts.git"> 交信/翻訳契約 </a>
     </td>
     <td>ライブラリ</td>
     <td>翻訳に関連する一般的な抽象概念</td>
@@ -1342,7 +1342,7 @@ magento/product-enterprise-edition: >=2.4.7 <2.4.8
       paypal/module-braintree-core
     </td>
     <td>magento2-module</td>
-    <td>PayPal 用の Gene Commerce によるMagentoBraintree 2.2.0 モジュールから分岐。</td>
+    <td>PayPal 用の Gene CommerceによるMagentoBraintree 2.2.0 モジュールから分岐します。</td>
   </tr>
   </tbody>
 </table>

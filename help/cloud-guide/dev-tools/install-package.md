@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # ECE-Tools パッケージを使用するようにプロジェクトをアップグレード
 
-Adobeは、を廃止しました `magento/magento-cloud-configuration` および `magento/ece-patches` を支持するパッケージ `ece-tools` 多くのクラウドプロセスを簡素化するパッケージ。 古いAdobe Commerce on cloud infrastructure プロジェクトを使用する場合は、次のようになります _ではない_ contain `ece-tools` パッケージ化したら、1 回限りの手動を実行する必要があります _アップグレード_ プロジェクトに対して処理を行います。
+Adobeでは、`magento/magento-cloud-configuration` パッケージと `magento/ece-patches` パッケージを非推奨（廃止予定）にし、多くのクラウドプロセスを簡素化する `ece-tools` パッケージを優先しました。 `ece-tools` パッケージを含 _ない_ 古いAdobe Commerce on cloud infrastructure プロジェクトを使用する場合は、プロジェクトに対して 1 回限りの手動 _アップグレード_ プロセスを実行する必要があります。
 
 >[!WARNING]
 >
->プロジェクトにが含まれている場合 `ece-tools` パッケージが追加されました。次のアップグレードはスキップできます。 検証するには、を取得します [!DNL Commerce] を使用したバージョン `php vendor/bin/ece-tools -V` ローカルプロジェクトのルートディレクトリにあるコマンド。
+>プロジェクトに `ece-tools` パッケージが含まれている場合は、次のアップグレードをスキップできます。 検証するには、ローカルプロジェクトのルートディレクトリで `php vendor/bin/ece-tools -V` コマンドを使用して [!DNL Commerce] バージョンを取得します。
 
-このプロジェクトのアップグレード プロセスでは、 `magento/magento-cloud-metapackage` でのバージョン制約 `composer.json` ファイルをルートディレクトリに配置します。 この制約により、現在のAdobe Commerce バージョンをアップグレードすることなく、クラウドインフラストラクチャメタパッケージ（非推奨パッケージの削除など）上のAdobe Commerceを更新できます。
+このプロジェクトのアップグレードプロセスでは、ルートディレクトリにある `composer.json` ファイルの `magento/magento-cloud-metapackage` バージョン制約を更新する必要があります。 この制約により、現在のAdobe Commerce バージョンをアップグレードすることなく、クラウドインフラストラクチャメタパッケージ（非推奨パッケージの削除など）上のAdobe Commerceを更新できます。
 
 {{upgrade-tip}}
 
 ## 非推奨（廃止予定）のパッケージを削除
 
-アップグレードを実行する前に、を使用します `ece-tools` パッケージ、 `composer.lock` 次の非推奨パッケージ用のファイル：
+`ece-tools` パッケージを使用するようにアップグレードを実行する前に、`composer.lock` ファイルで以下の非推奨パッケージを確認してください。
 
 - `magento/magento-cloud-configuration`
 - `magento/ece-patches`
@@ -37,12 +37,12 @@ Adobe Commerceの各バージョンには、次に基づいて異なる制約が
 >=current_version <next_version
 ```
 
-- の場合 `current_version`を開き、インストールするAdobe Commerceのバージョンを指定します。
-- の場合 `next_version`で指定した値の後の次のパッチバージョンを指定します。 `current_version`.
+- `current_version` しくは、インストールするAdobe Commerceのバージョンを指定します。
+- `next_version`:`current_version` で指定した値の後の次のパッチバージョンを指定します。
 
-Adobe Commerceのインストール `2.3.5-p2`、設定 `current_version` 対象： `2.3.5` および `next_version` 対象： `2.3.6`. 制約 `">=2.3.5 <2.3.6"` 2.3.5 用に利用可能な最新のパッケージをインストールします。
+Adobe Commerce `2.3.5-p2` をインストールする場合は、`current_version` を `2.3.5` に、`next_version` を `2.3.6` に設定します。 制約 `">=2.3.5 <2.3.6"` は、2.3.5 で利用可能な最新のパッケージをインストールします。
 
-常に最新のメタパッケージ制約は [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json).
+最新のメタパッケージ制約は、[`magento-cloud` のテンプレートで常に見つけることができ ](https://github.com/magento/magento-cloud/blob/master/composer.json) す。
 
 次の例では、クラウドインフラストラクチャメタパッケージ上のAdobe Commerceを、現在のバージョン 2.4.7 以上、次のバージョン 2.4.8 以下の任意のバージョンに制限します。
 
@@ -54,11 +54,11 @@ Adobe Commerceのインストール `2.3.5-p2`、設定 `current_version` 対象
 
 ## プロジェクトのアップグレード
 
-使用するようにプロジェクトをアップグレードするには `ece-tools` パッケージを使用する場合は、メタパッケージを更新し、 `.magento.app.yaml` プロパティをフックし、Composer の更新を実行します。
+`ece-tools` パッケージを使用するようにプロジェクトをアップグレードするには、メタパッケージおよび `.magento.app.yaml` フック プロパティを更新し、Composer の更新を実行する必要があります。
 
 **ece-tools を使用するようにプロジェクトをアップグレードするには**:
 
-1. を更新 `magento/magento-cloud-metapackage` でのバージョン制約 `composer.json` ファイル。
+1. `composer.json` ファイルの `magento/magento-cloud-metapackage` バージョン制約を更新します。
 
    ```bash
    composer require "magento/magento-cloud-metapackage":">=2.4.7 <2.4.8" --no-update
@@ -70,7 +70,7 @@ Adobe Commerceのインストール `2.3.5-p2`、設定 `current_version` 対象
    composer update magento/magento-cloud-metapackage
    ```
 
-1. でフック コマンドを変更する `magento.app.yaml` ファイル。
+1. `magento.app.yaml` ファイルのフック コマンドを修正します。
 
    ```yaml
    hooks:
@@ -87,7 +87,7 @@ Adobe Commerceのインストール `2.3.5-p2`、設定 `current_version` 対象
            php ./vendor/bin/ece-tools run scenario/post-deploy.xml
    ```
 
-1. を確認して削除します [非推奨パッケージ](#remove-deprecated-packages). 非推奨パッケージを使用すると、アップグレードが正常に行われなくなる可能性があります。
+1. [ 非推奨パッケージ ](#remove-deprecated-packages) を確認して削除します。 非推奨パッケージを使用すると、アップグレードが正常に行われなくなる可能性があります。
 
    ```bash
    composer remove magento/magento-cloud-configuration
@@ -97,7 +97,7 @@ Adobe Commerceのインストール `2.3.5-p2`、設定 `current_version` 対象
    composer remove magento/ece-patches
    ```
 
-1. を更新する必要がある場合があります `ece-tools` パッケージ。
+1. 場合によっては、`ece-tools` パッケージを更新する必要があります。
 
    ```bash
    composer update magento/ece-tools
@@ -111,7 +111,7 @@ Adobe Commerceのインストール `2.3.5-p2`、設定 `current_version` 対象
    composer.lock
    ```
 
-1. コードの変更をリモートサーバーにプッシュし、このブランチを `integration` 分岐。
+1. コードの変更をリモートサーバーにプッシュし、このブランチを `integration` ブランチとマージします。
 
    ```bash
    git push origin <branch-name>

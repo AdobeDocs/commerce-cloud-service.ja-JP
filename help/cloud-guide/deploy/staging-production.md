@@ -18,51 +18,51 @@ ht-degree: 0%
 
 >[!TIP]
 >
->Adobeでは、以下を作成することをお勧めします [バックアップ](../storage/snapshots.md) デプロイメント前の環境の
+>Adobeでは、デプロイメントの前に環境の [ バックアップ ](../storage/snapshots.md) を作成することをお勧めします。
 
-また、を有効にすることもできます [New Relicを使用したデプロイメントの追跡](../monitor/track-deployments.md) デプロイメントのイベントを監視し、デプロイメント間のパフォーマンスを分析するのに役立ちます。
+また、[New Relicでデプロイメントを追跡 ](../monitor/track-deployments.md) を有効にしてデプロイメントイベントを監視し、デプロイメント間のパフォーマンスを分析することもできます。
 
 ## スターターデプロイメントフロー
 
-Adobeでは、以下を作成することをお勧めします `staging` 分岐の `master` スタータープランの開発とデプロイメントを最適にサポートするブランチ。 次に、4 つのアクティブな環境のうち 2 つが準備されています。 `master` 実稼動用および `staging` ステージングの場合。
+Adobeでは、スタータープランの開発とデプロイメントを最適にサポートするために、`master` ブランチから `staging` ブランチを作成することをお勧めします。 次に、4 つのアクティブな環境（実稼動用 `master` とステージング用 `staging`）の 2 つが準備されています。
 
-このプロセスの詳細については、を参照してください [スターターの開発とデプロイのワークフロー](../architecture/starter-develop-deploy-workflow.md).
+このプロセスについて詳しくは、[ スターターの開発とデプロイのワークフロー ](../architecture/starter-develop-deploy-workflow.md) を参照してください。
 
 ## プロデプロイメントフロー
 
-Pro には、2 つのアクティブなブランチを持つ大規模な統合環境（グローバル）が付属しています `master` ブランチ、ステージングおよび実稼動のブランチ。 プロジェクトを作成すると、サイトの構築とデプロイのために、コードを分岐、開発、プッシュする準備が整います。 統合環境には多数のブランチを含めることができますが、ステージング環境と実稼動環境のブランチは各環境に 1 つだけです。
+Pro には、2 つのアクティブなブランチ（グローバルブランチ、ステージングおよび実稼動ブランチ）を持つ大規模な統合環境が `master` 意されています。 プロジェクトを作成すると、サイトの構築とデプロイのために、コードを分岐、開発、プッシュする準備が整います。 統合環境には多数のブランチを含めることができますが、ステージング環境と実稼動環境のブランチは各環境に 1 つだけです。
 
-このプロセスの詳細については、を参照してください [プロ開発およびデプロイワークフロー](../architecture/pro-develop-deploy-workflow.md).
+このプロセスについて詳しくは、「[Pro 開発およびデプロイワークフロー ](../architecture/pro-develop-deploy-workflow.md)」を参照してください。
 
 ## コードをステージングにデプロイ
 
-このステージング環境は、データベース、web サーバー、Fastly やNew Relicなどのすべてのサービスを含む、実稼動環境に近い環境を提供します。 を介して完全にプッシュ、結合、デプロイできます [[!DNL Cloud Console]](../project/overview.md) または [クラウド CLI コマンド](../dev-tools/cloud-cli-overview.md) ターミナルアプリケーションを使用します。
+このステージング環境は、データベース、web サーバー、Fastly やNew Relicなどのすべてのサービスを含む、実稼動環境に近い環境を提供します。 [[!DNL Cloud Console]](../project/overview.md) または [Cloud CLI コマンド ](../dev-tools/cloud-cli-overview.md) を使用して、ターミナルアプリケーションから完全にプッシュ、結合およびデプロイできます。
 
-### を使用したコードのデプロイ [!DNL Cloud Console]
+### [!DNL Cloud Console] を使用したコードのデプロイ
 
-この [!DNL Cloud Console] は、スタータープランと Pro プランの統合、ステージングおよび実稼動環境でコードを作成、管理、デプロイする機能を提供します。
+[!DNL Cloud Console] は、スタータープランと Pro プランの統合、ステージングおよび実稼動環境で、コードを作成、管理およびデプロイする機能を提供します。
 
-**Pro プロジェクトの場合は、統合ブランチをステージングにデプロイします**:
+**Pro プロジェクトの場合は、統合ブランチをステージングにデプロイします**。
 
-1. [ログイン](https://accounts.magento.cloud) をプロジェクトに追加します。
-1. 「」を選択します `integration` 分岐。
-1. 「」を選択します **結合** ステージングにデプロイするオプション。
+1. プロジェクトに [ ログイン ](https://accounts.magento.cloud) します。
+1. `integration` ブランチを選択します。
+1. **結合** オプションを選択して、ステージング環境にデプロイします。
 
-   ![結合](../../assets/button-merge.png){width="150"}
+   ![ 結合 ](../../assets/button-merge.png){width="150"}
 
-1. すべて完了 [テスト](../test/staging-and-production.md) ステージング環境で行います。
-1. ステージングの準備が整ったら、 **結合** 実稼動環境にデプロイするオプション。
+1. ステージング環境ですべての [ テスト ](../test/staging-and-production.md) を完了します。
+1. ステージングの準備が整ったら、「**結合**」オプションを選択して、実稼動環境にデプロイします。
 
-**スターターの場合、開発ブランチをステージングにデプロイします**:
+**スターターの場合、開発ブランチをステージングにデプロイします**。
 
-1. [ログイン](https://accounts.magento.cloud) をプロジェクトに追加します。
+1. プロジェクトに [ ログイン ](https://accounts.magento.cloud) します。
 1. 準備済みコードブランチを選択します。
-1. 「」を選択します **結合** ステージングにデプロイするオプション。
+1. **結合** オプションを選択して、ステージング環境にデプロイします。
 
-   ![結合](../../assets/button-merge.png){width="150"}
+   ![ 結合 ](../../assets/button-merge.png){width="150"}
 
-1. すべて完了 [テスト](../test/staging-and-production.md) ステージング環境で行います。
-1. ステージングの準備が整ったら、 **結合** 実稼動にデプロイするオプション （`master`）に設定します。
+1. ステージング環境ですべての [ テスト ](../test/staging-and-production.md) を完了します。
+1. ステージングの準備が整ったら、「**結合**」オプションを選択して、実稼動環境（`master`）にデプロイします。
 
 ### コマンドラインでコードをデプロイします。
 
@@ -140,11 +140,11 @@ Cloud CLI には、コードをデプロイするコマンドが用意されて�
 
 ## 静的ファイルの移行
 
-[静的ファイル](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) に保存されます。 `mounts`. ローカル環境などのソース・マウントの場所からターゲット・マウントの場所にファイルを移行する方法は 2 つあります。 どちらの方法でも、 `rsync` ユーティリティですが、Adobeでは `magento-cloud` ローカル環境とリモート環境の間でファイルを移動するための CLI。 また、Adobeでは、 `rsync` リモートソースから別のリモートの場所にファイルを移動する場合のメソッド。
+[ 静的ファイル ](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) は `mounts` に保存されます。 ローカル環境などのソース・マウントの場所からターゲット・マウントの場所にファイルを移行する方法は 2 つあります。 どちらの方法でも `rsync` ユーティリティが使用されますが、Adobeでは、ローカル環境とリモート環境の間でファイルを移動するには `magento-cloud` CLI を使用することをお勧めします。 また、Adobeでは、リモートソースから別のリモートの場所にファイルを移動する場合に、`rsync` の方法を使用することをお勧めします。
 
 ### CLI を使用したファイルの移行
 
-を使用できます `mount:upload` および `mount:download` ローカル環境とリモート環境の間でファイルを移行する CLI コマンド。 どちらのコマンドも、 `rsync` ユーティリティですが、CLI コマンドでは、クラウドインフラストラクチャー環境のAdobe Commerceに合わせてカスタマイズされたオプションとプロンプトが提供されます。 たとえば、オプションを指定せずに単純なコマンドを使用した場合、アップロードまたはダウンロードするマウントを選択するよう CLI によって求められます。
+`mount:upload` および `mount:download` CLI コマンドを使用して、ローカル環境とリモート環境の間でファイルを移行できます。 どちらのコマンドも `rsync` ユーティリティを使用しますが、CLI コマンドは Cloud Infrastructure 環境のAdobe Commerceに合わせたオプションとプロンプトを提供します。 たとえば、オプションを指定せずに単純なコマンドを使用した場合、アップロードまたはダウンロードするマウントを選択するよう CLI によって求められます。
 
 ```bash
 magento-cloud mount:download
@@ -168,7 +168,7 @@ Downloading files from the remote mount pub/media to pub/media
 Are you sure you want to continue? [Y/n] Y
 ```
 
-**ローカルからファイルをアップロードするには `pub/media/` リモートへのフォルダー `pub/media/` 現在の環境のフォルダー**:
+**現在の環境のローカル `pub/media/` フォルダーからリモート `pub/media/` フォルダーにファイルをアップロードするには**:
 
 ```bash
 magento-cloud mount:upload --source /path/to/project/pub/media/ --mount pub/media/
@@ -189,11 +189,11 @@ Are you sure you want to continue? [Y/n] Y
   total size is 154.57K  speedup is 18.23
 ```
 
-の使用 `--help` オプション： `mount:upload` および `mount:download` その他のオプションを表示するコマンド。 例えば、 `--delete` 移行中に不要なファイルを削除するオプション。
+`mount:upload` コマンドと `mount:download` コマンドの `--help` オプションを使用して、その他のオプションを表示します。 例えば、移行中に不要なファイルを削除する `--delete` のオプションがあります。
 
 ### rsync を使用したファイルの移行
 
-または、を使用することもできます。 `rsync` ファイルを移行するためのユーティリティ。
+または、`rsync` ユーティリティを使用してファイルをマイグレーションすることもできます。
 
 ```bash
 rsync -azvP <source> <destination>
@@ -202,29 +202,29 @@ rsync -azvP <source> <destination>
 このコマンドは、次のオプションを使用します。
 
 - `a`-archive
-- `z` – マイグレーション中にファイルを圧縮する
+- 移行中にファイルを `z` 圧縮
 - `v`-verbose
-- `P`部分的な進捗状況
+- `P` 部的な進歩
 
-参照： [rsync](https://linux.die.net/man/1/rsync) 助けて。
+[rsync](https://linux.die.net/man/1/rsync) ヘルプを参照してください。
 
 >[!NOTE]
 >
->リモート環境からリモート環境にメディアを直接転送するには、SSH エージェント転送を有効にする必要があります。詳しくは、を参照してください。 [GitHub ガイダンス](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
+>リモートからリモート環境に直接メディアを転送するには、SSH エージェント転送を有効にする必要があります。[GitHub ガイダンス ](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding) を参照してください。
 
-**静的ファイルをリモート環境からリモート環境に直接移行する（高速アプローチ）**:
+**静的ファイルをリモート環境からリモート環境に直接移行する（高速アプローチ）**
 
-1. SSH を使用してソース環境にログインします。 を使用しないでください。 `magento-cloud` CLI。 使用， `-A` 認証エージェント接続の転送を有効にするので、オプションは重要です。
+1. SSH を使用してソース環境にログインします。 `magento-cloud` CLI は使用しないでください。 `-A` オプションを使用すると、認証エージェント接続の転送が有効になるので、このオプションは重要です。
 
    >[!TIP]
    >
-   >を検索するには **SSH アクセス** 内のリンク [!DNL Cloud Console]を選択し、環境を選択して、 **サイトへのアクセス**.
+   >[!DNL Cloud Console] で **SSH アクセス** リンクを見つけるには、環境を選択して **サイトにアクセス** をクリックします。
 
    ```bash
    ssh -A <environment_ssh_link@ssh.region.magento.cloud>
    ```
 
-1. の使用 `rsync` コピーするコマンド `pub/media` ソース環境から別のリモート環境へのディレクトリ。
+1. `rsync` コマンドを使用して、ソース環境から別のリモート環境に `pub/media` ディレクトリをコピーします。
 
    ```bash
    rsync -azvP pub/media/ <destination_environment_ssh_link@ssh.region.magento.cloud>:pub/media/
@@ -240,29 +240,29 @@ rsync -azvP <source> <destination>
 
 >[!BEGINSHADEBOX]
 
-**前提条件：** データベースダンプ（手順 3 を参照）には、データベーストリガーを含める必要があります。 これらをダンプする場合は、次の点を確認します [トリガー権限](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger).
+**前提条件：** データベース・ダンプ（手順 3 を参照）にデータベース・トリガーが含まれている必要があります。 ダンプする場合は、[トリガー権限 ](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger) があることを確認します。
 
 >[!IMPORTANT]
 >
 >統合環境データベースは開発テスト専用であり、ステージング環境や実稼動環境に移行しないデータを含めることができます。
 
-継続的統合デプロイメントの場合、Adobe **推奨しない** 統合からステージング環境および実稼動環境へのデータの移行 テストデータに合格したり、重要なデータを上書きしたりできます。 重要な設定はすべて、 [設定ファイル](../store/store-settings.md) および `setup:upgrade` ビルドおよびデプロイ時のコマンド。
+継続的な統合デプロイメントの場合、Adobeは、統合からステージング環境および実稼動環境にデータを移行する **お勧めしません**。 テストデータに合格したり、重要なデータを上書きしたりできます。 重要な設定は、ビルドおよびデプロイ時に [ 設定ファイル ](../store/store-settings.md) とコマンド `setup:upgrade` 使用して渡されます。
 
 >[!ENDSHADEBOX]
 
-Adobe **推奨** 実稼動環境からステージング環境にデータを移行して、サイトを完全にテストし、すべてのサービスと設定を備えたほぼ実稼動環境に保存します。
+Adobe **推奨** 実稼動環境からステージング環境にデータを移行して、サイトを完全にテストし、すべてのサービスと設定を使用してほぼ実稼動環境に保存します。
 
 >[!NOTE]
 >
->リモート環境からリモート環境に直接メディアを転送するには、ssh エージェント転送を有効にする必要があります。 [GitHub ガイダンス](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
+>リモート環境からリモート環境に直接メディアを転送するには、ssh エージェント転送を有効にする必要があります。[GitHub ガイダンス ](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding) を参照してください。
 
 ### データベースのバックアップ
 
-データベースのバックアップを作成することをお勧めします。 次の手順では、のガイダンスを使用しています。 [データベースのバックアップ](../storage/database-dump.md).
+データベースのバックアップを作成することをお勧めします。 次の手順では、[ データベースのバックアップ ](../storage/database-dump.md) のガイダンスを使用しています。
 
 **データベースをダンプするには**:
 
-1. [SSH を使用してリモート環境にログインする](../development/secure-connections.md#use-an-ssh-command) コピーするデータベースを含みます。
+1. [SSH を使用して、コピーするデータベースが含まれているリモート環境にログインします ](../development/secure-connections.md#use-an-ssh-command)。
 
 1. 環境の関係を一覧表示し、データベースのログイン情報をメモします。
 
@@ -270,19 +270,19 @@ Adobe **推奨** 実稼動環境からステージング環境にデータを移
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
    ```
 
-   ステージング環境および実稼動環境の場合、データベースの名前はにあります。 `MAGENTO_CLOUD_RELATIONSHIPS` 変数（通常、アプリケーション名およびユーザー名と同じ）。
+   ステージング環境および実稼動環境の場合、データベースの名前は `MAGENTO_CLOUD_RELATIONSHIPS` 変数に入力します（通常、アプリケーション名およびユーザー名と同じ）。
 
-1. データベースのバックアップを作成します。 DB ダンプのターゲット・ディレクトリを選択するには、 `--dump-directory` オプション。
+1. データベースのバックアップを作成します。 DB ダンプのターゲット・ディレクトリを選択するには、`--dump-directory` オプションを使用します。
 
-   スターター環境と Pro 統合環境の場合は、を使用します `main` データベースの名前として、次の操作を行います。
+   スターター環境および Pro 統合環境の場合は、データベースの名前として `main` を使用します。
 
    ```bash
    php vendor/bin/ece-tools db-dump main
    ```
 
    ダンプオプション：
-   - `--dump-directory=<dir>`— データベース ダンプのターゲット ディレクトリを選択します。
-   - `--remove-definers`— データベース ダンプから DEFINER ステートメントを削除します。
+   - `--dump-directory=<dir>` - データベース ダンプのターゲット ディレクトリを選択します
+   - `--remove-definers` - データベース・ダンプから DEFINER 文を削除します。
 
 1. ECE ツール方式をお勧めしますが、別の方法として、ネイティブの MySQL を使用して GZIP 形式でデータベースダンプファイルを作成する方法もあります。
 
@@ -296,15 +296,15 @@ Adobe **推奨** 実稼動環境からステージング環境にデータを移
    mysqldump -h <database-host> --user=<database-username> --password=<password> --single-transaction --triggers --ignore-table=<database-name>.tfa_user_config --ignore-table=<database-name>.tfa_country_codes <database-name> | gzip - > /tmp/database.sql.gz
    ```
 
-1. タイプ `logout` SSH 接続を終了します。
+1. `logout` と入力して、SSH 接続を終了します。
 
 ### データベースを削除して再作成します
 
 データをインポートする場合、データベースをドロップして作成する必要があります。
 
-**データベースを削除して再作成するには、次の手順に従います**:
+**データベースを削除して再作成するには、次の手順に従います**。
 
-1. を確立する [SSH トンネル](../development/secure-connections.md#ssh-tunneling) をリモート環境に送信します。
+1. リモート環境への [SSH トンネル ](../development/secure-connections.md#ssh-tunneling) を確立します。
 
 1. データベースサービスに接続します。
 
@@ -312,7 +312,7 @@ Adobe **推奨** 実稼動環境からステージング環境にデータを移
    mysql --host=127.0.0.1 --user='<database-username>' --pass='<user-password>' --database='<name>' --port='<port>'
    ```
 
-1. 時刻 `MariaDB [main]>` プロンプトを表示して、データベースを削除します。
+1. `MariaDB [main]>` プロンプトで、データベースをドロップします。
 
    スターターと Pro の統合の場合：
 

@@ -12,12 +12,12 @@ ht-degree: 0%
 
 # New Relic ログ管理
 
-すべてのクラウドインフラストラクチャプロジェクトには、次のものが含まれます [New Relic ログ管理](https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/). このサービスは、ステージング環境と実稼動環境のすべてのログデータを集計して、一元化されたログ管理ダッシュボードに表示するように事前に設定されています。
+すべてのクラウドインフラストラクチャプロジェクトには、[New Relic ログ管理 ](https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/) が含まれます。 このサービスは、ステージング環境と実稼動環境のすべてのログデータを集計して、一元化されたログ管理ダッシュボードに表示するように事前に設定されています。
 
 集計データには、次のログの情報が含まれます。
 
-- すべて `ece-tools` とのアプリケーションログ `~/var/log` directory
-- からのクラウドサービスのログ `var/log/platform/<project-ID>` directory
+- `~/var/log` ディレクトリからのすべての `ece-tools` とアプリケーションのログ
+- `var/log/platform/<project-ID>` ディレクトリからのクラウドサービスのログ
 - Fastly CDN と WAF
 
 プロジェクトがNew Relicに接続されている場合、New Relic ログサービスを使用して、次のようなタスクを実行できます。
@@ -33,28 +33,28 @@ New Relic ログアプリケーションを使用して、集計ログデータ�
 
 **New Relic ログアプリケーションを使用するには**:
 
-1. にログイン [New Relic アカウント](https://login.newrelic.com/login).
+1. [New Relic アカウント ](https://login.newrelic.com/login) にログインします。
 
-1. を選択 **ログ** エクスプローラーナビゲーションメニューから。
+1. エクスプローラーナビゲーションメニューから **ログ** を選択します。
 
-1. の上部でアカウントが選択されていることを確認します。 _すべてのログ_ 表示。
+1. _すべてのログ_ ビューの上部でアカウントが選択されていることを確認します。
 
 1. ログ クエリの時間範囲を選択します。
 
-1. Cloud Services のインフラストラクチャログデータを確認するには（からのログ） `~/var/log/`）、クエリ文字列を入力します。 `has: "filePath"` が含まれる _ログを検索_ フィールド。 次に、 **[!UICONTROL Query logs]**.
+1. クラウドサービス（`~/var/log/` からのログ）のインフラストラクチャログデータを確認するには、「_ログを検索_ フィールドにクエリ文字列 `has: "filePath"` を入力します。 次に、「**[!UICONTROL Query logs]**」をクリックします。
 
-   ログファイルの名前はに保存されます。 `filePath` 列（ログファイルへのフルパス）。
+   ログファイルの名前は、ログファイルのフルパスと共に「`filePath`」列に格納されます。
 
-   ![Cloud project New Relic サービスのログデータ](../../assets/new-relic/var-log-query.png)
+   ![Cloud Project New Relic サービスのログデータ ](../../assets/new-relic/var-log-query.png)
 
-1. Fastly ログデータをレビューするには、クエリ文字列を入力します `has: "client_ip"` が含まれる _ログを検索_ フィールド。 次に、 **[!UICONTROL Query logs]**.
+1. Fastly ログデータをレビューするには、_ログを検索_ フィールドにクエリ文字列 `has: "client_ip"` を入力します。 次に、「**[!UICONTROL Query logs]**」をクリックします。
 
-1. Fastly ログ結果を国コードでフィルタリングするには、次のボタンをクリックします **[!UICONTROL Add column]**&#x200B;を選択してから、 **[!UICONTROL geo_country_code]**.
+1. 国コードで Fastly ログ結果をフィルタリングするには、「**[!UICONTROL Add column]**」をクリックし、「**[!UICONTROL geo_country_code]**」を選択します。
 
-   ![Cloud Project New Relic CDN ログ属性フィルター](../../assets/new-relic/fastly-countrycode-filter.png)
+   ![Cloud Project New Relic CDN ログ属性フィルター ](../../assets/new-relic/fastly-countrycode-filter.png)
 
 >[!TIP]
 >
->からクエリビューを保存できます _保存したビュー_ ドロップダウン。 クリック **[!UICONTROL Create new]**&#x200B;を選択し、名前を入力してオプションを選択し、 **[!UICONTROL Save view]**.
+>_保存済みのビュー_ ドロップダウンからクエリビューを保存できます。 「**[!UICONTROL Create new]**」をクリックし、名前を入力してオプションを選択し、「**[!UICONTROL Save view]**」をクリックします。
 >
->参照： [ログ管理の基本を学ぶ](https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/) および [New Relicのクエリ言語の概要](https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/introduction-nrql-new-relics-query-language/) 日 _New Relic ドキュメント_ サイト。
+>[4}New Relic ドキュメント ](https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/) サイトの [ ログ管理の基本を学ぶ ](https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/introduction-nrql-new-relics-query-language/) および {New Relic query language の概要 _を参照してください。_

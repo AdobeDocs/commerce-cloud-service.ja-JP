@@ -5,9 +5,9 @@ source-wordcount: '15'
 ht-degree: 0%
 
 ---
-## このプル要求の目的
+## このプルリクエストの目的
 
-このプルリクエスト (PR) ...
+このプルリクエスト（PR） ...
 
 ## 影響を受けるページ
 
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 - ...
 
-## コマースコードへのリンク
+## Commerce コードへのリンク
 
 <!--  OPTIONAL - REMOVE THIS SECTION IF NOT USED.
 If this pull request references a file in a Magento Open Source or Adobe Commerce codebase repository, add the link here. -->

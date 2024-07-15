@@ -10,21 +10,21 @@ ht-degree: 0%
 
 ---
 
-# の設定 [!DNL RabbitMQ] サービス
+# サービス [!DNL RabbitMQ] 設定
 
-この [メッセージキューフレームワーク（MQF）](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) は、Adobe Commerce内のシステムで、 [モジュール](https://glossary.magento.com/module) メッセージをキューに公開します。 また、メッセージを非同期で受信するコンシューマーも定義します。
+[Message Queue Framework （MQF） ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) は、[ モジュール ](https://glossary.magento.com/module) がメッセージをキューに公開できるようにする、Adobe Commerce内のシステムです。 また、メッセージを非同期で受信するコンシューマーも定義します。
 
-この MQF は、 [RabbitMQ](https://www.rabbitmq.com/) メッセージを送受信するためのスケーラブルなプラットフォームを提供するメッセージングブローカーとして。 また、未配信メッセージを保存するメカニズムも含まれています。 [!DNL RabbitMQ] は、Advanced Message Queuing Protocol （AMQP） 0.9.1 仕様に基づいています。
+MQF は、メッセージの送受信に使用できるスケーラブルなプラットフォームを提供するメッセージング ブローカーとして ](https://www.rabbitmq.com/)0}RabbitMQ} を使用します。 [また、未配信メッセージを保存するメカニズムも含まれています。 [!DNL RabbitMQ] は、Advanced Message Queuing Protocol （AMQP） 0.9.1 仕様に基づいています。
 
 >[!WARNING]
 >
->次のような既存の AMQP ベースのサービスを使用する場合： [!DNL RabbitMQ]を使用すれば、Adobe Commerceのクラウドインフラストラクチャーに依存してテンプレートを作成する代わりに、 [`QUEUE_CONFIGURATION`](../environment/variables-deploy.md#queue_configuration) サイトに接続するための環境変数。
+>クラウドインフラストラクチャ上のAdobe Commerceを使用してサービスを作成するのではなく、[!DNL RabbitMQ] などの既存の AMQP ベースのサービスを使用する場合は、[`QUEUE_CONFIGURATION`](../environment/variables-deploy.md#queue_configuration) 環境変数を使用してサービスをサイトに接続します。
 
 {{service-instruction}}
 
 **RabbitMQを有効にするには**:
 
-1. 必要な名前、タイプ、ディスク値（MB 単位）をに追加します `.magento/services.yaml` ファイルと、インストールされているRabbitMQのバージョン。
+1. 必要な名前、タイプ、ディスク値（MB 単位）を、インストールされているRabbitMQのバージョンと共に `.magento/services.yaml` ファイルに追加します。
 
    ```yaml
    rabbitmq:
@@ -32,7 +32,7 @@ ht-degree: 0%
        disk: 1024
    ```
 
-1. での関係の設定 `.magento.app.yaml` ファイル。
+1. `.magento.app.yaml` ファイルで関係を設定します。
 
    ```yaml
    relationships:
@@ -53,7 +53,7 @@ ht-degree: 0%
    git push origin <branch-name>
    ```
 
-1. [サービス関係の検証](services-yaml.md#service-relationships).
+1. [ サービスの関係を確認します ](services-yaml.md#service-relationships)。
 
 {{service-change-tip}}
 
@@ -67,7 +67,7 @@ ht-degree: 0%
 
 ### ローカル開発環境から接続する
 
-1. にログインします `magento-cloud` CLI とプロジェクト：
+1. `magento-cloud` CLI にログインし、次のプロジェクトを実行します。
 
    ```bash
    magento-cloud login
@@ -85,7 +85,7 @@ ht-degree: 0%
    magento-cloud ssh
    ```
 
-1. からRabbitMQ接続の詳細とログイン資格情報を取得します。 [$CLOUD_RELATIONSHIPS$MAGENTO](../application/properties.md#relationships) 変数：
+1. [$connection_CLOUD_RELATIONSHIPS](../application/properties.md#relationships) 変数からRabbitMQMAGENTOの詳細とログイン資格情報を取得します。
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
@@ -114,23 +114,23 @@ ht-degree: 0%
    }
    ```
 
-1. RabbitMQへのローカルポート転送を有効にする（プロジェクトが US-3、EU-5、AP-3 リージョンなど別のリージョンにある場合は、 ``us-3``/``eu-5``/``ap-3`` （用） ``us``）
+1. RabbitMQへのローカルポート転送を有効にする（プロジェクトが US-3、EU-5、AP-3 リージョンなど別のリージョンにある場合は、``us`` の代わりに ``us-3``/``eu-5``/``ap-3`` を使用します）
 
    ```bash
    ssh -L <port-number>:rabbitmq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
    ```
 
-   でRabbitMQ管理 web インターフェイスにアクセスする例 `http://localhost:15672` は：
+   `http://localhost:15672` でRabbitMQ管理 web インターフェイスにアクセスする例を次に示します。
 
    ```bash
    ssh -L 15672:rabbitmq.internal:15672 <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
    ```
 
-1. セッションが開いている間は、ローカルワークステーションから選択したRabbitMQ クライアントを起動し、に接続するように設定できます `localhost:<portnumber>` Magento_CLOUD_RELATIONSHIPS 変数のポート番号、ユーザー名およびパスワード情報を使用します。
+1. セッションが開いている間は、選択したRabbitMQ クライアントをローカルワークステーションから起動できます。このクライアントは、ポート番号、ユーザー名およびパスワード情報を使用して `localhost:<portnumber>` にMAGENTOするように設定されています。
 
 ### アプリケーションからの接続
 
-アプリケーションで動作しているRabbitMQに接続するには、次のようなクライアントをインストールします [amqp-utils](https://github.com/dougbarth/amqp-utils)を、内のプロジェクト依存関係として `.magento.app.yaml` ファイル。
+アプリケーションで動作しているRabbitMQに接続するには、[amqp-utils](https://github.com/dougbarth/amqp-utils) などのクライアントを `.magento.app.yaml` ファイルのプロジェクト依存関係としてインストールします。
 
 以下に例を挙げます。
 
@@ -140,8 +140,8 @@ dependencies:
         amqp-utils: "0.5.1"
 ```
 
-PHP コンテナにログインする場合は、 `amqp-` キューを管理するために使用できるコマンド。
+PHP コンテナにログインすると、キューの管理に使用できる `amqp-` コマンドを入力します。
 
 ### PHP アプリケーションからの接続
 
-PHP アプリケーションを使用してRabbitMQに接続するには、PHP を [ライブラリ](https://glossary.magento.com/library) をソースツリーに追加します。
+PHP アプリケーションを使用してRabbitMQに接続するには、PHP [library](https://glossary.magento.com/library) をソースツリーに追加します。

@@ -19,7 +19,7 @@ ht-degree: 0%
 
 次の表の管理変数を使用して、Commerceのインストール中に管理者ユーザーの資格情報を上書きできます。
 
-インストール後に値を変更する場合は、SSH を使用してに接続し、Adobe Commerce CLI を使用します [`admin:user` コマンド](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin.html) 管理者ユーザーの資格情報を作成または編集するには、次の手順を実行します。
+インストール後に値を変更する場合は、SSH を使用して環境に接続し、Adobe Commerce CLI [`admin:user` コマンドを使用して ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin.html) 管理者ユーザーの資格情報を作成または編集します。
 
 | 変数 | デフォルト | 説明 |
 | -------------- | --------------------------- | ----------- |
@@ -32,13 +32,13 @@ ht-degree: 0%
 
 次の環境変数を使用して、管理 UI へのアクセスを保護します。 指定した場合、インストール時のデフォルト URL はこの値で上書きされます。
 
-`ADMIN_URL` – 管理 UI にアクセスするための相対 URL。 デフォルトの URL は、です。 `/admin`. セキュリティ上の理由から、Adobeでは、デフォルトを推測しにくい一意のカスタム管理 URL に変更することをお勧めします。
+`ADMIN_URL` – 管理 UI にアクセスするための相対 URL。 デフォルトの URL は `/admin` です。 セキュリティ上の理由から、Adobeでは、デフォルトを推測しにくい一意のカスタム管理 URL に変更することをお勧めします。
 
 ### 管理者 URL の変更
 
-Adobeでは、インストール後に管理者 URL の環境レベル変数を変更することをお勧めします。 クローンから分岐する前に、セキュリティ上の理由から、この設定を設定します `master` 環境。 から作成されたすべてのブランチ `master` ブランチは、環境レベルの変数とその値を継承します。
+Adobeでは、インストール後に管理者 URL の環境レベル変数を変更することをお勧めします。 クローン `master` 環境から分岐する前に、セキュリティ上の理由から、この設定を設定します。 `master` ブランチから作成されたすべてのブランチは、環境レベルの変数とその値を継承します。
 
-の使用 `magento-cloud variable:update` 変数値を更新するコマンド。 （ `variable:set` コマンドは非推奨となり、使用できなくなりました）。 次の例では、ADMIN_URL をに更新します `newAdmin_A8v10`:
+`magento-cloud variable:update` コマンドを使用して、変数値を更新します。 （`variable:set` コマンドは非推奨となり、使用できなくなりました）。 次の例では、ADMIN_URL を `newAdmin_A8v10` に更新します。
 
 ```bash
 magento-cloud variable:update ADMIN_URL --value newAdmin_A8v10 -e master
@@ -46,27 +46,27 @@ magento-cloud variable:update ADMIN_URL --value newAdmin_A8v10 -e master
 
 >[!NOTE]
 >
->この `ADMIN_URL` 値には、カスタム管理パス用の文字（a ～ z または A ～ Z）、数字（0 ～ 9）、アンダースコア文字（_）を使用できます。 スペースまたはその他の文字は **ではない** 承諾済み。
+>`ADMIN_URL` の値には、カスタム管理パス用の文字（a ～ z または A ～ Z）、数字（0 ～ 9）、アンダースコア文字（_）を使用できます。 スペースやその他の文字は使用 **きません**。
 
-**を使用して URL を変更するには[!DNL Cloud Console]**:
+**[!DNL Cloud Console]** を使用して URL を変更するには：
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. 「」からプロジェクトを選択 _すべてのプロジェクト_ リスト。
+1. _すべてのプロジェクト_ リストからプロジェクトを選択します。
 
 1. プロジェクトの概要で、環境を選択し、設定アイコンをクリックします。
 
-   ![プロジェクト設定](../../assets/icon-configure.png){width="36"}
+   ![ プロジェクト設定 ](../../assets/icon-configure.png){width="36"}
 
-1. 「」を選択します **変数** タブ。
+1. 「**変数**」タブを選択します。
 
-1. クリック **変数を作成**.
+1. **変数を作成** をクリックします。
 
 1. 以下を入力します。
 
    - **変数名** = `ADMIN_URL`
-   - **value** =新しい URL。 例えば、管理者 URL をに設定します。 `magento_A8v10`.
+   - **value** =新しい URL。 例えば、管理者 URL を `magento_A8v10` に設定します。
 
-   デフォルトでは `Available during runtime` および `Make inheritable` が選択されました。
+   デフォルトでは、`Available during runtime` と `Make inheritable` が選択されています。
 
-1. クリック **変数を作成** デプロイメントが完了するまで待ちます。 このボタンは、必須フィールドに値が含まれている場合にのみ表示されます。
+1. **変数を作成** をクリックして、デプロイメントが完了するまで待ちます。 このボタンは、必須フィールドに値が含まれている場合にのみ表示されます。

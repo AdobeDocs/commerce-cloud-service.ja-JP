@@ -15,29 +15,29 @@ ht-degree: 0%
 
 Adobe Commerce リポジトリにアクセスし、クラウドインフラストラクチャプロジェクト上のAdobe Commerceのインストールおよびアップデートコマンドを有効にするには、認証キーが必要です。 Composer 認証資格情報を指定する方法は 2 つあります。
 
-- **認証ファイル**—Adobe Commerceを含むファイル [認証資格情報](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/authentication-keys.html) Adobe Commerce（クラウドインフラストラクチャー上のルートディレクトリ）
-- **環境変数** – 誤って公開してしまうのを防ぐため、クラウドインフラストラクチャプロジェクト上のAdobe Commerceに認証キーを設定するための環境変数。
+- **認証ファイル** - クラウドインフラストラクチャーのルートディレクトリ上のAdobe CommerceにAdobe Commerce[ 認証資格情報 ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/authentication-keys.html) を含むファイルです。
+- **環境変数** – 誤って公開されるのを防ぐために、クラウドインフラストラクチャプロジェクト上のAdobe Commerceに認証キーを設定するための環境変数。
 
 >[!BEGINSHADEBOX]
 
-**セキュリティ メモ**
+**セキュリティノート**
 
-Adobeでは、を使用することをお勧めします [環境変数](#composer-auth-environment-variable) クラウドプロジェクトを使用する方法で、認証資格情報が誤って漏洩されるのを防ぎます。
+Adobeでは、認証資格情報が誤って漏洩されるのを防ぐために、クラウドプロジェクトで [ 環境変数 ](#composer-auth-environment-variable) 方式を使用することをお勧めします。
 
-ローカル開発ファイル方式は、Cloud Docker for Commerceを認証ツールとして使用する場合に最適ですが、 `auth.json` 公開 Git ベースのリポジトリにファイルを送信します。 を追加できます `auth.json` にファイルします。 [`.gitignore` ファイル](../project/file-structure.md#ignoring-files).
+ローカル開発ファイル方式は、Cloud Docker for Commerceを認証ツールとして使用する場合に最適ですが、`auth.json` ファイルを公開 Git ベースのリポジトリにアップロードしないように注意してください。 `auth.json` ファイルを [`.gitignore` ファイルに追加でき ](../project/file-structure.md#ignoring-files) す。
 
 >[!ENDSHADEBOX]
 
 ## 認証ファイル
 
-**を作成するには `auth.json` ファイル**:
+**`auth.json` ファイルを作成するには**:
 
-1. を持っていない場合 `auth.json` ファイルをプロジェクトのルートディレクトリに作成します。
+1. プロジェクトのルートディレクトリに `auth.json` ファイルがない場合は、作成します。
 
-   - テキストエディターを使用して、 `auth.json` ファイルをプロジェクトのルートディレクトリに置きます。
-   - の内容をコピーします [サンプル `auth.json`](https://github.com/magento/magento2/blob/2.3/auth.json.sample) 新しい `auth.json` ファイル。
+   - テキスト エディタを使用して、プロジェクト ルート ディレクトリに `auth.json` ファイルを作成します。
+   - [sample `auth.json`](https://github.com/magento/magento2/blob/2.3/auth.json.sample) の内容を新しい `auth.json` ファイルにコピーします。
 
-1. 置換 `<public-key>` および `<private-key>` （Adobe Commerce認証資格情報を使用）
+1. `<public-key>` と `<private-key>` をAdobe Commerceの認証資格情報に置き換えます。
 
    ```json
    {
@@ -58,17 +58,17 @@ Adobeでは、を使用することをお勧めします [環境変数](#compose
 
 **環境変数を使用して認証キーを追加するには**:
 
-1. が含まれる _[!DNL Cloud Console]_を開き、プロジェクトのナビゲーションの右側にある「設定」アイコンをクリックします。
+1. _[!DNL Cloud Console]_で、プロジェクトナビゲーションの右側にある「設定」アイコンをクリックします。
 
-   ![プロジェクトの設定](../../assets/icon-configure.png){width="36"}
+   ![ プロジェクトの設定 ](../../assets/icon-configure.png){width="36"}
 
-1. が含まれる _プロジェクト設定_ リスト、クリック **[!UICONTROL Variables]**.
+1. _プロジェクト設定_ リストで、「**[!UICONTROL Variables]**」をクリックします。
 
-1. クリック **[!UICONTROL Create variable]**.
+1. 「**[!UICONTROL Create variable]**」をクリックします。
 
-1. が含まれる **[!UICONTROL Variable name]** フィールド、を入力 `env:COMPOSER_AUTH`.
+1. 「**[!UICONTROL Variable name]**」フィールドに「`env:COMPOSER_AUTH`」と入力します。
 
-1. が含まれる _値_ フィールドで、次を追加して置換 `<public-key>` および `<private-key>` Adobe Commerce認証資格情報を使用：
+1. 「_値_」フィールドに以下を追加し、`<public-key>` と `<private-key>` をAdobe Commerceの認証資格情報に置き換えます。
 
    ```json
    {
@@ -81,8 +81,8 @@ Adobeでは、を使用することをお勧めします [環境変数](#compose
    }
    ```
 
-1. を選択 **[!UICONTROL Available during buildtime]** およびを選択解除 **[!UICONTROL Available during runtime]**.
+1. **[!UICONTROL Available during buildtime]** を選択し、**[!UICONTROL Available during runtime]** の選択を解除します。
 
-1. クリック **[!UICONTROL Create variable]**.
+1. 「**[!UICONTROL Create variable]**」をクリックします。
 
-1. を削除 `auth.json` 各環境のファイル。
+1. 各環境から `auth.json` ファイルを削除します。

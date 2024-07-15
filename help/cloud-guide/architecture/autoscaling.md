@@ -13,27 +13,27 @@ ht-degree: 0%
 
 # 自動スケーリング
 
-自動スケーリングでは、最適なパフォーマンスと妥当なコストを維持するために、クラウドインフラストラクチャにリソースを自動的に追加または削除します。 現在、この機能は、で設定されたプロジェクトでのみ使用できます [拡張されたアーキテクチャ](scaled-architecture.md).
+自動スケーリングでは、最適なパフォーマンスと妥当なコストを維持するために、クラウドインフラストラクチャにリソースを自動的に追加または削除します。 現在、この機能は、[ 拡張アーキテクチャ ](scaled-architecture.md) で設定されたプロジェクトでのみ使用できます。
 
 ## Web サーバーノード
 
-この [web 層](scaled-architecture.md#web-tier) は、プロセスリクエストの増加とトラフィック要件の増加に対応するために拡張されます。 現在、自動スケーリング機能は、web サーバーノードを追加または削除することで水平方向にのみスケーリングできます。
+[Web 層 ](scaled-architecture.md#web-tier) は、プロセスリクエストの増加とトラフィック要件の増加に対応するように拡張できます。 現在、自動スケーリング機能は、web サーバーノードを追加または削除することで水平方向にのみスケーリングできます。
 
 自動スケーリング イベントは、CPU 使用率とトラフィックが事前定義されたしきい値に達した場合に発生します。
 
-- **追加されたノード** – すべてのアクティブな Web ノードの CPU/コアは、1 分間は 75% の処理能力で、5 分連続でトラフィックが 20% 増加します。
-- **削除されたノード** – すべてのアクティブな Web ノードの CPU/コアが 60% で 20 分間読み込まれます。 ノードは、追加された順序で削除されます。
+- **ノードの追加** – すべてのアクティブな web ノードの CPU/コアは、1 分間は 75% の処理能力で、5 分連続でトラフィックが 20% 増加します。
+- **ノードが削除されました** – すべてのアクティブな web ノードの CPU/コアが 60% で 20 分間読み込まれます。 ノードは、追加された順序で削除されます。
 
 最小および最大しきい値は、各マーチャントの契約済みリソース制限に基づいて決定および設定されます。これにより、無限スケーリングのリスクが軽減されます。
 
 ## New Relicによるしきい値の監視
 
-を使用できます [New Relic サービス](../monitor/new-relic-service.md) ホスト数や CPU 使用率などの特定のしきい値を監視します。 次のNew Relic クエリでは、変数表記を使用しています `cluster-id` 例です。
+[New Relic サービス ](../monitor/new-relic-service.md) を使用して、ホスト数や CPU 使用率など、特定のしきい値を監視できます。 次のNew Relic クエリでは、`cluster-id` 用の変数表記を例としてのみ使用しています。
 
 >[!TIP]
 >
->クエリの作成について詳しくは、 [NRQL 構文、句、関数](https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/) が含まれる _New Relic_ ドキュメント。
->クエリを使用したの構築 [New Relic ダッシュボード](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/introduction-dashboards/).
+>クエリの作成について詳しくは、_New Relic[ ドキュメントの ](https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/)NRQL 構文、句、関数_ を参照してください。
+>クエリを使用して、[New Relic ダッシュボード ](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/introduction-dashboards/) を作成します。
 
 ### ホスト数
 
@@ -43,9 +43,9 @@ ht-degree: 0%
 SELECT uniqueCount(SystemSample.entityId) AS 'Infrastructure hosts', uniqueCount(Transaction.host) AS 'APM hosts seen' FROM SystemSample, Transaction where (Transaction.appName = 'cluster-id_stg' AND Transaction.transactionType = 'Web') OR SystemSample.apmApplicationNames LIKE '%|cluster-id_stg|%' TIMESERIES SINCE 3 HOURS AGO
 ```
 
-次のスクリーンショットでは、 **APM ホストが表示される** 選択した期間中にトランザクションがログに記録されたホストの数を参照します。
+次のスクリーンショットでは **APM ホストが表示されています** は、選択した期間中にトランザクションがログに記録されたホストの数を示しています。
 
-![New Relic ホスト数](../../assets/new-relic/host-count.png)
+![New Relic ホスト数 ](../../assets/new-relic/host-count.png)
 
 ### CPU 使用率
 
@@ -55,22 +55,22 @@ SELECT uniqueCount(SystemSample.entityId) AS 'Infrastructure hosts', uniqueCount
 SELECT average(cpuPercent) FROM SystemSample FACET hostname, apmApplicationNames WHERE instanceType LIKE 'c%' TIMESERIES SINCE 3 HOURS AGO
 ```
 
-![New Relic web ノードの CPU 使用率](../../assets/new-relic/web-node-cpu-usage.png)
+![New Relic Web ノードの CPU 使用率 ](../../assets/new-relic/web-node-cpu-usage.png)
 
 ## 自動スケーリングを有効にする
 
-Adobe Commerce on cloud infrastructure プロジェクトの自動スケーリングを有効または無効にするには： [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket). チケットで次の理由を選択します。
+クラウドインフラストラクチャプロジェクトでAdobe Commerceの自動スケーリングを有効または無効にするには、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) します。 チケットで次の理由を選択します。
 
-- **連絡先の理由**: インフラストラクチャ変更リクエスト
-- **Adobe Commerce インフラストラクチャ連絡先の理由**：その他のインフラストラクチャ変更リクエスト
+- **問い合わせ理由**：インフラストラクチャ変更リクエスト
+- **Adobe Commerce インフラストラクチャへの問い合わせ理由**：その他のインフラストラクチャの変更リクエスト
 
 >[!IMPORTANT]
 >
->自動スケーリング機能は、予期しないイベントをキャプチャします。 自動スケーリングを有効にしている場合でも、Adobeでは次の操作を続行することをお勧めします [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) 今後のイベントを想定している場合。
+>自動スケーリング機能は、予期しないイベントをキャプチャします。 Adobe自動スケーリングが有効になっている場合でも、今後のイベントを想定している場合は、引き続き [Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) することをお勧めします。
 
 ### 負荷テスト
 
-Adobeを使用すると、クラウドプロジェクトの自動スケーリングが可能になります _ステージング_ 最初にクラスター化します。 環境で負荷テストを実行して完了すると、Adobeは実稼動クラスターで自動スケーリングを有効にします。 負荷テストのガイダンスについては、 [パフォーマンステスト](../launch/checklist.md#performance-testing).
+Adobeでは、最初にクラウドプロジェクト _ステージング_ クラスターで自動スケーリングを有効にします。 環境で負荷テストを実行して完了すると、Adobeは実稼動クラスターで自動スケーリングを有効にします。 負荷テストのガイダンスについては、[ パフォーマンステスト ](../launch/checklist.md#performance-testing) を参照してください。
 
 ### IP許可リスト
 
@@ -80,4 +80,4 @@ Adobeを使用すると、クラウドプロジェクトの自動スケーリン
 
 - 許可リストにサービスノードの IP アドレス（1、2、3）が含まれている場合は、対処は必要ありません。
 - 許可リストにサービスノード（1、2、3）と web ノード（4、5、6）の IP アドレスが含まれている場合（この場合、6 つのノードすべて）、アクションは必要ありません。
-- （許可リストに IP アドレスが含まれている場合） _のみ_ web ノード（4、5、6）の場合、許可リストを更新して、サービスノードの IP アドレスを含める必要があります。
+- 許可リストに Web ノード（4、5、6 _の IP アドレス_ のみ）が含まれている場合は、サービスノードの IP アドレスを含めるように許可リストを更新する必要があります。

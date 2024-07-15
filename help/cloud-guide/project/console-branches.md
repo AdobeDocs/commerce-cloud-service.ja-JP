@@ -1,6 +1,6 @@
 ---
-title: 「での分岐の管理 [!DNL Cloud Console]“
-description: を使用して、クラウドインフラストラクチャ上のAdobe Commerceの環境ブランチを管理する方法について説明します [!DNL Cloud Console].
+title: 「で分岐を管理  [!DNL Cloud Console]」
+description: ' [!DNL Cloud Console] を使用して、クラウドインフラストラクチャー上でAdobe Commerceの環境ブランチを管理する方法について説明します。'
 role: Developer
 feature: Cloud, Install
 exl-id: 2c4ef149-fdb9-473f-91fd-5e6421ac5a43
@@ -11,36 +11,36 @@ ht-degree: 0%
 
 ---
 
-# を使用して分岐を管理する [!DNL Cloud Console]
+# [!DNL Cloud Console] で分岐を管理
 
-環境は、次のいずれかを使用して管理できます [!DNL Cloud Console] または `magento-cloud` CLI。 プロジェクトファイルは Git リポジトリーに保存されます。 Git コマンドを使用してコードを管理できますが、 `magento-cloud` CLI は、Git コマンドが機能しないのに対して、Platform の機能とやり取りするように設計されています。 参照： [Git コマンド](../dev-tools/cloud-cli-overview.md#git-commands) Cloud CLI トピックで説明します。
+[!DNL Cloud Console] または `magento-cloud` CLI を使用して環境を管理できます。 プロジェクトファイルは Git リポジトリーに保存されます。 Git コマンドを使用してコードを管理できますが、`magento-cloud` CLI はプラットフォーム機能とやり取りするように設計されていますが、Git コマンドは設計されていません。 Cloud CLI トピックの [Git コマンド ](../dev-tools/cloud-cli-overview.md#git-commands) を参照してください。
 
-このトピックでは、の使用方法について説明します [!DNL Cloud Console] コピー先：
+このトピックでは、[!DNL Cloud Console] を使用して以下を行う方法について説明します。
 
 - 環境の追加または削除
-- 同期（`git pull`）を親環境から削除します
-- 結合（`git push`）を親環境に追加します。
+- 親環境から（`git pull`）を同期
+- 親環境に（`git push`）を結合
 
 >[!TIP]
 >
->Pro ステージング環境および実稼動環境からはブランチを作成できません。 以下から分岐できます `master` 分岐。
+>Pro ステージング環境および実稼動環境からはブランチを作成できません。 `master` 分岐から分岐できます。
 
 ## 環境の作成
 
-ブランチ戦略では、コードを開発して開発ブランチに拡張機能を追加する一般的な Git ワークフローを使用します。 参照： [スターター](../architecture/starter-architecture.md) および [プロ](../architecture/starter-develop-deploy-workflow.md) アーキテクチャ概要。
+ブランチ戦略では、コードを開発して開発ブランチに拡張機能を追加する一般的な Git ワークフローを使用します。 [Starter](../architecture/starter-architecture.md) および [Pro](../architecture/starter-develop-deploy-workflow.md) アーキテクチャの概要を参照してください。
 
-- スターターの場合、 `staging` 分岐の `master` 分岐、次に分岐 `staging` （開発用）。
-- Pro の場合は、 `Integration` 環境。
+- Starter の場合は、`master` ブランチから `staging` ブランチを作成し、その後 `staging` ブランチを作成して開発を行います。
+- Pro の場合は、`Integration` 環境から開発ブランチを作成します。
 
-お使いのアカウントでサポートされている数は限られています ![アクティブな分岐](../../assets/icon-active.png){width="32"} (active) and an unlimited number of ![inactive branch](../../assets/icon-inactive.png){width="32"} （非アクティブ）開発ブランチ。 を使用してのみブランチを追加または削除して、アクティブなブランチと非アクティブなブランチを管理します。 [!DNL Cloud Console] または Cloud CLI です。 ブランチを削除する前に、そのブランチを非アクティブ化します。このブランチは以下に残ります。 _環境_ リスト形式 _inactive_. 後でブランチを再アクティブ化するか、次の操作を行うことができます [ブランチを削除](../dev-tools/cloud-cli-overview.md#) を使用する必要があります。
+お使いのアカウントは、限られた数の ![ アクティブなブランチ ](../../assets/icon-active.png){width="32"} (active) and an unlimited number of ![inactive branch](../../assets/icon-inactive.png){width="32"} （非アクティブな）開発ブランチをサポートしています。 [!DNL Cloud Console] または Cloud CLI のみを使用してブランチを追加または削除することで、アクティブなブランチと非アクティブなブランチを管理します。 ブランチを削除する前に、そのブランチを非アクティブ化します。このブランチは、_環境_ リストに _非アクティブ_ として残ります。 後でブランチを再アクティブ化したり、環境設定または Cloud CLI を使用して [ ブランチを削除 ](../dev-tools/cloud-cli-overview.md#) することができます。
 
-開発のために追加のアクティブな環境が必要な場合は、を送信します。 [サポートチケット](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
+開発用にさらにアクティブな環境が必要な場合は、[ サポートチケット ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) を送信します。
 
 **ブランチを追加するには**:
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. 「」からプロジェクトを選択 _すべてのプロジェクト_ リスト。
+1. _すべてのプロジェクト_ リストからプロジェクトを選択します。
 
 1. 環境を選択します。
 
@@ -48,27 +48,27 @@ ht-degree: 0%
    >
    >新しいブランチは、この環境から複製されます。 作成しようとしている環境に類似した親環境を選択します。
 
-1. クリック **[!UICONTROL Branch]**.
+1. 「**[!UICONTROL Branch]**」をクリックします。
 
-   ![ブランチの作成](../../assets/button-branch.png){width="150"}
+   ![ ブランチの作成 ](../../assets/button-branch.png){width="150"}
 
-1. が含まれる _分岐しています…_ フォームで、ブランチ名を入力します。
+1. _...からの分岐_ フォームで、分岐名を入力します。
 
-   環境 _名前_ は環境とは異なります _ID_ 環境名にスペースまたは大文字を使用する場合のみ。 環境 ID は、すべての小文字、数字、許可された記号で構成されます。 環境名の大文字は、ID では小文字に変換され、環境名のスペースはダッシュに変換されます。
+   環境 _name_ は、環境名にスペースまたは大文字を使用する場合にのみ、環境 _ID_ と異なります。 環境 ID は、すべての小文字、数字、許可された記号で構成されます。 環境名の大文字は、ID では小文字に変換され、環境名のスペースはダッシュに変換されます。
 
-   環境名 **できません** linux シェルまたは正規表現に予約されている文字を含めます。 禁止されている文字には中括弧（`{ }`）、括弧、アスタリスク（`*`）、山括弧（`>`）、アンパサンド（`&`）,% （<code>%</code>）、およびその他の文字。
+   環境名には、Linux シェルまたは正規表現で予約されている文字を含めることができません **使用できません**。 禁止されている文字には、中括弧（`{ }`）、括弧、アスタリスク（`*`）、山括弧（`>`）、アンパサンド（`&`）、パーセント（<code>%）があります</code>）、およびその他の文字。
 
-1. を選択 **[!UICONTROL Environment type]**.
+1. **[!UICONTROL Environment type]** を選択します。
 
-1. クリック **[!UICONTROL Create Branch]**.
+1. 「**[!UICONTROL Create Branch]**」をクリックします。
 
 1. 環境のデプロイが完了するまで待ちます。
 
-   デプロイ時の環境のステータスは「」です  **処理中**. デプロイメントが成功すると、のステータスが緑色のチェックマークに変わります **成功**.
+   デプロイ時の環境のステータスは、**処理中** です。 デプロイメントが成功すると、ステータスが「成功 **の緑色のチェックマークに変わり** す。
 
 ## 非アクティブなブランチの作成
 
-Adobe Commerce Cloud コンソールまたは CLI から非アクティブなブランチを作成することはできません。 非アクティブなブランチを作成する場合は、Git リポジトリーでブランチを作成し、を使用してプッシュします `environment.Parent` コマンドの「」オプションを選択します。
+Adobe Commerce Cloud コンソールまたは CLI から非アクティブなブランチを作成することはできません。 非アクティブなブランチを作成する場合は、Git リポジトリーでブランチを作成し、コマンドの `environment.Parent` オプションを使用してプッシュします。
 
 ```bash
 git push -o "environment.Parent=<parent branch>" <origin> <branch>
@@ -78,35 +78,35 @@ git push -o "environment.Parent=<parent branch>" <origin> <branch>
 
 環境を削除する前に、その環境を非アクティブ化する必要があります。 環境が非アクティブになったら、削除できます。
 
-**環境を非アクティブ化するには**:
+**環境をディアクティベートするには**:
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. 「」からプロジェクトを選択 _すべてのプロジェクト_ リスト。
+1. _すべてのプロジェクト_ リストからプロジェクトを選択します。
 
-1. ナビゲーションバーから環境を選択します _0.5511122_ リスト。
+1. ナビゲーションバーの _環境_ リストから環境を選択します。
 
 1. 上部のナビゲーションバーの右側にある「設定」アイコンをクリックすると、環境設定が開きます。
 
-1. 日 _[!UICONTROL General]_タブで、「」までスクロールします_[!UICONTROL Deactivate environment]_ セクションでクリック **[!UICONTROL Deactivate environment and delete data]** 指示に従ってください。
+1. 「_[!UICONTROL General]_」タブで「_[!UICONTROL Deactivate environment]_」セクションまでスクロールし、「**[!UICONTROL Deactivate environment and delete data]**」をクリックして、指示に従います。
 
 ## 環境の同期
 
-環境（またはブランチ）の同期は次と同じです `git pull origin <parent>`. 親環境から更新されたコードを同期できます。 この機能は、 [!DNL Cloud Console] すべての Starter および Pro 環境に対応。
+環境（またはブランチ）の同期は `git pull origin <parent>` と同じです。 親環境から更新されたコードを同期できます。 この機能は、すべての Starter および Pro 環境で [!DNL Cloud Console] を通じて使用できます。
 
-Pro プランの場合は、ステージング環境と実稼動環境からユーザーの `master` 分岐。 この同期では、コードの取り込みとプッシュのみが行われ、データはプッシュされません。 データを同期するには、データベースデータをダンプし、別の環境のデータベースにプッシュします。 参照： [静的ファイルおよびデータの移行とデプロイ](/help/cloud-guide/deploy/staging-production.md#migrate-static-files).
+Pro プランの場合は、ステージング環境と実稼動環境から実 `master` 動環境のブランチに同期できます。 この同期では、コードの取り込みとプッシュのみが行われ、データはプッシュされません。 データを同期するには、データベースデータをダンプし、別の環境のデータベースにプッシュします。 [ 静的ファイルおよびデータの移行およびデプロイ ](/help/cloud-guide/deploy/staging-production.md#migrate-static-files) を参照してください。
 
 **環境を同期するには**:
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. 「」からプロジェクトを選択 _すべてのプロジェクト_ リスト。
+1. _すべてのプロジェクト_ リストからプロジェクトを選択します。
 
 1. 環境リストで、同期するブランチの名前をクリックします。
 
 1. （同期）をクリックします。
 
-   ![環境の同期](../../assets/button-sync.png){width="150"}
+   ![ 環境の同期 ](../../assets/button-sync.png){width="150"}
 
 1. 同期する項目を選択します。
 
@@ -115,75 +115,75 @@ Pro プランの場合は、ステージング環境と実稼動環境からユ�
 
    これにより、コピーして使用するための CLI コマンドも作成されます。
 
-1. クリック **同期**.
+1. **同期** をクリックします。
 
 ## 親環境と結合
 
-環境（またはブランチ）の結合は次と同じです `git push origin`. 更新されたコードを環境からその親環境にプッシュするには、統合します。 このコードは、に結合できます `master`. を使用して、ステージング環境および実稼動環境にデプロイできます。 `merge` コマンド。
+環境（またはブランチ）の結合は `git push origin` と同じです。 更新されたコードを環境からその親環境にプッシュするには、統合します。 このコードは `master` に結合できます。 `merge` コマンドを使用して、ステージング環境および実稼動環境にデプロイできます。
 
-**親環境と結合するには**:
+**親環境と統合するには**:
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. 「」からプロジェクトを選択 _すべてのプロジェクト_ リスト。
+1. _すべてのプロジェクト_ リストからプロジェクトを選択します。
 
 1. 環境リストで、統合するブランチの名前をクリックします。
 
 1. （結合）をクリックします。
 
-   ![環境の結合](../../assets/button-merge.png){width="150"}
+   ![ 環境の結合 ](../../assets/button-merge.png){width="150"}
 
-1. クリック **結合** およびアクションを確認します。
+1. **結合** をクリックして、アクションを確認します。
 
 ## ログを表示
 
-経由 [!DNL Cloud Console]を使用すると、ビルド、デプロイ、デプロイメント履歴など、環境の様々なログを確認できます。
+[!DNL Cloud Console] を通じて、ビルド、デプロイ、デプロイメント履歴など、環境の様々なログを確認できます。
 
-の場合 **スターター**&#x200B;を参照すると、ビルドおよびデプロイのログとデプロイメント履歴を確認できます。 これらの環境には、 `master` （実稼動）ブランチとそこから作成されたすべてのブランチ。
+**スターター** の場合は、ビルドおよびデプロイのログとデプロイメント履歴を確認できます。 これらの環境には、`master` （実稼動）ブランチと、そのブランチから作成されたすべてのブランチが含まれます。
 
-の場合 **プロ**&#x200B;の場合、各環境で次のログを確認できます。
+**Pro** の場合、各環境で次のログを確認できます。
 
 - 統合：構築およびデプロイとデプロイの履歴
 - ステージング – ログとデプロイメント履歴を構築します。 SSH を使用してサーバーにログインし、デプロイログを確認します。
 - 実稼動 – ログとデプロイメント履歴を作成します。 SSH を使用してサーバーにログインし、デプロイログを確認します。
 
-**でログを表示するには[!DNL Cloud Console]**:
+**[!DNL Cloud Console]** でログを表示するには：
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. 「」からプロジェクトを選択 _すべてのプロジェクト_ リスト。
+1. _すべてのプロジェクト_ リストからプロジェクトを選択します。
 
 1. 環境を選択します。
 
-   環境ビューには、次の機能があります [アクティビティリスト](activity-stream.md) それが示すのは _最近_ 同期、マージ、ブランチ、バックアップなど、試行されるアクションごとに 1 つのエントリであるイベント。 クリック **すべて** デプロイメント履歴全体に対して。
+   環境ビューには [ 最近 ](activity-stream.md) のイベントと、同期、マージ、ブランチ、バックアップなど、試行されたアクションごとに 1 つのエントリを表示する _アクティビティリスト_ が表示されます。 デプロイメントの履歴をすべて表示するには、「**すべて**」をクリックします。
 
 1. ビルドログを表示するには、アカウントのデプロイメントレコードごとに成功または失敗リンクを選択します。
 
 >[!TIP]
 >
->「」をクリックします **フィルター条件** アイコンをクリックし、表示するメッセージのタイプを選択します。
+>ドロップダウンリストの **フィルター条件** アイコンをクリックし、表示するメッセージのタイプを選択します。
 
 ## プライベート Git リポジトリからのコードの取り込み
 
-クラウドインフラストラクチャー上のAdobe Commerce プロジェクトには、非公開の Git リポジトリーから取得したコードを含めることができます。 例えば、プライベートリポジトリにカスタムモジュールまたはテーマのコードを含めることができます。 これを行うには、プロジェクトの SSH 公開鍵を非公開の Git リポジトリに追加し、プロジェクトを更新する必要があります `composer.json` ファイル。
+クラウドインフラストラクチャー上のAdobe Commerce プロジェクトには、非公開の Git リポジトリーから取得したコードを含めることができます。 例えば、プライベートリポジトリにカスタムモジュールまたはテーマのコードを含めることができます。 これを行うには、プロジェクトの SSH 公開鍵を非公開の Git リポジトリに追加し、プロジェクトの `composer.json` ファイルを更新する必要があります。
 
 デプロイメントキーを非公開 GitHub リポジトリに追加するには、そのリポジトリの管理者である必要があります。 GitHub では、1 つのリポジトリに対してのみデプロイキーを使用できます。
 
-プロジェクトで複数のリポジトリにアクセスする場合は、自動ユーザーアカウントに SSH キーを接続できます。 このアカウントは人間が使用するものではないので、 [機械使用者](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys). コンピューターアカウントを共同作業者として追加するか、リポジトリへのアクセス権を持つチームにコンピューターユーザーを追加します。
+プロジェクトで複数のリポジトリにアクセスする場合は、自動ユーザーアカウントに SSH キーを接続できます。 このアカウントは人間が使用するものではないので、[ マシンユーザー ](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys) と呼ばれます。 コンピューターアカウントを共同作業者として追加するか、リポジトリへのアクセス権を持つチームにコンピューターユーザーを追加します。
 
 >[!INFO]
 >
 >Adobeでは、このコードを追加してプロジェクトの Git リポジトリにマージすることをお勧めします。 接続を設定しない場合、ビルドの問題が発生する可能性があります。
 
-**SSH 公開鍵を検索するには**:
+**SSH 公開鍵を見つけるには**:
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. 「」からプロジェクトを選択 _すべてのプロジェクト_ リスト。
+1. _すべてのプロジェクト_ リストからプロジェクトを選択します。
 
 1. 上部のナビゲーションバーの右側にある「設定」アイコンをクリックします。
 
-1. 対象： _プロジェクト設定_&#x200B;を選択し、 **[!UICONTROL Deploy Key]**.
+1. _プロジェクト設定_ で、「**[!UICONTROL Deploy Key]**」をクリックします。
 
 1. デプロイキーをクリップボードにコピーして、次の Git ベースのメソッドのいずれかで使用します。
 
@@ -198,28 +198,28 @@ GitHub では、デプロイキーはデフォルトで読み取り専用です�
 **プロジェクトの公開鍵を GitHub デプロイ鍵として入力するには**:
 
 1. 管理者として GitHub リポジトリにログインします。
-1. リポジトリをクリックします。 **[!UICONTROL Settings]** タブ。
+1. 「リポジトリ **[!UICONTROL Settings]**」タブをクリックします。
 
    >[!NOTE]
    >
    >このオプションが表示されない場合は、リポジトリ管理者としてログインしていないので、このタスクを完了できません。 GitHub リポジトリ管理者に依頼して、実行してもらいます。
 
-1. 日 _設定_ tab キーを押すと、左側のナビゲーションから **[!UICONTROL Deploy Keys]**.
-1. クリック **[!UICONTROL Add deploy key]**.
+1. 左側のナビゲーションの「_設定_」タブで、「**[!UICONTROL Deploy Keys]**」をクリックします。
+1. 「**[!UICONTROL Add deploy key]**」をクリックします。
 1. 画面の指示に従います。
 
-対象： `composer.json`、を使用します `<user>@<host>:<.git</code>` format、または `ssh://<user>@<host>:<port>/<path>.git` 非標準ポートを使用する場合。
+`composer.json` では、`<user>@<host>:<.git</code>` 形式を使用します。非標準ポートを使用する場合は `ssh://<user>@<host>:<port>/<path>.git` を使用します。
 
 >[!TAB Bitbucket]
 
 ### Bitbucket デプロイキーを入力
 
-**プロジェクトの公開鍵を Bitbucket のデプロイキーとして入力するには**:
+**プロジェクト公開鍵を Bitbucket デプロイキーとして入力するには**:
 
 1. Bitbucket リポジトリに管理者としてログインします。
-1. 左側のナビゲーションで、 **[!UICONTROL Settings]**.
-1. 一般/をクリックします。 **[!UICONTROL Deployment Keys]**.
-1. クリック **[!UICONTROL Add Key]**.
+1. 左側のナビゲーションで、「**[!UICONTROL Settings]**」をクリックします。
+1. 一般/**[!UICONTROL Deployment Keys]** をクリックします。
+1. 「**[!UICONTROL Add Key]**」をクリックします。
 1. 画面の指示に従います。
 
 >[!TAB GitLab]
@@ -229,41 +229,41 @@ GitHub では、デプロイキーはデフォルトで読み取り専用です�
 **プロジェクトの SSH 公開鍵を GitLab デプロイキーとして追加するには**:
 
 1. 所有者として GitLab リポジトリにログインします。
-1. を確認します _パイプライン_ オプションがプロジェクトに対して有効になっている：
+1. プロジェクトで「_パイプライン_」オプションが有効になっていることを確認します。
 
-   1. プロジェクト設定で、を展開します **[!UICONTROL Visibility, project, features, permissions]** セクション。
-   1. 必要に応じて、 **[!UICONTROL Pipelines]** 」をクリックしてオプションを有効にします。
+   1. プロジェクト設定で、「**[!UICONTROL Visibility, project, features, permissions]**」セクションを展開します。
+   1. 必要に応じて、「**[!UICONTROL Pipelines]**」をクリックし、このオプションを有効にします。
 
 1. SSH 公開鍵を CI/CD 設定に追加します。
 
-   1. 左側のナビゲーションで、設定/をクリックします。 **[!UICONTROL CI / CD]**.
-   1. 「キーをデプロイ」をクリックします **を展開** キーを設定します。
-   1. が含まれる _キーのデプロイ_ フォームで、デプロイ キー名をに追加します **[!UICONTROL Title]** に公開 SSH キーを入力し、 **[!UICONTROL Key]** フィールド。
-   1. クリック **[!UICONTROL Add Key]** をクリックして、設定を保存します。
+   1. 左側のナビゲーションで、設定/ **[!UICONTROL CI / CD]** をクリックします。
+   1. 「キーをデプロイ **展開**」をクリックして、キーを設定します。
+   1. _キーをデプロイ_ フォームで、デプロイフィールドにデプロイ **[!UICONTROL Title]** ー名を追加し、**[!UICONTROL Key]** フィールドに SSH 公開鍵を貼り付けます。
+   1. 「**[!UICONTROL Add Key]**」をクリックして、設定を保存します。
 
 >[!ENDTABS]
 
 ## 安全な環境とブランチ
 
-Web ブラウザーを使用して、任意の場所からプロジェクトや環境にアクセスできます。 [!DNL Cloud Console]. 実稼動環境、ストア、サイトのセキュリティが設定されている場合があります。 この節では、開発者や DBA など厳密に定義されている統合環境とステージング環境を保護します。
+[!DNL Cloud Console] を使用して、web ブラウザーを通じて、任意の場所からプロジェクトや環境にアクセスできます。 実稼動環境、ストア、サイトのセキュリティが設定されている場合があります。 この節では、開発者や DBA など厳密に定義されている統合環境とステージング環境を保護します。
 
 >[!WARNING]
 >
->**DO NOT** ステージング環境と実稼動環境を保護するには、次の方法を使用します。 これにより、Fastly のキャッシュが中断されます。 の使用 [ブロック](../cdn/fastly-vcl-blocking.md) Adobe Commerce用 Fastly CDN で使用できる機能。
+>**使用しない** ステージング環境と実稼動環境を保護するために、次の方法を使用します。 これにより、Fastly のキャッシュが中断されます。 Adobe Commerce用 Fastly CDN で利用可能な [ ブロッキング ](../cdn/fastly-vcl-blocking.md) 機能を使用します。
 
 **環境を保護するには**:
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. 「」からプロジェクトを選択 _すべてのプロジェクト_ リスト。
+1. _すべてのプロジェクト_ リストからプロジェクトを選択します。
 
 1. 環境を選択し、ナビゲーションバーの設定アイコンをクリックします。
 
-1. （環境設定で） _一般_ タブ、クリック **日付：** （用） **[!UICONTROL HTTP access control enabled]** 安全なアクセスを有効にします。 アクセスをフィルタリングするための資格情報または IP アドレスを選択できます。
+1. セキュリティで保護されたアクセスを有効にするには、[ 環境設定 _一般_] タブで **オン** をクリック **[!UICONTROL HTTP access control enabled]** ます。 アクセスをフィルタリングするための資格情報または IP アドレスを選択できます。
 
-1. 認証情報でフィルタリングするには、をクリックします **[!UICONTROL Add Login]**&#x200B;を選択し、ユーザー名とパスワードを入力して、 **[!UICONTROL Add Login]** を追加します。
+1. 資格情報でフィルタリングするには、「**[!UICONTROL Add Login]**」をクリックし、ユーザー名とパスワードを入力して、「**[!UICONTROL Add Login]**」をクリックして追加します。
 
-1. IP アドレスでフィルタリングするには、リストの IP アドレスをに入力します `deny` または `allow`. 例：
+1. IP アドレスでフィルタリングするには、リストの IP アドレスに `deny` または `allow` を入力します。 例：
 
    ```text
    123.456.789.111/29 allow
@@ -272,4 +272,4 @@ Web ブラウザーを使用して、任意の場所からプロジェクトや�
    0.0.0.0/0 deny
    ```
 
-1. クリック **[!UICONTROL Save]**. これにより、環境がデプロイされて、セキュリティと設定が更新されます。 Adobeでは、セキュリティ設定を完了した後に環境をテストすることをお勧めします。
+1. 「**[!UICONTROL Save]**」をクリックします。 これにより、環境がデプロイされて、セキュリティと設定が更新されます。 Adobeでは、セキュリティ設定を完了した後に環境をテストすることをお勧めします。

@@ -12,33 +12,33 @@ ht-degree: 0%
 
 # 静的コンテンツのデプロイメント戦略
 
-静的コンテンツのデプロイメント（SCD）は、画像、スクリプト、CSS、ビデオ、テーマ、ロケール、web ページなどの生成するコンテンツの量と、コンテンツを生成するタイミングに依存するストアデプロイメントプロセスに大きな影響を与えます。 例えば、デフォルトの方法では、次の場合に静的コンテンツを生成します [デプロイフェーズ](process.md#deploy-phase-deploy-phase) サイトがメンテナンスモードの場合は、マウントされたディレクトリにコンテンツを直接書き込むのに時間がかかります `pub/static` ディレクトリ。 必要に応じて、デプロイメント時間を短縮するのに役立つオプションや戦略がいくつかあります。
+静的コンテンツのデプロイメント（SCD）は、画像、スクリプト、CSS、ビデオ、テーマ、ロケール、web ページなどの生成するコンテンツの量と、コンテンツを生成するタイミングに依存するストアデプロイメントプロセスに大きな影響を与えます。 例えば、デフォルトの方法では、サイトがメンテナンスモードの場合、[ デプロイフェーズ ](process.md#deploy-phase-deploy-phase) の間、静的コンテンツが生成されます。ただし、この方法では、マウントされた `pub/static` ディレクトリにコンテンツを直接書き込むのに時間がかかります。 必要に応じて、デプロイメント時間を短縮するのに役立つオプションや戦略がいくつかあります。
 
-## JavaScript とHTMLのコンテンツの最適化
+## JavaScriptとHTMLコンテンツの最適化
 
-静的コンテンツのデプロイメント中にバンドルおよび縮小を使用して、最適化された JavaScript およびHTMLコンテンツを構築できます。
+静的コンテンツのデプロイメント中にバンドルおよび縮小を使用して、最適化されたJavaScriptおよびHTMLコンテンツを構築できます。
 
 ### コンテンツの縮小
 
-で静的ビューファイルのコピーをスキップする場合は、デプロイメントプロセス中の SCD の読み込み時間を短縮できます。 `var/view_preprocessed` ディレクトリと生成 _縮小_ HTML（リクエスト時）。 この機能を有効にするには、 [SKIP_HTML_MINIFICATION](../environment/variables-global.md#skiphtmlminification) グローバル環境変数をに `true` が含まれる `.magento.env.yaml` ファイル。
+デプロイメントディレクトリ内の静的ビューファイルのコピーをスキップし、必要に応じて _縮小_ HTMLを生成すると、デプロ `var/view_preprocessed` メントプロセス中の SCD の読み込み時間を短縮できます。 この機能を有効にするには、`.magento.env.yaml` ファイルで [SKIP_ENVIRONMENT_MINIFICATION](../environment/variables-global.md#skiphtmlminification) グローバルHTML変数を `true` に設定します。
 
 >[!NOTE]
 >
->で始まる `ece-tools` パッケージバージョン 2002.0.13 では、SKIP_VARIATION_MINIFICATIONHTMLのデフォルト値はに設定されています。 `true`.
+>`ece-tools` パッケージバージョン 2002.0.13 以降、SKIP_VARIATION_MINIFICATIONHTMLのデフォルト値は `true` に設定されます。
 
-保存できます **詳細** 不要なテーマファイルの数を減らして、デプロイメント時間とディスク容量を削減します。 例えば、 `magento/backend` 英語のテーマおよび他の言語のカスタムテーマ。 これらのテーマの設定は、 [SCD_MATRIX](../environment/variables-deploy.md#scdmatrix) 環境変数。
+不要なテーマファイルの数を減らすことで、デプロイメント時間とディスク領域を **より** 節約できます。 例えば、`magento/backend` のテーマを英語でデプロイし、カスタムテーマを他の言語でデプロイすることができます。 これらのテーマ設定は、環境変数 [SCD_MATRIX](../environment/variables-deploy.md#scdmatrix) を使用して設定できます。
 
 ## デプロイ方法の選択
 
-デプロイメント戦略は、 _ビルド_ フェーズ、 _deploy_ フェーズ、または _オンデマンド_. 次のチャートに示すように、デプロイフェーズでは静的コンテンツを生成することが、最適な選択ではありません。 HTMLが縮小されている場合でも、各コンテンツファイルをマウントされたにコピーする必要があります `~/pub/static` ディレクトリ（時間がかかる場合があります）。 静的コンテンツをオンデマンドで生成することは、最適な選択と思われます。 ただし、コンテンツファイルがキャッシュに存在しない場合は、リクエストされた瞬間に生成されるので、読み込み時間がユーザーエクスペリエンスに長くなります。 したがって、ビルドフェーズでは静的コンテンツを生成するのが最適です。
+デプロイメント戦略は、_ビルド_ フェーズ、_デプロイ_ フェーズ、または _オンデマンド_ で静的コンテンツを生成することを選択するかどうかによって異なります。 次のチャートに示すように、デプロイフェーズでは静的コンテンツを生成することが、最適な選択ではありません。 HTMLが縮小されていても、マウントされた `~/pub/static` ディレクトリに各コンテンツ ファイルをコピーする必要があり、これには時間がかかることがあります。 静的コンテンツをオンデマンドで生成することは、最適な選択と思われます。 ただし、コンテンツファイルがキャッシュに存在しない場合は、リクエストされた瞬間に生成されるので、読み込み時間がユーザーエクスペリエンスに長くなります。 したがって、ビルドフェーズでは静的コンテンツを生成するのが最適です。
 
-![SCD 負荷比較](../../assets/scd-load-times.png)
+![SCD 荷重比較 ](../../assets/scd-load-times.png)
 
 ### ビルド時の SCD の設定
 
-ビルドフェーズでの静的コンテンツの生成をHTMLを縮小することが、次の場合に最適な設定です。 [**ダウンタイムなし** デプロイメント](reduce-downtime.md)（別名） **理想状態**. ファイルをマウントしたドライブにコピーする代わりに、からシンボリックリンクを作成します。 `./init/pub/static` ディレクトリ。
+縮小HTMLを使用したビルドフェーズでの静的コンテンツの生成は、[**ダウンタイムなし** デプロイメント ](reduce-downtime.md) に最適な設定であり、**理想的な状態** とも呼ばれます。 マウントされたドライブにファイルをコピーする代わりに、`./init/pub/static` ディレクトリからシンボリックリンクを作成します。
 
-静的コンテンツを生成するには、テーマとロケールにアクセスする必要があります。 Adobe Commerceは、テーマをファイルシステムに格納します。これはビルドフェーズでアクセスできますが、Adobe Commerceはデータベースにロケールを格納します。 データベースは _ではない_ ビルドフェーズで使用できます。 ビルドフェーズで静的コンテンツを生成するには、次を使用する必要があります `config:dump` のコマンド `ece-tools` パッケージを作成して、ロケールをファイルシステムに移動します。 ロケールが読み取られ、 `app/etc/config.php` ファイル。
+静的コンテンツを生成するには、テーマとロケールにアクセスする必要があります。 Adobe Commerceは、テーマをファイルシステムに格納します。これはビルドフェーズでアクセスできますが、Adobe Commerceはデータベースにロケールを格納します。 データベースは、ビルドフェーズでは使用 _できません_。 ビルドフェーズで静的コンテンツを生成するには、`ece-tools` パッケージで `config:dump` コマンドを使用してロケールをファイルシステムに移動する必要があります。 ロケールが読み取られ、`app/etc/config.php` ファイルに保存されます。
 
 **ビルド時に SCD を生成するようにプロジェクトを設定するには**:
 
@@ -49,17 +49,17 @@ ht-degree: 0%
    magento-cloud ssh
    ```
 
-1. ロケールをファイルシステムに移動してから、 [`config.php` ファイル](../development/commerce-version.md#create-a-configphp-file).
+1. ロケールをファイルシステムに移動し、[`config.php` ファイルを更新します ](../development/commerce-version.md#create-a-configphp-file)。
 
-1. この `.magento.env.yaml` 設定ファイルには、次の値を含める必要があります。
+1. `.magento.env.yaml` 設定ファイルには、次の値を含める必要があります。
 
-   - [SKIP_HTML_MINIFICATION](../environment/variables-global.md#skip_html_minification) 等しい `true`
-   - [SKIP_SCD](../environment/variables-build.md#skip_scd) ビルドステージで： `false`
-   - [SCD_STRATEGY](../environment/variables-build.md#scd_strategy) 等しい `compact`
+   - HTML [SKIP_MINIFICATION_MINIFICATION](../environment/variables-global.md#skip_html_minification) が `true` である
+   - ビルド ステージの [SKIP_SCD](../environment/variables-build.md#skip_scd) は `false` です
+   - [SCD_STRATEGY](../environment/variables-build.md#scd_strategy) は `compact` です
 
-1. の設定の確認 [デプロイ後フック](../application/hooks-property.md) が含まれる `.magento.app.yaml` ファイル。
+1. `.magento.app.yaml` ファイルの [Post-deploy フック ](../application/hooks-property.md) の設定を確認します。
 
-1. 次を実行して設定を検証 [理想的な状態を実現するスマートウィザード](smart-wizards.md).
+1. [ 理想的な状態のスマート ウィザード ](smart-wizards.md) を実行して、設定を確認します。
 
    ```bash
    php ./vendor/bin/ece-tools wizard:ideal-state
@@ -67,9 +67,9 @@ ht-degree: 0%
 
 ### SCD のオンデマンド設定
 
-SCD をオンデマンドで生成することは、統合環境における開発ワークフローに最適です。 デプロイメント時間が短縮されるので、実装をすばやく確認したり、統合テストを実行したりできます。 を有効にする [SCD_ON_DEMAND](../environment/variables-global.md#scdondemand) のグローバルステージの環境変数 `.magento.env.yaml` ファイル。 変数 SCD_ON_DEMAND は、SCD に関連するその他すべての設定を上書きし、 `~/pub/static` ディレクトリ。
+SCD をオンデマンドで生成することは、統合環境における開発ワークフローに最適です。 デプロイメント時間が短縮されるので、実装をすばやく確認したり、統合テストを実行したりできます。 `.magento.env.yaml` ファイルのグローバルステージで [SCD_ON_DEMAND](../environment/variables-global.md#scdondemand) 環境変数を有効にします。 変数 SCD_ON_DEMAND は、SCD に関連するその他すべての設定をオーバーライドし、`~/pub/static` ディレクトリの既存のコンテンツを消去します。
 
-SCD オンデマンド戦略を使用する場合、ホームページなど、要求するページをキャッシュにプリロードすると便利です。 に期待されるページのリストを追加します。 [WARM_UP_PAGES](../environment/variables-post-deploy.md#warmuppages) のデプロイ後ステージの環境変数 `.magento.env.yaml` ファイル。
+SCD オンデマンド戦略を使用する場合、ホームページなど、要求するページをキャッシュにプリロードすると便利です。 `.magento.env.yaml` ファイルのデプロイ後のステージの [WARM_UP_PAGES](../environment/variables-post-deploy.md#warmuppages) 環境変数に、必要なページのリストを追加します。
 
 >[!WARNING]
 >
@@ -77,4 +77,4 @@ SCD オンデマンド戦略を使用する場合、ホームページなど、�
 
 ### SCD をスキップしています
 
-静的コンテンツの生成を完全にスキップすることもできます。 を設定できます [SKIP_SCD](../environment/variables-build.md#skipscd) scd に関連するその他の設定を無視する場合のグローバルステージの環境変数。 これは、の既存のコンテンツには影響しません `~/pub/static` ディレクトリ。
+静的コンテンツの生成を完全にスキップすることもできます。 [SKIP_SCD](../environment/variables-build.md#skipscd) 環境変数をグローバルステージで設定して、SCD に関連する他の設定を無視できます。 これは、`~/pub/static` ディレクトリ内の既存のコンテンツには影響しません。

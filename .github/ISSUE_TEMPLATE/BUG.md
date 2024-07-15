@@ -7,7 +7,7 @@ assignees: hguthrie
 source-git-commit: 8be5acdf0e555c46f3307b7acb564148a83570bd
 workflow-type: tm+mt
 source-wordcount: '17'
-ht-degree: 5%
+ht-degree: 17%
 
 ---
 
@@ -16,11 +16,11 @@ ht-degree: 5%
 
 <!-- (REQUIRED) What is the issue or current behavior? -->
 
-### 再現の手順
+### 再現手順
 
 <!-- (OPTIONAL) What needs to be done to replicate this issue? You can provide your scenario in a Gist. -->
 
-1. 最初のステップ
+1. 最初の手順
 1. 2 番目の手順
 1. Etcetera
 

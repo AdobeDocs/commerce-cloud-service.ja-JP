@@ -16,7 +16,7 @@ ht-degree: 0%
 
 統合は、Git ホスティングやSlackボットなどの外部サービスを使用したり、GitHub のコードリビュープルリクエスト機能の使用など、現在の開発プロセスを維持管理したりするのに役立ちます。 クラウドインフラストラクチャー上のAdobe Commerce プロジェクトに次の統合を追加できます。
 
-![統合](/help/assets/integrations.png)
+![ 統合 ](/help/assets/integrations.png)
 
 >[!BEGINTABS]
 
@@ -30,7 +30,7 @@ ht-degree: 0%
 magento-cloud integration:add
 ```
 
-**プロジェクトに設定されている統合を一覧表示するには、次の手順に従います**:
+**プロジェクトに設定されている統合をリストするには**:
 
 ```bash
 magento-cloud integration:list
@@ -50,13 +50,13 @@ magento-cloud integration:list
 +----------+--------------+---------------------------------------------------------------------------+
 ```
 
->[!TAB コンソール]
+>[!TAB  コンソール ]
 
-**を使用して統合を追加するには[!DNL Cloud Console]**:
+**[!DNL Cloud Console]** を使用して統合を追加するには：
 
-1. 対象： _プロジェクト設定_&#x200B;を選択し、 **[!UICONTROL Integrations]**.
+1. _プロジェクト設定_ で、「**[!UICONTROL Integrations]**」をクリックします。
 
-1. 統合タイプをクリックするか、 **[!UICONTROL Add integration]**.
+1. 統合の種類をクリックするか、「**[!UICONTROL Add integration]**」をクリックします。
 
 1. 統合タイプの選択と設定の手順について説明します。
 
@@ -66,24 +66,24 @@ magento-cloud integration:list
 
 ## Commerce Webhook
 
-を使用して、クラウドプロジェクトにCommerce Webhook を設定できます [ENABLE_WEBHOOK グローバル変数](../environment/variables-global.md#enable_webhooks). Commerce Webhook は、Commerceが生成したイベントに応答して、外部サーバーにリクエストを送信します。 この [_Webhook ガイド_](https://developer.adobe.com/commerce/extensibility/webhooks) では、この機能について詳しく説明します。
+[ENABLE_WEBHOOK グローバル変数 ](../environment/variables-global.md#enable_webhooks) を使用して、クラウドプロジェクト内でCommerce Webhook を設定できます。 Commerce Webhook は、Commerceが生成したイベントに応答して、外部サーバーにリクエストを送信します。 [_Webhook ガイド_](https://developer.adobe.com/commerce/extensibility/webhooks) では、この機能について詳しく説明します。
 
 ## 汎用 Webhook
 
-へのカスタム Webhook 統合を使用すると、クラウドインフラストラクチャーとリポジトリのイベントを取得してレポートできます `POST` に対する JSON メッセージ _webhook_ URL。
+カスタム Webhook 統合を使用して、クラウドインフラストラクチャーとリポジトリのイベントを取得し、レポートして、JSON メッセージを _Webhook_ URL に `POST` すことができます。
 
-**Webhook URL を追加するには、次の構文を使用します**:
+**Webhook URL を追加するには、次の構文を使用します**。
 
 ```bash
 magento-cloud integration:add --type=webhook --url=https://hook-url.example.com
 ```
 
-- `type` – を指定する `webhook` 統合タイプ。
-- `url`- JSON メッセージを受信できる Webhook URL を指定します。
+- `type` - `webhook` 統合タイプを指定します。
+- `url` - JSON メッセージを受信できる Webhook URL を指定します。
 
 応答のサンプルでは、統合をカスタマイズする機会を提供する一連のプロンプトを示しています。 デフォルト（空白）の応答を使用すると、プロジェクト内のすべての環境のすべてのイベントに関するメッセージが送信されます。
 
-レポート固有になるように統合をカスタマイズできます [イベント](#events-to-report)ブランチにコードをプッシュするなど。 例えば、 `environment.push` ユーザーがブランチにコードをプッシュする際にメッセージを送信するイベントです。
+統合をカスタマイズして、分岐へのコードのプッシュなど、特定の [ イベント ](#events-to-report) をレポートすることができます。 例えば、ユーザーがブランチにコードをプッシュする際にメッセージを送信するように、`environment.push` イベントを指定できます。
 
 ```terminal
 Events to report (--events)
@@ -93,7 +93,7 @@ Enter comma-separated values (or leave this blank)
 >
 ```
 
-でイベントの報告を選択できます。 `pending`, `in_progress`、または `complete` 都道府県：
+イベントの状態は、`pending`、`in_progress`、`complete` から選択できます。
 
 ```terminal
 States to report (--states)
@@ -103,7 +103,7 @@ Enter comma-separated values (or leave this blank)
 >
 ```
 
-また、次のことができます _次を含める_ または _除外_ 特定の環境向けのメッセージ：
+また、特定の環境に対してメッセージを _含める_ または _除外_ できます。
 
 ```terminal
 Included environments (--environments)
@@ -137,7 +137,7 @@ Created integration integration-ID (type: webhook)
 
 ### 既存の統合を更新
 
-既存の統合は更新できます。 例えば、の状態を次のように変更します。 `complete` 対象： `pending` 次を使用します。
+既存の統合は更新できます。 例えば、以下を使用して状態を `complete` から `pending` に変更します。
 
 ```bash
 magento-cloud integration:update --states=pending <int-id>
@@ -171,14 +171,14 @@ Integration integration-ID (webhook) updated
 | `environment.branch` | 管理コンソールを使用してブランチが作成されました |
 | `environment.deactivate` | ブランチが「非アクティブ化」されました。 コードはまだそこにありますが、環境は破壊されました |
 | `environment.delete` | 分岐が削除されました |
-| `environment.initialize` | この `master` 最初のコミットで初期化されたプロジェクトのブランチ |
+| `environment.initialize` | プロジェクトの `master` ブランチが最初のコミットで初期化されました |
 | `environment.merge` | アクティブなブランチが、管理コンソールまたは API を使用して統合されました |
 | `environment.push` | ユーザーがブランチにコードをプッシュした |
 | `environment.restore` | ユーザーがスナップショットを復元しました |
 | `environment.route.create` | 管理コンソールを使用してルートが作成されました |
 | `environment.route.delete` | 管理コンソールを使用してルートが削除されました |
 | `environment.route.update` | 管理コンソールを使用してルートが変更されました |
-| `environment.subscription.update` | この `master` サブスクリプションが変更されたので環境のサイズが変更されましたが、コンテンツの変更はありません |
+| `environment.subscription.update` | サブスクリプションが変更されたので、`master` 環境のサイズが変更されましたが、コンテンツの変更はありません |
 | `environment.synchronize` | 環境が親環境からデータまたはコードをコピーした |
 | `environment.update.http_access` | 環境の HTTP アクセスルールが変更されました |
 | `environment.update.restrict_robots` | ブロック オールロボット機能が有効または無効になっています |

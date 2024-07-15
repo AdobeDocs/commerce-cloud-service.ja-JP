@@ -18,20 +18,20 @@ Secure Shell （SSH）は、リモートサーバーおよびシステムに安�
 
 ## SSH キーペアの生成
 
-プロジェクトのソースコードと環境にアクセスする必要があるすべてのマシンとワークスペースに、SSH キーペアを作成します。 SSH キーを使用すると、GitHub に接続してソースコードを管理したり、クラウドサーバーに接続したりできます。ユーザー名やパスワードを常に指定する必要はありません。 参照： [SSH を使用した GitHub への接続](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) ssh キーペアの作成に関する詳細な手順。
+プロジェクトのソースコードと環境にアクセスする必要があるすべてのマシンとワークスペースに、SSH キーペアを作成します。 SSH キーを使用すると、GitHub に接続してソースコードを管理したり、クラウドサーバーに接続したりできます。ユーザー名やパスワードを常に指定する必要はありません。 SSH キーペアの作成について詳しくは、[SSH を使用した GitHub への接続 ](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) を参照してください。
 
-- この _公開鍵_ は、サイト、SSH、sFTP にアクセスする場合に提供しても安全です。
-- この _秘密鍵_ ワークステーションのプライベート状態を維持します。
+- _公開鍵_ は、サイト、SSH および sFTP へのアクセスに安全に使用できます。
+- _秘密鍵_ は、ワークステーションでは非公開のままです。
 
 >[!CAUTION]
 >
->**秘密鍵は決して共有しないでください。** チケットに追加したり、チャットにコピーしたり、メールに添付したりしないでください。
+>**秘密鍵は共有しないでください。** チケットに追加したり、チャットにコピーしたり、メールに添付したりしないでください。
 
 ## SSH 公開鍵をアカウントに追加
 
 クラウドインフラストラクチャアカウント上のAdobe Commerceに SSH 公開鍵を追加した後、アカウント上のすべてのアクティブな環境を再デプロイして鍵をインストールします。
 
-次のいずれかの方法を使用して、アカウントに SSH キーを追加できます。Cloud CLI または [!DNL Cloud Console].
+Cloud CLI または [!DNL Cloud Console] のいずれかの方法を使用して、アカウントに SSH キーを追加できます。
 
 >[!BEGINTABS]
 
@@ -55,39 +55,39 @@ Secure Shell （SSH）は、リモートサーバーおよびシステムに安�
 
 >[!TIP]
 >
->Cloud CLI コマンドを使用して、SSH キーの一覧表示と削除を行うことができます `ssh-key:list` および `ssh-key:delete`.
+>Cloud CLI コマンド `ssh-key:list` および `ssh-key:delete` を使用して、SSH キーの一覧表示および削除を行うことができます。
 
->[!TAB コンソール]
+>[!TAB  コンソール ]
 
-### を使用して SSH キーを追加する [!DNL Cloud Console]
+### [!DNL Cloud Console] を使用して SSH キーを追加する
 
-**新しいプロジェクトに SSH キーを追加するには**:
+**新規プロジェクトに SSH キーを追加するには**:
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. クリック **[!UICONTROL No SSH key]**. このアイコンはコマンドフィールドの右側にあり、プロジェクトに SSH キーが含まれていない場合に表示されます。
+1. 「**[!UICONTROL No SSH key]**」をクリックします。 このアイコンはコマンドフィールドの右側にあり、プロジェクトに SSH キーが含まれていない場合に表示されます。
 
-1. に SSH 公開鍵の内容をコピーして貼り付けます。 **公開鍵** フィールド。
+1. SSH 公開鍵の内容をコピーして「**公開鍵**」フィールドに貼り付けます。
 
 1. 残りのプロンプトに従います。
 
 **クラウドプロファイルに SSH キーを追加するには**:
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. 右上のアカウントメニューで、 **マイプロファイル**.
+1. 右上のアカウントメニューで、「**マイプロファイル**」をクリックします。
 
-1. が含まれる _SSH キー_ 表示、クリック **公開鍵を追加**.
+1. _SSH キー_ ビューで、「**公開鍵を追加**」をクリックします。
 
-1. が含まれる _SSH キーの追加_ フォーム、キーを **タイトル**&#x200B;に、SSH 公開鍵を貼り付けます。 **キー** フィールド。
+1. _SSH キーを追加_ フォームで、キーに **タイトル** を入力し、「**キー**」フィールドに SSH 公開鍵を貼り付けます。
 
-1. クリック **保存**.
+1. **保存** をクリックします。
 
 >[!ENDTABS]
 
 ## リモート環境への接続
 
-リモート環境に接続するには、 `magento-cloud` CLI または SSH コマンド。 この `magento-cloud` CLI コマンドは、Starter および Pro 統合環境でのみ使用できます。
+`magento-cloud` CLI または SSH コマンドを使用して、リモート環境に接続できます。 `magento-cloud` の CLI コマンドは、Starter および Pro 統合環境でのみ使用できます。
 
 ### Cloud CLI の使用
 
@@ -109,19 +109,19 @@ Secure Shell （SSH）は、リモートサーバーおよびシステムに安�
 
 ### SSH コマンドの使用
 
-この [!DNL Cloud Console] 各環境の Web および SSH アクセス・コマンドのリストが含まれています。
+この [!DNL Cloud Console] には、各環境の Web および SSH アクセス・コマンドのリストが含まれています。
 
-**SSH コマンドをコピーするには、次の手順に従います**:
+**SSH コマンドをコピーするには**:
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 
-1. 「」からプロジェクトを選択 _すべてのプロジェクト_ リスト。
+1. _すべてのプロジェクト_ リストからプロジェクトを選択します。
 
 1. 環境を選択します。
 
-1. クリック **[!UICONTROL SSH]**.
+1. 「**[!UICONTROL SSH]**」をクリックします。
 
-1. が含まれる _SSH_ タブをクリックし、「コピー」ボタンをクリックして、完全な SSH コマンドをクリップボードにコピーします。
+1. 「_SSH_」タブで、「コピー」ボタンをクリックして、SSH コマンド全体をクリップボードにコピーします。
 
 1. ターミナルを開き、SSH コマンドを貼り付けて接続を作成します。
 
@@ -139,30 +139,30 @@ Secure Shell （SSH）は、リモートサーバーおよびシステムに安�
 
 ## sFTP
 
-クラウドインフラストラクチャー上のAdobe Commerceでは、SSH 認証を使用した sFTP （セキュア FTP）を使用した環境へのアクセスをサポートしています。 sFTP 用の SSH キー認証をサポートするクライアントを使用し、SSH 公開キーを使用します。 SSH 公開鍵をターゲット環境に追加する必要があります。 スターター環境と Pro 統合環境の場合は、次のことができます [を使用して追加 [!DNL Cloud Console]](#add-your-ssh-key-using-the-project-web-interface).
+クラウドインフラストラクチャー上のAdobe Commerceでは、SSH 認証を使用した sFTP （セキュア FTP）を使用した環境へのアクセスをサポートしています。 sFTP 用の SSH キー認証をサポートするクライアントを使用し、SSH 公開キーを使用します。 SSH 公開鍵をターゲット環境に追加する必要があります。 スターター環境および Pro 統合環境の場合は、[ を使用して追加  [!DNL Cloud Console]](#add-your-ssh-key-using-the-project-web-interface) できます。
 
-読み取り専用の sFTP 接続 _ではない_ サポート。sFTP アクセスはで提供 _write_ 権限のデフォルト。
+読み取り専用の sFTP 接続はサポートされていま _ん_。sFTP アクセスは、デフォルトで _書き込み_ 権限で提供されます。
 
-sFTP の設定時には、SSH アクセス環境コマンドからの情報を使用します。 `<project-id>-<environment-id>--<app-name>@ssh<cloud-host>`
+sFTP の設定時には、SSH アクセス環境のコマンドから次の情報を使用します：`<project-id>-<environment-id>--<app-name>@ssh<cloud-host>`
 
-- **ユーザー名**：次より前のすべてのコンテンツ `@` SSH アクセス先で行います。
-- **パスワード**:sFTP 用のパスワードは必要ありません。 sFTP アクセスでは、SSH キー認証を使用します。
-- **ホスト**：次の期間より後のすべてのコンテンツ `@` SSH アクセス権で。
-- **ポート**: 22 （デフォルトの SSH ポート）。
-- **SSH** 秘密鍵：必要に応じて、秘密鍵の場所を sFTP クライアントに指定します。 デフォルトでは、秘密鍵はに保存されます `~/.ssh` ディレクトリ。
+- **ユーザー名**:SSH アクセス先にある `@` より前のすべてのコンテンツ。
+- **パスワード**:sFTP のパスワードは必要ありません。 sFTP アクセスでは、SSH キー認証を使用します。
+- **ホスト**:SSH アクセス権での `@` 以降のすべてのコンテンツ。
+- **ポート**:22 （デフォルトの SSH ポート）。
+- **SSH** 秘密鍵：必要に応じて、秘密鍵の場所を sFTP クライアントに指定します。 デフォルトでは、秘密鍵は `~/.ssh` ディレクトリに保存されます。
 
 クライアントによっては、sFTP の SSH 認証を完了するために、追加のオプションが必要になる場合があります。 選択したクライアントのドキュメントを確認します。
 
-の場合 **スターター環境と Pro 統合環境**&#x200B;の場合も、次の点を考慮してください。 [の追加 `mount`](../application/properties.md#mounts) 特定のディレクトリにアクセスする場合。 マウントを `.magento.app.yaml` ファイル。 書き込み可能なディレクトリのリストについては、を参照してください [プロジェクト構造](../project/file-structure.md). このマウントポイントは、これらの環境でのみ機能します。
+**スターター環境と Pro 統合環境** の場合は、[ 特定のディレクトリにアクセスするための `mount`](../application/properties.md#mounts) ールを追加する」ことも検討してください。 `.magento.app.yaml` ファイルにマウントを追加します。 書き込み可能なディレクトリのリストについては、[ プロジェクト構造 ](../project/file-structure.md) を参照してください。 このマウントポイントは、これらの環境でのみ機能します。
 
-の場合 **ステージング環境と実稼動環境**&#x200B;環境に対する SSH アクセス権がない場合は、次の操作を行う必要があります [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) 特定のフォルダーにアクセスするために、sFTP アクセスおよびマウントポイントをリクエストします（例：）。 `pub/media`.
+**Pro ステージング環境および実稼動環境** の場合、環境に SSH アクセスできない場合は、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) して、sFTP アクセスおよび特定のフォルダー（`pub/media` など）にアクセスするためのマウントポイントをリクエストする必要があります。
 
 >[!NOTE]
->Pro ステージング環境および実稼動環境では、sFTP 接続が _汎用_ 実行するユーザー **ではない** ～である必要がある [がクラウドプロジェクトに追加されました](../project/user-access.md)は、次の操作が必要です [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) と共に **パブリック** キーが添付されました。 **SSH 秘密鍵を決して入力しないでください。**
+>ステージング環境および実稼動環境で、sFTP 接続が **クラウドプロジェクトに追加**[ する必要がない _汎用_ ユーザー用の場合は、](../project/user-access.md) 公開 **キーを添付した [Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket)** する必要があります。 **秘密の SSH キーを入力しないでください。**
 
 ## SSH トンネリング
 
-SSH トンネリングを使用すると、ローカル開発環境からサービスに対して、サービスがローカルであるかのように接続できます。 トンネリングを行う前に、 [SSH](#add-an-ssh-public-key-to-your-account).
+SSH トンネリングを使用すると、ローカル開発環境からサービスに対して、サービスがローカルであるかのように接続できます。 トンネリングを行う前に、[SSH](#add-an-ssh-public-key-to-your-account) を設定します。
 
 ターミナルアプリケーションを使用してログインし、コマンドを発行します。
 
@@ -176,7 +176,7 @@ magento-cloud login
 magento-cloud tunnel:list
 ```
 
-トンネルを構築するには、 [アプリケーション名](../application/properties.md#name). アプリケーション名は、CLI を使用して確認できます。
+トンネルを構築するには、[ アプリケーション名 ](../application/properties.md#name) を知っている必要があります。 アプリケーション名は、CLI を使用して確認できます。
 
 ```bash
 magento-cloud apps
@@ -188,7 +188,7 @@ magento-cloud apps
 magento-cloud tunnel:open -e <environment-ID> --app <app-name>
 ```
 
-たとえば、へのトンネルを開くには `sprint5` という名前のアプリを使用したプロジェクトのブランチ `mymagento`、と入力します
+たとえば、`mymagento` という名前のアプリケーションを使用して、プロジェクトの `sprint5` ブランチへのトンネルを開くには、次のように入力します
 
 ```bash
 magento-cloud tunnel:open -e sprint5 --app mymagento

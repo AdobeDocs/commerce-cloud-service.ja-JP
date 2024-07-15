@@ -27,13 +27,13 @@ ht-degree: 0%
 ## 前提条件
 
 - Adobe Commerce on cloud infrastructure プロジェクトへの管理者アクセス
-- [`magento-cloud` CLI](../dev-tools/cloud-cli-overview.md) ローカル環境のツール
+- ローカル環境での [`magento-cloud` CLI](../dev-tools/cloud-cli-overview.md) ツール
 - GitLab アカウント
-- GitLab リポジトリへの書き込みアクセス権を持つ GitLab 個人用アクセストークン。選択した範囲は、少なくとも次の条件を満たす必要があります。 `api` および `read_repository`.
+- GitLab リポジトリへの書き込みアクセス権を持つ GitLab 個人用アクセストークン。選択した範囲は、少なくとも `api` と `read_repository` である必要があります。
 
 ## リポジトリを準備
 
-既存の環境からクラウドインフラストラクチャプロジェクト上にAdobe Commerceのクローンを作成し、同じブランチ名を保持したまま、プロジェクトのブランチを新しい空の GitLab リポジトリに移行します。 このプロパティは **重大** Adobe Commerce on cloud infrastructure プロジェクトで既存の環境やブランチが失われないように、同一の Git ツリーを保持する。
+既存の環境からクラウドインフラストラクチャプロジェクト上にAdobe Commerceのクローンを作成し、同じブランチ名を保持したまま、プロジェクトのブランチを新しい空の GitLab リポジトリに移行します。 Adobe Commerce on cloud infrastructure プロジェクトで既存の環境やブランチが失われないように、同一の Git ツリーを保持することが **重要** です。
 
 1. ターミナルから、クラウドインフラストラクチャプロジェクトのAdobe Commerceにログインします。
 
@@ -59,7 +59,7 @@ ht-degree: 0%
    git remote add origin git@gitlab.com:<user-name>/<repo-name>.git
    ```
 
-   リモート接続のデフォルト名は以下のようになります。 `origin` または `magento`. 次の場合 `origin` 存在する、別の名前を選択できる、または既存の参照の名前を変更または削除できる。 参照： [git-remote ドキュメント](https://git-scm.com/docs/git-remote).
+   リモート接続の既定の名前は `origin` または `magento` です。 `origin` が存在する場合は、別の名前を選択するか、既存の参照の名前を変更または削除できます。 [git-remote ドキュメント ](https://git-scm.com/docs/git-remote) を参照してください。
 
 1. GitLab リモートが正しく追加されていることを確認します。
 
@@ -80,13 +80,13 @@ ht-degree: 0%
    git push -u origin master
    ```
 
-   新しい GitLab リポジトリから始める場合は、を使用する必要がある場合があります。 `-f` リモートリポジトリがローカルコピーと一致しないためです。
+   新しい GitLab リポジトリで開始する場合、リモートリポジトリがローカルコピーと一致しないので、`-f` オプションを使用する必要がある場合があります。
 
 1. GitLab リポジトリにすべてのプロジェクトファイルが含まれていることを確認します。
 
 ## GitLab 統合の有効化
 
-の使用 `magento-cloud integration` コマンドを使用して GitLab 統合を有効にし、GitLab Webhook のペイロード URL を取得して、GitLab からクラウドインフラストラクチャプロジェクトのAdobe Commerceに更新を送信します。
+`magento-cloud integration` コマンドを使用して GitLab 統合を有効にし、GitLab Webhook のペイロード URL を取得して、GitLab からクラウドインフラストラクチャプロジェクトのAdobe Commerceに更新を送信します。
 
 ```bash
 magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your-GitLab-token> [--base-url=<GitLab-url> --server-project=<GitLab-project> --build-merge-requests={true|false} --merge-requests-clone-parent-data={true|false} --fetch-branches={true|false} --prune-branches={true|false}]
@@ -96,16 +96,16 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
 | ------ | ----------- |
 | `<project-ID>` | クラウドインフラストラクチャー上のAdobe Commerce プロジェクト ID |
 | `<your-GitLab-token>` | GitLab 用に生成した個人用アクセストークン |
-| `--base-url` | GitLab の URL （`https://gitlab.com/` gitlab が SaaS バージョンで使用されている場合） |
+| `--base-url` | GitLab の URL （GitLab を SaaS バージョンで使用している場合の `https://gitlab.com/`） |
 | `--server-project` | GitLab のプロジェクト名（ベース URL の後の部分） |
-| `--build-merge-requests` | An _optional_ 結合リクエストごとに新しい環境を構築するようにAdobe Commerceにクラウドインフラストラクチャに指示するパラメーター（`true` デフォルト） |
-| `--merge-requests-clone-parent-data` | An _optional_ 結合リクエスト用に親環境のデータを複製するようにAdobe Commerceにクラウドインフラストラクチャで指示するパラメーター（`true` デフォルト） |
-| `--fetch-branches` | An _optional_ Adobe Commerce on cloud infrastructure がリモート環境（非アクティブな環境として）からすべてのブランチを取得できるようにするパラメーター（`true` デフォルト） |
-| `--prune-branches` | An _optional_ リモートに存在しないブランチを削除するようにAdobe Commerceにクラウドインフラストラクチャに指示するパラメーター（`true` デフォルト） |
+| `--build-merge-requests` | すべての結合リクエストで新しい環境を構築するようにクラウドインフラストラクチャ上のAdobe Commerceに指示する _オプション_ パラメーター（デフォルトでは `true`） |
+| `--merge-requests-clone-parent-data` | 結合リクエスト用に親環境のデータを複製するようにクラウドインフラストラクチャ上のAdobe Commerceに指示する _オプション_ パラメーター（デフォルトでは `true`） |
+| `--fetch-branches` | Adobe Commerce on Cloud Infrastructure がリモートから（非アクティブな環境として）すべてのブランチを取得できるようにする _オプション_ パラメーター（デフォルトでは `true`） |
+| `--prune-branches` | リモートに存在しないブランチを削除するようクラウドインフラストラクチャー上のAdobe Commerceに指示する _オプション_ パラメーター（デフォルトでは `true`） |
 
 >[!WARNING]
 >
->この `magento-cloud integration` コマンドの上書き _all_ gitlab リポジトリのコードを使用して、クラウドインフラストラクチャプロジェクト上のAdobe Commerceのコードを生成します。 これには、を含むすべてのブランチが含まれます `production` 分岐。 このアクションは即座に実行され、元に戻すことはできません。 ベストプラクティスとして、GitLab 統合を追加する前に、クラウドインフラストラクチャプロジェクト上のAdobe Commerceからすべてのブランチをクローンし、GitLab リポジトリにプッシュすることが重要です。
+>`magento-cloud integration` コマンドは、クラウドインフラストラクチャプロジェクト上のAdobe Commerceのコード _すべて_ を、GitLab リポジトリのコードで上書きします。 これには、`production` ブランチを含むすべてのブランチが含まれます。 このアクションは即座に実行され、元に戻すことはできません。 ベストプラクティスとして、GitLab 統合を追加する前に、クラウドインフラストラクチャプロジェクト上のAdobe Commerceからすべてのブランチをクローンし、GitLab リポジトリにプッシュすることが重要です。
 
 **GitLab 統合を有効にするには**:
 
@@ -115,7 +115,7 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
    magento-cloud integration:add --type gitlab --project=3txxjf32gtryos --token=qVUfeEn4ouze7A7JH --base-url=https://gitlab.com/ --server-project=my-agency/project-name --build-merge-requests=false --merge-requests-clone-parent-data=false --fetch-branches=true --prune-branches=true
    ```
 
-1. プロンプトが表示されたら、と入力します `y` ：統合を追加します。
+1. プロンプトが表示されたら、`y` と入力して統合を追加します。
 
    ```terminal
    Warning: adding a 'gitlab' integration will automatically synchronize code from the external Git repository.
@@ -123,7 +123,7 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
    Are you sure you want to continue? [y/N] y
    ```
 
-1. をコピーします **フック URL** 戻り値の出力で表示されます。
+1. 返り出力で表示されている **フック URL** をコピーします。
 
    ```terminal
    Hook URL: https://eu-3.magento.cloud/api/projects/3txxjf32gtryos/integrations/eolmpfizzg9lu/hook
@@ -146,24 +146,24 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
 
 ### GitLab での Webhook の追加
 
-イベント（プッシュリクエストや結合リクエストなど）を Cloud Git サーバーと通信するには、次の操作が必要です [webhook の作成](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#overview) gitlab リポジトリの場合
+イベント（プッシュリクエストや結合リクエストなど）をクラウド Git サーバーと通信するには、GitLab リポジトリの [Webhook を作成 ](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#overview) する必要があります
 
-1. GitLab リポジトリで、 **設定** タブ。
+1. GitLab リポジトリで、「**設定**」タブをクリックします。
 
-1. 左側のナビゲーションバーで、 **Webhook**.
+1. 左側のナビゲーションバーで、「**Webhook**」をクリックします。
 
-1. が含まれる _Webhook_ フォームで、次のフィールドを編集します。
+1. _Webhook_ フォームで、次のフィールドを編集します。
 
-   - **URL**：を入力します `Hook URL` は、GitLab 統合を有効にした場合に返されます。
+   - **URL**:GitLab 統合を有効にした際に返される `Hook URL` を入力します。
    - **秘密鍵トークン**：必要に応じて、検証秘密鍵を入力します。
-   - **トリガー**：チェック `Merge request events` および/または `Push events` 必要に応じて調整します。
+   - **トリガー**：必要に応じて、`Merge request events` や `Push events` を確認してください。
    - **SSL 検証を有効にする**：このオプションを選択する必要があります。
 
-1. クリック **Webhook を追加**.
+1. **Webhook を追加** をクリックします。
 
 ### 統合のテスト
 
-GitLab 統合を設定したら、統合が動作していることを次を使用して確認できます `magento-cloud` CLI:
+GitLab 統合を設定したら、`magento-cloud` の CLI を使用して、統合が動作していることを確認できます。
 
 ```bash
 magento-cloud integration:validate
@@ -183,12 +183,12 @@ magento-cloud integration:validate
    git add . && git commit -m "Testing GitLab integration" && git push
    ```
 
-1. にログインします [[!DNL Cloud Console]](../project/overview.md) コミットメッセージが表示され、プロジェクトがデプロイされていることを確認します。
+1. [[!DNL Cloud Console]](../project/overview.md) にログインし、コミットメッセージが表示され、プロジェクトがデプロイされていることを確認します。
 
 ## クラウドブランチの作成
 
-の使用 `magento-cloud` CLI `environment:push` 新しい環境を作成してアクティブにするコマンド。 参照： [クラウドブランチの作成](bitbucket.md#create-a-cloud-branch).
+`magento-cloud` CLI `environment:push` コマンドを使用して、新しい環境を作成し、アクティブにします。 [ クラウドブランチの作成 ](bitbucket.md#create-a-cloud-branch) を参照してください。
 
 ## 統合の削除
 
-の使用 `magento-cloud` CLI `integration:delete` 統合を削除するコマンド。 参照： [統合の削除](bitbucket.md#remove-the-integration).
+`magento-cloud` CLI `integration:delete` コマンドを使用して、統合を削除します。 [ 統合の削除 ](bitbucket.md#remove-the-integration) を参照してください。

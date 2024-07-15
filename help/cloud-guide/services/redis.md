@@ -14,27 +14,27 @@ ht-degree: 0%
 
 [Redis](https://redis.io) は、Adobe Commerceがデフォルトで使用する Zend フレームワークの Zend_Cache_Backend_File に代わる、オプションのバックエンドキャッシュソリューションです。
 
-参照： [Redis の設定](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/redis/config-redis.html) が含まれる _設定ガイド_.
+[ 設定ガイド ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/redis/config-redis.html) の _Redis の設定_ を参照してください。
 
 {{service-instruction}}
 
 **Redis を有効にするには**:
 
-1. 必要な名前とタイプをに追加します。 `.magento/services.yaml` ファイル。
+1. 必要な名前とタイプを `.magento/services.yaml` ファイルに追加します。
 
    ```yaml
    myredis:
        type: redis:<version>
    ```
 
-   独自の Redis 設定を指定するには、を追加します。 `core_config` のキー `.magento/services.yaml` ファイル：
+   独自の Redis 設定を指定するには、`.magento/services.yaml` ファイルに `core_config` キーを追加します。
 
    ```yaml
    cache:
        type: redis:<version>
    ```
 
-1. での関係の設定 `.magento.app.yaml` ファイル。
+1. `.magento.app.yaml` ファイルで関係を設定します。
 
    ```yaml
    runtime:
@@ -51,13 +51,13 @@ ht-degree: 0%
    git add .magento/services.yaml .magento.app.yaml && git commit -m "Enable redis service" && git push origin <branch-name>
    ```
 
-1. [サービス関係の検証](services-yaml.md#service-relationships).
+1. [ サービスの関係を確認します ](services-yaml.md#service-relationships)。
 
 {{service-change-tip}}
 
 ## Redis CLI の使用
 
-Redis 関係にという名前を付けた場合 `redis`にアクセスするには、 `redis-cli` ツール。
+Redis 関係の名前が `redis` の場合は、`redis-cli` ツールを使用してアクセスできます。
 
 1. SSH を使用して、Redis がインストールおよび設定された統合環境に接続します。
 
@@ -84,7 +84,7 @@ gcc_version:8.3.0
 
 ### Redis on Pro ステージング環境と実稼動環境
 
-ステージング環境または実稼動環境に Redis バージョンをインストールするには、を使用します。 `redis-server` コマンド：
+ステージング環境または実稼動環境に Redis バージョンをインストールするには、`redis-server` のコマンドを使用します。
 
 ```bash
 redis-server -v
@@ -129,9 +129,9 @@ echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
 
 Redis の問題のトラブルシューティングについては、次のAdobe Commerce サポート記事を参照してください。
 
-- [Redis 問題の管理者ログインまたはチェックアウトの遅延](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-issue-delay-magento-admin-login-or-checkout.html)
-- [Adobe Commerce 2.3.5 以降の拡張 Redis キャッシュ実装](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/redis-service-configuration.html)
-- [MDVA-30102: Redis キャッシュがいっぱいです](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/patches/v1-0-6/mdva-30102-magento-patch-redis-cache-getting-full.html)
-- [Adobe Commerceの管理アラート：Redis メモリ警告アラート](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-warning-alert.html)
-- [Adobe Commerceの管理アラート：Redis メモリクリティカルアラート](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-critical-alert.html)
-- [Redis のトラブルシューティング](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-troubleshooter.html)
+- [Redis 問題により、管理者ログインまたはチェックアウトが遅れる ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-issue-delay-magento-admin-login-or-checkout.html)
+- [ 拡張 Redis キャッシュ実装Adobe Commerce 2.3.5 以降 ](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/redis-service-configuration.html)
+- [MDVA-30102: Redis キャッシュがいっぱいです ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/patches/v1-0-6/mdva-30102-magento-patch-redis-cache-getting-full.html)
+- [Managed alerts on Adobe Commerce:Redis memory warning アラート ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-warning-alert.html)
+- [Adobe Commerceの管理アラート：Redis メモリクリティカルアラート ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-critical-alert.html)
+- [Redis のトラブルシューティング ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-troubleshooter.html)

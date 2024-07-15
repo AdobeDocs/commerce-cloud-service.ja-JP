@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # クラウド CLI
 
-この `magento-cloud` CLI ツールを使用すると、開発者やシステム管理者は、クラウドのプロジェクトや環境の管理、ルーチンの実行、自動化タスクの実行が可能になります。 この `magento-cloud` CLI は、の機能を拡張します [[!DNL Cloud Console]](../../get-started/cloud-console.md). をインストールしたら、 `magento-cloud` ローカルワークステーションで CLI を使用すると、クラウドインフラストラクチャー上のAdobe Commerce Starter および Pro 統合環境を管理できます。
+`magento-cloud` CLI ツールを使用すると、開発者およびシステム管理者は、クラウドプロジェクトおよび環境の管理、ルーチンの実行、自動化タスクの実行が可能になります。 `magento-cloud` CLI は、[[!DNL Cloud Console]](../../get-started/cloud-console.md) の機能を拡張します。 ローカルワークステーションに `magento-cloud` CLI をインストールすると、それを使用してクラウドインフラストラクチャー上のAdobe Commerce Starter および Pro 統合環境を管理できます。
 
-**をインストールするには `magento-cloud` CLI**:
+**`magento-cloud` CLI をインストールするには**:
 
-1. ローカルワークステーションで、を、クラウドプロジェクトのクローンを作成するディレクトリに変更します。また、 [ファイルシステム所有者](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) が _write_ アクセス。
+1. ローカルワークステーションで、を、クラウドプロジェクトを複製するディレクトリおよび [ ファイルシステムの所有者 ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) が _書き込み_ アクセス権を持つディレクトリに変更します。
 
-1. のインストール `magento-cloud` CLI。
+1. `magento-cloud` CLI をインストールします。
 
    ```bash
    curl -sS https://accounts.magento.cloud/cli/installer | php
    ```
 
-1. 追加 `magento-cloud` bash プロファイルへの CLI。
+1. bash プロファイ `magento-cloud` に CLI を追加します。
 
    ```bash
    export PATH=$PATH:$HOME/.magento-cloud/bin
@@ -36,7 +36,7 @@ ht-degree: 0%
    . ~/.bash_profile
    ```
 
-1. CLI を開始するには、を呼び出します。 `magento-cloud` プロンプトが表示されたら、クラウドアカウントの資格情報を入力します。
+1. CLI を開始するには、`magento-cloud` を呼び出し、プロンプトが表示されたらクラウドアカウントの資格情報を入力します。
 
    ```bash
    magento-cloud
@@ -48,7 +48,7 @@ ht-degree: 0%
    Your email address or username:
    ```
 
-1. を確認 `magento-cloud` コマンドはパスにあります。 次の例は、使用可能なコマンドを示しています。
+1. `magento-cloud` コマンドがパス内にあることを確認します。 次の例は、使用可能なコマンドを示しています。
 
    ```bash
    magento-cloud list
@@ -56,9 +56,9 @@ ht-degree: 0%
 
 ## 一般的なコマンド
 
-Adobeでは、これらのコマンドをクラウド統合環境を管理するために設計し、を実行することをお勧めします `magento-cloud` プロジェクトディレクトリから CLI を使用する。これにより、 `-p <project-ID>` パラメーター。
+Adobeでは、これらのコマンドを設計してクラウド統合環境を管理し、`-p <project-ID>` パラメーターを省略できるように、プロジェクトディレクトリから `magento-cloud` CLI を実行することをお勧めします。
 
-一般的に使用される次のリスト `magento-cloud` CLI コマンドには、必要なオプションのみが含まれます。 を使用できます `--help` オプションと任意のコマンドを使用すると、詳細を確認できます。
+一般的に使用される `magento-cloud` CLI コマンドの次のリストには、必要なオプションのみが含まれています。 `--help` オプションを任意のコマンドと共に使用すると、詳細を確認できます。
 
 | コマンド | 説明 |
 | ------------------------------------ | -------------------------------------------------- |
@@ -70,15 +70,15 @@ Adobeでは、これらのコマンドをクラウド統合環境を管理する
 | `magento-cloud variables` | この環境のリスト変数。 |
 | `magento-cloud ssh` | SSH を使用してリモート環境に接続します。 |
 | `magento-cloud url` | ブラウザーでAdobe Commerce ストアフロントを開きます。 |
-| `magento-cloud web` | を開きます [!DNL Cloud Console]. |
+| `magento-cloud web` | [!DNL Cloud Console] を開きます。 |
 
 ## 環境コマンド
 
-環境 _名前_ は環境とは異なります _ID_ 環境名にスペースまたは大文字を使用する場合のみ。 環境 ID は、すべての小文字、数字、許可された記号で構成されます。 環境名の大文字は、ID では小文字に変換され、環境名のスペースはダッシュに変換されます。
+環境 _name_ は、環境名にスペースまたは大文字を使用する場合にのみ、環境 _ID_ と異なります。 環境 ID は、すべての小文字、数字、許可された記号で構成されます。 環境名の大文字は、ID では小文字に変換され、環境名のスペースはダッシュに変換されます。
 
-環境名 _できません_ linux シェルまたは正規表現に予約されている文字を含めます。 禁止されている文字には中括弧（`{ }`）、括弧、アスタリスク（`*`）、山括弧（`< >`）、アンパサンド（`&`）,% （`%`）、およびその他の文字。
+環境名には、Linux シェルまたは正規表現で予約されている文字を含めることができません _使用できません_。 禁止されている文字には、中括弧（`{ }`）、括弧、アスタリスク（`*`）、山括弧（`< >`）、アンパサンド（`&`）、パーセント（`%`）、その他の文字があります。
 
-この `magento-cloud environment:list` コマンドは環境階層を表示しますが、 `git branch` しない。 ネストされた環境がある場合は、次を使用します。
+`magento-cloud environment:list` コマンドは環境階層を表示しますが、`git branch` は表示しません。 ネストされた環境がある場合は、次を使用します。
 
 ```bash
 magento-cloud environment:list
@@ -102,9 +102,9 @@ Are you sure you want to redeploy the environment <environment-name>? [Y/n]
 
 ## Git コマンド
 
-これらのコマンドの一部は Git コマンドに似ていることに気付くかもしれません。 この `magento-cloud` コマンドは、追加機能を使用して Git ベースのクラウドプロジェクトに直接接続します。 を使用せずにブランチを作成する場合 `magento-cloud` CLI は「アクティブ化」されておらず、変更をリモート環境にプッシュしても自動的に構築されません。 この `magento-cloud` CLI コマンドにアクティブ化が含まれる。
+これらのコマンドの一部は Git コマンドに似ていることに気付くかもしれません。 `magento-cloud` のコマンドは、追加機能を使用して Git ベースのクラウドプロジェクトに直接接続します。 `magento-cloud` CLI を使用せずにブランチを作成した場合、ブランチは「アクティブ化」されず、変更をリモート環境にプッシュしても自動的にビルドされません。 `magento-cloud` CLI コマンドにはアクティブ化が含まれます。
 
-ブランチを作成するには、 `magento-cloud` コマンドを実行すると、ブランチがアクティブになります。
+分岐を作成するには、`magento-cloud` コマンドを使用して分岐をアクティブにします。
 
 ```bash
 magento-cloud environment:branch <new-name> <parent-branch>
@@ -112,8 +112,8 @@ magento-cloud environment:branch <new-name> <parent-branch>
 
 分岐ステータスの場合：
 
-- の使用 `magento-cloud env` 環境ブランチのリストとステータス（アクティブまたは非アクティブ）を表示するコマンド。
-- の使用 `magento-cloud environment:activate` 環境ブランチをアクティブにするコマンド。
+- `magento-cloud env` コマンドを使用して、環境ブランチとそのステータス（アクティブまたは非アクティブ）のリストを表示します。
+- `magento-cloud environment:activate` コマンドを使用して、環境ブランチをアクティベートします。
 
 空の Git コミットをプッシュしてデプロイメントをトリガーにします。 例：
 
@@ -129,7 +129,7 @@ git commit --allow-empty -m "redeploy" && git push <branch-name>
 
 1. ローカルワークステーションで、をプロジェクトディレクトリに変更します。
 
-1. に切り替え [ファイルシステム所有者](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html).
+1. [ ファイルシステム所有者 ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) に切り替えます。
 
 1. プロジェクトにログインします。
 
@@ -151,7 +151,7 @@ git commit --allow-empty -m "redeploy" && git push <branch-name>
 
    >[!NOTE]
    >
-   >を使用することが重要です `magento-cloud environment:list` コマンドでは環境階層が表示されるのに対して、 `git branch` コマンドは実行しません。
+   >`magento-cloud environment:list` コマンドは環境階層を表示するのに対して、`git branch` コマンドは表示しないので、このコマンドを使用することが重要です。
 
 1. オリジンブランチを取得して最新のコードを取得します。
 
@@ -165,11 +165,11 @@ git commit --allow-empty -m "redeploy" && git push <branch-name>
    magento-cloud environment:checkout <environment-ID>
    ```
 
-   Git コマンドは、Git ブランチのみをチェックアウトします。 この `magento-cloud checkout` コマンドは、ブランチをチェックアウトし、アクティブな環境に切り替えます。
+   Git コマンドは、Git ブランチのみをチェックアウトします。 `magento-cloud checkout` コマンドは、ブランチをチェックアウトし、アクティブな環境に切り替えます。
 
    >[!TIP]
    >
-   >を使用して、環境ブランチを作成できます `magento-cloud environment:branch <environment-name> <parent-environment-ID>` コマンドの構文。 環境ブランチの作成とアクティブ化にはさらに時間がかかる場合があります。
+   >`magento-cloud environment:branch <environment-name> <parent-environment-ID>` のコマンド構文を使用して、環境ブランチを作成できます。 環境ブランチの作成とアクティブ化にはさらに時間がかかる場合があります。
 
 1. 環境 ID を使用して、更新されたコードをローカルに取り込みます。 環境ブランチが新しい場合は、これは必要ありません。
 
@@ -177,7 +177,7 @@ git commit --allow-empty -m "redeploy" && git push <branch-name>
    git pull origin <environment-ID>
    ```
 
-1. （_オプション_）を作成します [スナップショット](../storage/snapshots.md) バックアップとしての環境の。
+1. （_オプション_）環境の [ スナップショット ](../storage/snapshots.md) をバックアップとして作成します。
 
    ```bash
    magento-cloud snapshot:create -e <environment-ID>
@@ -185,9 +185,9 @@ git commit --allow-empty -m "redeploy" && git push <branch-name>
 
 ## CLI の更新
 
-この `magento-cloud` CLI は、ログイン時に利用可能な更新をチェックしますが、次を使用して更新をチェックできます `self:update` コマンド。 更新がある場合は、手順に従って CLI を更新します。
+ログイン時に `magento-cloud` CLI は利用可能な更新をチェックしますが、`self:update` コマンドを使用すると更新をチェックできます。 更新がある場合は、手順に従って CLI を更新します。
 
-次の場合 `magento-cloud` CLI は最新の状態です。次の応答が表示されます。
+`magento-cloud` CLI が最新の場合は、次の応答が表示されます。
 
 ```bash
 magento-cloud update

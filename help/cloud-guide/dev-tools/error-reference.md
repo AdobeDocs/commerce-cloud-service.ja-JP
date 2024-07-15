@@ -15,9 +15,9 @@ ht-degree: 4%
 
 このエラーメッセージリファレンスでは、クラウドインフラストラクチャー上のAdobe Commerceのビルド、デプロイおよびデプロイ後のプロセスで発生する可能性のあるエラーのトラブルシューティングについて説明します。
 
-デプロイ中に発生する重大なエラーメッセージと警告エラーメッセージはすべて、両方の `var/log/cloud.log` および `/var/log/cloud.error.log` ファイル。 クラウドエラーログファイルには、最新のデプロイメントのエラーのみが含まれます。 空のファイルは、エラーのないデプロイメントが成功したことを示します。
+デプロイ中に発生する重大なエラーメッセージや警告エラーメッセージはすべて、`var/log/cloud.log` ファイルと `/var/log/cloud.error.log` ファイルの両方に書き込まれます。 クラウドエラーログファイルには、最新のデプロイメントのエラーのみが含まれます。 空のファイルは、エラーのないデプロイメントが成功したことを示します。
 
-が含まれる `cloud.error.log` ファイルの場合、各エントリは解析しやすいように、JSON 文字列としてフォーマットされます。
+`cloud.error.log` ファイルでは、解析しやすいように、各エントリが JSON 文字列としてフォーマットされています。
 
 ```json
 {"errorCode":1006,"stage":"build","step":"validate-config","suggestion":"No stores/website/locales found in config.php\n  To speed up the deploy process do the following:\n  1. Using SSH, log in to your Magento Cloud account\n  2. Run \"php ./vendor/bin/ece-tools config:dump\"\n  3. Using SCP, copy the app/etc/config.php file to your local repository\n  4. Add, commit, and push your changes to the app/etc/config.php file","title":"The configured state is not ideal","type":"warning"}
@@ -27,10 +27,10 @@ ht-degree: 4%
 
 - **エラーコード**:Adobe Commerceによって割り当てられたエラーメッセージの識別情報
 - **ステージ**：エラーがビルド、デプロイ、またはデプロイ後のステージで発生したかどうかを示します
-- **ステップ**：エラーを返すデプロイメントシナリオのステップを示します。 次の場合 _ステップ_ 列が空白の場合、エラーは一般的なエラーであり、複数の手順で返されたり、前処理の操作中に返されたりします。 参照： [シナリオベースのデプロイメント](../deploy/scenario-based.md) ビルド、デプロイ、デプロイ後の手順について詳しくは、こちらを参照してください。
+- **手順**：エラーを返す可能性のあるデプロイメントシナリオの手順を示します。 _ステップ_ 列が空白の場合、エラーは一般的なエラーであり、複数のステップや前処理の操作中に返される可能性があります。 ビルド、デプロイ、デプロイ後の手順について詳しくは、[ シナリオベースのデプロイメント ](../deploy/scenario-based.md) を参照してください。
 - **提案**：エラーのトラブルシューティングと解決のガイダンスを提供します。
-- **タイトル （エラーの説明）**：エラーの原因の概要を示す説明
-- **タイプ**：エラーが重大エラーか警告かを示します
+- **タイトル（エラーの説明）**：エラーの原因を要約した説明
+- **種類**：エラーが重大エラーか警告かを示します
 
 <!-- Note: The error code tables in this file are auto-generated from source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to the magento/ece-tools repository. -->
 
@@ -42,102 +42,102 @@ ht-degree: 4%
 
 | エラーコード | ビルドステップ | エラーの説明（タイトル） | 推奨されるアクション |
 | - | - | - | - |
-| 2 |  | に書き込めません `./app/etc/env.php` ファイル | デプロイメントスクリプトで、に対して必要な変更を行うことはできません `/app/etc/env.php` ファイル。 ファイルシステムの権限を確認します。 |
-| 3 |  | 設定がで定義されていません `schema.yaml` ファイル | 設定がで定義されていません `./vendor/magento/ece-tools/config/schema.yaml` ファイル。 設定変数名が正しく、定義されていることを確認します。 |
-| 4 |  | を解析できませんでした `.magento.env.yaml` ファイル | この `./.magento.env.yaml` ファイル形式が無効です。 YAML パーサーを使用して構文を確認し、エラーを修正します。 |
-| 5 |  | を読み取れません `.magento.env.yaml` ファイル | を読み取れません `./.magento.env.yaml` ファイル。 ファイルの権限を確認します。 |
-| 6 |  | を読み取れません `.schema.yaml` ファイル | を読み取れません `./vendor/magento/ece-tools/config/magento.env.yaml` ファイル。 ファイルの権限を確認し、再デプロイします（`magento-cloud environment:redeploy`）に設定します。 |
-| 7 | refresh-modules | に書き込めません `./app/etc/config.php` ファイル | 配置スクリプトは、に対して必要な変更を行うことができません `/app/etc/config.php` ファイル。 ファイルシステムの権限を確認します。 |
-| 8 | validate-config | を読み取れません `composer.json` ファイル | を読み取れません `./composer.json` ファイル。 ファイルの権限を確認します。 |
-| 9 | validate-config | この `composer.json` ファイルに必要な自動ロード セクションがありません | 必須 `autoload` セクションがにありません `composer.json` ファイル。 「自動読み込み」セクションと `composer.json` ファイルをクラウドテンプレートに追加し、不足している設定を追加します。 |
-| 10 | validate-config | この `.magento.env.yaml` ファイルに、スキーマで宣言されていないオプションが含まれているか、無効な値またはステージで設定されたオプションが含まれています | この `./.magento.env.yaml` ファイルに無効な設定が含まれています。 詳細については、エラーログを確認してください。 |
-| 11 | refresh-modules | コマンドが失敗しました： `/bin/magento module:enable --all` | 走ってみる `composer update` ローカル。 次に、更新されたをコミットしてプッシュします `composer.lock` ファイル。 また、 `cloud.log` を参照してください。 コマンド出力について詳しくは、 `VERBOSE_COMMANDS: '-vvv'` のオプション `.magento.env.yaml` ファイル。 |
+| 2 |  | `./app/etc/env.php` ファイルに書き込めません | 配置スクリプトは、`/app/etc/env.php` ファイルに必要な変更を加えることができません。 ファイルシステムの権限を確認します。 |
+| 3 |  | `schema.yaml` ファイルで設定が定義されていません | `./vendor/magento/ece-tools/config/schema.yaml` ファイルで設定が定義されていません。 設定変数名が正しく、定義されていることを確認します。 |
+| 4 |  | `.magento.env.yaml` ファイルを解析できませんでした | `./.magento.env.yaml` ファイル形式が無効です。 YAML パーサーを使用して構文を確認し、エラーを修正します。 |
+| 5 |  | `.magento.env.yaml` ファイルを読み取れません | `./.magento.env.yaml` ファイルを読み取ることができません。 ファイルの権限を確認します。 |
+| 6 |  | `.schema.yaml` ファイルを読み取れません | `./vendor/magento/ece-tools/config/magento.env.yaml` ファイルを読み取ることができません。 ファイルの権限を確認し、（`magento-cloud environment:redeploy`）を再デプロイします。 |
+| 7 | refresh-modules | `./app/etc/config.php` ファイルに書き込めません | 配置スクリプトは、`/app/etc/config.php` ファイルに必要な変更を加えることができません。 ファイルシステムの権限を確認します。 |
+| 8 | validate-config | `composer.json` ファイルを読み取れません | `./composer.json` ファイルを読み取ることができません。 ファイルの権限を確認します。 |
+| 9 | validate-config | `composer.json` ファイルに必要な自動ロード セクションがありません | 必要な `autoload` セクションが `composer.json` ファイルにありません。 自動ロードセクションをクラウドテンプレート内の `composer.json` ファイルと比較し、不足している設定を追加します。 |
+| 10 | validate-config | `.magento.env.yaml` ファイルに、スキーマで宣言されていないオプションが含まれているか、無効な値またはステージで構成されたオプションが含まれています | `./.magento.env.yaml` ファイルに無効な構成が含まれています。 詳細については、エラーログを確認してください。 |
+| 11 | refresh-modules | コマンドが失敗しました：`/bin/magento module:enable --all` | `composer update` をローカルで実行してみてください。 次に、更新された `composer.lock` ファイルをコミットしてプッシュします。 また、詳しくは `cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` ファイルに `VERBOSE_COMMANDS: '-vvv'` オプションを追加してください。 |
 | 12 | apply-patches | パッチを適用できませんでした |  |
-| 13 | set-report-dir-nesting-level | ファイルに書き込めません `/pub/errors/local.xml` |  |
+| 13 | set-report-dir-nesting-level | ファイル `/pub/errors/local.xml` に書き込めません |  |
 | 14 | copy-sample-data | サンプルデータファイルをコピーできませんでした |  |
-| 15 | compile-di | コマンドが失敗しました： `/bin/magento setup:di:compile` | を確認します `cloud.log` を参照してください。 追加 `VERBOSE_COMMANDS: '-vvv'` 対象 `.magento.env.yaml` 詳細なコマンド出力については、を参照してください。 |
-| 16 | dump-autoload | コマンドが失敗しました： `composer dump-autoload` | この `composer dump-autoload` コマンドが失敗しました。 を確認します `cloud.log` を参照してください。 |
-| 17 | ランベーラー | 実行するコマンド `Baler` for Javascript のバンドルに失敗しました | を確認します `SCD_USE_BALER` 環境変数：Baler モジュールが設定され、JS バンドルが有効になっていることを検証します。 Baler モジュールが必要ない場合は、を設定します `SCD_USE_BALER: false`. |
+| 15 | compile-di | コマンドが失敗しました：`/bin/magento setup:di:compile` | 詳しくは、`cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` に `VERBOSE_COMMANDS: '-vvv'` を追加してください。 |
+| 16 | dump-autoload | コマンドが失敗しました：`composer dump-autoload` | `composer dump-autoload` コマンドが失敗しました。 詳しくは、`cloud.log` を確認してください。 |
+| 17 | ランベーラー | Javascript バンドル用に `Baler` を実行するコマンドが失敗しました | `SCD_USE_BALER` 環境変数をチェックして、Baler モジュールが設定され、JS のバンドルが有効になっていることを確認します。 Baler モジュールが必要ない場合は、`SCD_USE_BALER: false` を設定します。 |
 | 18 | compress-static-content | 必要なユーティリティが見つかりませんでした（タイムアウト、bash） |  |
-| 19 | deploy-static-content | コマンド `/bin/magento setup:static-content:deploy` 失敗 | を確認します `cloud.log` を参照してください。 コマンド出力について詳しくは、 `VERBOSE_COMMANDS: '-vvv'` のオプション `.magento.env.yaml` ファイル。 |
-| 20 | compress-static-content | 静的コンテンツの圧縮に失敗しました | を確認します `cloud.log` を参照してください。 |
-| 21 | backup-data: static-content | 静的コンテンツをにコピーできませんでした `init` directory | を確認します `cloud.log` を参照してください。 |
-| 22 | backup-data: writable-dirs | 一部の書き込み可能ディレクトリをにコピーできませんでした `init` directory | 書き込み可能ディレクトリをにコピーできませんでした `./init` フォルダー。 ファイルシステムの権限を確認します。 |
+| 19 | deploy-static-content | コマンド `/bin/magento setup:static-content:deploy` が失敗しました | 詳しくは、`cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` ファイルに `VERBOSE_COMMANDS: '-vvv'` オプションを追加してください。 |
+| 20 | compress-static-content | 静的コンテンツの圧縮に失敗しました | 詳しくは、`cloud.log` を確認してください。 |
+| 21 | backup-data: static-content | 静的コンテンツを `init` ディレクトリにコピーできませんでした | 詳しくは、`cloud.log` を確認してください。 |
+| 22 | backup-data: writable-dirs | 一部の書き込み可能ディレクトリを `init` ディレクトリにコピーできませんでした | 書き込み可能なディレクトリを `./init` フォルダーにコピーできませんでした。 ファイルシステムの権限を確認します。 |
 | 23 |  | ロガーオブジェクトを作成できません |  |
-| 24 | backup-data: static-content | をクリーンアップできませんでした `./init/pub/static/` directory | クリーンアップできませんでした `./init/pub/static` フォルダー。 ファイルシステムの権限を確認します。 |
-| 25 |  | Composer パッケージが見つかりません | Adobe Commerce アプリケーションのバージョンを GitHub リポジトリから直接インストールした場合は、次のことを確認してください `DEPLOYED_MAGENTO_VERSION_FROM_GIT` 環境変数が設定されます。 |
-| 26 | validate-config | Adobe CommerceおよびMagento Open Source 2.4 以降でサポートされなくなったMagentoBraintreeモジュール設定を削除します。 | Braintreeモジュールのサポートは、Magento 2.4.0 以降には含まれなくなりました。 の「variables」セクションから CONFIG__STORES__DEFAULT__PAYMENT__VARIABLE__CHANNELBRAINTREEを削除します。 `.magento.app.yaml` ファイル。 Braintree支払いサポートについては、代わりにCommerce Marketplaceの公式の内線番号を使用してください。 |
+| 24 | backup-data: static-content | `./init/pub/static/` ディレクトリをクリーンアップできませんでした | フォルダーを削除でき `./init/pub/static` せんでした。 ファイルシステムの権限を確認します。 |
+| 25 |  | Composer パッケージが見つかりません | GitHub リポジトリから直接Adobe Commerce アプリケーションバージョンをインストールした場合は、`DEPLOYED_MAGENTO_VERSION_FROM_GIT` 環境変数が設定されていることを確認します。 |
+| 26 | validate-config | Adobe CommerceおよびMagento Open Source 2.4 以降でサポートされなくなったMagentoBraintreeモジュール設定を削除します。 | Braintreeモジュールのサポートは、Magento 2.4.0 以降には含まれなくなりました。 `.magento.app.yaml` ファイルの variables セクションから CONFIG__STORES__DEFAULT__PAYMENT__VARIABLES__CHANNELBRAINTREEを削除します。 Braintree支払いサポートについては、代わりにCommerce Marketplaceの公式の内線番号を使用してください。 |
 
 ### ステージのデプロイ
 
 | エラーコード | デプロイステップ | エラーの説明（タイトル） | 推奨されるアクション |
 | - | - | - | - |
-| 101 | 事前デプロイ：キャッシュ | キャッシュの構成が正しくありません（ポートまたはホストがありません） | キャッシュ構成に必要なパラメーターがありません `server` または `port`. を確認します `cloud.log` を参照してください。 |
-| 102 |  | に書き込めません `./app/etc/env.php` ファイル | デプロイメントスクリプトで、に対して必要な変更を行うことはできません `/app/etc/env.php` ファイル。 ファイルシステムの権限を確認します。 |
-| 103 |  | 設定がで定義されていません `schema.yaml` ファイル | 設定がで定義されていません `./vendor/magento/ece-tools/config/schema.yaml` ファイル。 設定変数名が正しく、定義されていることを確認します。 |
-| 104 |  | を解析できませんでした `.magento.env.yaml` ファイル | 設定がで定義されていません `./vendor/magento/ece-tools/config/schema.yaml` ファイル。 設定変数名が正しく、定義されていることを確認します。 |
-| 105 |  | を読み取れません `.magento.env.yaml` ファイル | を読み取れません `./.magento.env.yaml` ファイル。 ファイルの権限を確認します。 |
-| 106 |  | を読み取れません `.schema.yaml` ファイル |  |
-| 107 | pre-deploy: clean-redis-cache | Redis キャッシュをクリーンアップできませんでした | Redis キャッシュをクリーンアップできませんでした。 Redis のキャッシュ構成が正しく、Redis サービスが利用可能であることを確認します。 参照： [Redis サービスのセットアップ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/redis.html). |
-| 108 | pre-deploy: set-production-mode | コマンド `/bin/magento maintenance:enable` 失敗 | を確認します `cloud.log` を参照してください。 コマンド出力について詳しくは、 `VERBOSE_COMMANDS: '-vvv'` のオプション `.magento.env.yaml` ファイル。 |
-| 109 | validate-config | データベース設定が正しくありません | を確認します。 `DATABASE_CONFIGURATION` 環境変数が正しく設定されている。 |
-| 110 | validate-config | セッション設定が正しくありません | を確認します。 `SESSION_CONFIGURATION` 環境変数が正しく設定されている。 設定には、少なくとも次を含める必要があります `save` パラメーター。 |
-| 111 | validate-config | 検索設定が正しくありません | を確認します。 `SEARCH_CONFIGURATION` 環境変数が正しく設定されている。 設定には、少なくとも次を含める必要があります `engine` パラメーター。 |
-| 112 | validate-config | リソース設定が正しくありません | を確認します。 `RESOURCE_CONFIGURATION` 環境変数が正しく設定されている。 設定に含める必要のある最低文字種類の数 `connection` パラメーター。 |
-| 113 | validate-config:elasticsuite-integrity | ElasticSuite がインストールされていますが、Elasticsearchサービスを利用できません | を確認します。 `SEARCH_CONFIGURATION` 環境変数が正しく設定されていることを確認し、Elasticsearchサービスが使用可能であることを確認します。 |
-| 114 | validate-config:elasticsuite-integrity | ElasticSuite はインストールされていますが、別の検索エンジンが使用されています | ElasticSuite はインストールされていますが、別の検索エンジンが設定されています。 を更新 `SEARCH_CONFIGURATION` Elasticsearchを有効にし、Elasticsearchサービス設定を検証するための環境変数 `services.yaml` ファイル。 |
+| 101 | 事前デプロイ：キャッシュ | キャッシュの構成が正しくありません（ポートまたはホストがありません） | キャッシュ構成に必須パラメーター `server` または `port` がありません。 詳しくは、`cloud.log` を確認してください。 |
+| 102 |  | `./app/etc/env.php` ファイルに書き込めません | 配置スクリプトは、`/app/etc/env.php` ファイルに必要な変更を加えることができません。 ファイルシステムの権限を確認します。 |
+| 103 |  | `schema.yaml` ファイルで設定が定義されていません | `./vendor/magento/ece-tools/config/schema.yaml` ファイルで設定が定義されていません。 設定変数名が正しく、定義されていることを確認します。 |
+| 104 |  | `.magento.env.yaml` ファイルを解析できませんでした | `./vendor/magento/ece-tools/config/schema.yaml` ファイルで設定が定義されていません。 設定変数名が正しく、定義されていることを確認します。 |
+| 105 |  | `.magento.env.yaml` ファイルを読み取れません | `./.magento.env.yaml` ファイルを読み取ることができません。 ファイルの権限を確認します。 |
+| 106 |  | `.schema.yaml` ファイルを読み取れません |  |
+| 107 | pre-deploy: clean-redis-cache | Redis キャッシュをクリーンアップできませんでした | Redis キャッシュをクリーンアップできませんでした。 Redis のキャッシュ構成が正しく、Redis サービスが利用可能であることを確認します。 [Redis サービスの設定 ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/redis.html) を参照してください。 |
+| 108 | pre-deploy: set-production-mode | コマンド `/bin/magento maintenance:enable` が失敗しました | 詳しくは、`cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` ファイルに `VERBOSE_COMMANDS: '-vvv'` オプションを追加してください。 |
+| 109 | validate-config | データベース設定が正しくありません | `DATABASE_CONFIGURATION` 環境変数が正しく設定されていることを確認します。 |
+| 110 | validate-config | セッション設定が正しくありません | `SESSION_CONFIGURATION` 環境変数が正しく設定されていることを確認します。 設定には、少なくとも `save` パラメーターを含める必要があります。 |
+| 111 | validate-config | 検索設定が正しくありません | `SEARCH_CONFIGURATION` 環境変数が正しく設定されていることを確認します。 設定には、少なくとも `engine` パラメーターを含める必要があります。 |
+| 112 | validate-config | リソース設定が正しくありません | `RESOURCE_CONFIGURATION` 環境変数が正しく設定されていることを確認します。 設定には、少なくとも `connection` パラメーターを含める必要があります。 |
+| 113 | validate-config:elasticsuite-integrity | ElasticSuite がインストールされていますが、Elasticsearchサービスを利用できません | `SEARCH_CONFIGURATION`Elasticsearch変数が正しく設定されていること、および環境サービスが使用可能であることを確認します。 |
+| 114 | validate-config:elasticsuite-integrity | ElasticSuite はインストールされていますが、別の検索エンジンが使用されています | ElasticSuite はインストールされていますが、別の検索エンジンが設定されています。 `SEARCH_CONFIGURATION` 環境変数を更新してElasticsearchを有効にし、`services.yaml` ファイルでElasticsearchサービスの設定を確認します。 |
 | 115 |  | データベースクエリの実行に失敗しました |  |
-| 116 | install-update: setup | コマンド `/bin/magento setup:install` 失敗 | を確認します `cloud.log` および `install_upgrade.log` を参照してください。 コマンド出力について詳しくは、 `VERBOSE_COMMANDS: '-vvv'` のオプション `.magento.env.yaml` ファイル。 |
-| 117 | install-update:config-import | コマンド `app:config:import` 失敗 | を確認します `cloud.log` を参照してください。 コマンド出力について詳しくは、 `VERBOSE_COMMANDS: '-vvv'` のオプション `.magento.env.yaml` ファイル。 |
+| 116 | install-update: setup | コマンド `/bin/magento setup:install` が失敗しました | 詳細については、`cloud.log` および `install_upgrade.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` ファイルに `VERBOSE_COMMANDS: '-vvv'` オプションを追加してください。 |
+| 117 | install-update:config-import | コマンド `app:config:import` が失敗しました | 詳しくは、`cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` ファイルに `VERBOSE_COMMANDS: '-vvv'` オプションを追加してください。 |
 | 118 |  | 必要なユーティリティが見つかりませんでした（タイムアウト、bash） |  |
-| 119 | install-update: deploy-static-content | コマンド `/bin/magento setup:static-content:deploy` 失敗 | を確認します `cloud.log` を参照してください。 コマンド出力について詳しくは、 `VERBOSE_COMMANDS: '-vvv'` のオプション `.magento.env.yaml` ファイル。 |
-| 120 | compress-static-content | 静的コンテンツの圧縮に失敗しました | を確認します `cloud.log` を参照してください。 |
-| 121 | deploy-static-content:generate | デプロイされたバージョンを更新できません | を更新できません `./pub/static/deployed_version.txt` ファイル。 ファイルシステムの権限を確認します。 |
+| 119 | install-update: deploy-static-content | コマンド `/bin/magento setup:static-content:deploy` が失敗しました | 詳しくは、`cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` ファイルに `VERBOSE_COMMANDS: '-vvv'` オプションを追加してください。 |
+| 120 | compress-static-content | 静的コンテンツの圧縮に失敗しました | 詳しくは、`cloud.log` を確認してください。 |
+| 121 | deploy-static-content:generate | デプロイされたバージョンを更新できません | `./pub/static/deployed_version.txt` ファイルを更新できません。 ファイルシステムの権限を確認します。 |
 | 122 | clean-static-content | 静的コンテンツファイルをクリーンアップできませんでした |  |
-| 123 | install-update:split-db | コマンド `/bin/magento setup:db-schema:split` 失敗 | を確認します `cloud.log` を参照してください。 コマンド出力について詳しくは、 `VERBOSE_COMMANDS: '-vvv'` のオプション `.magento.env.yaml` ファイル。 |
-| 124 | clean-view-preprocessed | をクリーンアップできませんでした `var/view_preprocessed` フォルダー | をクリーンアップできません `./var/view_preprocessed` フォルダー。 ファイルシステムの権限を確認します。 |
-| 125 | install-update: reset-password | を更新できませんでした `/var/credentials_email.txt` ファイル | を更新できませんでした `/var/credentials_email.txt` ファイル。 ファイルシステムの権限を確認します。 |
-| 126 | install-update:update | コマンド `/bin/magento setup:upgrade` 失敗 | を確認します `cloud.log` および `install_upgrade.log` を参照してください。 コマンド出力について詳しくは、 `VERBOSE_COMMANDS: '-vvv'` のオプション `.magento.env.yaml` ファイル。 |
-| 127 | キャッシュのクリーンアップ | コマンド `/bin/magento cache:flush` 失敗 | を確認します `cloud.log` を参照してください。 コマンド出力について詳しくは、 `VERBOSE_COMMANDS: '-vvv'` のオプション `.magento.env.yaml` ファイル。 |
-| 128 | disable-maintenance-mode | コマンド `/bin/magento maintenance:disable` 失敗 | を確認します `cloud.log` を参照してください。 追加 `VERBOSE_COMMANDS: '-vvv'` 対象 `.magento.env.yaml` 詳細なコマンド出力については、を参照してください。 |
+| 123 | install-update:split-db | コマンド `/bin/magento setup:db-schema:split` が失敗しました | 詳しくは、`cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` ファイルに `VERBOSE_COMMANDS: '-vvv'` オプションを追加してください。 |
+| 124 | clean-view-preprocessed | `var/view_preprocessed` フォルダーをクリーンアップできませんでした | `./var/view_preprocessed` フォルダーをクリーンアップできません。 ファイルシステムの権限を確認します。 |
+| 125 | install-update: reset-password | `/var/credentials_email.txt` ファイルを更新できませんでした | `/var/credentials_email.txt` ファイルを更新できませんでした。 ファイルシステムの権限を確認します。 |
+| 126 | install-update:update | コマンド `/bin/magento setup:upgrade` が失敗しました | 詳細については、`cloud.log` および `install_upgrade.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` ファイルに `VERBOSE_COMMANDS: '-vvv'` オプションを追加してください。 |
+| 127 | キャッシュのクリーンアップ | コマンド `/bin/magento cache:flush` が失敗しました | 詳しくは、`cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` ファイルに `VERBOSE_COMMANDS: '-vvv'` オプションを追加してください。 |
+| 128 | disable-maintenance-mode | コマンド `/bin/magento maintenance:disable` が失敗しました | 詳しくは、`cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` に `VERBOSE_COMMANDS: '-vvv'` を追加してください。 |
 | 129 | install-update: reset-password | パスワードリセットテンプレートを読み取れません |  |
-| 130 | install-update:cache_type | コマンドが失敗しました： `php ./bin/magento cache:enable` | コマンド `php ./bin/magento cache:enable` Adobe Commerceがインストールされているが `./app/etc/env.php` デプロイメントの開始時に、ファイルが存在しないか空でした。 を確認します `cloud.log` を参照してください。 追加 `VERBOSE_COMMANDS: '-vvv'` 対象 `.magento.env.yaml` 詳細なコマンド出力については、を参照してください。 |
-| 131 | install-update | この `crypt/key`  キー値がに存在しません `./app/etc/env.php` ファイルまたは `CRYPT_KEY` クラウド環境変数 | このエラーは、 `./app/etc/env.php` Adobe Commerceのデプロイメント開始時、または `crypt/key` 値が定義されていません。 別の環境からデータベースを移行した場合は、その環境から暗号化キーの値を取得します。 次に、値をに追加します [CRYPT_KEY](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-deploy.html#crypt_key) 現在の環境のクラウド環境変数。 参照： [Adobe Commerce暗号化キー](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/overview.html#gather-credentials). 誤って削除した場合 `./app/etc/env.php` ファイル。次のコマンドを使用して、以前の配置で作成されたバックアップ ファイルから復元します。 `./vendor/bin/ece-tools backup:restore` CLI コマンド。&quot; |
+| 130 | install-update:cache_type | コマンドが失敗しました：`php ./bin/magento cache:enable` | コマンド `php ./bin/magento cache:enable` は、Adobe Commerceがインストールされてい `./app/etc/env.php` が、デプロイメントの開始時にファイルが存在しないか空の場合にのみ実行されます。 詳しくは、`cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` に `VERBOSE_COMMANDS: '-vvv'` を追加してください。 |
+| 131 | install-update | `crypt/key` キーの値が `./app/etc/env.php` ファイルまたは `CRYPT_KEY` クラウド環境変数に存在しません | このエラーは、Adobe Commerceのデプロイメント開始時に `./app/etc/env.php` ファイルが存在しない場合、または `crypt/key` の値が定義されていない場合に発生します。 別の環境からデータベースを移行した場合は、その環境から暗号化キーの値を取得します。 次に、現在の環境のクラウド環境変数 [CRYPT_KEY](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/env/stage/variables-deploy.html#crypt_key) に値を追加します。 [Adobe Commerce暗号化キー ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/develop/overview.html#gather-credentials) を参照してください。 `./app/etc/env.php` ファイルを誤って削除した場合は、次のコマンドを使用して、以前のデプロイメントで作成されたバックアップファイルから復元します。`./vendor/bin/ece-tools backup:restore` CLI コマンド」 |
 | 132 |  | Elasticsearchサービスに接続できません | 有効なElasticsearch資格情報を確認し、サービスが実行中であることを確認します |
 | 137 |  | OpenSearch サービスに接続できません | 有効な OpenSearch 認証情報を確認し、サービスが実行中であることを確認します |
-| 133 | validate-config | Adobe CommerceまたはMagento Open Source 2.4 以降でサポートされなくなったMagentoBraintreeモジュール設定を削除します。 | Braintreeモジュールのサポートは、Adobe CommerceまたはMagento Open Source 2.4.0 以降には含まれなくなりました。 の「variables」セクションから CONFIG__STORES__DEFAULT__PAYMENT__VARIABLE__CHANNELBRAINTREEを削除します。 `.magento.app.yaml` ファイル。 Braintreeのサポートについては、Commerce Marketplaceの公式のBraintree支払い拡張機能を使用します。 |
+| 133 | validate-config | Adobe CommerceまたはMagento Open Source 2.4 以降でサポートされなくなったMagentoBraintreeモジュール設定を削除します。 | Braintreeモジュールのサポートは、Adobe CommerceまたはMagento Open Source 2.4.0 以降には含まれなくなりました。 `.magento.app.yaml` ファイルの variables セクションから CONFIG__STORES__DEFAULT__PAYMENT__VARIABLES__CHANNELBRAINTREEを削除します。 Braintreeのサポートについては、Commerce Marketplaceの公式のBraintree支払い拡張機能を使用します。 |
 | 134 | validate-config | Adobe CommerceおよびMagento Open Source 2.4.0 では、Elasticsearchサービスをインストールする必要があります | Elasticsearchサービスのインストール |
 | 138 | validate-config | Adobe CommerceおよびMagento Open Source 2.4.4 では、OpenSearch またはElasticsearchサービスをインストールする必要があります | OpenSearch サービスのインストール |
-| 135 | validate-config | 検索エンジンは、Adobe CommerceのElasticsearchおよびMagento Open Source >= 2.4.0 に設定する必要があります | の SEARCH_CONFIGURATION 変数を確認します。 `engine` オプション。 設定されている場合は、オプションを削除するか、値を「elasticsearch」に設定します。 |
+| 135 | validate-config | 検索エンジンは、Adobe CommerceのElasticsearchおよびMagento Open Source >= 2.4.0 に設定する必要があります | `engine` オプションの SEARCH_CONFIGURATION 変数を確認します。 設定されている場合は、オプションを削除するか、値を「elasticsearch」に設定します。 |
 | 136 | validate-config | Split Database は、Adobe CommerceおよびMagento Open Source 2.5.0 以降で削除されました。 | 分割データベースを使用している場合は、単一のデータベースに戻すか、単一のデータベースに移行するか、別の方法を使用する必要があります。 |
 | 139 | validate-config | 検索エンジンが正しくありません | このAdobe CommerceまたはMagento Open Sourceのバージョンでは、OpenSearch がサポートされていません。 バージョン 2.3.7-p3、2.4.3-p2 以降を使用する必要があります |
 
-### デプロイ後のステージ
+### Post-deploy ステージ
 
-| エラーコード | デプロイ後手順 | エラーの説明（タイトル） | 推奨されるアクション |
+| エラーコード | Post-deploy ステップ | エラーの説明（タイトル） | 推奨されるアクション |
 | - | - | - | - |
 | 201 | is-deploy-failed | ステージのデプロイに失敗しました |  |
-| 202 |  | この `./app/etc/env.php` ファイルは書き込み可能ではありません | デプロイメントスクリプトで、に対して必要な変更を行うことはできません `/app/etc/env.php` ファイル。 ファイルシステムの権限を確認します。 |
-| 203 |  | 設定がで定義されていません `schema.yaml` ファイル | 設定がで定義されていません `./vendor/magento/ece-tools/config/schema.yaml` ファイル。 設定変数名が正しく、定義されていることを確認します。 |
-| 204 |  | を解析できませんでした `.magento.env.yaml` ファイル | この `./.magento.env.yaml` ファイル形式が無効です。 YAML パーサーを使用して構文を確認し、エラーを修正します。 |
-| 205 |  | を読み取れません `.magento.env.yaml` ファイル | ファイルの権限を確認します。 |
-| 206 |  | を読み取れません `.schema.yaml` ファイル |  |
+| 202 |  | `./app/etc/env.php` ファイルは書き込み可能ではありません | 配置スクリプトは、`/app/etc/env.php` ファイルに必要な変更を加えることができません。 ファイルシステムの権限を確認します。 |
+| 203 |  | `schema.yaml` ファイルで設定が定義されていません | `./vendor/magento/ece-tools/config/schema.yaml` ファイルで設定が定義されていません。 設定変数名が正しく、定義されていることを確認します。 |
+| 204 |  | `.magento.env.yaml` ファイルを解析できませんでした | `./.magento.env.yaml` ファイル形式が無効です。 YAML パーサーを使用して構文を確認し、エラーを修正します。 |
+| 205 |  | `.magento.env.yaml` ファイルを読み取れません | ファイルの権限を確認します。 |
+| 206 |  | `.schema.yaml` ファイルを読み取れません |  |
 | 207 | ウォームアップ | いくつかのウォームアップページをプリロードできませんでした |  |
 | 208 | 最初のバイトまでの時間 | 最初のバイト （TTFB）への時間のテストに失敗しました |  |
-| 227 | キャッシュのクリーンアップ | コマンド `/bin/magento cache:flush` 失敗 | を確認します `cloud.log` を参照してください。 追加 `VERBOSE_COMMANDS: '-vvv'` 対象 `.magento.env.yaml` 詳細なコマンド出力については、を参照してください。 |
+| 227 | キャッシュのクリーンアップ | コマンド `/bin/magento cache:flush` が失敗しました | 詳しくは、`cloud.log` を確認してください。 コマンド出力の詳細については、`.magento.env.yaml` に `VERBOSE_COMMANDS: '-vvv'` を追加してください。 |
 
 ### 一般
 
 | エラーコード | 一般的な手順 | エラーの説明（タイトル） | 推奨されるアクション |
 | - | - | - | - |
-| 243 |  | 設定がで定義されていません `schema.yaml` ファイル | 設定変数名が正しく、定義されていることを確認します。 |
-| 244 |  | を解析できませんでした `.magento.env.yaml` ファイル | この `./.magento.env.yaml` ファイル形式が無効です。 YAML パーサーを使用して構文を確認し、エラーを修正します。 |
-| 245 |  | を読み取れません `.magento.env.yaml` ファイル | を読み取れません `./.magento.env.yaml` ファイル。 ファイルの権限を確認します。 |
-| 246 |  | を読み取れません `.schema.yaml` ファイル |  |
-| 247 |  | イベント用のモジュールを生成できません | を確認します `cloud.log` を参照してください。 |
-| 248 |  | イベント用のモジュールを有効にできません | を確認します `cloud.log` を参照してください。 |
-| 249 |  | AdobeCommerceWebhookPlugins モジュールを生成できませんでした | を確認します `cloud.log` を参照してください。 |
-| 250 |  | AdobeCommerceWebhookPlugins モジュールを有効にできませんでした | を確認します `cloud.log` を参照してください。 |
+| 243 |  | `schema.yaml` ファイルで設定が定義されていません | 設定変数名が正しく、定義されていることを確認します。 |
+| 244 |  | `.magento.env.yaml` ファイルを解析できませんでした | `./.magento.env.yaml` ファイル形式が無効です。 YAML パーサーを使用して構文を確認し、エラーを修正します。 |
+| 245 |  | `.magento.env.yaml` ファイルを読み取れません | `./.magento.env.yaml` ファイルを読み取ることができません。 ファイルの権限を確認します。 |
+| 246 |  | `.schema.yaml` ファイルを読み取れません |  |
+| 247 |  | イベント用のモジュールを生成できません | 詳しくは、`cloud.log` を確認してください。 |
+| 248 |  | イベント用のモジュールを有効にできません | 詳しくは、`cloud.log` を確認してください。 |
+| 249 |  | AdobeCommerceWebhookPlugins モジュールを生成できませんでした | 詳しくは、`cloud.log` を確認してください。 |
+| 250 |  | AdobeCommerceWebhookPlugins モジュールを有効にできませんでした | 詳しくは、`cloud.log` を確認してください。 |
 
 ## 警告エラー
 
@@ -164,7 +164,7 @@ ht-degree: 4%
 | 2003 | validate-config | エラーレポート用のディレクトリのネスティングレベル値が設定されていません |  |
 | 2004 | validate-config | での設定が無効です。/pub/errors/local.xml ファイル。 |  |
 | 2005 | validate-config | 管理データは、初期インストール時にのみ管理者ユーザーを作成するために使用されます。 アップグレードプロセス中、管理者データに対する変更は無視されます。 | 最初のインストール後、管理者データを設定から削除できます。 |
-| 2006 | validate-config | 管理者の電子メールが設定されていなかったので、管理者ユーザーは作成されませんでした | インストール後、管理者ユーザーを手動で作成できます。ssh を使用して環境に接続します。 次に、 `bin/magento admin:user:create` コマンド。 |
+| 2006 | validate-config | 管理者の電子メールが設定されていなかったので、管理者ユーザーは作成されませんでした | インストール後、管理者ユーザーを手動で作成できます。ssh を使用して環境に接続します。 次に、`bin/magento admin:user:create` コマンドを実行します。 |
 | 2007 | validate-config | php のバージョンを推奨バージョンに更新する |  |
 | 2008 | validate-config | Solr のサポートは、Adobe CommerceおよびMagento Open Source 2.1 で非推奨（廃止予定）となりました。 |  |
 | 2009 | validate-config | Solr は、Adobe CommerceおよびMagento Open Source 2.2 以降ではサポートされなくなりました。 |  |
@@ -179,20 +179,20 @@ ht-degree: 4%
 | 2018 | validate-config | 一部のサービスは提供終了（EOL）になりました |  |
 | 2019 | validate-config | MySQL 検索設定オプションは非推奨です | 代わりに、Elasticsearchを使用します。 |
 | 2029 | validate-config | Split Database は、Adobe CommerceおよびMagento Open Source 2.4.2 で非推奨となり、2.5 で削除される予定です。 | 分割データベースを使用している場合は、単一のデータベースに戻す、単一のデータベースに移行する、または別の方法を使用する計画を開始する必要があります。 |
-| 2020 | install-update | Adobe Commerceのインストールは完了しましたが、 `app/etc/env.php` 構成ファイルが見つからないか、空です。 | 必須データは、環境設定および.magento.env.yaml ファイルから復元されます。 |
+| 2020 | install-update | Adobe Commerceのインストールは完了しましたが、`app/etc/env.php` 設定ファイルが見つからないか、空でした。 | 必須データは、環境設定および.magento.env.yaml ファイルから復元されます。 |
 | 2021 | install-update:db-connection | カスタム接続を使用する分割データベースの場合 |  |
 | 2022 | install-update:db-connection | スレーブ接続と互換性のないデータベース構成に変更しました。 |  |
 | 2023 | install-update:split-db | 分割データベースの有効化はスキップされます。 |  |
 | 2024 | install-update:split-db | SPLIT_DB 変数に分割接続タイプの構成がありません。 |  |
 | 2025 | install-update:split-db | スレーブ接続が設定されていません。 |  |
-| 2026 | pre-deploy:restore-writable-dirs | ビルド フェーズで生成された一部のデータをマウントされたディレクトリに復元できませんでした | を確認します `cloud.log` を参照してください。 |
+| 2026 | pre-deploy:restore-writable-dirs | ビルド フェーズで生成された一部のデータをマウントされたディレクトリに復元できませんでした | 詳しくは、`cloud.log` を確認してください。 |
 | 2027 | validate-config:mage-mode-variable | MAGE_MODE 環境変数のモード値はサポートされていません | MAGE_MODE 環境変数を削除するか、その値を「production」に変更します。 クラウドインフラストラクチャー上のAdobe Commerceでは、「実稼動」モードのみをサポートします。 |
 | 2028 | remote-storage | リモート記憶域を有効にできませんでした。 | リモートストレージの資格情報を確認します。 |
 | 2030 | validate-config | Elasticsearchサービスと OpenSearch サービスは、どちらもインフラストラクチャレイヤーにインストールされます。 Adobe CommerceおよびMagento Open Source 2.4.4 以降では、デフォルトで OpenSearch を使用します | リソースの使用状況を最適化するには、インフラストラクチャレイヤーからElasticsearchサービスまたは OpenSearch サービスを削除することを検討してください。 |
 
-### デプロイ後のステージ
+### Post-deploy ステージ
 
-| エラーコード | デプロイ後手順 | エラーの説明（タイトル） | 推奨されるアクション |
+| エラーコード | Post-deploy ステップ | エラーの説明（タイトル） | 推奨されるアクション |
 | - | - | - | - |
 | 3001 | validate-config | Adobe Commerceではデバッグログが有効になっています | ディスク容量を節約するには、実稼動環境のデバッグログを有効にしないでください。 |
 | 3002 | ウォームアップ | ストア URL を取得できません |  |

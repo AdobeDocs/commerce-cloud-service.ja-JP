@@ -26,7 +26,7 @@ ht-degree: 0%
             <td>
                 bcmath<br>
                 bz2<br>
-                カレンダー<br>
+                カレンダー <br>
                 exif<br>
                 gd<br>
                 gettext<br>
@@ -37,25 +37,25 @@ ht-degree: 0%
                 openswoole<br>
                 pcntl<br>
                 pdo_mysql<br>
-                反射<br>
-                石けん<br>
-                ソケット<br>
+                反射 <br>
+                soap<br>
+                ソケット <br>
                 SPL<br>
-                標準<br>
+                標準 <br>
                 sysvmsg<br>
-                システム<br>
+                システムの設定 <br>
                 sysvshm<br>
-                郵便番号<br>
+                郵便番号 <br>
                 zlib<br>
             </td>
             <td>
                 ctype<br>
                 curl<br>
-                日付<br>
+                日付 <br>
                 dba<br>
                 dom<br>
                 fileinfo<br>
-                フィルター<br>
+                フィルター <br>
                 ftp<br>
                 hash<br>
                 iconv<br>
@@ -69,9 +69,9 @@ ht-degree: 0%
                 phar<br>
                 posix<br>
                 readline<br>
-                session<br>
+                セッション <br>
                 sqlite3<br>
-                tokenzer<br>
+                tokenizer <br>
                 xml<br>
                 xmlreader<br>
                 xmlwriter<br>
@@ -91,13 +91,13 @@ ht-degree: 0%
                 pdo_mysql<br>
                 propro<br>
                 pspell<br>
-                グラフ<br>
-                レコード<br>
+                グラフ <br>
+                コード <br>
                 redis<br>
-                shmop ソケット<br>
-                ナトリウム<br>
+                shmop ソケット <br>
+                ナトリウム <br>
                 ssh2<br>
-                整頓する<br>
+                ティディ <br>
                 xdebug<br>
                 xmlrpc<br>
                 xsl<br>

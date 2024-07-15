@@ -20,50 +20,50 @@ Commerceを初めて使用する場合でも、クラウドインフラストラ
 
 - **認証キー（Composer キー）**
 
-  認証キーは、Adobe Commerce Composer リポジトリへの安全なアクセスを提供する 32 文字の認証トークンです（`repo.magento.com`）を選択し、GitHub など、アプリケーション開発に必要なその他の Git サービスを選択します。 アカウントには複数の認証キーを設定できます。 ワークスペースを設定する場合は、まずコードリポジトリに固有のキーを 1 つ使用します。 キーがない場合は、プロジェクトの所有者に問い合わせるか、 [認証キー](../cloud-guide/development/authentication-keys.md) あなた自身。
+  認証キーは 32 文字の認証トークンで、Adobe Commerce Composer リポジトリ（`repo.magento.com`）や、GitHub などのアプリケーション開発に必要な他の Git サービスへの安全なアクセスを提供します。 アカウントには複数の認証キーを設定できます。 ワークスペースを設定する場合は、まずコードリポジトリに固有のキーを 1 つ使用します。 キーがない場合は、プロジェクトの所有者に問い合わせるか、自分で [ 認証キー ](../cloud-guide/development/authentication-keys.md) を作成します。
 
 - **クラウドプロジェクトアカウント**
 
-  プロジェクトオーナーに、クラウドインフラストラクチャプロジェクトのAdobe Commerceへの招待を受ける必要があります。 電子メールによる招待を受け取ったら、リンクをクリックし、画面の指示に従ってアカウントを作成します。 参照： [オンボーディング](onboarding.md).
+  プロジェクトオーナーに、クラウドインフラストラクチャプロジェクトのAdobe Commerceへの招待を受ける必要があります。 電子メールによる招待を受け取ったら、リンクをクリックし、画面の指示に従ってアカウントを作成します。 [ オンボーディング ](onboarding.md) を参照してください。
 
 - **Adobe Commerce暗号化キー**
 
-  既存のシステムのみをインポートする場合は、データベースのアクセスとデータを保護するために使用する暗号化キーを取得します。 このキーについて詳しくは、 [暗号化キーに関する問題の解決](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/resolve-issues-with-encryption-key.html)
+  既存のシステムのみをインポートする場合は、データベースのアクセスとデータを保護するために使用する暗号化キーを取得します。 このキーについて詳しくは、[ 暗号化キーに関する問題の解決 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/resolve-issues-with-encryption-key.html) を参照してください。
 
 ## デベロッパーツール
 
 - **Cloud CLI のインストール**
 
-  のインストール `magento-cloud` CLI を使用すると、クラウド環境を管理し、自動化タスクを実行できます。 参照： [クラウド CLI](../cloud-guide/dev-tools/cloud-cli-overview.md) を参照してください。
+  `magento-cloud` CLI をインストールして、クラウド環境を管理し、自動化タスクを実行できるようにします。 インストール手順については、[Cloud CLI](../cloud-guide/dev-tools/cloud-cli-overview.md) を参照してください。
 
 - **ローカル開発およびテスト用の Docker のインストール**
 
-  オプションで、Docker 環境を使用してクラウドインフラストラクチャー上のCommerceをエミュレートします `integration` ローカル開発の環境。 必須のコンポーネントには、Adobe Commerce v2 テンプレート、Docker Compose および `ece-tools` パッケージ。
+  必要に応じて、Docker 環境を使用して、Commerce on cloud infrastructure `integration` 環境をローカル開発用にエミュレートします。 必須のコンポーネントには、Adobe Commerce v2 テンプレート、Docker Compose および `ece-tools` パッケージの 3 つがあります。
 
    - [Docker アーキテクチャと一般的なコマンド](../cloud-guide/dev-tools/cloud-docker.md)
-   - [Docker 開発環境の起動](https://developer.adobe.com/commerce/cloud-tools/docker/setup/)
+   - [Docker 開発環境の起動 ](https://developer.adobe.com/commerce/cloud-tools/docker/setup/)
    - [ECE-Tools パッケージ](../cloud-guide/dev-tools/package-overview.md)
 
 - **Git ベースのサービスの統合**
 
-  オプションで、GitHub や GitLab などの Git ベースのホスティングサービスと、クラウドインフラストラクチャー上のAdobe Commerceを統合します。 参照： [統合](../cloud-guide/integrations/overview.md).
+  オプションで、GitHub や GitLab などの Git ベースのホスティングサービスと、クラウドインフラストラクチャー上のAdobe Commerceを統合します。 [ 統合 ](../cloud-guide/integrations/overview.md) を参照してください。
 
 ## プロジェクトコード
 
-リモート環境とやり取りするには、安全な接続が不可欠です。 新規プロジェクトの場合、 [にログインします [!DNL Cloud Console]](https://console.adobecommerce.com) をクリックして、 **[!UICONTROL No SSH key]**. このアイコンはコマンドフィールドの右側にあり、プロジェクトに SSH キーが含まれていない場合に表示されます。 参照： [安全な接続](../cloud-guide/development/secure-connections.md#add-an-ssh-public-key-to-your-account).
+リモート環境とやり取りするには、安全な接続が不可欠です。 新規プロジェクトの場合は、[ にログイン  [!DNL Cloud Console]](https://console.adobecommerce.com) し、「**[!UICONTROL No SSH key]**」をクリックします。 このアイコンはコマンドフィールドの右側にあり、プロジェクトに SSH キーが含まれていない場合に表示されます。 [ 安全な接続 ](../cloud-guide/development/secure-connections.md#add-an-ssh-public-key-to-your-account) を参照してください。
 
-**コードベースをローカルワークステーションに複製するには**:
+**コードベースをローカルワークステーションにクローンするには**:
 
-1. が含まれる [[!DNL Cloud Console]](https://console.adobecommerce.com)を選択し、 **[!UICONTROL code]** を選択し、 **[!UICONTROL Git]** タブ。
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) で「**[!UICONTROL code]**」をクリックし、「**[!UICONTROL Git]**」タブを選択します。
 
-   ![コードのクローン](../assets/ui-git-code.png){width="450"}
+   ![ コードのクローンを作成 ](../assets/ui-git-code.png){width="450"}
 
-1. をコピーします `git clone ...` コマンドが提供されました。
+1. 提供された `git clone ...` コマンドをコピーします。
 
 1. ターミナルでを作成し、作業ディレクトリに変更します。
 
-1. を貼り付けて実行 `git clone ...` コマンド。
+1. 貼り付けて、`git clone ...` コマンドを実行します。
 
 >[!TIP]
 >
->Adobeは、特定のバージョンのAdobe Commerceのパッケージ手順を含むテンプレートリポジトリを使用して、初期プロジェクト環境をプロビジョニングします。 をレビュー [プロジェクト ファイル構造](../cloud-guide/project/file-structure.md) 重要なプロジェクトファイルとクラウドテンプレートに関するトピックと詳細情報。
+>Adobeは、特定のバージョンのAdobe Commerceのパッケージ手順を含むテンプレートリポジトリを使用して、初期プロジェクト環境をプロビジョニングします。 [ プロジェクトファイル構造 ](../cloud-guide/project/file-structure.md) のトピックを確認し、重要なプロジェクトファイルとクラウドテンプレートについて詳しく学びます。

@@ -1,6 +1,6 @@
 ---
 title: 作業者
-description: でワーカープロパティを設定する方法を説明します [!DNL Commerce] アプリケーション設定ファイル。
+description: アプリケーション設定ファイルでワーカープロパティを設定する方法  [!DNL Commerce]  説明します。
 feature: Cloud, Configuration
 exl-id: d6816925-5912-45ca-8255-6c307e58542d
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -12,20 +12,20 @@ ht-degree: 0%
 
 # 労働者財産
 
-ワーカーは、実行中の Nginx インスタンスを使用せずに、web インスタンスとは別に実行するように定義できます。ただし、ワーカーは、で使用されるのと同じネットワークストレージを使用します。 [!DNL Commerce] アプリケーション。 ルーターがワーカーに公開リクエストを送信できないので、ワーカーインスタンスに（Node.js または Go を使用して） web サーバーを設定する必要はありません。 これにより、ワーカーインスタンスがバックグラウンドタスクや、デプロイメントをブロックするリスクのあるタスクを継続的に実行する場合に最適になります。
+ワーカーは、実行中の Nginx インスタンスを使用せずに、web インスタンスとは別に実行するように定義できます。ただし、ワーカーは、[!DNL Commerce] アプリケーションで使用されているのと同じネットワークストレージを使用します。 ルーターがワーカーに公開リクエストを送信できないので、ワーカーインスタンスに（Node.js または Go を使用して） web サーバーを設定する必要はありません。 これにより、ワーカーインスタンスがバックグラウンドタスクや、デプロイメントをブロックするリスクのあるタスクを継続的に実行する場合に最適になります。
 
 ## ワーカーの設定
 
-ワーカーは、Pro ステージング環境および実稼動環境でのみ使用できます。 Pro 統合およびスターター環境は、 [CRON_CONSUMERS_RUNNER](../environment/variables-deploy.md#cron_consumers_runner) 変数。
+ワーカーは、Pro ステージング環境および実稼動環境でのみ使用できます。 Pro 統合およびスターター環境は、[CRON_CONSUMERS_RUNNER](../environment/variables-deploy.md#cron_consumers_runner) 変数の使用を選択できます。
 
-ステージング環境または実稼動環境でワーカーを設定するには、 [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) また、次の情報も含めます。
+ステージング環境または実稼動環境でワーカーを設定するには、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) して、次の情報を含めます。
 
 - プロジェクト ID
 - 環境 ID
 - 作業者名
 - 開始コマンド
 
-ワーカーごとに 1 つのプロセスを設定できます。 の基本的で一般的なワーカー設定 `.magento.app.yaml` ファイルは次のようになります。
+ワーカーごとに 1 つのプロセスを設定できます。 `.magento.app.yaml` ファイル内の基本的で一般的なワーカー設定は、次のようになります。
 
 ```yaml
 workers:
@@ -35,28 +35,28 @@ workers:
                 php ./bin/magento queue:consumers:start commerce.eventing.event.publish
 ```
 
-この例では、という名前の単一のワーカーを定義します。 `queue`を実行します。リソース割り当てのレベルが小さい（サイズ S）場合は、 `php ./bin/magento` 起動時のコマンド。 作業者 `queue` 次に、各ノードでワーカープロセスとして実行されます。 コマンドが終了すると、自動的に再起動されます。
+この例では、リソース割り当ての小さい（サイズ S） レベルで `queue` という名前の単一のワーカーを定義し、起動時に `php ./bin/magento` コマンドを実行します。 その後、ワーカー `queue` はワーカープロセスとして各ノードで実行されます。 コマンドが終了すると、自動的に再起動されます。
 
 ## コマンドと上書き
 
-この `commands.start` キーは、ワーカーアプリケーションでコマンドを起動するために必要です。 任意の有効なシェルコマンドを使用できますが、アプリケーションの言語を使用するのが理想的です。 コマンドが `start` キーが終了すると、自動的に再起動します。
+`commands.start` キーは、ワーカーアプリケーションでコマンドを起動するために必要です。 任意の有効なシェルコマンドを使用できますが、アプリケーションの言語を使用するのが理想的です。 `start` キーで指定されたコマンドが終了すると、自動的に再起動します。
 
 >[!IMPORTANT]
 >
->この `deploy` および `post_deploy` フックと `crons` コマンドは web コンテナでのみ実行され、ワーカーインスタンスでは実行されません。
+>`deploy` および `post_deploy` フックと `crons` コマンドは、web コンテナでのみ実行され、ワーカーインスタンスでは実行されません。
 
 ### 継承
 
-の定義 `size`, `relationships`, `access`, `disk` および `mount`、および `variables` プロパティは、明示的に上書きされない限り、ワーカーに継承されます。
+`size`、`relationships`、`access`、`disk`、`mount` および `variables` プロパティの定義は、明示的に上書きされない限り、ワーカーに継承されます。
 
-次のプロパティは、オーバーライドに最もよく使用されます [トップレベルの設定](properties.md):
+次のプロパティは、[ トップレベルの設定 ](properties.md) をオーバーライドする場合に最も一般的に使用されます。
 
-- `size` – 単一のバックグラウンド・プロセスに割り当てるリソースを削減する
-- `variables` – 異なる方法で実行するようアプリケーションに指示する
+- `size`：単一のバックグラウンド・プロセスに割り当てるリソースを減らす
+- `variables` - アプリケーションに別の方法で実行するよう指示します
 
 ### タイミングとキュー
 
-各ワーカーは別のワーカーの後ろにキューしますが、次の設定では、タイムスタンプで一貫した 2 秒の分離が生成されます。 `var/time.txt` ファイル。PHP コード内の 8 秒間のスリープに関係なく実行されます。
+各ワーカーは別のワーカーの後ろにキューを作成しますが、次の設定では、PHP コード内の 8 秒のスリープに関係なく、`var/time.txt` ファイルにタイムスタンプで一貫性のある 2 秒の分離が生成されます。
 
 ```yaml
 workers:

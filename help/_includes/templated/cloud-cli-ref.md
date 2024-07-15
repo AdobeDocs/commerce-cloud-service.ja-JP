@@ -10,12 +10,12 @@ ht-degree: 0%
 <!-- The template to render with above values -->
 **バージョン**:1.46.1
 
-このリファレンスには、を介して使用できる 119 のコマンドが含まれています `magento-cloud` コマンドラインツール。
-最初のリストは、 `magento-cloud list` クラウドインフラストラクチャー上のAdobe Commerceでコマンドを実行します。
+このリファレンスには、`magento-cloud` のコマンド ライン ツールで使用できる 119 個のコマンドが含まれています。
+最初のリストは、クラウドインフラストラクチャ上のAdobe Commerceで `magento-cloud list` コマンドを使用して自動生成されます。
 
 >[!NOTE]
 >
->この参照は、アプリケーションコードベースから生成されます。 コンテンツを変更するには、対応するコマンド実装のソースコードを [コードベース](https://github.com/magento/magento-cloud-cli) 変更をレビュー用にリポジトリーして送信します。 もう 1 つの方法は、 _フィードバックを提供_ （右上のリンクを見つけます）。 投稿のガイドラインについては、を参照してください。 [コードの投稿](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+>この参照は、アプリケーションコードベースから生成されます。 コンテンツを変更するには、[codebase](https://github.com/magento/magento-cloud-cli) リポジトリ内の対応するコマンド実装のソースコードを更新し、変更点をレビュー用に送信します。 もう 1 つの方法は、_フィードバックを提供_ （右上のリンクを見つけます）です。 投稿のガイドラインについては、[ コードの投稿 ](https://developer.adobe.com/commerce/contributor/guides/code-contributions/) を参照してください。
 
 ## `clear-cache`
 
@@ -29,35 +29,35 @@ magento-cloud cc
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -86,35 +86,35 @@ magento-cloud decode [-P|--property PROPERTY] [--] <value>
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -131,7 +131,7 @@ magento-cloud docs [--browser BROWSER] [--pipe] [--] [<search>]...
 
 検索語句
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 
 - 配列
 
@@ -145,42 +145,42 @@ URL を開くために使用するブラウザー。 何も設定しない場合
 
 URL を stdout に出力します。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -197,56 +197,56 @@ magento-cloud help [--format FORMAT] [--raw] [--] [<command_name>]
 
 コマンド名
 
-- デフォルト： `help`
+- デフォルト：`help`
 
 
 ### `--format`
 
 出力形式（txt、json、md）
 
-- デフォルト： `txt`
+- デフォルト：`txt`
 - 値が必要です
 
 ### `--raw`
 
 生のコマンド ヘルプを出力するには
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -274,56 +274,56 @@ magento-cloud list [--raw] [--format FORMAT] [--all] [--] [<namespace>]
 
 生のコマンド リストを出力するには
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--format`
 
 出力形式（txt、xml、json、md）
 
-- デフォルト： `txt`
+- デフォルト：`txt`
 - 値が必要です
 
 ### `--all`
 
 非表示のコマンドも含めて、すべてのコマンドを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -340,7 +340,7 @@ magento-cloud multi [-p|--projects PROJECTS] [--continue] [--sort SORT] [--rever
 
 実行するコマンド
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 
 - 必須
 - 配列
@@ -355,56 +355,56 @@ magento-cloud multi [-p|--projects PROJECTS] [--continue] [--sort SORT] [--rever
 
 例外が発生した場合でも、コマンドの実行を続行する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--sort`
 
 プロジェクトオプションのリストを並べ替えるプロパティ
 
-- デフォルト： `title`
+- デフォルト：`title`
 - 値が必要です
 
 ### `--reverse`
 
 プロジェクト オプションの順序を逆にする
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -426,7 +426,7 @@ URL を開くために使用するブラウザー。 何も設定しない場合
 
 URL を stdout に出力します。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -445,35 +445,35 @@ URL を stdout に出力します。
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -495,21 +495,21 @@ magento-cloud activity:cancel [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] 
 
 タイプでフィルターします（デフォルトアクティビティを選択する場合）。 値は、コンマ（「a,b,c」など）や空白で分割できます。 % または*文字は、タイプのワイルドカードとして使用できます（例：&#39;%var%&#39;）。変数関連のアクティビティを選択します。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--exclude-type`, `-x`
 
 タイプで除外（デフォルトアクティビティを選択する場合）。 値は、コンマ（「a,b,c」など）や空白で分割できます。 % または*文字は、タイプを除外するためのワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--all`, `-a`
 
 すべての環境で最近のアクティビティを確認する（デフォルトアクティビティを選択する場合）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -528,35 +528,35 @@ magento-cloud activity:cancel [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] 
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -584,21 +584,21 @@ magento-cloud activity:get [-P|--property PROPERTY] [-t|--type TYPE] [-x|--exclu
 
 タイプでフィルターします（デフォルトアクティビティを選択する場合）。 値は、コンマ（「a,b,c」など）や空白で分割できます。 % または*文字は、タイプのワイルドカードとして使用できます（例：&#39;%var%&#39;）。変数関連のアクティビティを選択します。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--exclude-type`, `-x`
 
 タイプで除外（デフォルトアクティビティを選択する場合）。 値は、コンマ（「a,b,c」など）や空白で分割できます。 % または*文字は、タイプを除外するためのワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--state`
 
 状態でフィルター（デフォルトのアクティビティを選択する場合）:in_progress、pending、complete または cancelled。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--result`
@@ -611,14 +611,14 @@ magento-cloud activity:get [-P|--property PROPERTY] [-t|--type TYPE] [-x|--exclu
 
 不完全なアクティビティのみを含める（デフォルトアクティビティを選択する場合）。 —state=in_progress,pending の略記法です。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--all`, `-a`
 
 すべての環境で最近のアクティビティを確認する（デフォルトアクティビティを選択する場合）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -637,63 +637,63 @@ magento-cloud activity:get [-P|--property PROPERTY] [-t|--type TYPE] [-x|--exclu
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -709,21 +709,21 @@ magento-cloud activities [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--li
 
 タイプ別にアクティビティをフィルター値は、コンマ（「a,b,c」など）および空白で分割できます。 アクティビティ名の最初の部分は省略できます。例えば、「cron」は「environment.cron」アクティビティを選択できます。 % または*文字はワイルドカードとして使用できます。例：&#39;%var%&#39;。変数関連のアクティビティを選択します。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--exclude-type`, `-x`
 
 タイプ別のアクティビティを除外します。 値は、コンマ（「a,b,c」など）や空白で分割できます。 アクティビティ名の最初の部分は省略できます。例えば、「cron」は「environment.cron」アクティビティを除外できます。 % または*文字は、タイプを除外するためのワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--limit`
 
 表示する結果の数を制限する
 
-- デフォルト： `10`
+- デフォルト：`10`
 - 値が必要です
 
 ### `--start`
@@ -736,7 +736,7 @@ magento-cloud activities [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--li
 
 アクティビティを状態（in_progress、pending、complete または cancelled）でフィルタリングします。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--result`
@@ -749,42 +749,42 @@ magento-cloud activities [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--li
 
 不完全なアクティビティのみをリスト
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--all`, `-a`
 
 すべての環境のアクティビティのリスト
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：id*、created*、description*、progress*、state*、result*、completed、environments、type （* = default columns）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -803,35 +803,35 @@ magento-cloud activities [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--li
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -853,35 +853,35 @@ magento-cloud activity:log [--refresh REFRESH] [-t|--timestamps] [--type TYPE] [
 
 アクティビティの更新間隔（秒）。 0 に設定すると、更新が無効になります。
 
-- デフォルト： `3`
+- デフォルト：`3`
 - 値が必要です
 
 ### `--timestamps`, `-t`
 
 各メッセージの横にタイムスタンプを表示します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--type`
 
 タイプでフィルターします（デフォルトアクティビティを選択する場合）。 値は、コンマ（「a,b,c」など）や空白で分割できます。 % または*文字は、タイプのワイルドカードとして使用できます（例：&#39;%var%&#39;）。変数関連のアクティビティを選択します。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--exclude-type`, `-x`
 
 タイプで除外（デフォルトアクティビティを選択する場合）。 値は、コンマ（「a,b,c」など）や空白で分割できます。 % または*文字は、タイプを除外するためのワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--state`
 
 状態でフィルター（デフォルトのアクティビティを選択する場合）:in_progress、pending、complete または cancelled。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--result`
@@ -894,21 +894,21 @@ magento-cloud activity:log [--refresh REFRESH] [-t|--timestamps] [--type TYPE] [
 
 不完全なアクティビティのみを含める（デフォルトアクティビティを選択する場合）。 —state=in_progress,pending の略記法です。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--all`, `-a`
 
 すべての環境で最近のアクティビティを確認する（デフォルトアクティビティを選択する場合）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -927,35 +927,35 @@ magento-cloud activity:log [--refresh REFRESH] [-t|--timestamps] [--type TYPE] [
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -977,7 +977,7 @@ magento-cloud app:config-get [-P|--property PROPERTY] [--refresh] [-p|--project 
 
 キャッシュを更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -1000,7 +1000,7 @@ magento-cloud app:config-get [-P|--property PROPERTY] [--refresh] [-p|--project 
 
 ### `--identity-file`, `-i`
 
-[非推奨（廃止予定）のオプション、使用されなくなりました]
+[ 非推奨オプション、使用されなくなりました ]
 
 - 値が必要です
 
@@ -1008,35 +1008,35 @@ magento-cloud app:config-get [-P|--property PROPERTY] [--refresh] [-p|--project 
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1052,14 +1052,14 @@ magento-cloud apps [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environment
 
 キャッシュを更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--pipe`
 
 アプリ名のリストのみを出力
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -1078,56 +1078,56 @@ magento-cloud apps [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environment
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：name*、type*、disk、path、size （* = デフォルトの列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1143,35 +1143,35 @@ magento-cloud auth:api-token-login
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1187,7 +1187,7 @@ magento-cloud login [-f|--force] [--browser BROWSER] [--pipe]
 
 既にログインしている場合も、再度ログインします
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--browser`
@@ -1200,42 +1200,42 @@ URL を開くために使用するブラウザー。 何も設定しない場合
 
 URL を stdout に出力します。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1257,7 +1257,7 @@ magento-cloud auth:info [--no-auto-login] [-P|--property PROPERTY] [--refresh] [
 
 自動ログインをスキップします。 ログインしていない場合は何も出力されず、その他のエラーがないと仮定すると終了コードは 0 になります。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--property`, `-P`
@@ -1270,63 +1270,63 @@ magento-cloud auth:info [--no-auto-login] [-P|--property PROPERTY] [--refresh] [
 
 キャッシュを更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1342,49 +1342,49 @@ magento-cloud logout [-a|--all] [--other]
 
 すべてのローカルセッションからログアウトする
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--other`
 
 他のローカルセッションからのログアウト
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1418,49 +1418,49 @@ magento-cloud blackfire:setup [--server_id SERVER_ID] [--server_token SERVER_TOK
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1488,7 +1488,7 @@ magento-cloud certificate:add [--cert CERT] [--key KEY] [--chain CHAIN] [-p|--pr
 
 証明書チェーン ファイルへのパス
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -1501,49 +1501,49 @@ magento-cloud certificate:add [--cert CERT] [--key KEY] [--chain CHAIN] [-p|--pr
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1572,49 +1572,49 @@ magento-cloud certificate:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] 
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1643,7 +1643,7 @@ magento-cloud certificate:get [-P|--property PROPERTY] [--date-fmt DATE-FMT] [-p
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -1656,35 +1656,35 @@ magento-cloud certificate:get [-P|--property PROPERTY] [--date-fmt DATE-FMT] [-p
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1718,70 +1718,70 @@ magento-cloud certificates [--domain DOMAIN] [--exclude-domain EXCLUDE-DOMAIN] [
 
 自動プロビジョニングされた証明書のみを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-auto`
 
 手動で追加された証明書のみを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--ignore-expiry`
 
 期限切れの証明書と期限切れでない証明書の両方を表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--only-expired`
 
 期限切れの証明書のみを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-expired`
 
 期限切れでない証明書のみを表示（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--pipe-domains`
 
 証明書でカバーされるドメイン名のリストのみを返す
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：作成済み、ドメイン、有効期限、ID、発行者。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -1794,35 +1794,35 @@ magento-cloud certificates [--domain DOMAIN] [--exclude-domain EXCLUDE-DOMAIN] [
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1839,7 +1839,7 @@ magento-cloud commit:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|--e
 
 コミット SHA です。 親コミットの場合は「HEAD」やキャレット（^）またはチルダ（～）を使用できます。
 
-- デフォルト： `HEAD`
+- デフォルト：`HEAD`
 
 
 ### `--property`, `-P`
@@ -1864,42 +1864,42 @@ magento-cloud commit:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|--e
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -1921,7 +1921,7 @@ magento-cloud commits [--limit LIMIT] [-p|--project PROJECT] [-e|--environment E
 
 表示するコミットの数。
 
-- デフォルト： `10`
+- デフォルト：`10`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -1940,63 +1940,63 @@ magento-cloud commits [--limit LIMIT] [-p|--project PROJECT] [-e|--environment E
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：author、date、sha、summary。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2030,42 +2030,42 @@ magento-cloud db:dump [--schema SCHEMA] [-f|--file FILE] [-d|--directory DIRECTO
 
 gzip を使用してダンプを圧縮します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--timestamp`, `-t`
 
 ダンプファイル名にタイムスタンプを追加します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--stdout`, `-o`
 
 ファイルではなく STDOUT に出力
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--table`
 
 含めるテーブル
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--exclude-table`
 
 除外するテーブル
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--schema-only`
 
 スキーマのみをダンプし、データはダンプしない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--charset`
@@ -2108,35 +2108,35 @@ gzip を使用してダンプを圧縮します
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2152,14 +2152,14 @@ magento-cloud db:size [-B|--bytes] [-C|--cleanup] [-p|--project PROJECT] [-e|--e
 
 サイズをバイト単位で表示します。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--cleanup`, `-C`
 
 テーブルをクリーンアップできるかどうかを確認し、推奨事項を表示します（InnoDb のみ）。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -2190,21 +2190,21 @@ magento-cloud db:size [-B|--bytes] [-C|--cleanup] [-p|--project PROJECT] [-e|--e
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：max、percent_used、used。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--identity-file`, `-i`
@@ -2217,35 +2217,35 @@ magento-cloud db:size [-B|--bytes] [-C|--cleanup] [-p|--project PROJECT] [-e|--e
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2267,7 +2267,7 @@ magento-cloud sql [--raw] [--schema SCHEMA] [-p|--project PROJECT] [-e|--environ
 
 生の非表形式出力を生成する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--schema`
@@ -2310,35 +2310,35 @@ magento-cloud sql [--raw] [--schema SCHEMA] [-p|--project PROJECT] [-e|--environ
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2373,7 +2373,7 @@ magento-cloud domain:add [--cert CERT] [--key KEY] [--chain CHAIN] [--attach ATT
 
 指定された証明書の証明書チェーンファイルまたはファイルへのパス
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--attach`
@@ -2398,49 +2398,49 @@ magento-cloud domain:add [--cert CERT] [--key KEY] [--chain CHAIN] [--attach ATT
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2475,49 +2475,49 @@ magento-cloud domain:delete [-p|--project PROJECT] [-e|--environment ENVIRONMENT
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2545,28 +2545,28 @@ magento-cloud domain:get [-P|--property PROPERTY] [--format FORMAT] [-c|--column
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -2585,35 +2585,35 @@ magento-cloud domain:get [-P|--property PROPERTY] [--format FORMAT] [-c|--column
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2629,21 +2629,21 @@ magento-cloud domains [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：name*、ssl*、created_at*、registered_name、replacement_for、type、updated_at （* = デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -2662,35 +2662,35 @@ magento-cloud domains [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2725,7 +2725,7 @@ magento-cloud domain:update [--cert CERT] [--key KEY] [--chain CHAIN] [-p|--proj
 
 指定された証明書の証明書チェーンファイルまたはファイルへのパス
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -2744,49 +2744,49 @@ magento-cloud domain:update [--cert CERT] [--key KEY] [--chain CHAIN] [-p|--proj
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2803,7 +2803,7 @@ magento-cloud environment:activate [--parent PARENT] [-p|--project PROJECT] [-e|
 
 アクティブ化する環境
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 
 - 配列
 
@@ -2829,49 +2829,49 @@ magento-cloud environment:activate [--parent PARENT] [-p|--project PROJECT] [-e|
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2910,7 +2910,7 @@ magento-cloud branch [--title TITLE] [--type TYPE] [--no-clone-parent] [-p|--pro
 
 親環境のデータのクローンを作成しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -2929,49 +2929,49 @@ magento-cloud branch [--title TITLE] [--type TYPE] [--no-clone-parent] [-p|--pro
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -2999,35 +2999,35 @@ magento-cloud checkout [-i|--identity-file IDENTITY-FILE] [--] [<id>]
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -3044,7 +3044,7 @@ magento-cloud environment:delete [--delete-branch] [--no-delete-branch] [--type 
 
 削除する環境。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 
 - 配列
 
@@ -3052,63 +3052,63 @@ magento-cloud environment:delete [--delete-branch] [--no-delete-branch] [--type 
 
 非アクティブな環境の Git ブランチを確認なしで削除
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-delete-branch`
 
 Git ブランチ（非アクティブな環境）を削除しないでください
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--type`
 
 タイプのすべての環境を削除（選択されたその他のものに追加）値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--only-type`, `-t`
 
 特定のタイプの削除環境のみ。値は、コンマ（「a,b,c」など）および空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--exclude`
 
 削除しない環境。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--exclude-type`
 
 値を削除しない環境タイプは、コンマ（「a,b,c」など）および空白（またはその両方）で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--inactive`
 
 非アクティブな環境をすべて削除（選択されたその他のに追加）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--merged`
 
 すべての結合環境を削除（選択されたその他のに追加）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--allow-delete-parent`
 
 子を持つ環境の削除を許可
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -3127,49 +3127,49 @@ Git ブランチ（非アクティブな環境）を削除しないでくださ�
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -3185,14 +3185,14 @@ magento-cloud httpaccess [--access ACCESS] [--auth AUTH] [--enabled ENABLED] [-p
 
 「permission:address」形式でのアクセス制限。 すべてのアドレスをクリアするには 0 を使用します。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--auth`
 
 「username:password」の形式の HTTP 基本認証資格情報。 0 を使用して、すべての資格情報をクリアします。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--enabled`
@@ -3217,49 +3217,49 @@ magento-cloud httpaccess [--access ACCESS] [--auth AUTH] [--enabled ENABLED] [-p
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -3286,35 +3286,35 @@ magento-cloud environment:info [--refresh] [--date-fmt DATE-FMT] [--format FORMA
 
 キャッシュを更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -3333,49 +3333,49 @@ magento-cloud environment:info [--refresh] [--date-fmt DATE-FMT] [--format FORMA
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -3416,49 +3416,49 @@ Git リポジトリへの URL
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -3474,63 +3474,63 @@ magento-cloud environments [-I|--no-inactive] [--pipe] [--refresh REFRESH] [--so
 
 非アクティブな環境は表示しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--pipe`
 
 環境 ID の簡単なリストを出力します。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--refresh`
 
 リストを更新するかどうか。
 
-- デフォルト： `1`
+- デフォルト：`1`
 - 値が必要です
 
 ### `--sort`
 
 並べ替えの基準にするプロパティ
 
-- デフォルト： `title`
+- デフォルト：`title`
 - 値が必要です
 
 ### `--reverse`
 
 逆順（降順）で並べ替え
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--type`
 
 環境タイプでリストをフィルタリングします。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：id*、title*、status*、type*、created、machine_name、updated （* = デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -3543,35 +3543,35 @@ magento-cloud environments [-I|--no-inactive] [--pipe] [--refresh REFRESH] [--so
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -3593,14 +3593,14 @@ magento-cloud log [--lines LINES] [--tail] [-p|--project PROJECT] [-e|--environm
 
 表示するライン数
 
-- デフォルト： `100`
+- デフォルト：`100`
 - 値が必要です
 
 ### `--tail`
 
 ログを継続的にテール
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -3637,35 +3637,35 @@ magento-cloud log [--lines LINES] [--tail] [-p|--project PROJECT] [-e|--environm
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -3699,49 +3699,49 @@ magento-cloud merge [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -3769,49 +3769,49 @@ magento-cloud environment:pause [-p|--project PROJECT] [-e|--environment ENVIRON
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -3828,7 +3828,7 @@ magento-cloud push [--target TARGET] [-f|--force] [--force-with-lease] [-u|--set
 
 ソース参照：ブランチ名またはコミットハッシュ
 
-- デフォルト： `HEAD`
+- デフォルト：`HEAD`
 
 
 ### `--target`
@@ -3841,28 +3841,28 @@ magento-cloud push [--target TARGET] [-f|--force] [--force-with-lease] [-u|--set
 
 早送り以外の更新を許可
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--force-with-lease`
 
 リモートトラッキングブランチが最新の場合、非早送り更新を許可します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--set-upstream`, `-u`
 
 ターゲット環境をソースブランチのアップストリームとして設定します。 これにより、ターゲットプロジェクトがローカルリポジトリのリモートとして設定されます。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--activate`
 
 プッシュする前に環境をアクティベート
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--parent`
@@ -3881,21 +3881,21 @@ magento-cloud push [--target TARGET] [-f|--force] [--force-with-lease] [-u|--set
 
 親ブランチのデータのクローンを作成しない（—activate でのみ使用）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-wait`, `-W`
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -3920,35 +3920,35 @@ magento-cloud push [--target TARGET] [-f|--force] [--force-with-lease] [-u|--set
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -3976,49 +3976,49 @@ magento-cloud redeploy [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -4046,7 +4046,7 @@ magento-cloud relationships [-P|--property PROPERTY] [--refresh] [-p|--project P
 
 関係を更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -4077,35 +4077,35 @@ magento-cloud relationships [-P|--property PROPERTY] [--refresh] [-p|--project P
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -4133,49 +4133,49 @@ magento-cloud environment:resume [-p|--project PROJECT] [-e|--environment ENVIRO
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -4192,7 +4192,7 @@ magento-cloud scp [-r|--recursive] [-p|--project PROJECT] [-e|--environment ENVI
 
 コピーするファイル。 remote: プレフィックスを使用してリモートの場所を定義します。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 
 - 配列
 
@@ -4200,7 +4200,7 @@ magento-cloud scp [-r|--recursive] [-p|--project PROJECT] [-e|--environment ENVI
 
 ディレクトリ全体を再帰的にコピー
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -4243,35 +4243,35 @@ magento-cloud scp [-r|--recursive] [-p|--project PROJECT] [-e|--environment ENVI
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -4288,7 +4288,7 @@ magento-cloud ssh [--pipe] [--all] [-p|--project PROJECT] [-e|--environment ENVI
 
 環境で実行するコマンド。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 
 - 配列
 
@@ -4296,14 +4296,14 @@ magento-cloud ssh [--pipe] [--all] [-p|--project PROJECT] [-e|--environment ENVI
 
 SSH URL のみを出力します。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--all`
 
 すべての SSH URL を出力します（各アプリ用）。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -4346,35 +4346,35 @@ SSH URL のみを出力します。
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -4391,7 +4391,7 @@ magento-cloud sync [--rebase] [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 同期するもの：「コード」、「データ」またはその両方
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 
 - 配列
 
@@ -4399,7 +4399,7 @@ magento-cloud sync [--rebase] [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 結合の代わりにリベースによるコードの同期
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -4418,49 +4418,49 @@ magento-cloud sync [--rebase] [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -4476,7 +4476,7 @@ magento-cloud url [-1|--primary] [--browser BROWSER] [--pipe] [-p|--project PROJ
 
 プライマリルートの URL のみを返す
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--browser`
@@ -4489,7 +4489,7 @@ URL を開くために使用するブラウザー。 何も設定しない場合
 
 URL を stdout に出力します。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -4508,35 +4508,35 @@ URL を stdout に出力します。
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -4552,7 +4552,7 @@ magento-cloud xdebug [--port PORT] [-p|--project PROJECT] [-e|--environment ENVI
 
 ローカルポート
 
-- デフォルト： `9000`
+- デフォルト：`9000`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -4595,35 +4595,35 @@ magento-cloud xdebug [--port PORT] [-p|--project PROJECT] [-e|--environment ENVI
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -4660,7 +4660,7 @@ magento-cloud integration:activity:get [-P|--property PROPERTY] [-p|--project PR
 
 ### `--environment`, `-e`
 
-[非推奨オプション、未使用]
+[ 非推奨（廃止予定）のオプション、未使用 ]
 
 - 値が必要です
 
@@ -4668,63 +4668,63 @@ magento-cloud integration:activity:get [-P|--property PROPERTY] [-p|--project PR
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -4746,21 +4746,21 @@ magento-cloud int:act [--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--limit LI
 
 タイプでアクティビティをフィルタリングします。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--exclude-type`, `-x`
 
 タイプ別のアクティビティを除外します。 値は、コンマ（「a,b,c」など）や空白で分割できます。 % または*文字は、タイプを除外するためのワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--limit`
 
 表示する結果の数を制限する
 
-- デフォルト： `10`
+- デフォルト：`10`
 - 値が必要です
 
 ### `--start`
@@ -4773,7 +4773,7 @@ magento-cloud int:act [--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--limit LI
 
 状態でアクティビティをフィルタリングします。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--result`
@@ -4786,35 +4786,35 @@ magento-cloud int:act [--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--limit LI
 
 不完全なアクティビティのみをリスト
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：id*、created*、description*、type*、state*、result*、completed （* = デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -4825,7 +4825,7 @@ magento-cloud int:act [--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--limit LI
 
 ### `--environment`, `-e`
 
-[非推奨オプション、未使用]
+[ 非推奨（廃止予定）のオプション、未使用 ]
 
 - 値が必要です
 
@@ -4833,35 +4833,35 @@ magento-cloud int:act [--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--limit LI
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -4888,14 +4888,14 @@ magento-cloud integration:activity:log [-t|--timestamps] [--date-fmt DATE-FMT] [
 
 各メッセージの横にタイムスタンプを表示します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -4906,7 +4906,7 @@ magento-cloud integration:activity:log [-t|--timestamps] [--date-fmt DATE-FMT] [
 
 ### `--environment`, `-e`
 
-[非推奨オプション、未使用]
+[ 非推奨（廃止予定）のオプション、未使用 ]
 
 - 値が必要です
 
@@ -4914,35 +4914,35 @@ magento-cloud integration:activity:log [-t|--timestamps] [--date-fmt DATE-FMT] [
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -5018,70 +5018,70 @@ New Relic ログのライセンスキー
 
 GitLab：結合リクエストを環境として作成
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--build-pull-requests`
 
 すべてのプルリクエストを環境として作成
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--build-draft-pull-requests`
 
 下書きプルリクエストの作成
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--build-pull-requests-post-merge`
 
 結合後の状態に基づいてプルリクエストを作成する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値が必要です
 
 ### `--build-wip-merge-requests`
 
 GitLab:WIP 結合リクエストの作成
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--merge-requests-clone-parent-data`
 
 GitLab：結合リクエストのデータを複製
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--pull-requests-clone-parent-data`
 
 プルリクエスト用に親環境のデータをクローンします
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--resync-pull-requests`
 
 ビルドごとにプルリクエスト環境データを再同期
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値が必要です
 
 ### `--fetch-branches`
 
 リモートから（非アクティブな環境として）すべてのブランチを取得する
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--prune-branches`
 
 リモートに存在しないブランチを削除
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--resources-init`
@@ -5112,33 +5112,33 @@ Webhook:JWS 共有秘密鍵
 
 操作するイベントのリスト（environment.push など）
 
-- デフォルト： `*`
+- デフォルト：`*`
 - 値が必要です
 
 ### `--states`
 
 操作する状態のリスト （保留中、処理中、完了など）
 
-- デフォルト： `complete`
+- デフォルト：`complete`
 - 値が必要です
 
 ### `--environments`
 
 含める環境 ID
 
-- デフォルト： `*`
+- デフォルト：`*`
 - 値が必要です
 
 ### `--excluded-environments`
 
 除外する環境 ID
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--from-address`
 
-[オプション] アラートメールのカスタム送信元アドレス
+[ オプション ] アラートメールのカスタム送信元アドレス
 
 - 値が必要です
 
@@ -5146,7 +5146,7 @@ Webhook:JWS 共有秘密鍵
 
 受信者の E メールアドレス
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--channel`
@@ -5183,7 +5183,7 @@ Splunk イベントソースタイプ
 
 Syslog トランスポートプロトコル （「tcp」、「udp」、「tls」）
 
-- デフォルト： `tls`
+- デフォルト：`tls`
 - 値が必要です
 
 ### `--syslog-host`
@@ -5202,21 +5202,21 @@ Syslog リレー/コレクタ・ポート
 
 Syslog 機能
 
-- デフォルト： `1`
+- デフォルト：`1`
 - 値が必要です
 
 ### `--message-format`
 
 Syslog メッセージ形式（「rfc3164」または「rfc5424」）
 
-- デフォルト： `rfc5424`
+- デフォルト：`rfc5424`
 - 値が必要です
 
 ### `--auth-mode`
 
 認証モード （&#39;prefix&#39;または&#39;structured_data&#39;）
 
-- デフォルト： `prefix`
+- デフォルト：`prefix`
 - 値が必要です
 
 ### `--auth-token`
@@ -5229,14 +5229,14 @@ Syslog メッセージ形式（「rfc3164」または「rfc5424」）
 
 HTTPS 証明書の検証を有効にするかどうか（推奨）
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--header`
 
 POSTリクエストで使用する HTTP ヘッダー。 名前と値はコロン（:）で区切ります。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -5249,49 +5249,49 @@ POSTリクエストで使用する HTTP ヘッダー。 名前と値はコロン
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -5319,49 +5319,49 @@ magento-cloud integration:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] 
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -5389,21 +5389,21 @@ magento-cloud integration:get [-P|--property [PROPERTY]] [--format FORMAT] [-c|-
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -5416,35 +5416,35 @@ magento-cloud integration:get [-P|--property [PROPERTY]] [--format FORMAT] [-c|-
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -5460,21 +5460,21 @@ magento-cloud integrations [--format FORMAT] [-c|--columns COLUMNS] [--no-header
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：id、summary、type。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -5487,35 +5487,35 @@ magento-cloud integrations [--format FORMAT] [-c|--columns COLUMNS] [--no-header
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -5597,70 +5597,70 @@ New Relic ログのライセンスキー
 
 GitLab：結合リクエストを環境として作成
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--build-pull-requests`
 
 すべてのプルリクエストを環境として作成
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--build-draft-pull-requests`
 
 下書きプルリクエストの作成
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--build-pull-requests-post-merge`
 
 結合後の状態に基づいてプルリクエストを作成する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値が必要です
 
 ### `--build-wip-merge-requests`
 
 GitLab:WIP 結合リクエストの作成
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--merge-requests-clone-parent-data`
 
 GitLab：結合リクエストのデータを複製
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--pull-requests-clone-parent-data`
 
 プルリクエスト用に親環境のデータをクローンします
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--resync-pull-requests`
 
 ビルドごとにプルリクエスト環境データを再同期
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値が必要です
 
 ### `--fetch-branches`
 
 リモートから（非アクティブな環境として）すべてのブランチを取得する
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--prune-branches`
 
 リモートに存在しないブランチを削除
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--resources-init`
@@ -5691,33 +5691,33 @@ Webhook:JWS 共有秘密鍵
 
 操作するイベントのリスト（environment.push など）
 
-- デフォルト： `*`
+- デフォルト：`*`
 - 値が必要です
 
 ### `--states`
 
 操作する状態のリスト （保留中、処理中、完了など）
 
-- デフォルト： `complete`
+- デフォルト：`complete`
 - 値が必要です
 
 ### `--environments`
 
 含める環境 ID
 
-- デフォルト： `*`
+- デフォルト：`*`
 - 値が必要です
 
 ### `--excluded-environments`
 
 除外する環境 ID
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--from-address`
 
-[オプション] アラートメールのカスタム送信元アドレス
+[ オプション ] アラートメールのカスタム送信元アドレス
 
 - 値が必要です
 
@@ -5725,7 +5725,7 @@ Webhook:JWS 共有秘密鍵
 
 受信者の E メールアドレス
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--channel`
@@ -5762,7 +5762,7 @@ Splunk イベントソースタイプ
 
 Syslog トランスポートプロトコル （「tcp」、「udp」、「tls」）
 
-- デフォルト： `tls`
+- デフォルト：`tls`
 - 値が必要です
 
 ### `--syslog-host`
@@ -5781,21 +5781,21 @@ Syslog リレー/コレクタ・ポート
 
 Syslog 機能
 
-- デフォルト： `1`
+- デフォルト：`1`
 - 値が必要です
 
 ### `--message-format`
 
 Syslog メッセージ形式（「rfc3164」または「rfc5424」）
 
-- デフォルト： `rfc5424`
+- デフォルト：`rfc5424`
 - 値が必要です
 
 ### `--auth-mode`
 
 認証モード （&#39;prefix&#39;または&#39;structured_data&#39;）
 
-- デフォルト： `prefix`
+- デフォルト：`prefix`
 - 値が必要です
 
 ### `--auth-token`
@@ -5808,14 +5808,14 @@ Syslog メッセージ形式（「rfc3164」または「rfc5424」）
 
 HTTPS 証明書の検証を有効にするかどうか（推奨）
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--header`
 
 POSTリクエストで使用する HTTP ヘッダー。 名前と値はコロン（:）で区切ります。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -5828,49 +5828,49 @@ POSTリクエストで使用する HTTP ヘッダー。 名前と値はコロン
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -5898,35 +5898,35 @@ magento-cloud integration:validate [-p|--project PROJECT] [--] [<id>]
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -5943,7 +5943,7 @@ magento-cloud build [-a|--abslinks] [-s|--source SOURCE] [-d|--destination DESTI
 
 構築するアプリケーションを指定
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 
 - 配列
 
@@ -5951,7 +5951,7 @@ magento-cloud build [-a|--abslinks] [-s|--source SOURCE] [-d|--destination DESTI
 
 絶対リンクを使用
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--source`, `-s`
@@ -5970,119 +5970,119 @@ magento-cloud build [-a|--abslinks] [-s|--source SOURCE] [-d|--destination DESTI
 
 ソースからのシンボリックリンクの代わりに、ビルドディレクトリにコピー
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--clone`
 
 Git を使用して、現在のHEADをビルドディレクトリにクローンします
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--run-deploy-hooks`
 
 デプロイおよび post_deploy フックの実行
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-clean`
 
 古いビルドを削除しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-archive`
 
 ビルドアーカイブを作成または使用しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-backup`
 
 以前のビルドをバックアップしない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-cache`
 
 キャッシュを無効にする
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-build-hooks`
 
 ビルド後のフックを実行しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-deps`
 
 ビルドの依存関係をローカルにインストールしない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--working-copy`
 
 Drush：単にバージョンをダウンロードするのではなく、git を使用して各 Drupal モジュールのリポジトリを複製します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--concurrency`
 
 プッシュ：同時に処理される同時プロジェクトの数を設定します
 
-- デフォルト： `4`
+- デフォルト：`4`
 - 値が必要です
 
 ### `--lock`
 
 Drush：ロックファイルを作成または更新します（Drush バージョン 7 以降でのみ利用可能）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -6104,41 +6104,41 @@ magento-cloud dir [<subdir>]
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
 ## `metrics:all`
 
-ベータ版環境の CPU、ディスク、メモリの指標を表示します
+BETA環境の CPU、ディスク、メモリの指標を表示します
 
 ```bash
 magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6148,7 +6148,7 @@ magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [
 
 サイズをバイト単位で表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--range`, `-r`
@@ -6173,21 +6173,21 @@ magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [
 
 最新の単一データ ポイントのみを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--service`, `-s`
 
 サービス名またはアプリケーション名でフィルタリングします。% または*文字はワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--type`
 
 サービスタイプでフィルタリングします（—service が指定されていない場合）。 バージョンは必須ではありません。 % または*はワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -6206,69 +6206,69 @@ magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：timestamp*、service*、cpu_percent*、mem_percent*、disk_percent*、tmp_disk_percent*、cpu_limit、cpu_used、disk_limit、inodes_limit、inodes_percent、inodes_used、mem_limit、mem_used、tmp_disk_limit、tmp_disk_used、tmp_inodes_limit、tmp_inodes_percent、tmp_inodes_used、type （* =デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
 ## `metrics:cpu`
 
-ベータ版環境の CPU 使用率を表示します
+BETA環境の CPU 使用率を表示します
 
 ```bash
 magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6296,21 +6296,21 @@ magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--la
 
 最新の単一データ ポイントのみを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--service`, `-s`
 
 サービス名またはアプリケーション名でフィルタリングします。% または*文字はワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--type`
 
 サービスタイプでフィルタリングします（—service が指定されていない場合）。 バージョンは必須ではありません。 % または*はワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -6329,63 +6329,63 @@ magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--la
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：timestamp*、service*、used*、limit*、%*、type （* = デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -6401,7 +6401,7 @@ magento-cloud disk [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--t
 
 サイズをバイト単位で表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--range`, `-r`
@@ -6426,28 +6426,28 @@ magento-cloud disk [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--t
 
 最新の単一データ ポイントのみを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--service`, `-s`
 
 サービス名またはアプリケーション名でフィルタリングします。% または*文字はワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--type`
 
 サービスタイプでフィルタリングします（—service が指定されていない場合）。 バージョンは必須ではありません。 % または*はワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--tmp`
 
 一時的なディスク使用量をレポートします（列：timestamp、service、tmp_used、tmp_limit、tmp_percent、tmp_ipercent）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -6466,69 +6466,69 @@ magento-cloud disk [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--t
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：timestamp*、service*、used*、limit*、percent*、ipercent*、ilimit、iused、tmp_ilimit、tmp_ipercent、tmp_iused、tmp_limit、tmp_used、type （* = デフォルトの列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
 ## `metrics:memory`
 
-ベータ版環境のメモリ使用量を表示
+BETA環境のメモリ使用量を表示します
 
 ```bash
 magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6538,7 +6538,7 @@ magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to
 
 サイズをバイト単位で表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--range`, `-r`
@@ -6563,21 +6563,21 @@ magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to
 
 最新の単一データ ポイントのみを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--service`, `-s`
 
 サービス名またはアプリケーション名でフィルタリングします。% または*文字はワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--type`
 
 サービスタイプでフィルタリングします（—service が指定されていない場合）。 バージョンは必須ではありません。 % または*はワイルドカードとして使用できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -6596,63 +6596,63 @@ magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：timestamp*、service*、used*、limit*、%*、type （* = デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -6668,7 +6668,7 @@ magento-cloud mount:download [-a|--all] [-m|--mount MOUNT] [--target TARGET] [--
 
 すべてのマウントからダウンロード
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--mount`, `-m`
@@ -6687,35 +6687,35 @@ magento-cloud mount:download [-a|--all] [-m|--mount MOUNT] [--target TARGET] [--
 
 —all を使用する場合は、マウントのソース・パス（マウント・パスではなく）をターゲットのサブディレクトリとして使用する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--delete`
 
 ターゲットディレクトリ内の不要なファイルを削除するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--exclude`
 
 ダウンロードから除外するファイル （パターン）
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--include`
 
 除外しないファイル （パターン）
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--refresh`
 
 キャッシュを更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -6758,35 +6758,35 @@ magento-cloud mount:download [-a|--all] [-m|--mount MOUNT] [--target TARGET] [--
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -6802,35 +6802,35 @@ magento-cloud mounts [--paths] [--refresh] [--format FORMAT] [-c|--columns COLUM
 
 マウント・パスのみを出力する（1 行につき 1 つ）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--refresh`
 
 キャッシュを更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：定義、パス。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -6867,35 +6867,35 @@ magento-cloud mounts [--paths] [--refresh] [--format FORMAT] [-c|--columns COLUM
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -6911,35 +6911,35 @@ magento-cloud mount:size [-B|--bytes] [--refresh] [--format FORMAT] [-c|--column
 
 サイズをバイト単位で表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--refresh`
 
 キャッシュを更新
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：available、max、mounts、percent_used、size、used。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--identity-file`, `-i`
@@ -6982,35 +6982,35 @@ magento-cloud mount:size [-B|--bytes] [--refresh] [--format FORMAT] [-c|--column
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -7038,28 +7038,28 @@ magento-cloud mount:upload [--source SOURCE] [-m|--mount MOUNT] [--delete] [--ex
 
 マウント内の不要なファイルを削除するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--exclude`
 
 アップロードから除外するファイル （パターン）
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--include`
 
 除外しないファイル （パターン）
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--refresh`
 
 キャッシュを更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -7102,41 +7102,41 @@ magento-cloud mount:upload [--source SOURCE] [-m|--mount MOUNT] [--delete] [--ex
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
 ## `operation:list`
 
-ベータ版環境でのリストのランタイム操作
+環境のBETA リストのランタイム操作
 
 ```bash
 magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -7146,7 +7146,7 @@ magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT]
 
 表示するコマンドの長さを制限しないでください。 デフォルトの上限は 24 行です。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -7177,62 +7177,62 @@ magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT]
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：service*、name*、start*、role、stop （* = デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
 ## `operation:run`
 
-ベータ版環境で操作を実行します
+BETA環境で操作を実行します
 
 ```bash
 magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-W|--no-wait] [--wait] [--] [<operation>]
@@ -7272,49 +7272,49 @@ magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -7336,35 +7336,35 @@ magento-cloud project:clear-build-cache [-p|--project PROJECT]
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -7403,7 +7403,7 @@ magento-cloud get [-e|--environment ENVIRONMENT] [--depth DEPTH] [--build] [-p|-
 
 クローン後のプロジェクトのビルド
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -7422,35 +7422,35 @@ magento-cloud get [-e|--environment ENVIRONMENT] [--depth DEPTH] [--build] [-p|-
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -7477,35 +7477,35 @@ magento-cloud project:info [--refresh] [--date-fmt DATE-FMT] [--format FORMAT] [
 
 キャッシュを更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -7518,49 +7518,49 @@ magento-cloud project:info [--refresh] [--date-fmt DATE-FMT] [--format FORMAT] [
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -7576,7 +7576,7 @@ magento-cloud projects [--pipe] [--region REGION] [--title TITLE] [--my] [--refr
 
 プロジェクト ID の簡単なリストを出力します。 ページネーションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--region`
@@ -7595,28 +7595,28 @@ magento-cloud projects [--pipe] [--region REGION] [--title TITLE] [--my] [--refr
 
 所有しているプロジェクトのみを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--refresh`
 
 リストを更新するかどうか
 
-- デフォルト： `1`
+- デフォルト：`1`
 - 値が必要です
 
 ### `--sort`
 
 並べ替えの基準にするプロパティ
 
-- デフォルト： `title`
+- デフォルト：`title`
 - 値が必要です
 
 ### `--reverse`
 
 逆順（降順）で並べ替え
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--page`
@@ -7635,63 +7635,63 @@ magento-cloud projects [--pipe] [--region REGION] [--title TITLE] [--my] [--refr
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`
 
 表示する列。 使用可能な列：id*、title*、region*、created_at、organization_id、organization_label、organization_name、status （* = デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -7713,35 +7713,35 @@ magento-cloud set-remote [<project>]
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -7782,35 +7782,35 @@ magento-cloud repo:cat [-c|--commit COMMIT] [-p|--project PROJECT] [-e|--environ
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -7832,21 +7832,21 @@ magento-cloud repo:ls [-d|--directories] [-f|--files] [--git-style] [-c|--commit
 
 ディレクトリのみを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--files`, `-f`
 
 ファイルのみを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--git-style`
 
 「git ls-tree」に類似したスタイル出力
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--commit`, `-c`
@@ -7871,35 +7871,35 @@ magento-cloud repo:ls [-d|--directories] [-f|--files] [--git-style] [-c|--commit
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -7939,35 +7939,35 @@ magento-cloud read [-c|--commit COMMIT] [-p|--project PROJECT] [-e|--environment
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -7995,7 +7995,7 @@ magento-cloud route:get [--id ID] [-1|--primary] [-P|--property PROPERTY] [--ref
 
 プライマリ ルートの選択
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--property`, `-P`
@@ -8008,14 +8008,14 @@ magento-cloud route:get [--id ID] [-1|--primary] [-P|--property PROPERTY] [--ref
 
 ルートのキャッシュをバイパス
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -8032,13 +8032,13 @@ magento-cloud route:get [--id ID] [-1|--primary] [-P|--property PROPERTY] [--ref
 
 ### `--app`, `-A`
 
-[非推奨（廃止予定）のオプション、使用されなくなりました]
+[ 非推奨オプション、使用されなくなりました ]
 
 - 値が必要です
 
 ### `--identity-file`, `-i`
 
-[非推奨（廃止予定）のオプション、使用されなくなりました]
+[ 非推奨オプション、使用されなくなりました ]
 
 - 値が必要です
 
@@ -8046,35 +8046,35 @@ magento-cloud route:get [--id ID] [-1|--primary] [-P|--property PROPERTY] [--ref
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8096,28 +8096,28 @@ magento-cloud routes [--refresh] [--format FORMAT] [-c|--columns COLUMNS] [--no-
 
 ルートのキャッシュをバイパス
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：route*、type*、to*、url （* = デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -8136,35 +8136,35 @@ magento-cloud routes [--refresh] [--format FORMAT] [-c|--columns COLUMNS] [--no-
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8186,35 +8186,35 @@ magento-cloud self:install [--shell-type SHELL-TYPE]
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8230,14 +8230,14 @@ magento-cloud update [--no-major] [--unstable] [--manifest MANIFEST] [--current-
 
 マイナーバージョンまたはパッチバージョン間のみを更新
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--unstable`
 
 新しい不安定なバージョンへの更新（可能な場合）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--manifest`
@@ -8256,42 +8256,42 @@ magento-cloud update [--no-major] [--unstable] [--manifest MANIFEST] [--current-
 
 バージョン確認のタイムアウト
 
-- デフォルト： `30`
+- デフォルト：`30`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8307,14 +8307,14 @@ magento-cloud services [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environ
 
 キャッシュを更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--pipe`
 
 サービス名のリストのみを出力
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -8333,56 +8333,56 @@ magento-cloud services [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environ
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：ディスク、名前、サイズ、タイプ。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8404,14 +8404,14 @@ magento-cloud mongodump [-c|--collection COLLECTION] [-z|--gzip] [-o|--stdout] [
 
 gzip を使用してダンプを圧縮します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--stdout`, `-o`
 
 ファイルではなく STDOUT に出力
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--relationship`, `-r`
@@ -8448,35 +8448,35 @@ gzip を使用してダンプを圧縮します
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8498,7 +8498,7 @@ magento-cloud mongoexport [-c|--collection COLLECTION] [--jsonArray] [--type TYP
 
 単一の JSON 配列としてのデータのエクスポート
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--type`
@@ -8511,7 +8511,7 @@ magento-cloud mongoexport [-c|--collection COLLECTION] [--jsonArray] [--type TYP
 
 エクスポートするフィールド
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--relationship`, `-r`
@@ -8548,35 +8548,35 @@ magento-cloud mongoexport [-c|--collection COLLECTION] [--jsonArray] [--type TYP
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8628,35 +8628,35 @@ magento-cloud mongorestore [-c|--collection COLLECTION] [-r|--relationship RELAT
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8708,35 +8708,35 @@ JavaScript フラグメントをシェルに渡す
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8788,35 +8788,35 @@ Redis コマンドに追加する引数
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8838,7 +8838,7 @@ magento-cloud backup [--live] [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 ライブバックアップ：環境を停止しないでください。 設定すると、バックアップ中も環境が実行中で、接続を開いたままになります。 これにより、整合性のない状態でデータをバックアップするリスクのあるダウンタイムが削減されます。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -8857,49 +8857,49 @@ magento-cloud backup [--live] [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -8933,49 +8933,49 @@ magento-cloud snapshot:delete [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9015,42 +9015,42 @@ magento-cloud snapshot:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|-
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9066,28 +9066,28 @@ magento-cloud snapshots [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--date-fmt`
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -9106,35 +9106,35 @@ magento-cloud snapshots [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9180,49 +9180,49 @@ magento-cloud snapshot:restore [--target TARGET] [--branch-from BRANCH-FROM] [-p
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9238,7 +9238,7 @@ magento-cloud source-ops [--full] [-p|--project PROJECT] [-e|--environment ENVIR
 
 表示するコマンドの長さを制限しないでください。 デフォルトの上限は 24 行です。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -9257,56 +9257,56 @@ magento-cloud source-ops [--full] [-p|--project PROJECT] [-e|--environment ENVIR
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：アプリ、コマンド、操作。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9328,7 +9328,7 @@ magento-cloud source-operation:run [--variable VARIABLE] [-p|--project PROJECT] 
 
 操作中に設定する変数を type:name=value の形式で指定します。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -9347,49 +9347,49 @@ magento-cloud source-operation:run [--variable VARIABLE] [-p|--project PROJECT] 
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9405,56 +9405,56 @@ magento-cloud ssh-cert:load [--refresh-only] [--new] [--new-key]
 
 必要な場合にのみ証明書を更新します（SSH 設定は書かないでください）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--new`
 
 証明書を強制的に更新する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--new-key`
 
-[非推奨] 代わりに – new を使用してください
+[ 非推奨 ] 代わりに – new を使用してください。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9482,35 +9482,35 @@ magento-cloud ssh-key:add [--name NAME] [--] [<path>]
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9532,35 +9532,35 @@ magento-cloud ssh-key:delete [<id>]
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9576,56 +9576,56 @@ magento-cloud ssh-keys [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：id*、title*、path*、fingerprint （* =デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9658,28 +9658,28 @@ magento-cloud subscription:info [-s|--id ID] [--date-fmt DATE-FMT] [--format FOR
 
 日付形式（PHP 日付書式文字列）
 
-- デフォルト： `c`
+- デフォルト：`c`
 - 値が必要です
 
 ### `--format`
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -9692,35 +9692,35 @@ magento-cloud subscription:info [-s|--id ID] [--date-fmt DATE-FMT] [--format FOR
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9736,7 +9736,7 @@ magento-cloud tunnel:close [-a|--all] [-p|--project PROJECT] [-e|--environment E
 
 すべてのトンネルを閉じる
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -9761,35 +9761,35 @@ magento-cloud tunnel:close [-a|--all] [-p|--project PROJECT] [-e|--environment E
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9811,7 +9811,7 @@ magento-cloud tunnel:info [-P|--property PROPERTY] [-c|--encode] [-p|--project P
 
 base64 でエンコードされた JSON としての出力
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -9836,35 +9836,35 @@ base64 でエンコードされた JSON としての出力
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9880,7 +9880,7 @@ magento-cloud tunnels [-a|--all] [-p|--project PROJECT] [-e|--environment ENVIRO
 
 すべてのトンネルを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -9905,56 +9905,56 @@ magento-cloud tunnels [-a|--all] [-p|--project PROJECT] [-e|--environment ENVIRO
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：port*、project*、environment*、app*、relationship*、url （* = デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -9970,7 +9970,7 @@ magento-cloud tunnel:open [-g|--gateway-ports] [-p|--project PROJECT] [-e|--envi
 
 リモート・ホストがローカル転送ポートに接続できるようにする
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -10001,35 +10001,35 @@ magento-cloud tunnel:open [-g|--gateway-ports] [-p|--project PROJECT] [-e|--envi
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10051,7 +10051,7 @@ magento-cloud tunnel:single [--port PORT] [-g|--gateway-ports] [-p|--project PRO
 
 リモート・ホストがローカル転送ポートに接続できるようにする
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -10088,35 +10088,35 @@ magento-cloud tunnel:single [--port PORT] [-g|--gateway-ports] [-p|--project PRO
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10138,14 +10138,14 @@ magento-cloud user:add [-r|--role ROLE] [--force-invite] [-p|--project PROJECT] 
 
 ユーザーのプロジェクトの役割（「管理者」または「閲覧者」）または環境の種類の役割（「ステージング：投稿者」や「実稼動：閲覧者」など）。 環境タイプからユーザーを削除するには、役割を「なし」に設定します。 % または*文字を環境タイプのワイルドカードとして使用できます（例：「%:viewer」）。これにより、ユーザーにすべてのタイプで「viewer」の役割を付与できます。 役割は短縮できます（例：「production:v」）。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--force-invite`
 
 既に送信されている招待状も送信する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -10158,49 +10158,49 @@ magento-cloud user:add [-r|--role ROLE] [--force-invite] [-p|--project PROJECT] 
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10229,49 +10229,49 @@ magento-cloud user:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] <e
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10299,7 +10299,7 @@ magento-cloud user:get [-l|--level LEVEL] [--pipe] [-p|--project PROJECT] [-e|--
 
 （変更を加えた後で）ロールを stdout に出力します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -10318,19 +10318,19 @@ magento-cloud user:get [-l|--level LEVEL] [--pipe] [-p|--project PROJECT] [-e|--
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--role`, `-r`
 
-[非推奨：user:update を使用してユーザーの役割を変更します]
+[ 非推奨：ユーザーの役割を変更するには user:update を使用してください ]
 
 - 値が必要です
 
@@ -10338,35 +10338,35 @@ magento-cloud user:get [-l|--level LEVEL] [--pipe] [-p|--project PROJECT] [-e|--
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10382,21 +10382,21 @@ magento-cloud users [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|-
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：email*、name*、role*、id*、granted_at、updated_at （* = デフォルト列）。 「+」文字は、デフォルトの列のプレースホルダーとして使用できます。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -10409,35 +10409,35 @@ magento-cloud users [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|-
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10459,7 +10459,7 @@ magento-cloud user:update [-r|--role ROLE] [-p|--project PROJECT] [-W|--no-wait]
 
 ユーザーのプロジェクトの役割（「管理者」または「閲覧者」）または環境の種類の役割（「ステージング：投稿者」や「実稼動：閲覧者」など）。 環境タイプからユーザーを削除するには、役割を「なし」に設定します。 % または*文字を環境タイプのワイルドカードとして使用できます（例：「%:viewer」）。これにより、ユーザーにすべてのタイプで「viewer」の役割を付与できます。 役割は短縮できます（例：「production:v」）。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -10472,49 +10472,49 @@ magento-cloud user:update [-r|--role ROLE] [-p|--project PROJECT] [-W|--no-wait]
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10536,7 +10536,7 @@ magento-cloud variable:create [-u|--update] [-l|--level LEVEL] [--name NAME] [--
 
 変数が既に存在する場合は、更新します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--level`, `-l`
@@ -10561,35 +10561,35 @@ magento-cloud variable:create [-u|--update] [-l|--level LEVEL] [--name NAME] [--
 
 変数値が JSON 形式かどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値が必要です
 
 ### `--sensitive`
 
 変数値が大文字と小文字を区別するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値が必要です
 
 ### `--prefix`
 
 変数名のプレフィックス。型を決定できます（例：&#39;env&#39;）。 名前にプレフィックスがまだ含まれていない場合にのみ適用されます。 （例：「none」または「env:」）
 
-- デフォルト： `none`
+- デフォルト：`none`
 - 値が必要です
 
 ### `--enabled`
 
 環境で変数を有効にする必要があるかどうか
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--inheritable`
 
 変数が子環境によって継承可能かどうか
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--visible-build`
@@ -10602,7 +10602,7 @@ magento-cloud variable:create [-u|--update] [-l|--level LEVEL] [--name NAME] [--
 
 実行時に変数を表示するかどうか
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -10621,49 +10621,49 @@ magento-cloud variable:create [-u|--update] [-l|--level LEVEL] [--name NAME] [--
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10704,49 +10704,49 @@ magento-cloud variable:delete [-l|--level LEVEL] [-p|--project PROJECT] [-e|--en
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10780,21 +10780,21 @@ magento-cloud vget [-P|--property PROPERTY] [-l|--level LEVEL] [--format FORMAT]
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -10811,44 +10811,44 @@ magento-cloud vget [-P|--property PROPERTY] [-l|--level LEVEL] [--format FORMAT]
 
 ### `--pipe`
 
-[非推奨オプション] 変数値のみを出力します
+[ 非推奨オプション ] 変数値のみを出力します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10870,21 +10870,21 @@ magento-cloud variables [-l|--level LEVEL] [--format FORMAT] [-c|--columns COLUM
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：is_enabled、level、name、value。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -10903,35 +10903,35 @@ magento-cloud variables [-l|--level LEVEL] [--format FORMAT] [-c|--columns COLUM
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -10954,7 +10954,7 @@ magento-cloud variable:update [--allow-no-change] [-l|--level LEVEL] [--value VA
 
 変更がない場合は成功（ゼロ終了コード）を返します
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--level`, `-l`
@@ -10973,28 +10973,28 @@ magento-cloud variable:update [--allow-no-change] [-l|--level LEVEL] [--value VA
 
 変数値が JSON 形式かどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値が必要です
 
 ### `--sensitive`
 
 変数値が大文字と小文字を区別するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値が必要です
 
 ### `--enabled`
 
 環境で変数を有効にする必要があるかどうか
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--inheritable`
 
 変数が子環境によって継承可能かどうか
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--visible-build`
@@ -11007,7 +11007,7 @@ magento-cloud variable:update [--allow-no-change] [-l|--level LEVEL] [--value VA
 
 実行時に変数を表示するかどうか
 
-- デフォルト： `true`
+- デフォルト：`true`
 - 値が必要です
 
 ### `--project`, `-p`
@@ -11026,49 +11026,49 @@ magento-cloud variable:update [--allow-no-change] [-l|--level LEVEL] [--value VA
 
 操作が完了するのを待たない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--wait`
 
 操作が完了するまで待ちます（デフォルト）
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 
@@ -11084,14 +11084,14 @@ magento-cloud workers [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environm
 
 キャッシュを更新するかどうか
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--pipe`
 
 ワーカー名のリストのみを出力
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--project`, `-p`
@@ -11110,55 +11110,55 @@ magento-cloud workers [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environm
 
 出力形式：table、csv、tsv、plain
 
-- デフォルト： `table`
+- デフォルト：`table`
 - 値が必要です
 
 ### `--columns`, `-c`
 
 表示する列。 使用可能な列：コマンド、名前、タイプ。 % または*はワイルドカードとして使用できます。 値は、コンマ（「a,b,c」など）や空白で分割できます。
 
-- デフォルト： `[]`
+- デフォルト：`[]`
 - 値が必要です
 
 ### `--no-header`
 
 テーブルヘッダーを出力しない
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--help`, `-h`
 
 このヘルプ メッセージを表示する
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--verbose`, `-v|-vv|-vvv`
 
 メッセージの冗長性の向上
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--version`, `-V`
 
 このアプリケーションのバージョンを表示
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--yes`, `-y`
 
 確認の質問には「はい」と答え、他の質問ではデフォルト値をそのまま使用し、インタラクションを無効にします。
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 
 ### `--no-interaction`
 
 インタラクティブな質問はしないでください。デフォルト値を使用します。 次のMAGENTO変数を使用した場合と同じ：environment_CLOUD_CLI_NO_INTERACTION=1
 
-- デフォルト： `false`
+- デフォルト：`false`
 - 値を受け入れません
 

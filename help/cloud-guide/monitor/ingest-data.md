@@ -14,24 +14,24 @@ ht-degree: 0%
 
 New Relicは、効果的な監視と分析を提供するためにリッチデータに依存していますが、大規模なデータセットは、タイムリーな結果、パフォーマンス、コンプライアンスに影響を与える可能性があります。 このトピックでは、データの取り込みを管理し、データを最も効果的に調整する戦略に関するガイダンスを提供します。
 
-New Relicはを提供します。 _データ管理_ データ・ソース別の計画使用を要約するビュー。
+New Relicには、計画の使用状況をデータソース別にまとめた _データ管理_ ビューが用意されています。
 
-**取り込んだデータとソースを表示するには**:
+**取り込んだデータとソースを表示するには**
 
-1. New Relicのユーザーメニューで、 **[!UICONTROL Manage your data]**.
-1. クリック **[!UICONTROL Data management]** が含まれる _管理_ リスト。
+1. New Relicのユーザーメニューで、「**[!UICONTROL Manage your data]**」をクリックします。
+1. _管理_ リストの「**[!UICONTROL Data management]**」をクリックします。
 
-   ![データ管理](../../assets/new-relic/data-ingestion.png)
+   ![ データ管理 ](../../assets/new-relic/data-ingestion.png)
 
-   この **[!UICONTROL Data ingestion]** タブには、その日に取り込まれたデータと、そのデータのソースが表示されます。
+   「**[!UICONTROL Data ingestion]**」タブには、その日に取り込まれたデータと、そのデータのソースが表示されます。
 データ保持タブには、データが保存される期間を表示および制御します。
 
-1. 「」を選択します **[!UICONTROL Limits]** タブをクリックして、アカウントの制限を確認します。
+1. 「**[!UICONTROL Limits]**」タブを選択し、アカウントの制限を確認します。
 
 Adobe Commerceのデータソースには、次のものが含まれます。
 
-- **APM イベント**- グラフおよびダッシュボードで使用するイベントデータ
-- **インフラストラクチャ**—CPU、ストレージ、ネットワークなどのプロセスおよびホストのメトリック
-- **ログ**—CDN、APM およびアプリケーションサーバーのログ
+- **APM イベント** - グラフやダッシュボードで使用するイベントデータ
+- **インフラストラクチャ**：プロセスおよびホストのメトリック（CPU、ストレージ、ネットワークなど）
+- **ログ** - CDN、APM およびアプリケーションサーバーのログ
 
-ログデータは、取り込みの大部分に貢献します。 方法を参照する [ログデータの表示と分析](log-management.md#view-and-analyze-log-data) Adobe担当者と協力して、データの取り込みと保持のニーズに対する戦略を立てます。 詳細を読む： [データ取り込みの管理](https://docs.newrelic.com/docs/data-apis/manage-data/manage-data-coming-new-relic/) が含まれる _New Relic ドキュメント_.
+ログデータは、取り込みの大部分に貢献します。 [ ログデータの表示と分析 ](log-management.md#view-and-analyze-log-data) 方法を参照し、Adobeの担当者と協力して、データの取り込みと保持のニーズに対する戦略を立てる。 [ データ取り込みの管理 ](https://docs.newrelic.com/docs/data-apis/manage-data/manage-data-coming-new-relic/) について詳しくは、_New Relic ドキュメント_ を参照してください。

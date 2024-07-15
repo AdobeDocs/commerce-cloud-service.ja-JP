@@ -1,6 +1,6 @@
 ---
 title: プロパティ
-description: を設定する際の参照としてのプロパティリストの使用 [!DNL Commerce] ビルドしてクラウドインフラストラクチャにデプロイするためのアプリケーション。
+description: クラウドインフラストラクチャにビルドおよびデプロイする  [!DNL Commerce]  アプリケーションを設定する際には、プロパティリストを参照として使用します。
 feature: Cloud, Configuration, Build, Deploy, Roles/Permissions, Storage
 exl-id: 58a86136-a9f9-4519-af27-2f8fa4018038
 source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # アプリケーション設定のプロパティ
 
-この `.magento.app.yaml` ファイルではプロパティを使用して、の環境サポートを管理します [!DNL Commerce] アプリケーション。
+`.magento.app.yaml` ファイルは、プロパティを使用して、[!DNL Commerce] アプリケーションの環境サポートを管理します。
 
 | 名前 | 説明 | デフォルト | 必須 |
 | ------ | --------------------------------- | ------- | -------- |
@@ -25,7 +25,7 @@ ht-degree: 0%
 | [`mounts`](#mounts) | パスを設定 | パス：<ul><li>`"var": "shared:files/var"`</li><li>`"app/etc": "shared:files/etc"`</li><li>`"pub/media": "shared:files/media"`</li><li>`"pub/static": "shared:files/static"`</li></ul> | 不可 |
 | [`name`](#name) | アプリケーション名を定義 | `mymagento` | はい |
 | [`relationships`](#relationships) | マップサービス | サービス：<ul><li>`database: "mysql:mysql"`</li><li>`redis: "redis:redis"`</li><li>`opensearch: "opensearch:opensearch"`</li></ul> | 不可 |
-| [`runtime`](#runtime) | Runtime プロパティには、が必要とする拡張機能が含まれています。 [!DNL Commerce] アプリケーション。 | 拡張機能：<ul><li>`xsl`</li><li>`newrelic`</li><li>`sodium`</li></ul> | はい |
+| [`runtime`](#runtime) | Runtime プロパティには、[!DNL Commerce] アプリケーションで必要な拡張機能が含まれています。 | 拡張機能：<ul><li>`xsl`</li><li>`newrelic`</li><li>`sodium`</li></ul> | はい |
 | [`type`](#type-and-build) | ベースコンテナ画像の設定 | `php:8.3` | はい |
 | [`variables`](variables-property.md) | 特定のCommerce バージョンに環境変数を適用する | — | 不可 |
 | [`web`](web-property.md) | 外部リクエストの処理 | — | はい |
@@ -35,23 +35,23 @@ ht-degree: 0%
 
 ## `name`
 
-この `name` プロパティは、で使用されるアプリケーション名を提供します [`routes.yaml`](../routes/routes-yaml.md) http アップストリームを定義するファイル （デフォルトでは `mymagento:http`）に設定します。 例えば、の値が `name` 等しい `app`を使用する必要があります。 `app:http` 「上流」フィールドに移動します。
+`name` プロパティは、HTTP アップストリームを定義するために [`routes.yaml`](../routes/routes-yaml.md) ファイルで使用されるアプリケーション名を提供します（デフォルトでは `mymagento:http`）。 例えば、`name` の値が `app` の場合、アップストリームフィールドで `app:http` を使用する必要があります。
 
 >[!WARNING]
 >
 >デプロイ後にアプリケーションの名前を変更しないでください。 これにより、データが失われます。
 
-## `type` および `build`
+## `type` と `build`
 
-この `type`  および `build` プロパティは、プロジェクトをビルドおよび実行するためのベースコンテナイメージに関する情報を提供します。
+`type` プロパティと `build` プロパティは、プロジェクトをビルドして実行するためのベースコンテナイメージに関する情報を提供します。
 
-サポートされるの `type` 言語は PHP です。 PHP のバージョンを次のように指定します。
+サポートしている `type` 言語は PHP です。 PHP のバージョンを次のように指定します。
 
 ```yaml
 type: php:<version>
 ```
 
-この `build` プロパティは、プロジェクトをビルドする際のデフォルトの動作を決定します。 この `flavor` 実行するビルド タスクの既定のセットを指定します。 次の例は、のデフォルト設定を示しています `type` および `build` から `magento-cloud/.magento.app.yaml`:
+`build` プロパティは、プロジェクトの構築時のデフォルトの動作を決定します。 `flavor` は、実行するビルドタスクのデフォルトセットを指定します。 次の例は、`magento-cloud/.magento.app.yaml` の `type` と `build` のデフォルト設定を示しています。
 
 ```yaml
 # The toolstack used to build the application.
@@ -66,13 +66,13 @@ dependencies:
 
 ### Composer 2 のインストールと使用
 
-この `build: flavor:` プロパティは Composer 2.x では使用されないので、ビルド フェーズ中に Composer を手動でインストールする必要があります。 Composer 2.x を Starter プロジェクトおよび Pro プロジェクトにインストールして使用するには、3 つの変更を加える必要があります `.magento.app.yaml` 設定：
+`build: flavor:` プロパティは Composer 2.x では使用されないので、ビルド フェーズ中に Composer を手動でインストールする必要があります。 Composer 2.x を Starter プロジェクトおよび Pro プロジェクトにインストールして使用するには、`.magento.app.yaml` の設定に 3 つの変更を加える必要があります。
 
-1. 削除 `composer` as the `build: flavor:` 追加： `none`. この変更により、Cloud ではデフォルトの 1.x バージョンの Composer を使用してビルド タスクを実行できなくなります。
-1. 追加 `composer/composer: '^2.0'` as a `php` composer 2.x をインストールするための依存関係
-1. を追加 `composer` へのタスクのビルド `build` フックを使用して Composer 2.x を使用してビルド タスクを実行する
+1. `composer` を `build: flavor:` として削除し、`none` を追加します。 この変更により、Cloud ではデフォルトの 1.x バージョンの Composer を使用してビルド タスクを実行できなくなります。
+1. Composer 2.x をインストールする場合は、`php` の依存関係として `composer/composer: '^2.0'` を追加します。
+1. Composer 2.x を使用してビルド タスクを実行するには、`composer` ビルド タスクを `build` フックに追加します。
 
-次の設定フラグメントを独自に使用します `.magento.app.yaml` 設定：
+独自の `.magento.app.yaml` 設定で次の設定フラグメントを使用します。
 
 ```yaml
 # 1. Change flavor to none.
@@ -91,7 +91,7 @@ hooks:
         composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 ```
 
-参照： [必須パッケージ](../development/overview.md#required-packages) composer の詳細については、を参照してください。
+Composer の詳細については、[ 必須パッケージ ](../development/overview.md#required-packages) を参照してください。
 
 ## `dependencies`
 
@@ -103,7 +103,7 @@ Adobe Commerceは、次の言語の依存関係をサポートしています。
 - Ruby
 - Node.js
 
-これらの依存関係は、アプリケーションの最終的な依存関係には依存せず、 `PATH`を使用します。使用するアプリケーションのビルドプロセス中およびランタイム環境で使用します。
+これらの依存関係はアプリケーションの最終的な依存関係には依存せず、`PATH`、ビルドプロセス中およびアプリケーションのランタイム環境で利用できます。
 
 これらの依存関係は、次のように指定できます。
 
@@ -126,7 +126,7 @@ runtime:
         - sodium
 ```
 
-参照： [PHP 設定](php-settings.md) 拡張機能の有効化について詳しくは、を参照してください。
+拡張機能の有効化について詳しくは、[PHP 設定 ](php-settings.md) を参照してください。
 
 ## `disk`
 
@@ -136,17 +136,17 @@ runtime:
 disk: 5120
 ```
 
-推奨される最小ディスクサイズは 256 MB です。 次のエラーが表示される場合： `UserError: Error building the project: Disk size may not be smaller than 128MB`の場合は、サイズを 256 MB に増やします。
+推奨される最小ディスクサイズは 256 MB です。 `UserError: Error building the project: Disk size may not be smaller than 128MB` というエラーが表示される場合は、サイズを 256 MB に増やします。
 
 >[!NOTE]
 >
->ステージング環境および実稼動環境の場合は、次の操作が必要です [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) を更新します `mounts` および `disk` アプリケーションの設定。 チケットを送信する際に、必要な設定変更を指定し、の更新バージョンを含めます `.magento.app.yaml` ファイル。
+>ステージング環境および実稼動環境をプロ環境にする場合は、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) して、アプリケーションの `mounts` 定と `disk` 定を更新する必要があります。 チケットを送信する際には、必要な設定変更を指定し、`.magento.app.yaml` ファイルの更新バージョンを含めます。
 
 ## `relationships`
 
 アプリケーションでサービスマッピングを定義します。
 
-関係 `name` は、内のアプリケーションで使用できます。 `MAGENTO_CLOUD_RELATIONSHIPS` 環境変数。 この `<service-name>:<endpoint-name>` 関係は、で定義された名前とタイプの値にマッピングされます。 `.magento/services.yaml` ファイル。
+関係 `name` は、`MAGENTO_CLOUD_RELATIONSHIPS` 環境変数でアプリケーションが使用できます。 `<service-name>:<endpoint-name>` 関係は、`.magento/services.yaml` ファイルで定義された名前とタイプの値にマッピングされます。
 
 ```yaml
 relationships:
@@ -163,11 +163,11 @@ relationships:
     rabbitmq: "rabbitmq:rabbitmq"
 ```
 
-参照： [サービス](../services/services-yaml.md) 現在サポートされているサービスタイプとエンドポイントの完全なリストについては、を参照してください。
+現在サポートされているサービスタイプとエンドポイントの完全なリストについては、[ サービス ](../services/services-yaml.md) を参照してください。
 
 ## `mounts`
 
-キーがアプリケーションのルートに対する相対パスであるオブジェクト。 マウントは、ファイルのディスク上の書き込み可能な領域です。 に設定されたマウントのデフォルトのリストは次のとおりです。 `magento.app.yaml` を使用したファイル `volume_id[/subpath]` 構文：
+キーがアプリケーションのルートに対する相対パスであるオブジェクト。 マウントは、ファイルのディスク上の書き込み可能な領域です。 `volume_id[/subpath]` の構文を使用して `magento.app.yaml` ファイルに設定されるマウントのデフォルトのリストを以下に示します。
 
 ```yaml
  # The mounts that will be performed when the package is deployed.
@@ -184,28 +184,28 @@ mounts:
 "/public/sites/default/files": "shared:files/files"
 ```
 
-- `shared` – 環境内のアプリケーション間でボリュームを共有します。
+- `shared`：環境内のアプリケーション間でボリュームを共有します。
 - `disk` – 共有ボリュームに使用できるサイズを定義します。
 
 >[!NOTE]
 >
->ステージング環境および実稼動環境の場合は、次の操作が必要です [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) を更新します `mounts` および `disk` アプリケーションの設定。 チケットを送信する際に、必要な設定変更を指定し、の更新バージョンを含めます `.magento.app.yaml` ファイル。
+>ステージング環境および実稼動環境をプロ環境にする場合は、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) して、アプリケーションの `mounts` 定と `disk` 定を更新する必要があります。 チケットを送信する際には、必要な設定変更を指定し、`.magento.app.yaml` ファイルの更新バージョンを含めます。
 
-マウント web をに追加すると、その web にアクセスできるようになります。 [`web`](web-property.md) 場所のブロック。
+マウント web を [`web`](web-property.md) の場所のブロックに追加すると、そのマウント web にアクセスできるようになります。
 
 >[!WARNING]
 >
->サイトにデータが取り込まれたら、 `subpath` マウント名の一部。 この値は、の一意の識別子です `files` 領域。 この名前を変更すると、古い場所に保存されているすべてのサイト データが失われます。
+>サイトにデータが取り込まれたら、マウント名の `subpath` の部分は変更しないでください。 この値は、`files` 領域の一意の ID です。 この名前を変更すると、古い場所に保存されているすべてのサイト データが失われます。
 
 ## `access`
 
-この `access` プロパティは、環境への SSH アクセスが許可されている最小ユーザー役割レベルを示します。 使用できるユーザーの役割は次のとおりです。
+`access` プロパティは、環境への SSH アクセスが許可されている最小ユーザー役割レベルを示します。 使用できるユーザーの役割は次のとおりです。
 
-- `admin` – 設定を変更し、環境内でアクションを実行できます。 _投稿者_ および _ビューア_ 権限。
-- `contributor` – この環境にコードをプッシュし、環境から分岐できます。 _ビューア_ 権限。
+- `admin` – 設定を変更し、環境内でアクションを実行できます。_contributor_ および _viewer_ 権限があります。
+- `contributor` - コードをこの環境にプッシュし、環境から分岐できます。_ビューア_ 権限があります。
 - `viewer` – 環境のみを表示できます。
 
-デフォルトのユーザーの役割はです。 `contributor`（のユーザーのみからの SSH アクセスを制限します） _ビューア_ 権限。 ユーザーの役割は、次のように変更できます。 `viewer` を持つユーザーだけに SSH アクセスを許可するには _ビューア_ 権限：
+デフォルトのユーザーの役割は `contributor` で、_viewer_ 権限のみを持つユーザーからの SSH アクセスを制限しています。 ユーザーの役割を `viewer` に変更して、_viewer_ 権限のみを持つユーザーに対して SSH アクセスを許可できます。
 
 ```yaml
 access:

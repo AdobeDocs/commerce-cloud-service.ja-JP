@@ -20,14 +20,14 @@ Commerce管理パネルへの管理アクセス権を持つユーザーは、ユ
 
 - ライセンス所有者のメールアドレスに送信されたようこそメールを探し、リンクに従ってパスワードを変更します。
 
-- からストア URL をコピー [[!DNL Cloud Console]](../cloud-guide/project/overview.md) ブラウザーに移動します。 次に、を追加します `/admin` URL の末尾に移動して、サインインページを開きます。 「」をクリックします **パスワードをお忘れですか？** パスワード変更要求をライセンス所有者の電子メール アドレスに送信するためのリンクです。
+- [[!DNL Cloud Console]](../cloud-guide/project/overview.md) ージからブラウザーにストア URL をコピーします。 次に、URL の末尾に `/admin` を追加して、ログインページを開きます。 **パスワードを忘れた場合？パスワード変更要求をライセンス所有者の電子メールアドレスに送信するためのリンクを** きます。
 
 パスワード変更リクエストを送信したら、パスワードのリセット通知が届いていないかどうかをメールで確認します。 メールが届かない場合は、スパムフォルダーを確認してください。
 
 >[!TIP]
 >
->パスワードのリセットに失敗した場合や管理パネルにログインできない場合は、管理者アクセス権を持つユーザーが SSH を使用してプロジェクトに接続し、を使用して管理者ユーザーを追加できます。 `admin:user:create` CLI コマンド。 参照： [管理者アカウントを作成、編集またはロック解除](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin.html) が含まれる _インストールガイド_.
+>パスワードのリセットに失敗した場合や管理パネルにログインできない場合は、管理者アクセス権を持つユーザーが SSH を使用してプロジェクトに接続し、`admin:user:create` CLI コマンドを使用して管理者ユーザーを追加できます。 [ インストール ガイド _の「管理者アカウントを作成、編集、またはロック解除する ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin.html) を参照してください_。
 
 ## サイトの正常性の監視
 
-この [サイト全体分析ツール](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/intro) は、プロアクティブなセルフサービスツールで、Adobe Commerce インストールのセキュリティと操作性を確保するための詳細なシステムインサイトおよびレコメンデーションが含まれている中央リポジトリです。 24 時間 365 日、パフォーマンスの監視、レポート、アドバイスをリアルタイムで行うことで、潜在的な問題を特定し、サイトの正常性、安全性、アプリケーションの設定をより明確に把握します。 これにより、解決時間が短縮され、サイトの安定性とパフォーマンスが向上します。 からサイト全体の分析ツールに直接アクセスできます。 [管理パネル](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-2-logging-in-to-your-site-wide-analysis-tool-dashboard-from-your-stores-admin-panel) または [専用ドメイン](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-1-logging-in-to-your-site-wide-analysis-tool-dashboard-directly-from-the-site-wide-analysis-tool-domain-for-adobe-commerce-on-cloud-infrastructure-only) （クラウドインフラストラクチャプロジェクトでのAdobe Commerceのみ）。
+[Site-Wide Analysis Tool](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/intro) は、プロアクティブなセルフサービスツールで、Adobe Commerce インストールのセキュリティと操作性を確保するための詳細なシステムインサイトおよびレコメンデーションが含まれている中央リポジトリです。 24 時間 365 日、パフォーマンスの監視、レポート、アドバイスをリアルタイムで行うことで、潜在的な問題を特定し、サイトの正常性、安全性、アプリケーションの設定をより明確に把握します。 これにより、解決時間が短縮され、サイトの安定性とパフォーマンスが向上します。 Site-Wide Analysis Tool には、[ 管理パネル ](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-2-logging-in-to-your-site-wide-analysis-tool-dashboard-from-your-stores-admin-panel) または [ 専用ドメイン ](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-1-logging-in-to-your-site-wide-analysis-tool-dashboard-directly-from-the-site-wide-analysis-tool-domain-for-adobe-commerce-on-cloud-infrastructure-only) から直接アクセスできます（クラウドインフラストラクチャプロジェクトのAdobe Commerceのみ）。

@@ -1,6 +1,6 @@
 ---
-title: '"にログイン [!DNL Cloud Console]“'
-description: について説明します [!DNL Cloud Console] クラウドインフラストラクチャー上のAdobe Commerceの場合。
+title: "にログイン  [!DNL Cloud Console]"
+description: クラウドインフラストラクチ  [!DNL Cloud Console]  上のAdobe Commerce用について説明します。
 recommendations: noDisplay, catalog
 last-substantial-update: 2024-02-06T00:00:00Z
 exl-id: c19a36b6-e5e8-461c-a82c-68b7bf121999
@@ -12,13 +12,13 @@ ht-degree: 0%
 ---
 
 
-# へのログイン [!DNL Cloud Console]
+# [!DNL Cloud Console] にログインする
 
-この [!DNL Cloud Console] は、Commerce コードを作成、管理、デプロイするためのインタラクティブなメソッドを提供します。 この [!DNL Cloud Console] はより現代的で使いやすいエクスペリエンスであり、今後のインターフェイス機能強化の基盤となります。
+[!DNL Cloud Console] には、Commerce コードを作成、管理およびデプロイするためのインタラクティブなメソッドが用意されています。 この [!DNL Cloud Console] は、より現代的で使いやすいエクスペリエンスであり、将来のインターフェイス機能強化の基盤となります。
 
-[にログインします [!DNL Cloud Console]](https://console.adobecommerce.com) をクリックしてプロジェクトリストを表示します。
+[ にログイン  [!DNL Cloud Console]](https://console.adobecommerce.com) して、プロジェクトのリストを表示します。
 
-![プロジェクトリスト](../assets/ui-allprojects-list.png)
+![ プロジェクトリスト ](../assets/ui-allprojects-list.png)
 
 ## 機能
 
@@ -38,29 +38,29 @@ ht-degree: 0%
 
 | 機能 | 改善点 |
 | -------------- | ----------------------------------- |
-| [アクティビティストリーム](../cloud-guide/project/activity-stream.md) | 実行中、保留中または履歴のアクションの並べ替え可能なリストを操作します。 アクティビティを選択してログを表示するか、実行中のビルドをキャンセルします。 |
-| [プロジェクトと環境の概要](../cloud-guide/project/overview.md#project-overview) | プロジェクトを開き、プロジェクトの詳細と環境リストの概要を確認します。 環境の概要には、環境のステータス、アプリケーションへのアクセス、最近のアクティビティに関する詳細が表示されます。 |
-| [統合フォーム](../cloud-guide/integrations/overview.md) | 簡単なフォームとガイダンスを使用して、Bitbucket やSlack通知などの統合機能を追加します。 |
-| [プロジェクトリスト](../cloud-guide/project/overview.md#cloud-console) | この _すべてのプロジェクト_ 「表示」には、アクセス権を持つすべてのプロジェクトが一覧表示されます。 次のいずれかをクリックできます。 **[!UICONTROL Show filters]** さらに、タイプ、地域またはプランでプロジェクトリストをフィルタリングできます。 |
-| [変数の表示オプション](../cloud-guide/environment/variable-levels.md) | ビルドまたは実行中に、プロジェクトレベルまたは環境レベルの変数の表示を制限します。 |
+| [ アクティビティストリーム ](../cloud-guide/project/activity-stream.md) | 実行中、保留中または履歴のアクションの並べ替え可能なリストを操作します。 アクティビティを選択してログを表示するか、実行中のビルドをキャンセルします。 |
+| [ プロジェクトと環境の概要 ](../cloud-guide/project/overview.md#project-overview) | プロジェクトを開き、プロジェクトの詳細と環境リストの概要を確認します。 環境の概要には、環境のステータス、アプリケーションへのアクセス、最近のアクティビティに関する詳細が表示されます。 |
+| [ 統合フォーム ](../cloud-guide/integrations/overview.md) | 簡単なフォームとガイダンスを使用して、Bitbucket やSlack通知などの統合機能を追加します。 |
+| [ プロジェクトリスト ](../cloud-guide/project/overview.md#cloud-console) | _すべてのプロジェクト_ ビューには、アクセス権限を持つすべてのプロジェクトが一覧表示されます。 「**[!UICONTROL Show filters]**」をクリックし、タイプ、地域またはプランでプロジェクトリストをフィルタリングできます。 |
+| [ 変数の表示オプション ](../cloud-guide/environment/variable-levels.md) | ビルドまたは実行中に、プロジェクトレベルまたは環境レベルの変数の表示を制限します。 |
 
 <!-- The following are features yet to be activated:
 | **Apps and services topology** | The Apps & Services topology is visible on Project and Environment views. This interactive diagram allows you to select a service and view the relationship details, such as name, type, version, port, and more. Click **[!UICONTROL View details]** to access the overview and configuration panel for each service. | -->
 
 ## コンソールに関する質問
 
-**_スナップショット機能について_**?
+**_スナップショット機能はどこで入手できま_** か？
 
-の場合 [!DNL Starter] プロジェクトのスナップショット機能は、 _バックアップ_. の手動バックアップを作成できます [!DNL Starter] からの環境 [!DNL Cloud Console] または、Cloud CLI からスナップショットを作成します。 環境の管理者の役割が必要です。
+[!DNL Starter] プロジェクトのスナップショット機能は、_バックアップ_ と呼ばれるようになりました。 [!DNL Cloud Console] から [!DNL Starter] 環境の手動バックアップを作成するか、Cloud CLI からスナップショットを作成できます。 環境の管理者の役割が必要です。
 
-プロジェクトナビゲーションバーから環境を選択します。 環境がアクティブである必要があります。 「」を選択します **[!UICONTROL Backups]** タブ。 現在、このオプションは Pro 環境では使用できません。
+プロジェクトナビゲーションバーから環境を選択します。 環境がアクティブである必要があります。 「**[!UICONTROL Backups]**」タブを選択します。 現在、このオプションは Pro 環境では使用できません。
 
-**_ここで、は環境に設定されたルートのリストです_**?
+**_環境に設定されたルートのリストはどこにありま_** か？
 
-設定されたルートのリストは、次にあります _サービス_ 環境の場合は tab キーを押します。
+設定済みのルートのリストは、環境の「_サービス_」タブに表示されます。
 
-プロジェクトナビゲーションバーから環境を選択します。 「」を選択します **[!UICONTROL Services]** タブ。 この **発送担当** 概要：設定済みのルートが表示されます。 現在、新しいからルートを追加することはできません [!DNL Cloud Console].
+プロジェクトナビゲーションバーから環境を選択します。 「**[!UICONTROL Services]**」タブを選択します。 **Router** の概要には、設定済みのルートが表示されます。 現在、新しい [!DNL Cloud Console] からルートを追加することはできません。
 
 ## アカウントメニュー
 
-右上隅にアカウントメニューがあります。 メニューの下矢印をクリックし、を選択します。 **[!UICONTROL My Profile]**. が含まれる _マイプロファイル_ 表示、ユーザーの詳細と表示設定を制御、管理できます。 [セキュリティ認証](../cloud-guide/project/user-access.md#user-authentication-requirements), [API トークン](../cloud-guide/project/user-access.md#create-an-api-token)、および [SSH キー](../cloud-guide/development/secure-connections.md).
+右上隅にアカウントメニューがあります。 メニューの下矢印をクリックし、「**[!UICONTROL My Profile]**」を選択します。 _マイプロファイル_ ビューでは、ユーザーの詳細と表示設定を制御したり、[ セキュリティ認証 ](../cloud-guide/project/user-access.md#user-authentication-requirements)、[API トークン ](../cloud-guide/project/user-access.md#create-an-api-token)、[SSH キー ](../cloud-guide/development/secure-connections.md) を管理したりできます。

@@ -13,40 +13,40 @@ ht-degree: 0%
 
 # デプロイメント用の環境変数の設定
 
-この `.magento.env.yaml` ファイルでは、環境変数を使用して、ステージング環境や実稼動環境を含むすべての環境で、ビルドおよびデプロイアクションの管理を一元化します。 各環境で一意のアクションを設定するには、各環境でこのファイルを変更する必要があります。
+`.magento.env.yaml` ファイルでは、環境変数を使用して、ステージング環境や実稼動環境を含むすべての環境で、ビルドおよびデプロイアクションの管理を一元化します。 各環境で一意のアクションを設定するには、各環境でこのファイルを変更する必要があります。
 
 >[!TIP]
 >
->YAML ファイルでは大文字と小文字が区別され、タブは使用できません。 全体で一貫したインデントを使用するように注意してください `.magento.env.yaml` ファイルまたは設定が期待どおりに動作しない可能性があります。 ドキュメントとサンプルファイルの例では、次のものを使用します _2 つのスペース_ インデント。 の使用 [ece-tools validate コマンド](#validate-configuration-file) をクリックして、設定を確認します。
+>YAML ファイルでは大文字と小文字が区別され、タブは使用できません。 `.magento.env.yaml` ファイル全体で一貫性のあるインデントを使用するように注意してください。使用しないと、設定が期待どおりに動作しない場合があります。 ドキュメントとサンプルファイルの例では、_2 スペース_ インデントを使用しています。 [ece-tools validate コマンド ](#validate-configuration-file) を使用して、設定を確認します。
 
 ## ファイル構造
 
-この `.magento.env.yaml` ファイルには、次の 2 つのセクションがあります。 `stage` および `log`. この `stage` 「」セクションでは、 [クラウドのデプロイメントプロセス](../deploy/process.md).
+`.magento.env.yaml` ファイルには、`stage` と `log` の 2 つのセクションがあります。 `stage` の節では、[ クラウドデプロイメントプロセス ](../deploy/process.md) の各段階で行われるアクションを制御します。
 
-- `stage`- ステージセクションを使用して、次のデプロイメントのステージに対する特定のアクションを定義します。
-   - `global`- ビルド、デプロイ、およびデプロイ後の両方のフェーズでアクションを制御します。 これらの設定は、ビルド、デプロイ、デプロイ後のセクションで上書きできます。
+- `stage` - 「ステージ」セクションを使用して、次のデプロイメントのステージに対する特定のアクションを定義します。
+   - `global` - ビルド、デプロイ、およびデプロイ後の両方のフェーズでアクションを制御します。 これらの設定は、ビルド、デプロイ、デプロイ後のセクションで上書きできます。
    - `build` – 構築フェーズのアクションのみを制御します。 このセクションで設定を指定しない場合、ビルドフェーズではグローバルセクションの設定が使用されます。
-   - `deploy`- デプロイフェーズのアクションのみを制御します。 このセクションで設定を指定しない場合、デプロイフェーズではグローバルセクションの設定が使用されます。
-   - `post-deploy`- アクションを制御します。 _後_ アプリケーションのデプロイと _後_ コンテナが接続の受け入れを開始します。
-- `log`— ログ セクションを使用して構成します。 [通知](set-up-notifications.md)通知のタイプや詳細レベルを含みます。
-   - `slack`—Slackボットに送信するメッセージを設定します。
-   - `email`- 1 人または複数のメール受信者に送信するメールを設定します。
-   - [ログハンドラー](log-handlers.md) – リモート ログ サーバーに送信されるハードウェアおよびソフトウェア アプリケーション メッセージを構成します。
+   - `deploy` – 配置フェーズのアクションのみを制御します。 このセクションで設定を指定しない場合、デプロイフェーズではグローバルセクションの設定が使用されます。
+   - `post-deploy` - アプリケーションのデプロイ _後_ アクションを制御し、コンテナは接続の受け入れを開始 _後_ します。
+- `log` - 「ログ」セクションを使用して、通知のタイプや詳細レベルを含む [ 通知 ](set-up-notifications.md) を構成します。
+   - `slack` - Slackボットに送信するメッセージを設定します。
+   - `email` - 1 人または複数の電子メール受信者に送信する電子メールを設定します。
+   - [ ログハンドラー ](log-handlers.md) - リモートログサーバーに送信されるハードウェアおよびソフトウェアアプリケーションメッセージを設定します。
 
 ### 環境変数
 
-この `ece-tools` パッケージはに値を設定します `env.php` の値に基づいたファイル [クラウド変数](variables-cloud.md)、で設定された変数 [!DNL Cloud Console]、および `.magento.env.yaml` 設定ファイル。 の環境変数 `.magento.env.yaml` ファイルは、既存のCommerce設定を上書きしてクラウド環境をカスタマイズします。 デフォルト値がの場合 `Not Set`を選択し、続いて `ece-tools` パッケージテイク **不可** アクションとの使用 [!DNL Commerce] デフォルト、またはMAGENTO設定の値。 デフォルト値が設定されている場合は、 `ece-tools` パッケージは、そのデフォルトを設定するように動作します。
+`ece-tools` パッケージは、[ クラウド変数 ](variables-cloud.md)、[!DNL Cloud Console] で設定された変数、`.magento.env.yaml` 設定ファイルの値に基づいて `env.php` ファイルの値を設定します。 `.magento.env.yaml` ファイルの環境変数は、既存の Cloud Configuration を上書きしてCommerce環境をカスタマイズします。 デフォルト値が `Not Set` の場合、`ece-tools` パッケージは **NO** アクションを実行し、[!DNL Commerce] のデフォルトまたはMAGENTOCLOUD_RELATIONSHIPS 設定の値を使用します。 デフォルト値が設定されている場合、`ece-tools` パッケージはそのデフォルト値を設定します。
 
-次のトピックには、で使用できるすべての変数の詳細な定義（デフォルト値が設定されているかどうかなど）が含まれています `.magento.env.yaml` ファイル：
+次のトピックには、`.magento.env.yaml` ファイルで使用できるすべての変数に関する詳細な定義（デフォルト値が設定されているかどうかなど）が含まれています。
 
-- [グローバル](variables-global.md) – 変数は、ビルド、デプロイ、およびデプロイ後の各フェーズでのアクションを制御します。
-- [ビルド](variables-build.md) – 変数は構築アクションを制御する
-- [デプロイ](variables-deploy.md) – 変数は展開アクションを制御する
-- [デプロイ後](variables-post-deploy.md) – 変数はデプロイ後のアクションを制御する
+- [ グローバル ](variables-global.md) – 変数は各フェーズのアクション（構築、デプロイ、デプロイ後）を制御します
+- [ ビルド ](variables-build.md) – 変数はビルドアクションを制御します
+- [Deploy](variables-deploy.md) – 変数はデプロイアクションを制御します。
+- [Post-deploy](variables-post-deploy.md) – 変数は、デプロイ後のアクションを制御します
 
 ### CLI からの構成ファイルの作成
 
-を生成できます `.magento.env.yaml` 以下を使用したクラウド環境用の設定ファイル `ece-tools` コマンド。
+次の `ece-tools` コマンドを使用して、クラウド環境用の `.magento.env.yaml` 設定ファイルを生成できます。
 
 >設定ファイルを作成します
 
@@ -60,13 +60,13 @@ php ./vendor/bin/ece-tools cloud:config:create `<configuration-json>`
 php ./vendor/bin/ece-tools cloud:config:update `<configuration-json>`
 ```
 
-両方のコマンドには単一の引数が必要です。少なくとも 1 つの build、deploy または post-deploy 変数の値を指定する JSON 形式の配列です。 例えば、次のコマンドは、 `SCD_THREADS` および `CLEAN_STATIC_FILES` 変数：
+両方のコマンドには単一の引数が必要です。少なくとも 1 つの build、deploy または post-deploy 変数の値を指定する JSON 形式の配列です。 例えば、次のコマンドは、`SCD_THREADS` 変数と `CLEAN_STATIC_FILES` 変数の値を設定します。
 
 ```bash
 php vendor/bin/ece-tools cloud:config:create '{"stage":{"build":{"SCD_THREADS":5}, "deploy":{"CLEAN_STATIC_FILES":false}}}'
 ```
 
-また、が作成されます `.magento.env.yaml` 次の設定のファイル：
+次の設定で `.magento.env.yaml` ファイルを作成します。
 
 ```yaml
 stage:
@@ -76,7 +76,7 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-を使用できます `cloud:config:update` 新しいファイルを更新するコマンド。 たとえば、次のコマンドは `SCD_THREADS` に値を設定して、に `SCD_COMPRESSION_TIMEOUT` 設定：
+`cloud:config:update` コマンドを使用して、新しいファイルを更新できます。 例えば、次のコマンドは `SCD_THREADS` の値を変更し、`SCD_COMPRESSION_TIMEOUT` の設定を追加します。
 
 ```bash
 php vendor/bin/ece-tools cloud:config:update '{"stage":{"build":{"SCD_THREADS":3, "SCD_COMPRESSION_TIMEOUT":1000}}}'
@@ -95,7 +95,7 @@ stage:
 
 ### 設定ファイルを検証
 
-以下を使用します `ece-tools` 検証するコマンド `.magento.env.yaml` 変更をリモートクラウド環境にプッシュする前の設定ファイル。
+次の `ece-tools` コマンドを使用して、変更をリモートクラウド環境にプッシュする前に `.magento.env.yaml` 設定ファイルを検証します。
 
 ```bash
 php ./vendor/bin/ece-tools cloud:config:validate
@@ -112,7 +112,7 @@ The NOT_EXIST_OPTION variable is not allowed in configuration.
 
 ## PHP 定数
 
-PHP 定数は以下で使用できます。 `.magento.env.yaml` 値をハードコーディングする代わりに、ファイル定義を使用します。 次の例では、 `driver_options` php 定数を使用する場合：
+`.magento.env.yaml` ファイル定義では、値をハードコーディングする代わりに PHP 定数を使用できます。 次の例では、PHP 定数を使用して `driver_options` を定義します。
 
 ```yaml
 stage:
@@ -130,11 +130,11 @@ stage:
 
 >[!WARNING]
 >
->を使用している場合、定数解析が機能しない。 `symfony/yaml` 3.2 より前のパッケージバージョン。
+>3.2 より前の `symfony/yaml` パッケージバージョンを使用している場合、定数の解析は機能しません。
 
 ## エラー処理
 
-で予期しない値が原因でエラーが発生した場合 `.magento.env.yaml` 設定ファイルにエラーメッセージが表示されます。 例えば、次のエラーメッセージは、各項目に対して提案された変更のリストを予期しない値で表示し、場合によっては有効なオプションを提供します。
+`.magento.env.yaml` 設定ファイル内の予期しない値が原因でエラーが発生した場合は、エラーメッセージが表示されます。 例えば、次のエラーメッセージは、各項目に対して提案された変更のリストを予期しない値で表示し、場合によっては有効なオプションを提供します。
 
 ```terminal
 - Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:
@@ -151,7 +151,7 @@ stage:
 
 ## 構成管理の最適化
 
-設定のダンプ後に Configuration Management を有効にした場合は、SCD_*変数をデプロイからビルドステージに移動する必要があります。 参照： [静的コンテンツのデプロイメント戦略](../deploy/static-content.md).
+設定のダンプ後に Configuration Management を有効にした場合は、SCD_*変数をデプロイからビルドステージに移動する必要があります。 [ 静的コンテンツデプロイメント戦略 ](../deploy/static-content.md) を参照してください。
 
 >構成管理前：
 

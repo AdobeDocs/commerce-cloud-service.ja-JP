@@ -22,11 +22,11 @@ ht-degree: 0%
 
 | コマンド | 説明 |
 | ------- | ------------|
-| `wizard:ideal-state` | SCD がオンになっていることを確認します _ビルド_ ステージ、 `SKIP_HTML_MINIFICATION` 変数は `true`、およびクラウド環境に設定された post_deploy フック。 ローカル開発環境では使用されません。 |
-| `wizard:master-slave` | を確認します。 `REDIS_USE_SLAVE_CONNECTION` 変数と `MYSQL_USE_SLAVE_CONNECTION` 変数は `true`. |
-| `wizard:scd-on-demand` | を確認します。 `SCD_ON_DEMAND` グローバル環境変数は `true`. |
-| `wizard:scd-on-build` | を確認します。 `SCD_ON_DEMAND` グローバル環境変数は `false` および `SKIP_SCD` 環境変数は `false` の場合 _ビルド_ ステージ。 を実行して、 `config.php` ファイルには、ストア、ストアグループ、web サイトの情報が含まれています。 |
-| `wizard:scd-on-deploy` | を確認します。 `SCD_ON_DEMAND` グローバル環境変数は `false` および `SKIP_SCD` 環境変数は `false` の場合 _deploy_ ステージ。 を実行して、 `config.php` ファイルの処理 _ではない_ ストア、ストアグループ、web サイトのリストと関連情報が含まれます。 |
+| `wizard:ideal-state` | SCD が _ビルド_ ステージにあり、`SKIP_HTML_MINIFICATION` 変数が `true` であり、クラウド環境に post_deploy フックが設定されていることを確認します。 ローカル開発環境では使用されません。 |
+| `wizard:master-slave` | `REDIS_USE_SLAVE_CONNECTION` 変数と `MYSQL_USE_SLAVE_CONNECTION` 変数が `true` しいことを確認します。 |
+| `wizard:scd-on-demand` | `SCD_ON_DEMAND` グローバル環境変数が `true` になっていることを確認します。 |
+| `wizard:scd-on-build` | `SCD_ON_DEMAND` グローバル環境変数が `false` であり、`SKIP_SCD` 環境変数が _ビルド_ ステージ用に `false` されていることを確認します。 `config.php` ファイルにストア、ストア グループ、および Web サイトの情報が含まれていることを確認します。 |
+| `wizard:scd-on-deploy` | `SCD_ON_DEMAND` グローバル環境変数が `false` であり、`SKIP_SCD` 環境変数が _deploy_ ステージ用に `false` されていることを確認します。 `config.php` ファイルに、ストア、ストア グループ、および Web サイトの一覧と関連情報が含まれて _ない_ ことを確認します。 |
 
 例えば、お使いの設定で SCD オンデマンド機能が適切に有効になっていることを確認できます。
 
@@ -48,7 +48,7 @@ SCD on-demand is disabled
 
 ## 理想的な設定の検証
 
-この _理想_ クラウドプロジェクトの設定は、ユーザーから要求があったときにキャッシュをウォームアップし、静的コンテンツを生成することで、デプロイメントのダウンタイムを最小限に抑えるのに役立ちます。 このウィザードは、配置プロセス中に自動的に実行されます。 クラウドが設定されていない場合 _理想状態_&#x200B;すると、次のようなメッセージが表示されます。
+クラウドプロジェクトの _理想的_ な設定は、ユーザーからリクエストがあった場合にキャッシュをウォームアップし、静的コンテンツを生成することで、デプロイメントのダウンタイムを最小限に抑えるのに役立ちます。 このウィザードは、配置プロセス中に自動的に実行されます。 クラウドがこの _理想的な状態_ に設定されていない場合は、次のようなメッセージが表示されます。
 
 ```terminal
 - SCD on build is not configured
@@ -79,7 +79,7 @@ Ideal state is not configured
            php ./vendor/bin/ece-tools post-deploy
    ```
 
-1. コードの変更をプッシュし、テストを再度実行します。 設定が _理想_&#x200B;すると、次のメッセージが表示されます。
+1. コードの変更をプッシュし、テストを再度実行します。 設定が _理想的_ な場合は、次のメッセージが表示されます。
 
    ```terminal
    Ideal state is configured

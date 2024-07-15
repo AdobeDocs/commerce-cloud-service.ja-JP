@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # カスタムテーマ
 
-プロジェクト内の 1 つまたはすべてのストアとサイトに使用する 1 つまたは複数のテーマをインストールできます。 テーマには、ストアを完全にデザインするために、画像、フォント、CSS、JavaScript、PHP など、複数の静的ファイルが含まれます。 テーマを追加するには、コードをファイルシステムに抽出するか、Composer を使用します。
+プロジェクト内の 1 つまたはすべてのストアとサイトに使用する 1 つまたは複数のテーマをインストールできます。 テーマには、画像、フォント、CSS、JavaScript、PHP など、ストアを完全にデザインするための複数の静的ファイルが含まれます。 テーマを追加するには、コードをファイルシステムに抽出するか、Composer を使用します。
 
 ## テーマを手動でインストール
 
@@ -34,9 +34,9 @@ ht-degree: 0%
           └── js
 ```
 
-**テーマを手動でインストール**:
+**テーマを手動でインストールするには**:
 
-1. の下にテーマのコードをコピーします。 `<Project root dir>/app/design/frontend` ストアフロントのテーマの場合はまたは `<Project root dir>/app/design/adminhtml` 管理テーマの場合。 最上位ディレクトリがであることを確認 `<VendorName>`。そうでない場合、テーマが正しくインストールされません。
+1. ストアフロントテーマの場合は `<Project root dir>/app/design/frontend` の下に、管理テーマの場合は `<Project root dir>/app/design/adminhtml` の下にテーマのコードをコピーします。 最上位のディレクトリが `<VendorName>` であることを確認します。そうでない場合、テーマが正しくインストールされません。
 
    ```bash
    cp -r ExampleTheme <project-root>/app/design/frontend
@@ -44,8 +44,8 @@ ht-degree: 0%
 
 1. 正しい場所にコピーされたテーマを確認します。
 
-   * ストアフロントのテーマ： `ls <project-root>/app/design/frontend`
-   * 管理テーマ： `ls <project-root>/app/design/adminhtml`
+   * Storefront テーマ：`ls <project-root>/app/design/frontend`
+   * 管理テーマ：`ls <project-root>/app/design/adminhtml`
 
    次に例を示します。
 
@@ -65,13 +65,13 @@ ht-degree: 0%
 
 1. デプロイメントが完了するまで待ちます。
 1. 管理者にログインします。
-1. クリック **コンテンツ** > デザイン > **テーマ**.
+1. **コンテンツ**/デザイン/**テーマ** をクリックします。
 
    テーマが右側のパネルに表示されます。
 
 ## Composer を使用したテーマのインストール
 
-Composer を使用してテーマをインストールする方法は、Composer を使用して他の拡張機能をインストールする方法と同様です。 参照： [モジュールのインストール、管理、アップグレード](extensions.md) を参照してください。
+Composer を使用してテーマをインストールする方法は、Composer を使用して他の拡張機能をインストールする方法と同様です。 詳しくは、[ モジュールのインストール、管理、アップグレード ](extensions.md) を参照してください。
 
 Composer を使用してテーマをインストールするには：
 
@@ -101,10 +101,10 @@ Composer を使用してテーマをインストールするには：
    ```
 
 1. 管理者にログインします。
-1. クリック **コンテンツ** > デザイン > **テーマ**.
+1. **コンテンツ**/デザイン/**テーマ** をクリックします。
 
    テーマが右側のパネルに表示されます。
 
 ## 複数のテーマ
 
-ロケールごとに異なるテーマを使用するなど、複数のテーマを使用する場合、 `SCD_MATRIX` テーマのデプロイメントをカスタマイズするための環境変数。 を参照してください。 [ビルド](../environment/variables-build.md#scd_matrix) または [deploy](../environment/variables-deploy.md#scd_matrix) のステージ [環境設定](../environment/configure-env-yaml.md).
+ロケールごとに異なるテーマなど、複数のテーマを使用する場合は、テーマのデプロイメントをカスタマイズするための `SCD_MATRIX` 環境変数を確認します。 [ 環境設定 ](../environment/configure-env-yaml.md) の [ ビルド ](../environment/variables-build.md#scd_matrix) または [ デプロイ ](../environment/variables-deploy.md#scd_matrix) ステージを参照してください。

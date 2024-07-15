@@ -1,6 +1,6 @@
 ---
 title: Crons プロパティ
-description: で「cron」プロパティを設定する方法の例を参照 [!DNL Commerce] アプリケーション設定ファイル。
+description: ' [!DNL Commerce] application 設定ファイルで「cron」プロパティを設定する方法の例を参照してください。'
 feature: Cloud, Configuration
 exl-id: 67d592c1-2933-4cdf-b4f6-d73cd44b9f59
 source-git-commit: 1c0e05c3d8461bea473bcf6ec35162d65ef2774f
@@ -12,22 +12,22 @@ ht-degree: 0%
 
 # Crons プロパティ
 
-Adobe Commerceはを使用します `crons` ライン型活動を計画するプロパティ。 1 日の特定の時間に実行する特定のタスクをスケジュールするのに最適です。 読み取り専用環境の性質上、クラウドインフラストラクチャプロジェクト上のAdobe Commerceの web インスタンスでは一度に 1 つの cron ジョブのみを実行できます。 長時間実行されるタスクをキューに入れられた小さなタスクに分類することをお勧めします。 または、 [ワーカーインスタンス](workers-property.md).
+Adobe Commerceは、`crons` プロパティを使用して、繰り返しアクティビティをスケジュールします。 1 日の特定の時間に実行する特定のタスクをスケジュールするのに最適です。 読み取り専用環境の性質上、クラウドインフラストラクチャプロジェクト上のAdobe Commerceの web インスタンスでは一度に 1 つの cron ジョブのみを実行できます。 長時間実行されるタスクをキューに入れられた小さなタスクに分類することをお勧めします。 または、[ ワーカーインスタンス ](workers-property.md) を作成することもできます。
 
-Adobeでは、を実行することをお勧めします `crons` as the [ファイルシステム所有者](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html). 実行 _ではない_ 実行 `crons` as `root` または web サーバーユーザーとして設定します。
+Adobeでは、`crons` を [ ファイルシステムのオーナー ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) として実行することをお勧めします。 `crons` を `root` または Web サーバーユーザーとして実行 _ない_ でください。
 
-この設定は、複数のデフォルト cron ジョブを持つAdobe Commerceのオンプレミスデプロイメントとは異なります。 参照： [Cron ジョブの設定](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/configure-cron-jobs.html) が含まれる _設定ガイド_.
+この設定は、複数のデフォルト cron ジョブを持つAdobe Commerceのオンプレミスデプロイメントとは異なります。 _設定ガイド ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/configure-cron-jobs.html) の [cron ジョブの設定_ を参照してください。
 
 ## cron ジョブの設定
 
-この `crons` プロパティは、スケジュールに従ってトリガーされるプロセスを記述します。 各ジョブには、名前と次のオプションが必要です。
+`crons` プロパティは、スケジュールに従ってトリガーされるプロセスを記述します。 各ジョブには、名前と次のオプションが必要です。
 
-- `spec`- スケジュールに使用する cron 式。
-- `cmd` – 実行するコマンド `start` および `stop`.
+- `spec` - スケジュールに使用する Cron 式。
+- `cmd` - `start` および `stop` で実行するコマンド。
 - `shutdown_timeout` – （_オプション_） Cron ジョブがキャンセルされた場合、これはジョブまたはプロセスを停止するために SIGKILL シグナルが送信されるまでの秒数です。 デフォルト値は 10 秒です。
 - `timeout` – （_オプション_） Cron ジョブがタイムアウトまでに実行できる最大時間。 デフォルトでは、許容される最大値の 86400 秒（24 時間）に設定されます。
 
-デフォルトでは、すべてのCommerce クラウドプロジェクトに次のデフォルトがあります `crons` での設定 `.magento.app.yaml` ファイル：
+デフォルトでは、すべてのCommerce クラウドプロジェクトの `.magento.app.yaml` ファイルに次のようなデフォルトの `crons` 設定があります。
 
 ```yaml
 crons:
@@ -36,17 +36,17 @@ crons:
         cmd: "php bin/magento cron:run"
 ```
 
-プロジェクトでカスタム cron ジョブが必要な場合は、デフォルトに追加できます `crons` 設定。 参照： [Cron ジョブの作成](#build-a-cron-job).
+プロジェクトにカスタム cron ジョブが必要な場合は、それらをデフォルトの `crons` 設定に追加できます。 [cron ジョブの作成 ](#build-a-cron-job) を参照してください。
 
 ### `crontab`
 
-Adobe Commerceは、セルフサービスをサポートするために、Pro プロジェクトにのみ自動クローン設定オプションを追加しました `crons` ステージング環境と実稼動環境での設定。 このオプションが有効になっている場合は、 `crontab` :cron 設定を確認します。 これはです _ではない_ スタータープロジェクトで使用できます。
+Adobe Commerceでは、ステージング環境と実稼動環境でのセルフサービスサー `crons` ス設定をサポートするために、Pro プロジェクトにのみ自動クローン設定オプションを追加しました。 このオプションが有効な場合は、`crontab` を使用して cron 設定を確認できます。 これは、スタータープロジェクトでは使用で _ません_。
 
-を使用できますが、 `crontab` pro プロジェクトの設定をレビューするために、Adobe Commerceはを使用しません `crontab` クラウドインフラストラクチャにデプロイされたサイトに対して cron ジョブを実行する。
+`crontab` を使用して Pro プロジェクトの設定を確認できますが、Adobe Commerceでは、クラウドインフラストラクチャにデプロイされたサイトの cron ジョブを実行するために `crontab` を使用しません。
 
-**Pro 環境での cron 設定を確認するには：**:
+**Pro 環境での cron 設定を確認するには**:
 
-1. 使用方法 [SSH](../development/secure-connections.md#use-an-ssh-command) リモート環境にログインします。
+1. [SSH](../development/secure-connections.md#use-an-ssh-command) を使用して、リモート環境にログインします。
 
 1. スケジュールされた cron プロセスを一覧表示します。
 
@@ -56,9 +56,9 @@ Adobe Commerceは、セルフサービスをサポートするために、Pro �
 
    >[!NOTE]
    >
-   >次の場合 `crontab -l` command は以下を返します。 `Command not found` エラー（ステージング環境および実稼動環境のみ）が発生した場合、次の操作を行う必要があります [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) でプロジェクトの自動クローン セルフサービス設定オプションを有効にします。
+   >`crontab -l` コマンドで `Command not found` エラーが返される場合（プロのステージング環境および実稼動環境のみ）は、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) して、プロジェクトで自動クローンのセルフサービス設定オプションを有効にする必要があります。
 
-次の例は、 `crontab` デフォルトのみを持つ環境の出力 `crons` 設定：
+次の例は、デフォルトの `crons` 設定のみを持つ環境の `crontab` の出力を示しています。
 
 ```terminal
 username@hostname:~$ crontab -l
@@ -73,11 +73,11 @@ MAILTO=""
 
 ## Cron ジョブの作成
 
-cron ジョブには、スケジュールとタイミングの仕様、およびスケジュールされた時刻に実行するコマンドが含まれます。 スターター環境および Pro の場合 `integration` 環境では、最小間隔は 5 分に 1 回です。 ステージング環境および実稼動環境の場合、最小間隔は 1 分あたり 1 回です。 クラウドインフラストラクチャー上のAdobe Commerceでは、カスタム cron ジョブをに追加します `.magento.app.yaml` 内のファイル `crons` セクション。 一般的な形式は次のとおりです。 `spec` スケジュール用および `cmd` をクリックして、実行するコマンドまたはカスタム スクリプトを指定します。
+cron ジョブには、スケジュールとタイミングの仕様、およびスケジュールされた時刻に実行するコマンドが含まれます。 スターター環境および Pro `integration` 環境の場合、最小間隔は 5 分に 1 回です。 ステージング環境および実稼動環境の場合、最小間隔は 1 分あたり 1 回です。 クラウドインフラストラクチャー上のAdobe Commerceでは、`crons` セクションの `.magento.app.yaml` ファイルにカスタム cron ジョブを追加します。 一般的な形式は、実行するコマンドまたはカスタムスクリプトを指定するた `cmd` のスケジュールと `spec` です。
 
 ### 仕様
 
-Adobe Commerceでは、5 つの値から成る式を `crons` 仕様（仕様）: `* * * * *`
+Adobe Commerceでは、`crons` 仕様（spec）に 5 つの値を持つ式を使用します：`* * * * *`
 
 1. 分（0～59）すべての Starter 環境および Pro 環境で、cron ジョブでサポートされる最小頻度は 5 分です。 管理者による設定が必要になる場合があります。
 2. 時間（0 ～ 23）
@@ -87,20 +87,20 @@ Adobe Commerceでは、5 つの値から成る式を `crons` 仕様（仕様）:
 
 次に例を示します。
 
-- `00 */3 * * *` 3 時間ごとに最初の分（午前 12 時、午前 3 時、午前 6 時）に実行
-- `20 */8 * * *` 8 時間ごとに分 20 に実行（午前 12 時 20 分、午前 8 時 20 分、午後 4 時 20 分）
-- `00 00 * * *` 1 日 1 回深夜に実行
-- `00 * * * 1` 週に 1 回、月曜日の深夜に実行します。
+- `00 */3 * * *` は 3 時間ごとに最初の分（午前 12 時、午前 3 時、午前 6 時）に実行されます
+- `20 */8 * * *` は 8 時間ごとに分 20 に実行されます（午前 12 時 20 分、午前 8 時 20 分、午後 4 時 20 分）。
+- `00 00 * * *` は 1 日 1 回深夜に実行されます
+- `00 * * * 1` は週に 1 回、月曜日の深夜に実行されます。
 
 >[!NOTE]
 >
->この `crons` で指定された時間 `.magento.app.yaml` ファイルは、データベースのストア設定値で指定されたタイムゾーンではなく、サーバーのタイムゾーンに基づいています。
+>`.magento.app.yaml` ファイルで指定される `crons` 時は、データベースのストア設定値で指定されたタイムゾーンではなく、サーバーのタイムゾーンに基づきます。
 
 スケジュールを決定する際は、タスクの完了に要する時間を考慮します。 例えば、3 時間ごとにジョブを実行し、タスクが完了するまでに 40 分かかる場合は、スケジュールされたタイミングの変更を検討できます。
 
 ### コマンド
 
-この `cmd` 実行するコマンドまたはカスタム スクリプトを指定します。 コマンドスクリプトの形式には、次のものが含まれます。
+`cmd` は、実行するコマンドまたはカスタムスクリプトを指定します。 コマンドスクリプトの形式には、次のものが含まれます。
 
 ```text
 <path-to-php-binary> <project-dir>/<script-command>
@@ -114,23 +114,23 @@ crons:
     cmd: "/usr/bin/php /app/abc123edf890/bin/magento export:start catalog_category_product"
 ```
 
-この例では、 `<path-to-php-binary>` 等しい `/usr/bin/php`. インストールディレクトリ（プロジェクト ID が含まれています） `/app/abc123edf890/bin/magento`。スクリプトのアクションはです。 `export:start catalog_category_product`.
+この例では、`<path-to-php-binary>` は `/usr/bin/php` です。 インストールディレクトリ（プロジェクト ID を含む）は `/app/abc123edf890/bin/magento`、スクリプトアクションは `export:start catalog_category_product` です。
 
 ### プロジェクトへのカスタム cron ジョブの追加
 
-クラウドインフラストラクチャプラットフォーム上のAdobe Commerceでは、のカスタマイズを以下に追加できます `crons` の節 [`.magento.app.yaml`](../application/configure-app-yaml.md) ファイル。
+クラウドインフラストラクチャプラットフォーム上のAdobe Commerceでは、[`.magento.app.yaml`](../application/configure-app-yaml.md) ファイルの `crons` セクションにカスタマイズを追加できます。
 
 >[!NOTE]
 >
->スターター環境および Pro の場合 `integration` 環境では、最小間隔は 5 分に 1 回です。 ステージング環境および実稼動環境の場合、最小間隔は 1 分あたり 1 回です。 デフォルトの最小間隔よりも頻繁な間隔を設定することはできません。
+>スターター環境および Pro `integration` 環境の場合、最小間隔は 5 分に 1 回です。 ステージング環境および実稼動環境の場合、最小間隔は 1 分あたり 1 回です。 デフォルトの最小間隔よりも頻繁な間隔を設定することはできません。
 
-Adobe Commerce Pro プロジェクトでは、 [オートクロン機能](#set-up-cron-jobs) を使用してステージング環境と実稼動環境にカスタム cron ジョブを追加するには、まずプロジェクトで有効にする必要があります `.magento.app.yaml` ファイル。 この機能が有効になっていない場合、 [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) をクリックして自動クローンを有効にします。
+Adobe Commerce Pro プロジェクトでは、`.magento.app.yaml` ファイルを使用してステージング環境と実稼動環境にカスタム cron ジョブを追加する前に、プロジェクトで [ 自動クローン機能 ](#set-up-cron-jobs) を有効にする必要があります。 この機能が有効になっていない場合は、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) して自動クローンを有効にします。
 
-**カスタム cron ジョブの追加手順**:
+**カスタム cron ジョブを追加するには**
 
-1. ローカル開発環境で、を編集します `.magento.app.yaml` Adobe Commerceのファイル `/app` ディレクトリ。
+1. ローカル開発環境で、Adobe Commerce `/app` ディレクトリの `.magento.app.yaml` ファイルを編集します。
 
-1. が含まれる `crons` セクションでは、次の形式を使用してカスタマイズを追加します。
+1. `crons` セクションで、次の形式を使用してカスタマイズを追加します。
 
    ```yaml
    crons:
@@ -142,7 +142,7 @@ Adobe Commerce Pro プロジェクトでは、 [オートクロン機能](#set-u
            cmd: "<schedule_command>"
    ```
 
-   次の例では、 `productcatalog` ジョブは、製品カタログを 8 時間ごとに、1 時間後 20 分後に書き出します。
+   次の例では、`productcatalog` ジョブによって、製品カタログが 8 時間ごとに、1 時間後に 20 分後に書き出されています。
 
    ```yaml
    crons:
@@ -162,13 +162,13 @@ Adobe Commerce Pro プロジェクトでは、 [オートクロン機能](#set-u
 
 ### cron ジョブの更新
 
-カスタマイズされたジョブを追加、削除、または更新するには、 `crons` の節 `.magento.app.yaml` ファイル。 次に、リモートでアップデートをテストします `integration` ステージング環境と実稼動環境に変更をプッシュする前の環境。
+カスタマイズされたジョブを追加、削除、または更新するには、`.magento.app.yaml` ファイルの `crons` セクションで設定を変更します。 次に、変更をステージング環境と実稼動環境にプッシュする前に、リモート `integration` 環境で更新をテストします。
 
 ## Cron ジョブの無効化
 
-パフォーマンスの問題を防ぐために、インデックスの再作成やキャッシュのクリーニングなどのメンテナンスタスクを完了する前に、cron ジョブを手動で無効にすることができます。 を使用できます `ece-tools` CLI コマンド `cron:disable` ：すべての cron ジョブを無効化し、アクティブな cron プロセスを停止します。
+パフォーマンスの問題を防ぐために、インデックスの再作成やキャッシュのクリーニングなどのメンテナンスタスクを完了する前に、cron ジョブを手動で無効にすることができます。 `ece-tools` CLI コマンド `cron:disable` を使用すると、すべての cron ジョブを無効化し、アクティブな cron プロセスを停止できます。
 
-**Cron ジョブを無効にするには**:
+**cron ジョブを無効にするには**:
 
 1. ローカルワークステーションで、をプロジェクトディレクトリに変更します。
 
@@ -192,12 +192,12 @@ Adobe Commerce Pro プロジェクトでは、 [オートクロン機能](#set-u
 
 ## cron ジョブのトラブルシューティング
 
-Adobeは、クラウドインフラストラクチャプラットフォーム上のAdobe Commerce上で cron 処理を最適化し、cron 関連の問題を修正するために、Adobe Commerce on cloud infrastructure パッケージを更新しました。 Cron 処理で問題が発生した場合は、プロジェクトで最新バージョンの `ece-tools` パッケージ。 参照： [ECE ツールの更新](../dev-tools/update-package.md).
+Adobeは、クラウドインフラストラクチャプラットフォーム上のAdobe Commerce上で cron 処理を最適化し、cron 関連の問題を修正するために、Adobe Commerce on cloud infrastructure パッケージを更新しました。 Cron 処理で問題が発生した場合は、プロジェクトで最新バージョンの `ece-tools` パッケージが使用されていることを確認します。 [ECE ツールの更新 ](../dev-tools/update-package.md) を参照してください。
 
-各環境のアプリケーションレベルのログファイルで、cron 処理情報を確認できます。 参照： [アプリケーションログ](../test/log-locations.md#application-logs).
+各環境のアプリケーションレベルのログファイルで、cron 処理情報を確認できます。 [ アプリケーションログ ](../test/log-locations.md#application-logs) を参照してください。
 
 cron 関連の問題のトラブルシューティングについては、次のAdobe Commerce サポート記事を参照してください。
 
-- [Cron タスクは他のグループからタスクをロック](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/cron-tasks-lock-tasks-from-other-groups.html)
+- [Cron タスクは他のグループからタスクをロックする ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/cron-tasks-lock-tasks-from-other-groups.html)
 
-- [クラウドでスタックした cron ジョブを手動でリセット](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/reset-stuck-magento-cron-jobs-manually-on-cloud.html)
+- [ クラウドでスタックした cron ジョブを手動でリセットする ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/reset-stuck-magento-cron-jobs-manually-on-cloud.html)

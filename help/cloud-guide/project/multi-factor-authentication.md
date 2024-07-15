@@ -19,40 +19,40 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->クラウドプロジェクトでは、MFA はデフォルトでは有効になっていません。 クラウドインフラストラクチャプロジェクト上のAdobe Commerceのアカウント所有者は、 [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) 有効にします。 MFA が有効な場合、プロジェクト環境に SSH でアクセスするには、すべてのユーザーがAdobe Commerce on cloud infrastructure アカウントで二要素認証（TFA）を有効にする必要があります。
+>クラウドプロジェクトでは、MFA はデフォルトでは有効になっていません。 Adobe Commerce on cloud infrastructure プロジェクトのアカウント所有者は、有効にするために [Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) する必要があります。 MFA が有効な場合、プロジェクト環境に SSH でアクセスするには、すべてのユーザーがAdobe Commerce on cloud infrastructure アカウントで二要素認証（TFA）を有効にする必要があります。
 
 ## SSH アクセス用の証明書
 
 MFA を使用すると、Adobe Cloud Certifier API で生成された短期間有効な SSH 証明書と OAUTH アクセストークンを交換できます。 ユーザーが管理者または投稿者のロール、有効な SSH キー、有効な TFA コードまたは API トークンを持っている場合、クラウドインフラストラクチャー上のAdobe Commerceはこれらの資格情報を使用して一時的な SSH 証明書を生成します。 証明書の有効期限は 1 時間に設定されていますが、現在のセッション中に自動更新されます。
 
-MFA を使用してプロジェクトにログインした後、 `magento-cloud` SSH 証明書を生成するための CLI:
+MFA を使用してプロジェクトにログインした後、ユーザーは `magento-cloud` CLI を使用して SSH 証明書を生成する必要があります。
 
 ```bash
 magento-cloud ssh-cert:load
 ```
 
-この `ssh-cert:load` コマンドは、SSH 証明書を生成して、ローカル ユーザーの SSH エージェントにインストールします。
+`ssh-cert:load` コマンドは、SSH 証明書を生成して、ローカル ユーザーの SSH エージェントにインストールします。
 
 ### ログイン時に証明書を自動生成
 
-への認証時に SSH 証明書を自動的に生成するように、ローカル環境を設定することができます `magento-cloud` CLI。
+`magento-cloud` CLI への認証時に SSH 証明書を自動的に生成するように、ローカル環境を設定することができます。
 
-**SSH 証明書の自動生成をに追加するには `magento-cloud` CLI 設定**:
+**SSH 証明書の自動生成を `magento-cloud` CLI 設定に追加するには**:
 
-1. ローカルワークステーションで、という名前のファイルを作成します。 `config.yaml` が含まれる `.magento-cloud` ホームディレクトリのフォルダー（存在しない場合）。
+1. ローカルワークステーションで、`config.yaml` という名前のファイルをホームディレクトリの `.magento-cloud` フォルダー（存在しない場合）に作成します。
 
    ```bash
    touch ~/.magento-cloud/config.yaml
    ```
 
-1. 次の設定をに追加します `config.yaml` ファイル。
+1. 次の設定を `config.yaml` ファイルに追加します。
 
    ```yaml
    api:
       auto_load_ssh_cert: true
    ```
 
-1. の使用 `magento-cloud` 再認証する CLI:
+1. `magento-cloud` CLI を使用して再度認証します。
 
    >ログアウト：
 
@@ -89,7 +89,7 @@ magento-cloud ssh-cert:load
 
 ## SSH と TFA を使用した環境への接続
 
-プロジェクトで MFA を有効にする場合、SSH を使用してリモート環境に接続するには、アカウントで TFA を有効にしておく必要があります。 参照： [TFA を有効にする](user-access.md#enable-tfa-for-cloud-accounts).
+プロジェクトで MFA を有効にする場合、SSH を使用してリモート環境に接続するには、アカウントで TFA を有効にしておく必要があります。 [TFA を有効にする ](user-access.md#enable-tfa-for-cloud-accounts) を参照してください。
 
 >[!BEGINSHADEBOX]
 
@@ -103,11 +103,11 @@ MFA 適用が有効なプロジェクトの場合、SSH アクセスには次の
 
 >[!ENDSHADEBOX]
 
-**SSH と TFA ユーザーアカウント資格情報を使用して接続するには**:
+**TFA ユーザーアカウント資格情報を使用して SSH を使用して接続するには**:
 
-1. へのログイン [アカウント](https://console.adobecommerce.com).
+1. [ アカウント ](https://console.adobecommerce.com) にログインします。
 
-1. ローカルワークステーションでは、を使用します。 `magento-cloud` SSH 証明書を生成するための CLI。
+1. ローカル・ワークステーションで、`magento-cloud` CLI を使用して SSH 証明書を生成します。
 
    ```bash
    magento-cloud ssh-cert:load
@@ -151,15 +151,15 @@ MFA 適用が有効なプロジェクトの場合、SSH アクセスには次の
 
 クラウドインフラストラクチャプロジェクト上のAdobe Commerceのソースコードを管理する場合は、SSH を使用してプロジェクトの Git リポジトリに対する認証を行います。 プロジェクトで MFA 適用が有効になっている場合は、Git リポジトリを使用してコマンドライン操作を実行する前に、SSH 証明書を生成する必要があります。
 
-**SSH と TFA ユーザーアカウント資格情報を使用して接続するには**:
+**TFA ユーザーアカウント資格情報を使用して SSH を使用して接続するには**:
 
-1. へのログイン [アカウント](https://console.adobecommerce.com) TFA を使用して認証します。
+1. [ アカウント ](https://console.adobecommerce.com) にログインし、TFA を使用して認証します。
 
    >[!NOTE]
    >
-   >アカウントで TFA が有効になっていない場合は、有効にする必要があります。 参照： [クラウドアカウントでの TFA の有効化](user-access.md#enable-tfa-for-cloud-accounts).
+   >アカウントで TFA が有効になっていない場合は、有効にする必要があります。 [ クラウドアカウントで TFA を有効にする ](user-access.md#enable-tfa-for-cloud-accounts) を参照してください。
 
-1. ローカルワークステーションでは、を使用します。 `magento-cloud` SSH 証明書を生成するための CLI。
+1. ローカル・ワークステーションで、`magento-cloud` CLI を使用して SSH 証明書を生成します。
 
    ```bash
    magento-cloud ssh-cert:load
@@ -208,7 +208,7 @@ API トークンによる認証には、引き続き SSH 証明書の生成が�
 
 >[!ENDSHADEBOX]
 
-**SSH と API トークン資格情報を使用して接続するには：**:
+**SSH を使用して API トークン資格情報で接続するには**:
 
 1. API キー認証を使用して Cloud プロジェクトにログインします。
 
@@ -232,9 +232,9 @@ API トークンの保存には 2 つのオプションがあります。
 
 >[!NOTE]
 >
->API トークンが格納されている場合、 `magento-cloud` CLI は自動的に認証を行うため、 `magento-cloud login` コマンド。
+>API トークンが格納されている場合は、`magento-cloud` CLI が自動的に認証され、`magento-cloud login` コマンドを実行する必要はありません。
 
-**オプション 1**:API トークンを格納する環境変数を作成します
+**オプション 1**:API トークンを格納する環境変数を作成する
 
 bash_profile へのトークンの書き込み
 
@@ -242,15 +242,15 @@ bash_profile へのトークンの書き込み
 echo "export MAGENTO_CLOUD_CLI_TOKEN=<your api token>" >> ~/.bash_profile
 ```
 
-**オプション 2**：トークンをに追加します `config.yaml` ファイル
+**オプション 2**:`config.yaml` ファイルへのトークンの追加
 
-1. ローカルワークステーションで、という名前のファイルを作成します。 `config.yaml` が含まれる `.magento-cloud` ホームディレクトリのフォルダー（存在しない場合）。
+1. ローカルワークステーションで、`config.yaml` という名前のファイルをホームディレクトリの `.magento-cloud` フォルダー（存在しない場合）に作成します。
 
    ```bash
    touch ~/.magento-cloud/config.yaml
    ```
 
-1. 次の設定をに追加します `config.yaml` ファイル。
+1. 次の設定を `config.yaml` ファイルに追加します。
 
    ```yaml
    api:
@@ -267,7 +267,7 @@ ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud "tail -n 10 
 
 ## トラブルシューティング
 
-次の情報を使用して、次のような認証エラーが原因で発生した SSH 接続要求のエラーを解決します `access requires MFA` または `permission denied`.
+次の情報を使用して、`access requires MFA` や `permission denied` などの認証エラーが原因で発生した SSH 接続要求エラーを解決します。
 
 ### 要求は有効な証明書を提供していません
 
@@ -284,23 +284,23 @@ authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--m
 - アカウント TFA 設定の検証
 - 再度認証し、証明書を再読み込みします
 
-**TFA の設定と認証を検証するには**:
+**TFA 設定と認証を確認するには**:
 
-1. へのログイン [アカウント](https://console.adobecommerce.com).
+1. [ アカウント ](https://console.adobecommerce.com) にログインします。
 
-1. 右上のアカウントメニューで、 **[!UICONTROL My Profile]**.
+1. 右上のアカウントメニューで、「**[!UICONTROL My Profile]**」をクリックします。
 
-1. 日 _マイプロファイル_ ページで、 **[!UICONTROL Security]** タブ。
+1. _マイプロファイル_ ページで、「**[!UICONTROL Security]**」タブをクリックします。
 
    TFA が有効になっている場合は、TFA の設定を管理するためのオプションが [ セキュリティ ] セクションに表示されます。
 
-1. TFA が設定されていない場合は、 **[!UICONTROL Set up application]** そして、指示に従って有効にします。 参照： [TFA を有効にする](user-access.md#enable-tfa-for-cloud-accounts).
+1. TFA が設定されていない場合は、**[!UICONTROL Set up application]** をクリックし、指示に従って有効にします。 [TFA を有効にする ](user-access.md#enable-tfa-for-cloud-accounts) を参照してください。
 
 1. TFA が設定されている場合は、認証を再試行します。
 
-**SSH 証明書の認証と再読み込みを行うには**:
+**SSH 証明書を認証して再読み込みするには**:
 
-1. の使用 `magento-cloud` 再認証する CLI:
+1. `magento-cloud` CLI を使用して再度認証します。
 
    ```bash
    magento-cloud logout
@@ -318,14 +318,14 @@ authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--m
 
 ### 権限が拒否されました
 
-SSH キーがないか無効な場合、SSH 接続リクエストはを返します `Permission denied (publickey)` エラー。
+SSH キーがないか無効な場合、SSH 接続リクエストは `Permission denied (publickey)` エラーを返します。
 
 ```terminal
 Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully authenticated, but could not connect to service oh2wi6klp5ytk-mc-35985-integration-nnulm4a--mymagento (reason: service doesn't exist or you do not have access to it)
 oh2wi6klp5ytk-mc-35985-integration-nnulm4a--mymagento@ssh.eu-3.magento.cloud: Permission denied (publickey).
 ```
 
-この問題を修正するには、現在のセッションに SSH キーを追加するか、SSH 設定ファイルを更新して SSH キーを自動的に読み込みます。 参照： [SSH 公開鍵を追加](../development/secure-connections.md#add-an-ssh-public-key-to-your-account).
+この問題を修正するには、現在のセッションに SSH キーを追加するか、SSH 設定ファイルを更新して SSH キーを自動的に読み込みます。 [SSH 公開鍵の追加 ](../development/secure-connections.md#add-an-ssh-public-key-to-your-account) を参照してください。
 
 ### MFA のないプロジェクトにアクセスできません
 
@@ -341,17 +341,17 @@ ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud
 abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud: Permission denied (publickey).
 ```
 
-SSH 証明書の生成中、 `magento-cloud` CLI は、追加の SSH キーをローカル環境に追加します。 ローカルの SSH 設定にプロジェクトアクセス用の SSH キーが含まれていない場合、このキーがデフォルトで使用されます。
+SSH 証明書の生成中に、`magento-cloud` CLI は追加の SSH キーをローカル環境に追加します。 ローカルの SSH 設定にプロジェクトアクセス用の SSH キーが含まれていない場合、このキーがデフォルトで使用されます。
 
-**SSH キーをローカル設定に追加するには、次の手順を実行します**:
+**SSH キーをローカル設定に追加するには**:
 
-1. を作成 `config` ファイル（存在しない場合）。
+1. `config` ファイルが存在しない場合は作成します。
 
    ```bash
    touch ~/.ssh/config
    ```
 
-1. を追加 `IdentityFile` 設定。
+1. `IdentityFile` 設定を追加します。
 
    ```yaml
    Host *
@@ -360,4 +360,4 @@ SSH 証明書の生成中、 `magento-cloud` CLI は、追加の SSH キーを�
 
 >[!NOTE]
 >
->複数の SSH キーを追加することで、複数の SSH キーを指定できます `IdentityFile` エントリを設定に追加します。
+>設定に複数の `IdentityFile` エントリを追加することで、複数の SSH キーを指定できます。

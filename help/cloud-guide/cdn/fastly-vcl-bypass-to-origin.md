@@ -24,21 +24,21 @@ ht-degree: 0%
 
 {{$include /help/_includes/vcl-snippet-prerequisites.md}}
 
-**IP アドレスまたは URL に基づいて Fastly キャッシュをバイパスするには：**:
+**IP アドレスまたは URL に基づいて Fastly キャッシュをバイパスするには**:
 
 {{admin-login-step}}
 
-1. クリック **ストア** > 設定 > **設定** > **詳細** > **システム**.
+1. **ストア**/設定/**設定**/**詳細**/**システム** をクリックします。
 
-1. を展開 **フルページキャッシュ** > **Fastly 設定** > **カスタム VCL スニペット**.
+1. **フルページキャッシュ**/**Fastly 設定**/**カスタム VCL スニペット** の順に展開します。
 
-1. クリック **カスタムスニペットの作成**.
+1. **カスタムスニペットを作成** をクリックします。
 
 1. VCL スニペットの値を追加します。
 
    - **名前** — `bypass_fastly`
 
-   - **タイプ** — `recv`
+   - **種類** — `recv`
 
    - **優先度** — `5`
 
@@ -58,13 +58,13 @@ ht-degree: 0%
      if (req.url ~ "/media/feeds/GoogleShoppingHiVisNew.xml") {  return (pass);}
      ```
 
-     URL を完全に一致させるには、 `==` の代わりにの演算子 `~` 演算子。 を参照してください。 [Fastly VCL 参照] を参照してください。
+     URL が完全に一致する場合は、`~` 演算子の代わりに `==` 演算子を使用します。 詳しくは、[Fastly VCL リファレンス ] を参照してください。
 
-1. クリック **作成**.
+1. **作成** をクリックします。
 
-   ![Fastly バイパス VCL スニペットの作成](/help/assets/cdn/fastly-create-bypass-snippet.png)
+   ![Fastly バイパス VCL スニペットの作成 ](/help/assets/cdn/fastly-create-bypass-snippet.png)
 
-1. ページの再読み込み後、 **Fastly への VCL のアップロード** が含まれる *Fastly 設定* セクション。
+1. ページのリロード後、「**Fastly 設定 *セクションの**Fastly に VCL をアップロード* をクリックします。
 
 1. アップロードが完了したら、ページ上部の通知に従ってキャッシュを更新します。
 

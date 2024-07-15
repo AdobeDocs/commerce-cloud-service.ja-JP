@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## キャッシュの設定
 
-でキャッシュルールを設定して、アプリケーションのキャッシュを有効にします。 `.magento/routes.yaml` ファイルの内容は次のとおりです。
+`.magento/routes.yaml` ファイルにキャッシュルールを設定して、アプリケーションのキャッシュを次のように有効にします。
 
 ```yaml
 http://{default}/:
@@ -61,22 +61,22 @@ http://{default}/path/more/:
 - `http://{default}/path/more/`
 - `http://{default}/path/more/etc/`
 
-次のルートがあります **ではない** キャッシュ：
+また、次のルートは **キャッシュされません**。
 
 - `http://{default}/path/`
 - `http://{default}/path/etc/`
 
 >[!NOTE]
 >
->ルートの正規表現は次のとおりです **ではない** サポート。
+>ルートの正規表現はサポートされて **ません**。
 
 ## キャッシュ時間
 
-キャッシュ時間は、 `Cache-Control` 応答ヘッダー値。 ない場合 `Cache-Control` ヘッダーが応答にある場合、 `default_ttl` キーが使用されます。
+キャッシュ時間は、`Cache-Control` 応答ヘッダー値によって決まります。 応答に `Cache-Control` ヘッダーがない場合は、`default_ttl` キーが使用されます。
 
 ## キャッシュキー
 
-レスポンスをキャッシュする方法を決定するために、Adobe Commerceは、いくつかの要因に依存するキャッシュキーを作成し、そのキーに関連付けられたレスポンスを保存します。 リクエストに同じキャッシュキーが含まれる場合、応答は再利用されます。 目的は HTTP に似ています [`Vary` ヘッダー](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44).
+レスポンスをキャッシュする方法を決定するために、Adobe Commerceは、いくつかの要因に依存するキャッシュキーを作成し、そのキーに関連付けられたレスポンスを保存します。 リクエストに同じキャッシュキーが含まれる場合、応答は再利用されます。 その目的は HTTP [`Vary` ヘッダー ](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44) に似ています。
 
 パラメーター `headers` および `cookies` キーを使用すると、このキャッシュキーを変更できます。
 
@@ -93,13 +93,13 @@ cache:
 
 ### `enabled`
 
-に設定されている場合 `true`、このルートのキャッシュを有効にします。 に設定されている場合 `false`、このルートのキャッシュを無効にします。
+`true` に設定した場合は、このルートのキャッシュを有効にします。 `false` に設定した場合は、このルートのキャッシュを無効にします。
 
 ### `headers`
 
 キャッシュキーが依存する必要がある値を定義します。
 
-例えば、 `headers` 重要なのは次のとおりです。
+例えば、`headers` のキーが次のような場合：
 
 ```yaml
 cache:
@@ -107,11 +107,11 @@ cache:
     headers: ["Accept"]
 ```
 
-次に、Adobe Commerceは、の値ごとに異なる応答をキャッシュします `Accept` HTTP ヘッダー。
+次に、Adobe Commerceは、`Accept` HTTP ヘッダーの値ごとに異なる応答をキャッシュします。
 
 ### `cookies`
 
-この `cookies` キーは、キャッシュキーが依存する必要がある値を定義します。
+`cookies` キーは、キャッシュキーが依存する必要がある値を定義します。
 
 例：
 
@@ -121,19 +121,19 @@ cache:
     cookies: ["value"]
 ```
 
-キャッシュキーは、の値によって異なります `value` リクエスト内の cookie。
+キャッシュキーは、リクエストの `value` cookie の値によって異なります。
 
-次の場合は、特殊なケースがあります。 `cookies` キーに含まれる `["*"]` の値。 この値は、cookie を持つリクエストによってキャッシュがバイパスされることを意味します。 これがデフォルト値です。
+`cookies` キーの値が `["*"]` の場合は、特殊なケースが存在します。 この値は、cookie を持つリクエストによってキャッシュがバイパスされることを意味します。 これがデフォルト値です。
 
 >[!NOTE]
 >
->cookie 名にワイルドカードを使用することはできません。 正確な cookie 名を使用するか、アスタリスク（`*`）に設定します。 例： `SESS*` または `~SESS` 現在 **ではない** 有効な値。
+>cookie 名にワイルドカードを使用することはできません。 正確な cookie 名を使用するか、アスタリスク（`*`）ですべての cookie に一致します。 例えば、`SESS*` や `~SESS` は現在 **無効** 値です。
 
 Cookie には次の制限があります。
 
-- 最大個を設定できます **50 の cookie** システム内の それ以外の場合、アプリケーションは `Unable to send the cookie. Maximum number of cookies would be exceeded` 例外。
-- Cookie の最大サイズはです **4096 バイト**. それ以外の場合、アプリケーションは `Unable to send the cookie. Size of '%name' is %size bytes` 例外。
+- システムでは、最大 **50 個の cookie** を設定できます。 それ以外の場合、アプリケーションは `Unable to send the cookie. Maximum number of cookies would be exceeded` 例外をスローします。
+- Cookie の最大サイズは **4096 バイト** です。 それ以外の場合、アプリケーションは `Unable to send the cookie. Size of '%name' is %size bytes` 例外をスローします。
 
 ### `default_ttl`
 
-応答にがありません `Cache-Control` ヘッダー、 `default_ttl` キーを使用して、キャッシュ時間を秒単位で定義します。 デフォルト値はです `0`。これは、何もキャッシュされないことを意味します。
+応答に `Cache-Control` ヘッダーがない場合、`default_ttl` キーを使用してキャッシュ時間（秒単位）を定義します。 デフォルト値は `0` です。これは、何もキャッシュされないことを意味します。

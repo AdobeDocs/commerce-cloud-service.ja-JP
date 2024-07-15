@@ -13,33 +13,33 @@ ht-degree: 0%
 
 # 後方互換性のない変更
 
-後方互換性のない変更を行うには、の最新リリースにアップグレードする際に、既存のクラウドプロジェクトのクラウド設定とプロセスを調整する必要がある場合があります `ece-tools` Commerce パッケージ用のパッケージまたはその他の Cloud Tools Suite。
+下位互換性のない変更を行うには、Cloud パッケージの最新リリースまたはCommerce パッケージ用の他の Cloud Tools Suite にアップグレードする際に、既存の `ece-tools` ラウドプロジェクトのクラウド設定とプロセスを調整する必要がある場合があります。
 
-## 変更先 `ece-tools` package
+## パッケージ `ece-tools` 変更
 
-一部の機能は以前にに含まれています `ece-tools` パッケージは、別個のパッケージで提供されるようになりました。 これらのパッケージは、 `ece-tools`:ece-tools をインストールまたは更新すると、自動的にインストールおよび更新されます。
+以前 `ece-tools` パッケージに含まれていた機能の一部は、現在は別のパッケージで提供されています。 これらのパッケージは、ece-tools をインストールまたは更新すると自動的にインストールおよび更新される、`ece-tools` 用の composer の依存関係です。
 
-新しいアーキテクチャは、インストールや更新のプロセスには影響を与えません。 ただし、クラウドインフラストラクチャプロジェクトでAdobe Commerceを使用する場合、コマンドの構文とプロセスをいくつか変更する必要が生じる場合があります。 詳しくは、次の後方互換性のない変更情報と [Cloud Tools Suite リリースノート](cloud-tools-suite.md).
+新しいアーキテクチャは、インストールや更新のプロセスには影響を与えません。 ただし、クラウドインフラストラクチャプロジェクトでAdobe Commerceを使用する場合、コマンドの構文とプロセスをいくつか変更する必要が生じる場合があります。 詳しくは、次の後方互換性のない変更情報と [Cloud Tools Suite リリースノート ](cloud-tools-suite.md) を参照してください。
 
 ### サービス バージョン要件の変更
 
-を使用する Cloud プロジェクトの最小 PHP バージョン要件を 7.0.x から 7.1.x に変更しました。 `ece-tools` v2002.1.0 以降。 環境設定で PHP 7.0 が指定されている場合は、 [php 設定](../application/php-settings.md) が含まれる `.magento.app.yaml` ファイル。
+`ece-tools` v2002.1.0 以降を使用するクラウドプロジェクトの場合、PHP の最小バージョン要件を 7.0.x から 7.1.x に変更しました。 環境設定で PHP 7.0 を指定している場合は、`.magento.app.yaml` ファイルの [php 設定 ](../application/php-settings.md) を更新します。
 
 >[!WARNING]
 >
->PHP のバージョン要件が変更されたため、 `ece-tools` 2002.1.0 では、Adobe Commerce 2.1.15 以降を実行しているクラウドインフラストラクチャプロジェクトのAdobe Commerceのみをサポートしています。 以前のリリースをプロジェクトで使用している場合は、次の操作を行う必要があります [アップグレード](../development/commerce-version.md) をに更新する前に `ece-tools` 2002.1.0。
+>PHP のバージョン要件が変わったので、`ece-tools` 2002.1.0 では、Adobe Commerce 2.1.15 以降を実行しているクラウドインフラストラクチャプロジェクトでのAdobe Commerceのみをサポートしています。 プロジェクトで以前のリリースを使用している場合、`ece-tools` 2002.1.0 に更新する前に [ アップグレード ](../development/commerce-version.md) する必要があります。
 
 ### 環境設定の変更
 
-次の表は、で削除または非推奨になった、環境変数およびその他の環境設定ファイルの情報を示しています `ece-tools` v2002.1.0。
+次の表は、`ece-tools` v2002.1.0 で削除または非推奨になった環境変数およびその他の環境設定ファイルの情報を示しています。
 
 | 項目 | 置き換え |
 | -------- | ----------- |
 | `SCD_EXCLUDE_THEMES` 変数 | [`SCD_MATRIX`](../environment/variables-build.md#scd_matrix) |
 | `STATIC_CONTENT_THREADS` 変数 | [`SCD_THREADS`](../environment/variables-build.md#scd_threads) |
 | `DO_DEPLOY_STATIC_CONTENT` 変数 | [`SKIP_SCD`](../environment/variables-build.md#skip_scd) |
-| `STATIC_CONTENT_SYMLINK` 変数 | なし。 現在は、ビルドにより、常に静的コンテンツディレクトリへのシンボリックリンクが作成されます `pub/static`. |
-| `build_options.ini` ファイル | の使用 [`.magento.env.yaml`](../application/configure-app-yaml.md) すべての環境でビルドおよびデプロイアクションを管理するための環境変数を設定するファイル。<p>を含むクラウド環境を作成する場合 `build_options.ini` ファイルの場合、ビルドは失敗します。 |
+| `STATIC_CONTENT_SYMLINK` 変数 | なし。 現在は、ビルドでは常に、静的コンテンツディレクトリ `pub/static` へのシンボリックリンクが作成されます。 |
+| `build_options.ini` ファイル | [`.magento.env.yaml`](../application/configure-app-yaml.md) ファイルを使用して環境変数を設定し、すべての環境でビルドおよびデプロイアクションを管理します。<p>`build_options.ini` ファイルを含むクラウド環境をビルドすると、ビルドに失敗します。 |
 
 ### CLI コマンドの変更点
 
@@ -54,13 +54,13 @@ ht-degree: 0%
 | `vendor/bin/ece-tools docker:build` | `vendor/bin/ece-docker build:compose` |
 | `vendor/bin/ece-tools docker:config:convert` | `vendor/bin/ece-docker  image:generate:php` |
 
-以前の ECE-Tools リリースでは、 `m2-ece-build` および `m2-ece-deploy` でデプロイメントフックを設定するコマンド `.magento.app.yaml` ファイル。 を v2002.1.0 に更新する場合は、 `hooks` での設定 `.magento.app.yaml` 古いコマンド用のファイルを作成し、必要に応じて置き換えます。
+以前の ECE ツールリリースでは、`m2-ece-build` および `m2-ece-deploy` コマンドを使用して、`.magento.app.yaml` ファイルにデプロイメントフックを設定できました。 v2002.1.0 に更新する場合は、`.magento.app.yaml` ファイルの `hooks` 設定で古いコマンドを確認し、必要に応じて置き換えます。
 
 ## クラウドパッチの変更
 
-- **ダウンロードしたパッチの削除** – その `magento/magento-cloud-patches` パッケージバンドルには、から使用可能なすべてのパッチが含まれています [ソフトウェアのダウンロード](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/commerce.html) ページ化し、クラウドにデプロイするときに自動的に適用されます。 ECE-Tools 2002.1.0 以降にアップグレードした後にパッチの競合が発生しないようにするには、ダウンロードしてプロジェクトに追加したAdobe提供のパッチを手動で削除します。
+- **ダウンロードしたパッチを削除**-`magento/magento-cloud-patches` パッケージには、「[ ソフトウェアのダウンロード ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/commerce.html)」ページから使用可能なすべてのパッチがバンドルされており、クラウドへのデプロイ時に自動的に適用されます。 ECE-Tools 2002.1.0 以降にアップグレードした後にパッチの競合が発生しないようにするには、ダウンロードしてプロジェクトに追加したAdobe提供のパッチを手動で削除します。
 
-- **パッチ適用コマンドの更新** – パッチを適用するためのコマンドを `vendor/bin/ece-tools` ディレクトリ `vendor/bin/ece-patches` ディレクトリ。 このコマンドを使用してパッチを手動で適用する場合は、新しいパスを使用します。
+- **apply patches コマンドの更新** - パッチを適用するためのコマンドを `vendor/bin/ece-tools` ディレクトリから `vendor/bin/ece-patches` ディレクトリに移動しました。 このコマンドを使用してパッチを手動で適用する場合は、新しいパスを使用します。
 
   > パッチを手動で適用
 
@@ -70,40 +70,40 @@ ht-degree: 0%
 
 ## Cloud Docker の変更点
 
-- **PHP の最小バージョン要件は PHP 7.1 になりました**- Cloud Docker for Commerce ホストで以前のバージョンが実行されている場合は、PHP v7.1 以降にアップグレードしてください。
+- **PHP の最小バージョンは PHP 7.1 です**- Cloud Docker for Commerceで以前のバージョンが使用されている場合は、PHP v7.1 以降にアップグレードしてください。
 
-- **Cloud Docker for Commerce コマンドの変更点**-
+- **Cloud Docker for Commerceのコマンドの変更点**-
 
-   - **Docker ビルド操作用の Cloud Docker for Commerce コマンドの更新** – から Cloud Docker for Commerce コマンドを移動しました `vendor/bin/ece-tools` ディレクトリ `vendor/bin/ece-docker` ディレクトリ。 新しいパスを使用するようにスクリプトとコマンドを更新します。
+   - **Docker ビルド操作用の Cloud Docker for Commerce コマンドの更新**- Cloud Docker for Commerce コマンドを `vendor/bin/ece-tools` ディレクトリから `vendor/bin/ece-docker` ディレクトリに移動しました。 新しいパスを使用するようにスクリプトとコマンドを更新します。
 
-     へのアップグレード後 `ece-tools` 2002.1.0 で、次のコマンドを使用して使用可能な状態を表示します `ece-docker` コマンド。
+     `ece-tools` 2002.1.0 にアップグレードした後、次のコマンドを使用して、使用可能な `ece-docker` コマンドを表示します。
 
      ```bash
      php ./vendor/bin/ece-docker list
      ```
 
-   - **Cloud docker-compose コマンドの更新** – コマンド ファイルのパスの名前を `./bin/docker` 対象： `./bin/magento-docker`. 新しいパスを使用するようにスクリプトとコマンドを更新します。
+   - **Cloud docker-compose コマンドの更新**- コマンドファイルのパスを `./bin/docker` から `./bin/magento-docker` に変更しました。 新しいパスを使用するようにスクリプトとコマンドを更新します。
 
-   - **Cron コンテナがデフォルトの Docker 設定に含まれなくなりました** – 今すぐ、を追加する必要があります `--with-cron` のオプション `ece-docker build:compose` Docker 環境設定に Cron コンテナを含めるコマンド。 参照： [Cron ジョブの管理](https://developer.adobe.com/commerce/cloud-tools/docker/configure/manage-cron-jobs/) が含まれる _Cloud Docker for Commerce_ ガイド。
+   - **Cron コンテナはデフォルトの Docker 設定に含まれなくなりました** – ここでは、`ece-docker build:compose` コマンドに `--with-cron` オプションを追加して、Docker 環境設定に Cron コンテナを含める必要があります。 [Cloud Docker for Commerce](https://developer.adobe.com/commerce/cloud-tools/docker/configure/manage-cron-jobs/) ガイドの _Cron ジョブの管理_ を参照してください。
 
      以前に cron ジョブでコンテナを生成したスクリプトは、cron コンテナを使用しなくなりました。
 
-   - **一時コンテナの使用** – 以前のバージョンでは、によって作成されたコンテナ `bin/magento-docker` コマンド操作は削除されなかったので、他の操作に使用できます。 さて、 `magento-docker` コマンドは、コマンドの完了後に作成したコンテナをすべて削除します。
+   - **一時コンテナの使用** – 以前のバージョンでは、`bin/magento-docker` のコマンド操作で作成されたコンテナは削除されなかったので、他の操作に使用できます。 `magento-docker` のコマンドは、コマンドが完了した後に作成したコンテナをすべて削除するようになりました。
 
-     Docker-compose 操作で作成されたコンテナを保持する場合は、を使用します `docker-compose run` の代わりにをコマンドします。 `bin/magento-docker` コマンド。
+     Docker-compose 操作で作成されたコンテナを保持する場合は、`bin/magento-docker` コマンドではなく `docker-compose run` コマンドを使用します。
 
-   - **デプロイ後のフックの実行** – その `cloud-deploy` コマンドは、デプロイ後のフックを実行しなくなりました。 新しいを使用 `cloud-post-deploy` デプロイ後にデプロイ後のフックを実行するコマンド。 スクリプトを更新して、コマンドを追加し、デプロイ後のフックを実行します。
+   - **デプロイ後フックの実行**- `cloud-deploy` コマンドは、デプロイ後フックを実行しなくなりました。 新しい `cloud-post-deploy` コマンドを使用して、デプロイ後にデプロイ後のフックを実行します。 スクリプトを更新して、コマンドを追加し、デプロイ後のフックを実行します。
 
      ```shell
      bin/magento-docker ece-deploy
      bin/magento-docker ece-post-deploy
      ```
 
-     または、次を使用する場合： `docker-compose` コマンドを直接実行する `docker-compose run deploy cloud-post-deploy` deploy コマンドの後のコマンドです。
+     または、`docker-compose` コマンドを直接使用する場合は、deploy コマンドの後に `docker-compose run deploy cloud-post-deploy` コマンドを実行します。
 
-- **データベースの更新** – データベース コンテナは次に格納されています： `magento-db` 永続的な Docker ボリューム。 Docker 環境を更新すると、データベースは自動的には削除されなくなります。 必要に応じて、次のいずれかのコマンドを使用して手動で削除します。
+- **データベースの更新** - データベースコンテナは、`magento-db` の永続 Docker ボリュームに保存されるようになりました。 Docker 環境を更新すると、データベースは自動的には削除されなくなります。 必要に応じて、次のいずれかのコマンドを使用して手動で削除します。
 
-   - を削除 `magento-db` コンテナ：
+   - `magento-db` コンテナを削除します。
 
      ```bash
      docker volume rm magento-db
@@ -115,4 +115,4 @@ ht-degree: 0%
      docker-compose down -v
      ```
 
-- **アーカイブ ファイルとバックアップ ファイルのファイル同期設定を上書きする**-Docker-sync または mutagen:SQL、GZ、ZIP および BZ2 を使用する場合、拡張子が次のアーカイブおよびバックアップファイルは同期されなくなります。 これらのファイルタイプのデフォルトのファイル同期を上書きするには、ファイル名を別の拡張子に変更します。 例： `synchronize-me.zip-backup`
+- **アーカイブおよびバックアップファイルのファイル同期設定の上書き**-Docker-sync または mutagen:SQL、GZ、ZIP、BZ2 を使用する場合、次の拡張子を持つアーカイブおよびバックアップファイルは同期されなくなります。 これらのファイルタイプのデフォルトのファイル同期を上書きするには、ファイル名を別の拡張子に変更します。 例：`synchronize-me.zip-backup`

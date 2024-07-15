@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # 複数の web サイトまたはストアを設定
 
-英語のストア、フランス語のストア、ドイツ語のストアなど、複数の web サイトやストアを持つようにAdobe Commerceを設定できます。 参照： [Web サイト、ストア、ストア表示について](best-practices.md#store-views).
+英語のストア、フランス語のストア、ドイツ語のストアなど、複数の web サイトやストアを持つようにAdobe Commerceを設定できます。 詳しくは [Web サイト、ストア、ストア表示について ](best-practices.md#store-views) を参照してください。
 
 >[!WARNING]
 >
@@ -36,7 +36,7 @@ https://store.com/second/
 
 >[!TIP]
 >
->ストアビューをサイトベース URL に追加する場合、複数のディレクトリを作成する必要はありません。 参照： [ベース URL にストアコードを追加します](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) が含まれる _設定ガイド_.
+>ストアビューをサイトベース URL に追加する場合、複数のディレクトリを作成する必要はありません。 _設定ガイド_ の [ ベース URL へのストアコードの追加 ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) を参照してください。
 
 ## ドメインの追加
 
@@ -46,30 +46,30 @@ https://store.com/second/
 
 - ステージングおよび実稼動用
 
-  Fastly に新しいドメインを追加するには、を参照してください。 [ドメインの管理](../cdn/fastly-custom-cache-configuration.md#manage-domains)または、サポートチケットを開いてサポートをリクエストします。 さらに、次の操作が必要です [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) 新しいドメインを要求してクラスターに追加します。
+  新しいドメインを Fastly に追加する、[ ドメインの管理 ](../cdn/fastly-custom-cache-configuration.md#manage-domains) を参照する、またはサポートチケットを開いてサポートをリクエストします。 また、クラスターに追加する新しいドメインをリクエストするには、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) する必要があります。
 
 - スターター実稼動用のみ
 
-  Fastly に新しいドメインを追加するには、を参照してください。 [ドメインの管理](../cdn/fastly-custom-cache-configuration.md#manage-domains)、または [Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) お問い合わせください。 また、新しいドメインをに追加する必要があります **ドメイン** タブ [!DNL Cloud Console]: `https://<zone>.magento.cloud/projects/<project-ID>/edit`
+  新しいドメインを Fastly に追加する方法については、[ ドメインの管理 ](../cdn/fastly-custom-cache-configuration.md#manage-domains) または [Adobe Commerce サポートチケットの送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) を参照してください。 さらに、次の手順で新しいドメインを **ドメイン** タブに追加する必要があり [!DNL Cloud Console] す。`https://<zone>.magento.cloud/projects/<project-ID>/edit`
 
 ## ローカルインストールの設定
 
-複数のストアを使用するようにローカル インストールを設定するには、を参照してください。 [複数の web サイトまたはストア][config-multiweb] が含まれる _設定ガイド_.
+複数のストアを使用するようにローカルインストールを設定するには、[ 設定ガイド ][config-multiweb] の _複数の web サイトまたはストア_ を参照してください。
 
 ローカルインストールを正常に作成およびテストして複数のストアを使用したら、統合環境の準備を行う必要があります。
 
-1. **ルートまたは場所の設定** – 受信 URL がAdobe Commerceでどのように処理されるかを指定する
+1. **ルートまたは場所を設定** – 受信 URL がAdobe Commerceでどのように処理されるかを指定します。
 
    - [個別のドメインのルート](#configure-routes-for-separate-domains)
    - [共有ドメインの場所](#configure-locations-for-shared-domains)
 
-1. **Web サイト、ストア、ストアビューの設定**—Adobe Commerce管理 UI を使用してを設定します
-1. **変数の変更** – の値を指定します。 `MAGE_RUN_TYPE` および `MAGE_RUN_CODE` の変数 `magento-vars.php` ファイル
-1. **環境のデプロイとテスト** – をデプロイしてテストします。 `integration` 分岐
+1. **Web サイト、ストア、ストア表示の設定** - Adobe Commerce管理 UI を使用して設定します
+1. **変数の変更** - `magento-vars.php` ファイルの `MAGE_RUN_TYPE` 変数と `MAGE_RUN_CODE` 変数の値を指定します
+1. **環境の導入とテスト**:`integration` ブランチの導入とテスト
 
 >[!TIP]
 >
->ローカル環境を使用して、複数の web サイトやストアを設定できます。 詳しくは、Cloud Docker の手順を参照してください [複数の web サイトまたはストアを設定](https://developer.adobe.com/commerce/cloud-tools/docker/configure/multiple-sites/).
+>ローカル環境を使用して、複数の web サイトやストアを設定できます。 詳しくは、Cloud Docker の手順 [ 複数の web サイトまたはストアの設定 ](https://developer.adobe.com/commerce/cloud-tools/docker/configure/multiple-sites/) を参照してください。
 
 ### Pro 環境の設定アップデート
 
@@ -77,13 +77,13 @@ https://store.com/second/
 
 ### 個別のドメインのルートの設定
 
-ルートは、受信 URL の処理方法を定義します。 一意のドメインを持つ複数のストアでは、 `routes.yaml` ファイル。 ルートを設定する方法は、サイトの動作方法によって異なります。
+ルートは、受信 URL の処理方法を定義します。 一意のドメインを持つ複数のストアでは、`routes.yaml` ファイルで各ドメインを定義する必要があります。 ルートを設定する方法は、サイトの動作方法によって異なります。
 
 **統合環境でルートを設定するには**:
 
-1. ローカルワークステーションで、を開きます `.magento/routes.yaml` ファイルをテキストエディターで開きます。
+1. ローカルワークステーションで、`.magento/routes.yaml` ファイルをテキストエディターで開きます。
 
-1. ドメインとサブドメインを定義します。 この `mymagento` アップストリームの値は、の名前プロパティと同じ `.magento.app.yaml` ファイル。
+1. ドメインとサブドメインを定義します。 `mymagento` のアップストリーム値は、`.magento.app.yaml` ファイルの name プロパティと同じ値です。
 
    ```yaml
    "http://{default}/":
@@ -95,17 +95,17 @@ https://store.com/second/
        upstream: "mymagento:http"
    ```
 
-1. 変更をに保存します。 `routes.yaml` ファイル。
+1. 変更内容を `routes.yaml` ファイルに保存します。
 
-1. 続行 [Web サイト、ストア、ストアビューの設定](#set-up-websites-stores-and-store-views).
+1. 続けて [web サイト、ストア、ストア表示の設定 ](#set-up-websites-stores-and-store-views) を行います。
 
 ### 共有ドメインの場所の設定
 
-routes 設定で URL の処理方法が定義されている場合、 `web` のプロパティ `.magento.app.yaml` ファイルは、アプリケーションを web に公開する方法を定義します。 Web _の場所_ 受信リクエストの精度を高めることができます。 例えば、ドメインがの場合 `store.com`、以下を使用できます `/first` （デフォルトサイト）と `/second` 1 つのドメインを共有する 2 つの異なるストアへのリクエスト。
+routes 設定で URL の処理方法を定義する場合、`.magento.app.yaml` ファイルの `web` プロパティで、アプリケーションが web に公開される方法を定義します。 Web _場所_ を使用すると、受信リクエストの精度を高めることができます。 例えば、ドメインが `store.com` の場合、ドメインを共有する 2 つの異なるストアへのリクエストには、`/first` （デフォルトサイト）と `/second` を使用できます。
 
-**新しい Web の場所を構成するには**:
+**新しい web サイトを設定するには**:
 
-1. ルートのエイリアス（`/`）に設定します。 この例では、エイリアスはです。 `&app` 3 行目。
+1. ルート（`/`）のエイリアスを作成します。 この例では、エイリアスは 3 行目の `&app` です。
 
    ```yaml
    web:
@@ -119,9 +119,9 @@ routes 設定で URL の処理方法が定義されている場合、 `web` の�
                ...
    ```
 
-1. Web サイトのパススルーを作成します（`/website`）を選択し、前の手順で取得したエイリアスを使用してルートを参照します。
+1. Web サイト（`/website`）のパススルーを作成し、前の手順のエイリアスを使用してルートを参照します。
 
-   エイリアスは `website` を使用して、ルートの場所から値にアクセスします。 この例では、web サイトです `passthru` は 21 行目です。
+   エイリアスを使用 `website` ると、ルートの場所から値にアクセスできます。 この例では、web サイト `passthru` は 21 行目にあります。
 
    ```yaml
    web:
@@ -148,9 +148,9 @@ routes 設定で URL の処理方法が定義されている場合、 `web` の�
              ...
    ```
 
-**別のディレクトリを使用して場所を構成するには**:
+**別のディレクトリを使用して場所を設定するには**:
 
-1. ルートのエイリアス（`/`）と、静的（`/static`）の場所。
+1. ルート（`/`）と静的（`/static`）の場所にエイリアスを作成します。
 
    ```yaml
    web:
@@ -166,9 +166,9 @@ routes 設定で URL の処理方法が定義されている場合、 `web` の�
                root: "pub/static"
    ```
 
-1. 以下に web サイトのサブディレクトリを作成します。 `pub` ディレクトリ： `pub/<website>`
+1. Web サイトのサブディレクトリを `pub` ディレクトリの下に作成します。`pub/<website>`
 
-1. をコピーします `pub/index.php` にファイルを送信 `pub/<website>` ディレクトリを更新し、 `bootstrap` パス （`/../../app/bootstrap.php`）に設定します。
+1. `pub/index.php` ファイルを `pub/<website>` ディレクトリにコピーし、`bootstrap` パス（`/../../app/bootstrap.php`）を更新します。
 
    ```
    try {
@@ -176,7 +176,7 @@ routes 設定で URL の処理方法が定義されている場合、 `web` の�
    } catch (\Exception $e) { 
    ```
 
-1. のパススルーの作成 `index.php` ファイル。
+1. `index.php` ファイルのパススルーを作成します。
 
    ```yaml
    web:
@@ -208,24 +208,24 @@ routes 設定で URL の処理方法が定義されている場合、 `web` の�
 
 1. 変更したファイルをコミットしてプッシュします。
 
-   - `pub/<website>/index.php` （このファイルの場所 `.gitignore`（プッシュには、力オプションが必要な場合があります）。
+   - `pub/<website>/index.php` （このファイルが `.gitignore` の場合、プッシュには強制オプションが必要な場合があります。）
    - `.magento.app.yaml`
 
 ### Web サイト、ストア、ストアビューの設定
 
-が含まれる _管理 UI_、Adobe Commerceを設定します **Web サイト**, **ストア**、および **ストアの表示**. 参照： [管理での複数の web サイト、ストア、ストア表示の設定](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) が含まれる _設定ガイド_.
+_管理 UI_ で、Adobe Commerce **Web サイト**、**ストア**、**ストアビュー** を設定します。 [ 設定ガイド _の「管理者での複数の web サイト、ストア、ストア表示の設定 ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/multi-sites/ms-admin.html) を参照してください_。
 
-ローカルインストールを設定する際には、管理者が web サイト、ストア、ストアビューと同じ名前とコードを使用することが重要です。 これらの値は、 `magento-vars.php` ファイル。
+ローカルインストールを設定する際には、管理者が web サイト、ストア、ストアビューと同じ名前とコードを使用することが重要です。 これらの値は、`magento-vars.php` ファイルを更新する際に必要になります。
 
 ### 変数の変更
 
-NGINX 仮想ホストを設定する代わりに、を渡します `MAGE_RUN_CODE` および `MAGE_RUN_TYPE` を使用した変数 `magento-vars.php` ファイルをプロジェクトのルートディレクトリに置きます。
+NGINX 仮想ホストを設定する代わりに、プロジェクトのルートディレクトリにある `magento-vars.php` ファイルを使用して、`MAGE_RUN_CODE` 変数と `MAGE_RUN_TYPE` 変数を渡します。
 
-**を使用して変数を渡すには： `magento-vars.php` ファイル**:
+**`magento-vars.php` ファイルを使用して変数を渡すには**:
 
-1. を開きます `magento-vars.php` ファイルをテキストエディターで開きます。
+1. `magento-vars.php` ファイルをテキストエディターで開きます。
 
-   この [default `magento-vars.php` ファイル](https://github.com/magento/magento-cloud/blob/master/magento-vars.php) 次のようになります。
+   [ デフォルトの `magento-vars.php` ファイル ](https://github.com/magento/magento-cloud/blob/master/magento-vars.php) は次のようになります。
 
    ```php
    <?php
@@ -244,7 +244,7 @@ NGINX 仮想ホストを設定する代わりに、を渡します `MAGE_RUN_COD
    }
    ```
 
-1. コメントを移動 `if` ブロックする _後_ この `function` ブロックし、コメントを終了しました。
+1. コメントされた `if` ブロックを、`function` ブロックの _後_ に移動して、コメントされなくなるようにします。
 
    ```php
    <?php
@@ -265,12 +265,12 @@ NGINX 仮想ホストを設定する代わりに、を渡します `MAGE_RUN_COD
    }
    ```
 
-1. で次の値を `if (isHttpHost("example.com"))` ブロック :
-   - `example.com` – のベース URL _web サイト_
-   - `default` – 固有のコードを _web サイト_ または _ストア表示_
-   - `store` – 次のいずれかの値を使用します。
-      - `website` – をロードする _web サイト_ 店頭で
-      - `store` – をロードする _ストア表示_ 店頭で
+1. `if (isHttpHost("example.com"))` ブロック内の次の値を
+   - `example.com` - _web サイトのベース URL_
+   - `default` - _web サイト_ または _ストアビューの一意のコード_
+   - `store` – 次のいずれかの値を持ちます：
+      - `website` - ストアフロントに _web サイト_ を読み込みます
+      - `store` - ストアフロントに _ストア表示_ をロードします
 
    一意のドメインを使用する複数のサイトの場合：
 
@@ -293,7 +293,7 @@ NGINX 仮想ホストを設定する代わりに、を渡します `MAGE_RUN_COD
    }
    ```
 
-   同じドメインを持つ複数のサイトの場合は、 _host_ および _URI_:
+   同じドメインを持つ複数のサイトの場合は、_host_ と _URI_ を確認する必要があります。
 
    ```php
    <?php
@@ -319,7 +319,7 @@ NGINX 仮想ホストを設定する代わりに、を渡します `MAGE_RUN_COD
    }
    ```
 
-1. 変更をに保存します。 `magento-vars.php` ファイル。
+1. 変更内容を `magento-vars.php` ファイルに保存します。
 
 ### 統合サーバーへのデプロイとテスト
 
@@ -335,19 +335,19 @@ NGINX 仮想ホストを設定する代わりに、を渡します `MAGE_RUN_COD
 
 1. デプロイメント後、Web ブラウザーでストア URL を開きます。
 
-   一意のドメインでは、次の形式を使用します。 `http://<magento-run-code>.<site-URL>`
+   一意のドメインでは、`http://<magento-run-code>.<site-URL>` の形式を使用します。
 
    例：`http://french.master-name-projectID.us.magentosite.cloud/`
 
-   共有ドメインでは、次の形式を使用します。 `http://<site-URL>/<magento-run-code>`
+   共有ドメインでは、`http://<site-URL>/<magento-run-code>` の形式を使用します。
 
    例：`http://master-name-projectID.us.magentosite.cloud/french/`
 
-1. サイトを徹底的にテストし、コードをに結合します `integration` 分岐してさらにデプロイします。
+1. サイトを徹底的にテストし、コードを `integration` ブランチに結合して、さらにデプロイメントします。
 
 ## ステージング環境および実稼動環境にデプロイ
 
-のデプロイメントプロセスに従います [ステージング環境および実稼動環境へのデプロイ](../deploy/staging-production.md). Starter 環境と Pro 環境の場合は、 [!DNL Cloud Console] 環境全体にコードをプッシュします。
+デプロイメントプロセス [ ステージング環境および実稼動環境へのデプロイ ](../deploy/staging-production.md) に従います。 スターター環境および Pro 環境の場合は、[!DNL Cloud Console] を使用して環境全体にコードをプッシュします。
 
 Adobeでは、実稼動環境にプッシュする前に、ステージング環境で完全にテストすることをお勧めします。 統合環境でコードを変更し、環境全体にデプロイするプロセスを再度開始します。
 

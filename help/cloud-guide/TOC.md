@@ -11,9 +11,9 @@ ht-degree: 7%
 ---
 
 
-# クラウドインフラストラクチャー上の Commerce {#user-guide}
+# クラウドインフラストラクチャー上のCommerce {#user-guide}
 
-+ [コマース](overview.md)
++ [Commerce](overview.md)
 + アーキテクチャ {#architecture}
    + [クラウドインフラストラクチャ](architecture/cloud-architecture.md)
    + [技術スタック](architecture/tech-stack.md)
@@ -23,7 +23,7 @@ ht-degree: 7%
    + [Pro ワークフロー](architecture/pro-develop-deploy-workflow.md)
    + [拡張されたアーキテクチャ](architecture/scaled-architecture.md)
    + [自動スケーリング](architecture/autoscaling.md)
-+ [基本を学ぶ](https://experienceleague.adobe.com/docs/commerce-cloud-service/start/overview.html)
++ [ はじめに ](https://experienceleague.adobe.com/docs/commerce-cloud-service/start/overview.html)
 + リリースノート {#release-notes}
    + [クラウドツールスイート](release-notes/cloud-tools-suite.md)
    + [ECE-Tools パッケージ](release-notes/ece-tools-package.md)
@@ -33,7 +33,7 @@ ht-degree: 7%
    + [クラウドパッケージ](release-notes/cloud-packages.md)
    + [後方互換性のない変更](release-notes/backward-incompatible-changes.md)
    + [リリースノートアーカイブ](release-notes/cloud-release-archive.md)
-+ クラウドプロジェクト {#project}
++ Cloud project {#project}
    + [プロジェクトの概要](project/overview.md)
    + [プロジェクト構造](project/file-structure.md)
    + [ユーザーアクセス](project/user-access.md)
@@ -45,7 +45,7 @@ ht-degree: 7%
    + [地域の IP アドレス](project/regional-ip-addresses.md)
 + デベロッパーツール {#dev-tools}
    + [概要](dev-tools/overview.md)
-   + クラウド CLI {#cloud-cli}
+   + Cloud CLI {#cloud-cli}
       + [CLI の概要](dev-tools/cloud-cli-overview.md)
       + [CLI リファレンス](dev-tools/cloud-cli-reference.md)
    + [Cloud Docker](dev-tools/cloud-docker.md)
@@ -55,7 +55,7 @@ ht-degree: 7%
       + [ECE-Tools パッケージの更新](dev-tools/update-package.md)
       + [CLI リファレンス](dev-tools/ece-tools-cli-reference.md)
       + [エラーリファレンス](dev-tools/error-reference.md)
-   + 統合 {#integrations}
+   + Integrations {#integrations}
       + [概要](integrations/overview.md)
       + [Bitbucket](integrations/bitbucket.md)
       + [GitHub](integrations/github.md)
@@ -66,7 +66,7 @@ ht-degree: 7%
    + [認証キー](development/authentication-keys.md)
    + [CLI ブランチ管理](development/cli-branches.md)
    + [安全な接続](development/secure-connections.md)
-   + デプロイ {#deploy}
+   + {#deploy} のデプロイ
       + [デプロイメントプロセス](deploy/process.md)
       + [最適化](deploy/optimization.md)
       + [ベストプラクティス](deploy/best-practices.md)
@@ -96,7 +96,7 @@ ht-degree: 7%
       + [パッチの適用](development/apply-patches.md)
 + 設定 {#configure}
    + [概要](environment/overview.md)
-   + 用途 {#app}
+   + アプリケーション {#app}
       + [アプリケーションのデプロイメントの設定](application/configure-app-yaml.md)
       + [PHP 設定](application/php-settings.md)
       + プロパティ {#properties}
@@ -108,7 +108,7 @@ ht-degree: 7%
          + [Web](application/web-property.md)
          + [作業者](application/workers-property.md)
       + [静的ファイルのキャッシュの設定](application/set-cache.md)
-   + 0.5511122 {#env}
+   + 環境 {#env}
       + [環境デプロイメントの設定](environment/configure-env-yaml.md)
       + [変数のレベルとオプション](environment/variable-levels.md)
       + 変数の上書き {#stage}
@@ -118,7 +118,7 @@ ht-degree: 7%
          + [グローバル](environment/variables-global.md)
          + [ビルド](environment/variables-build.md)
          + [デプロイ](environment/variables-deploy.md)
-         + [デプロイ後](environment/variables-post-deploy.md)
+         + [Post-deploy](environment/variables-post-deploy.md)
       + 通知の設定 {#log}
          + [通知](environment/set-up-notifications.md)
          + [ログハンドラー](environment/log-handlers.md)
@@ -136,13 +136,13 @@ ht-degree: 7%
       + [Redis](services/redis.md)
 + Fastly サービス {#cdn}
    + [概要](cdn/fastly.md)
-   + Fastly 設定 {#setup-fastly}
+   + Fastly のセットアップ {#setup-fastly}
       + [Fastly サービスの設定](cdn/fastly-configuration.md)
       + [キャッシュ設定のカスタマイズ](cdn/fastly-custom-cache-configuration.md)
       + [エラーページとメンテナンスページのカスタマイズ](cdn/fastly-custom-response.md)
    + [Web アプリケーションファイアウォール](cdn/fastly-waf-service.md)
    + [画像の最適化](cdn/fastly-image-optimization.md)
-   + VCL を使用したカスタマイズ {#custom-vcl-snippets}
+   + VCL {#custom-vcl-snippets} を使用したカスタマイズ
       + [基本を学ぶ](cdn/fastly-vcl-custom-snippets.md)
       + [CMS バックエンドへのリクエストの再ルーティング](cdn/fastly-vcl-wordpress.md)
       + [リファラルスパムをブロック](cdn/fastly-vcl-badreferer.md)
@@ -150,7 +150,7 @@ ht-degree: 7%
       + [IPブロックリスト](cdn/fastly-vcl-blocking.md)
       + [Fastly キャッシュのバイパス](cdn/fastly-vcl-bypass-to-origin.md)
    + [Fastly のトラブルシューティング](cdn/fastly-troubleshooting.md)
-+ ストアの設定 {#configure-store}
++ ストア設定 {#configure-store}
    + [概要](store/overview.md)
    + [ベストプラクティス](store/best-practices.md)
    + [カスタムテーマ](store/custom-theme.md)
@@ -160,16 +160,16 @@ ht-degree: 7%
    + [サイトマップ・検索エンジンロボット](store/robots-sitemap.md)
    + [PayPal の支払い方法](store/paypal.md)
    + [設定管理](store/store-settings.md)
-+ サイトを起動 {#launch}
++ サイト {#launch} を起動
    + [概要](launch/overview.md)
    + [Launch チェックリスト](launch/checklist.md)
    + [ローンチ手順](launch/steps.md)
-+ サイトの監視 {#monitor}
++ サイト {#monitor} の監視
    + [パフォーマンス](monitor/performance.md)
    + New Relic サービス {#new-relic}
       + [New Relicの概要](monitor/new-relic-service.md)
       + [アカウントとユーザーの管理](monitor/account-management.md)
-      + パフォーマンスの調査 {#investigate}
+      + パフォーマンス {#investigate} の調査
          + [ポリシー、アラート、ワークフロー](monitor/investigate-performance.md)
          + [データ取り込み](monitor/ingest-data.md)
          + [デプロイメントの追跡](monitor/track-deployments.md)

@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # PHP 設定
 
-以下から選択できます [php のバージョン](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) を実行するには `.magento.app.yaml` ファイル：
+`.magento.app.yaml` ファイルで実行する [PHP のバージョン ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) を選択できます。
 
 ```yaml
 name: mymagento
@@ -21,13 +21,13 @@ type: php:<version>
 
 >[!TIP]
 >
->PHP 8.1 以降にアップグレードする場合は、 [`runtime: extensions:` プロパティ](properties.md#runtime) が含まれる `.magento.app.yaml` ファイルを作成し、再デプロイします。 JSON 拡張機能は、PHP 8.0 以降、クラウド環境にインストールされています。
+>PHP 8.1 以降にアップグレードする場合は、`.magento.app.yaml` ファイルの [`runtime: extensions:` プロパティから JSON を削除し ](properties.md#runtime) 再デプロイします。 JSON 拡張機能は、PHP 8.0 以降、クラウド環境にインストールされています。
 
 ## PHP の設定
 
-を使用して、ご使用の環境に合わせて PHP 設定をカスタマイズできます。 `php.ini` Adobe Commerceが管理する設定に追加されるファイル。
+Adobe Commerceが管理する設定に追加された `php.ini` ファイルを使用して、PHP の設定をカスタマイズできます。
 
-リポジトリに、次を追加します `php.ini` ファイルをアプリケーションのルート（リポジトリルート）に移動します。
+リポジトリで、`php.ini` ファイルをアプリケーションのルート（リポジトリルート）に追加します。
 
 >[!TIP]
 >
@@ -35,7 +35,7 @@ type: php:<version>
 
 ### PHP のメモリ制限を増やす
 
-PHP のメモリ制限を増やすには、以下の設定を `php.ini` ファイル：
+PHP のメモリ上限を増やすには、`php.ini` ファイルに次の設定を追加します。
 
 ```ini
 memory_limit = 1G
@@ -45,7 +45,7 @@ memory_limit = 1G
 
 ### realpath_cache 構成の最適化
 
-以下を設定します `realpath_cache` アプリケーションのパフォーマンスを向上させるための設定。
+アプリケーションのパフォーマンスを向上させるには、次の `realpath_cache` 設定を行います。
 
 ```conf
 ;
@@ -59,15 +59,15 @@ realpath_cache_size = 10M
 realpath_cache_ttl = 7200
 ```
 
-これらの設定により、PHP プロセスは、ページが読み込まれるたびにパスを検索する代わりにファイルへのパスをキャッシュすることができます。 参照： [パフォーマンスチューニング](https://www.php.net/manual/en/ini.core.php) PHP のドキュメントに書かれています。
+これらの設定により、PHP プロセスは、ページが読み込まれるたびにパスを検索する代わりにファイルへのパスをキャッシュすることができます。 PHP ドキュメントの [ パフォーマンスチューニング ](https://www.php.net/manual/en/ini.core.php) を参照してください。
 
 >[!NOTE]
 >
->推奨される PHP の設定の一覧については、を参照してください。 [必要な PHP 設定](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html) が含まれる _インストールガイド_.
+>推奨される PHP 設定の一覧については、_インストールガイド_ の [ 必要な PHP 設定 ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html) を参照してください。
 
 ### カスタム PHP 設定の確認
 
-をプッシュした後 `php.ini` クラウド環境の変更について、カスタム PHP 設定が環境に追加されたことを確認します。 例えば、SSH を使用してリモート環境にログインし、次のような方法でファイルを表示します。
+`php.ini` の変更をクラウド環境にプッシュしたら、カスタム PHP 設定が環境に追加されたことを確認できます。 例えば、SSH を使用してリモート環境にログインし、次のような方法でファイルを表示します。
 
 ```bash
 cat /etc/php/<php-version>/fpm/php.ini
@@ -75,17 +75,17 @@ cat /etc/php/<php-version>/fpm/php.ini
 
 >[!WARNING]
 >
->ローカル開発に Cloud Docker for Commerceを使用する場合は、以下を参照してください。 [Docker サービスコンテナ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#fpm-container) カスタムの使用について `php.ini` docker 環境のファイル。
+>Cloud Docker for Commerceをローカル開発に使用する場合、Docker 環境でカスタム `php.ini` ファイルを使用する方法については、[Docker サービスコンテナ ](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#fpm-container) を参照してください。
 
 ## 拡張機能の有効化
 
-で PHP 拡張機能を有効または無効にできます。 `runtime:extension` セクション。 また、指定された拡張機能は、Docker PHP コンテナで使用できるようになります。
+`runtime:extension` のセクションでは、PHP 拡張機能を有効または無効にすることができます。 また、指定された拡張機能は、Docker PHP コンテナで使用できるようになります。
 
 >[!IMPORTANT]
 >
 >拡張機能を有効にする前に、PHP バージョンがプロジェクトをホストするオペレーティングシステムと互換性を持つ必要があることを理解しておくことが重要です。 プロジェクト環境では、続行する前に、インフラストラクチャチームによる OS のアップグレードが必要になる場合があります。
 
-の例 `.magento.app.yaml` ファイル：
+ファイル `.magento.app.yaml` 例：
 
 ```yaml
 runtime:
@@ -106,13 +106,13 @@ SSH を使用して環境にログインし、PHP の拡張機能を一覧表示
 php -m
 ```
 
-特定の PHP 拡張モジュールの詳細については、 [PHP 拡張機能リスト](https://www.php.net/manual/en/extensions.alphabetical.php).
+特定の PHP 拡張モジュールについて詳しくは、[PHP 拡張モジュールの一覧 ](https://www.php.net/manual/en/extensions.alphabetical.php) を参照してください。
 
 次の表に、Cloud Platform にAdobe Commerceをデプロイする際にサポートされる PHP 拡張機能を示します。
 
 {{$include /help/_includes/templated/php-extensions-cloud.md}}
 
-PHP のモジュール要件は、Adobe Commerceのバージョンに関連付けられています。 参照： [PHP 要件](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html).
+PHP のモジュール要件は、Adobe Commerceのバージョンに関連付けられています。 [PHP の要件 ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html) を参照してください。
 
 ### 拡張機能のサポート
 
@@ -120,17 +120,17 @@ Pro プロジェクトの場合、次の拡張機能のインストールには�
 
 - `sourceguardian`
 
-例えば、すべての環境で SourceGuardian 保護スクリプトのみを実行するように PHP を設定するには、以下のオプションを `php.ini` ファイル：
+例えば、すべての環境で SourceGuardian 保護スクリプトのみを実行するように PHP を設定するには、`php.ini` ファイルで以下のオプションを設定する必要があります。
 
 ```ini
 [SourceGuardian]
 sourceguardian.restrict_unencoded = "1"
 ```
 
-参照： [sourceguardian ドキュメントのセクション 3.5](https://sourceguardian.com/demofiles/files/SourceGuardian%20for%20Linux%20User%20Manual.pdf). _PDFへのリンクです_.
+[SourceGuardian ドキュメントの 3.5 節 ](https://sourceguardian.com/demofiles/files/SourceGuardian%20for%20Linux%20User%20Manual.pdf) を参照してください。 _PDFへのリンクです_。
 
-[Adobe Commerce サポートチケットを送信](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) これらの PHP 拡張機能をすべての実稼動環境および Pro ステージング環境にインストールする際のヘルプ 更新済みを含める `.magento/services.yaml` ファイル、 `.magento.app.yaml` 更新された PHP のバージョンと、その他の PHP の拡張子を持つファイル。 実稼動環境に変更を加える場合は、少なくとも 48 時間は通知する必要があります。 クラウドインフラストラクチャチームがプロジェクトを更新するまで、最大 48 時間かかる場合があります。
+[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) すると、これらの PHP 拡張機能をすべての実稼動環境および Pro ステージング環境にインストールする際のヘルプが表示されます。 更新した `.magento/services.yaml` ファイル、更新した PHP バージョン `.magento.app.yaml` 含むファイル、および追加の PHP 拡張子を含めます。 実稼動環境に変更を加える場合は、少なくとも 48 時間は通知する必要があります。 クラウドインフラストラクチャチームがプロジェクトを更新するまで、最大 48 時間かかる場合があります。
 
 >[!WARNING]
 >
->debug を指定してコンパイルされた PHP はサポートされておらず、Probe は以下と競合する可能性があります [!DNL XDebug] または [!DNL XHProf]. プローブを有効にする場合は、これらの拡張機能を無効にします。 Probe は以下のような PHP 拡張モジュールと競合します。 [!DNL Pinba] または IonCube。
+>debug を指定してコンパイルされた PHP はサポートされておらず、Probe は [!DNL XDebug] または [!DNL XHProf] と競合する可能性があります。 プローブを有効にする場合は、これらの拡張機能を無効にします。 Probe は [!DNL Pinba] や IonCube のような PHP 拡張モジュールと競合します。

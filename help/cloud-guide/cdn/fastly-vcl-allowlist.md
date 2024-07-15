@@ -1,6 +1,6 @@
 ---
 title: リクエストを許可するカスタム VCL
-description: Fastly Edge ACL リストとカスタム VCL スニペットを使用して、受信リクエストをフィルタリングし、によってAdobe Commerce サイトの IP アドレスでアクセスを許可します。
+description: Fastly Edgeの ACL リストとカスタム VCL スニペットを使用して、で受信リクエストをフィルタリングし、Adobe Commerce サイトの IP アドレスでアクセスを許可します。
 feature: Cloud, Configuration, Security
 exl-id: a6ee958a-c3d3-47be-b2df-510707f551fc
 source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
@@ -12,15 +12,15 @@ ht-degree: 0%
 
 # リクエストを許可するカスタム VCL
 
-カスタム VCL コードスニペットを含んだ Fastly Edge ACL リストを使用して、受信リクエストをフィルタリングし、IP アドレスによるアクセスを許可できます。 ACL リストは、許可する IP アドレスを指定します。
+カスタム VCL コードスニペットと共に Fastly Edgeの ACL リストを使用して、受信リクエストをフィルタリングし、IP アドレスによるアクセスを許可できます。 ACL リストは、許可する IP アドレスを指定します。
 
 許可リストを作成して、ステージング環境へのアクセスを制限し、内部開発者および承認済みの外部サービス用に指定された IP アドレスからのリクエストのみが許可されるようにします。 また、ステージング環境と実稼動環境で管理者へのアクセスを保護するための許可リストを作成することもできます。
 
-次の例は、カスタム VCL スニペットを [Fastly アクセス制御リスト（ACL）](https://docs.fastly.com/guides/access-control-lists/about-acls) Adobe Commerce on cloud infrastructure プロジェクト環境の管理者へのアクセスを保護します。 カスタム VCL スニペットをクラウド環境に追加する場合、Fastly では、ACL に含まれる IP アドレスからのリクエストのみを許可します。
+次の例は、[Fastly アクセス制御リスト（ACL） ](https://docs.fastly.com/guides/access-control-lists/about-acls) を含むカスタム VCL スニペットを使用して、クラウドインフラストラクチャプロジェクト環境でのAdobe Commerceの管理者へのアクセスを保護する方法を示しています。 カスタム VCL スニペットをクラウド環境に追加する場合、Fastly では、ACL に含まれる IP アドレスからのリクエストのみを許可します。
 
 >[!TIP]
 >
->公開アクセスを禁止するステージング環境および統合環境の場合は、で使用可能な HTTP アクセス制御オプションを使用します [[!DNL Cloud Console]](../project/overview.md#access-the-project-web-interface) サイト全体へのアクセスを IP アドレスで管理します。
+>公開アクセスを禁止するステージング環境および統合環境の場合は、[[!DNL Cloud Console]](../project/overview.md#access-the-project-web-interface) で使用可能な HTTP アクセス制御オプションを使用して、IP アドレスでサイト全体へのアクセスを管理します。
 
 **前提条件：**
 
@@ -29,41 +29,41 @@ ht-degree: 0%
 
 - 許可リストに含めるクライアント IP アドレスのリスト
 
-## クライアント IP アドレスを許可するエッジ ACL を作成する
+## Edge ACL を作成して、クライアント IP アドレスを許可します
 
-エッジ ACL は、サイトへのアクセスを管理するための IP アドレスリストを作成します。 この例では、Edge ACL を作成して、プロジェクト環境の管理者にアクセスできるクライアント IP アドレスのリストを追加します。
+Edge ACL は、サイトへのアクセスを管理するための IP アドレスリストを作成します。 この例では、Edge ACL を作成し、プロジェクト環境の管理者にアクセスできるクライアント IP アドレスのリストを追加します。
 
 {{admin-login-step}}
 
-1. クリック **ストア** > 設定 > **設定** > **詳細** > **システム**.
+1. **ストア**/設定/**設定**/**詳細**/**システム** をクリックします。
 
-1. を展開 **フルページキャッシュ** > **Fastly 設定** > **エッジ ACL**.
+1. **フルページキャッシュ**/**Fastly 設定**/**4}Edge ACL} を展開します。**
 
 1. ACL コンテナを作成します。
 
-   - クリック **ACL を追加**.
+   - **ACL を追加** をクリックします。
 
-   - 日 *ACL コンテナ* ページ、を入力 **ACL 名**—`allowlist`.
+   - *ACL コンテナ* ページで **ACL 名**—`allowlist` を入力します。
 
-   - を選択 **変更後にアクティベート** 編集中の Fastly サービス設定のバージョンに変更をデプロイする場合。
+   - **変更後にアクティベート** を選択して、編集中の Fastly サービス設定のバージョンに変更をデプロイします。
 
-   - クリック **Upload** をクリックして、ACL を Fastly サービス設定に添付します。
+   - **アップロード** をクリックして、ACL を Fastly サービス設定に添付します。
 
 1. 管理者にアクセスできる IP アドレスのリストを追加します。
 
-   - の「設定」アイコンをクリックします `allowlist` ACL。
+   - `allowlist` ACL の設定アイコンをクリックします。
 
-   - を追加して保存します。 *IP 値* （クライアント IP アドレスごとに）。
+   - クライアント IP アドレスごとに *IP 値* を追加して保存します。
 
-   - クリック **キャンセル** 「システム設定」ページに戻ります。
+   - 「**キャンセル**」をクリックして、システム設定ページに戻ります。
 
-1. クリック **設定を保存**.
+1. 「**設定を保存**」をクリックします。
 
 1. ページ上部の通知に従ってキャッシュを更新します。
 
 ## 管理アクセスを保護するためのカスタム VCL スニペットの作成
 
-次のカスタム VCL スニペットコード（JSON 形式）は、管理者へのリクエストをフィルタリングし、クライアントの IP アドレスがのアドレスと一致した場合にアクセスを許可するロジックを示しています。 `allowlist` ACL。
+次のカスタム VCL スニペットコード（JSON 形式）は、管理者へのリクエストをフィルタリングして、クライアントの IP アドレスが `allowlist` の ACL 内のアドレスと一致した場合にアクセスを許可するロジックを示しています。
 
 ```json
 {
@@ -75,53 +75,53 @@ ht-degree: 0%
 }
 ```
 
-次の前 [カスタムスニペットの作成](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/custom-vcl-snippets/fastly-vcl-allowlist.html#add-the-custom-vcl-snippet) この例では、値を確認して、変更が必要かどうかを判断します。 次に、各値をそれぞれのフィールド（例：）に入力します `type` 「タイプ」フィールドに移動します。 `content` 「コンテンツ」フィールドに移動します。
+この例では [ カスタムスニペットの作成 ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/cdn/custom-vcl-snippets/fastly-vcl-allowlist.html#add-the-custom-vcl-snippet) の前に、値を確認して、変更が必要かどうかを判断してください。 次に、各値をそれぞれのフィールドに入力します（例えば、「タイプ」フィールドに `type` を入力 `content`、「コンテンツ」フィールドに入力します）。
 
-- `name` — VCL スニペットの名前。 この例では、 `allowlist`.
+- `name` — VCL スニペットの名前。 この例の場合は `allowlist` です。
 
-- `priority` - VCL スニペットを実行するタイミングを指定します。 優先度は次のとおりです `5` を使用して、管理者リクエストが許可された IP アドレスからのリクエストであるかどうかを直ちに実行および確認します。 このスニペットは、デフォルトのMagentoVCL スニペット（`magentomodule_*`）に優先度 50 を割り当てました。 各カスタムスニペットの優先度を、スニペットを実行するタイミングに応じて 50 より高くまたは低く設定します。 優先度の低いスニペットが最初に実行されます。
+- `priority` — VCL スニペットを実行するタイミングを指定します。 優先度は、直ちに実行し、管理者リクエストの送信元が許可された IP アドレスであるかどうかを確認するように `5` 定されています。 このスニペットは、デフォルトのMagento VCL スニペット（`magentomodule_*`）に優先度 50 が割り当てられる前に実行されます。 各カスタムスニペットの優先度を、スニペットを実行するタイミングに応じて 50 より高くまたは低く設定します。 優先度の低いスニペットが最初に実行されます。
 
-- `type` - バージョン管理された VCL コードにスニペットを挿入する場所を指定します。 この VCL は `recv` にスニペットコードを追加するスニペットタイプ `vcl_recv` デフォルトの Fastly VCL コードの下およびすべてのオブジェクトの上のサブルーチン
+- 「`type`」 – バージョン管理された VCL コードにスニペットを挿入する場所を指定します。 この VCL は、デフォルトの Fastly VCL コードの下およびオブジェクトの上の `vcl_recv` サブルーチンにスニペットコードを追加する `recv` スニペットタイプです。
 
-- `content`  – 実行する VCL コードのスニペット。 この例では、コードは管理者へのリクエストをフィルタリングし、クライアント IP アドレスがのアドレスと一致する場合はアクセスを許可します `allowlist` ACL。 アドレスが一致しない場合、リクエストは次のコードでブロックされます。 `403 Forbidden` エラー。
+- `content` – 実行する VCL コードのスニペット。 この例では、コードは管理者への要求をフィルタリングし、クライアント IP アドレスが `allowlist` ACL 内のアドレスと一致する場合はアクセスを許可します。 アドレスが一致しない場合、リクエストは `403 Forbidden` エラーでブロックされます。
 
-  管理者の URL が変更された場合は、サンプル値を `/admin` と環境の URL。 例： `/company-admin`.
+  管理者の URL が変更された場合は、サンプル値 `/admin` を環境の URL に置き換えます。 例：`/company-admin`。
 
-このコードサンプルでは、条件は `!req.http.Fastly-FF` を使用する場合に重要 [原点シールド](fastly-custom-cache-configuration.md#configure-back-ends-and-origin-shielding). このコードを削除または編集しないでください。
+コードサンプルでは、[ 原点シールド ](fastly-custom-cache-configuration.md#configure-back-ends-and-origin-shielding) を使用する場合、条件 `!req.http.Fastly-FF` が重要です。 このコードを削除または編集しないでください。
 
 環境のコードを確認して更新した後、次のいずれかの方法を使用して、カスタム VCL スニペットを Fastly サービス設定に追加します。
 
-- [カスタム VCL スニペットを管理者から追加します。](#add-the-custom-vcl-snippet). 管理者にアクセスできる場合は、この方法をお勧めします。 （必須 [Magento 2 バージョン 1.2.58 用 Fastly CDN モジュール](fastly-configuration.md#upgrade) （またはそれ以降）。
+- [ カスタム VCL スニペットを管理者から追加します ](#add-the-custom-vcl-snippet)。 管理者にアクセスできる場合は、この方法をお勧めします。 （Magento 2 バージョン 1.2.58](fastly-configuration.md#upgrade) 以降には [Fastly CDN モジュールが必要です）。
 
-- JSON コードの例をファイルに保存します（例： `allowlist.json`）および [fastly API を使用してアップロードします](fastly-vcl-custom-snippets.md#manage-custom-vcl-snippets-using-the-api). 管理者にアクセスできない場合は、この方法を使用します。
+- JSON コードの例をファイル（例：`allowlist.json`）に保存して、[Fastly API を使用してアップロード ](fastly-vcl-custom-snippets.md#manage-custom-vcl-snippets-using-the-api) します。 管理者にアクセスできない場合は、この方法を使用します。
 
 ## カスタム VCL スニペットの追加
 
 {{admin-login-step}}
 
-1. クリック **ストア** > 設定 > **設定** > **詳細** > **システム**.
+1. **ストア**/設定/**設定**/**詳細**/**システム** をクリックします。
 
-1. を展開 **フルページキャッシュ** > **Fastly 設定** > **カスタム VCL スニペット**.
+1. **フルページキャッシュ**/**Fastly 設定**/**カスタム VCL スニペット** の順に展開します。
 
-1. クリック **カスタムスニペットの作成**.
+1. **カスタムスニペットを作成** をクリックします。
 
 1. VCL スニペットの値を追加します。
 
    - **名前** — `allowlist`
 
-   - **タイプ** — `recv`
+   - **種類** — `recv`
 
    - **優先度** — `5`
 
-   - を追加 **VCL** スニペットコンテンツ：
+   - **VCL** スニペットコンテンツを追加します。
 
      ```conf
      if ((req.url ~ "^/admin") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 "Forbidden";}
      ```
 
-1. クリック **作成** 名前が pattern の VCL スニペット ファイルを生成するには `type_priority_name.vcl`、例： `recv_5_allowlist.vcl`
+1. **作成** をクリックして、名前パターン `type_priority_name.vcl` （たとえば `recv_5_allowlist.vcl`）で VCL スニペット ファイルを生成します
 
-1. ページの再読み込み後、 **Fastly への VCL のアップロード** が含まれる *Fastly 設定* Fastly サービス設定にファイルを追加するためのセクションです。
+1. ページのリロード後、「**Fastly 設定**」セクションの「*Fastly に VCL をアップロード*」をクリックして、ファイルを Fastly サービス設定に追加します。
 
 1. アップロードが完了したら、ページ上部の通知に従ってキャッシュを更新します。
 

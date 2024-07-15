@@ -1,6 +1,6 @@
 ---
 title: Variables プロパティ
-description: Variables プロパティを使用すると、のストア設定オプションをカスタマイズできます [!DNL Commerce] アプリケーション。
+description: variables プロパティを使用して、アプリケーションのストア設定オプション  [!DNL Commerce]  カスタマイズします。
 feature: Cloud, Configuration
 exl-id: 5cd92fbb-8bff-48b1-9658-500140591344
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # Variables プロパティ
 
-アプリケーションベースの環境変数を使用して、ストア設定をカスタマイズできます。 これらの変数は、特定の構文を使用します。 参照： [設定を上書き](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/paths/override-config-settings.html) が含まれる _設定ガイド_.
+アプリケーションベースの環境変数を使用して、ストア設定をカスタマイズできます。 これらの変数は、特定の構文を使用します。 [ 設定ガイド ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/paths/override-config-settings.html) の「_設定のオーバーライド_」を参照してください。
 
-に含まれている次の環境変数 `.magento.app.yaml` ファイルは、の特定のバージョンで必要です [!DNL Commerce] アプリケーション。
+[!DNL Commerce] アプリケーションの特定のバージョンには、`.magento.app.yaml` ファイルに含まれる次の環境変数が必要です。
 
 Adobe Commerce 2.2.x から 2.3.x へのアップグレードに必要：
 

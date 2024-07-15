@@ -12,13 +12,13 @@ ht-degree: 0%
 
 # サービスの設定
 
-この `services.yaml` ファイルは、MySQL、Redis、Elasticsearchまたは OpenSearch など、クラウドインフラストラクチャー上のAdobe Commerceでサポートされ、使用されるサービスを定義します。 外部サービスプロバイダーに登録する必要はありません。 このファイルの保存先 `.magento` プロジェクトのディレクトリ。
+`services.yaml` ファイルは、MySQL、Redis、Elasticsearchまたは OpenSearch など、クラウドインフラストラクチャー上のAdobe Commerceでサポートされ、使用されるサービスを定義します。 外部サービスプロバイダーに登録する必要はありません。 このファイルは、プロジェクトの `.magento` ディレクトリにあります。
 
-デプロイスクリプトでは、の設定ファイルを使用します。 `.magento` 設定済みのサービスを環境にプロビジョニングするディレクトリ。 アプリケーションにサービスが含まれていると、そのサービスを使用できるようになります [`relationships`](../application/properties.md#relationships) のプロパティ `.magento.app.yaml` ファイル。 この `services.yaml` ファイルには次が含まれています _タイプ_ および _ディスク_ 値。 サービスタイプはサービスを定義します。 _名前_ および _version_.
+デプロイ スクリプトは、`.magento` ディレクトリの設定ファイルを使用して、設定済みのサービスを環境にプロビジョニングします。 サービスは、`.magento.app.yaml` ファイルの [`relationships`](../application/properties.md#relationships) プロパティに含まれていると、アプリケーションで使用できるようになります。 `services.yaml` ファイルには _type_ と _disk_ の値が含まれています。 サービスタイプは、サービス _name_ と _version_ を定義します。
 
 サービス設定を変更すると、デプロイメントによって更新されたサービスを環境にプロビジョニングされます。これにより、次の環境が影響を受けます。
 
-- 実稼動を含むすべてのスターター環境 `master`
+- 実稼動環境を含むすべてのスタータ `master` 環境
 - Pro 統合環境
 
 {{pro-update-service}}
@@ -33,7 +33,7 @@ ht-degree: 0%
 - [Elasticsearch](elasticsearch.md)
 - [OpenSearch](opensearch.md)
 
-現在ののデフォルトのバージョンとディスクの値を表示できます。 [default `services.yaml` ファイル](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). 次の例に、 `mysql`, `redis`, `opensearch` または `elasticsearch`、および `rabbitmq` で定義されているサービス `services.yaml` 設定ファイル：
+現在の（デフォルトの `services.yaml` ファイル [ のデフォルトのバージョンとディスク値を表示 ](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml) きます。 次の例は、`services.yaml` 設定ファイルで定義されている `mysql`、`redis`、`opensearch` または `elasticsearch` および `rabbitmq` サービスを示しています。
 
 ```yaml
 mysql:
@@ -54,7 +54,7 @@ rabbitmq:
 
 ## サービス値
 
-サービス ID とサービスタイプを設定する必要があります `type: <name>:<version>`. サービスが永続的なストレージを使用する場合は、ディスク値を指定する必要があります。
+サービス ID とサービスタイプ設定 `type: <name>:<version>` を指定する必要があります。 サービスが永続的なストレージを使用する場合は、ディスク値を指定する必要があります。
 
 次の形式を使用します。
 
@@ -66,9 +66,9 @@ rabbitmq:
 
 ### `service-id`
 
-この `service-id` 値は、プロジェクト内のサービスを識別します。 使用できるのは小文字の英数字のみです。 `a` 対象： `z` および `0` 対象： `9`（例：） `redis`.
+`service-id` 値は、プロジェクト内のサービスを識別します。 `redis` のように、小文字の英数字（`a`～`z`、`0`～`9`）のみを使用できます。
 
-この _service-id_ 値は [`relationships`](../application/properties.md#relationships) のプロパティ `.magento.app.yaml` 設定ファイル：
+この _service-id_ 値は、`.magento.app.yaml` 設定ファイルの [`relationships`](../application/properties.md#relationships) プロパティで使用されます。
 
 ```yaml
 relationships:
@@ -85,14 +85,14 @@ redis2:
     type: redis:<version>
 ```
 
-でのサービス名の変更 `services.yaml` ファイル **完全に削除** 以下を実行します。
+`services.yaml` ファイル内のサービスの名前を変更すると **完全に削除されます**、次の問題が発生します。
 
 - 指定した新しい名前でサービスを作成する前の既存のサービス。
-- サービスの既存のデータがすべて削除されます。 Adobeでは、次のことを強くお勧めします [スターター環境のバックアップ](../storage/snapshots.md) 既存のサービスの名前を変更する前に、
+- サービスの既存のデータがすべて削除されます。 Adobeでは、既存のサービスの名前を変更する前に ](../storage/snapshots.md) スターター環境をバックアップ [ することを強くお勧めします。
 
 ### `type`
 
-この `type` 値は、サービス名とバージョンを指定します。 例：
+`type` 値は、サービス名とバージョンを指定します。 例：
 
 ```yaml
 mysql:
@@ -101,7 +101,7 @@ mysql:
 
 ### `disk`
 
-この `disk` この値は、サービスに割り当てる永続的なディスク記憶域のサイズ （MB 単位）を指定します。 MySQL などの永続ストレージを使用するサービスでは、ディスク値を指定する必要があります。 Redis などの永続的なストレージの代わりにメモリを使用するサービスでは、ディスク値は必要ありません。
+`disk` 値は、サービスに割り当てる永続的なディスク記憶域のサイズ （MB 単位）を指定します。 MySQL などの永続ストレージを使用するサービスでは、ディスク値を指定する必要があります。 Redis などの永続的なストレージの代わりにメモリを使用するサービスでは、ディスク値は必要ありません。
 
 ```yaml
 mysql:
@@ -113,9 +113,9 @@ mysql:
 
 ## サービスの関係
 
-クラウドインフラストラクチャプロジェクトのAdobe Commerceでのサービス [の関係](../application/properties.md#relationships) で設定 `.magento.app.yaml` ファイルは、アプリケーションで使用可能なサービスを決定します。
+クラウドインフラストラクチャプロジェクトのAdobe Commerceでは、`.magento.app.yaml` ファイルで設定されたサービス [ 関係 ](../application/properties.md#relationships) によって、アプリケーションで使用可能なサービスが決まります。
 
-すべてのサービス関係の設定データは、 [`$MAGENTO_CLOUD_RELATIONSHIPS`](../environment/variables-cloud.md) 環境変数。 設定データには、サービス名、タイプ、バージョンのほか、ポート番号やログイン資格情報など、必要な接続の詳細が含まれます。
+[`$MAGENTO_CLOUD_RELATIONSHIPS`](../environment/variables-cloud.md) 環境変数から、すべてのサービス関係の設定データを取得できます。 設定データには、サービス名、タイプ、バージョンのほか、ポート番号やログイン資格情報など、必要な接続の詳細が含まれます。
 
 **ローカル環境で関係を検証するには**:
 
@@ -125,7 +125,7 @@ mysql:
    magento-cloud relationships
    ```
 
-1. 「」を確認します `service` および `type` 応答から。 応答では、IP アドレスやポート番号などの接続情報が提供されます。
+1. `service` を確認し、応答から `type` を返します。 応答では、IP アドレスやポート番号などの接続情報が提供されます。
 
    >短縮されたサンプル応答
 
@@ -157,44 +157,44 @@ mysql:
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
    ```
 
-   または、次を使用します `ece-tools` 関係を表示するコマンド：
+   または、次の `ece-tools` コマンドを使用して関係を表示します。
 
    ```bash
    php ./vendor/bin/ece-tools env:config:show services
    ```
 
-1. 「」を確認します `service` および `type` 応答から。 応答では、IP アドレスやポート番号、必要なユーザー名やパスワードの認証情報などの接続情報が提供されます。
+1. `service` を確認し、応答から `type` を返します。 応答では、IP アドレスやポート番号、必要なユーザー名やパスワードの認証情報などの接続情報が提供されます。
 
 ## サービスのバージョン
 
-クラウドインフラストラクチャにおけるAdobe Commerceのサービスバージョンと互換性のサポートは、クラウドインフラストラクチャにデプロイされテストされたバージョンによって決まり、Adobe Commerceのオンプレミスデプロイメントでサポートされているバージョンとは異なる場合があります。 参照： [必要システム構成](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) が含まれる _インストール_ Adobe CommerceとMagento Open Sourceの特定のリリースでAdobeがテストした、サードパーティ製ソフトウェアの依存関係のリストを示すガイド。
+クラウドインフラストラクチャにおけるAdobe Commerceのサービスバージョンと互換性のサポートは、クラウドインフラストラクチャにデプロイされテストされたバージョンによって決まり、Adobe Commerceのオンプレミスデプロイメントでサポートされているバージョンとは異なる場合があります。 特定のAdobe CommerceおよびMagento Open SourceリリースでAdobeでテストされたサードパーティ製ソフトウェアの依存関係のリストについては、『 _インストール_ ガイドの [ システム要件 ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) を参照してください。
 
 ### ソフトウェアの EOL チェック
 
-デプロイメントプロセス中、 `ece-tools` パッケージは、インストールされているサービスバージョンを各サービスの提供終了（EOL）日と照合して確認します。
+デプロイメントプロセス中に、`ece-tools` パッケージはインストールされたサービスバージョンを各サービスの提供終了（EOL）日と照合して確認します。
 
 - サービスのバージョンが提供終了（EOL）日から 3 か月以内の場合、デプロイログに通知が表示されます。
 - EOL 日が過去の場合は、警告通知が表示されます。
 
-ストアのセキュリティを維持するには、インストールされているソフトウェアのバージョンを EOL になる前に更新してください。 の EOL 日を確認できます。 [ece-tools&#39; `eol.yaml` ファイル](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml).
+ストアのセキュリティを維持するには、インストールされているソフトウェアのバージョンを EOL になる前に更新してください。 [ece-tools&#39;の `eol.yaml` ファイル ](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml) で EOL 日付を確認できます。
 
 ### OpenSearch への移行
 
 {{elasticsearch-support}}
 
-Adobe Commerce バージョン 2.4.4 以降については、を参照してください。 [OpenSearch サービスの設定](opensearch.md).
+Adobe Commerce バージョン 2.4.4 以降については、[OpenSearch サービスの設定 ](opensearch.md) を参照してください。
 
 ## サービスバージョンの変更
 
 インストールしたサービスバージョンは、クラウド環境にデプロイされたAdobe Commerceのバージョンと互換性を持つようにアップグレードできます。
 
-インストールされているサービスのバージョンを直接ダウングレードすることはできません。 ただし、必要なバージョンを持つサービスを作成できます。 参照： [サービス バージョンのダウングレード](#downgrade-version).
+インストールされているサービスのバージョンを直接ダウングレードすることはできません。 ただし、必要なバージョンを持つサービスを作成できます。 [ サービスのバージョンのダウングレード ](#downgrade-version) を参照してください。
 
 ### インストールされているサービスのバージョンのアップグレード
 
-インストールされているサービスのバージョンは、でサービス設定を更新することでアップグレードできます。 `services.yaml` ファイル。
+インストールされたサービスバージョンは、`services.yaml` ファイルのサービス設定を更新することでアップグレードできます。
 
-1. 変更： [`type`](#type) のサービスに対する値 `.magento/services.yaml` ファイル：
+1. `.magento/services.yaml` ファイルのサービスの [`type`](#type) の値を変更します。
 
    > 元のサービス定義
 
@@ -234,19 +234,19 @@ Adobe Commerce バージョン 2.4.4 以降については、を参照してく�
 
 1. サービスを作成し、既存のサービスからデータを保存します。
 
-サービスのバージョンを変更する場合は、でサービス設定を更新する必要があります `services.yaml` でファイルを作成し、関係を更新します。 `.magento.app.yaml` ファイル。
+サービスのバージョンを変更する場合は、`services.yaml` ファイルのサービス構成を更新し、`.magento.app.yaml` ファイルの関係を更新する必要があります。
 
 **既存のサービスの名前を変更してサービスバージョンをダウングレードするには**:
 
-1. の既存のサービスの名前を変更する `.magento/services.yaml` ファイルに入力して、バージョンを変更します。
+1. `.magento/services.yaml` ファイルの既存のサービスの名前を変更し、バージョンを変更します。
 
    >[!WARNING]
    >
    >既存のサービスの名前を変更すると、そのサービスが置き換えられ、すべてのデータが削除されます。 データを保持する必要がある場合は、既存のサービスの名前を変更する代わりに、サービスを作成します。
 
-   例えば、の MariaDB バージョンをダウングレードするには _mysql_ サービスをバージョン 10.4 から 10.3 に変更し、既存のを _service-id_ および _タイプ_ 設定。
+   例えば、_mysql_ サービスの MariaDB バージョンをバージョン 10.4 から 10.3 にダウングレードするには、既存の _service-id_ と _type_ の設定を変更します。
 
-   > オリジナル `services.yaml` 定義
+   > 元の `services.yaml` 定義
 
    ```yaml
    mysql:
@@ -254,7 +254,7 @@ Adobe Commerce バージョン 2.4.4 以降については、を参照してく�
        disk: 5120
    ```
 
-   > 新規 `services.yaml` 定義
+   > 新しい `services.yaml` 定義
 
    ```yaml
    mysql2:
@@ -262,16 +262,16 @@ Adobe Commerce バージョン 2.4.4 以降については、を参照してく�
         disk: 5120
    ```
 
-1. での関係の更新 `.magento.app.yaml` ファイル。
+1. `.magento.app.yaml` ファイルの関係を更新します。
 
-   > オリジナル `.magento.app.yaml` 設定
+   > 元の `.magento.app.yaml` 設定
 
    ```yaml
    relationships:
        database: "mysql:mysql"
    ```
 
-   > 更新日 `.magento.app.yaml` 設定
+   > `.magento.app.yaml` 設定を更新しました
 
    ```yaml
    relationships:
@@ -282,7 +282,7 @@ Adobe Commerce バージョン 2.4.4 以降については、を参照してく�
 
 **サービスを作成してサービスをダウングレードするには**:
 
-1. にサービス定義を追加する `services.yaml` ダウングレードされたバージョンの仕様を含むプロジェクトのファイル。 参照： _mysql2_ 次の例では、
+1. ダウングレードされたバージョン仕様を使用して、プロジェクトの `services.yaml` ファイルにサービス定義を追加します。 以下の _mysql2_ を参照してください。
 
    > services.yaml
 
@@ -295,16 +295,16 @@ Adobe Commerce バージョン 2.4.4 以降については、を参照してく�
        disk: 5120
    ```
 
-1. での関係設定の変更 `.magento.app.yaml` 新しいサービスを使用するファイル。
+1. 新しいサービスを使用するには、`.magento.app.yaml` ファイルの関係設定を変更します。
 
-   > オリジナル `.magento.app.yaml` 設定
+   > 元の `.magento.app.yaml` 設定
 
    ```yaml
    relationships:
        database: "mysql:mysql"
    ```
 
-   > 新規 `.magento.app.yaml` 設定
+   > 新しい `.magento.app.yaml` 設定
 
    ```yaml
    relationships:

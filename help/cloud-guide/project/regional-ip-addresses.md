@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # 地域の IP アドレス
 
-次の表に、クラウドインフラストラクチャ上のAdobe Commerceで使用される受信および送信 IP アドレスを示します [統合環境](../architecture/pro-architecture.md#integration-environment). これらの IP アドレスは安定していますが、変更される可能性があります。 Adobeは、IP アドレスの変更を行う前に、お客様に通知します。
+次の表に、クラウドインフラストラクチャ [Integration Environments](../architecture/pro-architecture.md#integration-environment) でAdobe Commerceが使用する受信および送信 IP アドレスを示します。 これらの IP アドレスは安定していますが、変更される可能性があります。 Adobeは、IP アドレスの変更を行う前に、お客様に通知します。
 
 統合環境を指定する構文は次のとおりです。
 
@@ -19,11 +19,11 @@ ht-degree: 0%
 <branch>-<unique-ID>-<project-ID>.<region>.magentosite.cloud
 ```
 
-- **ユニーク ID** = 7 個のランダムな英数字
+- **一意の ID** = 7 個のランダムな英数字
 - **プロジェクト ID** = 13 文字のプロジェクト ID
 - **地域** = AWSまたは Azure の地域名
 
-を使用できます `ping` 受信 IP アドレスを取得するコマンド：
+`ping` コマンドを使用して、受信 IP アドレスを取得できます。
 
 ```bash
 ping integration-abcd123-abcd78910.us-3.magentosite.cloud

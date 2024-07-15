@@ -13,29 +13,29 @@ ht-degree: 0%
 
 # CLI によるブランチの管理
 
-をインストールするには `magento-cloud` CLI、を参照 [Cloud CLI リファレンス](../dev-tools/cloud-cli-overview.md). をインストールしたら、 `magento-cloud` CLI と、クラウドインフラストラクチャへのリモートアクセス用の SSH キーを設定すると、を使用できます。 `magento-cloud` プロジェクトの環境を管理する CLI コマンド。 環境のアーキテクチャについては、を参照してください。 [スターターアーキテクチャ](../architecture/starter-architecture.md) または [Pro アーキテクチャ](../architecture/pro-architecture.md).
+`magento-cloud` CLI をインストールするには、[Cloud CLI リファレンス ](../dev-tools/cloud-cli-overview.md) を参照してください。 `magento-cloud` CLI をインストールし、クラウドインフラストラクチャへのリモートアクセス用の SSH キーを設定したら、`magento-cloud` CLI コマンドを使用してプロジェクトの環境を管理できます。 環境アーキテクチャについては、「[ スターターアーキテクチャ ](../architecture/starter-architecture.md) または [Pro アーキテクチャ ](../architecture/pro-architecture.md)」を参照してください。
 
-を使用してブランチと環境を管理する [!DNL Cloud Console]を参照してください [を使用して分岐を管理する [!DNL Cloud Console]](../project/console-branches.md).
+[!DNL Cloud Console] を使用してブランチと環境を管理するには、[ を使用したブランチの管理  [!DNL Cloud Console]](../project/console-branches.md) を参照してください。
 
 ## CLI コマンドの使用
 
-この `magento-cloud` CLI コマンドは、Git コマンドに似ています。 これらを使用して、プロジェクトに接続し、環境を管理できます。 コマンドは任意のディレクトリから実行できますが、プロジェクトディレクトリから実行することをお勧めします。 プロジェクトディレクトリから実行する場合、を省略できます `-p <project-ID>` パラメーター。 を参照してください。 [Cloud CLI リファレンス](../dev-tools/cloud-cli-overview.md).
+`magento-cloud` の CLI コマンドは、Git コマンドに似ています。 これらを使用して、プロジェクトに接続し、環境を管理できます。 コマンドは任意のディレクトリから実行できますが、プロジェクトディレクトリから実行することをお勧めします。 プロジェクトディレクトリから実行する場合は、`-p <project-ID>` パラメーターを省略できます。 [Cloud CLI リファレンス ](../dev-tools/cloud-cli-overview.md) を参照してください。
 
 ## プロジェクトのクローン
 
-以下の手順では、以下を組み合わせて使用します。 `magento-cloud` プロジェクトをローカルワークステーションに複製するための CLI コマンドと Git コマンド。 の完全なリストを表示するには `magento-cloud` CLI コマンド、を使用 `magento-cloud list` コマンド。
+次の手順では、CLI コマンドと Git コマンド `magento-cloud` 組み合わせて、プロジェクトをローカルワークステーションに複製します。 CLI コマンドの完全なリスト `magento-cloud` 表示するには、`magento-cloud list` コマンドを使用します。
 
 >[!IMPORTANT]
 >
->一部の Git コマンドでは、クラウドインフラストラクチャプロジェクト上のAdobe Commerceでアクションを完了できません。 例えば、Git コマンドを使用してブランチを作成できますが、新しい環境を作成してアクティブ化することはできません。 を使用して環境を作成する必要があります `magento-cloud environment:branch <branch-name>` 環境がになるコマンド _アクティブ_. または、を使用することもできます。 [!DNL Cloud Console] アクティブな環境を作成する 参照： [Cloud CLI リファレンス](../dev-tools/cloud-cli-overview.md#git-commands).
+>一部の Git コマンドでは、クラウドインフラストラクチャプロジェクト上のAdobe Commerceでアクションを完了できません。 例えば、Git コマンドを使用してブランチを作成できますが、新しい環境を作成してアクティブ化することはできません。 環境を _アクティブ_ にするには、`magento-cloud environment:branch <branch-name>` コマンドを使用して環境を作成する必要があります。 または、[!DNL Cloud Console] を使用してアクティブな環境を作成できます。 [Cloud CLI リファレンス ](../dev-tools/cloud-cli-overview.md#git-commands) を参照してください。
 
-**プロジェクトを複製するには `master` 0.9511122**:
+**プロジェクトを環境 `master` 複製するには**:
 
-1. を使用して、ローカルワークステーションにログインします。 [ファイルシステム所有者](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) アカウント。
+1. [ ファイル・システム所有者 ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) アカウントを使用して、ローカル・ワークステーションにログインします。
 
-1. Web サーバーまたは仮想ホストへの変更 _docroot_ ディレクトリ。
+1. Web サーバーまたは仮想ホスト _docroot_ ディレクトリに移動します。
 
-1. を使用してログイン `magento-cloud` CLI。
+1. `magento-cloud` CLI を使用してログインします。
 
    ```bash
    magento-cloud login
@@ -55,7 +55,7 @@ ht-degree: 0%
 
    プロンプトが表示されたら、ディレクトリ名を指定します。
 
-1. をに変更します。 `magento2` ディレクトリ。
+1. `magento2` ディレクトリに移動します。
 
 1. プロジェクトで使用可能な環境のリスト。
 
@@ -65,7 +65,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   >この `magento-cloud environment:list` コマンドは環境階層を表示するのに対して、 `git branch` コマンドは実行しません。
+   >`magento-cloud environment:list` コマンドは環境階層を表示しますが、`git branch` コマンドは表示しません。
 
 1. リモートブランチを取得します。
 
@@ -81,14 +81,14 @@ ht-degree: 0%
 
 >[!TIP]
 >
->参照： [統合](../integrations/overview.md) cloud infrastructure 上のAdobe Commerceで Git ベースのホスティングサービスを使用する方法について詳しくは、
+>クラウドインフラストラクチャー上のAdobe Commerceで Git ベースのホスティングサービスを使用する方法については、「[ 統合 ](../integrations/overview.md)」を参照してください。
 
 ## 開発用のブランチの作成
 
-プロジェクトを複製し、Adobe Commerce管理者アカウントの設定を更新したら、開発用に分岐できます。 前述のように、を使用して環境を作成する必要があります `magento-cloud environment:branch <branch-name>` command または [!DNL Cloud Console] 環境が～になる _アクティブ_.
+プロジェクトを複製し、Adobe Commerce管理者アカウントの設定を更新したら、開発用に分岐できます。 前述のように、環境を _アクティブ_ にするには、`magento-cloud environment:branch <branch-name>` コマンドまたは [!DNL Cloud Console] を使用して環境を作成する必要があります。
 
-- の場合 [スターター](../architecture/starter-develop-deploy-workflow.md#clone-and-branch)を作成する場合は、に分岐を作成することを検討します `staging`に基づいて開発ブランチを作成します。 `staging` 分岐。
-- の場合 [プロ](../architecture/pro-develop-deploy-workflow.md#development-workflow)に基づいて、開発ブランチを作成します。 `Integration` 分岐。
+- [ スターター ](../architecture/starter-develop-deploy-workflow.md#clone-and-branch) の場合は、`staging` 用のブランチを作成した後、`staging` ブランチに基づいて開発ブランチを作成することを検討します。
+- [Pro](../architecture/pro-develop-deploy-workflow.md#development-workflow) の場合は、`Integration` ブランチに基づいて開発ブランチを作成します。
 
 **開発ブランチを作成するには**:
 
@@ -106,7 +106,7 @@ ht-degree: 0%
    composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
    ```
 
-1. [_optional_] を作成 [バックアップ](../storage/snapshots.md) 環境の。
+1. [_オプション_] 環境の [ バックアップ ](../storage/snapshots.md) を作成します。
 
 ### ブランチの結合
 
@@ -134,11 +134,11 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->を削除することはできません `master` 任意のプロジェクトのブランチ。
+>プロジェクトの `master` ブランチは削除できません。
 
-このタスクを実行するには、プロジェクト管理者、環境管理者、またはアカウント所有者である必要があります。 参照： [クラウドプロジェクトへのユーザーアクセスの管理](../project/user-access.md).
+このタスクを実行するには、プロジェクト管理者、環境管理者、またはアカウント所有者である必要があります。 詳しくは、[ クラウドプロジェクトへのユーザーアクセスの管理 ](../project/user-access.md) を参照してください。
 
-環境を削除すると、その環境はに設定されます _inactive_. コードは引き続き Git ブランチで使用できますが、サービスやデータベースは含まれなくなりました。 環境を完全に削除するには、対応するリモート Git ブランチも削除する必要があります。
+環境を削除すると、その環境は _非アクティブ_ に設定されます。 コードは引き続き Git ブランチで使用できますが、サービスやデータベースは含まれなくなりました。 環境を完全に削除するには、対応するリモート Git ブランチも削除する必要があります。
 
 **環境を削除するには**:
 
@@ -169,7 +169,7 @@ ht-degree: 0%
    Are you sure you want to delete the environment <environment-ID>? [Y/n]
    ```
 
-   環境を削除すると、に配置されます。 _inactive_ 都道府県。
+   環境を削除すると、環境は _非アクティブ_ 状態になります。
 
    ```terminal
    Delete the remote Git branch too? [Y/n]
@@ -192,8 +192,8 @@ ht-degree: 0%
 
 >[!TIP]
 >
->非アクティブな環境をアクティブ化するには、 `magento-cloud environment:activate` コマンド。
+>非アクティブな環境をアクティブにするには、`magento-cloud environment:activate` コマンドを使用します。
 
 ## リモート環境とのインタラクション
 
-お先に [ssh キーの設定](../development/secure-connections.md)の場合は、次のことができます [ローカルワークスペースからリモート環境への接続](../development/secure-connections.md#connect-to-a-remote-environment) を使用して、プロジェクトサービスとやり取りし、設定を変更できます。
+[SSH キーを設定 ](../development/secure-connections.md) したら、[ ローカルワークスペースからリモート環境に接続 ](../development/secure-connections.md#connect-to-a-remote-environment) し、プロジェクトサービスとやり取りし、設定を変更できます。

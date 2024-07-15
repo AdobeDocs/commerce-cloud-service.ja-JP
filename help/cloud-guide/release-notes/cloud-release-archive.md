@@ -16,261 +16,261 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->これらのリリースノートは、の情報と更新を提供します `ece-tools` v2002.0.22 以降。 参照： [Cloud Tools Suite のリリースノート](cloud-tools-suite.md) の最新のアップデートを取得するには `ece-tools` およびその他のクラウドパッケージ。
+>これらのリリースノートは、`ece-tools` v2002.0.22 以降に関する情報とアップデートを提供します。 `ece-tools` およびその他のクラウドパッケージの最新のアップデートを入手するには、[ クラウドツールスイートのリリースノート ](cloud-tools-suite.md) を参照してください。
 
 ## v2002.0.22
 
-この `ece-tools` 2002.0.22 リリースでは、の構造が変更されました `ece-tools` のリリースを切り離すためのパッケージ `Adobe Commerce on cloud infrastructure` ece-Tools リリースのパッチ。 このリリース以降、パッチおよび重要な修正は、 [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) パッケージ（ `ece-tools` パッケージ。 リリースアップデートのスケジュール設定やコミュニティの貢献度の操作に関する複雑さを軽減するために、これらの変更を行いました。
+`ece-tools` 2002.0.22 リリースでは、`ece-tools` パッケージの構造が変更され、`Adobe Commerce on cloud infrastructure` パッチのリリースが ECE-Tools リリースから切り離されます。 このリリース以降、パッチおよび重要な修正は、`ece-tools` パッケージの新しい依存関係である [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) パッケージを使用して配布されます。 リリースアップデートのスケジュール設定やコミュニティの貢献度の操作に関する複雑さを軽減するために、これらの変更を行いました。
 
-- ![新規アイコン](../../assets/new.svg) **ECE-Tools パッケージの変更**
+- ![ 新規アイコン ](../../assets/new.svg)**ECE ツールパッケージの変更点**
 
-   - ![新規アイコン](../../assets/new.svg) Adobe Commerce パッチをから移動しました。 `ece-tools` 新規にパッケージ化 [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) composer パッケージ。
+   - ![ 新規アイコン ](../../assets/new.svg) Adobe Commerceのパッチを `ece-tools` パッケージから新しい [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) composer パッケージに移動しました。
 
-   - ![新規アイコン](../../assets/new.svg) が更新されました `composer.json` ファイル： `ece-tools` の依存関係を追加するパッケージ `magento/magento-cloud-patches` v1.0.0 パッケージ。
+   - ![ 新規アイコン ](../../assets/new.svg)`ece-tools` パッケージの `composer.json` ファイルを更新して、`magento/magento-cloud-patches` v1.0.0 パッケージの依存関係を追加しました。
 
-   - ![修正アイコン](../../assets/fix.svg) の原因となった問題を修正しました `ece-tools` バージョン 2.3.2-p2 以降のセキュリティのみのリリースにパッチセットを適用すると、パッチ適用プロセスが中断する。 この問題は、で採用された新しいバージョン管理スキームによって導入されました [セキュリティ専用パッチ](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html#security-only-patches).<!--MAGECLOUD-4661-->
+   - ![ 修正アイコン ](../../assets/fix.svg) バージョン 2.3.2-p2 以降のセキュリティ専用リリースにパッチセットを適用すると、`ece-tools` のパッチ適用プロセスが中断する問題を修正しました。 この問題は、[ セキュリティのみのパッチ ](https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html#security-only-patches) に採用された新しいバージョン管理スキームによって導入されました <!--MAGECLOUD-4661-->
 
-- ![修正アイコン](../../assets/fix.svg) **パッチおよび重要な修正** – を使用したクラウド環境の更新 `ece-tools` バージョン 2002.0.22：次のパッチおよび重要な修正を適用します。 これらのパッチは、 `magento/magento-cloud-patches` v1.0.0 パッケージ。
+- ![ 修正アイコン ](../../assets/fix.svg)**パッチと重要な修正**-`ece-tools` バージョン 2002.0.22 でクラウド環境を更新し、次のパッチと重要な修正を適用します。 これらのパッチは、`magento/magento-cloud-patches` v1.0.0 パッケージに含まれています。
 
-   - ![修正アイコン](../../assets/fix.svg) **2.3.1.x および 2.3.2.x リリース用 Page Builder セキュリティパッチ**- ページビルダープレビューで、未認証ユーザーが一部のテンプレートメソッドにアクセスして、ネットワーク（RCE）経由の任意のコード実行をトリガーするために使用でき、グローバルな情報リークが発生する問題を修正しました。 この問題は、Adobe Commerce バージョン 2.3.1 および 2.3.2 で、サポートされていないバージョンのページビルダーを使用している場合に発生する可能性があります。<!--MAGECLOUD-4649-->
+   - ![ 修正アイコン ](../../assets/fix.svg)**Page Builder 2.3.1.x および 2.3.2.x リリースのセキュリティパッチ** – 未認証のユーザーがネットワーク（RCE）上での任意のコード実行をトリガーするために使用でき、グローバルな情報漏洩を引き起こすテンプレートメソッドにアクセスできるようにする Page Builder プレビューの問題を修正しました。 この問題は、Adobe Commerce バージョン 2.3.1 および 2.3.2.<!--MAGECLOUD-4649--> で、サポートされていないバージョンのページビルダーを使用している場合に発生する可能性があります
 
-   - ![修正アイコン](../../assets/fix.svg) **MSI パッチ** – 在庫の管理にデフォルトの在庫設定を使用する際に、インデックス作成エラーやパフォーマンスの問題が発生する問題を修正します。<!--MAGECLOUD-4428-->
+   - ![ 修正アイコン ](../../assets/fix.svg)**MSI パッチ** – 在庫を管理するためにデフォルトのインベントリ設定を使用した際に、インデックス作成エラーおよびパフォーマンスの問題が発生する問題を修正しました。<!--MAGECLOUD-4428-->
 
-   - ![修正アイコン](../../assets/fix.svg) **新しいメールインターフェイスの後方互換性** – に起因する後方非互換性の問題を修正します。 `Magento\Framework\Mail\EmailMessageInterface` Adobe Commerce v2.3.3 で導入された PHP インターフェイス。このパッチの範囲では、 `EmailMessageInterface` 古いのを継承 `MessageInterface`、およびAdobe Commerceコアモジュールは、依存するに戻ります `MessageInterface`.<!--MAGECLOUD-4422-->
+   - ![fix icon](../../assets/fix.svg) **新しいメールインターフェイスの後方互換性**-Adobe Commerce v2.3.3 で導入された `Magento\Framework\Mail\EmailMessageInterface` PHP インターフェイスに起因する後方非互換性の問題を修正しました。このパッチの適用範囲では、新しい `EmailMessageInterface` は古い `MessageInterface` から継承され、Adobe Commerce コアモジュールは `MessageInterface`.<!--MAGECLOUD-4422--> に依存するように戻されます。
 
-   - ![修正アイコン](../../assets/fix.svg) **カタログのページネーションがElasticsearch 6.x で機能しない**-Elasticsearch 6.x をカタログ検索エンジンとして使用する場合に発生する、検索結果のページネーションに関する重大な問題を修正しました。<!--MAGECLOUD-4448-->
+   - ![ 修正アイコン ](../../assets/fix.svg)**Elasticsearch 6.x でカタログのページネーションが機能しない**-Elasticsearch 6.x をカタログ検索エンジンとして使用するお客様に影響を与える、検索結果のページネーションに関する重要な問題を修正しました。<!--MAGECLOUD-4448-->
 
 ## v2002.0.21
 
-- ![新規アイコン](../../assets/new.svg) **Docker の更新**—
+- ![ 新規アイコン ](../../assets/new.svg)**Docker のアップデート**—
 
-   - ![新規アイコン](../../assets/new.svg) **新しい Docker イメージ**— バージョン 2.3.3 以降でサポート<!-- MAGECLOUD-3345 -->
+   - ![ 新規アイコン ](../../assets/new.svg)**新規 Docker イメージ** - バージョン 2.3.3 以降でサポート <!-- MAGECLOUD-3345 -->
 
       - PHP バージョン 7.3.<!-- MAGECLOUD-4017 -->
 
-      - Varnish Cache 6.2.0<!-- MAGECLOUD-4017 -->
+      - ワニス キャッシュ 6.2.0<!-- MAGECLOUD-4017 -->
 
-   - ![新規アイコン](../../assets/new.svg) で指定されたカスタムフック設定を適用できるようになりました `.magento.app.yaml` Docker 環境で作成します。 以前は、Docker 環境はデフォルトのフック設定のみをサポートしていました。<!-- MAGECLOUD-3505-->
+   - ![ 新規アイコン ](../../assets/new.svg)Docker 環境の `.magento.app.yaml` で指定されたカスタムフック設定を適用するためのサポートを追加しました。 以前は、Docker 環境はデフォルトのフック設定のみをサポートしていました。<!-- MAGECLOUD-3505-->
 
-   - ![新規アイコン](../../assets/new.svg) Docker のビルド中に Docker ENV ファイルが生成されなくなりました。 `docker:config:convert` コマンドは非推奨（廃止予定）です。 対応するデータがに保存されます。 `docker-compose.yml` ファイル。<!-- MAGECLOUD-3816-->
+   - ![ 新規アイコン ](../../assets/new.svg)Docker のビルド中に Docker 環境ファイルが生成されなくなり、`docker:config:convert` コマンドが非推奨（廃止予定）になりました。 対応するデータが `docker-compose.yml` ファイルに保存されます。<!-- MAGECLOUD-3816-->
 
-   - ![新規アイコン](../../assets/new.svg) **更新された PHP イメージ**-node、npm、grunt-cli の機能をサポートするために、Node.js を PHP Docker イメージに追加しました。<!-- MAGECLOUD-3953 -->
+   - ![new icon](../../assets/new.svg)**PHP イメージの更新**-Node.js を PHP Docker イメージに追加して、node、npm、grunt-cli の機能をサポートしました。<!-- MAGECLOUD-3953 -->
 
-- ![新規アイコン](../../assets/new.svg) **環境変数の更新**-
+- ![ 新規アイコン ](../../assets/new.svg)**環境変数の更新**-
 
-   - ![新規アイコン](../../assets/new.svg) さんがを追加しました **LOCK_PROVIDER** 変数をデプロイして、重複する cron ジョブや cron グループの起動を防ぐロックプロバイダーを設定します。 の変数の説明を参照してください。 [変数のデプロイ](../environment/variables-deploy.md#lock_provider) トピック。<!-- MAGECLOUD-4052 -->
+   - ![ 新規アイコン ](../../assets/new.svg) **LOCK_PROVIDER** デプロイ変数を追加して、重複する cron ジョブや cron グループの起動を防ぐロックプロバイダーを設定しました。 [ 変数のデプロイ ](../environment/variables-deploy.md#lock_provider) トピックの変数の説明を参照してください。<!-- MAGECLOUD-4052 -->
 
-   - ![新規アイコン](../../assets/new.svg) さんがを追加しました **CONSUMERS_WAIT_FOR_MAX_MESSAGES** 環境変数：を使用する際に、コンシューマーがメッセージキューからメッセージを処理する方法を設定します。 `CRON_CONSUMERS_RUNNER` cron ジョブを管理する環境変数。 の変数の説明を参照してください。 [変数のデプロイ](../environment/variables-deploy.md#consumers_wait_for_max_messages) トピック。<!-- MAGECLOUD-4071 -->
+   - ![ 新規アイコン ](../../assets/new.svg) **CONSUMERS_WAIT_FOR_MAX_MESSAGES** 環境変数を追加しました。コンシューマーが `CRON_CONSUMERS_RUNNER` 環境変数を使用して cron ジョブを管理する際に、メッセージキューからのメッセージを処理する方法を設定します。 [ 変数のデプロイ ](../environment/variables-deploy.md#consumers_wait_for_max_messages) トピックの変数の説明を参照してください。<!-- MAGECLOUD-4071 -->
 
-   - ![修正アイコン](../../assets/fix.svg) 次の場合にデータベースのデッドロックエラーが発生する可能性がある問題を修正しました `consumers_runner` cron ジョブが、同じコンシューマーの複数のインスタンスを異なるノードで開始する。 ここで、 [**CRON_CONSUMERS_RUNNER**](../environment/variables-deploy.md#cron_consumers_runner) 環境に変数をデプロイすると、 `consumers_runner` ジョブはを使用します `single-thread` 各コンシューマーの 1 つのインスタンスを 1 つのノードでのみ起動するオプション。<!-- MAGECLOUD-3913 -->
+   - ![ 修正アイコン ](../../assets/fix.svg) `consumers_runner` cron ジョブが異なるノードで同じコンシューマーの複数のインスタンスを開始した場合に、データベースのデッドロックエラーが発生する可能性がある問題を修正しました。 現在は、お使いの環境で [**CRON_CONSUMER_RUNNER**](../environment/variables-deploy.md#cron_consumers_runner) デプロイ変数を有効にしている場合、`consumers_runner` ジョブは `single-thread` オプションを使用して 1 つのノードのみで各コンシューマーの 1 つのインスタンスを起動します。<!-- MAGECLOUD-3913 -->
 
-   - ![修正アイコン](../../assets/fix.svg) に影響する問題を修正しました [**WARM_UP_PAGES**](../environment/variables-post-deploy.md#warm_up_pages) デフォルトストア URL を使用する機能。 ここで、 `config:show:default-url` コマンドでベース URL を取得できない場合は、MAGENTO_CLOUD_ROUTES 変数の URL が使用されます。<!-- MAGECLOUD-3866 -->
+   - ![ 修正アイコン ](../../assets/fix.svg) デフォルトのストア URL を使用する [**WARM_UP_PAGES**](../environment/variables-post-deploy.md#warm_up_pages) 機能に影響する問題を修正しました。 これで、`config:show:default-url` コマンドでベース URL を取得できない場合は、MAGENTO_CLOUD_ROUTES 変数からの URL が使用されます。<!-- MAGECLOUD-3866 -->
 
-- ![新規アイコン](../../assets/new.svg) が返すログ情報を更新しました `module:refresh` コマンド。 有効なモジュールの詳細なリストが `cloud.log` ファイル。<!-- MAGECLOUD-2514 -->
+- ![ 新規アイコン ](../../assets/new.svg) `module:refresh` コマンドによって返されたログ情報を更新しました。 これで、有効なモジュールの詳細なリストが `cloud.log` ファイルに表示されました。<!-- MAGECLOUD-2514 -->
 
-- ![新規アイコン](../../assets/new.svg) Adobe Commerceのバージョンとインストールされているサービスの互換性に関する問題（Elasticsearchなど）について、バージョン互換性の検証と警告通知を改善しました。 [!DNL RabbitMQ]、Redis および DB です。<!-- MAGECLOUD-3535 -->
+- ![ 新しいアイコン ](../../assets/new.svg) Adobe Commerceのバージョンとインストールされているサービス（Elasticsearch、[!DNL RabbitMQ]、Redis、DB など）の互換性の問題に対するバージョン互換性の検証と警告通知を改善しました。<!-- MAGECLOUD-3535 -->
 
-- ![新規アイコン](../../assets/new.svg) RabitMQ バージョン 3.8 のサポートを追加。<!-- MAGECLOUD-4674-->
+- ![ 新しいアイコン ](../../assets/new.svg)RabitMQ バージョン 3.8.<!-- MAGECLOUD-4674--> のサポートを追加
 
-- ![新規アイコン](../../assets/new.svg) 新しいAdobe Commerce 2.3.3 および 2.2.10 リリースでサポートされているバージョンを反映するように、サービス互換性のインタラクティブな検証を更新しました。 参照： [必要システム構成](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) が含まれる _インストールガイド_ （推奨バージョン用）。<!-- MAGECLOUD-4018 -->
+- ![ 新しいアイコン ](../../assets/new.svg) 新しいAdobe Commerce 2.3.3 および 2.2.10 リリースでサポートされているバージョンを反映するように、サービス互換性のインタラクティブな検証を更新しました。 推奨バージョンについては、『 _インストレーション ガイド_ の [ システム要件 ](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html) を参照してください。<!-- MAGECLOUD-4018 -->
 
-- ![修正アイコン](../../assets/fix.svg) デプロイフェーズの cron ジョブ管理プロセスが、この問題がエラーではないことを明確にするために、既に完了した cron ジョブを停止しようとすると返されるログメッセージを改善しました。 がログレベルをから変更しました `INFO` 対象： `DEBUG`.<!-- MAGECLOUD-3653-->
+- ![ 修正アイコン ](../../assets/fix.svg) デプロイフェーズの cron ジョブ管理プロセスが、この問題がエラーではないことを明確にするために、既に完了した cron ジョブを停止しようとすると返されるログメッセージを改善しました。 ログレベルが `INFO` から `DEBUG`.<!-- MAGECLOUD-3653--> に変更されました
 
-- ![修正アイコン](../../assets/fix.svg) を実行する際の問題を修正しました `setup:upgrade` デプロイ中にエラーが発生したときにデプロイメントプロセスを中断しなかったコマンド `app:config:import` タスク。<!-- MAGECLOUD-3806 -->
+- ![ 修正アイコン ](../../assets/fix.svg) `setup:upgrade` コマンドを実行したときに、`app:config:import` タスク中にエラーが発生した場合にデプロイメントプロセスが中断されなかった問題を修正しました。<!-- MAGECLOUD-3806 -->
 
-- ![新規アイコン](../../assets/new.svg) ファイルハンドラーのデフォルトログレベルをに変更しました `debug` に表示されるログの詳細度を下げるには [!DNL Cloud Console]を選択します（デバッグ用の詳細情報は提供されます）。<!-- MAGECLOUD-3871 -->
+- ![ 新規アイコン ](../../assets/new.svg) ファイルハンドラーのデフォルトのログレベルを `debug` に変更して、[!DNL Cloud Console] に表示されるログの詳細量を減らすと同時に、デバッグの詳細情報を提供するようになりました。<!-- MAGECLOUD-3871 -->
 
-- ![修正アイコン](../../assets/fix.svg) ビルド中に静的コンテンツのデプロイメントでエラーが発生する問題を修正しました。 インストール後、および `ece-tools` 設定ダンプ。で管理者ユーザー用のロケールが指定されていない場合にエラーが発生しました `config.php` ファイル。 これで、管理者ユーザーのデフォルトのロケールが `config.php` ファイル。<!-- MAGECLOUD-3957 -->
+- ![ 修正アイコン ](../../assets/fix.svg) ビルド中に静的コンテンツのデプロイメントでエラーが発生する問題を修正しました。 インストールおよび設定ダンプ `ece-tools` 後、`config.php` ファイルで管理者ユーザーのロケールが指定されていない場合、エラーが発生しました。 これで、`config.php` ファイルに admin ユーザーのデフォルトのロケールが含まれるようになりました。<!-- MAGECLOUD-3957 -->
 
-- ![修正アイコン](../../assets/fix.svg) を修正 `Undefined index error` 次の場合に発生 `magento-cloud` セキュア URL （https）が設定されていない環境で CLI コマンドが失敗する。 現在、ECE-Tools パッケージは、セキュア URL が使用できない場合、ベース URL （http）を使用します。<!-- MAGECLOUD-4009 -->
+- ![ 修正アイコン ](../../assets/fix.svg) セキュア URL （https）が設定されていない環境で `magento-cloud` CLI コマンドが失敗したときに発生する `Undefined index error` ラーを修正しました。 現在、ECE-Tools パッケージは、セキュア URL が使用できない場合にベース URL （http）を使用します <!-- MAGECLOUD-4009 -->。
 
 ## v2002.0.20
 
-- ![新規アイコン](../../assets/new.svg) **Docker の更新**—
+- ![ 新規アイコン ](../../assets/new.svg)**Docker のアップデート**—
 
-   - ![新規アイコン](../../assets/new.svg) を使用して機能テストを実行できるようになりました `ece-tools` docker 環境のパッケージ。 参照： [アプリケーションテスト](https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html).<!-- MAGECLOUD-3129/3684 -->
+   - ![ 新規アイコン ](../../assets/new.svg)Docker 環境の `ece-tools` パッケージを使用して機能テストを実行できるようになりました。 [ アプリケーションテスト ](https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html) を参照してください <!-- MAGECLOUD-3129/3684 -->。
 
-   - ![新規アイコン](../../assets/new.svg) を使用した PHP モジュールの設定をサポートするようになりました。 `.magento.app.yaml` ファイル。 任意 [で指定された PHP 拡張モジュール `.magento.app.yaml` ファイル](https://devdocs.magento.com/cloud/project/magento-app-php-application.html#php-extensions) docker PHP コンテナで使用できるようになります。<!-- MAGECLOUD-3357 -->
+   - ![ 新規アイコン ](../../assets/new.svg) `.magento.app.yaml` ファイルを使用した PHP モジュールの設定をサポートするようになりました。 `.magento.app.yaml` ファイルで指定された [PHP Extensions](https://devdocs.magento.com/cloud/project/magento-app-php-application.html#php-extensions) は、Docker PHP コンテナで使用できます。<!-- MAGECLOUD-3357 -->
 
-   - ![新規アイコン](../../assets/new.svg) Docker コマンドラインのエクスペリエンスを向上させるために使用できる新しいコマンドがあります。 を参照してください。 [`bin/magento-docker` Docker リファレンスの節](https://devdocs.magento.com/cloud/docker/docker-quick-reference.html#magento-cloud-docker-cli).<!-- MAGECLOUD-3569 -->
+   - ![ 新規アイコン ](../../assets/new.svg) Docker コマンドラインエクスペリエンスを向上させるための新しいコマンドが追加されました。 詳しくは、Docker リファレンスの [`bin/magento-docker` の節を参照してください ](https://devdocs.magento.com/cloud/docker/docker-quick-reference.html#magento-cloud-docker-cli).<!-- MAGECLOUD-3569 -->
 
-   - ![新規アイコン](../../assets/new.svg) Mutagen.io を使用して、ローカルホストと Docker 間の開発中にファイルを同期する機能を追加しました。<!-- MAGECLOUD-3559 -->
+   - ![ 新規アイコン ](../../assets/new.svg)Mutagen.io を使用して、ローカルホストと Docker 間の開発中にファイルを同期する機能が追加されました。<!-- MAGECLOUD-3559 -->
 
-   - ![修正アイコン](../../assets/fix.svg) Docker 環境を使用する際のデフォルトパスを修正しました。 SSH を使用して Docker コンテナにログインすると、内のプロジェクトルートに移動します。 `/app` ディレクトリ（期待どおり）。<!-- MAGECLOUD-3582 -->
+   - ![ 修正アイコン ](../../assets/fix.svg)Docker 環境を使用する際のデフォルトパスを修正しました。 これで、SSH を使用して Docker コンテナにログインすると、期待どおりに `/app` ディレクトリのプロジェクトルートに移動できます。<!-- MAGECLOUD-3582 -->
 
-   - ![修正アイコン](../../assets/fix.svg) Sodium ライブラリをバージョン 1.0.11 からバージョン 1.0.18 に更新し、Sodium PHP 拡張モジュールを更新しました。<!-- MAGECLOUD-3832 -->
+   - ![ 修正アイコン ](../../assets/fix.svg) Sodium ライブラリをバージョン 1.0.11 からバージョン 1.0.18 に更新し、Sodium PHP 拡張機能を更新しました。<!-- MAGECLOUD-3832 -->
 
      >[!WARNING]
      >
-     >クラウドインフラストラクチャー上のAdobe Commerceのお客様には、次が必要です [Adobe Commerce サポートチケットを送信](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) Adobe Commerce 2.3.2 にアップグレードする前に、Pro 実稼動環境とステージング環境で libsodium パッケージをアップグレードする場合。現在、スターター環境をAdobe Commerce 2.3.2 にアップグレードすることはできません。
+     >Adobe Commerce on cloud infrastructure のお客様がAdobe Commerce 2.3.2 にアップグレードする前に ](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket)Adobe Commerce サポートチケットを送信 [ して、プロ実稼動環境とステージング環境の libsona パッケージをアップグレードする必要があります。現在、スターター環境をAdobe Commerce 2.3.2 にアップグレードすることはできません。
 
-   - ![修正アイコン](../../assets/fix.svg) さんがを追加しました `analysis-icu` および `analysis-phonetic` すべての Docker イメージへのプラグインのElasticsearch。<!-- MAGECLOUD-3446 -->
+   - ![fix icon](../../assets/fix.svg) すべての Docker イメージに `analysis-icu` プラグインと `analysis-phonetic` Elasticsearchプラグインを追加しました。<!-- MAGECLOUD-3446 -->
 
-   - ![修正アイコン](../../assets/fix.svg) 検証機能の向上：のオプションを使用する場合 `docker:build` コマンド。オプションを使用する場合は、値を指定する必要があります。 また、を使用する場合のノード バージョンの検証を追加しました。 `docker:build run` コマンド。<!-- MAGECLOUD-3486 & MAGECLOUD-3678 -->
+   - ![ 修正アイコン ](../../assets/fix.svg) 検証機能の向上：`docker:build` コマンドでオプションを使用する場合、オプションを使用する際に値を指定する必要があります。 また、`docker:build run` コマンドを使用する際のノードバージョンの検証も追加しました。<!-- MAGECLOUD-3486 & MAGECLOUD-3678 -->
 
-- ![新規アイコン](../../assets/new.svg) **環境変数の更新**—
+- ![ 新規アイコン ](../../assets/new.svg)**環境変数の更新**—
 
-   - ![新規アイコン](../../assets/new.svg) を使用したデータベーステーブル接頭辞のサポートを追加しました [DATABASE_CONFIGURATION 環境変数](../environment/variables-deploy.md#database_configuration).<!-- MAGECLOUD-2901 -->
+   - ![ 新規アイコン ](../../assets/new.svg) [DATABASE_CONFIGURATION 環境変数 ](../environment/variables-deploy.md#database_configuration) を使用したデータベーステーブル接頭辞のサポートが追加されました。<!-- MAGECLOUD-2901 -->
 
-   - ![新規アイコン](../../assets/new.svg) さんがを追加しました **FORCE_UPDATE_URLS** 変数をデプロイして、Pro およびスターターの実稼動環境とステージング環境にデプロイする際にベース URL を更新します。 の定義を参照してください。 [変数のデプロイ](../environment/variables-deploy.md#force_update_urls) コンテンツ。<!-- MAGECLOUD-3602 -->
+   - ![ 新規アイコン ](../../assets/new.svg) **FORCE_UPDATE_URLS** デプロイ変数を追加して、Pro およびスターターの実稼動環境とステージング環境にデプロイする際にベース URL を更新しました。 [ 変数をデプロイ ](../environment/variables-deploy.md#force_update_urls) コンテンツの定義を参照してください。<!-- MAGECLOUD-3602 -->
 
-   - ![新規アイコン](../../assets/new.svg) さんがを追加しました **TTFB_TESTED_PAGES** 設定するデプロイ後変数 _最初のバイトまでの時間_ ページテスト：クラウドインフラストラクチャにデプロイされたサイトのアプリケーションパフォーマンスを確認します。 の変数の説明を参照してください。 [デプロイ後変数](../environment/variables-post-deploy.md).<!-- MAGECLOUD-3643 -->
+   - ![ 新規アイコン ](../../assets/new.svg) デプロイ後の **TTFB_TESTED_PAGES** 変数を追加して、_最初のバイトまでの時間_ ページテストを設定し、クラウドインフラストラクチャにデプロイされたサイトのアプリケーションパフォーマンスを確認しました。 [ デプロイ後変数 ](../environment/variables-post-deploy.md) の変数の説明を参照してください。<!-- MAGECLOUD-3643 -->
 
-   - ![修正アイコン](../../assets/fix.svg) マルチスレッド SCD で、静的コンテンツのデプロイメントでランダムなエラーが発生する問題を修正しました。 この回避策では、 **SCD_THREADS** 変数から `1`. 必要に応じて、カウントを増やすことができるようになりました。 の定義を参照してください。 [変数のデプロイ](../environment/variables-deploy.md#scd_threads) および [ビルド変数](../environment/variables-build.md#scd_threads).<!-- MAGECLOUD-3611 -->
+   - ![ 修正アイコン ](../../assets/fix.svg) マルチスレッド SCD で、静的コンテンツのデプロイメントでランダムなエラーが発生する問題を修正しました。 この問題を回避するために、**SCD_THREADS** 変数を `1` に設定しました。 必要に応じて、カウントを増やすことができるようになりました。 [ 変数のデプロイ ](../environment/variables-deploy.md#scd_threads) の定義および [ 変数のビルド ](../environment/variables-build.md#scd_threads) を参照してください。<!-- MAGECLOUD-3611 -->
 
-   - ![修正アイコン](../../assets/fix.svg) を設定できます **WARM_UP_PAGES** 単一ページ、複数ドメイン、複数ページをキャッシュする環境変数。 で展開された定義を参照してください。 [デプロイ後変数](../environment/variables-post-deploy.md#warm_up_pages) コンテンツ。<!-- MAGECLOUD-3258 -->
+   - ![ 修正アイコン ](../../assets/fix.svg) **WARM_UP_PAGES** 環境変数を設定して、単一ページ、複数ドメイン、複数ページをキャッシュできます。 [ デプロイ後の変数 ](../environment/variables-post-deploy.md#warm_up_pages) の内容の展開された定義を参照してください。<!-- MAGECLOUD-3258 -->
 
-- ![修正アイコン](../../assets/fix.svg) さんがを追加しました `pub/static/.htaccess` ファイルを除外リストに追加します。 [修正は PHOENIX MEDIA GmbH の Björn Kraus 氏によって提出されました](https://github.com/magento/ece-tools/pull/455).<!-- MAGECLOUD-3545/Github#455 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 除外リストに `pub/static/.htaccess` ファイルを追加しました。 [PHOENIX MEDIA GmbH](https://github.com/magento/ece-tools/pull/455) の Björn Kraus による修正 <!-- MAGECLOUD-3545/Github#455 -->
 
-- ![修正アイコン](../../assets/fix.svg) すべての検証メッセージがとして表示されていた場合のエラーを修正しました `Critical` 少なくとも 1 つの重要レベルバリデーターがエラーを返した場合。<!-- MAGECLOUD-3178 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 少なくとも 1 つの重要レベルのバリデーターがエラーを返した場合に、すべての検証メッセージが `Critical` として表示されていたエラーを修正しました。<!-- MAGECLOUD-3178 -->
 
-- ![修正アイコン](../../assets/fix.svg) ベース URL がデータベースに存在しない場合に、デプロイメントが失敗する問題を修正しました。<!-- MAGECLOUD-3075 -->
+- ![ 修正アイコン ](../../assets/fix.svg) ベース URL がデータベースに存在しない場合に、デプロイメントが失敗する問題を修正しました。<!-- MAGECLOUD-3075 -->
 
-- ![新規アイコン](../../assets/new.svg) 新しいを追加しました **`env:config:show`コマンド** に `ece-tools` 環境サービス、ルート、変数を表示するパッケージ。 参照： [サービス、ルート、変数](https://devdocs.magento.com/cloud/reference/ece-tools-reference.html#services-routes-and-variables). [Vladimir Kerkhoff が提供する機能](https://github.com/magento/ece-tools/pull/486).<!-- MAGECLOUD-3451 -->
+- ![ 新規アイコン ](../../assets/new.svg) 新しい **`env:config:show`コマンド** を、環境サービス、ルート、変数を表示する `ece-tools` パッケージに追加しました。 [ サービス、ルート、変数 ](https://devdocs.magento.com/cloud/reference/ece-tools-reference.html#services-routes-and-variables) を参照してください。 [Vladimir Kerkhoff が提供した機能 ](https://github.com/magento/ece-tools/pull/486).<!-- MAGECLOUD-3451 -->
 
-- ![修正アイコン](../../assets/fix.svg) Adobe Commerce 2.2.6 以前をでインストールしようとすると重大なエラーが発生する問題を修正しました `ece-tools` シェルリファクタリングの後に開発されます。<!-- MAGECLOUD-3665 -->
+- ![ 修正アイコン ](../../assets/fix.svg) シェルリファクタリング後に開発された `ece-tools` でAdobe Commerce 2.2.6 以前をインストールしようとすると、重大なエラーが発生する問題を修正しました。<!-- MAGECLOUD-3665 -->
 
-- ![修正アイコン](../../assets/fix.svg) Adobe Commerce 2.1.x および 2.2.x のインストールが失敗し、非推奨（廃止予定）の Carbon バージョンの使用に関する警告が表示される問題を修正しました。<!-- MAGECLOUD-3704 -->
+- ![ 修正アイコン ](../../assets/fix.svg) Adobe Commerce 2.1.x および 2.2.x のインストールが失敗し、非推奨（廃止予定）の Carbon バージョンの使用に関する警告が表示される問題を修正しました。<!-- MAGECLOUD-3704 -->
 
-- ![修正アイコン](../../assets/fix.svg) 減じた `cloud.log` からのシェル出力のログレベル `info` 対象： `debug`.<!-- MAGECLOUD-3277 -->
+- ![ 修正アイコン ](../../assets/fix.svg) シェル出力の `cloud.log` ログレベルを `info` から `debug` に下げました。<!-- MAGECLOUD-3277 -->
 
-- ![修正アイコン](../../assets/fix.svg) さんがを追加しました `--remove-definers (-d)` のオプション `ece-tools db-dump` ダンプ ファイルから定義を削除するコマンド。<!-- MAGECLOUD-3510 -->
+- ![ 修正アイコン ](../../assets/fix.svg) ダンプファイルから定義を削除する `--remove-definers (-d)` オプションを `ece-tools db-dump` コマンドに追加しました。<!-- MAGECLOUD-3510 -->
 
 ## v2002.0.19
 
-- ![修正アイコン](../../assets/fix.svg) を上書きする問題を修正しました `env.php` デプロイ中にファイルを保存すると、カスタム設定が失われる。 このアップデートにより、クラウドインフラストラクチャ上のAdobe Commerceで `env.php` カスタム設定を維持しながら、デプロイメントごとにファイルを取り込みます。<!-- MAGECLOUD-3668 -->
+- ![ 修正アイコン ](../../assets/fix.svg) デプロイ中に `env.php` ファイルが上書きされ、カスタム設定が失われる問題を修正しました。 この更新により、カスタム設定を維持しながら、クラウドインフラストラクチャ上のAdobe Commerceによってデプロイメントごとに `env.php` ファイルが更新されます。<!-- MAGECLOUD-3668 -->
 
 ## v2002.0.18
 
-- ![新規アイコン](../../assets/new.svg) **Docker の更新**—
+- ![ 新規アイコン ](../../assets/new.svg)**Docker のアップデート**—
 
-   - ![新規アイコン](../../assets/new.svg) これで、Docker 環境は、 [.magento.app.yaml ファイルの cron プロパティ](https://devdocs.magento.com/cloud/project/magento-app-properties.html#crons).<!-- MAGECLOUD-3150 -->
+   - ![ 新規アイコン ](../../assets/new.svg)Docker 環境で、.magento.app.yaml ファイルの [cron プロパティで定義された cron 設定がサポートされるようになりました ](https://devdocs.magento.com/cloud/project/magento-app-properties.html#crons).<!-- MAGECLOUD-3150 -->
 
-   - ![新規アイコン](../../assets/new.svg) **新規 Docker コンテナ** – が追加されました [TLS 終了プロキシコンテナ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#varnish-container) https 経由の Varnish SSL 終了を容易にする。<!-- MAGECLOUD-2890 -->
+   - ![ 新しいアイコン ](../../assets/new.svg)**新しい Docker コンテナ** - HTTPS での Varnish SSL 終了を容易にするために [TLS 終了プロキシコンテナ ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#varnish-container) を追加しました。<!-- MAGECLOUD-2890 -->
 
-   - ![新規アイコン](../../assets/new.svg) **新しい Docker イメージ**- Gulp および Jasmine JS 単体テストなどのその他の機能をサポートするために Node.js 画像を追加しました。<!-- MAGECLOUD-3345 -->
+   - ![ 新規アイコン ](../../assets/new.svg)**新しい Docker 画像** - Gulp および Jasmine JS Unit Testing などのその他の機能をサポートするための Node.js 画像を追加しました。<!-- MAGECLOUD-3345 -->
 
-   - ![新規アイコン](../../assets/new.svg) **Docker ビルドモード** – で Docker 環境を起動するように選択できるようになりました。 [実稼動モードまたは開発者モード](https://devdocs.magento.com/cloud/docker/docker-launch.html#set-the-launch-mode). 開発者モードは、完全な書き込み可能なファイルシステム権限を持つアクティブ開発をサポートします。<!-- MAGECLOUD-3152/3511 -->
+   - ![ 新規アイコン ](../../assets/new.svg)**Docker ビルドモード** - Docker 環境を [ 実稼動モードまたは開発者モード ](https://devdocs.magento.com/cloud/docker/docker-launch.html#set-the-launch-mode) で起動するように選択できるようになりました。 開発者モードは、完全な書き込み可能なファイルシステム権限を持つアクティブ開発をサポートします。<!-- MAGECLOUD-3152/3511 -->
 
-   - ![修正アイコン](../../assets/fix.svg) Docker のデプロイに失敗する問題を `Name or service not known` キャッシュが使用できないサービス用に設定されている場合のエラー。 これで、からサービスを削除できます [`.magento/services.yaml` ファイル](https://devdocs.magento.com/cloud/project/services.html). Docker 設定ジェネレーターがのサービスを更新します `docker/config.php.dist` ファイルを自動的に。<!-- MAGECLOUD-3369 -->
+   - ![ 修正アイコン ](../../assets/fix.svg) 使用できないサービスに対してキャッシュが設定されている場合、Docker デプロイが `Name or service not known` エラーで失敗する問題を修正しました。 [`.magento/services.yaml` ファイルからサービスを削除できるようになりました ](https://devdocs.magento.com/cloud/project/services.html)。 Docker 設定ジェネレーターが、`docker/config.php.dist` ファイルのサービスを自動的に更新します。<!-- MAGECLOUD-3369 -->
 
-   - ![新規アイコン](../../assets/new.svg) サービスの互換性のインタラクティブな検証を追加しました。 ここで、リクエストされたサービスがAdobe Commerceのバージョンや他のサービスと互換性がない場合、 _対話モード_ では、メッセージと続行する選択をユーザーに促します。 を参照してください。 [サービスのバージョン](https://devdocs.magento.com/cloud/docker/docker-containers.html#service-containers) docker で使用可能です。 の使用 `-n` CICD の目的でインタラクティビティをスキップするオプション。<!-- MAGECLOUD-3251 -->
+   - ![ 新規アイコン ](../../assets/new.svg) サービスの互換性のインタラクティブな検証を追加しました。 これで、要求されたサービスがAdobe Commerceのバージョンまたは他のサービスと互換性がない場合、_インタラクティブモード_ からメッセージが表示され、続行するかどうかを選択するように求められます。 Docker で使用可能な [ サービスバージョン ](https://devdocs.magento.com/cloud/docker/docker-containers.html#service-containers) を参照してください。 CICD の目的でインタラクティビティをスキップするには、`-n` オプションを使用します。<!-- MAGECLOUD-3251 -->
 
-   - ![修正アイコン](../../assets/fix.svg) Docker Compose の問題を修正しました `db-dump` 既存のダンプを消去したコマンド。<!-- MAGECLOUD-3366 -->
+   - ![ 修正アイコン ](../../assets/fix.svg)Docker compose `db-dump` コマンドで既存のダンプが消去される問題を修正しました。<!-- MAGECLOUD-3366 -->
 
-   - ![修正アイコン](../../assets/fix.svg) Redis が割り当てられた問題を修正しました `session`, `default`、および `page_cache` ストレージを同じデータベース ID にキャッシュします。<!-- MAGECLOUD-3172 -->
+   - ![ 修正アイコン ](../../assets/fix.svg)Redis `session`、`default` および `page_cache` キャッシュストレージを同じデータベース ID に割り当てた問題を修正しました。<!-- MAGECLOUD-3172 -->
 
-- ![新規アイコン](../../assets/new.svg) **環境変数の更新**—
+- ![ 新規アイコン ](../../assets/new.svg)**環境変数の更新**—
 
-   - ![新規アイコン](../../assets/new.svg) 新しい **ELASTICSUITE\_CONFIGURATION** 環境変数は、デプロイメントとデプロイメントの間、カスタマイズされたサービス設定を保持します。 の定義を参照してください。 [変数のデプロイ](../environment/variables-deploy.md#elasticsuite_configuration) コンテンツ。<!-- MAGECLOUD-3205 -->
+   - ![ 新規アイコン ](../../assets/new.svg) 新しい **ELASTICSUITE\_CONFIGURATION** 環境変数には、カスタマイズされたサービス設定がデプロイメント間で保持されます。 [ 変数をデプロイ ](../environment/variables-deploy.md#elasticsuite_configuration) コンテンツの定義を参照してください。<!-- MAGECLOUD-3205 -->
 
-   - ![新規アイコン](../../assets/new.svg) さんがを追加しました **SCD_MAX_EXECUTION_TIMEOUT** 環境変数を使用すると、 `.magento.env.yaml` ファイル。 の定義を参照してください。 [変数のデプロイ](../environment/variables-deploy.md#scd_max_execution_time), [ビルド変数](../environment/variables-build.md#scd_max_execution_time)、および [グローバル変数](../environment/variables-global.md#scd_max_execution_time).<!-- MAGECLOUD-2822 -->
+   - ![ 新規アイコン ](../../assets/new.svg) **SCD_MAX_EXECUTION_TIMEOUT** 環境変数が追加され、`.magento.env.yaml` ファイルからの静的コンテンツのデプロイメントの完了に要する時間を短縮できるようになりました。 [ 変数のデプロイ ](../environment/variables-deploy.md#scd_max_execution_time)、[ 変数のビルド ](../environment/variables-build.md#scd_max_execution_time)、[ グローバル変数 ](../environment/variables-global.md#scd_max_execution_time) の定義を参照してください。<!-- MAGECLOUD-2822 -->
 
-      - ![新規アイコン](../../assets/new.svg) さんがを追加しました **MAGENTO_CLOUD_LOCKS_DIR** 環境変数：クラウドインフラストラクチャ上のロックプロバイダーのマウントポイントへのパスを設定します。 ロックプロバイダーは、重複した cron ジョブや cron グループの起動を防ぎます。 この変数はAdobe Commerce バージョン 2.2.5 以降でサポートされ、自動的に設定されます。 の定義を参照してください [クラウド変数](../environment/variables-cloud.md).<!-- MAGECLOUD-3135 -->
+      - ![ 新規アイコン ](../../assets/new.svg) **environment_CLOUD_LOCKS_DIR** MAGENTO変数を追加して、クラウドインフラストラクチャ上のロックプロバイダーのマウントポイントへのパスを設定しました。 ロックプロバイダーは、重複した cron ジョブや cron グループの起動を防ぎます。 この変数はAdobe Commerce バージョン 2.2.5 以降でサポートされ、自動的に設定されます。 [ クラウド変数 ](../environment/variables-cloud.md) の定義を参照してください。<!-- MAGECLOUD-3135 -->
 
-      - ![修正アイコン](../../assets/fix.svg) がを変更しました **SCD_THREADS** 環境変数のデフォルト値：検出された CPU スレッド数に基づいて最適な値を自動的に決定します。 で更新された定義を参照してください。 [変数のデプロイ](../environment/variables-deploy.md#scd_threads) および [ビルド変数](../environment/variables-build.md#scd_threads).<!-- MAGECLOUD-3382 -->
+      - ![fix icon](../../assets/fix.svg) **SCD_THREADS** 環境変数のデフォルト値を変更し、検出された CPU スレッド数に基づいて最適な値を自動的に決定しました。 [ 変数のデプロイ ](../environment/variables-deploy.md#scd_threads) および [ 変数のビルド ](../environment/variables-build.md#scd_threads) の更新された定義を参照してください。<!-- MAGECLOUD-3382 -->
 
-- ![修正アイコン](../../assets/fix.svg) DB 分離メカニズムのパッチが、クラウドインフラストラクチャバージョン 2002.0.16 上のAdobe Commerceにアップグレードする際にエラーが発生する問題を修正しました。<!-- MAGECLOUD-3383 -->
+- ![fix icon](../../assets/fix.svg) クラウドインフラストラクチャバージョン 2002.0.16.<!-- MAGECLOUD-3383 --> 上のAdobe Commerceにアップグレードする際に、DB 分離メカニズムのパッチが原因でエラーが発生していた問題を修正しました
 
-- ![修正アイコン](../../assets/fix.svg) に代わるパッチを追加しました。 _Google画像グラフ_ （を使用） _Image-Chart_. DevBlog の記事を参照 [Google画像グラフの M1 の廃止と更新](https://community.magento.com/t5/Magento-DevBlog/Google-Image-Charts-deprecation-and-update-for-M1/ba-p/125006).<!-- MAGECLOUD-3456 -->
+- ![fix icon](../../assets/fix.svg) _Googleの画像グラフ_ を _画像グラフ_ に置き換えるパッチを追加しました。 DevBlog の記事 [Google画像グラフの M1](https://community.magento.com/t5/Magento-DevBlog/Google-Image-Charts-deprecation-and-update-for-M1/ba-p/125006) の廃止および更新を参照してください。<!-- MAGECLOUD-3456 -->
 
-- ![修正アイコン](../../assets/fix.svg) の検証を追加しました [SEARCH_CONFIGURATION 変数](../environment/variables-deploy.md#search_configuration). 「エンジン」オプションが設定されていない場合、デプロイは失敗し、 `_merge` は必須ではありません。<!-- MAGECLOUD-3470 -->
+- ![ 修正アイコン ](../../assets/fix.svg) [SEARCH_CONFIGURATION 変数 ](../environment/variables-deploy.md#search_configuration) の検証を追加しました。 「エンジン」オプションが設定されておらず、`_merge` が不要な場合、デプロイは失敗します。<!-- MAGECLOUD-3470 -->
 
-- ![修正アイコン](../../assets/fix.svg) 例外が発生した後に機密データが公開される問題を修正しました。 これで、機密情報が適切にマスクされます。<!-- MAGECLOUD-3525 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 例外が発生した後に機密データが公開される問題を修正しました。 これで、機密情報が適切にマスクされます。<!-- MAGECLOUD-3525 -->
 
-- ![修正アイコン](../../assets/fix.svg) Magento Open Sourceパッケージのフォールトトレラント設定を改善しました。 Adobe Commerceが Redis からデータを読み取れない場合 `slave` 例えば、Redis から読み取りが行われます `master` インスタンス。 参照： [REDIS_USE_SLAVE_CONNECTION](../environment/variables-deploy.md#redis_use_slave_connection).<!-- MAGECLOUD-2899 -->
+- ![fix icon](../../assets/fix.svg)Magento Open Sourceパッケージのフォールトトレラント設定を改善しました。 Adobe Commerceが Redis `slave` インスタンスからデータを読み取れない場合、Redis `master` インスタンスから読み取りが行われます。 [REDIS_USE_SLAVE_CONNECTION](../environment/variables-deploy.md#redis_use_slave_connection).<!-- MAGECLOUD-2899 --> を参照してください。
 
 ## v2002.0.17
 
 >[!NOTE]
 >
->この `ece-tools` バージョン 2002.0.17 には、重要なセキュリティパッチが含まれています。 参照： [テクニカルリソース：Magento Open Sourceパッチ](https://magento.com/tech-resources/download#download2288).
+>`ece-tools` バージョン 2002.0.17 には、重要なセキュリティパッチが含まれています。 [ テクニカルリソース：Magento Open Sourceパッチ ](https://magento.com/tech-resources/download#download2288) を参照してください。
 
-- ![新規アイコン](../../assets/new.svg) **サービスの更新**—Adobe Commerce バージョン 2.2.8 以降、2.2.x、2.3.1 以降、2.3.x でサポート
+- ![ 新しいアイコン ](../../assets/new.svg)**サービスアップデート** - Adobe Commerce 2.2.8 以降、2.2.x、2.3.1 以降、2.3.x でサポートされています
 
-   - Elasticsearchバージョン 6.x がサポートされるようになりました。<!-- MAGECLOUD-3196 -->
+   - Elasticsearchバージョン 6.x.<!-- MAGECLOUD-3196 --> がサポートされるようになりました。
 
    - Redis バージョン 5.0 のサポートを追加しました。
 
-- ![新規アイコン](../../assets/new.svg) **新しい Docker イメージ** – 次のサービスを Docker ビルドに追加しました。
+- ![ 新規アイコン ](../../assets/new.svg)**新規 Docker イメージ** - Docker ビルドに次のサービスを追加しました。
 
    - Elasticsearch 6.5<!-- MAGECLOUD-3196 -->
 
    - Redis 5.0<!-- MAGECLOUD-3223 -->
 
-- ![新規アイコン](../../assets/new.svg) **新しい環境変数** – 以前は、SCD 圧縮のタイムアウトがハードコードされていました。 次に、を使用して SCD 圧縮タイムアウトを設定できます **SCD_COMPRESSION_TIMEOUT** 環境変数。 の定義を参照してください。 [ビルド変数](../environment/variables-build.md#scd_compression_timeout) および [変数のデプロイ](../environment/variables-deploy.md#scd_compression_timeout) コンテンツ。<!-- MAGECLOUD-2870 -->
+- ![new icon](../../assets/new.svg)**New environment variable** – 以前は、SCD 圧縮のタイムアウトがハードコードされていました。 これで、**SCD_COMPRESSION_TIMEOUT** 環境変数を使用して SCD 圧縮タイムアウトを設定できます。 [ ビルド変数 ](../environment/variables-build.md#scd_compression_timeout) および [ デプロイ変数 ](../environment/variables-deploy.md#scd_compression_timeout) の内容の定義を参照してください。<!-- MAGECLOUD-2870 -->
 
-- ![修正アイコン](../../assets/fix.svg) さんがを追加しました `--use-rewrites` セキュリティとカスタマーエクスペリエンスを向上させるために、ストアフロントおよび管理者アクセスで生成されたリンクの web サーバー書き換えを使用するように、インストールコマンドのオプションを設定します。<!-- MAGECLOUD-3246 -->
+- ![ 修正アイコン ](../../assets/fix.svg) インストールコマンドに `--use-rewrites` オプションが追加され、ストアフロントおよび管理者アクセスで生成されたリンクの web サーバー書き換えを使用して、セキュリティとカスタマーエクスペリエンスを向上させることができるようになりました。<!-- MAGECLOUD-3246 -->
 
-- ![修正アイコン](../../assets/fix.svg) にタイムスタンプを追加しました `var/log/install_upgrade.log` インストールおよびアップグレードイベントの日付を表示するファイル。<!-- MAGECLOUD-2895 -->
+- ![ 修正アイコン ](../../assets/fix.svg) インストールイベントとアップグレードイベントの日付を表示するように、`var/log/install_upgrade.log` ファイルにタイムスタンプを追加しました。<!-- MAGECLOUD-2895 -->
 
 ## v2002.0.16
 
-- ![新規アイコン](../../assets/new.svg) **Docker の更新**—
+- ![ 新規アイコン ](../../assets/new.svg)**Docker のアップデート**—
 
    - Docker 環境で生成されたデフォルトのサービス設定は、クラウドテンプレートのデフォルト設定と同じになりました。<!-- MAGECLOUD-3025 -->
 
-   - Docker 環境からメールを送信するには、 `sendmail` サービス。<!-- MAGECLOUD-2907 -->
+   - `sendmail` サービスを使用して、Docker 環境からメールを送信できます。<!-- MAGECLOUD-2907 -->
 
-   - にを追加しました。 [xdebug の設定](https://devdocs.magento.com/cloud/docker/docker-development-debug.html) を Cloud Docker 環境でデバッグします。<!-- MAGECLOUD-2891 -->
+   - Cloud Docker 環境でデバッグするように [Xdebug を設定 ](https://devdocs.magento.com/cloud/docker/docker-development-debug.html) する機能を追加しました。<!-- MAGECLOUD-2891 -->
 
-   - を生成する際の web サービス権限の問題を修正しました `docker-compose.yml` ファイル。<!-- MAGECLOUD-2883 -->
+   - `docker-compose.yml` ファイルを生成する際の web サービスの権限の問題を修正しました。<!-- MAGECLOUD-2883 -->
 
-- ![新規アイコン](../../assets/new.svg) **アップグレードの改善** – を確認する検証を追加しました `autoload` のプロパティ `composer.json` Adobe Commerce v2.3 にアップグレードする前に、必要な設定の変更がファイルに含まれています。参照： [アップグレードバージョン](https://devdocs.magento.com/cloud/project/project-upgrade.html).<!-- MAGECLOUD-2392 -->
+- ![ 新規アイコン ](../../assets/new.svg)**アップグレードの改善** - Adobe Commerce v2.3 にアップグレードする前に、`composer.json` ファイルの `autoload` プロパティに必要な設定変更が含まれていることを確認する検証が追加されました。[ アップグレードバージョン ](https://devdocs.magento.com/cloud/project/project-upgrade.html).<!-- MAGECLOUD-2392 --> を参照してください。
 
-- ![新規アイコン](../../assets/new.svg) 静的なコンテンツをデプロイする際の圧縮プロセスには、ネイティブで生成またはカスタマイズされたすべてのアセットが含まれるようになり、 [`build:transfer` セクション](https://devdocs.magento.com/cloud/project/magento-app-properties.html#hooks). 以前は、圧縮プロセスは、静的アセットのカスタム圧縮とバンドルを適用する前に行われていました。 [Tryzens Limited から Rafael Garcia Lepper によって送信された修正](https://github.com/magento/ece-tools/pull/413).<!-- MAGECLOUD-3104 -->
+- ![ 新しいアイコン ](../../assets/new.svg) 静的コンテンツをデプロイする際の圧縮プロセスには、ネイティブで生成またはカスタマイズされたすべてのアセットが含まれるようになり、[`build:transfer` の節の最初のビルドフェーズで行われます ](https://devdocs.magento.com/cloud/project/magento-app-properties.html#hooks)。 以前は、圧縮プロセスは、静的アセットのカスタム圧縮とバンドルを適用する前に行われていました。 [Tryzens Limited の Rafael Garcia Lepper 氏により修正が提出されました ](https://github.com/magento/ece-tools/pull/413).<!-- MAGECLOUD-3104 -->
 
-- ![修正アイコン](../../assets/fix.svg) 追加のデータベースとサービスの関係を設定した直後に、デプロイメント中に発生したデータベース接続エラーを修正しました。 また、この修正は、Starter のCommerce レポートの設定プロセス中に発生した問題に対処します。 スターターの場合、このアップグレードは、Commerce レポートを使用する際に「必須」です。<!-- MAGECLOUD-3035 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 追加のデータベースとサービスの関係を設定した直後に、デプロイメント中に発生したデータベース接続エラーを修正しました。 また、この修正は、Starter のCommerce レポートの設定プロセス中に発生した問題に対処します。 スターターの場合、このアップグレードは、Commerce レポートを使用する場合に「必須」です。<!-- MAGECLOUD-3035 -->
 
-- ![修正アイコン](../../assets/fix.svg) データベース設定の検証の問題で、デプロイプロセスが失敗する原因を修正しました。<!-- MAGECLOUD-3003 -->
+- ![ 修正アイコン ](../../assets/fix.svg) データベース設定の検証の問題が修正され、デプロイプロセスが失敗しました。<!-- MAGECLOUD-3003 -->
 
-- ![修正アイコン](../../assets/fix.svg) 制約を適切なバージョンに更新しました `symfony/yaml` で使用するパッケージ [PHP 定数](https://devdocs.magento.com/cloud/project/magento-env-yaml.html#php-constants). を使用している場合、定数解析が機能しない。 `symfony/yaml` 3.2 より前のパッケージバージョン。 [Vladimir Kerkhoff による修正の送信](https://github.com/magento/ece-tools/pull/404).<!-- MAGECLOUD-2956 -->
+- ![fix icon](../../assets/fix.svg) [PHP 定数 ](https://devdocs.magento.com/cloud/project/magento-env-yaml.html#php-constants) で使用する適切なバージョンの `symfony/yaml` パッケージで制約を更新しました。 3.2 より前の `symfony/yaml` パッケージ バージョンを使用している場合、定数の解析は機能しません。[Vladimir Kerkhoff によって送信された修正 ](https://github.com/magento/ece-tools/pull/404).<!-- MAGECLOUD-2956 -->
 
-- ![新規アイコン](../../assets/new.svg) **環境設定の確認**—PHP のバージョンをチェックし、最新の推奨バージョンを使用していない場合に警告する検証を追加しました。<!--MAGECLOUD-2903-->
+- ![ 新しいアイコン ](../../assets/new.svg)**環境設定チェック**—PHP のバージョンをチェックし、最新の推奨バージョンを使用していない場合にユーザーに警告する検証を追加しました。<!--MAGECLOUD-2903-->
 
-- ![修正アイコン](../../assets/fix.svg) 不正な形式の JSON 変数を処理する問題を修正しました。 これで、JSON 変数が構文エラーを引き起こした場合、 `cloud.log` ファイルとデプロイメントは、デフォルトの変数を使用して続行されます。<!-- MAGECLOUD-2851 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 不正な形式の JSON 変数を処理する問題を修正しました。 これで、JSON 変数が構文エラーを引き起こした場合、警告が `cloud.log` ファイルに表示され、デフォルトの変数を使用してデプロイメントが続行されます。<!-- MAGECLOUD-2851 -->
 
-- ![修正アイコン](../../assets/fix.svg) Redis サービスを無効にした直後にデプロイ中に発生していた接続エラーを修正しました。<!-- MAGECLOUD-2747 -->
+- ![ 修正アイコン ](../../assets/fix.svg)Redis サービスを無効にした直後に、デプロイメント中に発生した接続エラーを修正しました。<!-- MAGECLOUD-2747 -->
 
-- ![新規アイコン](../../assets/new.svg) **変更の記録** – さんが、 [ログレベル](../environment/log-handlers.md#log-levels) から `Info` 対象： `Notice` 次のビルドおよびデプロイプロセスイベントの場合：<!--MAGECLOUD-2925-->
+- ![ 新しいアイコン ](../../assets/new.svg)**変更のログ記録** – 次のビルドおよびデプロイプロセスイベントの [ ログレベル ](../environment/log-handlers.md#log-levels) を `Info` から `Notice` に更新しました：<!--MAGECLOUD-2925-->
 
-   - にインストールされたモジュールの紐付けプロセスの開始と終了 `composer.json` で共有設定を使用します。 `app/etc/config.php` ファイル
+   - `composer.json` にインストールされているモジュールを `app/etc/config.php` ファイル内の共有構成設定と紐付けするプロセスの開始と終了
 
    - 設定検証プロセスの開始と終了
 
-   - の開始と終了 `setup:di:compile` クラスを生成するプロセス
+   - クラスを生成する `setup:di:compile` プロセスの開始と終了
 
-- ![新規アイコン](../../assets/new.svg) **新しい環境変数**—
+- ![ 新規アイコン ](../../assets/new.svg)**新しい環境変数**—
 
    - **[RESOURCE_CONFIGURATION デプロイ変数](../environment/variables-deploy.md#resource_configuration)** – この変数を使用して、リソース名をデータベース接続にマップします。<!-- MAGECLOUD-3026 & MAGECLOUD-2963-->
 
-   - **[X_FRAME_CONFIGURATION グローバル変数](../environment/variables-global.md#x_frame_configuration)** – この変数を使用して、 `X-Frame-Options` でAdobe Commerce ページをレンダリングするためのヘッダー設定 `<frame>`, `<iframe>`、または `<object>`.<!-- MAGECLOUD-3048 -->
+   - **[X_FRAME_CONFIGURATION グローバル変数](../environment/variables-global.md#x_frame_configuration)** - `<frame>`、`<iframe>` または `<object>` でAdobe Commerce ページをレンダリングするための `X-Frame-Options` ヘッダー設定を変更するには、この変数を使用します。<!-- MAGECLOUD-3048 -->
 
-- ![修正アイコン](../../assets/fix.svg) **環境変数の更新** – 次の環境変数を変更しました。
+- ![ 修正アイコン ](../../assets/fix.svg)**環境変数の更新** – 次の環境変数を変更しました。
 
-   - **[WARM_UP_PAGES](../environment/variables-post-deploy.md)**- Adobe Commerce ストア用に定義されたすべてのドメインで、指定されたページのキャッシュをプリロードできるようになりました。 以前は、サイトが複数のドメインで設定されている場合、デプロイ後のプロセスが、デフォルト以外のドメイン上の指定されたページのキャッシュをプリロードできず、デプロイ後のログで次のエラーが返されていました。 `ERROR: Warming up failed: <uri>`<!-- MAGECLOUD-2466 -->
+   - **[WARM_UP_PAGES](../environment/variables-post-deploy.md)** - Adobe Commerce ストアに対して定義されたすべてのドメインで、指定されたページのキャッシュをプリロードできるようになりました。 以前は、サイトが複数のドメインで設定されている場合、デプロイ後のプロセスが、デフォルト以外のドメイン上の指定されたページのキャッシュをプリロードできず、デプロイ後のログに次のエラーが返されていました。`ERROR: Warming up failed: <uri>`<!-- MAGECLOUD-2466 -->
 
-   - **SCD_COMPRESSION_LEVEL**- ドキュメントとサンプルを更新しました `.magento.env.yaml` scd 圧縮レベルの適切なデフォルト値を持つファイル。 の定義を参照してください。 [ビルド変数](../environment/variables-build.md#scd_compression_level) および [変数のデプロイ](../environment/variables-deploy.md#scd_compression_level) コンテンツ。<!-- MAGECLOUD-2823 -->
+   - **SCD_COMPRESSION_LEVEL** - SCD 圧縮レベルの正しいデフォルト値を使用して、ドキュメントとサンプル `.magento.env.yaml` ファイルを更新しました。 [ ビルド変数 ](../environment/variables-build.md#scd_compression_level) および [ デプロイ変数 ](../environment/variables-deploy.md#scd_compression_level) の内容の定義を参照してください。<!-- MAGECLOUD-2823 -->
 
-   - **SCD_EXCLUDE_THEMES** – この環境変数は非推奨です。 の使用 [SCD_MATRIX](../environment/variables-build.md#scd_matrix) テーマの設定を制御します。<!--MAGECLOUD-2882-->
+   - **SCD_EXCLUDE_THEMES** – この環境変数は非推奨です。 テーマの設定を制御するには、[SCD_MATRIX](../environment/variables-build.md#scd_matrix) を使用します。<!--MAGECLOUD-2882-->
 
-   - **SCD\_MATRIX**- SCD_MATRIX が異なる文字ケースを含むテーマ値を無視した場合に発生する問題を防ぐために、検証プロセスを修正しました。 の定義を参照してください。 [ビルド変数](../environment/variables-build.md#scd_matrix) および [変数のデプロイ](../environment/variables-deploy.md#scd_matrix) コンテンツ。<!-- MAGECLOUD-2904 -->
+   - **SCD\_MATRIX** - SCD_MATRIX が異なる文字ケースを含むテーマ値を無視した場合に発生する問題を防ぐために、検証プロセスを修正しました。 [ ビルド変数 ](../environment/variables-build.md#scd_matrix) および [ デプロイ変数 ](../environment/variables-deploy.md#scd_matrix) の内容の定義を参照してください。<!-- MAGECLOUD-2904 -->
 
    - **管理変数**—<!-- MAGECLOUD-2573/MAGECLOUD-2848 -->
 
-      - 環境変数を使用して管理者ユーザーの資格情報を管理する際のセキュリティが向上しました。 ADMIN_EMAIL、ADMIN_USERNAME および ADMIN_PASSWORD 環境変数を、アップグレード中に管理者の資格情報を上書きするために使用できなくなりました。 管理パネルにアクセスできない場合は、 _パスワードを忘れる_ 機能または `admin:user:create` 新しい管理者ユーザーを作成する CLI コマンド。 参照： [管理パネルへのアクセス](https://devdocs.magento.com/cloud/onboarding/onboarding-tasks.html#admin).
+      - 環境変数を使用して管理者ユーザーの資格情報を管理する際のセキュリティが向上しました。 ADMIN_EMAIL、ADMIN_USERNAME および ADMIN_PASSWORD 環境変数を、アップグレード中に管理者の資格情報を上書きするために使用できなくなりました。 管理パネルにアクセスできない場合は、_パスワードを忘れた場合_ 機能または `admin:user:create` CLI コマンドを使用して、新しい管理ユーザーを作成します。 詳しくは [ 管理パネルへのアクセス ](https://devdocs.magento.com/cloud/onboarding/onboarding-tasks.html#admin) を参照してください。
 
       - パッチのアップグレードまたは適用時に、ADMIN_EMAIL は不要になりました。
 
 ## v2002.0.15
 
-- ![新規アイコン](../../assets/new.svg) **Docker の更新**—
+- ![ 新規アイコン ](../../assets/new.svg)**Docker のアップデート**—
 
-   - これで、Docker Generator はで指定されたサービスを使用するようになりました `.magento.app.yaml` および `.magento/services.yaml` 設定ファイルの条件 [docker 環境の構築](https://devdocs.magento.com/cloud/docker/docker-config.html). ビルドパラメーターを使用して、別のサービスバージョンを選択できます。<!-- MAGECLOUD-2888 -->
+   - これで、Docker Generator は、（Docker 環境の構築 [ 時に、`.magento.app.yaml` および `.magento/services.yaml` 設定ファイルで指定されたサービスを使用す ](https://devdocs.magento.com/cloud/docker/docker-config.html) ようになりました。 ビルドパラメーターを使用して、別のサービスバージョンを選択できます。<!-- MAGECLOUD-2888 -->
 
-   - PHP 7.2 のイメージを追加しました – Cloud Docker で PHP 7.2 のサポートを追加しました。 [Docker 設定の起動](https://devdocs.magento.com/cloud/docker/docker-config.html) を含めるには `docker:build --php` 使用しているAdobe Commerceと互換性のある PHP のバージョンを指定します。<!-- MAGECLOUD-2799 -->
+   - PHP 7.2 イメージが追加されました – Cloud Docker で PHP 7.2 がサポートされるようになりました。[Launch Docker configuration](https://devdocs.magento.com/cloud/docker/docker-config.html) を更新し、Adobe Commerceのバージョンと互換性のある PHP のバージョンを指定する `docker:build --php` オプションを含めました。<!-- MAGECLOUD-2799 -->
 
-   - がを追加しました [Cron コンテナ](https://devdocs.magento.com/cloud/docker/docker-containers-cli.html#cron-container) php-CLI イメージに基づいています。<!-- MAGECLOUD-2565 -->
+   - PHP-CLI イメージに基づく [Cron コンテナ ](https://devdocs.magento.com/cloud/docker/docker-containers-cli.html#cron-container) を追加しました。<!-- MAGECLOUD-2565 -->
 
    - Docker ビルドに次のサービスを追加しました。
 
@@ -278,47 +278,47 @@ ht-degree: 0%
 
       - Elasticsearch 1.7、2.4、5.2<!-- MAGECLOUD-2569 & 2887 -->
 
-      - Redis 3.2 と 4.0<!-- MAGECLOUD-2886 -->
+      - Redis 3.2 および 4.0<!-- MAGECLOUD-2886 -->
 
-- ![新規アイコン](../../assets/new.svg) **PHP 定数を使用してを設定する** – のサポートを追加 [PHP 定数](https://devdocs.magento.com/cloud/project/magento-env-yaml.html#php-constants) が含まれる `.magento.env.yaml` 設定ファイル。<!-- MAGECLOUD- 2575 -->
+- ![ 新しいアイコン ](../../assets/new.svg)**PHP 定数を使用して設定**—[PHP 定数 ](https://devdocs.magento.com/cloud/project/magento-env-yaml.html#php-constants) のサポートを `.magento.env.yaml` 設定ファイルに追加しました。<!-- MAGECLOUD- 2575 -->
 
-- ![新規アイコン](../../assets/new.svg) **新しい環境変数** – デフォルトでは、実稼動環境でのみGoogle Analyticsが有効になっています。 を使用して、ステージング環境と統合環境でGoogle Analyticsを有効にできます  [ENABLE_GOOGLE_ANALYTICS 環境変数](../environment/variables-deploy.md#enable_google_analytics).<!--MAGECLOUD-2879-->
+- ![new icon](../../assets/new.svg)**New environment variable**：デフォルトでは、実稼動環境でのみGoogle Analyticsが有効になっています。 [ENABLE_GOOGLE_ANALYTICS](../environment/variables-deploy.md#enable_google_analytics) 環境変数を使用して、ステージング環境および統合環境でGoogle Analyticsを有効にできます <!--MAGECLOUD-2879-->
 
-- ![修正アイコン](../../assets/fix.svg) カスタマイズした cron 設定をから削除する問題を修正しました `env.php` 再デプロイメント後のファイル。 現在は、カスタム cron 設定は安全に `env.php` ファイル。<!-- MAGECLOUD-2923 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 再デプロイメント後に `env.php` ファイルからカスタマイズされた cron 設定が削除される問題を修正しました。 これで、カスタム cron 設定は `env.php` ファイルに安全に残ります。<!-- MAGECLOUD-2923 -->
 
-- ![修正アイコン](../../assets/fix.svg) メッセージの不整合を修正し、 [ログレベル](../environment/log-handlers.md#log-levels) ビルド、デプロイ、デプロイ後のフェーズ用。 開始および終了ログメッセージレベルの向上： **情報** 対象： **通知** すべてのフェーズとサブフェーズで使用します。 必要に応じて、開始および終了ログメッセージを追加しました。<!-- MAGECLOUD-2919 -->
+- ![ 修正アイコン ](../../assets/fix.svg) ビルド、デプロイ、デプロイ後のフェーズにおけるメッセージと [ ログレベル ](../environment/log-handlers.md#log-levels) の不整合を修正しました。 すべてのフェーズとサブフェーズで、開始および終了ログメッセージレベルが **info** から **notice** に向上しました。 必要に応じて、開始および終了ログメッセージを追加しました。<!-- MAGECLOUD-2919 -->
 
-- ![修正アイコン](../../assets/fix.svg) 設定の際に、デプロイ後フェーズを開始できない cron プロセスに関する問題を修正しました。 これで、デプロイ後のフックを有効にした場合、デプロイ後のフェーズの開始時に、cron プロセスが再び有効になります。<!-- MAGECLOUD-2862 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 設定した場合に、デプロイ後のフェーズの開始が妨げられる cron プロセスに関する問題を修正しました。 これで、デプロイ後のフックを有効にした場合、デプロイ後のフェーズの開始時に、cron プロセスが再び有効になります。<!-- MAGECLOUD-2862 -->
 
-- ![修正アイコン](../../assets/fix.svg) カスタムデータベース設定を指定した場合に、Adobe Commerceを正常にインストールできない問題を修正しました。 以前は、インストールプロセスは、 [MAGENTO_CLOUD_RELATIONSHIP 変数](../environment/variables-cloud.md) でカスタマイズされた接続情報を指定した場合でも、 [DATABASE_CONFIGURATION 環境変数](../environment/variables-deploy.md#database_configuration).<!--MAGECLOUD-2736-->
+- ![fix icon](../../assets/fix.svg) カスタムデータベース設定を指定した場合に、Adobe Commerceを正常にインストールできない問題を修正しました。 以前は、[DATABASE_CONFIGURATIONMAGENTO変数 ](../environment/variables-deploy.md#database_configuration) でカスタマイズされた接続情報を指定した場合でも ](../environment/variables-cloud.md) インストールプロセスは [ENVIRONMENT_CLOUD_RELATIONSHIP 変数のデータベース設定を使用していました。<!--MAGECLOUD-2736-->
 
-- ![修正アイコン](../../assets/fix.svg) を修正しました `config:dump` コマンドを使用して、 `system` の節 `config.php` ファイル。<!--MAGECLOUD-2740-->
+- ![ 修正アイコン ](../../assets/fix.svg)`config:dump` コマンドを修正して、`config.php` ファイルの `system` セクションに各 web サイトのロケールが含まれるようにしました。<!--MAGECLOUD-2740-->
 
-- ![修正アイコン](../../assets/fix.svg) に起因する問題を修正しました _ウォームアップ_ ソースベース URL の参照を修正することで、デプロイ後のフェーズでエラーが発生しました。<!--MAGECLOUD-2797-->
+- ![ 修正アイコン ](../../assets/fix.svg) ソースベース URL の参照を修正することで、デプロイ後のフェーズで _ウォームアップ_ エラーが発生する問題を修正しました。<!--MAGECLOUD-2797-->
 
-- ![修正アイコン](../../assets/fix.svg) の間にファイルが正しく生成されなかった問題を修正しました `setup:di:compile` Amazon Pay モジュールに影響を与えたプロセス。<!--MAGECLOUD-2850-->
+- ![ 修正アイコン ](../../assets/fix.svg)`setup:di:compile` プロセス中にファイルが正しく生成されず、Amazon Pay モジュールに影響を与えていた問題を修正しました。<!--MAGECLOUD-2850-->
 
 ## v2002.0.14
 
-- ![新規アイコン](../../assets/new.svg) **理想的な状態の確認** – この `ideal-state` ウィザードでは、各デプロイメントで現在の構成を検証し、構成を更新してダウンタイムのない迅速なデプロイメントを実現するための明確な手順を提供するようになりました。<!--MAGECLOUD-2372-->
+- ![ 新しいアイコン ](../../assets/new.svg)**理想的な状態の検証**:`ideal-state` のウィザードでは、導入時に現在の構成を検証し、迅速でダウンタイムのない導入を実現するために構成を更新する明確な手順を提供するようになりました。<!--MAGECLOUD-2372-->
 
-- ![修正アイコン](../../assets/fix.svg) **PCI コンプライアンス**- サードパーティのメッセージングサービスと接続する際に、クラウドインフラストラクチャ上のAdobe Commerceのメッセージングプロトコルを更新して、Transport Layer Security （TLS）バージョン 1.2 を必要とするようにしました。 TLS バージョン 1.2 をサポートしていないメッセージサービスを使用している場合は、サービスをアップグレードする必要があります。 そうでない場合は、Adobe Commerce アプリケーションがメッセージサーバーに接続してメールを送信しようとすると、次のエラーメッセージが表示されます。 `Unable to connect via TLS`.<!--MAGECLOUD-2521-->
+- ![fix icon](../../assets/fix.svg)**PCI Compliance**：サードパーティのメッセージングサービスに接続する際に、Transport Layer Security （TLS）バージョン 1.2 が必要になるように、クラウドインフラストラクチャ上のAdobe Commerceのメッセージングプロトコルを更新しました。 TLS バージョン 1.2 をサポートしていないメッセージサービスを使用している場合は、サービスをアップグレードする必要があります。 そうでない場合は、Adobe Commerce アプリケーションがメッセージサーバーに接続してメールを送信しようとすると、次のエラーメッセージが表示されます。`Unable to connect via TLS`.<!--MAGECLOUD-2521-->
 
-- ![新規アイコン](../../assets/new.svg) **デプロイメントの改善** – ステージング環境または実稼動環境に次の問題がある場合に顧客に警告する検証を追加しました `dev`, `debug`、または `debug_logging` オプションを有効にして、過度のログアクティビティによって発生するパフォーマンスの問題を防ぎます。<!--MAGECLOUD-2517-->
+- ![ 新しいアイコン ](../../assets/new.svg) **デプロイメントの向上** - ステージング環境または実稼動環境で `dev`、`debug`、`debug_logging` の各オプションが有効になっている場合に、過度のログアクティビティによって発生するパフォーマンスの問題を防ぐために顧客に警告する検証を追加しました。<!--MAGECLOUD-2517-->
 
-- ![修正アイコン](../../assets/fix.svg) **デプロイメントの修正**—
+- ![ 修正アイコン ](../../assets/fix.svg)**デプロイメントの修正**—
 
    - これで、メンテナンスモードがデプロイフェーズの開始時に有効になり、最後に無効になります。 配置に失敗した場合、配置の問題が解決されるまで、サイトはメンテナンス モードのままになります。 以前は、デプロイメントに失敗した場合でも、サイトは実稼動モードに戻っていました。<!--MAGECLOUD-2603-->
 
-      - デプロイフェーズの検証チェックを修正し、次のデプロイメントの問題のエラーレベルを `CRITICAL` 対象： `WARNING` デプロイメントが完了するように設定します。 以前は、これらの問題が原因でデプロイメントが失敗していました。
+      - デプロイフェーズの検証チェックを修正し、デプロイメントが完了するように、次のデプロイメントの問題のエラーレベルを `CRITICAL` から `WARNING` にダウングレードしました。 以前は、これらの問題が原因でデプロイメントが失敗していました。
 
       - 環境設定に、デプロイまたはクラウド変数の誤った値が含まれています。
 
-   - クラウドインフラストラクチャー上のElasticsearchのバージョンは、クラウドインフラストラクチャー上のAdobe Commerceでサポートされている elasticsearch/elasticsearch モジュールのバージョンと互換性がありません。 を参照してください。 [Elasticsearchのトラブルシューティング記事](https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento) （Adobe Commerce サポートのナレッジベース）<!--MAGECLOUD-2600-->
+   - クラウドインフラストラクチャー上のElasticsearchのバージョンは、クラウドインフラストラクチャー上のAdobe Commerceでサポートされている elasticsearch/elasticsearch モジュールのバージョンと互換性がありません。 Adobe Commerce サポートナレッジベースの [Elasticsearchのトラブルシューティングの記事 ](https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento) を参照してください。<!--MAGECLOUD-2600-->
 
-   - の共有設定の問題を修正しました `app/etc/config.php` 原因となったファイル `recursion detected` デプロイ中にエラーが発生しました。<!--MAGECLOUD-2173-->
+   - `app/etc/config.php` ファイルの共有設定で、デプロイ中に `recursion detected` エラーが発生する問題を修正しました。<!--MAGECLOUD-2173-->
 
-- ![修正アイコン](../../assets/fix.svg) **Cron 関連の修正**—
+- ![ 修正アイコン ](../../assets/fix.svg)**Cron 関連の修正**—
 
    - デフォルト（1 分）以外の cron 頻度を指定した場合にジョブが実行されない cron スケジュールの問題を修正しました。<!--MAGECLOUD-2602-->
 
@@ -326,65 +326,65 @@ ht-degree: 0%
 
    - バージョン 2.2.x の cron ジョブワークフローを修正し、フリーズされた cron ジョブのロックを解除して、デプロイメント開始前に停止できるようにしました。 以前は、フリーズした cron ジョブが原因でデプロイメントが停止していました。<!--MAGECLOUD-2501-->
 
-- ![修正アイコン](../../assets/fix.svg) の形式を変更しました `config.php` によって生成されたファイル `vendor/bin/ece-tools config:dump` Adobe Commerceのコーディング標準に準拠するために、短い配列構文と 4 文字のインデントを使用するコマンド。<!--MAGECLOUD-2527-->
+- ![fix icon](../../assets/fix.svg) Adobe Commerceのコーディング標準に準拠するために、`vendor/bin/ece-tools config:dump` コマンドで生成される `config.php` ファイルの形式を、短い配列構文と 4 文字のインデントを使用するように変更しました。<!--MAGECLOUD-2527-->
 
-- ![修正アイコン](../../assets/fix.svg) の場合に発生するデプロイメントエラーを修正しました `.magento.env.yaml` 次を含む `{{ base_url }}` および `{{ unsecure_base_url }}` クラウドインフラストラクチャプロジェクト上のAdobe Commerceのデフォルト URL 設定の代わりに使用される、web 設定のプレースホルダー。/<!--MAGECLOUD-2607-->
+- ![ 修正アイコン ](../../assets/fix.svg) `.magento.env.yaml` に、Cloud Infrastructure プロジェクト上のAdobe Commerceのデフォルト URL 設定ではなく、Web 設定の `{{ base_url }}` および `{{ unsecure_base_url }}` プレースホルダーが含まれる場合に発生するデプロイメントエラーを修正しました。/<!--MAGECLOUD-2607-->
 
 ## v2002.0.13
 
-- ![新規アイコン](../../assets/new.svg) **ダウンタイムなしのデプロイメントを有効にする** – 現在は、クラウドインフラストラクチャー上のAdobe Commerceがデプロイメント時に必要なデータベース変更を含むリクエストをキューに入れ、デプロイメントが完了するとすぐに変更を適用します。 セッションが失われないように、リクエストを最大 5 分間保持できます。 参照： [クラウドでのデプロイメントのダウンタイムを短縮する静的コンテンツデプロイメントオプション](https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud).<!--MAGECLOUD-2169-->
+- ![ 新しいアイコン ](../../assets/new.svg)**ダウンタイムなしのデプロイメントを実現** – 現在は、クラウドインフラストラクチャー上のAdobe Commerceがデプロイメント中に必要なデータベース変更を含むリクエストをキューに入れ、デプロイメントが完了するとすぐに変更を適用します。 セッションが失われないように、リクエストを最大 5 分間保持できます。 [Cloud でのデプロイメントのダウンタイムを短縮するための静的コンテンツデプロイメントオプション ](https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud) を参照してください。<!--MAGECLOUD-2169-->
 
-- ![新規アイコン](../../assets/new.svg) **Docker Compose for Cloud** – に対して次の改善を行いました。 [Docker のセットアップと設定](https://devdocs.magento.com/cloud/docker/docker-config.html) プロセス：
+- ![ 新規アイコン ](../../assets/new.svg)**Docker Compose for Cloud** - [Docker のセットアップと設定 ](https://devdocs.magento.com/cloud/docker/docker-config.html) プロセスが次のように改善されました。
 
-   - コマンドを追加しました。`docker:config:convert` php 設定ファイルを Docker ENV 形式に変換して、環境設定を簡素化する。 次に、PHP 設定ファイルを Docker ディレクトリにコピーして、Docker ENV ファイルに変換します。 参照： [Docker の起動](https://devdocs.magento.com/cloud/docker/docker-config.html).<!--MAGECLOUD-2359-->
+   - PHP 設定ファイルを Docker ENV 形式に変換して環境設定を簡素化するためのコマンド - `docker:config:convert` を追加しました。 次に、PHP 設定ファイルを Docker ディレクトリにコピーして、Docker ENV ファイルに変換します。 [Docker の起動 ](https://devdocs.magento.com/cloud/docker/docker-config.html) を参照してください。<!--MAGECLOUD-2359-->
 
-   - クラウドインフラストラクチャー上のAdobe Commerceのインストールプロセスで、読み取り専用ファイルシステムと読み取り/書き込み可能ファイルシステムの両方へのデプロイがサポートされるようになりました。これにより、クラウドファイルシステムをより詳細にエミュレートできます。 参照： [Docker の設定](https://devdocs.magento.com/cloud/docker/docker-config.html).&lt;!—MAGECLOUD—2357—>
+   - クラウドインフラストラクチャー上のAdobe Commerceのインストールプロセスで、読み取り専用ファイルシステムと読み取り/書き込み可能ファイルシステムの両方へのデプロイがサポートされるようになりました。これにより、クラウドファイルシステムをより詳細にエミュレートできます。 [Docker の設定 ](https://devdocs.magento.com/cloud/docker/docker-config.html) を参照してください。&lt;!—MAGECLOUD—2357—>
 
-   - **Redis サービスサポート**- Redis イメージが追加されました。これは Docker コンテナにデプロイされ、Docker インストールと連携するように自動的に設定されます。&lt;!—MAGECLOUD—2442—>
+   - **Redis サービスサポート** - Redis イメージを追加しました。Docker コンテナにデプロイされ、Docker インストールと連携するように自動的に設定されます。&lt;!—MAGECLOUD—2442—>
 
-   - これで、Cloud Docker を使用する際の DB ダンプ機能が利用できるようになりました [データベースコンテナ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#database-container). また、次のことができます [ファイルを共有](https://devdocs.magento.com/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container) を使用してホストマシンとコンテナの間で `docker/mnt` ディレクトリ。<!-- MAGECLOUD-2577 -->
+   - これで、Cloud Docker [ データベースコンテナ ](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#database-container) を使用する際に DB ダンプ機能が利用できるようになりました。 また、`docker/mnt` ディレクトリを使用して、ホストマシンとコンテナ間で [ ファイルを共有 ](https://devdocs.magento.com/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container) できます <!-- MAGECLOUD-2577 -->。
 
-   - **Varnish サービスのサポート**— Docker コンテナに自動的にデプロイされる Varnish イメージを追加しました。 デプロイメント後、Adobe Commerceのベストプラクティスに従って、Varnish を手動で設定できます。 参照： [ワニスの設定と使用](https://devdocs.magento.com/guides/v2.3/config-guide/varnish/config-varnish.html).&lt;!—MAGECLOUD—2358—>
+   - **ワニス サービスのサポート** - Docker コンテナに自動的にデプロイされるワニス画像を追加しました。 デプロイメント後、Adobe Commerceのベストプラクティスに従って、Varnish を手動で設定できます。 [ ワニスの設定と使用 ](https://devdocs.magento.com/guides/v2.3/config-guide/varnish/config-varnish.html) を参照してください。&lt;!—MAGECLOUD—2358—>
 
    - 安全なサイトアクセス - Adobe Commerce ストアと管理パネルにアクセスするための SSL サポートが追加されました。&lt;!—MAGECLOUD—2360—>
 
-- ![修正アイコン](../../assets/fix.svg) **クラウドインフラストラクチャー上のAdobe Commerce拡張機能のサポートを改善しました** – クラウドインフラストラクチャー上のAdobe Commerceの guzzlehttp/guzzle パッケージの最小バージョン要件をダウングレードしました [composer.json ファイル](https://devdocs.magento.com/cloud/reference/cloud-composer.html) をバージョン 6.2 にアップグレードして、 `ece-tools` パッケージはより多くの拡張機能と互換性があります。<!--MAGECLOUD-2205-->
+- ![ 修正アイコン ](../../assets/fix.svg) **クラウドインフラストラクチャー上のAdobe Commerce拡張機能のサポートの改善** - クラウドインフラストラクチャー上のAdobe Commerce[composer.json ファイル ](https://devdocs.magento.com/cloud/reference/cloud-composer.html) の guzzlehttp/guzzle パッケージの最小バージョン要件をバージョン 6.2 にダウングレードして、`ece-tools` パッケージがより多くの拡張機能と互換性を持つようにしました。<!--MAGECLOUD-2205-->
 
-- ![新規アイコン](../../assets/new.svg) **ビルドフェーズでのAdobe Commerce アプリケーションへのカスタム変更の適用** – ビルドフェーズを 2 つの個別のプロセスに分割して、フックを使用して、アプリケーションをデプロイメント用にパッケージ化する前に、生成された静的コンテンツにカスタムの変更を適用できるようにします。 この _ビルド：生成_ process は、コードを生成し、パッチを適用し、静的コンテンツを生成します。 この _ビルド：転送_ プロセスは、生成されたコードと静的コンテンツを最終的な宛先に転送します。 参照： [アプリケーションフック](https://devdocs.magento.com/cloud/project/magento-app-properties.html#hooks).<!--MAGECLOUD-2363-->
+- ![ 新規アイコン ](../../assets/new.svg)**ビルドフェーズでAdobe Commerce アプリケーションにカスタムの変更を適用します** - ビルドフェーズを 2 つの個別のプロセスに分割して、フックを使用して、アプリケーションをデプロイメント用にパッケージ化する前に、生成された静的コンテンツにカスタムの変更を適用できます。 _build:generate_ プロセスは、コードを生成し、パッチを適用して、静的コンテンツを生成します。 _build:transfer_ プロセスは、生成されたコードと静的コンテンツを最終的な宛先に転送します。 [ アプリケーションフック ](https://devdocs.magento.com/cloud/project/magento-app-properties.html#hooks) を参照してください <!--MAGECLOUD-2363-->。
 
-- ![修正アイコン](../../assets/fix.svg) **環境設定チェック**- Adobe Commerceをクラウドインフラストラクチャにビルドおよびデプロイする前に、バージョンの非互換性と設定エラーに関する警告を顧客に表示するために、環境設定の検証を改善しました。
+- ![ 修正アイコン ](../../assets/fix.svg)**環境設定チェック** - クラウドインフラストラクチャにAdobe Commerceをビルドおよびデプロイする前に、バージョンの非互換性と設定エラーに関する警告を表示するように、環境設定の検証を改善しました。
 
-   - サポートされていない、または非推奨（廃止予定）の環境変数と値を識別するための、バージョン固有の検証を追加しました。<!--MAGECLOUD-2183-->
+   - サポートされていない、または非推奨（廃止予定）の環境変数と値を特定するために、バージョン固有の検証を追加しました。<!--MAGECLOUD-2183-->
 
    - Elasticsearch設定の問題に関してユーザーに警告するためのElasticsearch互換性チェックが追加されました。 現在は、サーバー上のElasticsearchサービスのバージョンがAdobe Commerceと互換性がない場合、デプロイは失敗します。 以前は、Elasticsearchバージョンに互換性がない場合でもデプロイメントが成功し、サイトデプロイメント後に製品カタログの問題が発生していました。<!--MAGECLOUD-2389-->
 
-     非互換性は、次の方法で解決できます。 [サポートチケットの送信](https://devdocs.magento.com/cloud/trouble/trouble.html) Elasticsearchを互換性のあるバージョンにアップグレードするか、Adobe Commerceの設定を変更してElasticsearch PHP クライアントの互換性のあるバージョンを指定します。
+     この非互換性を解決するには、[ サポートチケットを送信 ](https://devdocs.magento.com/cloud/trouble/trouble.html) して、Elasticsearchを互換性のあるバージョンにアップグレードします。または、Adobe Commerce設定を変更して、Elasticsearch PHP クライアントの互換性のあるバージョンを指定します。
 
       - Adobe Commerce バージョン 2.1.x から 2.2.2 の場合は、Elasticsearchをバージョン 2.4 にアップグレードします。
 
       - Adobe Commerce バージョン 2.2.3 以降では、Elasticsearchをバージョン 5.2 にアップグレードします。
 
-      - Elasticsearch 1.x または 2.x があり、アップグレードしない場合は、composer.json でAdobe Commerce Elasticsearchの PHP クライアントのバージョン要件を次のように更新します。 `"elasticsearch/elasticsearch": "~2.0"`.
+      - Elasticsearch 1.x または 2.x があり、アップグレードしない場合は、composer.json 内のAdobe Commerce Elasticsearch PHP クライアントのバージョン要件を `"elasticsearch/elasticsearch": "~2.0"` に更新します。
 
    - ビルド、デプロイ、デプロイ後のフェーズで競合を引き起こす可能性のある設定を特定するために、環境変数の検証を改善しました。 例えば、静的コンテンツのデプロイメントのグローバル設定がビルドまたはデプロイフェーズの設定と競合する場合、インストールおよびアップグレードプロセス中に警告メッセージが表示されます。<!--MAGECLOUD-2156-->
 
-- ![修正アイコン](../../assets/fix.svg) **環境変数の更新** – 次の環境変数を変更しました。
+- ![ 修正アイコン ](../../assets/fix.svg)**環境変数の更新** – 次の環境変数を変更しました。
 
-   - **[SKIP_VARIATION_MINIFICATION グローバルHTML](../environment/variables-global.md#skip_html_minification)**— デフォルト値をに変更しました。 `true` ステージング環境および実稼動環境にデプロイする際のダウンタイムを最小限に抑える、オンデマンドのHTMLコンテンツ縮小を有効にします。 この設定は、ダウンタイムなしのデプロイメントに必要です。<!--MAGECLOUD-2435-->
+   - **[SKIP_ENVIRONMENT_MINIFICATION グローバルHTML](../environment/variables-global.md#skip_html_minification)** - デフォルト値を `true` に変更して、オンデマンドのHTMLコンテンツの縮小を有効にしました。これにより、ステージング環境と実稼動環境にデプロイする際のダウンタイムが最小限に抑えられます。 この構成は、ダウンタイムなしの展開に必要です。<!--MAGECLOUD-2435-->
 
-   - **[CLEAN_STATIC_FILES デプロイ変数](../environment/variables-deploy.md#clean_static_files)**- CLEAN_STATIC_FILES 環境変数の設定に基づいて、ビルドフェーズで生成された静的コンテンツのクリーンな静的ファイル処理を管理する機能を追加しました。 以前は、ビルドフェーズで生成された静的コンテンツファイルは、常にクリーンアップされていました。<!--MAGECLOUD-1506-->
+   - **[CLEAN_STATIC_FILES デプロイ変数](../environment/variables-deploy.md#clean_static_files)** - CLEAN_STATIC_FILES 環境変数の設定に基づいて、ビルド段階で生成された静的コンテンツに対して処理されるクリーンな静的ファイルを管理する機能が追加されました。 以前は、ビルドフェーズで生成された静的コンテンツファイルは、常にクリーンアップされていました。<!--MAGECLOUD-1506-->
 
-- ![修正アイコン](../../assets/fix.svg) **ログ** – ログメッセージを改善し、ログサイズを小さくするために、次の変更を行いました。
+- ![ 修正アイコン ](../../assets/fix.svg)**ログ** - ログメッセージを改善し、ログサイズを小さくするために、次の変更を行いました。
 
-   - 環境設定でデバッグレベルのログが指定されていない場合でも、デプロイメントの失敗ログエントリに、エラーの原因となった操作からのコマンド出力が含まれるようになりました。 参照： [`MIN_LOGGING_LEVEL`](../environment/variables-global.md#min_logging_level).<!--MAGECLOUD-2489-->
+   - 環境設定でデバッグレベルのログが指定されていない場合でも、デプロイメントの失敗ログエントリに、エラーの原因となった操作からのコマンド出力が含まれるようになりました。 [`MIN_LOGGING_LEVEL`](../environment/variables-global.md#min_logging_level) を参照してください。<!--MAGECLOUD-2489-->
 
-   - ファイルシステムが読み取り専用状態にあるので、一部の拡張機能で必要な生成ファクトリが正しく生成されない場合に発生するデプロイメントエラーのログを追加しました。<!--MAGECLOUD-2209-->
+   - ファイルシステムが読み取り専用状態にあるため、一部の拡張機能で必要な生成ファクトリが正しく生成されない場合に発生するデプロイメントエラーのログを追加しました。<!--MAGECLOUD-2209-->
 
    - インタラクティブなプログレスバーを使用するセットアップコマンドによって発生する、デプロイログサイズの縮小とフォーマットの問題の修正。<!--MAGECLOUD-2402-->
 
-   - 不要な冗長をなくし、一部のログステートメントの優先度レベルを更新しました。<!--MAGECLOUD-2227-->
+   - 不要な冗長さを排除し、一部のログステートメントの優先度レベルを更新しました。<!--MAGECLOUD-2227-->
 
-- ![修正アイコン](../../assets/fix.svg) **Cron 固有の修正**—
+- ![ 修正アイコン ](../../assets/fix.svg)**Cron 固有の修正**—
 
    - 履歴有効期間のデフォルトの cron ジョブ設定を 3d （4320 分）から 1 時間（60 分）に変更して、cron キューの量が多すぎると発生するパフォーマンスの問題とデプロイメントエラーを防ぎました。<!--MAGECLOUD-2427-->
 
@@ -392,55 +392,55 @@ ht-degree: 0%
 
    - Adobe Commerce バージョン 2.2.0 以降の cron ジョブで起動されたコンシューマーをスケジュールするためのロックメカニズムで、cron ジョブで重複したコンシューマーが起動されない問題を修正しました。<!--MAGECLOUD-2464-->
 
-- ![修正アイコン](../../assets/fix.svg) の問題を修正しました [静的コンテンツ圧縮プロセス](../environment/variables-intro.md) （`gzip`を引き起こした `not overwritten` および `no such file or directory` 展開プロセス中に圧縮ファイルを参照する際にエラーが発生しました。<!-- MAGECLOUD-2182-->
+- ![ 修正アイコン ](../../assets/fix.svg) [ 静的コンテンツ圧縮プロセス ](../environment/variables-intro.md) （`gzip`）で、デプロイメントプロセス中に圧縮ファイルを参照する際に `not overwritten` エラーと `no such file or directory` エラーが発生する問題を修正しました。<!-- MAGECLOUD-2182-->
 
-- ![修正アイコン](../../assets/fix.svg) を実行できない問題を修正しました `php ./vendor/bin/ece-tools config:dump` コマンドで冗長セクションを `config.php` ストアのロケールが指定されていない場合、ダンププロセス中にファイルが生成されます。 これで、設定ファイルを環境間で簡単に移動できます。 をに更新した後 `ece-tools` v2002.0.13、古いバージョンの再生成 `config.php` を改善したファイル `config:dump` コマンド。 参照： [ストア設定の設定管理](https://devdocs.magento.com/cloud/live/sens-data-over.html).<!--MAGECLOUD-2444-->
+- ![ 修正アイコン ](../../assets/fix.svg) ストアのロケールが指定されていない場合に、ダンププロセス中に `php ./vendor/bin/ece-tools config:dump` コマンドが `config.php` ファイルから冗長なセクションを削除できなかった問題を修正しました。 これで、設定ファイルを環境間で簡単に移動できます。 `ece-tools` v2002.0.13 に更新した後は、改善された `config:dump` コマンドを使用して古い `config.php` ファイルを再生成します。 [ ストア設定の設定の管理 ](https://devdocs.magento.com/cloud/live/sens-data-over.html) を参照してください。<!--MAGECLOUD-2444-->
 
-- ![修正アイコン](../../assets/fix.svg) のルート設定の場合に、デプロイフェーズ中にエラーが発生する問題を修正しました。 `.magento/routes.yaml` ファイルはからリダイレクトされる [頂点](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) ドメインからへ `www` ドメイン。<!--MAGECLOUD-2556-->
+- ![ 修正アイコン ](../../assets/fix.svg) `.magento/routes.yaml` ファイルのルート設定が [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) ドメインから `www` ドメインにリダイレクトされる場合、デプロイフェーズ中にエラーが発生する問題を修正しました。<!--MAGECLOUD-2556-->
 
-- ![修正アイコン](../../assets/fix.svg) の問題を修正しました `_merge` オプション： [`SEARCH_CONFIGURATION`](../environment/variables-deploy.md#search_configuration) を含めない場合に、誤った結合結果を引き起こす変数 `engine` 更新されたのパラメーター `.magento.env.yaml` 設定ファイル。 現在は、結合操作により、更新されたで指定した値のみが正しく上書きされます `.magento.env.yaml` を設定する必要はありません `engine` パラメーター。<!--MAGECLOUD-2520-->
+- ![ 修正アイコン ](../../assets/fix.svg) 更新された `.magento.env.yaml` 設定ファイルに `engine` パラメーターを含めない場合に、[`SEARCH_CONFIGURATION`](../environment/variables-deploy.md#search_configuration) 変数の `_merge` オプションで誤った結合結果が発生する問題を修正しました。 マージ操作では、`engine` パラメーターを設定しなくても、更新された `.magento.env.yaml` で指定した値のみが正しく上書きされるようになりました。<!--MAGECLOUD-2520-->
 
-- ![修正アイコン](../../assets/fix.svg) クラウドインフラストラクチャバージョン 2.2.1 以降で、Adobe Commerceのセッションロックが誤って有効になり、パフォーマンスの低下やタイムアウトの原因となる可能性がある Redis 設定の問題を修正しました。 現在は、セッションロックはデフォルトで無効になっています。 この問題は、のデフォルト動作の変更が原因で発生しました `disable_locking` redis セッションハンドラーパッケージの v1.3.4 で導入されたパラメーター。 参照： [colinmollenhour/php-redis-session-abstract パッケージ](https://github.com/colinmollenhour/php-redis-session-abstract).<!-- MAGECLOUD-2515-->
+- ![ 修正アイコン ](../../assets/fix.svg) クラウドインフラストラクチャバージョン 2.2.1 以降で、Adobe Commerceのセッションロックが誤って有効になり、パフォーマンスの低下やタイムアウトの原因となる可能性がある Redis 設定の問題を修正しました。 現在は、セッションロックはデフォルトで無効になっています。 この問題は、Redis セッションハンドラーパッケージ v1.3.4 で導入された `disable_locking` パラメーターのデフォルト動作の変更が原因です。 [colinmollenhour/php-redis-session-abstract package](https://github.com/colinmollenhour/php-redis-session-abstract).<!-- MAGECLOUD-2515--> を参照ください。
 
 ## v2002.0.12
 
-- ![新規アイコン](../../assets/new.svg) **Docker Compose for Cloud** – コマンドを追加 – `docker:build` – 生成する [Docker Compose](https://devdocs.magento.com/cloud/docker/docker-config.html) クラウドからの設定 `ece-tools` リポジトリ。<!-- MAGECLOUD-2250 -->
+- ![ 新規アイコン ](../../assets/new.svg)**Docker Compose for Cloud**—Cloud `ece-tools` リポジトリから [Docker Compose](https://devdocs.magento.com/cloud/docker/docker-config.html) 設定を生成するためのコマンド – `docker:build` – を追加しました。<!-- MAGECLOUD-2250 -->
 
-- ![新規アイコン](../../assets/new.svg) **ロケールの変更** – これで、設定プロセスのエクスポートとインポートを行わずに、ストアのロケールを変更できるようになりました。 アプリケーションが実稼動環境にあり、SCD_ON_DEMAND が有効になっている間は、格納および管理ロケールオプションを使用できます。<!-- MAGECLOUD-2019 -->
+- ![ 新規アイコン ](../../assets/new.svg)**ロケールを変更** – 設定のエクスポートおよびインポート処理を実行しなくても、ストアのロケールを変更できるようになりました。 アプリケーションが実稼動環境にあり、SCD_ON_DEMAND が有効になっている間は、格納および管理ロケールオプションを使用できます。<!-- MAGECLOUD-2019 -->
 
-- ![新規アイコン](../../assets/new.svg) <!-- MAGECLOU-1998 -->**サイトマップとロボット** – が作成されました [ワークフロー](../store/robots-sitemap.md) を追加 `robots.txt` のファイルを作成して生成 `sitemap.xml` インフラストラクチャに変更を加える必要のない、単一ドメイン設定用のファイル。
+- ![ 新規アイコン ](../../assets/new.svg)<!-- MAGECLOU-1998 -->**サイトマップとロボット** - [ ワークフロー ](../store/robots-sitemap.md) を作成して、インフラストラクチャを変更することなく、`robots.txt` ファイルを追加し、単一ドメイン設定用の `sitemap.xml` ファイルを生成します。
 
-- ![新規アイコン](../../assets/new.svg) **ウィザード**— 2 つを追加しました [ウィザード](../deploy/smart-wizards.md) クラウド設定の支援：<!-- MAGECLOUD-1910 -->
+- ![ 新しいアイコン ](../../assets/new.svg)**ウィザード** – クラウド設定に役立つ 2 つの [ ウィザード ](../deploy/smart-wizards.md) を追加しました：<!-- MAGECLOUD-1910 -->
 
-   - `ideal-state` – 導入のダウンタイムを最小限に抑えるための理想的な状態を構成する
+   - `ideal-state`：導入のダウンタイムを最小限に抑えるために理想的な状態を構成
 
-   - `master-slave` – データベースと Redis のロード・バランシングを構成します。
+   - `master-slave` - データベースと Redis のロード・バランシングを構成します
 
-- ![新規アイコン](../../assets/new.svg) **モジュールの更新** – クラウドコマンドを追加 – `module:refresh` – 無効または明示的に有効になっていないモジュールを有効にします。これは、ビルド中に自動的に行われる方法と同様です。<!-- MAGECLOUD-1521 -->
+- ![ 新しいアイコン ](../../assets/new.svg)**モジュールの更新** - ビルド時に自動的に行われる方法と同様に、無効にされたモジュールや明示的に有効にされなかったモジュールを有効にするクラウドコマンド `module:refresh` を追加しました。<!-- MAGECLOUD-1521 -->
 
-- ![新規アイコン](../../assets/new.svg) を使用してサービスの設定を結合または上書きすることを選択する機能を追加しました `_merge` オプション： [キャッシュ](../environment/variables-deploy.md#cache_configuration), [SESSION](../environment/variables-deploy.md#session_configuration), [キュー](../environment/variables-deploy.md#queue_configuration)、および [検索](../environment/variables-deploy.md#search_configuration) 設定。<!-- MAGECLOUD-2105 -->
+- ![ 新規アイコン ](../../assets/new.svg) [CACHE](../environment/variables-deploy.md#cache_configuration)、[SESSION](../environment/variables-deploy.md#session_configuration)、[QUEUE](../environment/variables-deploy.md#queue_configuration)、[SEARCH](../environment/variables-deploy.md#search_configuration) 設定の `_merge` オプションを使用して、サービスの設定を結合または上書きするように選択する機能が追加されました。<!-- MAGECLOUD-2105 -->
 
-- ![新規アイコン](../../assets/new.svg) **環境設定サンプルファイル** – を追加しました。 `.magento.env.yaml` ece-Tools パッケージに追加するサンプルファイル。各環境変数の詳細な説明と指定可能な値が記載されています。<!-- MAGECLOUD-1908 -->
+- ![ 新規アイコン ](../../assets/new.svg)**環境設定サンプルファイル** – 各環境変数の詳細な説明と使用可能な値を含む `.magento.env.yaml` サンプルファイルを ECE-Tools パッケージに追加しました。<!-- MAGECLOUD-1908 -->
 
-   - また、の詳細な検証も追加しました `.magento.env.yaml` 予期しない値によってデプロイメントプロセスでエラーが発生するのを防ぐ設定。 エラーが発生すると、次の内容で始まる詳細なエラーメッセージが表示されるようになりました。 `Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:`<!-- MAGECLOUD-1907 -->
+   - また、予期しない値によってデプロイメントプロセスでエラーが発生するのを防ぐ、`.magento.env.yaml` 設定の詳細な検証を追加しました。 エラーが発生すると、`Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:`<!-- MAGECLOUD-1907 --> で始まる詳細なエラーメッセージが表示されるようになりました。
 
-- ![新規アイコン](../../assets/new.svg) 以下を追加しました [**環境変数**](../environment/variables-intro.md):
+- ![ 新規アイコン ](../../assets/new.svg) 次の [**環境変数**](../environment/variables-intro.md) を追加しました。
 
-   - 新しいを使用して、テーマごとに複数のロケールを定義できるようになりました [SCD_MATRIX](../environment/variables-deploy.md#scd_matrix) デプロイするテーマファイルの量を減らす環境変数。<!-- MAGECLOUD-1501 -->
+   - 新しい [SCD_MATRIX](../environment/variables-deploy.md#scd_matrix) 環境変数を使用して、テーマごとに複数のロケールを定義できるようになりました。これにより、デプロイするテーマファイルの量を減らすことができます。<!-- MAGECLOUD-1501 -->
 
-   - さんがを追加しました [DATABASE_CONFIGURATION](../environment/variables-deploy.md#database_configuration) デプロイメント用にデータベース接続をカスタマイズするための環境変数。<!-- MAGECLOUD-2047 -->
+   - [DATABASE_CONFIGURATION](../environment/variables-deploy.md#database_configuration) 環境変数を追加して、デプロイメント用のデータベース接続をカスタマイズしました。<!-- MAGECLOUD-2047 -->
 
-   - 新しい [MIN_LOGGING_LEVEL](../environment/variables-global.md#min_logging_level) 変数は、コードを変更せずにすべての出力ストリームの最小ログレベルを上書きします。<!-- MAGECLOUD-2129 -->
+   - 新しい [MIN_LOGGING_LEVEL](../environment/variables-global.md#min_logging_level) 変数は、コードを変更せずに、すべての出力ストリームの最小ログレベルを上書きします。<!-- MAGECLOUD-2129 -->
 
-- ![修正アイコン](../../assets/fix.svg) デプロイフェーズとデプロイ後フェーズの間でダウンタイムが発生する問題を修正しました。 これで、デプロイ後フェーズが開始されます _即時_ デプロイフェーズ終了後。
+- ![ 修正アイコン ](../../assets/fix.svg) デプロイフェーズとデプロイ後フェーズの間でダウンタイムが発生する問題を修正しました。 これで、デプロイフェーズが終了した後、デプロイフェーズが _直ちに_ 開始されます。
 
-- ![修正アイコン](../../assets/fix.svg) で成功した cron ジョブをクリーンアップしない問題を修正しました `status = success`、スケジュールから。<!-- MAGECLOUD-2268 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 成功した cron ジョブ（`status = success` 付きのジョブ）をスケジュールからクリーンアップしない問題を修正しました。<!-- MAGECLOUD-2268 -->
 
-- ![修正アイコン](../../assets/fix.svg) の問題を修正しました `post_deploy` プロジェクトのデプロイ後フェーズではなくデプロイフェーズのキャッシュをクリアしたフック。<!-- MAGECLOUD-2113 -->
+- ![ 修正アイコン ](../../assets/fix.svg) プロジェクトのデプロイ後フェーズではなくデプロイフェーズでキャッシュをクリアする `post_deploy` フックの問題を修正しました。<!-- MAGECLOUD-2113 -->
 
-- ![修正アイコン](../../assets/fix.svg) 複数のロケールで SCD を使用すると、同じ生成が行われる問題を修正しました `js-translation.json` 各ロケール用のファイル。<!-- MAGECLOUD-2034 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 複数のロケールで SCD を使用すると、各ロケールに対して同じ `js-translation.json` ファイルが生成される問題を修正しました。<!-- MAGECLOUD-2034 -->
 
-- ![修正アイコン](../../assets/fix.svg) 最適化： `db:dump` のコマンド `ece-tools` テーブルのロックを回避し、速度を上げるためにパッケージ化します。<!-- MAGECLOUD-2033 -->
+- ![fix アイコン ](../../assets/fix.svg) テーブルのロックを回避し速度を向上させるために、`ece-tools` パッケージの `db:dump` コマンドを最適化しました。<!-- MAGECLOUD-2033 -->
 
 ## v2002.0.11
 
@@ -448,23 +448,23 @@ ht-degree: 0%
 >
 >ECE-Tools バージョン 2002.0.11 は、2.2.4 の互換性のために必要です。
 
-- ![新規アイコン](../../assets/new.svg) **マスター以外のノードへの読み取り専用接続の設定** – このリリースでは、読み取り専用トラフィックを受信するように、非マスターノードへの読み取り専用接続を設定する機能が追加されました（  [MariaDB](../environment/variables-deploy.md#mysql_use_slave_connection)）に設定します。<!--MAGECLOUD-143 -->[Redis](../environment/variables-deploy.md#redis_use_slave_connection) および <!--MAGECLOUD-143 -->
+- ![ 新規アイコン ](../../assets/new.svg)**マスター以外のノードへの読み取り専用接続の設定** – このリリースでは、（[MariaDB](../environment/variables-deploy.md#mysql_use_slave_connection)）読み取り専用トラフィックを受信するように、マスター以外のノードへの読み取り専用接続を設定できるようになりました。<!--MAGECLOUD-143 -->[Redis](../environment/variables-deploy.md#redis_use_slave_connection) と <!--MAGECLOUD-143 -->
 
-- ![新規アイコン](../../assets/new.svg) **設定ウィザード** – 静的なコンテンツのデプロイメントの設定を検証するのに役立つウィザードが追加されました。 参照： [スマート・ウィザード](../deploy/smart-wizards.md).<!--MAGECLOUD-1910 -->
+- ![ 新しいアイコン ](../../assets/new.svg) **設定ウィザード** – 静的なコンテンツ配置の設定を検証するのに役立つウィザードが追加されました。 [ スマート ウィザード ](../deploy/smart-wizards.md) を参照してください。<!--MAGECLOUD-1910 -->
 
-- ![新規アイコン](../../assets/new.svg) **Symfony Console のサポート**—Adobe Commerce 2.3 で Symfony Console 4 がサポートされるようになりました。<!-- MAGECLOUD-1966 -->
+- ![ 新しいアイコン ](../../assets/new.svg)**Symfony Console のサポート**—Adobe Commerce 2.3 で Symfony Console 4 をサポートするようになりました。<!-- MAGECLOUD-1966 -->
 
-- ![修正アイコン](../../assets/fix.svg) **Cron スケジュールの最適化**- cron 関連の問題のデバッグに役立つように、キュー管理と拡張ログを改善しました。<!-- MAGECLOUD-1607 -->
+- ![ 修正アイコン ](../../assets/fix.svg)**Cron スケジュールの最適化** - Cron 関連の問題のデバッグに役立つキュー管理と拡張ログを改善しました。<!-- MAGECLOUD-1607 -->
 
-- ![修正アイコン](../../assets/fix.svg) デプロイメントの検証が失敗するのは、 `ADMIN_EMAIL` または `ADMIN_USERNAME` 値は既存の管理者アカウントと同じです。<!-- MAGECLOUD-1221 -->
+- ![ 修正アイコン ](../../assets/fix.svg)`ADMIN_EMAIL` または `ADMIN_USERNAME` の値が既存の管理者アカウントと同じ場合、デプロイメントの検証が失敗します。<!-- MAGECLOUD-1221 -->
 
-- ![修正アイコン](../../assets/fix.svg) 2.2.x バージョンの SOLR のサポートを削除。 2.1.x バージョンでは、SOLR を有効にする機能が保持されています。<!-- MAGECLOUD-1282 -->
+- ![ 修正アイコン ](../../assets/fix.svg) バージョン 2.2.x の SOLR サポートを削除しました。 2.1.x バージョンでは、SOLR.<!-- MAGECLOUD-1282 --> を有効にする機能が保持されています。
 
-- ![修正アイコン](../../assets/fix.svg) ステージング環境と実稼動環境に最初にインストールされる PRO プロジェクトには、Elasticsearch用に異なるインデックスプレフィックスが含まれるようになりました。これにより、各環境に属するレコードを特定しながら、競合の可能性を防ぎます。<!-- MAGECLOUD-1489 -->
+- ![ 修正アイコン ](../../assets/fix.svg)PRO プロジェクトのステージング環境と実稼動環境の最初のインストールに、環境に対する異なるインデックスプレフィックスが含まれるようになりました。これにより、各Elasticsearchに属するレコードを特定しながら、競合の可能性を防ぎます。<!-- MAGECLOUD-1489 -->
 
-- ![修正アイコン](../../assets/fix.svg) 静的コンテンツのデプロイメント中にレガシーアーキテクチャのビルドフェーズが中断される問題を修正しました。<!-- MAGECLOUD-2021 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 静的コンテンツのデプロイメント中にレガシーアーキテクチャのビルドフェーズが中断される問題を修正しました。<!-- MAGECLOUD-2021 -->
 
-- ![修正アイコン](../../assets/fix.svg) **Cron 固有の改善点**— cron の実装を修正しました。<!-- MAGECLOUD-1607 -->
+- ![ 修正アイコン ](../../assets/fix.svg)**Cron 固有の改善点**—Cron の実装を修正しました。<!-- MAGECLOUD-1607 -->
 
    - Cron キューがすぐにいっぱいになる問題を修正しました。 これで、古い cron ジョブがより信頼性の高い方法でクリアされます。
 
@@ -472,103 +472,103 @@ ht-degree: 0%
 
    - cron に関する問題のデバッグをより適切に支援するために、ログ機能を改善しました。
 
-   - **メモ** – このリリースでは、cron 関連の多くの問題に対処しています。 現在、で cron 関連のパッチを使用している場合 _m2 – ホットフィックス_、それらを削除します。
+   - **メモ** – このリリースでは、cron 関連の多くの問題に対処しています。 現在、_m2-hotfix_ で cron 関連のパッチを使用している場合は、それらを削除します。
 
-- ![修正アイコン](../../assets/fix.svg) **SCD 固有の改善点**—
+- ![ 修正アイコン ](../../assets/fix.svg)**SCD 固有の改善点**—
 
-   - を使用できます `VERBOSE_COMMANDS` および `SCD_COMPRESSION_LEVEL` 両方の期間の環境変数 _ビルド_ およびデプロイフェーズ。<!-- MAGECLOUD-1819 -->
+   - `VERBOSE_COMMANDS` と `SCD_COMPRESSION_LEVEL` の環境変数は、_build_ フェーズと de_ploy フェーズの両方で使用できます <!-- MAGECLOUD-1819 -->。
 
-   - で予期しない値が発生した場合、デプロイメントがランダムエラーで失敗する問題を修正しました `SCD_COMPRESSION_LEVEL` 環境変数。 設定の検証を改善して、意味のある通知を提供するようになりました。 参照： [`SCD_COMPRESSION_LEVEL`](../environment/variables-build.md#scd_compression_level) （使用可能な値）。<!-- MAGECLOUD-2043 -->
+   - `SCD_COMPRESSION_LEVEL` 環境変数に予期しない値が発生した場合、デプロイメントがランダムエラーで失敗する問題を修正しました。 設定の検証を改善して、意味のある通知を提供するようになりました。 使用可能な値については、[`SCD_COMPRESSION_LEVEL`](../environment/variables-build.md#scd_compression_level) を参照してください。<!-- MAGECLOUD-2043 -->
 
-   - の動作を修正 `SCD_COMPRESSION_LEVEL` 環境変数の設定フローにより、オーバーライドが期待どおりに動作します。<!-- MAGECLOUD-2044 -->
+   - `SCD_COMPRESSION_LEVEL` 環境変数の設定フローの動作を修正して、オーバーライドが期待どおりに動作するようにしました。<!-- MAGECLOUD-2044 -->
 
-   - を設定できない問題を修正しました `SCD_THREADS` の環境変数 `.magento.env.yaml` ファイル _deploy_ ステージ。<!-- MAGECLOUD-2046 -->
+   - `.magento.env.yaml` ファイル _deploy_ stage.<!-- MAGECLOUD-2046 --> で `SCD_THREADS` 環境変数を設定できない問題を修正しました
 
 ## v2002.0.10
 
-- ![新規アイコン](../../assets/new.svg) **静的コンテンツデプロイメント（SCD）** – 要求に応じて（オンデマンドで）静的コンテンツを生成する、新しい代替デプロイメントプロセスがあります。 これにより、最も重要なアセットを生成できるので、ダウンタイムが短縮され、キャッシュ処理が改善されます。<!-- MAGECLOUD-1285 -->
+- ![ 新しいアイコン ](../../assets/new.svg)**静的コンテンツ展開（SCD）** – 要求に応じて静的コンテンツを（オンデマンドで）生成する、新しい代替デプロイメントプロセスがあります。 これにより、最も重要なアセットを生成できるので、ダウンタイムが短縮され、キャッシュ処理が改善されます。<!-- MAGECLOUD-1285 -->
 
-   - **新しい環境変数** – が追加されました `SCD_ON_DEMAND` 静的コンテンツをリクエスト時に生成するためのグローバル環境変数。<!-- MAGECLOUD-1738 -->
+   - **新しい環境変数** - `SCD_ON_DEMAND` グローバル環境変数が追加され、要求に応じて静的コンテンツが生成されるようになりました。<!-- MAGECLOUD-1738 -->
 
-   - **デプロイ後フック** – が追加されました `post_deploy` フック用 `.magento.app.yaml` キャッシュをクリアし、キャッシュをプリロード（warms）するファイル _後_ コンテナが接続の受け入れを開始します。 これは、にステージング環境と実稼動環境が含まれている Pro プロジェクトでのみ使用できます [!DNL Cloud Console] スタータープロジェクトの場合はです。 必須ではありませんが、と並行して動作します `SCD_ON_DEMAND` 環境変数。<!-- MAGECLOUD-1788 -->
+   - **Post-deploy hook** - `.magento.app.yaml` ファイルに `post_deploy` フックが追加され、キャッシュがクリアされて、コンテナが接続の受け入れを開始する _後_ キャッシュがプリロード（warms）されるようになりました。 [!DNL Cloud Console] ージにステージング環境と実稼動環境が含まれている Pro プロジェクトと、スタータープロジェクトでのみ使用できます。 必須ではありませんが、`SCD_ON_DEMAND` 環境変数と連携して機能します。<!-- MAGECLOUD-1788 -->
 
-- ![新規アイコン](../../assets/new.svg) **最適化** – 導入時にファイルの移動またはコピーを最適化し、導入スピードを向上させ、ファイル・システムへの負荷を軽減します。<!-- MAGECLOUD-1842 -->
+- ![ 新しいアイコン ](../../assets/new.svg) **最適化** – 導入時にファイルの移動またはコピーを最適化し、導入スピードを向上させ、ファイル・システムへの負荷を軽減 <!-- MAGECLOUD-1842 -->
 
-- ![新規アイコン](../../assets/new.svg) **デプロイメントログ**- デプロイメントプロセス中にログを出力するための Syslog および Graylog Extended Log Format （GELF） ハンドラを有効にする機能が追加されました。 参照： [ログハンドラー](../environment/log-handlers.md).<!-- MAGECLOUD-1751 -->
+- ![ 新しいアイコン ](../../assets/new.svg)**配置ログ**：配置プロセス中にログを出力する Syslog および Graylog Extended Log Format （GELF）ハンドラを有効にする機能が追加されました。 [ ログハンドラー ](../environment/log-handlers.md) を参照してください <!-- MAGECLOUD-1751 -->。
 
-- ![新規アイコン](../../assets/new.svg) 以下を追加しました [**環境変数**](../environment/variables-intro.md):
+- ![ 新規アイコン ](../../assets/new.svg) 次の [**環境変数**](../environment/variables-intro.md) を追加しました。
 
-   - `CRYPT_KEY` – データベースを移動するときに、暗号化キーを別の環境に提供します。<!-- MAGECLOUD-1556 -->
+   - `CRYPT_KEY` - データベースを移動する際に、別の環境に暗号化キーを提供します。<!-- MAGECLOUD-1556 -->
 
-   - `SKIP_HTML_MINIFICATION`—_グローバル_ 静的ビューファイルのコピーをスキップする環境変数 `var/view_preprocessed` ディレクトリを指定し、必要に応じて縮小HTMLを生成します。<!-- MAGECLOUD-1621 and MAGECLOUD-1736-->
+   - `SKIP_HTML_MINIFICATION` - _グローバル_`var/view_preprocessed` ディレクトリ内の静的ビュー・ファイルのコピーをスキップし、要求されると縮小HTMLを生成する環境変数。<!-- MAGECLOUD-1621 and MAGECLOUD-1736-->
 
-   - `SCD_ON_DEMAND`—_グローバル_ 静的コンテンツをリクエスト時に生成するための環境変数。<!-- MAGECLOUD-1738 -->
+   - `SCD_ON_DEMAND` - _グローバル_ 環境変数で、要求に応じて静的コンテンツを生成します。<!-- MAGECLOUD-1738 -->
 
-   - `WARM_UP_PAGES`- キャッシュのプリロードに使用するページをリストできます。 新しいで使用可能 [デプロイ後変数](../environment/variables-post-deploy.md).
+   - `WARM_UP_PAGES` - キャッシュのプリロードに使用するページをリストできます。 新しい [Post-deploy 変数 ](../environment/variables-post-deploy.md) で使用可能です。
 
-- ![修正アイコン](../../assets/fix.svg) インスタンス上のデプロイメントを中断する、ローカルに適用されたパッチが関与する問題を修正しました。 これで、ECE-Tools はパッチが適用されたことを検出できます。<!-- MAGECLOUD-982 -->
+- ![ 修正アイコン ](../../assets/fix.svg) ローカルに適用されたパッチがインスタンス上のデプロイメントを中断する問題を修正しました。 これで、ECE-Tools はパッチが適用されたことを検出できます。<!-- MAGECLOUD-982 -->
 
-- ![修正アイコン](../../assets/fix.svg) JavaScript バンドルと GZIP 機能の間の競合を修正しました。 これで、これらの機能は正しく連携して動作します。<!-- MAGECLOUD-1735 -->
+- ![ 修正アイコン ](../../assets/fix.svg) JavaScriptのバンドルと GZIP 機能の間の競合を修正しました。 これで、これらの機能は正しく連携して動作するようになりました。<!-- MAGECLOUD-1735 -->
 
-- ![修正アイコン](../../assets/fix.svg) 以前のバージョンの PHP 7.0.x を使用すると ECE-Tools CLI コマンドが失敗する問題を修正しました。<!-- MAGECLOUD-1744 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 以前のバージョンの PHP 7.0.x を使用すると ECE-Tools CLI コマンドが失敗する問題を修正しました。<!-- MAGECLOUD-1744 -->
 
-- ![修正アイコン](../../assets/fix.svg) 複数スレッドでのコンパクトな戦略で静的コンテンツのデプロイができない問題を修正しました。<!-- MAGECLOUD-1822 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 複数のスレッドでのコンパクトな戦略で静的コンテンツのデプロイができない問題を修正しました。<!-- MAGECLOUD-1822 -->
 
-- ![修正アイコン](../../assets/fix.svg) 管理者ログインの遅延を引き起こす Redis セッションロックの問題を修正しました。 また、2.1.x では修正も利用できます。<!-- MAGECLOUD-1853 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 管理者ログインの遅延を引き起こす Redis セッションロックの問題を修正しました。 また、この修正は 2.1.x.<!-- MAGECLOUD-1853 --> で利用可能です
 
 ## v2002.0.9
 
 >[!NOTE]
 >
->あなたは必要があります [クラウドインフラストラクチャメタパッケージ上のAdobe Commerceのアップグレード](../dev-tools/install-package.md#update-the-metapackage) これで、今後のすべての更新を取得できます。
+>これと今後のすべてのアップデートを取得するには、[ クラウドインフラストラクチャメタパッケージ上のAdobe Commerceをアップグレード ](../dev-tools/install-package.md#update-the-metapackage) する必要があります。
 
-- ![新規アイコン](../../assets/new.svg) **ece-tools** – この `ece-tools` パッケージでAdobe Commerce 2.1.x がサポートされるようになりました。<!-- MAGECLOUD-1086 -->
+- ![ 新しいアイコン ](../../assets/new.svg)**ece-tools**—`ece-tools` パッケージでAdobe Commerce 2.1.x がサポートされるようになりました。<!-- MAGECLOUD-1086 -->
 
-- ![新規アイコン](../../assets/new.svg) **Redis 設定** – これで、以下を実行できます。 [redis の設定](../environment/variables-deploy.md#cache_configuration) 環境変数を使用したページとデフォルトのキャッシュおよび Redis セッションストレージ<!-- MAGECLOUD-1552 -->
+- ![ 新規アイコン ](../../assets/new.svg)**Redis 設定** – 環境変数を使用して、ページとデフォルトのキャッシュおよび Redis セッションストレージを [Redis 設定 ](../environment/variables-deploy.md#cache_configuration) できるようになりました。<!-- MAGECLOUD-1552 -->
 
-- ![新規アイコン](../../assets/new.svg) **検索、AMQP、Redis サービスの改善** – サービス設定フローを統合して、すべてのサービスで同じように動作するようになりました。 を手動で編集する `env.php` サービスを設定するためのファイルはサポートされなくなりました。 環境変数または `.magento.env.yaml` 代わりに、ファイルを参照してください。<!-- MAGECLOUD-1437 -->
+- ![ 新しいアイコン ](../../assets/new.svg)**検索、AMQP、Redis のサービス改善** – サービス設定フローを統合し、すべてのサービスで同じように動作するようになりました。 `env.php` ファイルを手動で編集したサービスの設定はサポートされなくなりました。 代わりに、環境変数または `.magento.env.yaml` ファイルを使用する必要があります。<!-- MAGECLOUD-1437 -->
 
-- ![修正アイコン](../../assets/fix.svg) **環境変数**—
+- ![ 修正アイコン ](../../assets/fix.svg)**環境変数**—
 
-   - の使用 `env:STATIC_CONTENT_THREADS` は非推奨（廃止予定）で、今後のリリースで削除される予定です。 の使用 [SCD_THREADS](../environment/variables-deploy.md#scd_threads) その代わり。<!-- MAGECLOUD-1507 -->
+   - `env:STATIC_CONTENT_THREADS` の使用は非推奨（廃止予定）となり、将来のリリースで削除される予定です。 代わりに [SCD_THREADS](../environment/variables-deploy.md#scd_threads) を使用してください。<!-- MAGECLOUD-1507 -->
 
-   - この `STATIC_CONTENT_EXCLUDE_THEMES` 環境変数は非推奨（廃止予定）となりました。 を使用する必要があります `SCD_EXCLUDE_THEMES` 代わりに環境変数を使用します。<!-- MAGECLOUD-1640 -->
+   - `STATIC_CONTENT_EXCLUDE_THEMES` 環境変数は非推奨（廃止予定）となりました。 代わりに、`SCD_EXCLUDE_THEMES` 環境変数を使用する必要があります。<!-- MAGECLOUD-1640 -->
 
-- ![修正アイコン](../../assets/fix.svg) **ログ** – 組み込みのパッチ適用オペレーションに関するログ作成を合理化しました。<!-- MAGECLOUD-1674 -->
+- ![ 修正アイコン ](../../assets/fix.svg)**ログ** – 組み込みのパッチ適用操作に関するログを簡素化しました。<!-- MAGECLOUD-1674 -->
 
-- ![修正アイコン](../../assets/fix.svg) 削除しました `developer` モードサポートと `APPLICATION_MODE` 予期しない動作を引き起こしていたため、環境変数に影響を及ぼします。<!-- MAGECLOUD-1615 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 予期しない動作を引き起こしていた `developer` モードのサポートと `APPLICATION_MODE` 環境変数を削除しました。<!-- MAGECLOUD-1615 -->
 
-- ![修正アイコン](../../assets/fix.svg) Redis に関連する静的コンテンツのデプロイメントの失敗を引き起こす問題を修正しました。 現在は、設計どおりにマルチスレッド静的コンテンツのデプロイメントが実行されます。<!-- MAGECLOUD-1630 -->
+- ![ 修正アイコン ](../../assets/fix.svg) Redis に関連する静的コンテンツのデプロイメント失敗を引き起こす問題を修正しました。 現在は、設計どおりにマルチスレッド静的コンテンツのデプロイメントが実行されます。<!-- MAGECLOUD-1630 -->
 
-- ![修正アイコン](../../assets/fix.svg) を実行した後に機密としてマークされる管理者の設定フィールドにユーザーが変更を保存できなかった問題を修正しました `app:config:dump` コマンド。<!-- MAGECLOUD-1175 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 管理コマンドを実行した後に機密としてマークされた管理 `app:config:dump` の設定フィールドにユーザーが変更を保存できなかった問題を修正しました。<!-- MAGECLOUD-1175 -->
 
-- ![修正アイコン](../../assets/fix.svg) の以前のバージョンへのサポートを追加しました `symfony/yaml` 最新バージョンとまだ互換性がない一部のパッケージとの競合を修正します。<!-- MAGECLOUD-1674 -->
+- ![ 修正アイコン ](../../assets/fix.svg) 最新バージョンとまだ互換性がない一部のパッケージとの競合を修正するために、以前のバージョンの `symfony/yaml` のサポートを追加しました。<!-- MAGECLOUD-1674 -->
 
 ## v2002.0.8
 
 >[!NOTE]
 >
->合併しました `vendor/magento/ece-patches` （を使用） `vendor/magento/ece-tools` このリリースではです。 を更新する必要はなくなりました `vendor/magento/ece-patches` 別々にパッケージ化します。
+>このリリースでは、`vendor/magento/ece-patches` と `vendor/magento/ece-tools` を統合しました。 `vendor/magento/ece-patches` パッケージを個別に更新する必要はなくなりました。
 
 **新機能：**
 
-- **ログの改善**<!-- MAGECLOUD-1253 -MAGECLOUD-1495 -->
+- **ロギングの改善**<!-- MAGECLOUD-1253 -MAGECLOUD-1495 -->
    - ビルドまたはデプロイプロセスで環境変数が上書きされる際の説明を改善するために、ログメッセージを改善しました。
-   - インストールとアップグレードの進行状況をリアルタイムで確認できるようになりました。 を追跡する `install_update.log` 進行状況を表示するファイル。 以下に例を挙げます。
+   - インストールとアップグレードの進行状況をリアルタイムで確認できるようになりました。 進行状況を表示するには、`install_update.log` ファイルに対して「テール」を実行します。 以下に例を挙げます。
 
      ```bash
      tail -f var/log/install_upgrade.log
      ```
 
-- **新しい cron コマンド** – では、スタックした特定の cron ジョブをすべて停止して再起動するのではなく、それらのジョブをロック解除できるようになりました。 [`cron:unlock`](https://support.magento.com/hc/en-us/articles/360033099451) コマンド。 2.1 では利用できません。<!-- MAGECLOUD-1367 -->
+- **新しい cron コマンド** - [`cron:unlock`](https://support.magento.com/hc/en-us/articles/360033099451) コマンドを使用してすべての cron ジョブを停止して再起動するのではなく、特定の停止した cron ジョブのロックを解除できるようになりました。 2.1.<!-- MAGECLOUD-1367 --> では利用できません。
 
-- **統合設定ファイル** – を使用して、ビルドとデプロイのステージを設定できるようになりました [`.magento.env.yaml`](https://devdocs.magento.com/cloud/project/magento-env-yaml.html) ファイル。<!-- MAGECLOUD-1369 -->
+- **統合設定ファイル** - [`.magento.env.yaml`](https://devdocs.magento.com/cloud/project/magento-env-yaml.html) ファイルを使用してビルドステージとデプロイステージを設定できるようになりました。<!-- MAGECLOUD-1369 -->
 
-- **設定ファイルのバックアップ** – 展開プロセスでは、のバックアップが自動的に作成されるようになりました `app/etc/env.php` および `app/etc/config.php` デプロイ後の設定ファイル。 以下も追加しました [新しい CLI コマンド](https://support.magento.com/hc/en-us/articles/360033182871) バックアップからこれらの構成ファイルを復元します。<!-- MAGECLOUD-1372 -->
+- **設定ファイルのバックアップ** – 導入プロセスでは、導入後に `app/etc/env.php` と `app/etc/config.php` の設定ファイルのバックアップが自動的に作成されるようになりました。 また、これらの構成ファイルをバックアップからリストアするための [ 新しい CLI コマンド ](https://support.magento.com/hc/en-us/articles/360033182871) も追加しました <!-- MAGECLOUD-1372 -->。
 
-- **検証エラーのトラブルシューティング** – 検証エラーを解決するために使用する必要があるコマンドを変更しました。 `config.php` には、静的コンテンツのデプロイメントに十分なデータが含まれていません。 以前は、エラーメッセージからを実行するように指示されていました `bin/magento app:config:dump`. さあ、走らなくちゃ `php ./vendor/bin/ece-tools config:dump`.<!-- MAGECLOUD-1491 -->
+- **検証エラーのトラブルシューティング** – 静的コンテンツのデプロイメントに十分なデータが含まれていない場合の検証エラーを解決するために使用する必要が `config.php` るコマンドを変更しました。 以前は、エラーメッセージから `bin/magento app:config:dump` を実行するように指示されていました。 ここで、`php ./vendor/bin/ece-tools config:dump`.<!-- MAGECLOUD-1491 --> を実行する必要があります。
 
-- **新しい環境変数** – 環境変数を使用してカスタムを接続できるようになりました [検索](../environment/variables-deploy.md#search_configuration) および [AMQP ベース](../environment/variables-deploy.md#queue_configuration) サイトへのサービス。<!-- MAGECLOUD-1410 -->
+- **新しい環境変数** – 環境変数を使用して、カスタム [ 検索 ](../environment/variables-deploy.md#search_configuration) および [AMQP ベース ](../environment/variables-deploy.md#queue_configuration) サービスをサイトに接続できるようになりました。<!-- MAGECLOUD-1410 -->
 
 - 私たちはスマートパッチを実装しました。 これで、クラウドインフラストラクチャー上のAdobe Commerceのバージョンではなく、パッチが適用されたパッケージバージョンに基づいて、パッケージでパッチが適用されます。<!--MAGECLOUD-1090-->
 
@@ -578,33 +578,33 @@ ht-degree: 0%
 
 - インタラクティブモードでデプロイメントを実行するとタイムアウト例外が発生する問題を修正しました。<!-- MAGECLOUD-1389 -->
 
-- 静的コンテンツ生成にコンパクト戦略を使用するとエラーが発生する問題を修正しました。 2.1 では利用できません。<!-- MAGECLOUD-1446 MAGECLOUD-1485-->
+- 静的コンテンツ生成にコンパクト戦略を使用するとエラーが発生する問題を修正しました。 2.1.<!-- MAGECLOUD-1446 MAGECLOUD-1485--> では利用できません。
 
 - デプロイメントスクリプトがステージング環境と実稼動環境を適切に識別しない問題を修正しました。<!-- MAGECLOUD-1493 -->
 
 - ネットワークの問題によってデータベース接続が中断されたり、インストールおよびアップグレードプロセス中にエラーが発生したりする問題を修正しました。<!-- MAGECLOUD-1520 -->
 
-- を使用して設定ファイルをエクスポートできない問題を修正しました `app:config:dump` 2 回以上。 2.1 では利用できません。<!--  MAGECLOUD-1567  -->
+- `app:config:dump` を複数回使用して設定ファイルをエクスポートできない問題を修正しました。 2.1.<!--  MAGECLOUD-1567  --> では利用できません。
 
-- Redis セッションを修正しました _ロック_ を引き起こした問題 _Admin_ ログインの遅延。 2.1 では利用できません。<!--  MAGECLOUD-1582  -->
+- _Admin_ ログインの遅延を引き起こす Redis セッション _ロック_ の問題を修正しました。 2.1.<!--  MAGECLOUD-1582  --> では利用できません。
 
 - 他の Composer ベースのパッチ適用モジュールとの競合を引き起こしていたバージョン管理に関連する実装の問題を修正しました。<!-- MAGECLOUD-1450 -->
 
 - インポート時に PHP のメモリに関する問題を修正しました。<!-- MAGECLOUD-1310 -->
 
-- パッチを削除しました。のバグを修正しました。 `colinmollenhour/credis` v1.6:cloud infrastructure 2.2.1 でAdobe Commerceのサポートを有効にします。2.1 では利用できません。<!-- MAGECLOUD-1033 -->
+- パッチを削除しました。`colinmollenhour/credis` v1.6 のバグを修正して、Cloud Infrastructure 2.2.1 でのAdobe Commerceのサポートを有効にしました。2.1.<!-- MAGECLOUD-1033 --> では利用できません。
 
 ## v2002.0.7
 
 **解決された問題：**
 
-- 削除しました `var/view_preprocessed` javascript の縮小の競合を引き起こしている問題を修正するためのシンボリックリンク。<!-- MAGECLOUD-1454 -->
+- JavaScript`var/view_preprocessed` 縮小の競合を引き起こしている問題を修正するために、シンボリックリンクを削除しました。<!-- MAGECLOUD-1454 -->
 
 ## v2002.0.6
 
 **解決された問題：**
 
-- が原因で発生していた問題を修正しました `gzip` ファイル名またはディレクトリ名にスペースが含まれている場合にエラーが発生します。<!-- MAGECLOUD-1413 -->
+- ファイル名またはディレクトリ名にスペースが含まれている場合に `gzip` エラーが発生する問題を修正しました。<!-- MAGECLOUD-1413 -->
 
 - デプロイメントスクリプトでモジュールの依存関係を適切に認識して有効にできなかった問題を修正しました。<!-- MAGECLOUD-1424 -->
 
@@ -612,79 +612,79 @@ ht-degree: 0%
 
 **新機能：**
 
-- **Cron コンシューマーと環境変数の設定** – 新しいを使用して cron コンシューマーを設定できるようになりました `CRON_CONSUMERS_RUNNER` 環境変数。
+- **環境変数を使用した cron コンシューマーの設定** – 新しい `CRON_CONSUMERS_RUNNER` 環境変数を使用して cron コンシューマーを設定できるようになりました。
 
-- **設定のスキャン** – 現在は、ビルド/デプロイ・プロセス中に重要なコンポーネントをスキャンし、スキャンが失敗した場合はプロセスを停止します。これにより、サイトがメンテナンス・モードになっていることが原因で発生する不要なダウンタイムを回避できます。
+- **構成のスキャン**：構築/展開プロセス中に重要なコンポーネントをスキャンし、スキャンに失敗した場合はプロセスを停止します。これにより、サイトがメンテナンス・モードになっていることが原因で発生する不要なダウンタイムを回避できます。
 
-- **通知のビルド/デプロイ** – に使用できる設定ファイルを追加しました。 [Slackやメール通知の設定](../environment/set-up-notifications.md) すべての環境でビルド/デプロイアクションを実行する場合。
+- **ビルド/デプロイ通知** – すべての環境でビルド/デプロイアクションを行うために [Slackやメール通知の設定 ](../environment/set-up-notifications.md) に使用できる設定ファイルを追加しました。
 
-- **静的コンテンツ圧縮** – 静的コンテンツを次を使用して圧縮するようになりました [gzip](https://www.gnu.org/software/gzip/) ビルドおよびデプロイフェーズ中に行います。 この圧縮と Fastly 圧縮を組み合わせると、ストアのサイズを縮小し、デプロイメント速度を向上させることができます。 必要に応じて、 [ビルドオプション](../environment/variables-build.md) または [変数をデプロイ](../environment/variables-deploy.md). 詳しくは、次のトピックを参照してください。
+- **静的コンテンツ圧縮** - ビルドおよびデプロイのフェーズで、[gzip](https://www.gnu.org/software/gzip/) を使用して静的コンテンツを圧縮するようになりました。 この圧縮と Fastly 圧縮を組み合わせると、ストアのサイズを縮小し、デプロイメント速度を向上させることができます。 必要に応じて、[ ビルドオプション ](../environment/variables-build.md) または [ デプロイ変数 ](../environment/variables-deploy.md) を使用して圧縮を無効にできます。 詳しくは、次のトピックを参照してください。
 
    - [アプリケーション環境変数](../application/variables-property.md)
 
    - [静的コンテンツのデプロイメントパフォーマンス](../deploy/static-content.md)
 
-   - [デプロイメントプロセス](https://devdocs.magento.com/cloud/reference/discover-deploy.html)
+   - [ デプロイメントプロセス ](https://devdocs.magento.com/cloud/reference/discover-deploy.html)
 
-- **設定管理** – 以下を自動生成します。 `app/etc/config.php` ファイルが Git リポジトリに存在しない場合は、ビルドフェーズ中にファイルを保存します。 自動生成されたファイルには、モジュールと拡張子のリストのみが含まれます。 ファイルが既に存在する場合、ビルドフェーズは通常どおり続行されます。 フォローしている場合 [設定の管理](../store/store-settings.md) 後で、コマンドを使用すると、追加の手順を必要とせずにファイルが更新されます。 こちらを参照してください [デプロイメントプロセス](https://devdocs.magento.com/cloud/reference/discover-deploy.html) を参照してください。
+- **設定管理** - ビルドフェーズ中に、Git リポジトリにまだ存在しない `app/etc/config.php` ファイルを自動生成するようになりました。 自動生成されたファイルには、モジュールと拡張子のリストのみが含まれます。 ファイルが既に存在する場合、ビルドフェーズは通常どおり続行されます。 後で [ 設定管理 ](../store/store-settings.md) に従うと、追加の手順を必要とせずにコマンドによってファイルが更新されます。 詳細は、「[ デプロイメントプロセス ](https://devdocs.magento.com/cloud/reference/discover-deploy.html)」を参照してください。
 
-- **データベースダンプ** – を追加しました。 `magento/ece-tools` すべての環境でデータベースダンプを作成する CLI コマンド。 Pro Plan の実稼動環境の場合、このコマンドは 3 つの高可用性ノードのうちの 1 つからのみダンプするので、ダンプ中に別のノードに書き込まれた実稼動データはコピーされません。 実稼動環境でデータベースダンプを実行する前に、アプリケーションをメンテナンスモードにすることをお勧めします。 参照： [バックアップ管理](https://devdocs.magento.com/cloud/project/project-webint-snap.html#db-dump) を参照してください。
+- **データベースダンプ** – すべての環境でデータベースダンプを作成するための `magento/ece-tools` CLI コマンドを追加しました。 Pro Plan の実稼動環境の場合、このコマンドは 3 つの高可用性ノードのうちの 1 つからのみダンプするので、ダンプ中に別のノードに書き込まれた実稼動データはコピーされません。 実稼動環境でデータベースダンプを実行する前に、アプリケーションをメンテナンスモードにすることをお勧めします。 詳しくは、[ バックアップ管理 ](https://devdocs.magento.com/cloud/project/project-webint-snap.html#db-dump) を参照してください。
 
-- **Cron 間隔の制限を解除**—us-3、eu-3、ap-3 の各地域でプロビジョニングされたすべての環境のデフォルトの cron 間隔は 1 分です。 その他のすべての地域のデフォルトの cron 間隔は、Pro 統合環境の場合は 5 分、Pro ステージング環境と実稼動環境の場合は 1 分です。 既存の cron ジョブを変更するには、で設定を編集します。 `.magento.app.yaml` または、実稼働/ステージング環境用のサポートチケットを作成します。 こちらを参照してください [cron ジョブの設定](../application/crons-property.md#set-up-cron-jobs) を参照してください。
+- **Cron 間隔の制限の撤廃** - us-3、eu-3、ap-3 の各地域でプロビジョニングされたすべての環境のデフォルトの Cron 間隔は 1 分です。 その他のすべての地域のデフォルトの cron 間隔は、Pro 統合環境の場合は 5 分、Pro ステージング環境と実稼動環境の場合は 1 分です。 既存の cron ジョブを変更するには、`.magento.app.yaml` で設定を編集するか、実稼働/ステージング環境用のサポートチケットを作成します。 詳しくは、[cron ジョブの設定 ](../application/crons-property.md#set-up-cron-jobs) を参照してください。
 
 **解決された問題：**
 
-- を呼び出すデプロイプロセスが原因で、デプロイに時間がかかる問題を修正しました `cache-clean` 静的コンテンツのデプロイメントの前に操作します。<!-- MAGECLOUD-1327 -->
+- 静的コンテンツのデプロイメント前にデプロイプロセスが `cache-clean` 操作を呼び出すことで、デプロイ時間が長くなる問題を修正しました。<!-- MAGECLOUD-1327 -->
 
 - 実稼動環境へのデプロイメントの静的コンテンツ生成手順でエラーが発生する問題を修正しました。<!-- MAGECLOUD-1322 -->
 
-- 一部ののエラーを修正しました `magento/ece-tools` 出力をにログ記録するコマンド `stderr`.<!-- MAGECLOUD-1264 -->
+- 一部の `magento/ece-tools` コマンドが `stderr`.<!-- MAGECLOUD-1264 --> に出力をログ記録しない問題を修正しました
 
-- でベース URL 値を使用できない問題を修正しました `env.php` 分岐した分岐で更新されることから。<!-- MAGECLOUD-1242 -->
+- `env.php` のベース URL 値がフォークされたブランチで更新されない問題を修正しました。<!-- MAGECLOUD-1242 -->
 
-- の原因となっている問題を修正しました `magento setup:install` セキュアでないプレフィックスを追加するコマンド （`http://`）を使用してベース URL を保護します。<!-- MAGECLOUD-1171 -->
+- `magento setup:install` コマンドでセキュアでないプレフィックス（`http://`）をセキュアなベース URL に追加する問題を修正しました。<!-- MAGECLOUD-1171 -->
 
-- パッチエラーがデプロイメントの失敗を引き起こさない問題を修正しました。<!-- MAGECLOUD-1170 -->
+- パッチエラーによってデプロイメントが失敗するのを防ぐ問題を修正しました。<!-- MAGECLOUD-1170 -->
 
-- を防ぐ問題を修正しました `ece-tools` パッチを適用できない場合に実行を停止して例外をスローする。<!-- MAGECLOUD-1152 -->
+- パッチを適用でき `ece-tools` い場合に、実行が停止して例外がスローされる問題を修正しました。<!-- MAGECLOUD-1152 -->
 
-- 管理者でHTMLの縮小を有効にした後、ストアフロントを読み込む際にエラーが発生する問題を修正しました。<!-- MAGECLOUD-1138 -->
+- 管理でHTMLの縮小を有効にした後にストアフロントを読み込むとエラーが発生する問題を修正しました。<!-- MAGECLOUD-1138 -->
 
 ## v2002.0.4
 
 **解決された問題：**
 
-- これで、 [スタックした cron ジョブを手動でリセット](https://support.magento.com/hc/en-us/articles/360033099451) ssh アクセス経由ですべての環境で CLI コマンドを使用する。 デプロイメントプロセスによって、cron ジョブが自動的にリセットされます。<!-- MAGECLOUD-1355 -->
+- SSH アクセスを介してすべての環境で CLI コマンドを使用して [ スタックした cron ジョブを手動でリセット ](https://support.magento.com/hc/en-us/articles/360033099451) できるようになりました。 デプロイメントプロセスにより、cron ジョブが自動的にリセットされます。<!-- MAGECLOUD-1355 -->
 
 ## v2002.0.3
 
 **解決された問題：**
 
-- Redis が読み取り/書き込みに時間がかかりすぎているので、ページがタイムアウトする問題を修正しました。 これで、を使用できます `disable_locking` この問題を防ぐには、Redis 設定のパラメーターを使用します。<!-- MAGECLOUD-1311 -->
+- Redis が読み取り/書き込みに時間がかかりすぎているので、ページがタイムアウトする問題を修正しました。 これで、Redis 設定で `disable_locking` パラメーターを使用して、この問題を回避できます。<!-- MAGECLOUD-1311 -->
 
 ## v2002.0.2
 
 **解決された問題：**
 
-- この [!DNL RabbitMQ] 設定プロセスは、必要なすべてのパラメーターを自動的に取得するようになりました。<!-- MAGECLOUD-1246 -->
+- [!DNL RabbitMQ] 設定プロセスは、必要なすべてのパラメーターを自動的に取得するようになりました。<!-- MAGECLOUD-1246 -->
 
 ## v2002.0.1
 
 **新機能：**
 
-- クラウドインフラストラクチャー上のAdobe Commerceでスコープおよびがサポートされるようになりました。 [静的コンテンツのデプロイメント戦略](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). が追加されました `–s` デフォルト設定がのパラメーター `quick` （静的コンテンツのデプロイメント戦略の場合）。 環境変数を使用できます [SCD_STRATEGY](../environment/variables-deploy.md) これらの戦略をカスタマイズし、ビルドアクションやデプロイアクションで使用するには、 この変数は、オプションをサポートします `standard`, `quick`、または `compact`. を選択する場合 `compact`を上書きします。 `STATIC_CONTENT_THREADS` 次を使用して値 `1`（特に実稼動環境では、デプロイメントの速度が低下する可能性があります）。 2.1 では利用できません。<!--- MAGECLOUD-1057 -->
+- クラウドインフラストラクチャー上のAdobe Commerceで scopes と [ 静的コンテンツのデプロイメント戦略 ](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) がサポートされるようになりました。 静的コンテンツデプロイメント戦略のデフォルト設定 `quick` を使用して、`–s` パラメーターを追加しました。 環境変数 [SCD_STRATEGY](../environment/variables-deploy.md) を使用して、これらの戦略をカスタマイズし、ビルドおよびデプロイアクションで使用できます。 この変数は、`standard`、`quick`、`compact` のオプションをサポートします。 「`compact`」を選択した場合は、`STATIC_CONTENT_THREADS` 値が `1` で上書きされるので、デプロイメントの速度が低下する可能性があります（特に実稼動環境の場合）。 2.1.<!--- MAGECLOUD-1057 --> では利用できません。
 
-- 環境に関するログファイルを作成して、ビルドアクションとデプロイアクションをキャプチャおよびコンパイルしました。 この `var/log/cloud.log` ファイルは、ルートアプリケーションディレクトリにあります。<!--- MAGECLOUD-1014 & MAGECLOUD-1023 -->
+- 環境に関するログファイルを作成して、ビルドアクションとデプロイアクションをキャプチャおよびコンパイルしました。 `var/log/cloud.log` ファイルは、ルートアプリケーションディレクトリにあります。<!--- MAGECLOUD-1014 & MAGECLOUD-1023 -->
 
 **解決された問題：**
 
-- をリファクタリング `ece-tools` cloud infrastructure 2.2.0 以降のAdobe Commerceと互換性を持たせるためのパッケージ。<!-- MAGECLOUD-919 & MAGECLOUD-1030 -->
+- `ece-tools` パッケージをリファクタリングして、Cloud Infrastructure 2.2.0 以降のAdobe Commerceと互換性を持たせました。<!-- MAGECLOUD-919 & MAGECLOUD-1030 -->
 
-- 妨げとなっていた問題を修正しました `ece-tools` パッチを適用できない場合に実行を停止して例外をスローする。<!-- MAGECLOUD-1186 -->
+- パッチを適用できない場合に、`ece-tools` の実行が停止して例外が発生する問題を修正しました。<!-- MAGECLOUD-1186 -->
 
 - ビルド中に依存関係の挿入（di）コンパイルがスキップされると例外がスローされる問題を修正しました。<!-- MAGECLOUD-1047 & MAGECLOUD-1049 -->
 
-- デプロイプロセスによってのカスタム Redis 設定が上書きされる問題を修正しました。 `env.php` ファイル。<!-- MAGECLOUD-1019 -->
+- デプロイプロセスで `env.php` ファイルのカスタム Redis 設定が上書きされる問題を修正しました。<!-- MAGECLOUD-1019 -->
 
 - デフォルトのセキュア管理者で無効になっていることが原因で、リダイレクトループが発生していた問題を修正しました。<!-- MAGECLOUD-1020 -->
 
@@ -692,8 +692,8 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->このパッケージは、クラウドインフラストラクチャー上の他のバージョンのAdobe Commerceとは互換性がなくなりました。 **してはならない** を使用します。
+>このパッケージは、クラウドインフラストラクチャー上で動作するAdobe Commerceの他のバージョンとの互換性がなくなり、**使用しないでください**。
 
 ### 初回リリース
 
-の初回リリース `ece-tools` （クラウドインフラストラクチャー 2.2.0 上のAdobe Commerceの場合）
+Cloud infrastructure 2.2.0 でのAdobe Commerce向け `ece-tools` の初回リリースです。

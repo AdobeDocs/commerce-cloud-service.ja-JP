@@ -14,24 +14,24 @@ ht-degree: 0%
 
 # デプロイメントの追跡
 
-New Relicを有効にできます _変更の追跡_ クラウドインフラストラクチャプロジェクト上のCommerceのデプロイメントイベントを監視する機能。
+New Relic _変更を追跡_ 機能を有効にすると、クラウドインフラストラクチャプロジェクト上のCommerceのデプロイメントイベントを監視できます。
 
-Deployments データ収集は、CPU、メモリ、応答時間など、全体的なパフォーマンスに対するデプロイメントの変更の影響を分析するのに役立ちます。 参照： [NerdGraph を使用した変更の追跡](https://docs.newrelic.com/docs/change-tracking/change-tracking-graphql/) が含まれる _New Relic ドキュメント_.
+Deployments データ収集は、CPU、メモリ、応答時間など、全体的なパフォーマンスに対するデプロイメントの変更の影響を分析するのに役立ちます。 [2}New Relic ドキュメント ](https://docs.newrelic.com/docs/change-tracking/change-tracking-graphql/) の NerdGraph を使用した変更のトラッキング _を参照してください。_
 
 >[!PREREQUISITES]
 >
->- `NR_API_URL`:New Relic API エンドポイント（ここでは NerdGraph API URL） `https://api.newrelic.com/graphql`
->- `NR_API_KEY`：ユーザーキーを作成します。を参照してください [New Relicの API キー](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys) が含まれる _New Relic_ ドキュメント。
->- `NR_APP_GUID`:New Relicにデータをレポートするエンティティには、一意の ID （GUID）があります。 例えば、ステージング環境でを有効にするには、ステージング環境を調整します `NR_APP_GUID` を使用したクラウド変数 _ステージングエンティティ GUID_ New Relicから を参照してください。 [New Relic エンティティについて学ぶ](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/) および [NerdGraph チュートリアル：エンティティ データの表示](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-entities-api-tutorial/) が含まれる _New Relic_ ドキュメント。
+>- `NR_API_URL`:New Relic API エンドポイント（この場合は NerdGraph API URL `https://api.newrelic.com/graphql`）
+>- `NR_API_KEY`: ユーザーキーを作成します。_New Relic](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys) ドキュメントの [New Relic API キー_ を参照してください。
+>- `NR_APP_GUID`:New Relicにデータをレポートするエンティティには、一意の ID （GUID）があります。 例えば、ステージング環境でを有効にするには、New Relicの _ステージングエンティティ GUID_ を使用してステージング環境をクラウド変数に `NR_APP_GUID` 定します。 [4}New Relic _ドキュメントの [New Relic エンティティについて学ぶ ](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/) および ](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-entities-api-tutorial/)NerdGraph チュートリアル：エンティティデータを表示する } を参照してください。_
 
 ## デプロイメントの追跡を有効にする
 
-を作成して、New RelicでCommerce プロジェクトのデプロイメントイベントを追跡します。 _script_ 統合。
+_スクリプト_ 統合を作成して、New RelicでCommerce プロジェクトのデプロイメントイベントを追跡します。
 
 **トラック デプロイメントを有効にするには**:
 
 1. ローカルワークステーションで、をプロジェクトディレクトリに変更します。
-1. を作成 `action-integration.js` ファイル。 以下のコードをコピーして、に貼り付けます。 `action-integration.js` ファイルと保存：
+1. `action-integration.js` ファイルを作成します。 次のコードをコピーして、`action-integration.js` ファイルに貼り付けて保存します。
 
    ```javascript
    function trackDeployments() {
@@ -91,7 +91,7 @@ Deployments データ収集は、CPU、メモリ、応答時間など、全体�
    trackDeployments();
    ```
 
-1. を作成 _script_ を使用したの統合 `magento-cloud` CLI コマンドと参照 `action-integration.js` ファイル。
+1. `magento-cloud` CLI コマンドを使用して _script_ 統合を作成し、`action-integration.js` ファイルを参照します。
 
    ```bash
    magento-cloud integration:add --type script --events='environment.restore, environment.push, environment.branch, environment.activate, environment.synchronize, environment.initialize, environment.merge, environment.redeploy, environment.variable.create, environment.variable.delete, environment.variable.update' --file ./action-integration.js --project=<YOUR_PROJECT_ID> --environments=<YOUR_ENVIRONMENT_ID>
@@ -191,7 +191,7 @@ Deployments データ収集は、CPU、メモリ、応答時間など、全体�
    Created integration 767u4hathojjw (type: script)
    ```
 
-   オプションで、統合を検証し、次を使用して統合 ID をメモすることができます。 `magento-cloud integration:list`
+   オプションで、統合を検証し、次を使用して統合 ID をメモすることができます。`magento-cloud integration:list`
 
 1. 前提条件を使用して環境変数を作成します。
 
@@ -220,10 +220,10 @@ Deployments データ収集は、CPU、メモリ、応答時間など、全体�
    {"data":{"changeTrackingCreateDeployment":{"deploymentId":"some-deployment-id","entityGuid":"SomeGUIDhere"}}}
    ```
 
-1. にログイン [New Relic アカウント](https://login.newrelic.com/login).
+1. [New Relic アカウント ](https://login.newrelic.com/login) にログインします。
 
-1. エクスプローラーナビゲーションメニューで、 **[!UICONTROL APM & Services]**. 環境を選択 [!UICONTROL Name] および [!UICONTROL Account].
+1. エクスプローラーナビゲーションメニューで、「**[!UICONTROL APM & Services]**」をクリックします。 環境 [!UICONTROL Name] と [!UICONTROL Account] を選択します。
 
-1. 次の下 _イベント_&#x200B;を選択し、 **[!UICONTROL Change tracking]**.
+1. _イベント_ の下の [**[!UICONTROL Change tracking]**] をクリックします。
 
-   ![デプロイメント](../../assets/new-relic/deployments.png)
+   ![Deployments](../../assets/new-relic/deployments.png)

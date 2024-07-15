@@ -12,32 +12,32 @@ ht-degree: 0%
 
 # バックアップ管理
 
-アクティブなスターター環境の手動バックアップは、 **[!UICONTROL Backup]** のボタン [!DNL Cloud Console] または使用 `magento-cloud snapshot:create` コマンド。
+アクティブなスターター環境の手動バックアップは、[!DNL Cloud Console] の [**[!UICONTROL Backup]**] ボタンを使用するか、`magento-cloud snapshot:create` コマンドを使用して、いつでも実行できます。
 
-バックアップまたは _スナップショット_ は、実行中のサービス（MySQL データベース）のすべての永続データと、マウントされたボリューム（var、pub/media、app/etc）に保存されたファイルを含む、環境データの完全なバックアップです。 スナップショットは次を実行します _ではない_ コードは Git ベースのリポジトリに既に保存されているので、コードを含めます。 スナップショットのコピーはダウンロードできません。
+バックアップまたは _スナップショット_ は、実行中のサービス（MySQL データベース）のすべての永続的なデータと、マウントされたボリューム（var、pub/media、app/etc）に保存されたすべてのファイルを含む、環境データの完全なバックアップです。 コードは Git ベースのリポジトリに既に保存されているので、スナップショットにはコードが含まれていま _ん_。 スナップショットのコピーはダウンロードできません。
 
-バックアップ/スナップショット機能では、次のことが行われます **ではない** ステージング環境および実稼動環境に適用します。これらの環境は、デフォルトで災害復旧用の通常のバックアップを受け取ります。 こちらを参照してください [Pro バックアップとディザスタリカバリ](../architecture/pro-architecture.md#backup-and-disaster-recovery) を参照してください。 ステージング環境および実稼動環境での自動ライブバックアップとは異なり、バックアップは次のとおりです **ではない** 自動。 このプロパティは _あなたの_ バックアップを手動で作成する責任、または Starter または Pro 統合環境のバックアップを定期的に作成する cron ジョブをセットアップする責任。
+バックアップ/スナップショット機能は、ステージング環境および実稼動環境には適用 **されません**。これらの環境は、デフォルトで災害復旧用の通常のバックアップを受け取ります。 詳細は、「[Pro バックアップと障害回復 ](../architecture/pro-architecture.md#backup-and-disaster-recovery)」を参照してください。 ステージング環境および実稼動環境での自動ライブバックアップとは異なり、バックアップは自動 **ではありません**。 バックアップを手動で作成する _、または Starter または Pro の統合環境のバックアップを定期的に作成する cron ジョブをセットアップするのは_ ユーザーの責任です。
 
 ## 手動バックアップの作成
 
-からアクティブなスターター環境と Integration Pro 環境の手動バックアップを作成できます [!DNL Cloud Console] または、Cloud CLI からスナップショットを作成します。 必須で、 [管理者の役割](../project/user-access.md) 環境の場合。
+アクティブなスターター環境と Integration Pro 環境の手動バックアップを [!DNL Cloud Console] から作成するか、Cloud CLI からスナップショットを作成できます。 環境の [ 管理者の役割 ](../project/user-access.md) が必要です。
 
-**を使用してスターター環境のバックアップを作成するには[!DNL Cloud Console]**:
+**[!DNL Cloud Console]** を使用してスターター環境のバックアップを作成するには：
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 1. プロジェクトナビゲーションバーから環境を選択します。 環境がアクティブである必要があります。
-1. が含まれる _バックアップ_ 表示、クリック **[!UICONTROL Backup]**. このオプションは、Pro 環境では使用できません。
+1. _バックアップ_ ビューで、「**[!UICONTROL Backup]**」をクリックします。 このオプションは、Pro 環境では使用できません。
 
-   ![バックアップ](../../assets/button-backup.png){width="150"}
+   ![ バックアップ ](../../assets/button-backup.png){width="150"}
 
-**を使用して統合環境のバックアップを作成するには[!DNL Cloud Console]**:
+**[!DNL Cloud Console]** を使用して統合環境のバックアップを作成するには：
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 1. プロジェクトナビゲーションバーから統合/開発環境を選択します。 環境がアクティブである必要があります。
-1. 「」を選択します **[!UICONTROL Backup]** 右上のメニューの「」オプション。 このオプションは、Starter 環境と Pro 環境の両方で使用できます。
-1. 「」をクリックします **[!UICONTROL Yes]** ボタン。
+1. 右上のメニューで「**[!UICONTROL Backup]**」オプションを選択します。 このオプションは、Starter 環境と Pro 環境の両方で使用できます。
+1. **[!UICONTROL Yes]** ボタンをクリックします。
 
-**を使用してスナップショットを作成するには `magento-cloud` CLI**:
+**`magento-cloud` CLI を使用してスナップショットを作成するには**:
 
 1. ローカルワークステーションで、をプロジェクトディレクトリに変更します。
 1. スナップショットを作成する環境ブランチをチェックアウトします。
@@ -47,7 +47,7 @@ ht-degree: 0%
    magento-cloud snapshot:create --live
    ```
 
-   または、を使用することもできます。 `magento-cloud backup` 短いコマンド。 この `--live` ダウンタイムを避けるために、オプションでは環境を実行したままにします。 オプションの完全なリストを表示するには、次のように入力します `magento-cloud snapshot:create --help`.
+   または、`magento-cloud backup` の短いコマンドを使用することもできます。 `--live` オプションを指定すると、ダウンタイムを避けるために環境は実行されたままになります。 オプションの完全なリストを表示するには、`magento-cloud snapshot:create --help` と入力します。
 
    応答の例：
 
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 ## 手動バックアップの復元
 
-以下が必要です [管理アクセス](../project/user-access.md) を環境に追加します。 最大個のを持っています **7 日間** 対象： _復元_ 手動バックアップ。 バックアップを復元しても、現在の Git ブランチのコードは変更されません。 この方法でのバックアップの復元は、Pro ステージング環境と実稼動環境には適用されません。を参照してください [Pro バックアップとディザスタリカバリ](../architecture/pro-architecture.md#backup-and-disaster-recovery).
+環境に対する [ 管理者アクセス ](../project/user-access.md) が必要です。 手動バックアップを **リストアする** には、最大で _7 日間_ かかります。 バックアップを復元しても、現在の Git ブランチのコードは変更されません。 この方法でのバックアップの復元は、Pro ステージング環境および実稼動環境には適用されません。[Pro バックアップおよび障害回復 ](../architecture/pro-architecture.md#backup-and-disaster-recovery) を参照してください。
 
 復元時間は、データベースのサイズによって異なります。
 
@@ -93,16 +93,16 @@ ht-degree: 0%
 >
 >バックアップなしでリストアする：
 >
->- 以前のコードにロールバックしたり、環境で追加した拡張機能を削除したりするには、を参照してください。 [コードをロールバック](#roll-back-code).
->- 次の手順で不安定な環境を復元します _ではない_ バックアップがある場合は、を参照してください [環境の復元](../development/restore-environment.md).
+>- 以前のコードにロールバックしたり、環境で追加した拡張機能を削除したりするには、[ コードのロールバック ](#roll-back-code) を参照してください。
+>- バックアップがある _ない_ 不安定な環境を復元するには、[ 環境の復元 ](../development/restore-environment.md) を参照してください。
 
-**を使用してバックアップを復元するには[!DNL Cloud Console]**:
+**[!DNL Cloud Console]** を使用してバックアップを復元するには：
 
-1. にログインします [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. [[!DNL Cloud Console]](https://console.adobecommerce.com) にログインします。
 1. プロジェクトナビゲーションバーから環境を選択します。
-1. が含まれる _バックアップ_ 表示する、からバックアップを選択する _保存済み_ リスト。 バックアップ機能では、次のことが行われます **ではない** pro 環境に適用します。
-1. が含まれる ![詳細](../../assets/icon-more.png){width="32"} （_詳細_） メニュー、クリック **復元**.
-1. バックアップからの復元情報を確認し、 **はい、復元します**.
+1. _バックアップ_ ビューで、「保存 _リストからバックアップを選択_ ます。 バックアップ機能は Pro 環境には適用 **されません**。
+1. ![ その他 ](../../assets/icon-more.png){width="32"} （_その他_）メニューで、「**復元**」をクリックします。
+1. バックアップからのリストア情報を確認し、[ はい、リストア **をクリックします**。
 
 **Cloud CLI を使用してスナップショットを復元するには**:
 
@@ -133,10 +133,10 @@ ht-degree: 0%
 
 ## 障害回復スナップショットの復元
 
-ステージング環境および実稼動環境で障害回復スナップショットを復元するには、次の手順に従います。 [データベースダンプをサーバーから直接インポートします。](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production#meth3).
+ステージング環境および実稼動環境で障害回復スナップショットを復元するには、[ データベースダンプをサーバーから直接読み込みます ](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production#meth3)。
 
 ## コードをロールバック
 
-バックアップとスナップショット _ではない_ コードのコピーを含めます。 コードは既に Git ベースのリポジトリに保存されているので、Git ベースのコマンドを使用してコードをロールバック（または元に戻す）できます。 例えば、 `git log --oneline` 前のコミットをスクロールするには、次を使用します [`git revert`](https://git-scm.com/docs/git-revert) 特定のコミットからコードを復元する
+バックアップとスナップショットには、コードのコピーは含まれません __。 コードは既に Git ベースのリポジトリに保存されているので、Git ベースのコマンドを使用してコードをロールバック（または元に戻す）できます。 例えば、以前のコミットをスクロールするには `git log --oneline` を使用し、特定のコミットからコードを復元するには [`git revert`](https://git-scm.com/docs/git-revert) を使用します。
 
-また、にコードを保存することもできます _inactive_ 分岐。 を使用する代わりに、Git コマンドを使用してブランチを作成します。 `magento-cloud` コマンド。 詳細を確認 [Git コマンド](../dev-tools/cloud-cli-overview.md#git-commands) Cloud CLI トピックの節を参照してください。
+また、コードを _非アクティブ_ ブランチに保存することもできます。 `magento-cloud` のコマンドを使用する代わりに、Git コマンドを使用してブランチを作成します。 Cloud CLI トピックの [Git コマンド ](../dev-tools/cloud-cli-overview.md#git-commands) についてを参照してください。

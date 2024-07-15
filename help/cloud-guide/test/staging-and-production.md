@@ -15,11 +15,11 @@ ht-degree: 0%
 
 ## ログファイル
 
-デプロイメントでエラーが発生した場合や、テスト中にほかの問題が発生した場合は、ログファイルを確認します。 ログファイルはの下にあります。 `var/log` ディレクトリ。
+デプロイメントでエラーが発生した場合や、テスト中にほかの問題が発生した場合は、ログファイルを確認します。 ログファイルは、`var/log` ディレクトリの下にあります。
 
-デプロイメントログはにあります。 `/var/log/platform/<prodject-ID>/deploy.log`. 次の値 `<project-ID>` プロジェクト ID と、環境がステージング環境か実稼動環境かによって異なります。 例えば、プロジェクト ID がの場合 `yw1unoukjcawe`の場合、ステージングユーザーはです。 `yw1unoukjcawe_stg` 実稼動ユーザーは `yw1unoukjcawe`.
+デプロイメントログは `/var/log/platform/<prodject-ID>/deploy.log` です。 `<project-ID>` の値は、プロジェクト ID と、環境がステージングか実稼動かによって異なります。 例えば、プロジェクト ID が `yw1unoukjcawe` の場合、ステージングユーザーは `yw1unoukjcawe_stg`、実稼動ユーザーは `yw1unoukjcawe` となります。
 
-実稼動環境またはステージング環境でログにアクセスする場合は、SSH を使用して 3 つのノードのそれぞれにログインしてログを探します。 または、次を使用できます [New Relic ログ管理](../monitor/log-management.md) すべてのノードの集約ログ・データを表示およびクエリーします。 参照： [ログを表示](log-locations.md#application-logs).
+実稼動環境またはステージング環境でログにアクセスする場合は、SSH を使用して 3 つのノードのそれぞれにログインしてログを探します。 または、[New Relic ログ管理 ](../monitor/log-management.md) を使用して、すべてのノードの集計ログデータを表示およびクエリできます。 [ ログを表示 ](log-locations.md#application-logs) を参照してください。
 
 ## コードベースの確認
 
@@ -27,52 +27,52 @@ ht-degree: 0%
 
 ## 設定の検証
 
-管理パネルで、ベース URL、ベース管理 URL、マルチサイト設定などの設定を確認します。 追加で変更が必要な場合は、ローカル Git ブランチで編集を完了し、にプッシュします。 `master` 統合、ステージングおよび実稼動のブランチ。
+管理パネルで、ベース URL、ベース管理 URL、マルチサイト設定などの設定を確認します。 追加の変更を行う必要がある場合は、ローカル Git ブランチで編集を完了し、統合、ステージングおよび実稼動環境の `master` ブランチにプッシュします。
 
 ## Fastly キャッシュを確認する
 
-[Fastly の設定](../cdn/fastly-configuration.md) 正しい Fastly サービス ID と Fastly API トークン資格情報の使用、Fastly VCL コードのアップロード、DNS 設定の更新、環境への SSL/TLS 証明書の適用など、詳細に注意する必要があります。 これらのセットアップタスクを完了したら、ステージング環境と実稼動環境で Fastly キャッシュを検証できます。
+[Fastly の設定 ](../cdn/fastly-configuration.md) では、正しい Fastly サービス ID と Fastly API トークン資格情報の使用、Fastly VCL コードのアップロード、DNS 設定の更新、環境への SSL/TLS 証明書の適用など、詳細に注意する必要があります。 これらのセットアップタスクを完了したら、ステージング環境と実稼動環境で Fastly キャッシュを検証できます。
 
 **Fastly サービス設定を検証するには**:
 
-1. URL を次と使用して、ステージング環境と実稼動環境の管理者にログインします。 `/admin`、または [更新された管理者 URL](../environment/variables-admin.md#admin-url).
+1. `/admin` を含む URL または [ 更新された管理者 URL](../environment/variables-admin.md#admin-url) を使用して、ステージング環境および実稼動環境で管理者にログインします。
 
-1. に移動します。 **ストア** > **設定** > **設定** > **詳細** > **システム**. スクロールしてクリック **フルページキャッシュ**.
+1. **Stores**/**Settings**/**Configuration**/**Advanced**/**System** に移動します。 スクロールして、「**フルページキャッシュ**」をクリックします。
 
-1. 必ずを **キャッシュアプリケーション** 値はに設定されています。 _Fastly CDN_ .
+1. **キャッシュアプリケーション** の値が _Fastly CDN_ に設定されていることを確認します。
 
 1. Fastly 資格情報をテストします。
 
-   - クリック **Fastly 設定**.
+   - **Fastly 設定** をクリックします。
 
-   - Fastly サービス ID と Fastly API トークン資格情報の値を確認します。 参照： [Fastly 資格情報の取得](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials).
+   - Fastly サービス ID と Fastly API トークン資格情報の値を確認します。 [Fastly 資格情報の取得 ](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials) を参照してください。
 
-   - クリック **テスト資格情報**.
+   - 「**認証情報をテスト**」をクリックします。
 
    >[!WARNING]
    >
    >ステージング環境と実稼動環境で、正しい Fastly サービス ID と API トークンを入力したことを確認します。 Fastly の資格情報は、サービス環境ごとに作成およびマッピングされます。 実稼動環境にステージング資格情報を入力した場合、VCL スニペットをアップロードできず、キャッシュが正しく機能せず、キャッシュ設定が間違ったサーバーとストアを指しています。
 
-**Fastly のキャッシュ動作を確認するには**:
+**Fastly キャッシュ動作を確認するには**:
 
-1. を使用してヘッダーを確認する `dig` サイト構成に関する情報を取得するためのコマンド ライン ユーティリティ。
+1. `dig` コマンドラインユーティリティを使用してヘッダーを確認し、サイト設定に関する情報を取得します。
 
-   で任意の URL を使用できます `dig` コマンド。 次の例では、Pro URL を使用しています。
+   `dig` コマンドでは任意の URL を使用できます。 次の例では、Pro URL を使用しています。
 
-   - ステージング： `dig https://mcstaging.<your-domain>.com`
-   - 実稼動： `dig https://mcprod.<your-domain>.com`
+   - ステージング：`dig https://mcstaging.<your-domain>.com`
+   - 実稼動：`dig https://mcprod.<your-domain>.com`
 
-   その他の情報 `dig` テスト、「Fastly」を参照 [DNS 変更前のテスト](https://docs.fastly.com/en/guides/working-with-domains).
+   その他の `dig` テストについては、Fastly の [DNS 変更前のテスト ](https://docs.fastly.com/en/guides/working-with-domains) を参照してください。
 
-1. 使用方法 `cURL` 応答ヘッダー情報を検証します。
+1. `cURL` を使用して、応答ヘッダー情報を確認します。
 
    ```bash
    curl https://mcstaging.<your-domain>.com -H "host: mcstaging.<your-domain.com>" -k -vo /dev/null -H Fastly-Debug:1
    ```
 
-   参照： [応答ヘッダーを確認](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers) ヘッダーの検証について詳しくは、を参照してください。
+   ヘッダーの検証について詳しくは、[ 応答ヘッダーの確認 ](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers) を参照してください。
 
-1. 使用後は、を使用します `cURL` ライブサイトを確認する場合。
+1. ライブ状態になったら、`cURL` を使用してライブサイトを確認できます。
 
    ```bash
    curl https://<your-domain> -k -vo /dev/null -H Fastly-Debug:1
@@ -127,7 +127,7 @@ ht-degree: 0%
 </td>
 </tr>
 <tr>
-<td>オーダー管理</td>
+<td>Order Management</td>
 <td>
 <ul>
 <li>顧客の注文の作成</li>
@@ -198,20 +198,20 @@ ht-degree: 0%
 
 テストを開始する前に、サポートに対して、テストする環境、使用するツール、期間についてアドバイスするチケットを入力します。 パフォーマンスを追跡するための結果と情報を使用してチケットを更新します。 テストを完了したら、更新した結果とメモをチケットテストに追加して、日付と時刻のスタンプを記入して完了します。
 
-をレビュー [Performance Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) ローンチ前準備プロセスの一部としてのオプション。
+ローンチ前の準備プロセスの一部として、[Performance Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) オプションを確認します。
 
 最適な結果を得るには、次のツールを使用します。
 
-- [アプリケーションパフォーマンステスト](../environment/variables-post-deploy.md#ttfb_tested_pages) – アプリケーションのパフォーマンスをテストするには、 `TTFB_TESTED_PAGES` サイトの応答時間をテストするための環境変数。
-- [包囲](https://www.joedog.org/siege-home/) – トラフィックのシェーピングとテストを行うソフトウェアで、ストアを限界まで押し上げます。 設定可能な数のシミュレーションクライアントを使用して、サイトをヒットします。 Siege では、基本認証、Cookie、HTTP、HTTPS、および FTP プロトコルをサポートしています。
-- [Jmeter](https://jmeter.apache.org) – 優れた負荷テストにより、フラッシュ・セールスなどの急増するトラフィックのパフォーマンスを測定できます。 サイトに対して実行するカスタムテストを作成します。
-- [New Relic](../monitor/new-relic-service.md) （提供） – データ、クエリ、Redis などの送信など、アクションごとの追跡時間でパフォーマンスの低下を引き起こしているサイトのプロセスと領域を見つけるのに役立ちます。
-- [WebPageTest](https://www.webpagetest.org) および [Pingdom](https://www.pingdom.com)- サイトページの読み込み時間を様々なオリジンの場所でリアルタイムに分析します。 Pingdom には手数料が必要な場合があります。 WebPageTest は無料のツールです。
+- [ アプリケーションパフォーマンステスト ](../environment/variables-post-deploy.md#ttfb_tested_pages) - `TTFB_TESTED_PAGES` 環境変数を設定して、サイトの応答時間をテストすることで、アプリケーションパフォーマンスをテストします。
+- [Siege](https://www.joedog.org/siege-home/) - トラフィックのシェーピングとテストを行うソフトウェアで、ストアを限界まで押し上げます。 設定可能な数のシミュレーションクライアントを使用して、サイトをヒットします。 Siege では、基本認証、Cookie、HTTP、HTTPS、および FTP プロトコルをサポートしています。
+- [Jmeter](https://jmeter.apache.org) - フラッシュセールスなどのスパイクされたトラフィックのパフォーマンスを測定するのに役立つ、優れた負荷テスト。 サイトに対して実行するカスタムテストを作成します。
+- [New Relic](../monitor/new-relic-service.md) （提供） – データ、クエリ、Redis などの送信に費やした時間が追跡されるため、パフォーマンスが低下するサイトのプロセスや領域を見つけるのに役立ちます。
+- [WebPageTest](https://www.webpagetest.org) および [Pingdom](https://www.pingdom.com) - サイトページのリアルタイム分析は、異なるオリジンの場所で時間を読み込みます。 Pingdom には手数料が必要な場合があります。 WebPageTest は無料のツールです。
 
 ## 機能テスト
 
-Magento機能テストフレームワーク（MFTF）を使用すると、Cloud Docker 環境からAdobe Commerceの機能テストを実行できます。 参照： [アプリケーションテスト](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) が含まれる _Cloud Docker for Commerce ガイド_.
+Magento機能テストフレームワーク（MFTF）を使用すると、Cloud Docker 環境からAdobe Commerceの機能テストを実行できます。 [Cloud Docker for Commerce ガイド ](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) アプリケーションテスト _を参照してください_。
 
 ## セキュリティスキャンツールの設定
 
-サイトには無料のセキュリティスキャンツールがあります。 サイトを追加してツールを実行するには、を参照してください。 [セキュリティ スキャン ツール](../launch/overview.md#set-up-the-security-scan-tool).
+サイトには無料のセキュリティスキャンツールがあります。 サイトを追加してツールを実行するには、[ セキュリティ スキャン ツール ](../launch/overview.md#set-up-the-security-scan-tool) を参照してください。

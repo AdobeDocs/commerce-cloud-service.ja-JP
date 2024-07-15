@@ -7,7 +7,7 @@ assignees: hguthrie
 source-git-commit: 8be5acdf0e555c46f3307b7acb564148a83570bd
 workflow-type: tm+mt
 source-wordcount: '10'
-ht-degree: 10%
+ht-degree: 30%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 10%
 
 <!-- (REQUIRED) What is the expected result or behavior of this feature? -->
 
-## メリット
+## 利点
 
 <!-- (REQUIRED) How does this feature improve the docs experience? -->
 

@@ -16,17 +16,17 @@ Fastly を活用した、クラウドインフラストラクチャー上のAdob
 
 WAF サービスには次の利点があります。
 
-- **PCI コンプライアンス**—WAF のイネーブルメントにより、実稼動環境のAdobe Commerce ストアフロントが PCI DSS 6.6 のセキュリティ要件を確実に満たすようになります。
-- **デフォルトの WAF ポリシー** – デフォルトの WAF ポリシーは、Fastly で設定および管理され、インジェクション攻撃、悪意のある入力、クロスサイトスクリプティング、データ抽出、HTTP プロトコル違反などの、様々な攻撃からAdobe Commerce web アプリケーションを保護するようにカスタマイズされたセキュリティルールのコレクションを提供します [OWASP トップ 10](https://owasp.org/www-project-top-ten/) セキュリティの脅威。
-- **WAF のオンボーディングと有効化**—Adobeは、プロビジョニングが完了してから 2～3 週間以内に、本番システム環境にデフォルトの WAF ポリシーを導入して有効にします。
+- **PCI コンプライアンス** - WAF の有効化により、実稼動環境のAdobe Commerce ストアフロントが PCI DSS 6.6 のセキュリティ要件を満たすようにします。
+- **デフォルト WAF ポリシー** - Fastly が設定および管理するデフォルト WAF ポリシーは、インジェクション攻撃、悪意のある入力、クロスサイトスクリプティング、データの取り出し、HTTP プロトコル違反、その他の [OWASP Top Ten](https://owasp.org/www-project-top-ten/) セキュリティ上の脅威など、様々な攻撃からAdobe Commerce Web アプリケーションを保護するようにカスタマイズされた一連のセキュリティルールを提供します。
+- **WAF のオンボーディングと有効化** - Adobeは、プロビジョニングが完了してから 2～3 週間以内に、実稼動環境にデフォルトの WAF ポリシーをデプロイし、有効にします。
 - **運用・保守サポート**—
    - Adobeと Fastly は、WAF サービスのログとアラートをセットアップおよび管理します。
    - Adobeは、WAF サービスの問題に関連するカスタマーサポートチケットをトリアージし、正規のトラフィックをブロックする問題を優先度 1 の問題として処理します。
-   - WAF サービスバージョンの自動アップグレードにより、新規または進化する攻撃を迅速に確実に検出できます。 参照： [WAF のメンテナンスとアップグレード](#waf-maintenance-and-updates).
+   - WAF サービスバージョンの自動アップグレードにより、新規または進化する攻撃を迅速に確実に検出できます。 [WAF のメンテナンスとアップグレード ](#waf-maintenance-and-updates) を参照してください。
 
 >[!TIP]
 >
->クラウドインフラストラクチャストア上のAdobe Commerceで PCI コンプライアンスを維持する方法について詳しくは、以下を参照してください [PCI コンプライアンス](https://business.adobe.com/products/magento/pci-compliance.html).
+>クラウドインフラストラクチャストア上のAdobe Commerceで PCI への準拠を維持する方法について詳しくは、[PCI コンプライアンス ](https://business.adobe.com/products/magento/pci-compliance.html) を参照してください。
 
 ## WAF の有効化
 
@@ -34,23 +34,23 @@ Adobeは、プロビジョニングが完了してから 2～3 週間以内に�
 
 >[!NOTE]
 >
->WAF サービスを使用する前に、クラウドインフラストラクチャプロジェクト上のAdobe Commerceへのすべての外部トラフィックを、Fastly サービスを通じてルーティングする必要があります。 参照： [Fastly の設定](fastly-configuration.md).
+>WAF サービスを使用する前に、クラウドインフラストラクチャプロジェクト上のAdobe Commerceへのすべての外部トラフィックを、Fastly サービスを通じてルーティングする必要があります。 [Fastly の設定 ](fastly-configuration.md) を参照してください。
 
 ## 仕組み
 
-WAF サービスは Fastly と統合され、Fastly CDN サービス内のキャッシュロジックを使用して、Fastly グローバルノードでトラフィックをフィルタリングします。 実稼動環境では、に基づいたデフォルトの WAF ポリシーで WAF サービスを有効にします。 [Trustwave SpiderLabs の ModSecurity ルール](https://github.com/owasp-modsecurity/ModSecurity) OWASP Top Ten のセキュリティ上の脅威
+WAF サービスは Fastly と統合され、Fastly CDN サービス内のキャッシュロジックを使用して、Fastly グローバルノードでトラフィックをフィルタリングします。 Trustwave SpiderLabs の [ModSecurity Rules](https://github.com/owasp-modsecurity/ModSecurity) および OWASP Top Ten のセキュリティ脅威に基づくデフォルトの WAF ポリシーを使用して、実稼動環境で WAF サービスを有効にします。
 
 WAF サービスは、WAF ルールセットに対して HTTP および HTTPS トラフィック（GETおよびPOSTリクエスト）をフィルタリングし、悪意のあるトラフィックや特定の規則に準拠しないトラフィックをブロックします。 サービスは、キャッシュの更新を試みるオリジンバインドトラフィックのみをフィルタリングします。 その結果、Fastly キャッシュでの攻撃トラフィックのほとんどを停止し、悪意のある攻撃からオリジントラフィックを保護します。 オリジントラフィックのみを処理することで、WAF サービスはキャッシュのパフォーマンスを維持し、キャッシュされていないリクエストごとに推定 1.5 ミリ秒から 20 ミリ秒の待ち時間しか発生しません。
 
 ## ブロックされたリクエストのトラブルシューティング
 
-WAF サービスを有効にすると、WAF ルールに対して web および管理者のすべてのトラフィックがフィルタリングされ、ルールをトリガーする web リクエストがブロックされます。 リクエストがブロックされると、リクエスターにはデフォルトが表示されます `403 Forbidden` ブロックイベントの参照 ID を含むエラーページ。
+WAF サービスを有効にすると、WAF ルールに対して web および管理者のすべてのトラフィックがフィルタリングされ、ルールをトリガーする web リクエストがブロックされます。 リクエストがブロックされると、ブロッキングイベントの参照 ID を含んだデフォルトの `403 Forbidden` エラーページがリクエスターに表示されます。
 
-![WAF エラーページ](../../assets/cdn/fastly-waf-403-error.png)
+![WAF エラーページ ](../../assets/cdn/fastly-waf-403-error.png)
 
-管理者からこのエラー応答ページをカスタマイズできます。 参照： [WAF 応答ページのカスタマイズ](fastly-custom-response.md#customize-the-waf-error-page).
+管理者からこのエラー応答ページをカスタマイズできます。 [WAF 応答ページのカスタマイズ ](fastly-custom-response.md#customize-the-waf-error-page) を参照してください。
 
-Adobe Commerce管理ページまたはストアフロントがを返す場合 `403 Forbidden` エラーページ正当な URL リクエストに応答して、以下を送信します。 [Adobe Commerce サポートチケット](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket). エラー応答ページから参照 ID をコピーし、チケットの説明に貼り付けます。
+Adobe Commerce管理ページまたはストアフロントが、正当な URL リクエストに対して `403 Forbidden` エラーページを返した場合は、[Adobe Commerce サポートチケット ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) を送信します。 エラー応答ページから参照 ID をコピーし、チケットの説明に貼り付けます。
 
 ## WAF のメンテナンスとアップデート
 
@@ -62,10 +62,10 @@ Adobeおよび Fastly は更新プロセスを管理し、更新がブロッキ�
 
 Fastly を利用した標準の WAF サービスでは、次の機能はサポートされていません。
 
-- マルウェアまたはボットの軽減に対する保護 – の使用を検討 [アクセス制御リスト](./fastly-vcl-allowlist.md) またはサードパーティのサービスです。
-- レート制限 – を参照 [レート制限](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/RATE-LIMITING.md) Fastly ドキュメントで、または [レート制限](https://developer.adobe.com/commerce/webapi/get-started/rate-limiting/) が含まれる _Commerce Web API_ セキュリティ セクション。
-- 顧客のログエンドポイントの設定 – を参照してください [PrivateLink サービス](../development/privatelink-service.md) 代替手段として。
+- マルウェアまたはボットの軽減に対する保護 – [ アクセス制御リスト ](./fastly-vcl-allowlist.md) またはサードパーティのサービスの使用を検討します。
+- レート制限 – Fastly ドキュメントの [ レート制限 ](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/RATE-LIMITING.md) または _Commerce Web API_ セキュリティセクションの [ レート制限 ](https://developer.adobe.com/commerce/webapi/get-started/rate-limiting/) を参照してください。
+- 顧客のログエンドポイントの設定 – 別の方法として [PrivateLink サービス ](../development/privatelink-service.md) を参照してください。
 
-WAF サービスでは、IP アドレスに基づくトラフィックのブロックや許可は許可されませんが、Fastly サービスに ACL （アクセス制御リスト）スニペットとカスタム VCL スニペットを追加して、トラフィックのブロックや許可を行うための IP アドレスと VCL ロジックを指定することができます。 参照： [カスタム Fastly VCL スニペット](fastly-vcl-custom-snippets.md).
+WAF サービスでは、IP アドレスに基づくトラフィックのブロックや許可は許可されませんが、Fastly サービスに ACL （アクセス制御リスト）スニペットとカスタム VCL スニペットを追加して、トラフィックのブロックや許可を行うための IP アドレスと VCL ロジックを指定することができます。 [Custom Fastly VCL スニペット ](fastly-vcl-custom-snippets.md) を参照してください。
 
-TCP、UDP、または ICMP 要求のフィルタリングは、WAF サービスではサポートされていません。 ただし、この機能は、Fastly CDN サービスに含まれる組み込みの DDoS 保護によって提供されます。 参照： [DDoS 保護](fastly.md#ddos-protection).
+TCP、UDP、または ICMP 要求のフィルタリングは、WAF サービスではサポートされていません。 ただし、この機能は、Fastly CDN サービスに含まれる組み込みの DDoS 保護によって提供されます。 [DDoS 保護 ](fastly.md#ddos-protection) を参照してください。
