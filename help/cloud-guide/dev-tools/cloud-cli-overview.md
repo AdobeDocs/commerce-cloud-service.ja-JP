@@ -2,7 +2,7 @@
 title: クラウド CLI
 description: magento-cloud CLI の概要と、クラウドインフラストラクチャプロジェクト上のAdobe Commerceのローカル開発環境を管理する際にどう役立つかを説明します。
 exl-id: 70dddd62-0269-4af4-bd2a-1a4fbf11a131
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '741'
 ht-degree: 0%
@@ -42,7 +42,7 @@ ht-degree: 0%
    magento-cloud
    ```
 
-   ```terminal
+   ```
    Welcome to Magento Cloud!
    Please log in using your Magento Cloud account.
    Your email address or username:
@@ -94,7 +94,7 @@ magento-cloud environment:redeploy
 
 応答の例：
 
-```terminal
+```
 Are you sure you want to redeploy the environment <environment-name>? [Y/n]
 ```
 
@@ -193,7 +193,7 @@ git commit --allow-empty -m "redeploy" && git push <branch-name>
 magento-cloud update
 ```
 
-```terminal
+```
 Checking for Magento Cloud CLI updates (current version: X.XX.X)
 No updates found
 ```

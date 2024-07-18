@@ -1,18 +1,18 @@
 ---
-title: Post-deploy 変数
+title: デプロイ後変数
 description: Adobe Commerce on cloud infrastructure のデプロイ後のフェーズで、アクションを制御する環境変数のリストを参照してください。
 feature: Cloud, Configuration, Cache
 recommendations: noDisplay, catalog
 role: Developer
 exl-id: e460335f-cd2b-4c98-b1ff-32504599b33d
-source-git-commit: 8b02757591c4e8f607e936de4eda74d76953d9b7
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# Post-deploy 変数
+# デプロイ後変数
 
 次の _デプロイ後_ 変数は、デプロイ後のフェーズでのアクションを制御し、[ グローバル変数 ](variables-global.md) の値を継承および上書きできます。 `.magento.env.yaml` ファイルの `post-deploy` のステージに、次の変数を挿入します。
 
@@ -45,7 +45,7 @@ stage:
 
 変更をテストしてコミットするページを指定すると、デプロイ後のフェーズで _最初のバイトまでの時間_ テストが実行され、各パスの結果がクラウドログに投稿されます。
 
-```terminal
+```
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.313s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/customer/account/create","status":200}
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.408s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/checkout/cart","status":200}
 ```
@@ -93,7 +93,7 @@ stage:
 
 - **複数のページ** – 特定の正規表現パターンに従って複数のページをキャッシュするには、次のフォーマットを使用します：
 
-  ```terminal
+  ```
   <entity_type>:<pattern|url|product_sku>:<store_id|store_code>
   ```
 

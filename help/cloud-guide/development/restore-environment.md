@@ -4,7 +4,7 @@ description: クラウドインフラストラクチャプロジェクトからA
 role: Developer
 topic: Development
 exl-id: b76bd6c3-986e-4adc-abd0-5b27db0d8a3b
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '480'
 ht-degree: 0%
@@ -38,7 +38,7 @@ Git ブランチをリセットすると、コードが以前に安定した状�
 
    応答の例：
 
-   ```terminal
+   ```
    6bf9f45 (HEAD -> master, magento/master, magento/develop, magento/HEAD, develop) Create composer.lock
    34d7434 2.4.6 upgrade
    b69803c Update composer.lock
@@ -106,7 +106,7 @@ Adobe Commerce ソフトウェアをアンインストールすると、デー�
 
    次のメッセージが表示され、アンインストールが正常に完了したことを確認します。
 
-   ```terminal
+   ```
    [SUCCESS]: Magento uninstallation complete.
    ```
 

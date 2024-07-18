@@ -3,7 +3,7 @@ title: ログの表示と管理
 description: クラウドインフラストラクチャで使用できるログファイルのタイプと、それらのログファイルの場所について説明します。
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 86af69eed16e8fe464de93bd0f33cfbfd4ed8f49
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -44,7 +44,7 @@ magento-cloud ssh -p <project-ID> -e <environment-ID> --all
 
 応答の例：
 
-```terminal
+```
 1.ent-project-environment-id@ssh.region.magento.cloud
 2.ent-project-environment-id@ssh.region.magento.cloud
 3.ent-project-environment-id@ssh.region.magento.cloud
@@ -84,7 +84,7 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 特定のデプロイメントのログエントリのタイムスタンプを確認し、ログを確認および特定します。 次に、トラブルシューティングに使用できるログ出力の圧縮例を示します。
 
-```terminal
+```
 Re-deploying environment project-integration-ID
   Executing post deploy hook for service `mymagento`
     [2019-01-03 19:44:11] NOTICE: Starting post-deploy.
@@ -129,7 +129,7 @@ magento-cloud log -e <environment-ID> deploy
 
 応答の例：
 
-```terminal
+```
 Reading log file projectID-branchname-ID--mymagento@ssh.zone.magento.cloud:/var/log/'deploy.log'
 
 [2023-04-24 18:58:03.080678] Launching command 'b'php ./vendor/bin/ece-tools run scenario/deploy.xml\n''.
@@ -153,7 +153,7 @@ magento-cloud ssh -e <environment-ID> "./vendor/bin/ece-tools error:show"
 
 応答の例：
 
-```terminal
+```
 errorCode: 1001
 stage: build
 step: validate-config
@@ -187,19 +187,19 @@ type: warning
 | ログファイル | スターターと Pro の統合 | 説明 |
 | ------------------- | --------------------------- | ------------------------------------------------- |
 | **ログをデプロイ** | `/var/log/deploy.log` | [ デプロイフック ](../application/hooks-property.md) からのアクティビティ。 |
-| **Postデプロイのログ** | `/var/log/post_deploy.log` | [ デプロイ後フック ](../application/hooks-property.md) からのアクティビティ。 |
+| **デプロイ後のログ** | `/var/log/post_deploy.log` | [ デプロイ後フック ](../application/hooks-property.md) からのアクティビティ。 |
 | **Cron ログ** | `/var/log/cron.log` | Cron ジョブからの出力。 |
 | **Nginx アクセス ログ** | `/var/log/access.log` | Nginx の起動時に、ディレクトリの欠落や除外されたファイル タイプの HTTP エラーが発生します。 |
 | **Nginx エラーログ** | `/var/log/error.log` | Nginx に関連する構成エラーのデバッグに役立つスタートアップ メッセージ。 |
 | **PHP アクセスログ** | `/var/log/php.access.log` | PHP サービスへのリクエスト。 |
 | **PHP FPM ログ** | `/var/log/app.log` | |
 
-ステージング環境および実稼動環境の場合、デプロイ、Post – デプロイ、Cron ログは、クラスターの最初のノードでのみ使用できます。
+ステージング環境および実稼動環境の場合、デプロイ、ポストデプロイ、Cron ログは、クラスターの最初のノードでのみ使用できます。
 
 | ログファイル | Pro ステージング | 実稼動環境に対応 |
 | ------------------- | --------------------------------------------------- | ----------------------------------------------- |
 | **ログをデプロイ** | 最初のノードのみ：<br>`/var/log/platform/<project-ID>_stg/deploy.log` | 最初のノードのみ：<br>`/var/log/platform/<project-ID>/deploy.log` |
-| **Postデプロイのログ** | 最初のノードのみ：<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | 最初のノードのみ：<br>`/var/log/platform/<project-ID>/post_deploy.log` |
+| **デプロイ後のログ** | 最初のノードのみ：<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | 最初のノードのみ：<br>`/var/log/platform/<project-ID>/post_deploy.log` |
 | **Cron ログ** | 最初のノードのみ：<br>`/var/log/platform/<project-ID>_stg/cron.log` | 最初のノードのみ：<br>`/var/log/platform/<project-ID>/cron.log` |
 | **Nginx アクセス ログ** | `/var/log/platform/<project-ID>_stg/access.log` | `/var/log/platform/<project-ID>/access.log` |
 | **Nginx エラーログ** | `/var/log/platform/<project-ID>_stg/error.log` | `/var/log/platform/<project-ID>/error.log` |
@@ -210,7 +210,7 @@ type: warning
 
 アプリケーションログは 1 日に 1 回の頻度で圧縮およびアーカイブされ、1 年間保持されます。 圧縮ログには、`Number of Days Ago + 1` に対応する一意の ID を使用して名前が付けられます。 例えば、Pro 実稼動環境では、過去 21 日間の PHP アクセスログが次のように保存され、名前が付けられます。
 
-```terminal
+```
 /var/log/platform/<project-ID>/php.access.log.22.gz
 ```
 
@@ -218,7 +218,7 @@ type: warning
 
 >[!NOTE]
 >
->**Deploy** および **Post-deploy** ログファイルは、ローテーションされたりアーカイブされたりしません。 デプロイメント履歴全体がこれらのログファイルに書き込まれます。
+>**デプロイ** および **デプロイ後** ログファイルは、ローテーションされたりアーカイブされたりしません。 デプロイメント履歴全体がこれらのログファイルに書き込まれます。
 
 ## サービスログ
 

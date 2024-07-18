@@ -3,7 +3,7 @@ title: 複数の web サイトまたはストアを設定
 description: クラウドインフラストラクチャー上でAdobe Commerce用に複数の web サイトまたはストアを設定する方法について説明します。
 feature: Cloud, Configuration, Routes, Site Navigation
 exl-id: 16e932ef-f083-44d7-977f-0c78899e151a
-source-git-commit: 85aa54af10e7ea44adde5403b69ff03d4a0c622f
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1013'
 ht-degree: 0%
@@ -22,14 +22,14 @@ ht-degree: 0%
 
 一意のドメインを持つ複数のストア：
 
-```terminal
+```
 https://first.store.com/
 https://second.store.com/
 ```
 
 同じドメインを持つ複数のストア：
 
-```terminal
+```
 https://store.com/first/
 https://store.com/second/
 ```

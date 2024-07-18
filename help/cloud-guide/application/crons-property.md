@@ -3,7 +3,7 @@ title: Crons プロパティ
 description: ' [!DNL Commerce] application 設定ファイルで「cron」プロパティを設定する方法の例を参照してください。'
 feature: Cloud, Configuration
 exl-id: 67d592c1-2933-4cdf-b4f6-d73cd44b9f59
-source-git-commit: 1c0e05c3d8461bea473bcf6ec35162d65ef2774f
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1069'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Adobe Commerceでは、ステージング環境と実稼動環境でのセルフ
 
 次の例は、デフォルトの `crons` 設定のみを持つ環境の `crontab` の出力を示しています。
 
-```terminal
+```
 username@hostname:~$ crontab -l
 # Crontab is managed by the system, attempts to edit it directly will fail.
 SHELL=/etc/platform/6fck2obu3244c/cron-run

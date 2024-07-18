@@ -3,7 +3,7 @@ title: ストアの設定管理
 description: クラウドインフラストラクチャー上のすべてのAdobe Commerceでストア設定を管理および同期する方法について説明します。
 feature: Cloud, Configuration, SCD
 exl-id: f2dd876d-24ee-4d47-b9ac-44fcf77b61b5
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1439'
 ht-degree: 0%
@@ -162,7 +162,7 @@ SCD_*変数をビルドステージに移動します。
 
 デプロイメントプロセス中に元の `app/etc/env.php` ファイルと `app/etc/config.php` ファイルのコピーが作成され、同じフォルダーに保存されます。 以下に、同じ `app/etc` フォルダー内の BAK （バックアップファイル）と PHP （元のファイル）を示します。
 
-```terminal
+```
 ...
 config.php.bak
 di.xml
@@ -192,7 +192,7 @@ env.php
 
    応答の例：
 
-   ```terminal
+   ```
    The list of backup files:
    app/etc/env.php
    app/etc/config.php

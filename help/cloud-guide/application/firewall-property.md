@@ -3,7 +3,7 @@ title: ファイアウォールプロパティ
 description: Commerce アプリケーション設定ファイルでファイアウォールプロパティを設定する方法の例を参照してください。
 feature: Cloud, Configuration, Security
 exl-id: f169c008-c62a-41b7-a98d-cccd81c7291a
-source-git-commit: 74d88560db3b65294673a1e1827f9cea098d707a
+source-git-commit: a8ecebc87bfae5deaf0fc7ff3e7dd3b255fe3f24
 workflow-type: tm+mt
 source-wordcount: '844'
 ht-degree: 0%
@@ -32,7 +32,7 @@ magento-cloud p:curl --project PROJECT_ID /settings | grep -i outbound
 
 ポリシーに対して `deny` をリクエストしない限り、コマンドはポリシーが `allow` に設定されていることを表示します。
 
-```terminal
+```json
 "outbound_restrictions_default_policy": "allow"
 ```
 
@@ -157,7 +157,7 @@ firewall:
 
 1 つの IP アドレスを指定するには、IP アドレスの末尾に `/32` の CIDR プレフィックスを追加します。
 
-```terminal
+```
 172.217.11.174/32  # google.com
 ```
 
@@ -189,7 +189,7 @@ awk '($5 ~/query/)' /var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort 
 
 このコマンドは、送信フィルタリングルールによってブロックされた DNS リクエストも表示します。 出力には、ブロックされたドメインは表示されず、リクエストが行われただけです。 IP アドレスを使用して行われたリクエストは出力に表示されません。
 
-```terminal
+```
 Example output:
 
 97 magento.com

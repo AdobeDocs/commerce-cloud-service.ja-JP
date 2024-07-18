@@ -4,7 +4,7 @@ description: クラウドインフラストラクチャ環境でAdobe Commerce�
 feature: Cloud, Security
 topic: Security
 exl-id: 754b2c22-f197-49be-a699-fb3bedf053fc
-source-git-commit: ec1e59c3aafae6452ad1590fdb9de37c68b94ed9
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1051'
 ht-degree: 0%
@@ -68,7 +68,7 @@ magento-cloud ssh-cert:load
 
    >次の応答に従います。
 
-   ```terminal
+   ```
    Please open the following URL in a browser and log in:
    http://127.0.0.1:5000
    
@@ -115,7 +115,7 @@ MFA 適用が有効なプロジェクトの場合、SSH アクセスには次の
 
    > 応答の例：
 
-   ```terminal
+   ```
    Generating SSH certificate...
      Expires at: 2020-07-13T15:28:13-04:00
      Multi-factor authentication: verified
@@ -132,7 +132,7 @@ MFA 適用が有効なプロジェクトの場合、SSH アクセスには次の
    ssh abcdef7uyxabce-master-7rqtwti--mymagento@ssh.us-5.magento.cloud
    ```
 
-   ```terminal
+   ```
     __  __                   _          ___ _             _
    |  \/  |__ _ __ _ ___ _ _| |_ ___   / __| |___ _  _ __| |
    | |\/| / _` / _` / -_) ' \  _/ _ \ | (__| / _ \ || / _` |
@@ -167,7 +167,7 @@ MFA 適用が有効なプロジェクトの場合、SSH アクセスには次の
 
    > 応答の例：
 
-   ```terminal
+   ```
    Generating SSH certificate...
      Expires at: 2020-07-13T15:28:13-04:00
      Multi-factor authentication: verified
@@ -186,7 +186,7 @@ MFA 適用が有効なプロジェクトの場合、SSH アクセスには次の
 
    > 応答の例：
 
-   ```terminal
+   ```
    Cloning into 'myproject'...
    Connection to git.us-3.magento.cloud port 22 [tcp/ssh] succeeded!
    remote: counting objects: 22, done.
@@ -218,7 +218,7 @@ API トークンによる認証には、引き続き SSH 証明書の生成が�
 
 1. プロンプトで、有効な API トークンの値を入力します。
 
-   ```terminal
+   ```
    Please enter an API token:
    >
    
@@ -273,7 +273,7 @@ ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud "tail -n 10 
 
 リクエストで有効な証明書が指定されない場合は、次のようなメッセージが表示されます。
 
-```terminal
+```
 to Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully
 authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud:>
 (reason: access requires MFA)
@@ -320,7 +320,7 @@ authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--m
 
 SSH キーがないか無効な場合、SSH 接続リクエストは `Permission denied (publickey)` エラーを返します。
 
-```terminal
+```
 Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully authenticated, but could not connect to service oh2wi6klp5ytk-mc-35985-integration-nnulm4a--mymagento (reason: service doesn't exist or you do not have access to it)
 oh2wi6klp5ytk-mc-35985-integration-nnulm4a--mymagento@ssh.eu-3.magento.cloud: Permission denied (publickey).
 ```
@@ -337,7 +337,7 @@ ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud
 
 応答の例：
 
-```terminal
+```
 abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud: Permission denied (publickey).
 ```
 

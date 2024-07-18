@@ -3,7 +3,7 @@ title: バックアップ管理
 description: クラウドインフラストラクチャプロジェクト上のAdobe Commerceのバックアップを手動で作成および復元する方法について説明します。
 feature: Cloud, Paas, Snapshots, Storage
 exl-id: 1cb00db7-2375-4761-9c07-1e20a74859e0
-source-git-commit: 4c3f3f2775e8327476233520e52b589f7264786f
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '711'
 ht-degree: 0%
@@ -51,7 +51,7 @@ ht-degree: 0%
 
    応答の例：
 
-   ```terminal
+   ```
    Creating a snapshot of develop-branch
    Waiting for the activity ID (User created a backup of develop-branch):
    
@@ -70,7 +70,7 @@ ht-degree: 0%
 
    リストは、スナップショットのステータスに関する情報を返します。
 
-   ```terminal
+   ```
    Snapshots on the project (project-id), environment develop-branch (type: development):
    +---------------------------+----------------------+------------+
    | Created                   | Snapshot ID          | Restorable |
@@ -116,7 +116,7 @@ ht-degree: 0%
 
    リストは、使用可能なスナップショットに関する情報を返します。
 
-   ```terminal
+   ```
    Snapshots on the project (project-id), environment develop-branch (type: development):
    +---------------------------+----------------------+------------+
    | Created                   | Snapshot ID          | Restorable |

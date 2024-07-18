@@ -3,7 +3,7 @@ title: スマート・ウィザード
 description: スマートウィザードを使用して、クラウドインフラストラクチャプロジェクト上のAdobe Commerceがデプロイメントのベストプラクティスに従っているかどうかを評価する方法を説明します。
 feature: Cloud, Build, Deploy, SCD
 exl-id: eb79431c-8835-4ae4-b453-9c4932c5d5ac
-source-git-commit: 225fba1acfd8b3ce4d7ce989c7851e7b0b218680
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 0%
@@ -36,13 +36,13 @@ ht-degree: 0%
 
 設定が成功すると、次の値が返されます。
 
-```terminal
+```
 SCD on-demand is enabled
 ```
 
 失敗した設定は次を返します。
 
-```terminal
+```
 SCD on-demand is disabled
 ```
 
@@ -50,7 +50,7 @@ SCD on-demand is disabled
 
 クラウドプロジェクトの _理想的_ な設定は、ユーザーからリクエストがあった場合にキャッシュをウォームアップし、静的コンテンツを生成することで、デプロイメントのダウンタイムを最小限に抑えるのに役立ちます。 このウィザードは、配置プロセス中に自動的に実行されます。 クラウドがこの _理想的な状態_ に設定されていない場合は、次のようなメッセージが表示されます。
 
-```terminal
+```
 - SCD on build is not configured
 - Post-deploy hook is not configured
 - Skip HTML minification is disabled
@@ -81,6 +81,6 @@ Ideal state is not configured
 
 1. コードの変更をプッシュし、テストを再度実行します。 設定が _理想的_ な場合は、次のメッセージが表示されます。
 
-   ```terminal
+   ```
    Ideal state is configured
    ```
