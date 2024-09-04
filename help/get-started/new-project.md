@@ -4,7 +4,7 @@ description: クラウドインフラストラクチャプロジェクトでAdob
 recommendations: noDisplay, catalog
 role: Admin
 exl-id: cfb354b0-c255-4b6e-94aa-c5a6bf7230d6
-source-git-commit: 374cbe4a119b43ab446905fd6b9e51840094ce61
+source-git-commit: da1dec76b9389244f9d5a65428e09f1bc897fa5f
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Adobeがクラウドプロジェクト環境にCommerceをプロビジョニン�
 
 複数または一意のドメインに関する詳細なガイダンスについては、_クラウドインフラストラクチャー上のCommerce_ ガイドの [ 複数の web サイトまたはストアの設定 ](../cloud-guide/store/multiple-sites.md) を参照してください。
 
-Adobe Commerce サイトで使用されているのと同じ apex およびサブドメインをリンクする既存の Fastly アカウントがある場合は、[ 複数の Fastly アカウントと割り当てられたドメイン ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/cdn/fastly#multiple-fastly-accounts-and-assigned-domains) を参照してください。
+Adobe Commerce サイトで使用されているのと同じ apex およびサブドメインをリンクする既存の Fastly アカウントがある場合は、[ 複数の Fastly アカウントと割り当てられたドメイン ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/cdn/fastly#multiple-fastly-accounts-and-assigned-domains){target="_blank"} を参照してください。
 
 ## トランザクションメールドメイン
 
