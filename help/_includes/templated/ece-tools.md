@@ -1,14 +1,14 @@
 ---
-source-git-commit: 6d8c082d78259f8f7adb0fb7f11ff4fcdb234124
+source-git-commit: a58ad3254cb00a8fcafd11f1541f55ea86ad18eb
 workflow-type: tm+mt
-source-wordcount: '4030'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 # ece-tools
 
 <!-- The template to render with above values -->
-**バージョン**:2002.1.18
+**バージョン**:2002.1.19
 
 このリファレンスには、`ece-tools` のコマンド ライン ツールで使用できる 34 のコマンドが含まれています。
 最初のリストは、クラウドインフラストラクチャ上のAdobe Commerceで `ece-tools list` コマンドを使用して自動生成されます。
@@ -40,7 +40,7 @@ ece-tools _complete [-s|--shell SHELL] [-i|--input INPUT] [-c|--current CURRENT]
 
 ### `--current`, `-c`
 
-カーソルが置かれている「入力」配列のインデックス（例：COMP_CWORD）
+カーソルがある「入力」配列のインデックス （例：COMP_CWORD）
 
 - 値が必要です
 
