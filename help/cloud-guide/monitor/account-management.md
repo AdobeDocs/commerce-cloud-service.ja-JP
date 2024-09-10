@@ -4,9 +4,9 @@ description: New Relic アカウントにアクセスし、クラウドインフ
 feature: Cloud, Observability
 role: Admin
 exl-id: ee639e2e-4074-4384-8f68-152bc3bac93b
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 1fc488d7e13952ad70d4c864327899f38ea48af1
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '660'
 ht-degree: 0%
 
 ---
@@ -17,20 +17,9 @@ Adobeがクラウドインフラストラクチャプロジェクトをプロビ
 
 ## ユーザーアクセスの管理
 
-New Relic アカウントには、所有者のロールに割り当てることができるユーザーは 1 人だけです。 アカウント所有者を変更する必要がある場合は、管理者の役割を現在の所有者に割り当て、所有者の役割を別のユーザーに割り当てます。 手順については、_New Relic ドキュメントの [ アカウント所有者の更新 ](https://docs.newrelic.com/docs/accounts/original-accounts-billing/original-users-roles/users-roles-original-user-model/) を参照_ てください。
-
-New Relic アクセスの管理ガイドライン：
-
-- プロジェクト所有者と管理者ユーザーは、New Relic アカウントにユーザーを追加したり、このアカウントからユーザーを削除したりできます。
-- フルアクセス **ユーザー** は、5 つを超えて作成しないでください。
-- 完全な機能セットへのアクセスを厳密に必要とするユーザーにのみ、フルアクセス権を付与します。
-- 無料の **制限付き** ユーザーに関する具体的なガイダンスはありません。
-
->[!TIP]
+>[!NOTE]
 >
->所有者の役割をユーザーに割り当てる前に、そのユーザーがクラウドインフラストラクチャー上のAdobe CommerceのNew Relic アカウントに存在することを確認します。 ユーザーをそのアカウントに追加する必要があり、既存のアカウント所有者または管理者が支援できない場合は、New Relicの [Adobeパートナーシップオーナーアカウント ](https://account.newrelic.com/accounts/1311131/users) にアクセスできるユーザーが、お客様に代わってユーザーを追加できます。
-
-すべてのアクセス、統合およびツールの使用を管理できる **管理者** ユーザーを 1 人以上New Relic アカウントに追加してください。
+>完全な機能セットへのアクセスを厳密に必要とするユーザーにのみ、フルアクセス権を付与します。
 
 **New Relicで User Management にアクセスするには**:
 
