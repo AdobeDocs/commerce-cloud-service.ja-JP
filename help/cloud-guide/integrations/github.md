@@ -4,9 +4,9 @@ description: クラウドインフラストラクチャプロジェクト上のA
 feature: Cloud, Integration
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: 5305452f-4c8d-438c-ac78-e2e1ec2f8cd9
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: b162faadf114423a7da23ecf94c96eccbcaeb72b
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '949'
 ht-degree: 0%
 
 ---
@@ -108,7 +108,7 @@ GitHub 開発者設定で、従来の個人用アクセストークンを作成�
 
 | オプション | 必須？ | 説明 |
 | ----------------------- | --------- | --------------------------------- |
-| `--base-url` | はい | サーバーインストールのベース URL （`https://github.com/` またはカスタム）。 リポジトリが公開 Github でホストされている場合は、このオプションを省略します。 |
+| `--base-url` | はい | サーバーインストールのベース URL （`https://github.com/` またはカスタム）。 リポジトリがパブリック Github でホストされている場合、またはリポジトリがプライベートサーバーでホストされていない場合は、このオプションを省略します。 リポジトリー URL が `https://github.com/{account}/{repository-name}` に似ている場合は、このオプションを省略します。 これにより、`Unable to connect to GitHub: repository not found` などのエラーが発生する可能性があります。 |
 | `--token` | はい | GitHub 用に生成した個人用アクセストークン |
 | `--repository` | はい | リポジトリ名：`owner-or-organisation/repository` |
 | `--build-pull-requests` | オプション | は、プルリクエストを結合した後にデプロイするように、クラウドインフラストラクチャ上のAdobe Commerceに指示します（デフォルトでは `true`）。 |
