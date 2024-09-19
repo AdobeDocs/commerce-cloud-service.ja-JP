@@ -2,9 +2,9 @@
 title: SendGrid メールサービス
 description: クラウドインフラストラクチャ上のAdobe Commerce用 SendGrid メールサービスと、DNS 設定をテストする方法について説明します。
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 1226be333deb1b1da402b4c0d2e141f9be1eb93b
 workflow-type: tm+mt
-source-wordcount: '1090'
+source-wordcount: '1128'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,10 @@ DKIM は、インターネットサービスプロバイダー（ISP）が正当
 ### 送信者とドメインの認証
 
 SendGrid が実稼動環境またはステージング環境からユーザーに代わってトランザクションメールを送信するには、3 つの SendGrid サブドメイン DNS エントリを含めるように DNS 設定を設定する必要があります。 各 SendGrid アカウントには、送信メールの認証に使用される一意の `TXT` レコードが割り当てられます。
+
+>[!TIP]
+>
+>必ず **[!UICONTROLSトラストメールアドレス]** を適切なドメインで設定してくださ **[!UICONTROL Stores > Configuration > General > Store Email Addresses]**。 ドメイン認証は、送信者のメールアドレスに対して実行されます。 デフォルト設定（`example.com`）が設定されている場合、`example.com` からのメールは Sendgrid によってブロックされます。
 
 **ドメイン認証を有効にするには**:
 
