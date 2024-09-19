@@ -2,20 +2,20 @@
 title: 送信メールの設定
 description: クラウドインフラストラクチャでAdobe Commerce用の送信メールを有効にする方法を説明します。
 exl-id: 814fe2a9-15bf-4bcb-a8de-ae288fd7f284
-source-git-commit: 59f82d891bb7b1953c1e19b4c1d0a272defb89c1
+source-git-commit: ec9192caa5daa1cd25a3eec6095c2c3cf8fbefb4
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
 
 # 送信メールの設定
 
-[!DNL Cloud Console] またはコマンドラインから、各環境の送信メールを有効または無効にすることができます。 統合およびステージング環境で送信メールを有効にして、クラウドプロジェクトユーザーに二要素認証またはパスワードリセットのメールを送信できるようにします。
+[!DNL Cloud Console] またはコマンドラインから、各環境の送信メールを有効または無効にすることができます。 統合（およびスターターのみのステージング）環境で送信メールを有効にして、クラウドプロジェクトユーザーに二要素認証またはパスワードリセットのメールを送信します。
 
-デフォルトでは、実稼動環境とステージング環境で送信メールが有効になっています。 ただし、[ コマンドライン ](#enable-emails-in-the-cli)[!UICONTROL Enable outgoing emails] たは [Cloud Console](outgoing-emails.md#enable-emails-in-the-cloud-console) を使用して `enable_smtp` プロパティを設定するまで、環境設定で無効と表示される場合があります。
+デフォルトでは、送信メールは実稼動環境とステージング環境（Pro のみ）で有効になります。 ただし、[ コマンドライン ](#enable-emails-in-the-cli) または [Cloud Console](outgoing-emails.md#enable-emails-in-the-cloud-console) から `enable_smtp` プロパティを設定するまで、ステータスに関係なく、環境設定で **[!UICONTROL Enable outgoing emails]** 設定が無効に表示される場合があります。
 
-[ コマンドライン ](#enable-emails-in-the-cli) で [!UICONTROL enable_smtp] プロパティ値を更新すると、Cloud Console でこの環境の [!UICONTROL Enable outgoing emails] 設定値も変更されます。
+[ コマンドライン ](#enable-emails-in-the-cli) で `enable_smtp` プロパティ値を更新すると、Cloud Console でこの環境の [!UICONTROL Enable outgoing emails] 設定値も変更されます。
 
 {{redeploy-warning}}
 
