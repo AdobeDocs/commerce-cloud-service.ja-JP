@@ -4,16 +4,16 @@ description: クラウドインフラストラクチャプロジェクトからA
 role: Developer
 topic: Development
 exl-id: b76bd6c3-986e-4adc-abd0-5b27db0d8a3b
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 9e4e58d2470b73b221168c182c7d563ce6f6502f
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
 
 # 環境の復元
 
-統合環境で問題が発生し、[ 有効なバックアップ ](../storage/snapshots.md) がない場合は、次のいずれかの方法を使用して環境を復元してみてください。
+統合環境で問題が発生したときに [ 有効なバックアップ ](../storage/snapshots.md) がない場合、または環境を空白の状態にリセットしたい場合は、次のいずれかの方法を使用して環境を復元またはリセットできます。
 
 - Git ブランチのコードをリセットまたは元に戻します
 - [!DNL Commerce] アプリケーションをアンインストールします
