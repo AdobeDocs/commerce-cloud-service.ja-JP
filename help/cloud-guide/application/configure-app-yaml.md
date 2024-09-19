@@ -3,9 +3,9 @@ title: アプリケーションのデプロイメントの設定
 description: アプリケーションによるクラウド環境のビルドおよびデプロイ方法を制御する  [!DNL Commerce]  プリケーション設定ファイルのプロパティを設定する方法について説明します。
 feature: Cloud, Configuration, Build, Deploy
 exl-id: 900da20d-98d2-4c9f-97ec-578aee775b55
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: c9339137d957840a9ae33ed45950c613eea93660
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '184'
 ht-degree: 0%
 
 ---
@@ -22,3 +22,7 @@ ht-degree: 0%
 - [Variables プロパティ ](variables-property.md) - [!DNL Commerce] アプリケーション・バージョンに必要な環境変数を確認します。
 - [PHP 設定 ](php-settings.md) – 実行時の PHP オプションを設定します。
 - [ 静的ファイルのキャッシュの設定 ](set-cache.md) - メディアと静的ファイルのキャッシュ TTL を設定します。
+
+>[!NOTE]
+>
+>`.magento.app.yaml` ファイルは、ローカルまたは Git リポジトリで管理されます。 設定は、デプロイメントおよびビルドプロセスの目的でのみ読み取られ、デプロイメントが完了すると削除されるので、サーバー上では見つかりません。
