@@ -3,9 +3,9 @@ title: リクエストをブロックするカスタム VCL
 description: カスタム VCL スニペットを使用したEdge アクセス制御リスト（ACL）を使用して、IP アドレスごとに受信リクエストをブロックします。
 feature: Cloud, Configuration, Security
 exl-id: 1f637612-3858-49d0-91f7-9b8823933cc9
-source-git-commit: 0e9ace747cc56808108781e42b97c86756089818
+source-git-commit: 16c34b6c693c4d4d5c67b21c79e0cd5d198e047b
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '996'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,15 @@ Fastly は、アップロードプロセス中に VCL コードの更新バー�
 
 >[!WARNING]
 >
->これらの例では、VCL コードは JSON ペイロードとしてフォーマットされ、ファイルに保存して Fastly API リクエストで送信できます。 [VCL スニペットは、管理者から ](#add-the-custom-vcl-snippet) または Fastly API を使用して JSON 文字列として送信できます。 JSON 文字列で Fastly API を使用する場合に検証を防ぐには、バックスラッシュを使用して特殊文字をエスケープする必要があります。
+>これらの例では、VCL コードは JSON ペイロードとしてフォーマットされ、ファイルに保存して Fastly API リクエストで送信できます。 [VCL スニペットは、管理者から ](#add-the-custom-vcl-snippet) または Fastly API を使用して JSON 文字列として送信できます。 Fastly API を JSON 文字列と共に使用する場合に検証エラーを防ぐには、バックスラッシュを使用して特殊文字をエスケープする必要があります。
+
+>[!NOTE]
+>VCL スニペットを管理者から送信する場合は、サンプル VCL コードから個々の値を抽出し、対応するフィールドに入力します。 例：
+>- 名前：`<name of the VCL>`
+>- 動的：`<0/1>`
+>- 型：`<type>`
+>- 優先度：`<priority>`
+>- コンテンツ：`<content>`
 
 Fastly VCL ドキュメントの [ 動的 VCL スニペットの使用 ](https://docs.fastly.com/vcl/vcl-snippets/) を参照してください。
 
