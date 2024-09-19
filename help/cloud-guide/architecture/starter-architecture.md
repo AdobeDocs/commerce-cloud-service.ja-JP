@@ -3,9 +3,9 @@ title: スターターアーキテクチャ
 description: スターターアーキテクチャがサポートする環境について説明します。
 feature: Cloud, Paas
 exl-id: 03365d32-4eb4-42d4-82a7-771df5e7b3da
-source-git-commit: c61d711b1041ecf76ec6468cd225a34fd77c24b1
+source-git-commit: e5cb79cab4e22d1c787859ab98e6bab6cd2dc2eb
 workflow-type: tm+mt
-source-wordcount: '903'
+source-wordcount: '942'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,9 @@ Adobeでは、`master` から `staging` というブランチを作成するこ�
 
 統合環境で最高のパフォーマンスを得るには、次のベストプラクティスに従います。
 
-- カタログサイズを制限
+- カタログサイズの制限 – 参考までに、サンプルデータには約 2,048 個の製品が含まれています。 カタログサイズを約 4,000～5,000 の製品に減らしてみてください。
+
+- 顧客グループの数を減らす – 顧客グループが多すぎると、インデックス作成のパフォーマンスや全体的なパフォーマンスに影響を与える可能性があります。
 
 - 使用を 1 人または 2 人の同時ユーザーに制限する
 
