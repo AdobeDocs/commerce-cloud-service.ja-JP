@@ -2,9 +2,9 @@
 title: SendGrid メールサービス
 description: クラウドインフラストラクチャ上のAdobe Commerce用 SendGrid メールサービスと、DNS 設定をテストする方法について説明します。
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: 1226be333deb1b1da402b4c0d2e141f9be1eb93b
+source-git-commit: b5c8dc062a940e9e202d9bd4cca6901b07109e07
 workflow-type: tm+mt
-source-wordcount: '1128'
+source-wordcount: '1273'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ DKIM は、インターネットサービスプロバイダー（ISP）が正当
 
 >[!WARNING]
 >
->SendGrid DKIM 署名とドメイン認証のサポートは、スタータープロジェクトではなく、Pro プロジェクトでのみ使用できます。 その結果、送信トランザクションメールはスパムフィルターによってフラグ付けされる可能性が高くなります。 DKIM を使用すると、認証済みメール送信者としての配信率が向上します。 メッセージ配信率を向上させるには、Starter から Pro にアップグレードするか、独自の SMTP サーバーまたはメール配信サービスプロバイダーを使用します。 [ 管理システムガイド ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) の「_メール接続の設定_」を参照してください。
+>SendGrid DKIM 署名とドメイン認証のサポートは、Pro プロジェクトの実稼動環境とステージング環境でのみ使用できますが、すべてのスターター環境では使用できません。 その結果、送信トランザクションメールはスパムフィルターによってフラグ付けされる可能性が高くなります。 DKIM を使用すると、認証済みメール送信者としての配信率が向上します。 メッセージ配信率を向上させるには、Starter から Pro にアップグレードするか、独自の SMTP サーバーまたはメール配信サービスプロバイダーを使用します。 [ 管理システムガイド ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) の「_メール接続の設定_」を参照してください。
 
 ### 送信者とドメインの認証
 
@@ -137,3 +137,13 @@ dig CNAME s2._domainkey.domain_name
 ### メール送信の評価
 
 メール送信の評価は、インターネットサービスプロバイダー（ISP）によって、メールメッセージを送信する会社に割り当てられるスコアです。 スコアが高いほど、ISP が受信者のインボックスにメッセージを配信する可能性が高くなります。 スコアが特定のレベルを下回ると、ISP が受信者のスパムフォルダーにメッセージをルーティングしたり、メッセージを完全に拒否したりする可能性があります。 評判スコアは、IP アドレスの 30 日間の平均が他の IP アドレスに対してランク付けされていることや、スパムの苦情率など、いくつかの要因によって決定されます。 [ メール送信の評判を確認する 8 つの方法 ](https://sendgrid.com/en-us/blog/5-ways-check-sending-reputation) を参照してください。
+
+### メール抑制リスト
+
+メール抑制リストとは、送信の評判や配信率が低下する可能性がある場合に、メールを送信してはいけない受信者のリストです。 CAN-SPAM 法では、電子メールの送信者が、電子メールを購読解除した受信者やスパムとマークした受信者をオプトアウトする方法を確保する必要があります。 抑制リストは、バウンス、ブロックまたは無効なメールも収集します。
+
+そもそもメールがスパムフォルダーに送信されるのを防ぐには、Sendgrid のベストプラクティス記事 [My Emails Going to Spam?](https://sendgrid.com/en-us/blog/10-tips-to-keep-email-out-of-the-spam-folder) に従ってください。
+
+一部の受信者にメールが届かない場合は、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) して、抑制リストの確認をリクエストし、必要に応じて受信者を削除することができます。
+
+詳しくは、[ 抑制リストとは ](https://sendgrid.com/en-us/blog/what-is-a-suppression-list) を参照してください。
