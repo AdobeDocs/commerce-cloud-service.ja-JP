@@ -3,7 +3,7 @@ title: Fastly のトラブルシューティング
 description: Adobe Commerce用の Fastly CDN モジュールおよびサービスのトラブルシューティングと管理の方法について説明します。
 feature: Cloud, Configuration, Cache, Services
 exl-id: e4c47035-cbad-4838-8d44-fa5eaaac42d1
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: e066e9c7e1a6010c9d316f66f1632e28a0c40652
 workflow-type: tm+mt
 source-wordcount: '1834'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 以下の情報を使用して、クラウドインフラストラクチャプロジェクト環境のAdobe CommerceのMagento 2 用 Fastly CDN モジュールのトラブルシューティングと管理を行います。 例えば、応答ヘッダー値とキャッシュ動作を調査して、Fastly のサービスとパフォーマンスの問題を解決できます。
 
-プロの実稼動環境およびステージング環境では、[New Relic ログ ](../monitor/log-management.md) を使用して、Fastly CDN および WAF ログデータを表示および分析し、エラーとパフォーマンスの問題のトラブルシューティングを行うことができます。
+プロの実稼動環境およびステージング環境では、[New Relic ログ ](../monitor/log-management.md) を使用して、Fastly CDN およびWAF ログデータを表示および分析し、エラーとパフォーマンスの問題のトラブルシューティングを行うことができます。
 
 >[!NOTE]
 >
@@ -119,7 +119,7 @@ Fastly が 503 タイムアウトエラーを返す場合は、エラーログ�
 
 クラウドインフラストラクチャプロジェクトのAdobe Commerceの apex ドメインとサブドメインが、割り当てられたサービス ID を持つ既存の Fastly アカウントに既に関連付けられている場合、Fastly 設定を更新するまで起動できません。
 
-- 既存の Fastly アカウントの apex とサブドメインの設定を更新します。 [ 複数の Fastly アカウントと割り当てられたドメイン ](fastly.md#domain) を参照してください。
+- 既存の Fastly アカウントの apex とサブドメインの設定を更新します。 [ 複数の Fastly アカウントと割り当てられたドメイン ](fastly.md#multiple-fastly-accounts-and-assigned-domains) を参照してください。
 
 - [Fastly を有効にして設定 ](fastly-configuration.md#enable-fastly-caching) し、[DNS 設定を完了します ](../launch/checklist.md#update-dns-configuration-with-production-settings)
 
