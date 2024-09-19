@@ -3,16 +3,21 @@ title: サービスの設定
 description: クラウドインフラストラクチャー上でAdobe Commerceが使用するサービスを設定する方法について説明します。
 feature: Cloud, Configuration, Services
 exl-id: 48091c10-c53f-4aad-afbe-b4516653bda1
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 0262fca6e94d9815e8af0fb0c026e36fecc1f939
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1046'
 ht-degree: 0%
 
 ---
 
 # サービスの設定
 
-`services.yaml` ファイルは、MySQL、Redis、Elasticsearchまたは OpenSearch など、クラウドインフラストラクチャー上のAdobe Commerceでサポートされ、使用されるサービスを定義します。 外部サービスプロバイダーに登録する必要はありません。 このファイルは、プロジェクトの `.magento` ディレクトリにあります。
+`services.yaml` ファイルは、MySQL、Redis、Elasticsearchまたは OpenSearch など、クラウドインフラストラクチャー上のAdobe Commerceでサポートされ、使用されるサービスを定義します。 外部サービスプロバイダーに登録する必要はありません。
+
+>[!NOTE]
+>
+>`.magento/services.yaml` ファイルは、プロジェクトの `.magento` ディレクトリでローカルに管理されます。 この設定は、必要なサービスバージョンを定義するビルドプロセス中にのみ統合環境でアクセスされ、デプロイメントが完了すると削除されるので、サーバー上では見つかりません。
+
 
 デプロイ スクリプトは、`.magento` ディレクトリの設定ファイルを使用して、設定済みのサービスを環境にプロビジョニングします。 サービスは、`.magento.app.yaml` ファイルの [`relationships`](../application/properties.md#relationships) プロパティに含まれていると、アプリケーションで使用できるようになります。 `services.yaml` ファイルには _type_ と _disk_ の値が含まれています。 サービスタイプは、サービス _name_ と _version_ を定義します。
 
