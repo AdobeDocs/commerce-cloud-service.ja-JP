@@ -3,9 +3,9 @@ title: Fastly サービスの概要
 description: クラウドインフラストラクチャー上のAdobe Commerceに含まれる Fastly サービスが、Adobe Commerce サイトのコンテンツ配信操作を最適化し、安全を確保する上でどのように役立つかを説明します。
 feature: Cloud, Configuration, Iaas, Paas, Cache, Security, Services
 exl-id: dc4500bf-f037-47f0-b7ec-5cd1291f73a1
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: dc331df378074af8a8776a33784b73082a39cf10
 workflow-type: tm+mt
-source-wordcount: '1392'
+source-wordcount: '1426'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ Fastly は、クラウドインフラストラクチャプロジェクト上のA
 
 - **セキュリティ** - Adobe Commerce サイトに対して Fastly サービスを有効にすると、サイトとネットワークを保護するためのその他のセキュリティ機能を使用できるようになります。
 
-   - [Web Application Firewall](fastly-waf-service.md) （WAF） – Managed Web Application Firewall サービスで、PCI に準拠した保護機能により、クラウドインフラストラクチャサイトおよびネットワーク上の実稼動のAdobe Commerceに損害を与える前に、悪意のあるトラフィックをブロックできます。 WAF サービスは、Pro および Starter 実稼動環境でのみ使用できます。
+   - [Web Application Firewall](fastly-waf-service.md) （WAF） – PCI に準拠した保護機能を提供する Managed Web Application Firewall サービスで、クラウドインフラストラクチャサイトおよびネットワーク上の実稼動のAdobe Commerceに損害を与える前に、悪意のあるトラフィックをブロックします。 WAF サービスは、Pro および Starter 実稼動環境でのみ使用できます。
 
    - [Distributed Denial of Service （DDoS）保護 ](#ddos-protection):Ping of Death、Smurf 攻撃、その他の ICMP ベースのフラッド攻撃などの一般的な攻撃に対する組み込みの DDoS 保護。
 
@@ -42,13 +42,13 @@ Fastly は、クラウドインフラストラクチャプロジェクト上のA
 
      Adobe Commerceは、ステージング環境と実稼動環境ごとに、ドメインで検証された Let&#39;s Encrypt SSL/TLS 証明書を提供します。 Adobe Commerceは、Fastly のセットアッププロセス中に、ドメインの検証と証明書のプロビジョニングを完了します。
 
-- **オリジンクローキング** - トラフィックが Fastly WAF をバイパスするのを防ぎ、オリジンサーバーの IP アドレスを非表示にして、直接アクセスや DDoS 攻撃から保護します。
+- **オリジンクローキング** - トラフィックが Fastly WAFをバイパスするのを防ぎ、オリジンサーバーの IP アドレスを非表示にして、ダイレクトアクセスや DDoS 攻撃から保護します。
 
   Cloud infrastructure Pro 実稼働プロジェクトのAdobe Commerceでは、オリジンクロークがデフォルトで有効になっています。 クラウドインフラストラクチャーのスターター実稼動プロジェクトでAdobe Commerceのオリジンクロークを有効にするには、[Adobe Commerce サポートチケット ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) を送信します。 キャッシュを必要としないトラフィックがある場合は、リクエストが [Fastly キャッシュをバイパス ](fastly-vcl-bypass-to-origin.md) できるように Fastly サービス設定をカスタマイズできます。
 
 - **[画像の最適化](fastly-image-optimization.md)** – 画像処理やサイズ変更の負荷を Fastly サービスにオフロードし、サーバーが注文やコンバージョンをより効率的に処理できるようにします。
 
-- **[Fastly CDN および WAF ログ](../monitor/new-relic-service.md#new-relic-log-management)** - Cloud Infrastructure Pro プロジェクトのAdobe Commerceの場合、New Relic ログサービスを使用して、Fastly CDN および WAF ログデータを確認し、分析できます。
+- **[Fastly CDN とWAF ログ](../monitor/new-relic-service.md#new-relic-log-management)** - Cloud Infrastructure Pro プロジェクトのAdobe Commerceの場合、New Relic ログサービスを使用して、Fastly CDN とWAFのログデータを確認および分析できます。
 
 ## Magento 2 用 Fastly CDN モジュール
 
@@ -58,7 +58,9 @@ Adobe Commerce プロジェクトの初期プロビジョニングまたはア�
 
 ## Fastly サービスアカウントと資格情報
 
-クラウドインフラストラクチャプロジェクトのAdobeCommerces では、専用の Fastly アカウントまたはアカウントオーナーは必要ありません。 代わりに、各ステージング環境と実稼動環境には、管理者から Fastly サービスを設定および管理するための一意の Fastly 資格情報（API トークンとサービス ID）があります。 また、Fastly API リクエストを送信するには、資格情報も必要です。
+クラウドインフラストラクチャプロジェクト上のAdobe Commerceには、専用の Fastly アカウントが付与されません。 Fastly サービスは、クラウドに登録された一元的なアカウントで管理され、管理ダッシュボードにはAdobeサポートチームからのみアクセスできます。
+
+代わりに、各ステージング環境と実稼動環境には、Commerce Admin から Fastly サービスを設定および管理するための一意の Fastly 資格情報（API トークンとサービス ID）があります。 Fastly API は、Fastly サービスのアドバンス管理を実行するために使用できます。この場合、リクエストを送信するために資格情報が必要になります。
 
 プロジェクトのプロビジョニング時に、Adobeはプロジェクトをクラウドインフラストラクチャ上のAdobe Commerce用の Fastly サービスアカウントに追加し、Fastly 資格情報をステージング環境と実稼動環境の設定に追加します。 [Fastly 資格情報の取得 ](fastly-configuration.md#get-fastly-credentials) を参照してください。
 
