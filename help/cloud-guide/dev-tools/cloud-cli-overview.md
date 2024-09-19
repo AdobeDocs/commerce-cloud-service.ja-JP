@@ -2,9 +2,9 @@
 title: クラウド CLI
 description: magento-cloud CLI の概要と、クラウドインフラストラクチャプロジェクト上のAdobe Commerceのローカル開発環境を管理する際にどう役立つかを説明します。
 exl-id: 70dddd62-0269-4af4-bd2a-1a4fbf11a131
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: f09c461c3b9cafd773cbed6c9dee1e514415bcde
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---
@@ -12,11 +12,17 @@ ht-degree: 0%
 
 # クラウド CLI
 
-`magento-cloud` CLI ツールを使用すると、開発者およびシステム管理者は、クラウドプロジェクトおよび環境の管理、ルーチンの実行、自動化タスクの実行が可能になります。 `magento-cloud` CLI は、[[!DNL Cloud Console]](../../get-started/cloud-console.md) の機能を拡張します。 ローカルワークステーションに `magento-cloud` CLI をインストールすると、それを使用してクラウドインフラストラクチャー上のAdobe Commerce Starter および Pro 統合環境を管理できます。
+`magento-cloud` CLI ツールを使用すると、開発者やシステム管理者は、クラウドのプロジェクトや環境の管理、ルーチンの実行、自動化タスクのローカル実行が可能になります。 `magento-cloud` CLI は、[[!DNL Cloud Console]](../../get-started/cloud-console.md) の機能を拡張します。 ローカルワークステーションに `magento-cloud` CLI をインストールすると、それを使用してクラウドインフラストラクチャー上のAdobe Commerce Starter および Pro 統合環境を管理できます。
+
+>[!NOTE]
+>
+>これはローカルツールであり、この方法を使用してクラウド環境（読み取り専用）にインストールすることはできません。 **デプロイメントワークフロー** を通じて、クラウド環境にモジュールのみをインストールできます
+>- [Pro デプロイメントワークフロー ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/architecture/pro-develop-deploy-workflow#deployment-workflow)
+>- [ スターターデプロイメントのワークフロー ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/architecture/starter-develop-deploy-workflow)
 
 **`magento-cloud` CLI をインストールするには**:
 
-1. ローカルワークステーションで、を、クラウドプロジェクトを複製するディレクトリおよび [ ファイルシステムの所有者 ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) が _書き込み_ アクセス権を持つディレクトリに変更します。
+1. _ローカルワークステーション_ で、クラウドプロジェクトを複製するディレクトリと、[ ファイルシステムの所有者 ](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) が _書き込み_ アクセス権を持つディレクトリに変更します。
 
 1. `magento-cloud` CLI をインストールします。
 
