@@ -2,9 +2,9 @@
 title: 設定  [!DNL Xdebug]
 description: クラウドインフラストラクチャプロジェクト開発でAdobe Commerceをデバッグするための Xdebug 拡張機能を設定する方法について説明します。
 exl-id: bf2d32d8-fab7-439e-8df3-b039e53009d4
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 7b42174663b79b673ee5af05b794090ddc5bdd75
 workflow-type: tm+mt
-source-wordcount: '1747'
+source-wordcount: '1765'
 ht-degree: 0%
 
 ---
@@ -272,6 +272,12 @@ ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
    ```bash
    ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
    ```
+
+>[!NOTE]
+>
+>`USERNAME@CLUSTER.ent.magento.cloud` の正しい値を取得するには：
+>- 方法 1:magento-cloud CLI:`magento-cloud ssh --all`
+>- 方法 2:Commerce コンソール：https://CONSOLE-URL/ENVIRONMENTで、「`SSH v`」ドロップダウンをクリックします。
 
 **環境 URL を使用したデバッグを開始するには**:
 
