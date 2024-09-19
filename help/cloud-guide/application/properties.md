@@ -3,9 +3,9 @@ title: プロパティ
 description: クラウドインフラストラクチャにビルドおよびデプロイする  [!DNL Commerce]  アプリケーションを設定する際には、プロパティリストを参照として使用します。
 feature: Cloud, Configuration, Build, Deploy, Roles/Permissions, Storage
 exl-id: 58a86136-a9f9-4519-af27-2f8fa4018038
-source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
+source-git-commit: 1d671d7d2b9ef8742f50b23aa56020d82c701fa4
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '816'
 ht-degree: 0%
 
 ---
@@ -141,6 +141,8 @@ disk: 5120
 >[!NOTE]
 >
 >ステージング環境および実稼動環境をプロ環境にする場合は、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) して、アプリケーションの `mounts` 定と `disk` 定を更新する必要があります。 チケットを送信する際には、必要な設定変更を指定し、`.magento.app.yaml` ファイルの更新バージョンを含めます。
+>
+>ステージング環境または実稼動環境で一時的にディスクストレージを増やすことはできません。このプロセスを元に戻すことはできません。
 
 ## `relationships`
 
