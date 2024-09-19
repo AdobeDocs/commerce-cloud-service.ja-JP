@@ -4,9 +4,9 @@ description: Pro アーキテクチャでサポートされる環境について
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 95b033ba430cb5dc74fa654b9d519dfcd5b6d319
+source-git-commit: eccf69d792f5f8bbd32fb24ac731fffa1eeb91ba
 workflow-type: tm+mt
-source-wordcount: '1472'
+source-wordcount: '1511'
 ht-degree: 0%
 
 ---
@@ -66,7 +66,9 @@ Pro プロジェクトでは、`master` ブランチは実稼動環境でアク�
 
 統合環境で最高のパフォーマンスを得るには、次のベストプラクティスに従います。
 
-- カタログサイズを制限
+- カタログサイズの制限 – 参考までに、サンプルデータには約 2,048 個の製品が含まれています。 カタログサイズを約 4,000～5,000 の製品に減らしてみてください。
+
+- 顧客グループの数を減らす – 顧客グループが多すぎると、インデックス作成のパフォーマンスや全体的なパフォーマンスに影響を与える可能性があります。
 
 - 使用を 1 人または 2 人の同時ユーザーに制限する
 
