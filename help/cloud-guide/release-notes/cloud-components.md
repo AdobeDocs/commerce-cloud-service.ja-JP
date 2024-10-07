@@ -3,9 +3,9 @@ title: Commerceのクラウドコンポーネント
 description: クラウドコンポーネントパッケージの最新の改善点のリストを確認します。
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
-source-git-commit: c02dfd2709cdc63ac1630edaa8c89cad5f737ea1
+source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '590'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,18 @@ ht-degree: 0%
 
 <!--Add release notes below-->
 
-## v1.0.14 {#latest}
+## v1.1.0 {#latest}
+
+リリース日：2024 年 10 月 7 日（PT）
+
+- ![ 修正アイコン ](../../assets/fix.svg)**リファクタリングされたコード** – 古い PHP バージョン 7.4、7.3、7.2 および関連ライブラリのサポートを削除しました。<!-- MCLOUD-9278 - -->
+- ![ 修正アイコン ](../../assets/fix.svg)**アップグレードされた Monolog バージョン**—Monolog 3.6.<!-- MCLOUD-12855 - --> のサポートを追加
+
+## v1.0.14
 
 リリース日：2024 年 4 月 8 日（PT）
 
-- ![new icon](../../assets/new.svg) **PHP** — PHP 8.3 のサポートを追加しました。
+- ![new icon](../../assets/new.svg) **PHP**—PHP 8.3 のサポートを追加しました。
 
 ## v1.0.13
 
@@ -121,4 +128,4 @@ ht-degree: 0%
 
 これは [`magento/magento-cloud-components`](https://github.com/magento/magento-cloud-components) パッケージの最初のリリースで、`ece-tools` パッケージバージョン 2002.0.20 以降の新しい依存関係です。
 
-- ![ 新規アイコン ](../../assets/new.svg) 正規表現パターンを使用して、単一ページ、複数ドメインおよび複数ページをキャッシュするように **WARM_UP_PAGES** 環境変数を設定する機能が追加されました。 [Post-deploy variables](../environment/variables-post-deploy.md#warm_up_pages) を参照してください。<!--MAGECLOUD-3258-->
+- ![ 新規アイコン ](../../assets/new.svg) 正規表現パターンを使用して、単一ページ、複数ドメインおよび複数ページをキャッシュするように **WARM_UP_PAGES** 環境変数を設定する機能が追加されました。 [ デプロイ後の変数 ](../environment/variables-post-deploy.md#warm_up_pages) を参照してください。<!--MAGECLOUD-3258-->

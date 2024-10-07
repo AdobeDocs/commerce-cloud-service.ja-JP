@@ -2,11 +2,11 @@
 title: Commerceのクラウドパッチ
 description: クラウドパッチパッケージの最新の改善点のリストを確認します。
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-05-21T00:00:00Z
+last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: ae6b511b-a37d-4776-9a5e-ad7d9f9f6611
-source-git-commit: 61c42a1bd1d5a28f90b8756032ee6f45be4565b2
+source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
 workflow-type: tm+mt
-source-wordcount: '2208'
+source-wordcount: '2275'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,15 @@ Cloud Patches for Commerce パッケージは、ECE-Tools パッケージの依�
 
 <!--Add release notes below-->
 
-## v1.0.27 {#latest}
+## v1.1.0 {#latest}
+
+リリース日：2024 年 10 月 7 日（PT）
+
+- ![ 修正アイコン ](../../assets/fix.svg)**リファクタリングされたコード** – 古い PHP バージョン （7.4、7.3、7.2）および関連ライブラリのサポートを削除しました。<!-- MCLOUD-9278 - -->
+- ![ 修正アイコン ](../../assets/fix.svg)**アップグレードされた Monolog バージョン**—Monolog 3.6.<!-- MCLOUD-12855 - --> のサポートを追加
+- ![fix icon](../../assets/fix.svg)**Patch for Application Server** - GraphQL Application Server の既知の問題を解決します。 特に、バージョン 2.4.7 の `CatalogGraphQl\\Model\\Config\\AttributeReader` には、古い属性の設定に基づいて応答を取得するGraphQL リクエストを引き起こす可能性があるバグが含まれていまし <!-- ACPT-1876 -->。
+
+## v1.0.27
 
 リリース日：2024 年 5 月 21 日（PT）
 

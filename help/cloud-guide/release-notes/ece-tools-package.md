@@ -2,11 +2,11 @@
 title: ECE-Tools リリースノート
 description: ECE-Tools パッケージの最新の改善点のリストを確認してください。
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-05-21T00:00:00Z
+last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: a464b940-c56e-4a7c-9948-559539e25361
-source-git-commit: 923e2114270df22e134e0676ac97f84d770bb226
+source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
 workflow-type: tm+mt
-source-wordcount: '2929'
+source-wordcount: '2990'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,16 @@ ht-degree: 0%
 
 <!--Add release notes below-->
 
-## v2002.1.19 {#latest}
+## v2002.2.0 {#latest}
+
+リリース日：2024 年 10 月 7 日（PT）
+
+- ![ 新しいアイコン ](../../assets/new.svg)**MariaDB 11.4**- MariaDB 11.4 のサポートを追加しました。
+- ![ 修正アイコン ](../../assets/fix.svg)**リファクタリングされたコード** – 古い PHP バージョン 7.4、7.3、7.2 および関連ライブラリのサポートを削除しました。<!-- MCLOUD-9278 -->
+- ![ 修正アイコン ](../../assets/fix.svg)**アップグレードされた Monolog バージョン** Monolog 3.6.<!-- MCLOUD-12855 --> のサポートが追加されました
+- ![fix icon](../../assets/fix.svg)**RabbitMQ、MariaDB、PHP のバリデーター** – 誤ったバージョンのサービスに関して誤解を招くようなメッセージを表示していたバリデーターを修正しました。
+
+## v2002.1.19
 
 リリース日：2024 年 5 月 21 日（PT）
 
@@ -40,7 +49,7 @@ ht-degree: 0%
 リリース日：2024 年 4 月 8 日（PT）
 
 - ![new icon](../../assets/new.svg) **PHP** — PHP 8.3 のサポートを追加しました。
-- ![ 修正アイコン ](../../assets/fix.svg) バリデーター – EOL バリデーターを更新しました。
+- ![ 修正アイコン ](../../assets/fix.svg)**バリデーター** - EOL バリデーターを更新しました。
 
 ## v2002.1.17
 
