@@ -1,14 +1,14 @@
 ---
-source-git-commit: a58ad3254cb00a8fcafd11f1541f55ea86ad18eb
+source-git-commit: f2bf3f597aafa19fc4af0974523a8307a1f37b8e
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '4030'
 ht-degree: 0%
 
 ---
 # ece-tools
 
 <!-- The template to render with above values -->
-**バージョン**:2002.1.19
+**バージョン**:2002.2.0
 
 このリファレンスには、`ece-tools` のコマンド ライン ツールで使用できる 34 のコマンドが含まれています。
 最初のリストは、クラウドインフラストラクチャ上のAdobe Commerceで `ece-tools list` コマンドを使用して自動生成されます。
