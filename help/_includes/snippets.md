@@ -1,7 +1,7 @@
 ---
-source-git-commit: 762ce3cb6268401b0f5fae5b2280a870aa9c83a5
+source-git-commit: a87039d2e96e39d6d8d19673c5e0d52de8b844a4
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -43,11 +43,12 @@ ht-degree: 0%
 ## プロサービスサポート {#pro-update-service}
 
 >[!TIP]
+>
 >Pro プロジェクトの場合、`Staging` および `Production` 環境でのみ [ サービス ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) をインストールまたは更新するには、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html) する必要があります。
 >
 >必要なサービスの変更を示し、更新した `.magento.app.yaml` ファイルと `services.yaml` ファイルを含め、PHP バージョンをチケットに記載します。 PHP のバージョン、拡張機能、または環境設定のセルフサービスでの変更については、[ アプリケーション設定 _の ](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html)PHP 設定_ を参照してください。
 >
->_ライブ_ 実稼動環境（**Pro のみ**）への変更の場合、クラウドインフラストラクチャチームがリソースをマーシャリングし、安全なアップグレードを実施するのに十分な時間を確保できるように、少なくとも 48 時間の注意事項を提供する必要があります。 通知期間には、週末は含まれません。 例えば、サービスのアップグレードを月曜日に行う場合は、前水曜日までにリクエストを送信する必要があります。
+>実稼動環境（**Pro のみ**）に対する変更の場合は、少なくとも 48 時間の通知が必要です。 これにより、クラウドインフラストラクチャチームは、リソースをマーシャリングし、安全なアップグレードを実行するのに十分な時間を確保できます。 通知期間は、インフラストラクチャチームがリクエストを承認し、週末を除くアップグレードをスケジュールしたときに開始されます。 例えば、月曜日にサービスアップグレードを完了するには、水曜日までに予定されているアップグレードの確認を受け取る必要があります。 ピーク時の要求期間では、要求の処理により多くの時間がかかる場合があります。
 
 ## Pro バックアップ {#pro-backups}
 
