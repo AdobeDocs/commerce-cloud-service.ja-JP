@@ -3,7 +3,7 @@ title: リダイレクト
 description: クラウドインフラストラクチャプロジェクトでAdobe Commerceのリダイレクトルールを管理する方法について説明します。
 feature: Cloud, Routes
 exl-id: 7089a790-6341-4443-990a-df42091f0680
-source-git-commit: 649c11b111aa9c9105e54908bf9c6f48741f10e4
+source-git-commit: 0f9a8cce6e0ed0f4dd6a902b6e4f7d3cfed9925d
 workflow-type: tm+mt
 source-wordcount: '646'
 ht-degree: 0%
@@ -82,7 +82,7 @@ http://{default}/:
 http://{default}/:
     type: upstream
     redirects:
-    paths:
+      paths:
         "/regexp/(.*)/match": { to: "http://example.com/$1", regexp: true }
 ```
 
@@ -96,7 +96,7 @@ http://{default}/:
 http://{default}/:
     type: upstream
     redirects:
-    paths:
+      paths:
         "/from": { to: "https://{default}/to", prefix: true }
 ```
 
@@ -116,7 +116,7 @@ http://{default}/:
 http://{default}/:
     type: upstream
     redirects:
-    paths: "/from": { to: "https://{default}/to", append_suffix: false }
+      paths: "/from": { to: "https://{default}/to", append_suffix: false }
 ```
 
 この設定は次のように動作します。
@@ -134,7 +134,7 @@ http://{default}/:
     type: upstream
     redirects:
     expires: 1d
-    paths:
+      paths:
         "/from": { to: "https://example.com/" }
         "/here": { to: "https://example.com/there", expires: "2w" }
 ```
