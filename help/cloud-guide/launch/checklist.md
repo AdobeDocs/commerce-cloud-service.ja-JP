@@ -2,7 +2,7 @@
 title: Launch チェックリスト
 description: サイトの起動のチェックリスト項目を確認します。
 exl-id: 4525742e-18c5-40d1-975d-00ba3f3a51a0
-source-git-commit: 5b0a691a4355f5eda31d42cd3da9925439dfb510
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '1104'
 ht-degree: 0%
@@ -105,7 +105,7 @@ Adobeは、各環境に対して SSL/TLS 証明書を暗号化しましょう提
 
 - [送信メールのテストを完了しました](../project/outgoing-emails.md)
 
-- [ 管理者資格情報とベース管理者 URL のセキュリティで保護された設定 ](https://docs.magento.com/user-guide/stores/security-admin.html)
+- [ 管理者資格情報とベース管理者 URL のセキュリティで保護された設定 ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
 - [Web 用にすべての画像を最適化](../cdn/fastly-image-optimization.md)
 
@@ -137,13 +137,13 @@ Adobeは、各環境に対して SSL/TLS 証明書を暗号化しましょう提
 
 - [セキュリティスキャンの設定](overview.md#set-up-the-security-scan-tool)
 
-- [ 管理者ユーザーのセキュリティで保護された設定 ](https://docs.magento.com/user-guide/stores/security-admin.html)
+- [ 管理者ユーザーのセキュリティで保護された設定 ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
-- [ 管理者 URL のセキュア設定 ](https://docs.magento.com/user-guide/stores/store-urls-custom-admin.html)
+- [ 管理者 URL ]https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/site-store/store-urls#use-a-custom-admin-urlのセキュリティで保護された構成）
 
 - [クラウドインフラストラクチャプロジェクトでAdobe Commerceを終了したユーザーをすべて削除](../project/user-access.md)
 
-- [ 二要素認証の設定 ](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
+- [ 二要素認証の設定 ](https://developer.adobe.com/commerce/testing/functional-testing-framework/two-factor-authentication/)
 
 ## パフォーマンス監視
 

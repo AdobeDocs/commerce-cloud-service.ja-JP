@@ -3,7 +3,7 @@ title: ストア設定のベストプラクティス
 description: クラウドインフラストラクチャー上のAdobe Commerceにストアを設定する際のベストプラクティスについては、こちらを参照してください。
 feature: Cloud, Best Practices
 exl-id: 01f528bd-74c2-42e7-8e77-7e6f57a40ef4
-source-git-commit: 5b0a691a4355f5eda31d42cd3da9925439dfb510
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '1087'
 ht-degree: 0%
@@ -58,7 +58,7 @@ _プロモーション_ 割引、1 回限りのオファー、クーポン、初
 
 次に、最初の注文のみの割引に対する価格ルールを作成する例を示します。 この割引の場合、次の操作を行います。
 
-* [ 顧客セグメント ](https://docs.magento.com/user-guide/marketing/customer-segment-price-rule.html) を条件として価格ルールを作成します：合計注文数が 1 未満
+* [ 顧客セグメント ](https://experienceleague.adobe.com/en/docs/commerce-admin/customers/segments/customer-segment-price-rule) を条件として価格ルールを作成します：合計注文数が 1 未満
 * この顧客セグメントを条件として買い物かごルールに追加
 * オプション – 条件とルールを追加して、特定の SKU や製品のカテゴリにフォーカスされた購入の割引を適用します
 

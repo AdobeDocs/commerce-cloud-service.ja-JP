@@ -4,9 +4,9 @@ description: クラウドパッチパッケージの最新の改善点のリス�
 recommendations: noDisplay, catalog
 last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: ae6b511b-a37d-4776-9a5e-ad7d9f9f6611
-source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '2275'
+source-wordcount: '2256'
 ht-degree: 0%
 
 ---
@@ -154,7 +154,7 @@ Adobe Commerce 2.3.3-p1 以降のバージョン用の重要なパッチ：
 
 Adobe Commerce 2.4.3 および 2.3.7-p1 の重要なパッチ：
 
-- **API レート制限の問題** – このパッチは、配列に 20 項目を超える項目を含むリクエストを Web API が処理できなかったデフォルトのレート制限を修正します。 このパッチは、レート制限のデフォルト値を引き上げます。 Adobe Commerce [2.4.3 リリースノート ](https://devdocs.magento.com/guides/v2.4/release-notes/commerce-2-4-3.html#apply-mc-43048__set_rate_limits__243patch-to-address-issue-with-api-rate-limiting) および [2.3.7 リリースノート ](https://devdocs.magento.com/guides/v2.3/release-notes/2-3-7-p1.html#apply-mc-43048__set_rate_limits__237-p1patch-to-address-issue-with-api-rate-limiting).<!-- MC-43048 --> を参照してください。
+- **API レート制限の問題** – このパッチは、配列に 20 項目を超える項目を含むリクエストを Web API が処理できなかったデフォルトのレート制限を修正します。 このパッチは、レート制限のデフォルト値を引き上げます。 Adobe Commerce [2.4.3 リリースノート ](https://experienceleague.adobe.com/en/docs/commerce-operations/release/notes/adobe-commerce/2-4-3#apply-mc-43048__set_rate_limits__243patch-to-address-issue-with-api-rate-limiting).<!-- MC-43048 --> を参照してください。
 
 ## v1.0.11
 
@@ -222,7 +222,7 @@ Adobe Commerce 2.4.3 および 2.3.7-p1 の重要なパッチ：
 
 リリース日：2020 年 6 月 26 日（PT）
 
-- **Redis パフォーマンスの向上** - Adobe Commerce バージョン 2.3.3 および 2.3.4 に Redis 最適化機能を追加しました。これらの修正は、Adobe Commerce バージョン 2.3.5 リリースに含まれていました。 [2}Adobe Commerce 2.3.5 リリースノート ](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html#performance-boosts) パフォーマンスブースト _を参照してください。<!--MCLOUD-5771-->_
+- **Redis パフォーマンスの向上** - Adobe Commerce バージョン 2.3.3 および 2.3.4 に Redis 最適化機能を追加しました。これらの修正は、Adobe Commerce バージョン 2.3.5 リリースに含まれていました。<!--MCLOUD-5771-->
 
 - **New Relic ログのエンリッチメント** - Commerce バージョン 1.0.4 のクラウドコンポーネントで導入されたNew Relic ログ機能の強化をサポートするために必要な Monolog ProcessorInterface を追加します。このパッチは、Adobe Commerce 2.1.x をデプロイするために必要です。パッチが適用されていない場合、ビルドは `di:compile` のプロセス中に失敗します。<!--MCLOUD-6029-->
 

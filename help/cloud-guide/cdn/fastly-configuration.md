@@ -3,9 +3,9 @@ title: Fastly サービスの設定
 description: Adobe Commerce プロジェクトに Fastly サービスをセットアップし設定する方法について説明します。
 feature: Cloud, Configuration, Iaas, Cache, Security
 exl-id: c53ff3bd-3df2-45fb-933e-d3b29f7edf4e
-source-git-commit: 8a0523f1714b6ea41887e99b5c31294cf5e5255e
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '1961'
+source-wordcount: '1960'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Fastly は、クラウドインフラストラクチャー上のAdobe Commerceのステージング環境および実稼動環境で必要です。
 
-Fastly は、Varnish と連携して高速キャッシュ機能と、静的アセット用の [ コンテンツ配信ネットワーク ](https://glossary.magento.com/content-delivery-network) （CDN）を提供します。 また、Fastly は、サイトとクラウドインフラストラクチャを保護する web アプリケーションファイアウォール（WAF）も提供しています。 悪意のあるトラフィックや攻撃からサイトやクラウドインフラストラクチャを保護するには、すべての受信サイトトラフィックを Fastly 経由でルーティングします。
+Fastly は、Varnish と連携して高速キャッシュ機能と、静的アセット用のコンテンツ配信ネットワーク（CDN）を提供します。 また、Fastly は、サイトとクラウドインフラストラクチャを保護するための web アプリケーションファイアウォール（WAF）も提供しています。 悪意のあるトラフィックや攻撃からサイトやクラウドインフラストラクチャを保護するには、すべての受信サイトトラフィックを Fastly 経由でルーティングします。
 
 >[!NOTE]
 >

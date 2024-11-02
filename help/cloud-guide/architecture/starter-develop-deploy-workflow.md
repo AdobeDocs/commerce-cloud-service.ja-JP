@@ -3,7 +3,7 @@ title: スタータープロジェクトワークフロー
 description: スターター開発ワークフローとデプロイメントワークフローの使用方法を説明します。
 feature: Cloud, Paas
 exl-id: f334047a-1e0d-45c7-bf96-5c2964741951
-source-git-commit: 08f43a3b0a50cdb2a5e8a45bd2e2448bc6dbca2b
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '2103'
 ht-degree: 0%
@@ -105,9 +105,9 @@ magento-cloud environment:branch <environment-name> <parent-environment-ID>
 設定に関する最適な情報については、Adobe Commerceのドキュメントとインストールされている拡張機能を参照してください。 開始に役立つリンクとアイデアを次に示します。
 
 - クラウド内の特定のベストプラクティスに関する [ ストア設定のベストプラクティス ](../store/best-practices.md)
-- ストア管理アクセス、名前、言語、通貨、ブランディング、サイト、ストア表示などの [ 基本設定 ](https://docs.magento.com/user-guide/configuration/configuration-basic.html)
-- [ テーマ ](https://docs.magento.com/user-guide/design/design-theme.html):CSS やレイアウトを含むサイトやストアのルックアンドフィール用
-- 役割、ツール、通知およびデータベースの暗号化キーの [ システム設定 ](https://docs.magento.com/user-guide/system/system.html)
+- ストア管理アクセス、名前、言語、通貨、ブランディング、サイト、ストア表示などの [ 基本設定 ](https://experienceleague.adobe.com/en/docs/commerce-admin/start/setup/store-details)
+- [ テーマ ](https://experienceleague.adobe.com/en/docs/commerce-admin/content-design/content-menu#design-features):CSS やレイアウトを含むサイトやストアのルックアンドフィール用
+- 役割、ツール、通知およびデータベースの暗号化キーの [ システム設定 ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/guide-overview)
 - ドキュメントを使用した拡張機能の設定
 
 ストアの設定だけでなく、複数のサイトやストア、設定されたサービスなどをさらに設定できます。 詳しくは [ ストアの設定 ](../store/overview.md) を参照してください。
@@ -165,7 +165,7 @@ Adobe Commerce バージョン 2.2 以降を使用している場合、Configura
 
 - [Adobe Commerce暗号化キーを使用して ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html) お客様およびストアデータの保護されたバックアップを書き出す場合は、サポートユーティリティを実行し、CLI コマンドを実行します（推奨）。
 
-- [ データ収集 ](https://docs.magento.com/user-guide/system/support-data-collector.html) データを生成および書き出すためのツール
+- [ データ収集 ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/support#data-collector) データを生成および書き出すためのツール
 
 このデータを移行するには、[ 静的ファイルおよびデータの移行およびデプロイ ](../deploy/staging-production.md#migrate-static-files) を参照してください。
 

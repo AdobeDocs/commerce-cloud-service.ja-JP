@@ -2,9 +2,9 @@
 title: システム固有の設定の管理例
 description: クラウドインフラストラクチャ環境ですべてのAdobe Commerceでストア設定を管理および同期する方法の例を確認します。
 hidefromtoc: true
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '864'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 例えば、次の設定が必要な場合があります。
 
-* 統合環境で [ ロケール ](https://glossary.magento.com/locale) および静的ファイル最適化設定を無効にします
+* 統合環境でロケールと静的ファイル最適化設定を無効にする
 * ステージング環境および実稼動環境での静的ファイル最適化の有効化
 * ステージング環境および実稼動環境での Fastly の設定に、それぞれの特定の資格情報を使用する
 
@@ -56,7 +56,7 @@ _静的ファイル最適化_ とは、JavaScriptとカスケードスタイル�
    ![ ロケールの変更 ](../../assets/locale-options.png)
 
 1. 「**設定を保存**」をクリックします。
-1. プロンプトが表示されたら、[ キャッシュをフラッシュ ](https://docs.magento.com/user-guide/system/cache-management.html) します。
+1. プロンプトが表示されたら、[ キャッシュをフラッシュ ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management) します。
 1. 管理者からログアウトします。
 
 ## 値をエクスポートし、config.php をローカルシステムに転送します。
@@ -159,7 +159,7 @@ git add app/etc/config.php && git commit -m "Add system-specific configuration" 
 1. 右側のウィンドウで、「**JavaScript設定**」を展開します。
 1. **JavaScript ファイルを結合** リストで、「はい **をクリックし** す。
 1. 「**設定を保存**」をクリックします。
-1. プロンプトが表示されたら、[ キャッシュをフラッシュ ](https://docs.magento.com/user-guide/system/cache-management.html) します。
+1. プロンプトが表示されたら、[ キャッシュをフラッシュ ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management) します。
 1. 管理者からログアウトします。
 
 dump コマンドを再度実行すると、新しい設定がファイルに追加されます。

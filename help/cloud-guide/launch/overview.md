@@ -2,7 +2,7 @@
 title: サイトの起動
 description: サイトのローンチの準備を開始する方法を説明します。
 exl-id: a7b3f260-b76e-4220-b521-699548a9928a
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '902'
 ht-degree: 0%
@@ -43,7 +43,7 @@ Adobe Commerce on cloud infrastructure サブスクリプションの一環と�
 
 >[!NOTE]
 >
->Let’s Encrypt 証明書を使用する代わりに、会社に独自の拡張検証 SSL 証明書をデプロイする場合は、CTA または [Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) にお問い合わせください。
+>Let’s Encrypt 証明書を使用する代わりに、会社に独自の拡張検証 SSL 証明書をデプロイする場合は、CTAまたは [Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) にお問い合わせください。
 
 ## セキュリティスキャンツールの設定
 
@@ -65,7 +65,7 @@ Adobe Commerce on cloud infrastructure サブスクリプションの一環と�
 
 - セキュリティ更新プログラムとサイト固有の通知を受信する
 
-セキュリティスキャンツールの設定と使用については、[ ユーザーガイド ](https://docs.magento.com/user-guide/magento/security-scan.html) を参照してください。 通常は、ユーザー受け入れテスト（UAT）を開始する際に、このツールの使用を開始します。
+セキュリティスキャンツールの設定と使用については、[ ユーザーガイド ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-scan) を参照してください。 通常は、ユーザー受け入れテスト（UAT）を開始する際に、このツールの使用を開始します。
 
 スキャンする各サイトは、「Security Scan」タブを使用して登録する必要があります。 スキャンを開始する前に、登録プロセス中に免責事項に同意する必要があります。 スケジュールを制御し、各スキャンが完了したときにユーザーが通知を受け取ることを許可します。 スキャンのスケジュールを特定の繰り返し日時に設定することも、必要に応じてスキャンをオンデマンドで実行することもできます。
 
