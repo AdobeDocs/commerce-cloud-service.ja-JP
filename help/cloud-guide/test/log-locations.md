@@ -3,7 +3,7 @@ title: ログの表示と管理
 description: クラウドインフラストラクチャで使用できるログファイルのタイプと、それらのログファイルの場所について説明します。
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 633e5e75ae23a933d15a0faedae22092797d5d0b
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -208,7 +208,7 @@ type: warning
 
 ### アーカイブしたログファイル
 
-アプリケーションログは 1 日に 1 回の頻度で圧縮およびアーカイブされ、1 年間保持されます。 圧縮ログには、`Number of Days Ago + 1` に対応する一意の ID を使用して名前が付けられます。 例えば、Pro 実稼動環境では、過去 21 日間の PHP アクセスログが次のように保存され、名前が付けられます。
+アプリケーションログは 1 日に 1 回の頻度で圧縮およびアーカイブされ、**30 日間** 保持されます。 圧縮ログには、`Number of Days Ago + 1` に対応する一意の ID を使用して名前が付けられます。 例えば、Pro 実稼動環境では、過去 21 日間の PHP アクセスログが次のように保存され、名前が付けられます。
 
 ```
 /var/log/platform/<project-ID>/php.access.log.22.gz
@@ -242,4 +242,4 @@ type: warning
 
 実稼動環境およびステージング環境では、プロジェクトと統合された [New Relic ログ管理 ](../monitor/log-management.md) を使用して、クラウドインフラストラクチャプロジェクト上のAdobe Commerceに関連付けられたすべてのログからの集計ログデータを管理します。
 
-New Relic ログアプリケーションは、クラウドインフラストラクチャの実稼動環境とステージング環境でAdobe Commerceをトラブルシューティングおよび監視するための一元的なログ管理ダッシュボードを提供します。 また、このダッシュボードからは、Fastly CDN、画像の最適化、web アプリケーションファイアウォール（WAF）の各サービスのログデータにもアクセスできます。 [New Relic サービス ](../monitor/new-relic-service.md) を参照してください。
+New Relic ログアプリケーションは、クラウドインフラストラクチャの実稼動環境とステージング環境でAdobe Commerceをトラブルシューティングおよび監視するための一元的なログ管理ダッシュボードを提供します。 また、Fastly CDN、Image Optimization、Web Application Firewall （WAF）の各サービスのログデータにもアクセスできます。 [New Relic サービス ](../monitor/new-relic-service.md) を参照してください。
