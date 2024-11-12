@@ -3,9 +3,9 @@ title: サイトマップと検索エンジンロボットを追加
 description: クラウドインフラストラクチャー上でサイトマップと検索エンジンロボットをAdobe Commerceに追加する方法を説明します。
 feature: Cloud, Configuration, Search, Site Navigation
 exl-id: b98f43fa-1878-466d-8ea0-1e7207af8b60
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: fda88fdf03afa4a59f40e52802c16b6136d8716f
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
@@ -117,10 +117,12 @@ VCL スニペットは `http://domain.com/robots.txt` をルートし、`pub/med
 
 ### 検索エンジンによるインデックス作成の設定
 
-カスタマイズを有効 `robots.txt` するには、プロジェクト設定で [ 検索エンジンによるインデックス作成を有効にする **オプション`<environment-name>`** 有効にする必要があります。
+実稼動環境でカスタマイズ `robots.txt` アクティブ化するには、プロジェクト設定の `<environment-name>`**オプションで** 検索エンジンによるインデックス作成を有効にする必要があります。
 
 ![[!DNL Cloud Console] を使用した環境の管理 ](../../assets/robots-indexing-by-search-engine.png)
 
 >[!NOTE]
 >
->PWA Studio許可リストに加えるを使用していて、設定済みの `robots.txt` ファイルにアクセスできない場合は、[Front Name](https://github.com/magento/magento2-upward-connector#front-name-allowlist)**Stores**/設定/**General**/**Web**/UPWARDPWA設定）に `robots.txt` を追加します。
+>- 検索エンジンによるインデックス作成は、実稼動環境でのみ有効にできますが、下位環境では有効にできません。
+>
+>- PWA Studio許可リストに加えるを使用していて、設定済みの `robots.txt` ファイルにアクセスできない場合は、[Front Name](https://github.com/magento/magento2-upward-connector#front-name-allowlist)**Stores**/設定/**General**/**Web**/UPWARDPWA設定）に `robots.txt` を追加します。
