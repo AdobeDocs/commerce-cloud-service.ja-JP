@@ -2,9 +2,9 @@
 title: SendGrid メールサービス
 description: クラウドインフラストラクチャ上のAdobe Commerce用 SendGrid メールサービスと、DNS 設定をテストする方法について説明します。
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: b5c8dc062a940e9e202d9bd4cca6901b07109e07
+source-git-commit: d07447fa8390794c3d019d513f23321fe02e41a1
 workflow-type: tm+mt
-source-wordcount: '1273'
+source-wordcount: '1317'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ SendGrid SMTP プロキシは、受信メールを受信するための汎用的
 
 >[!TIP]
 >
->[ オンボーディング UI](https://cloud.magento.com) でアカウントの SendGrid の詳細を確認し、**プロジェクトの詳細**/**ホスティング情報** タブを選択します。
+>ストア/設定/一般に移動して、管理画面で適切なストアメールアドレスを設定していることを確認し、配信品質とドメインの検証に関する問題を回避します。 **[!UICONTROL Use Default]** のチェックボックスをオフにして、デフォルト値を所有するドメインに置き換える必要があります。 gmail.comやoutlook.comなどのパブリック/共有ドメインのメールサービスは、Sendgrid を介してメールを送信する際に、送信者のメールアドレスとして設定しないでください。
 
 ## メールを有効または無効にする
 
