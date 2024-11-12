@@ -3,9 +3,9 @@ title: Commerceのバージョンのアップグレード
 description: クラウドインフラストラクチャプロジェクトでAdobe Commerceのバージョンをアップグレードする方法を説明します。
 feature: Cloud, Upgrade
 exl-id: 87821007-4979-4a20-940b-aa3c82c192d8
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 8851db6ee962bf1a65b31d344e2bd71065e9340d
 workflow-type: tm+mt
-source-wordcount: '1439'
+source-wordcount: '1547'
 ht-degree: 0%
 
 ---
@@ -286,6 +286,19 @@ Adobe Commerceのコードベースを新しいバージョンにアップグレ
    ```bash
    composer update
    ```
+
+1. 現在適用されているパッチを確認します。
+
+   - `m2-hotfixes` ディレクトリにパッチがインストールされている場合は、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#support-case) し、Adobe Commerce サポートに連絡して、新しいバージョンに適用可能なパッチを確認します。 該当しないパッチを `m2-hotfixes` ディレクトリから削除します。
+
+   - `.magento.env.yaml` ファイルに [ 品質向上パッチ ] が適用されている場合は、そのパッチを新しいバージョンにも適用できるかどうかを確認します。 `.magento.env.yaml` ファイルの `QUALITY_PATCHES` セクションから、適用できないパッチを削除します。
+
+   **方法 1**:[ 品質パッチのリリースノートで該当するバージョンを確認してください ](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/quality-patches-tool/release-notes)
+
+   **方法 2**:[ 使用可能なパッチおよびステータスの表示 ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/develop/upgrade/apply-patches#view-available-patches-and-status)
+
+   **方法 3**:[ パッチの検索 ](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html?lang=en)
+
 
 1. コードの変更を追加、コミットおよびプッシュします。
 
