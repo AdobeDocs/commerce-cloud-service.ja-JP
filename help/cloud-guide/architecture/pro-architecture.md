@@ -4,7 +4,7 @@ description: Pro アーキテクチャでサポートされる環境について
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: a1e7674b99d7e289531268e1a298f61344c7bd8f
+source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
 workflow-type: tm+mt
 source-wordcount: '1573'
 ht-degree: 0%
@@ -120,6 +120,8 @@ Pro プロジェクトでは、`master` ブランチは実稼動環境でアク�
 - 実稼動サイトの立ち上げ後、主にステージング環境を使用して、実稼動に不可欠なバグ修正のためのパッチをテストします。
 
 - `staging` 分岐から分岐を作成することはできません。 代わりに、`integration` ブランチから `staging` ブランチにコードの変更をプッシュします。
+
+{{second-staging}}
 
 ### 実稼動環境
 

@@ -3,9 +3,9 @@ user-guide-title: クラウドインフラストラクチャー上の Commerce �
 user-guide-description: クラウドインフラストラクチャー上で Adobe Commerce アプリケーションを管理する方法について説明します。
 product: magento
 feature: Cloud
-source-git-commit: ebd434e488b666d34df9562825a612b33495e44d
+source-git-commit: 54b9101d3cba535a0e2c83e482aaebe261e3bcce
 workflow-type: tm+mt
-source-wordcount: '353'
+source-wordcount: '356'
 ht-degree: 7%
 
 ---
@@ -82,6 +82,7 @@ ht-degree: 7%
       + [Xdebug](test/debug.md)
       + [サンプルデータ](test/sample-data.md)
       + [ステージングと実稼動](test/staging-and-production.md)
+      + [2 つ目のステージング環境](test/second-staging.md)
    + [PrivateLink サービス](development/privatelink-service.md)
    + [保護ブロック](development/protective-block.md)
    + [環境を復元](development/restore-environment.md)
@@ -118,7 +119,7 @@ ht-degree: 7%
          + [グローバル](environment/variables-global.md)
          + [ビルド](environment/variables-build.md)
          + [デプロイ](environment/variables-deploy.md)
-         + [Post-deploy](environment/variables-post-deploy.md)
+         + [デプロイ後](environment/variables-post-deploy.md)
       + 通知の設定 {#log}
          + [通知](environment/set-up-notifications.md)
          + [ログハンドラー](environment/log-handlers.md)

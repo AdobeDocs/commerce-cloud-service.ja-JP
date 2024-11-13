@@ -3,7 +3,7 @@ title: プロプロジェクトワークフロー
 description: Pro 開発ワークフローとデプロイメントワークフローの使用方法を説明します。
 feature: Cloud, Iaas, Paas
 exl-id: 103e90d5-2ef2-4fef-845c-439344666b00
-source-git-commit: 08f43a3b0a50cdb2a5e8a45bd2e2448bc6dbca2b
+source-git-commit: c6d4128792e688485e021bad75d9814a9f4d3b4f
 workflow-type: tm+mt
 source-wordcount: '782'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Pro プロジェクトには、グローバル `master` ブランチを持つ単
 ステージングは、実稼動環境にできるだけ近い場所ですべてのサービスと設定を提供する、実稼動前の環境です。 コードの変更を常に `integration` 環境から `staging` 環境にプッシュして、すべてのサービスで徹底的なテストを実行できるようにします。 ステージング環境を初めて使用する場合は、[Fastly CDN](../cdn/fastly.md) や [New Relic](../monitor/new-relic-service.md) などのサービスを設定する必要があります。 サンドボックスまたはテスト資格情報を使用して、支払いゲートウェイ、送料、通知、その他の重要なサービスを設定します。
 
 ストアが実稼動環境に対応できる状態になるまで、すべてのサービスを徹底的にテストし、パフォーマンステストツールを検証し、管理者およびお客様として UAT テストを実行することをお勧めします。 [ ストアのデプロイ ](../deploy/staging-production.md) を参照してください。
+
+{{second-staging}}
 
 ### 実稼動に結合
 
