@@ -2,9 +2,9 @@
 title: 設定  [!DNL Xdebug]
 description: クラウドインフラストラクチャプロジェクト開発でAdobe Commerceをデバッグするための Xdebug 拡張機能を設定する方法について説明します。
 exl-id: bf2d32d8-fab7-439e-8df3-b039e53009d4
-source-git-commit: 7b42174663b79b673ee5af05b794090ddc5bdd75
+source-git-commit: 83984f9e30402cda7af29ca5095a251ff835b4a1
 workflow-type: tm+mt
-source-wordcount: '1765'
+source-wordcount: '1920'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 - [ブランチでの作業によるファイル更新のプッシュ](#get-started-with-a-branch)
 - [環境  [!DNL Xdebug]  有効化](#enable-xdebug-in-your-environment)
-- [IDE の設定](#configure-phpstorm)
+- [PHPStorm サーバーの構成](#configure-phpstorm-server)
 - [ポート転送の設定](#set-up-port-forwarding)
 
 ### ブランチの基本を学ぶ
@@ -41,6 +41,8 @@ ht-degree: 0%
 ### お使いの環境で Xdebug を有効にする
 
 [!DNL Xdebug] を有効にすると、すべてのスターター環境と Pro 統合環境に直接適用できます。 この設定手順は、実稼動環境とステージング環境には必要ありません。 [ ステージング環境および実稼動環境でのデバッグ ](#debug-for-pro-staging-and-production) を参照してください。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437407?learn=on)
 
 プロジェクトで [!DNL Xdebug] を有効にするには、`.magento.app.yaml` ファイルの `runtime:extensions` セクションに `xdebug` を追加します。
 
@@ -65,11 +67,11 @@ ht-degree: 0%
 1. 変更を追加、コミットおよびプッシュして、環境を再デプロイします。
 
    ```bash
-   git add -A
+   git add .magento.app.yaml
    ```
 
    ```bash
-   git commit -m "Add xdebug"
+   git commit -m "add xdebug"
    ```
 
    ```bash
@@ -78,7 +80,9 @@ ht-degree: 0%
 
 スターター環境と Pro 統合環境にデプロイすると、[!DNL Xdebug] が使用できるようになりました。 IDE の設定を続行します。 PhpStorm については、[PhpStorm の設定 ](#configure-phpstorm) を参照してください。
 
-### PhpStorm の設定
+### PhpStorm サーバーの設定
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437409?learn=on)
 
 [PhpStorm](https://www.jetbrains.com/phpstorm/) IDE は、[!DNL Xdebug] で正しく動作するように設定する必要があります。
 
@@ -86,10 +90,10 @@ ht-degree: 0%
 
 1. PhpStorm プロジェクトで、**設定** パネルを開きます。
 
-   - _macOS_ - **PhpStorm**/**環境設定** を選択します。
+   - _macOS_ - **PhpStorm**/**設定** を選択します。
    - _Windows/Linux_ - **ファイル**/**設定** を選択します。
 
-1. _設定_ パネルで、**言語とフレームワーク**/**PHP**/**サーバー** セクションを展開して見つけます。
+1. _設定_ パネルで「**PHP**」セクションを展開し、「**サーバー**」をクリックします。
 
 1. **+** をクリックして、サーバー設定を追加します。 プロジェクト名は、上部がグレーで表示されます。
 
@@ -110,11 +114,32 @@ ht-degree: 0%
       - 実稼動：`/app/<project_code>/`
       - ステージング：`/app/<project_code>_stg/`
 
-1. **言語とフレームワーク**/**PHP**/**デバッグ**/**Xdebug**/**デバッグポート** パネルで、[!DNL Xdebug] ポートを 9000 に変更します。
+1. [!DNL Xdebug] ポートを `9000,9003` に変更するか、**PHP**/**Debug**/**Xdebug**/**Debug Port** パネルでポートを `9000` のみに制限できます。
 
 1. **適用** をクリックします。
 
+### PHPStorm Run/Debug 設定の作成
+
+これにより、Adobe Commerce アプリケーションからのリクエストを処理するための適切なデバッグ設定をアプリケーションに指定できます。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437426?learn=on)
+
+1. PHPStorm アプリケーションを開き、画面の右上にある **[!UICONTROL Add Configuration]** をクリックします。
+
+1. 「**[!UICONTROL Add new run configuration]**」をクリックします。
+
+1. **[!UICONTROL PHP Remote Debug]** オプションを選択します。
+
+   - 識別できる一意の名前を入力してください。
+   - 「[!UICONTROL Filter debug connection by IDE key]**」チェックボックスをオンにします。
+   - [ 前の節 ](#configure-phpstorm-server) で作成したサーバーを選択します。 まだ作成していない場合は、ここで作成できますが、設定ガイドのその部分を参照してください。
+   - 「**[!UICONTROL IDE key(session id)]**」テキストフィールドに、大文字で `PHPSTORM` と入力します。 これは設定の他の部分で使用するので、同じにしておくことが重要です。 別の文字列を選択する場合は、設定および設定プロセスの他の場所でも使用する必要があります。
+
+1. **[!UICONTROL Apply]**/**[!UICONTROL OK]** をクリックします。
+
 ### ポート転送の設定
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437410?learn=on)
 
 サーバーの `XDEBUG` 接続をローカルシステムにマッピングします。 あらゆる種類のデバッグを行うには、Cloud Infrastructure Server 上のAdobe Commerceからローカルマシンにポート 9000 を転送する必要があります。 以下のセクションの 1 つを参照してください。
 
@@ -280,6 +305,10 @@ ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 >- 方法 2:Commerce コンソール：https://CONSOLE-URL/ENVIRONMENTで、「`SSH v`」ドロップダウンをクリックします。
 
 **環境 URL を使用したデバッグを開始するには**:
+
+これは、使用される設定のデモであり、リモートデバッグセッションを開始するためのGETパラメーターのデモです。
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437417?learn=on)
 
 1. リモートデバッグを有効にします。ブラウザーでサイトにアクセスし、URL に次の `KEY` を追加します（`xdebug_key` の値）。
 
