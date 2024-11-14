@@ -2,7 +2,7 @@
 title: Launch チェックリスト
 description: サイトの起動のチェックリスト項目を確認します。
 exl-id: 4525742e-18c5-40d1-975d-00ba3f3a51a0
-source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
+source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
 workflow-type: tm+mt
 source-wordcount: '1104'
 ht-degree: 0%
@@ -139,7 +139,7 @@ Adobeは、各環境に対して SSL/TLS 証明書を暗号化しましょう提
 
 - [ 管理者ユーザーのセキュリティで保護された設定 ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
-- [ 管理者 URL ]https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/site-store/store-urls#use-a-custom-admin-urlのセキュリティで保護された構成）
+- [ 管理者 URL のセキュア設定 ](https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/site-store/store-urls#use-a-custom-admin-url)
 
 - [クラウドインフラストラクチャプロジェクトでAdobe Commerceを終了したユーザーをすべて削除](../project/user-access.md)
 

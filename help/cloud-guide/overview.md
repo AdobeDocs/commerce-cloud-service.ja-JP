@@ -2,9 +2,9 @@
 title: クラウドインフラストラクチャー上のCommerce
 description: クラウドインフラストラクチャー上でCommerceを構築、デプロイ、管理する方法について説明します。
 exl-id: c0accd55-95ac-49d9-b6f4-0da19b82c28f
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,10 @@ ht-degree: 0%
 - Amazon Web Services（AWS）ホスティングは、オンラインセールスおよび小売業にスケーラブルで安全な環境を提供します。
 
 ![ クラウドのメリット ](../assets/CloudBenefits.svg)
+
+>[!NOTE]
+>
+>セキュリティについて詳しくは、[ セキュリティのローンチチェックリスト ](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/launch/checklist#security-configuration) を参照してください。
 
 [Commerceのクラウドアーキテクチャ ](architecture/tech-stack.md) で、[ テクノロジースタック ](architecture/cloud-architecture.md) を詳しく表示するか、特定の機能とサポートされる製品について詳しく説明します。
 
