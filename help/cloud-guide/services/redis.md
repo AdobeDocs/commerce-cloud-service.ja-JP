@@ -3,9 +3,9 @@ title: Redis サービスの設定
 description: クラウドインフラストラクチャー上のAdobe Commerceのバックエンドキャッシュソリューションとして Redis を設定し最適化する方法について説明します。
 feature: Cloud, Cache, Services
 exl-id: d6971875-d302-495a-ad10-a81c507c2bc9
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '245'
 ht-degree: 0%
 
 ---
@@ -131,7 +131,5 @@ Redis の問題のトラブルシューティングについては、次のAdobe
 
 - [Redis 問題により、管理者ログインまたはチェックアウトが遅れる ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-issue-delay-magento-admin-login-or-checkout.html)
 - [ 拡張 Redis キャッシュ実装Adobe Commerce 2.3.5 以降 ](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/redis-service-configuration.html)
-- [MDVA-30102: Redis キャッシュがいっぱいです ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/patches/v1-0-6/mdva-30102-magento-patch-redis-cache-getting-full.html)
 - [Managed alerts on Adobe Commerce:Redis memory warning アラート ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-warning-alert.html)
 - [Adobe Commerceの管理アラート：Redis メモリクリティカルアラート ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-critical-alert.html)
-- [Redis のトラブルシューティング ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-troubleshooter.html)

@@ -3,9 +3,9 @@ title: Elasticsearchサービスの設定
 description: クラウドインフラストラクチャー上でAdobe CommerceのElasticsearchサービスを有効にする方法について説明します。
 feature: Cloud, Search, Services
 exl-id: ac559cbb-342a-4756-ade5-49eba4827965
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '788'
 ht-degree: 0%
 
 ---
@@ -266,6 +266,5 @@ Elastic Suite を設定する際に、`ELASTICSUITE_CONFIGURATION` のデプロ�
 Elasticsearchの問題のトラブルシューティングについては、以下のAdobe Commerce サポートの記事を参照してください。
 
 - [Elasticsearch 5 が設定されましたが、「Fielddata が無効です…」エラーで検索ページが読み込まれません ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-5-is-configured-but-search-page-does-not-load-with-fielddata-is-disabled...-error.html)
-- [Elasticsearch 6.x が使用されている場合、カタログのページネーションが機能しない ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/known-issues-patches-attached/catalog-pagination-doesn-t-work-when-elasticsearch-6.x-is-used.html)
 - [Adobe CommerceのElasticsearchのトラブルシューティング ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-in-magento-troubleshooter.html)
 - [Elasticsearch インデックスの状態は `yellow` または `red`](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-index-status-is-yellow-or-red.html) です

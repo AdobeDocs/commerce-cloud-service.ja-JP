@@ -4,9 +4,9 @@ description: New Relic ダッシュボードにアクセスし、クラウドイ
 feature: Cloud, Observability
 topic: Performance
 exl-id: 8d1e2ad6-14d0-4754-9703-960d93e135a9
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '844'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
@@ -85,11 +85,11 @@ Adobeでは、パフォーマンス指標を追跡するための _Adobe Commerc
 
 Adobe Commerceの管理アラート ポリシーに含まれるアラートを変更しないでください。 Adobeは、このポリシーのアラート条件を経時的に更新および改善します。これにより、ポリシーに追加したカスタマイズが上書きされます。
 
-既存のアラートを変更する代わりに、アラートポリシーを作成できます。 次に、アラート条件を新しいポリシーにコピーします。 [2}New Relic](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/alert-policies/update-or-disable-policies-conditions/) ドキュメントの { ポリシーまたは条件の更新 _を参照してください。_
+既存のアラートを変更する代わりに、アラートポリシーを作成できます。 次に、アラート条件を新しいポリシーにコピーします。
 
 >[!TIP]
 >
->アラート、アラートポリシーおよびワークフローについて詳しくは、_New Relic_ ドキュメントの [ アラートの概要 ](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/learn-alerts/alerts-concepts-workflow/) を参照してください。
+>アラート、アラートポリシーおよびワークフローについて詳しくは、_New Relic_ ドキュメントの [ アラートの概要 ](https://docs.newrelic.com/docs/alerts/overview/) を参照してください。
 
 ## 通知用のワークフローの設定
 
