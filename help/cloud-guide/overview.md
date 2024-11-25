@@ -2,9 +2,9 @@
 title: クラウドインフラストラクチャー上のCommerce
 description: クラウドインフラストラクチャー上でCommerceを構築、デプロイ、管理する方法について説明します。
 exl-id: c0accd55-95ac-49d9-b6f4-0da19b82c28f
-source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
+source-git-commit: 5f00b20e599b7ba26e483a238d05d99daf1dd1b8
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,26 @@ ht-degree: 0%
 <div id="recs-overview-body-4"></div>
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
+
+## クラウド地域
+
+以下の節では、クラウドインフラストラクチャー上のAdobe Commerceで使用できる様々なAWSおよび Azure リージョンについて詳しく説明します。
+
+## AWS地域
+
+![AWS地域を示す図 ](../assets/aws-regions.svg){zoomable="yes"}
+
+>[!NOTE]
+>
+> 中国とロシアのオンプレミスのみ。
+
+## Azure 地域
+
+![Azure の地域を示す図 ](../assets/azure-regions.svg){zoomable="yes"}
+
+>[!NOTE]
+>
+> 中国とロシアのオンプレミスのみ。 統合環境を必要とするすべてのマーチャントは、米国の地域を使用する必要があります。
 
 ## Adobe Commerce ドキュメント
 

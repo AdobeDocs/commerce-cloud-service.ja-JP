@@ -3,9 +3,9 @@ user-guide-title: クラウドインフラストラクチャー上の Commerce �
 user-guide-description: クラウドインフラストラクチャー上で Adobe Commerce アプリケーションを管理する方法について説明します。
 product: magento
 feature: Cloud
-source-git-commit: 54b9101d3cba535a0e2c83e482aaebe261e3bcce
+source-git-commit: 5f00b20e599b7ba26e483a238d05d99daf1dd1b8
 workflow-type: tm+mt
-source-wordcount: '356'
+source-wordcount: '357'
 ht-degree: 7%
 
 ---
@@ -16,6 +16,7 @@ ht-degree: 7%
 + [Commerce](overview.md)
 + アーキテクチャ {#architecture}
    + [クラウドインフラストラクチャ](architecture/cloud-architecture.md)
+   + [セキュリティ](architecture/security.md)
    + [技術スタック](architecture/tech-stack.md)
    + [スターターアーキテクチャ](architecture/starter-architecture.md)
    + [スターターワークフロー](architecture/starter-develop-deploy-workflow.md)
