@@ -3,7 +3,7 @@ title: ステージング環境および実稼動環境にデプロイ
 description: さらなるテストのために、クラウドインフラストラクチャコード上でAdobe Commerceをステージング環境および実稼動環境にデプロイする方法について説明します。
 feature: Cloud, Console, Deploy, SCD, Storage
 exl-id: 4b82289f-ee04-4b14-a0ed-7a8a19fc6a6a
-source-git-commit: ae7eb6a0c3de773377c8e1efb5ce2e92c06506bd
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '1310'
 ht-degree: 0%
@@ -140,7 +140,7 @@ Cloud CLI には、コードをデプロイするコマンドが用意されて�
 
 ## 静的ファイルの移行
 
-[ 静的ファイル ](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) は `mounts` に保存されます。 ローカル環境などのソース・マウントの場所からターゲット・マウントの場所にファイルを移行する方法は 2 つあります。 どちらの方法でも `rsync` ユーティリティが使用されますが、Adobeでは、ローカル環境とリモート環境の間でファイルを移動するには `magento-cloud` CLI を使用することをお勧めします。 また、Adobeでは、リモートソースから別のリモートの場所にファイルを移動する場合に、`rsync` の方法を使用することをお勧めします。
+[ 静的ファイル ](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) は `mounts` に保存されます。 ローカル環境などのソース・マウントの場所からターゲット・マウントの場所にファイルを移行する方法は 2 つあります。 どちらの方法でも `rsync` ユーティリティが使用されますが、Adobeでは、ローカル環境とリモート環境の間でファイルを移動するには `magento-cloud` CLI を使用することをお勧めします。 また、Adobeでは、リモートソースから別のリモートの場所にファイルを移動する場合に、`rsync` の方法を使用することをお勧めします。
 
 ### CLI を使用したファイルの移行
 

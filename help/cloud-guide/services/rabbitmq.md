@@ -3,7 +3,7 @@ title: RabbitMQ サービスの設定
 description: RabbitMQ サービスを有効にして、クラウドインフラストラクチャー上のAdobe Commerceのメッセージキューを管理する方法について説明します。
 feature: Cloud, Services
 exl-id: 85794b8f-2260-4a6e-b5a6-a1b4c356594e
-source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '398'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # サービス [!DNL RabbitMQ] 設定
 
-[Message Queue Framework （MQF） ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) は、[ モジュール ](https://experienceleague.adobe.com/en/docs/commerce-operations/operational-playbook/glossary#module) がメッセージをキューに公開できるようにする、Adobe Commerce内のシステムです。 また、メッセージを非同期で受信するコンシューマーも定義します。
+[Message Queue Framework （MQF） ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) は、[ モジュール ](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary#module) がメッセージをキューに公開できるようにする、Adobe Commerce内のシステムです。 また、メッセージを非同期で受信するコンシューマーも定義します。
 
 MQF は、メッセージの送受信に使用できるスケーラブルなプラットフォームを提供するメッセージング ブローカーとして ](https://www.rabbitmq.com/)0}RabbitMQ} を使用します。 [また、未配信メッセージを保存するメカニズムも含まれています。 [!DNL RabbitMQ] は、Advanced Message Queuing Protocol （AMQP） 0.9.1 仕様に基づいています。
 

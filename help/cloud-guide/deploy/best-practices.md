@@ -3,7 +3,7 @@ title: デプロイメントのベストプラクティス
 description: クラウドインフラストラクチャにAdobe Commerceをデプロイする際のベストプラクティスについて説明します。
 feature: Cloud, Deploy, Best Practices
 exl-id: bac3ca83-0eee-4fda-9a5c-a84ab25a837a
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '1904'
 ht-degree: 0%
@@ -118,7 +118,7 @@ ht-degree: 0%
 このフェーズでは、コードベースを構築し、`.magento.app.yaml` の `build` セクションでフックを実行します。 デフォルトのビルドフックは `php ./vendor/bin/ece-tools` のコマンドで、次の操作を実行します。
 
 - `vendor/magento/ece-patches` でパッチを適用し、`m2-hotfixes` でオプションでプロジェクト固有のパッチを適用します
-- `bin/magento setup:di:compile` を使用して、コードおよび [ 依存関係の挿入 ](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) 設定（`generated/code` と `generated/metapackage` を含む `generated/` ディレクトリ）を再生成します。
+- `bin/magento setup:di:compile` を使用して、コードおよび [ 依存関係の挿入 ](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) 設定（`generated/code` と `generated/metapackage` を含む `generated/` ディレクトリ）を再生成します。
 - コードベースに [`app/etc/config.php`](../store/store-settings.md) ファイルが存在するかどうかを確認します。 Adobe Commerceは、ビルドフェーズでこのファイルが検出されず、モジュールと拡張機能のリストが含まれている場合、このファイルを自動生成します。 存在する場合、ビルドフェーズは通常どおり続行され、静的ファイルは GZIP で圧縮されてデプロイされるので、デプロイメントフェーズでのダウンタイムが短縮されます。 ファイル圧縮のカスタマイズまたは無効化については、[ ビルドオプション ](../environment/variables-build.md) を参照してください。
 
 >[!WARNING]
@@ -145,7 +145,7 @@ ht-degree: 0%
 
 ### フェーズ 4：スラグとクラスターのデプロイ
 
-アプリケーションとすべての [ バックエンド ](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) サービスは、次のようにプロビジョニングされます。
+アプリケーションとすべての [ バックエンド ](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) サービスは、次のようにプロビジョニングされます。
 
 - Web サーバー、OpenSearch、[!DNL RabbitMQ] などのコンテナ内の各サービスをマウントします
 - 読み取り/書き込み可能なファイル・システムをマウントする（高可用性の分散ストレージ・グリッドにマウント）
@@ -183,7 +183,7 @@ ht-degree: 0%
 >
 >デプロイスクリプトは、`.magento` ディレクトリの設定ファイルで定義された値を使用してから、ディレクトリとその内容を削除します。 ローカル開発環境は影響を受けません。
 
-### Postのデプロイメント：ルーティングの設定
+### デプロイメント後：ルーティングの設定
 
 デプロイメントの実行中、プロセスはエントリポイントでの受信トラフィックを 60 秒間停止し、新しく作成したクラスターに web トラフィックが到達するようにルーティングを再設定します。
 

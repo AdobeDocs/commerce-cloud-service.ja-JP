@@ -4,9 +4,9 @@ description: クラウドインフラストラクチャプロジェクトでAdob
 recommendations: noDisplay, catalog
 role: Admin
 exl-id: cfb354b0-c255-4b6e-94aa-c5a6bf7230d6
-source-git-commit: da1dec76b9389244f9d5a65428e09f1bc897fa5f
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ SendGrid ドメインの例：`example@your-store.com`
 
 Adobe Commerce on cloud infrastructure Pro プロジェクトの Infrastructure as a Service （IaaS）基盤として、Amazon Web Services（AWS）またはMicrosoft Azure のいずれかを選択します。 各サービスプロバイダーは複数の地域で動作し、複数のアベイラビリティーゾーンを提供します。 場所に適した地域を選択し、待ち時間やコストの増加の可能性を減らします。
 
-_実装プレイブック_ の [Adobe Commerce クラウド地域のマップ ](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/infrastructure/cloud/regions.html) を参照してください。
+[Adobe Commerce クラウド地域のマップ ](../cloud-guide/overview.md) を参照してください。
 
 ## 接続サービス
 
