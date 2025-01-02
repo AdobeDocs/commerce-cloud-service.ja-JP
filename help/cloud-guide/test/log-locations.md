@@ -3,9 +3,9 @@ title: ログの表示と管理
 description: クラウドインフラストラクチャで使用できるログファイルのタイプと、それらのログファイルの場所について説明します。
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 633e5e75ae23a933d15a0faedae22092797d5d0b
+source-git-commit: 564a569c37ab8ec53f8a12bc105106a621251b10
 workflow-type: tm+mt
-source-wordcount: '1056'
+source-wordcount: '1083'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,18 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->ステージング環境および実稼動環境では、固定ファイル名のログファイルに対して、自動ログローテーション、圧縮、削除が有効になります。 各ログ ファイル タイプには、回転パターンと有効期間があります。 スターター環境にはログローテーションがありません。 環境のログのローテーションと圧縮ログの存続期間について詳しくは、`/etc/logrotate.conf` と `/etc/logrotate.d/<various>` を参照してください。 ログのローテーションは、Pro 統合環境では設定できません。 Pro 統合の場合、カスタムソリューション/スクリプトを実装し、必要に応じてスクリプトを実行するように [cron を設定 ](../application/crons-property.md) する必要があります。
+>Pro ステージング環境および Pro 実稼動環境では、固定ファイル名のログファイルに対して、自動ログローテーション、圧縮、削除が有効になります。 各ログ ファイル タイプには、回転パターンと有効期間があります。
+>環境のログのローテーションと圧縮ログの存続期間について詳しくは、`/etc/logrotate.conf` と `/etc/logrotate.d/<various>` を参照してください。
+>ステージング環境および実稼動環境が Pro の場合、ログローテーション設定の変更を依頼するには、[Adobe Commerce サポートチケットを送信 ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) する必要があります。
+
+>[!TIP]
+>
+>ログのローテーションは、Pro 統合環境では設定できません。
+>Pro 統合の場合、カスタムソリューション/スクリプトを実装し、必要に応じてスクリプトを実行するように [cron を設定 ](../application/crons-property.md) する必要があります。
+
+>[!NOTE]
+>
+>スタータープロジェクト環境にはログローテーションがありません。
 
 ## ログの作成とデプロイ
 
